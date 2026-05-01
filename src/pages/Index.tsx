@@ -111,13 +111,28 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Nav (fixed) */}
-      <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
+      <header
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "backdrop-blur-md bg-background/85 border-b border-border/60 shadow-sm"
+            : "bg-transparent border-b border-transparent"
+        }`}
+      >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
-          <a href="#home" className="flex flex-col leading-tight">
-            <span className="text-2xl font-semibold tracking-tight">
+          <a href="#home" className="inline-flex flex-col leading-tight">
+            <span
+              className={`text-2xl font-semibold tracking-tight transition-colors duration-500 ${
+                scrolled ? "text-foreground" : "text-white drop-shadow"
+              }`}
+            >
               Si<span className="text-primary-glow">Li</span>CA
             </span>
-            <span className="mt-0.5 text-[11px] tracking-[0.2em] text-muted-foreground">
+            <span
+              className={`mt-1 block w-full text-center font-medium transition-colors duration-500 ${
+                scrolled ? "text-muted-foreground" : "text-white/90 drop-shadow"
+              }`}
+              style={{ fontSize: "0.62rem", letterSpacing: "0.05em" }}
+            >
               규석 전문 기업
             </span>
           </a>
@@ -126,7 +141,9 @@ const Index = () => {
               <a
                 key={item.en}
                 href={item.href}
-                className="group relative inline-block text-sm text-foreground/85 transition-colors hover:text-primary-glow"
+                className={`group relative inline-block text-sm font-medium transition-colors duration-500 hover:text-primary-glow ${
+                  scrolled ? "text-foreground/85" : "text-white/95 [text-shadow:_0_1px_2px_rgb(0_0_0_/_45%)]"
+                }`}
               >
                 <span className="block transition-opacity duration-200 group-hover:opacity-0">
                   {item.en}
