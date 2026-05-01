@@ -121,7 +121,7 @@ const Index = () => {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
           <a href="#home" className="inline-flex flex-col leading-tight">
             <span
-              className={`text-2xl font-semibold tracking-tight transition-colors duration-500 ${
+              className={`text-2xl font-bold tracking-tight transition-colors duration-500 ${
                 scrolled ? "text-foreground" : "text-white drop-shadow"
               }`}
             >
@@ -141,7 +141,7 @@ const Index = () => {
               <a
                 key={item.en}
                 href={item.href}
-                className={`group relative inline-block text-sm font-medium transition-colors duration-500 hover:text-primary-glow ${
+                className={`group relative inline-block text-[15px] font-semibold tracking-wide transition-colors duration-500 hover:text-primary-glow ${
                   scrolled ? "text-foreground/85" : "text-white/95 [text-shadow:_0_1px_2px_rgb(0_0_0_/_45%)]"
                 }`}
               >
