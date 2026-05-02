@@ -237,9 +237,10 @@ const Index = () => {
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {filteredProducts.map((p) => (
-              <article
+              <Link
                 key={p.title}
-                className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+                to={`/products/${p.slug}`}
+                className="group block overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -252,14 +253,11 @@ const Index = () => {
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">{p.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
-                  <Link
-                    to={`/products/${p.slug}`}
-                    className="mt-5 inline-flex items-center gap-2 text-sm text-primary-glow transition hover:gap-3"
-                  >
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm text-primary-glow transition group-hover:gap-3">
                     자세히 보기 <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
