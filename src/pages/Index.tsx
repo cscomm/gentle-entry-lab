@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Mail, Clock, Phone, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Mail, Clock, Phone, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
