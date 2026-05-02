@@ -70,7 +70,7 @@ const Index = () => {
     {
       img: heroNanoImage,
       alt: "High-purity nano silica powder",
-      title: "High-Purity Ultrafine Silica Powder",
+      title: "High-Purity Silica Powder",
       sub: "A New Standard for Precision Industries",
       desc: "전자·코팅·첨단소재 산업에 적용되는 고분산 고순도 실리카 분말",
     },
