@@ -88,19 +88,14 @@ const Index = () => {
   const filteredProducts =
     activeCat === "전체 제품" ? products : products.filter((p) => p.cat === activeCat);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     if (!form.name || !form.phone || !form.message) {
+      e.preventDefault();
       toast({ title: "필수 항목을 입력해 주세요", variant: "destructive" });
       return;
     }
-    const subject = encodeURIComponent(`[홈페이지 문의] ${form.name}`);
-    const body = encodeURIComponent(
-      `이름: ${form.name}\n연락처: ${form.phone}\n회사명: ${form.company}\n\n문의 내용:\n${form.message}`
-    );
-    window.location.href = `mailto:cscomm@naver.com?subject=${subject}&body=${body}`;
-    toast({ title: "문의가 접수되었습니다", description: "빠르게 답변드리겠습니다." });
-    setForm({ name: "", phone: "", company: "", message: "" });
+    // FormSubmit will handle the POST and redirect; show toast optimistically
+    toast({ title: "문의가 전송되었습니다", description: "빠른 시일 내에 답변드리겠습니다." });
   };
 
   return (
