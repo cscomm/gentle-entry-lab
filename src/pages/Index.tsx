@@ -473,7 +473,7 @@ const Index = () => {
                 Si<span className="text-primary-glow">Li</span>CA
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                국내 유일의 고품위 규석 광산을<br />직접 개발하는 규석 전문 기업
+                규석전문기업
               </p>
             </div>
             <div>
