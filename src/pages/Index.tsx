@@ -58,7 +58,8 @@ const news = [
 const Index = () => {
   const { toast } = useToast();
   const [activeCat, setActiveCat] = useState("전체 제품");
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({ name: "", phone: "", company: "", message: "" });
+  const [sending, setSending] = useState(false);
 
   const slides = [
     {
