@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -80,6 +80,19 @@ const Index = () => {
     const t = setInterval(nextSlide, 6000);
     return () => clearInterval(t);
   }, []);
+
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
+    } else {
+      window.scrollTo({ top: 0 });
+    }
+  }, [location.pathname, location.hash, location.key]);
 
   const filteredProducts =
     activeCat === "전체 제품" ? products : products.filter((p) => p.cat === activeCat);
