@@ -327,71 +327,53 @@ const Index = () => {
         />
 
         <div className="relative mx-auto max-w-6xl px-6">
-          <div className="text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
-              <MessageSquare className="h-3.5 w-3.5" /> Contact Us
-            </span>
-            <h2 className="mt-6 text-3xl font-bold leading-tight md:text-5xl">
-              프로젝트의 시작,<br />
-              <span className="text-primary-glow">Silica가 함께 합니다.</span>
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-background/70">
-              최적의 규석 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.
-            </p>
-          </div>
+          <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+            {/* Left: Slogan + small office card */}
+            <div className="lg:col-span-5">
+              <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
+                <MessageSquare className="h-3.5 w-3.5" /> Contact Us
+              </span>
+              <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
+                프로젝트의 시작,<br />
+                <span className="text-primary-glow">Silica가 함께 합니다.</span>
+              </h2>
+              <p className="mt-5 text-sm text-background/70">
+                최적의 규석 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.
+              </p>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-5">
-            {/* Office info card */}
-            <aside className="relative overflow-hidden rounded-3xl border border-background/15 bg-gradient-to-br from-primary/20 via-background/5 to-primary-glow/10 p-8 backdrop-blur-xl lg:col-span-2">
-              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl" />
-              <div className="relative">
-                <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/10 px-3 py-1 text-[11px] tracking-widest text-background/80">
-                  OFFICE
-                </span>
-                <h3 className="mt-5 text-2xl font-semibold">사무실</h3>
-                <p className="mt-2 text-sm text-background/60">방문 및 직접 연락이 필요하시면 아래 정보를 이용해 주세요.</p>
-
-                <ul className="mt-8 space-y-5">
-                  <li className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
-                      <MapPin className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <div className="text-[11px] uppercase tracking-wider text-background/50">Address</div>
-                      <div className="mt-1 text-sm text-background/90">경기도 화성시 남양읍 수작이길 55</div>
-                    </div>
+              {/* Compact office card */}
+              <aside className="mt-8 rounded-2xl border border-background/15 bg-background/5 p-5 backdrop-blur-xl">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] tracking-widest text-primary-glow">OFFICE</span>
+                  <span className="h-px flex-1 bg-background/15" />
+                  <span className="text-xs text-background/60">사무실</span>
+                </div>
+                <ul className="mt-4 space-y-2.5 text-sm">
+                  <li className="flex items-start gap-2.5 text-background/85">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
+                    <span>경기도 화성시 남양읍 수작이길 55</span>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
-                      <Phone className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <div className="text-[11px] uppercase tracking-wider text-background/50">Phone</div>
-                      <a href="tel:031-000-0000" className="mt-1 block text-sm text-background/90 hover:text-primary-glow">
-                        031-000-0000
-                      </a>
-                    </div>
+                  <li>
+                    <a href="tel:031-000-0000" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
+                      <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
+                      031-000-0000
+                    </a>
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
-                      <Mail className="h-4 w-4" />
-                    </span>
-                    <div>
-                      <div className="text-[11px] uppercase tracking-wider text-background/50">Email</div>
-                      <a href="mailto:info@silica.co.kr" className="mt-1 block text-sm text-background/90 hover:text-primary-glow">
-                        info@silica.co.kr
-                      </a>
-                    </div>
+                  <li>
+                    <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
+                      <Mail className="h-4 w-4 shrink-0 text-primary-glow" />
+                      info@silica.co.kr
+                    </a>
                   </li>
                 </ul>
-              </div>
-            </aside>
+              </aside>
+            </div>
 
           <form
             onSubmit={handleSubmit}
             action="https://formsubmit.co/cscomm@naver.com"
             method="POST"
-            className="relative overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-10 lg:col-span-3"
+            className="relative overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-10 lg:col-span-7"
           >
             <input type="hidden" name="_subject" value="[홈페이지 문의] 신규 문의 도착" />
             <input type="hidden" name="_template" value="table" />
