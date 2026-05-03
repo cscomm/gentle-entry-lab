@@ -505,7 +505,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-10 border-t border-border pt-6 text-center text-xs text-muted-foreground">
-            © {new Date().getFullYear()} SiLiCA. All rights reserved.
+            © 2023 SiLiCA. All rights reserved.
           </div>
         </div>
       </footer>
