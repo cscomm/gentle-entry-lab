@@ -15,11 +15,10 @@ import gradeA from "@/assets/grade-a-silica.png";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
 import pProcess from "@/assets/p-process.jpg";
-import pQuality from "@/assets/p-quality.jpg";
-import aSemi from "@/assets/a-semi.jpg";
-import aOptic from "@/assets/a-optic.jpg";
-import aSolar from "@/assets/a-solar.jpg";
-import aElec from "@/assets/a-elec.jpg";
+import aSemi from "@/assets/a-semicon.jpg";
+import aOptic from "@/assets/a-optics.jpg";
+import aSolar from "@/assets/a-display.jpg";
+import aElec from "@/assets/a-energy.jpg";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
