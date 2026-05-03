@@ -341,12 +341,12 @@ const Index = () => {
                 <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
                   <MessageSquare className="h-3.5 w-3.5" /> Contact Us
                 </span>
-                <h2 className="mt-6 text-4xl font-bold leading-tight md:text-6xl">
-                  프로젝트가 있으신가요?<br />
-                  <span className="text-primary-glow">언제든 문의해 주세요.</span>
+                <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
+                  프로젝트 문의<br />
+                  <span className="text-primary-glow">언제든 연락 주세요.</span>
                 </h2>
                 <p className="mt-6 max-w-md text-background/70">
-                  최적의 규석 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다. 영업일 기준 1일 이내 답변드립니다.
+                  최적의 규석 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.
                 </p>
               </div>
 
