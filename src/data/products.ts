@@ -1,8 +1,11 @@
 import gradeA from "@/assets/grade-a-silica.png";
 import gradeADetail from "@/assets/grade-a-detail.png";
 import gradeB from "@/assets/grade-b-silica.png";
+import gradeBDetail from "@/assets/grade-b-detail.png";
 import gradeC from "@/assets/grade-c-silica.png";
+import gradeCDetail from "@/assets/grade-c-detail.png";
 import pProcess from "@/assets/p-process.jpg";
+import hpqDetail from "@/assets/hpq-detail.jpg";
 
 export type ProductDetail = {
   slug: string;
@@ -62,6 +65,7 @@ export const productCatalog: ProductDetail[] = [
     description:
       "프리미엄 용융 실리카 B등급은 99.5% 이상의 SiO₂ 순도와 98% 이상의 무정형 구조를 갖춘 고품질 소재입니다. 태양광·전자/반도체·정밀 주조·특수 소재 등 고신뢰성이 요구되는 산업에 폭넓게 공급됩니다.",
     image: gradeB,
+    detailImage: gradeBDetail,
     features: [
       { title: "🔥 우수한 열적 안정성", desc: "98% 이상 무정형 + 열팽창 < 0.8 → 고온 환경 균일 성능 보장" },
       { title: "🧪 철저한 불순물 관리", desc: "Al, Fe 등 ppm 단위 제어 → 화학적 부식 및 변색 방지" },
@@ -91,6 +95,7 @@ export const productCatalog: ProductDetail[] = [
     description:
       "산업용 용융 실리카 C등급은 99% 이상의 SiO₂ 순도와 95% 이상의 무정형 구조를 갖춘 경제형 소재입니다. 건축·코팅·플라스틱·연마 등 광범위한 산업 영역에서 안정적인 성능을 발휘합니다.",
     image: gradeC,
+    detailImage: gradeCDetail,
     features: [
       { title: "🧱 안정적 무정형 구조", desc: "95% 이상 무정형상 → 열적·화학적 안정성 확보" },
       { title: "💰 경제적 원가 구조", desc: "대량 산업용으로 최적화된 가격 경쟁력" },
