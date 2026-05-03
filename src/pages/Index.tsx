@@ -375,12 +375,6 @@ const Index = () => {
             method="POST"
             className="relative overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-10 lg:col-span-7"
           >
-          <form
-            onSubmit={handleSubmit}
-            action="https://formsubmit.co/cscomm@naver.com"
-            method="POST"
-            className="relative overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-10 lg:col-span-3"
-          >
             <input type="hidden" name="_subject" value="[홈페이지 문의] 신규 문의 도착" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
