@@ -340,11 +340,58 @@ const Index = () => {
             </p>
           </div>
 
+          <div className="mt-14 grid gap-6 lg:grid-cols-5">
+            {/* Office info card */}
+            <aside className="relative overflow-hidden rounded-3xl border border-background/15 bg-gradient-to-br from-primary/20 via-background/5 to-primary-glow/10 p-8 backdrop-blur-xl lg:col-span-2">
+              <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/30 blur-3xl" />
+              <div className="relative">
+                <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/10 px-3 py-1 text-[11px] tracking-widest text-background/80">
+                  OFFICE
+                </span>
+                <h3 className="mt-5 text-2xl font-semibold">사무실</h3>
+                <p className="mt-2 text-sm text-background/60">방문 및 직접 연락이 필요하시면 아래 정보를 이용해 주세요.</p>
+
+                <ul className="mt-8 space-y-5">
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
+                      <MapPin className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-background/50">Address</div>
+                      <div className="mt-1 text-sm text-background/90">경기도 화성시 남양읍 수작이길 55</div>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
+                      <Phone className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-background/50">Phone</div>
+                      <a href="tel:031-000-0000" className="mt-1 block text-sm text-background/90 hover:text-primary-glow">
+                        031-000-0000
+                      </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary-glow">
+                      <Mail className="h-4 w-4" />
+                    </span>
+                    <div>
+                      <div className="text-[11px] uppercase tracking-wider text-background/50">Email</div>
+                      <a href="mailto:info@silica.co.kr" className="mt-1 block text-sm text-background/90 hover:text-primary-glow">
+                        info@silica.co.kr
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+
           <form
             onSubmit={handleSubmit}
             action="https://formsubmit.co/cscomm@naver.com"
             method="POST"
-            className="relative mx-auto mt-14 overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-12"
+            className="relative overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-10 lg:col-span-3"
           >
             <input type="hidden" name="_subject" value="[홈페이지 문의] 신규 문의 도착" />
             <input type="hidden" name="_template" value="table" />
