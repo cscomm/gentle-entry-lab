@@ -398,14 +398,13 @@ const Index = () => {
 
           <form
             onSubmit={handleSubmit}
-            action="https://formsubmit.co/cscomm@naver.com"
+            action="https://formsubmit.co/ajax/cscomm@naver.com"
             method="POST"
             className="relative overflow-hidden rounded-3xl border border-background/15 bg-background/5 p-8 backdrop-blur-xl md:p-10 lg:col-span-7"
           >
             <input type="hidden" name="_subject" value="[홈페이지 문의] 신규 문의 도착" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_next" value="https://gentle-entry-lab.lovable.app/?sent=1" />
             <input type="text" name="_honey" style={{ display: "none" }} />
             <div className="absolute right-0 top-0 h-40 w-40 -translate-y-16 translate-x-16 rounded-full bg-primary/30 blur-2xl" />
             <div className="absolute bottom-0 left-0 h-40 w-40 translate-y-16 -translate-x-16 rounded-full bg-primary-glow/20 blur-2xl" />
@@ -482,9 +481,10 @@ const Index = () => {
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="h-12 w-full rounded-full bg-primary text-primary-foreground font-semibold shadow-[var(--shadow-glow)] hover:bg-primary/90"
                 >
-                  문의 보내기 <Send className="ml-2 h-4 w-4" />
+                  {isSubmitting ? "전송 중..." : "문의 보내기"} <Send className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
