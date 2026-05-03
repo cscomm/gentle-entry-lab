@@ -11,7 +11,7 @@ import SiteHeader from "@/components/SiteHeader";
 import heroImage from "@/assets/hero-quartz.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import facility from "@/assets/facility.jpg";
-import gradeA from "@/assets/grade-a-silica.png";
+import gradeA from "@/assets/grade-a-hero.png";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
 import pProcess from "@/assets/p-process.jpg";
