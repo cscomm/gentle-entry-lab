@@ -393,6 +393,7 @@ const Index = () => {
                     <div>
                       <label className="text-xs uppercase tracking-wider text-background/60">이름 *</label>
                       <Input
+                        name="이름"
                         value={form.name}
                         onChange={(e) => setForm({ ...form, name: e.target.value })}
                         className="mt-2 h-11 border-background/20 bg-background/10 text-background placeholder:text-background/40 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40"
@@ -402,6 +403,7 @@ const Index = () => {
                     <div>
                       <label className="text-xs uppercase tracking-wider text-background/60">연락처 *</label>
                       <Input
+                        name="연락처"
                         type="tel"
                         value={form.phone}
                         onChange={(e) => setForm({ ...form, phone: e.target.value })}
@@ -410,14 +412,28 @@ const Index = () => {
                       />
                     </div>
                   </div>
-                  <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">회사명</label>
-                    <Input
-                      value={form.company}
-                      onChange={(e) => setForm({ ...form, company: e.target.value })}
-                      className="mt-2 h-11 border-background/20 bg-background/10 text-background placeholder:text-background/40 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40"
-                      placeholder="회사명을 입력해 주세요"
-                    />
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <div>
+                      <label className="text-xs uppercase tracking-wider text-background/60">이메일</label>
+                      <Input
+                        name="이메일"
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className="mt-2 h-11 border-background/20 bg-background/10 text-background placeholder:text-background/40 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40"
+                        placeholder="name@example.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs uppercase tracking-wider text-background/60">회사명</label>
+                      <Input
+                        name="회사명"
+                        value={form.company}
+                        onChange={(e) => setForm({ ...form, company: e.target.value })}
+                        className="mt-2 h-11 border-background/20 bg-background/10 text-background placeholder:text-background/40 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40"
+                        placeholder="회사명을 입력해 주세요"
+                      />
+                    </div>
                   </div>
                   <div>
                     <label className="text-xs uppercase tracking-wider text-background/60">문의 내용 *</label>
