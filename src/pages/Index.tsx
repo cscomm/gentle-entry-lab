@@ -36,14 +36,14 @@ const navItems = [
 const productCategories = ["전체 제품", "용융규석", "용융규사", "용융규석미세분말", "고순도규석"];
 
 const products = [
-  { img: pBlockA, slug: "fused-silica-block", title: "용융규석", desc: "최고급 융편석영 블록 — 반도체 및 고급 광학 용도에 적합", cat: "용융규석" },
+  { img: pBlockA, slug: "fused-silica-block", title: "용융규석", desc: "최고급 융편석영 블록 — 전자 및 고급 광학 용도에 적합", cat: "용융규석" },
   { img: pSandA, slug: "fused-silica-sand", title: "용융규사", desc: "정밀 주조 및 첨단 산업용 고품질 용융규사", cat: "용융규사" },
   { img: pPowder, slug: "fused-silica-powder", title: "용융규석미세분말", desc: "고분산 융편석영 미세 분말, 전자 소재 및 코팅 용도에 적합", cat: "용융규석미세분말" },
-  { img: pProcess, slug: "high-purity-quartz", title: "고순도규석", desc: "엄선된 광원에서 채광한 프리미엄 고순도 규석 원료", cat: "고순도규석" },
+  { img: pProcess, slug: "high-purity-quartz", title: "고순도규석", desc: "엄선된 광원에서 채광한 고순도 규석 원료", cat: "고순도규석" },
 ];
 
 const applications = [
-  { img: aSemi, title: "반도체 산업", desc: "반도체 웨이퍼 제조용 고순도 석영 소재" },
+  { img: aSemi, title: "전자 산업", desc: "전자 웨이퍼 제조용 고순도 석영 소재" },
   { img: aOptic, title: "광학 산업", desc: "광학 렌즈 및 정밀 광학 부품용 석영 소재" },
   { img: aSolar, title: "태양광 산업", desc: "태양광 패널 생산에 적합한 석영 소재" },
   { img: aElec, title: "전자 소재", desc: "전자 소재 및 패키지 제품용 석영 소재" },
@@ -270,7 +270,7 @@ const Index = () => {
             응용 분야
           </span>
           <h2 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">
-            반도체부터 광학까지<br />다양한 산업에 공급합니다
+            전자부터 광학까지<br />다양한 산업에 공급합니다
           </h2>
         </div>
 
