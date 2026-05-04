@@ -376,14 +376,13 @@ const Index = () => {
             {/* Left: Slogan + small office card */}
             <div className="lg:col-span-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
-                <MessageSquare className="h-3.5 w-3.5" /> Contact Us
+                <MessageSquare className="h-3.5 w-3.5" /> {t("contact.tag")}
               </span>
-              <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
-                프로젝트의 시작,<br />
-                <span className="text-primary-glow">Silica가 함께 합니다.</span>
+              <h2 className="mt-6 whitespace-pre-line text-3xl font-bold leading-tight md:text-4xl">
+                {t("contact.title")}
               </h2>
               <p className="mt-5 text-sm text-background/70">
-                최적의 규석 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.
+                {t("contact.desc")}
               </p>
 
               {/* Compact office card */}
@@ -391,12 +390,12 @@ const Index = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] tracking-widest text-primary-glow">OFFICE</span>
                   <span className="h-px flex-1 bg-background/15" />
-                  <span className="text-xs text-background/60">사무실</span>
+                  <span className="text-xs text-background/60">{t("contact.office")}</span>
                 </div>
                 <ul className="mt-4 space-y-2.5 text-sm">
                   <li className="flex items-start gap-2.5 text-background/85">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
-                    <span>경기도 화성시 남양읍 수작이길 55</span>
+                    <span>{t("footer.address")}</span>
                   </li>
                   <li>
                     <a href="tel:031-000-0000" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
@@ -431,13 +430,13 @@ const Index = () => {
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Send className="h-4 w-4" />
                 </div>
-                <h3 className="text-xl font-semibold">문의 양식</h3>
+                <h3 className="text-xl font-semibold">{t("contact.form")}</h3>
               </div>
 
               <div className="mt-8 grid gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">이름 *</label>
+                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.name")}</label>
                     <Input
                       name="이름"
                       value={form.name}
@@ -447,7 +446,7 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">연락처 *</label>
+                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.phone")}</label>
                     <Input
                       name="연락처"
                       type="tel"
@@ -460,7 +459,7 @@ const Index = () => {
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">이메일</label>
+                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.email")}</label>
                     <Input
                       name="이메일"
                       type="email"
@@ -471,7 +470,7 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">회사명</label>
+                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.company")}</label>
                     <Input
                       name="회사명"
                       value={form.company}
@@ -482,7 +481,7 @@ const Index = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs uppercase tracking-wider text-background/60">문의 내용 *</label>
+                  <label className="text-xs uppercase tracking-wider text-background/60">{t("form.message")}</label>
                   <Textarea
                     name="문의내용"
                     value={form.message}
@@ -502,7 +501,7 @@ const Index = () => {
                   disabled={isSubmitting}
                   className="h-12 w-full rounded-full bg-primary text-primary-foreground font-semibold shadow-[var(--shadow-glow)] hover:bg-primary/90"
                 >
-                  {isSubmitting ? "전송 중..." : "문의 보내기"} <Send className="ml-2 h-4 w-4" />
+                  {isSubmitting ? t("form.sending") : t("form.send")} <Send className="ml-2 h-4 w-4" />
                 </Button>
               </div>
             </div>
