@@ -10,6 +10,7 @@ import mineOre from "@/assets/mine-ore.jpg";
 import minePlant from "@/assets/mine-plant.png";
 import mineBuilding from "@/assets/mine-building.jpg";
 import pProcess from "@/assets/p-process.jpg";
+import processDiagram from "@/assets/process-diagram.png";
 
 const stats = [
   { value: "유일", label: "국내 고품위 규석 광산 직접 운영" },
