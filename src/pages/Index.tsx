@@ -8,6 +8,7 @@ import { useToast } from "@/hooks/use-toast";
 import { productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { useLang } from "@/contexts/LanguageContext";
 
 import heroImage from "@/assets/hero-quartz.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
@@ -59,6 +60,7 @@ const news = [
 
 const Index = () => {
   const { toast } = useToast();
+  const { t, lang } = useLang();
   const [activeCat, setActiveCat] = useState("전체 제품");
   const [form, setForm] = useState({ name: "", phone: "", email: "", company: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -67,16 +69,16 @@ const Index = () => {
     {
       img: heroImage,
       alt: "High-purity quartz crystal",
-      title: "Silica: Nature's Gift to the Future.",
-      sub: "Technology that Leads Industry",
-      desc: "용융실리카와 고품위 실리카. 다양한 산업에 최적의 솔루션을 제공합니다.",
+      title: t("hero1.title"),
+      sub: t("hero1.sub"),
+      desc: t("hero1.desc"),
     },
     {
       img: heroNanoImage,
       alt: "High-purity nano silica powder",
-      title: "High-Purity Silica Powder",
-      sub: "A New Standard for Precision Industries",
-      desc: "전자·코팅·첨단소재 산업에 적용되는 고분산 고순도 실리카 분말",
+      title: t("hero2.title"),
+      sub: t("hero2.sub"),
+      desc: t("hero2.desc"),
     },
   ];
   const [slideIdx, setSlideIdx] = useState(0);
