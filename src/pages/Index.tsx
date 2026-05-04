@@ -299,7 +299,7 @@ const Index = () => {
                   <h3 className="text-lg font-semibold">{p.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground">{p.desc}</p>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm text-primary-glow transition group-hover:gap-3">
-                    자세히 보기 <ArrowRight className="h-4 w-4" />
+                    {t("products.detail")} <ArrowRight className="h-4 w-4" />
                   </span>
                 </div>
               </Link>
