@@ -7,6 +7,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Mail, Clock, Phone, Send
 import { useToast } from "@/hooks/use-toast";
 import { productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
 
 import heroImage from "@/assets/hero-quartz.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
@@ -514,41 +515,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-secondary/40">
-        <div className="mx-auto max-w-5xl px-6 py-16 text-center">
-          {/* Brand */}
-          <div className="text-3xl font-bold tracking-tight">
-            Si<span className="text-primary-glow">Li</span>CA
-          </div>
-          <p className="mt-2 text-sm text-muted-foreground">규석전문기업</p>
-
-          {/* Sitemap */}
-          <nav className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-            <a href="/#home" className="hover:text-primary-glow">홈</a>
-            <span className="opacity-30">|</span>
-            <a href="/#products" className="hover:text-primary-glow">제품</a>
-            <span className="opacity-30">|</span>
-            <Link to="/about" className="hover:text-primary-glow">회사소개</Link>
-            <span className="opacity-30">|</span>
-            <a href="/#contact" className="hover:text-primary-glow">문의하기</a>
-          </nav>
-
-          {/* HQ + bottom info */}
-          <div className="mt-10 border-t border-border pt-6">
-            <p className="text-xs text-muted-foreground">
-              본사 · 전라북도 진안군 동계로 328 · 주식회사 비에이알
-            </p>
-            <div className="mt-4 flex flex-col items-center justify-center gap-3 text-xs text-muted-foreground sm:flex-row">
-              <Link to="/terms" className="hover:text-primary-glow">이용약관</Link>
-              <span className="opacity-30">|</span>
-              <Link to="/privacy" className="hover:text-primary-glow">개인정보처리방침</Link>
-              <span className="hidden opacity-30 sm:inline">|</span>
-              <span>© 2023 SiLiCA. All rights reserved.</span>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 };
