@@ -78,13 +78,13 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-white">
           <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs tracking-widest backdrop-blur">
-            {t("ab.hero.tag")}
+            {tr("ab.hero.tag")}
           </span>
           <h1 className="mt-6 whitespace-pre-line text-4xl font-bold leading-tight md:text-6xl drop-shadow">
-            {t("ab.hero.title")}
+            {tr("ab.hero.title")}
           </h1>
           <p className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow">
-            {t("ab.hero.sub")}
+            {tr("ab.hero.sub")}
           </p>
         </div>
       </section>
@@ -93,7 +93,7 @@ const About = () => {
       <div className="mx-auto max-w-7xl px-6 pt-10">
         <Button asChild variant="ghost">
           <Link to="/">
-            <ArrowLeft className="mr-2 h-4 w-4" /> {t("ab.back")}
+            <ArrowLeft className="mr-2 h-4 w-4" /> {tr("ab.back")}
           </Link>
         </Button>
       </div>
@@ -106,14 +106,14 @@ const About = () => {
           </div>
           <div>
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              {t("ab.overview.tag")}
+              {tr("ab.overview.tag")}
             </span>
             <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
-              {t("ab.overview.title")}
+              {tr("ab.overview.title")}
             </h2>
-            <p className="mt-6 text-muted-foreground">{t("ab.overview.p1")}</p>
-            <p className="mt-4 text-muted-foreground">{t("ab.overview.p2")}</p>
-            <p className="mt-4 text-muted-foreground">{t("ab.overview.p3")}</p>
+            <p className="mt-6 text-muted-foreground">{tr("ab.overview.p1")}</p>
+            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p2")}</p>
+            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p3")}</p>
           </div>
         </div>
 
@@ -121,41 +121,41 @@ const About = () => {
         <div className="mt-20 md:mt-28">
           <div className="mx-auto max-w-4xl text-center">
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              {t("ab.mine.tag")}
+              {tr("ab.mine.tag")}
             </span>
             <h2 className="mt-5 text-3xl font-bold md:text-4xl">
-              {t("ab.mine.title")}
+              {tr("ab.mine.title")}
             </h2>
             <p
               className="mt-6 text-left text-muted-foreground md:text-center [&_strong]:text-foreground"
-              dangerouslySetInnerHTML={{ __html: t("ab.mine.p1.ko") }}
+              dangerouslySetInnerHTML={{ __html: tr("ab.mine.p1.ko") }}
             />
             <p
               className="mt-4 text-left text-muted-foreground md:text-center [&_strong]:text-foreground"
-              dangerouslySetInnerHTML={{ __html: t("ab.mine.p2") }}
+              dangerouslySetInnerHTML={{ __html: tr("ab.mine.p2") }}
             />
           </div>
 
           {/* Photo mosaic */}
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
             <div className="relative col-span-1 overflow-hidden rounded-2xl border border-border md:col-span-2 md:row-span-2">
-              <img src={mineAerial} alt={t("ab.mine.aerialSub")} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineAerial} alt={tr("ab.mine.aerialSub")} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                <span className="text-xs font-semibold tracking-widest text-white/80">{t("ab.mine.aerial")}</span>
-                <p className="mt-1 text-base font-bold text-white">{t("ab.mine.aerialSub")}</p>
+                <span className="text-xs font-semibold tracking-widest text-white/80">{tr("ab.mine.aerial")}</span>
+                <p className="mt-1 text-base font-bold text-white">{tr("ab.mine.aerialSub")}</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineTunnel} alt={t("ab.cap.tunnel")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineTunnel} alt={tr("ab.cap.tunnel")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineOre} alt={t("ab.cap.ore")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineOre} alt={tr("ab.cap.ore")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border md:col-span-2">
-              <img src={minePlant} alt={t("ab.cap.plant")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={minePlant} alt={tr("ab.cap.plant")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineBuilding} alt={t("ab.cap.building")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineBuilding} alt={tr("ab.cap.building")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
           </div>
 
