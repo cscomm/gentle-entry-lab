@@ -250,7 +250,7 @@ const Index = () => {
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              제품 카테고리
+              {t("products.cat")}
             </span>
             <h2 className="mt-5 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
               Mineral Product
