@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Award, Factory, Globe2, Mountain, ShieldCheck, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import { useLang } from "@/contexts/LanguageContext";
 import facility from "@/assets/facility.jpg";
 import heroImage from "@/assets/hero-quartz.jpg";
 import mineAerial from "@/assets/mine-aerial.png";
@@ -66,6 +67,7 @@ const milestones = [
 ];
 
 const About = () => {
+  const { t } = useLang();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -76,13 +78,13 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-white">
           <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs tracking-widest backdrop-blur">
-            ABOUT US
+            {t("ab.hero.tag")}
           </span>
-          <h1 className="mt-6 text-4xl font-bold leading-tight md:text-6xl drop-shadow">
-            국내 유일의 고품위 규석<br />광산을 직접 개발합니다
+          <h1 className="mt-6 whitespace-pre-line text-4xl font-bold leading-tight md:text-6xl drop-shadow">
+            {t("ab.hero.title")}
           </h1>
           <p className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow">
-            원료부터 완제품까지, 차별화된 품질로 산업의 표준을 만듭니다.
+            {t("ab.hero.sub")}
           </p>
         </div>
       </section>
@@ -91,7 +93,7 @@ const About = () => {
       <div className="mx-auto max-w-7xl px-6 pt-10">
         <Button asChild variant="ghost">
           <Link to="/">
-            <ArrowLeft className="mr-2 h-4 w-4" /> 홈으로
+            <ArrowLeft className="mr-2 h-4 w-4" /> {t("ab.back")}
           </Link>
         </Button>
       </div>
@@ -104,20 +106,14 @@ const About = () => {
           </div>
           <div>
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              COMPANY OVERVIEW
+              {t("ab.overview.tag")}
             </span>
             <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
-              원료에서 완제품까지
+              {t("ab.overview.title")}
             </h2>
-            <p className="mt-6 text-muted-foreground">
-              당사는 국내에는 현재 유일한 고품위 규석 광산을 직접 개발하여 운영 중이며, 탐사부터 채광 후 1차 공정을 자체적으로 수행하여 최고 품질의 고품위 석영을 생산하고 있습니다.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              원료 선별부터 완제품까지 운영되는 각 단계의 차별화된 품질 관리 시스템을 통해 고객의 높은 기대에 부합하는 제품을 생산하고 있습니다.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              용융실리카의 현지 공장은 ISO 9001 품질 관리 시스템 인증을 보유한 작업 환경에서 전자 소재 · 산업용 코팅 · 세라믹 · 내화재 · 주조 · 태양광 및 에너지 소재 등 다양한 산업 분야에 최적의 솔루션을 제공합니다.
-            </p>
+            <p className="mt-6 text-muted-foreground">{t("ab.overview.p1")}</p>
+            <p className="mt-4 text-muted-foreground">{t("ab.overview.p2")}</p>
+            <p className="mt-4 text-muted-foreground">{t("ab.overview.p3")}</p>
           </div>
         </div>
 
@@ -125,44 +121,41 @@ const About = () => {
         <div className="mt-20 md:mt-28">
           <div className="mx-auto max-w-4xl text-center">
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              JANGSU BAEKAM MINE · BAR
+              {t("ab.mine.tag")}
             </span>
             <h2 className="mt-5 text-3xl font-bold md:text-4xl">
-              장수백암광산
+              {t("ab.mine.title")}
             </h2>
-            <p className="mt-6 text-left text-muted-foreground md:text-center">
-              <strong className="text-foreground">장수백암광산(BAR)</strong>의 이름은, 일제강점기 때의 소재지 지명에서 유래합니다.
-              전라북도 장수군과 진안군 경계에 위치한 <strong className="text-foreground">백운면(白雲面) 백암리(白巖里)</strong>에 소재
-              (현재 지명은 진안군 동향면 신송리)했던 바, 백암리라는 원래 지명도 <strong className="text-foreground">백암(白巖) — '흰색 광석'</strong>이라는
-              별칭으로 불렸던 규석(Silica Stone, 硅石)과 장석이 생산됐던 이유에서 비롯돼 백암리(白巖里)라고 명명됐던 역사를 가지고 있습니다.
-            </p>
-            <p className="mt-4 text-left text-muted-foreground md:text-center">
-              과거에 이미 노천 장석광산으로 알려진 광산이며, 현재는 굴진을 통한 규석을 채광하고 있습니다.
-              <strong className="text-foreground"> 현존하는 국내 유일의 고품위 규석광산</strong>으로,
-              가장 큰 특징은 <strong className="text-primary">최저 99.5%를 유지하는 편차 없는 순도</strong>를 보장한다는 점입니다.
-            </p>
+            <p
+              className="mt-6 text-left text-muted-foreground md:text-center [&_strong]:text-foreground"
+              dangerouslySetInnerHTML={{ __html: t("ab.mine.p1.ko") }}
+            />
+            <p
+              className="mt-4 text-left text-muted-foreground md:text-center [&_strong]:text-foreground"
+              dangerouslySetInnerHTML={{ __html: t("ab.mine.p2") }}
+            />
           </div>
 
           {/* Photo mosaic */}
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
             <div className="relative col-span-1 overflow-hidden rounded-2xl border border-border md:col-span-2 md:row-span-2">
-              <img src={mineAerial} alt="장수백암광산 항공 전경" className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineAerial} alt={t("ab.mine.aerialSub")} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
-                <span className="text-xs font-semibold tracking-widest text-white/80">AERIAL VIEW</span>
-                <p className="mt-1 text-base font-bold text-white">광산 전경 — 장수 백암리</p>
+                <span className="text-xs font-semibold tracking-widest text-white/80">{t("ab.mine.aerial")}</span>
+                <p className="mt-1 text-base font-bold text-white">{t("ab.mine.aerialSub")}</p>
               </div>
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineTunnel} alt="갱도 채광 현장" className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineTunnel} alt={t("ab.cap.tunnel")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineOre} alt="채광된 고품위 규석 원광" className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineOre} alt={t("ab.cap.ore")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border md:col-span-2">
-              <img src={minePlant} alt="가공 플랜트 내부" className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={minePlant} alt={t("ab.cap.plant")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineBuilding} alt="(주)BAR 사업장 외관" className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineBuilding} alt={t("ab.cap.building")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
           </div>
 
