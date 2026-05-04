@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { productCatalog } from "@/data/products";
+import { useLang } from "@/contexts/LanguageContext";
 
 const navItems = [
-  { en: "Home", ko: "홈", href: "/#home" },
-  { en: "Mineral Product", ko: "제품", href: "/#products", dropdown: "products" as const },
-  { en: "About", ko: "회사소개", href: "/about" },
-  { en: "Applications", ko: "응용분야", href: "/#applications", dropdown: "applications" as const },
-  { en: "Contact", ko: "문의하기", href: "/#contact" },
+  { key: "nav.home", href: "/#home" },
+  { key: "nav.products", href: "/#products", dropdown: "products" as const },
+  { key: "nav.about", href: "/about" },
+  { key: "nav.applications", href: "/#applications", dropdown: "applications" as const },
+  { key: "nav.contact", href: "/#contact" },
 ];
 
 interface SiteHeaderProps {
