@@ -10,6 +10,7 @@ import mineOre from "@/assets/mine-ore.jpg";
 import minePlant from "@/assets/mine-plant.png";
 import mineBuilding from "@/assets/mine-building.jpg";
 import pProcess from "@/assets/p-process.jpg";
+import processDiagram from "@/assets/process-diagram.png";
 
 const stats = [
   { value: "유일", label: "국내 고품위 규석 광산 직접 운영" },
@@ -120,11 +121,11 @@ const About = () => {
               JANGSU BAEKAM MINE · BAR
             </span>
             <h2 className="mt-5 text-3xl font-bold md:text-4xl">
-              장수백암광산 <span className="text-primary">(BAR)</span>
+              장수백암광산
             </h2>
             <p className="mt-6 text-left text-muted-foreground md:text-center">
               <strong className="text-foreground">장수백암광산(BAR)</strong>의 이름은, 일제강점기 때의 소재지 지명에서 유래합니다.
-              이 광산은 전라북도 장수군과 진안군 경계에 위치한 <strong className="text-foreground">백운면(白雲面) 백암리(白巖里)</strong>에 소재
+              전라북도 장수군과 진안군 경계에 위치한 <strong className="text-foreground">백운면(白雲面) 백암리(白巖里)</strong>에 소재
               (현재 지명은 진안군 동향면 신송리)했던 바, 백암리라는 원래 지명도 <strong className="text-foreground">백암(白巖) — '흰색 광석'</strong>이라는
               별칭으로 불렸던 규석(Silica Stone, 硅石)과 장석이 생산됐던 이유에서 비롯돼 백암리(白巖里)라고 명명됐던 역사를 가지고 있습니다.
             </p>
@@ -177,6 +178,60 @@ const About = () => {
                   일관된 공정으로 처리합니다. 단계별 품질 관리(QC)를 통해
                   편차 없는 순도와 균일한 입도를 보장합니다.
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* 5-step Process Diagram */}
+          <div className="mt-16">
+            <div className="text-center">
+              <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+                PRODUCTION PROCESS
+              </span>
+              <h3 className="mt-5 text-2xl font-bold md:text-3xl">
+                다양한 입도 제품 <span className="text-primary">생산 공정</span>
+              </h3>
+              <p className="mt-3 text-muted-foreground">
+                다섯 단계의 정밀 공정을 통해 고순도, 균일한 품질의 제품을 만듭니다.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-5">
+              {[
+                { n: 1, title: "인공 선별", desc: "원료를 육안 및 기준에 따라 선별하여 불순물을 제거합니다." },
+                { n: 2, title: "기계 분쇄", desc: "선별된 원료를 기계로 분쇄하여 적정 크기로 조절합니다." },
+                { n: 3, title: "철 제거", desc: "자력 선별을 통해 철 성분 등 금속 불순물을 제거합니다." },
+                { n: 4, title: "체질(분류)", desc: "체질기를 통해 입도별로 분류하여 균일한 입도의 원료를 확보합니다." },
+                { n: 5, title: "볼 밀 가공", desc: "볼 밀에서 미세 분쇄 및 표면 처리를 진행하여 입도를 최종 조절합니다." },
+              ].map((s) => (
+                <div key={s.n} className="relative rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                    {s.n}
+                  </div>
+                  <h4 className="mt-4 text-lg font-bold">{s.title}</h4>
+                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+              <div className="flex items-center justify-center gap-2 border-b border-border pb-4">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">✓</span>
+                <span className="text-sm font-semibold tracking-wide md:text-base">다양한 입도 (모래 / 분말) 제품으로 생산</span>
+              </div>
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+                <div>
+                  <div className="text-sm font-semibold text-primary">모래 (Sand) 제품군</div>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    60mm 과립부터 정밀 입도까지 — 주조·건축·태양광 등 산업별 맞춤 공급
+                  </p>
+                </div>
+                <div>
+                  <div className="text-sm font-semibold text-primary">분말 (Powder) 제품군</div>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    1µm(12500 메쉬) 미분까지 — 반도체·코팅·전자재료 등 고정밀 응용
+                  </p>
+                </div>
               </div>
             </div>
           </div>
