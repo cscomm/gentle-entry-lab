@@ -67,7 +67,7 @@ const milestones = [
 ];
 
 const About = () => {
-  const { t } = useLang();
+  const { t: tr } = useLang();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
