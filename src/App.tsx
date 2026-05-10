@@ -9,6 +9,9 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import Board from "./pages/Board.tsx";
+import BoardNew from "./pages/BoardNew.tsx";
+import BoardDetail from "./pages/BoardDetail.tsx";
 import { LanguageProvider } from "./contexts/LanguageContext";
 
 const queryClient = new QueryClient();
