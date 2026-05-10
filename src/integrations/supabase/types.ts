@@ -14,13 +14,60 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      posts: {
+        Row: {
+          author_name: string
+          content: string
+          created_at: string
+          id: string
+          is_public: boolean
+          password_hash: string
+          title: string
+          updated_at: string
+          views: number
+        }
+        Insert: {
+          author_name?: string
+          content: string
+          created_at?: string
+          id?: string
+          is_public?: boolean
+          password_hash: string
+          title: string
+          updated_at?: string
+          views?: number
+        }
+        Update: {
+          author_name?: string
+          content?: string
+          created_at?: string
+          id?: string
+          is_public?: boolean
+          password_hash?: string
+          title?: string
+          updated_at?: string
+          views?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      delete_post_with_password: {
+        Args: { _password: string; _post_id: string }
+        Returns: boolean
+      }
+      get_post_content: {
+        Args: { _password: string; _post_id: string }
+        Returns: string
+      }
+      increment_post_views: { Args: { _post_id: string }; Returns: undefined }
+      verify_post_password: {
+        Args: { _password: string; _post_id: string }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
