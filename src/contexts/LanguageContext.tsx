@@ -66,7 +66,7 @@ const dict: Record<string, { ko: string; en: string }> = {
 
   // About section (Index)
   "about.tag": { ko: "ABOUT US", en: "ABOUT US" },
-  "about.title": { ko: "국내 유일의 고품위\n규석 광산을\n직접 개발합니다", en: "We Operate Korea's Only\nHigh-Grade Silica Mine" },
+  "about.title": { ko: "실리카는 자연이 주는\n미래를 만들어 갑니다", en: "Silica Shapes the Future\nNature Has Given Us" },
   "about.p1": {
     ko: "당사는 국내에는 현재 유일한 고품위 규석 광산을 직접 개발하여 운영 중이며, 탐사부터 채광 후 1차 공정을 자체적으로 수행하여 최고 품질의 고품위 석영을 생산하고 있습니다.",
     en: "We directly operate Korea's only high-grade silica mine, performing exploration, mining, and primary processing in-house to produce the highest-quality quartz.",
@@ -155,7 +155,7 @@ const dict: Record<string, { ko: string; en: string }> = {
 
   // About page
   "ab.hero.tag": { ko: "ABOUT US", en: "ABOUT US" },
-  "ab.hero.title": { ko: "실리카는 자연이 주는\n미래를 만들어 갑니다", en: "Silica Shapes the Future\nNature Has Given Us" },
+  "ab.hero.title": { ko: "국내 유일의 고품위\n규석 광산을\n직접 개발합니다", en: "We Operate Korea's Only\nHigh-Grade Silica Mine" },
   "ab.hero.sub": { ko: "원료부터 완제품까지, 차별화된 품질로 산업의 표준을 만듭니다.", en: "From raw material to finished product — we set the industry standard with differentiated quality." },
   "ab.back": { ko: "홈으로", en: "Back to Home" },
   "ab.overview.tag": { ko: "COMPANY OVERVIEW", en: "COMPANY OVERVIEW" },
