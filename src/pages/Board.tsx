@@ -12,7 +12,6 @@ interface PostRow {
   title: string;
   author_name: string;
   is_public: boolean;
-  views: number;
   created_at: string;
 }
 
