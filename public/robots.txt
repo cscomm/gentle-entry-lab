@@ -12,3 +12,4 @@ Allow: /
 
 User-agent: *
 Allow: /
+Sitemap: https://gentle-entry-lab.lovable.app/sitemap.xml
