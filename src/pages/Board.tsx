@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Lock, Globe, PenSquare, Eye, MessageSquare } from "lucide-react";
+import { Lock, Globe, PenSquare, MessageSquare } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -25,7 +25,7 @@ const Board = () => {
     (async () => {
       const { data } = await supabase
         .from("posts")
-        .select("id, title, author_name, is_public, views, created_at")
+        .select("id, title, author_name, is_public, created_at")
         .order("created_at", { ascending: false });
       setPosts(data ?? []);
       setLoading(false);
@@ -69,10 +69,9 @@ const Board = () => {
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="hidden grid-cols-12 border-b border-border bg-secondary/40 px-6 py-3 text-xs font-bold uppercase tracking-wider text-muted-foreground md:grid">
               <div className="col-span-1 text-center">#</div>
-              <div className="col-span-6">{t("form.title")}</div>
+              <div className="col-span-7">{t("form.title")}</div>
               <div className="col-span-2">{t("board.author")}</div>
               <div className="col-span-2">{t("board.date")}</div>
-              <div className="col-span-1 text-right">{t("board.views")}</div>
             </div>
 
             {loading ? (
@@ -91,7 +90,7 @@ const Board = () => {
                   <div className="hidden text-center text-sm text-muted-foreground md:col-span-1 md:block">
                     {posts.length - idx}
                   </div>
-                  <div className="md:col-span-6">
+                  <div className="md:col-span-7">
                     <div className="flex items-center gap-2">
                       <span
                         className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide ${
@@ -113,9 +112,6 @@ const Board = () => {
                   </div>
                   <div className="text-sm text-muted-foreground md:col-span-2">
                     {formatDate(p.created_at)}
-                  </div>
-                  <div className="flex items-center gap-1 text-sm text-muted-foreground md:col-span-1 md:justify-end">
-                    <Eye className="h-3.5 w-3.5" /> {p.views}
                   </div>
                 </Link>
               ))
