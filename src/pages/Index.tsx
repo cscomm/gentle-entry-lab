@@ -398,9 +398,9 @@ const Index = () => {
                     <span>{t("footer.address")}</span>
                   </li>
                   <li>
-                    <a href="tel:031-000-0000" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
+                    <a href="tel:031-356-5682" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
                       <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
-                      031-000-0000
+                      031-356-5682
                     </a>
                   </li>
                   <li>

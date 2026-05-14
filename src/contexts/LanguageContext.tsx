@@ -112,7 +112,7 @@ const dict: Record<string, { ko: string; en: string }> = {
   "footer.applications": { ko: "응용분야", en: "Applications" },
   "footer.contact": { ko: "문의하기", en: "Contact" },
   "footer.hq": { ko: "본사 · 전라북도 진안군 동계로 328 · 주식회사 비에이알", en: "HQ · 328 Donggye-ro, Jinan-gun, Jeollabuk-do · BAR Co., Ltd." },
-  "footer.address": { ko: "경기도 화성시 남양읍 수작이길 55", en: "55 Sujagi-gil, Namyang-eup, Hwaseong, Gyeonggi-do" },
+  "footer.address": { ko: "경기도 화성시 남양읍 화성로1196", en: "1196 Hwaseong-ro, Namyang-eup, Hwaseong, Gyeonggi-do" },
   "footer.products.title": { ko: "제품", en: "Products" },
   "footer.about.title": { ko: "회사소개", en: "About" },
   "footer.applications.title": { ko: "응용분야", en: "Applications" },
