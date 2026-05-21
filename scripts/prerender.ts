@@ -77,6 +77,26 @@ const productRoutes: Route[] = [
       <h2>적용 분야</h2>
       <p>EGS / 인조대리석, 고급 유리, 전자재료, 나노 가공.</p>`,
   },
+  {
+    path: "/products/silica-gel",
+    title: "실리카겔 (Silica Gel) — 미분 실리카·안티블로킹·소광제·흡착 실리카겔 | SiLiCA",
+    description:
+      "SiLiCA의 실리카겔 라인업 — 고순도 미분 실리카(Microsilica), 안티블로킹제, 소광제(Matting Agent), 대공극·조공극·A형·B형 실리카겔 및 내수(FNG) 실리카겔까지 8종 제품을 한곳에서 확인하세요.",
+    h1: "실리카겔 · Silica Gel — 8종 제품 라인업",
+    body: `
+      <p>SiLiCA의 실리카겔(Silica Gel) 라인업은 고순도 이산화규소(SiO₂) 기반의 정밀 무기 소재로, 흡착·건조·소광·안티블로킹·미분 충진재 등 광범위한 산업 공정에서 사용됩니다.</p>
+      <h2>제품 라인업 (총 8종)</h2>
+      <ul>
+        <li>미분 실리카 (Micronized Silica Powder) — 입자 3–10 µm</li>
+        <li>안티블로킹제 (Anti-blocking Agent) — 입자 2–10 µm, SiO₂ 99%</li>
+        <li>소광제 (Matting Agent) — 입자 D50 3.5–10 µm</li>
+        <li>대공극 실리카겔 (Large Pore Silica Gel) — 기공 16–25 nm</li>
+        <li>내수 실리카겔 FNG (Water-Resistant) — 가혹 환경 전용</li>
+        <li>조공극 실리카겔 (Coarse Pore Silica Gel) — 기공 8–12.5 nm</li>
+        <li>A형 실리카겔 (Type A) — 비표면적 650–800 m²/g</li>
+        <li>B형 실리카겔 (Type B) — 기공 4.5–7.0 nm</li>
+      </ul>`,
+  },
 ];
 
 const routes: Route[] = [
