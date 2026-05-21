@@ -6,6 +6,16 @@ import gradeC from "@/assets/grade-c-silica.png";
 import gradeCDetail from "@/assets/grade-c-detail.png";
 import pProcess from "@/assets/p-process.jpg";
 import hpqDetail from "@/assets/hpq-detail.jpg";
+import sgMicrosilica from "@/assets/sg-microsilica.jpg";
+import sgAntiblocking from "@/assets/sg-antiblocking.jpg";
+import sgMatting from "@/assets/sg-matting.jpg";
+import sgLargePore from "@/assets/sg-large-pore.jpg";
+import sgFng from "@/assets/sg-fng.jpg";
+import sgCoarse from "@/assets/sg-coarse.jpg";
+import sgTypeA from "@/assets/sg-type-a.jpg";
+import sgTypeB from "@/assets/sg-type-b.jpg";
+
+export type ProductCategory = "quartz" | "silica-gel";
 
 export type ProductDetail = {
   slug: string;
@@ -15,6 +25,7 @@ export type ProductDetail = {
   description: string;
   image: string;
   detailImage?: string;
+  category?: ProductCategory;
   features: { title: string; desc: string }[];
   specs: { label: string; value: string; note?: string }[];
   applications: string[];
@@ -149,5 +160,171 @@ export const productCatalog: ProductDetail[] = [
   },
 ];
 
+// Add category to existing quartz products
+productCatalog.forEach((p) => {
+  if (!p.category) p.category = "quartz";
+});
+
+const SG_APPS = ["실리카겔"];
+const SG_FEATURES = [
+  { title: "🔬 고순도 SiO₂", desc: "고순도 이산화규소 기반 — 안정적인 화학·열적 성능" },
+  { title: "🧪 맞춤형 생산", desc: "포장 및 규격은 고객 요구에 따라 맞춤 제작" },
+];
+
+const silicaGelProducts: ProductDetail[] = [
+  {
+    slug: "silica-gel-microsilica",
+    name: "미분 실리카 (Microsilica)",
+    enName: "Micronized Silica Powder",
+    tagline: "고순도 이산화규소 기반 초미세 분말 — 고활성·다공성 무기 정밀 소재",
+    description:
+      "미분 실리카는 고순도 이산화규소(SiO₂)를 핵심 성분으로 하여 특수 공정을 통해 초미세 분말 형태로 가공된 고활성·다공성 무기 정밀 소재입니다.",
+    image: sgMicrosilica,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "입자 크기 (Particle Size)", value: "3 – 10 µm" },
+      { label: "포장 / 규격 (Packing)", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-anti-blocking",
+    name: "플라스틱 안티블로킹제",
+    enName: "Anti-blocking Agent",
+    tagline: "필름·시트 안티블로킹용 고순도 실리카",
+    description:
+      "고순도 실리카 기반의 안티블로킹제로, 플라스틱 필름·시트의 접착(블로킹)을 효과적으로 방지하며 우수한 광학적 투명성을 유지합니다.",
+    image: sgAntiblocking,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "입자 크기", value: "2 – 10 µm" },
+      { label: "비표면적", value: "20 – 380 m²/g" },
+      { label: "흡유량", value: "150 – 300 ml/100g" },
+      { label: "벌크 밀도", value: "50 – 300 kg/m³" },
+      { label: "SiO₂ 순도", value: "99%" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-matting",
+    name: "소광제 (Matting Agent)",
+    enName: "Matting Agent",
+    tagline: "도료·코팅용 무광 효과 실리카",
+    description:
+      "도료 및 코팅 시스템에 사용되는 소광제(Matting Agent)로, 균일한 무광 효과와 우수한 분산성을 제공합니다.",
+    image: sgMatting,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "입자 크기 D50", value: "3.5 – 10 µm" },
+      { label: "흡유량", value: "100 – 330 ml/100g" },
+      { label: "pH", value: "3.5 – 8" },
+      { label: "기공 부피 (Pore Volume)", value: "0.4 – 2.2 ml/g" },
+      { label: "표면 처리", value: "왁스 처리 / 무처리" },
+      { label: "건조 감량 (105℃)", value: "≤ 5%" },
+      { label: "강열 감량 (1000℃)", value: "≤ 6%" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-large-pore",
+    name: "대공극 실리카겔",
+    enName: "Large Pore Volume Silica Gel",
+    tagline: "대공극·고비표면적의 흡착 전용 실리카겔",
+    description:
+      "대공극 실리카겔은 큰 기공 직경과 높은 기공 부피를 가져 분자 흡착·촉매 담체용으로 최적화된 실리카겔입니다.",
+    image: sgLargePore,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "기공 직경 (Pore Diameter)", value: "16 – 25 nm" },
+      { label: "비표면적", value: "200 – 350 m²/g" },
+      { label: "기공 부피", value: "1.2 – 2.2 ml/g" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-fng",
+    name: "내수 실리카겔 (FNG)",
+    enName: "FNG Water-Resistant Silica Gel",
+    tagline: "가혹 환경 전용 고성능 내수 실리카겔",
+    description:
+      "내수 실리카겔 FNG는 가혹한 환경에서도 안정적으로 동작하도록 설계된 고성능 실리카 소재로, 우수한 내수성·내후성·화학적 안정성을 갖추고 있습니다.",
+    image: sgFng,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "특성", value: "내수성 · 내후성 · 화학적 안정성" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-coarse",
+    name: "조공극 실리카겔",
+    enName: "Coarse Pore Silica Gel",
+    tagline: "중간 기공 크기의 범용 흡착 실리카겔",
+    description:
+      "조공극 실리카겔(Coarse Pore Silica Gel)은 균형 잡힌 기공 구조로 다양한 산업용 흡착·건조·정제 공정에 사용됩니다.",
+    image: sgCoarse,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "기공 직경", value: "8 – 12.5 nm" },
+      { label: "비표면적", value: "300 – 400 m²/g" },
+      { label: "기공 부피", value: "0.8 – 1.0 ml/g" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-type-a",
+    name: "A형 실리카겔",
+    enName: "Silica Gel Type A",
+    tagline: "고비표면적 · 미세기공 흡착용 실리카겔",
+    description:
+      "A형 실리카겔은 미세기공(2–3 nm)과 매우 높은 비표면적을 가진 표준 흡착용 실리카겔로, 건조제·흡습제 등에 폭넓게 사용됩니다.",
+    image: sgTypeA,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "기공 직경", value: "2.0 – 3.0 nm" },
+      { label: "비표면적", value: "650 – 800 m²/g" },
+      { label: "기공 부피", value: "0.4 – 0.5 ml/g" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+  {
+    slug: "silica-gel-type-b",
+    name: "B형 실리카겔",
+    enName: "Silica Gel Type B",
+    tagline: "중간 기공·균형 특성의 다용도 실리카겔",
+    description:
+      "B형 실리카겔은 중간 크기 기공(4.5–7 nm)과 적정한 비표면적을 갖춘 다목적 실리카겔로, 습도 변화가 큰 환경의 흡습 용도에 적합합니다.",
+    image: sgTypeB,
+    category: "silica-gel",
+    features: SG_FEATURES,
+    specs: [
+      { label: "기공 직경", value: "4.5 – 7.0 nm" },
+      { label: "비표면적", value: "450 – 650 m²/g" },
+      { label: "기공 부피", value: "0.6 – 0.85 ml/g" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능" },
+    ],
+    applications: SG_APPS,
+  },
+];
+
+productCatalog.push(...silicaGelProducts);
+
 export const getProductBySlug = (slug: string) =>
   productCatalog.find((p) => p.slug === slug);
+
+export const getProductsByCategory = (cat: ProductCategory) =>
+  productCatalog.filter((p) => (p.category ?? "quartz") === cat);
+
