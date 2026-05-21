@@ -50,11 +50,20 @@ const products = [
 ];
 
 const applications = [
-  { img: aSemi, title: "전자 산업", desc: "전자 웨이퍼 제조용 고순도 석영 소재" },
-  { img: aOptic, title: "광학 산업", desc: "광학 렌즈 및 정밀 광학 부품용 석영 소재" },
-  { img: aSolar, title: "태양광 산업", desc: "태양광 패널 생산에 적합한 석영 소재" },
-  { img: aElec, title: "전자 소재", desc: "전자 소재 및 패키지 제품용 석영 소재" },
-  { img: silicaGelHero, title: "실리카겔", desc: "흡습·건조·코팅·플라스틱 등 전방위 산업용 실리카겔" },
+  { img: aSemi, title: "전자 산업", en: "Electronics", desc: "전자 웨이퍼 제조용 고순도 석영 소재", enDesc: "High-purity quartz for semiconductor wafer manufacturing." },
+  { img: aOptic, title: "광학 산업", en: "Optics", desc: "광학 렌즈 및 정밀 광학 부품용 석영 소재", enDesc: "Quartz for optical lenses and precision optics." },
+  { img: aSolar, title: "태양광 산업", en: "Solar", desc: "태양광 패널 생산에 적합한 석영 소재", enDesc: "Quartz materials for solar panel production." },
+  { img: aElec, title: "전자 소재", en: "Electronic Materials", desc: "전자 소재 및 패키지 제품용 석영 소재", enDesc: "Quartz for electronic materials and packaging." },
+  { img: silicaGelHero, title: "실리카겔", en: "Silica Gel", desc: "흡습·건조·코팅·플라스틱 등 전방위 산업용 실리카겔", enDesc: "Silica gel for drying, coating, plastics and beyond.", href: "/applications/silica-gel" },
+];
+
+const applicationCategories: { label: string; en: string; href?: string }[] = [
+  { label: "전체 응용분야", en: "All Applications" },
+  { label: "전자 산업", en: "Electronics" },
+  { label: "광학 산업", en: "Optics" },
+  { label: "태양광 산업", en: "Solar" },
+  { label: "전자 소재", en: "Electronic Materials" },
+  { label: "실리카겔", en: "Silica Gel", href: "/applications/silica-gel" },
 ];
 
 const news = [
@@ -67,6 +76,7 @@ const Index = () => {
   const { toast } = useToast();
   const { t, lang } = useLang();
   const [activeCat, setActiveCat] = useState("전체 제품");
+  const [activeApp, setActiveApp] = useState("전체 응용분야");
   const [form, setForm] = useState({ name: "", phone: "", email: "", company: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -351,25 +361,56 @@ const Index = () => {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
-          {applications.map((a) => (
-            <article
-              key={a.title}
-              className="group relative overflow-hidden rounded-2xl border border-border"
-            >
-              <img
-                src={a.img}
-                alt={a.title}
-                loading="lazy"
-                className="h-72 w-full object-cover transition duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-              <div className="absolute bottom-0 p-6">
-                <h3 className="text-xl font-semibold">{a.title}</h3>
-                <p className="mt-2 text-sm text-foreground/80">{a.desc}</p>
-              </div>
-            </article>
-          ))}
+        <div className="mt-10 flex flex-wrap justify-center gap-2">
+          {applicationCategories.map((cat) => {
+            const isActive = activeApp === cat.label;
+            const className = `rounded-full border px-3.5 py-1.5 text-xs md:text-sm transition whitespace-nowrap ${
+              isActive
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
+            }`;
+            if (cat.href) {
+              return (
+                <Link key={cat.label} to={cat.href} className={className}>
+                  {lang === "en" ? cat.en : `${cat.label} · ${cat.en}`}
+                </Link>
+              );
+            }
+            return (
+              <button key={cat.label} onClick={() => setActiveApp(cat.label)} className={className}>
+                {lang === "en" ? cat.en : cat.label}
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          {(activeApp === "전체 응용분야"
+            ? applications
+            : applications.filter((a) => a.title === activeApp)
+          ).map((a) => {
+            const inner = (
+              <>
+                <img
+                  src={a.img}
+                  alt={a.title}
+                  loading="lazy"
+                  className="h-72 w-full object-cover transition duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                <div className="absolute bottom-0 p-6">
+                  <h3 className="text-xl font-semibold">{lang === "en" ? a.en : a.title}</h3>
+                  <p className="mt-2 text-sm text-foreground/80">{lang === "en" ? a.enDesc : a.desc}</p>
+                </div>
+              </>
+            );
+            const cls = "group relative block overflow-hidden rounded-2xl border border-border transition hover:border-primary";
+            return a.href ? (
+              <Link key={a.title} to={a.href} className={cls}>{inner}</Link>
+            ) : (
+              <article key={a.title} className={cls}>{inner}</article>
+            );
+          })}
         </div>
 
         <div className="mt-12 flex flex-wrap justify-center gap-3">
