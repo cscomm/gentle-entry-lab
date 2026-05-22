@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ChevronDown, Search } from "lucide-react";
 import { productCatalog } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -21,6 +21,22 @@ interface SiteHeaderProps {
 const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
   const [scrolled, setScrolled] = useState(!transparentAtTop);
   const { lang, setLang, t } = useLang();
+  const navigate = useNavigate();
+  const [q, setQ] = useState("");
+
+  const onSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const term = q.trim().toLowerCase();
+    if (!term) return;
+    const found = productCatalog.find(
+      (p) =>
+        p.name.toLowerCase().includes(term) ||
+        p.enName.toLowerCase().includes(term) ||
+        p.slug.toLowerCase().includes(term)
+    );
+    navigate(found ? `/products/${found.slug}` : `/#products`);
+    setQ("");
+  };
 
   useEffect(() => {
     if (!transparentAtTop) {
@@ -144,6 +160,21 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
               </div>
             );
           })}
+
+          {/* Search */}
+          <form onSubmit={onSearch} className="relative hidden lg:block">
+            <Search className={`pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 ${scrolled ? "text-muted-foreground" : "text-white/70"}`} />
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder={lang === "en" ? "Search" : "검색"}
+              className={`h-9 w-40 rounded-full border pl-8 pr-3 text-sm outline-none transition focus:border-primary ${
+                scrolled
+                  ? "border-border/60 bg-card text-foreground placeholder:text-muted-foreground"
+                  : "border-white/30 bg-white/10 text-white placeholder:text-white/70 backdrop-blur"
+              }`}
+            />
+          </form>
 
           {/* Language toggle */}
           <div className={`flex items-center gap-1 rounded-full border px-1 py-1 text-xs font-bold transition-colors duration-500 ${
