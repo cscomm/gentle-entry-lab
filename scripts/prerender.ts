@@ -23,20 +23,56 @@ type Route = {
 const productRoutes: Route[] = [
   {
     path: "/products/fused-silica-block",
-    title: "A등급 용융실리카 (Ultra-High Purity) | SiLiCA",
+    title: "A등급 용융실리카 (Ultra-High Purity Fused Silica) | SiLiCA",
     description:
-      "SiO₂ 99.9% 이상, 100% 무정형 구조의 초고순도 용융실리카 A등급. 반도체·광학·항공/방산·의료·에너지 등 최고 신뢰성 산업용 소재.",
-    h1: "A등급 용융실리카 — 초고순도 (Ultra-High Purity Fused Silica)",
+      "SiO₂ 99.9% 이상, 100% 무정형 구조의 초고순도 용융실리카 A등급. 열팽창 0.6×10⁻⁶/°C 이하, EC 3µs/cm 미만의 반도체·광학·항공/방산·의료·에너지용 최고 등급 소재.",
+    h1: "A등급 용융실리카 — 초고순도 (Grade A · Ultra-High Purity Fused Silica)",
     body: `
-      <p>초고순도 용융실리카 A등급은 99.9% 이상의 SiO₂ 순도와 100% 무정형 구조를 갖춘 최고 등급의 용융실리카입니다. 열팽창계수 0.6 × 10⁻⁶/°C 이하의 극저팽창, 초고전기절연성을 제공합니다.</p>
+      <p><strong>A등급 용융실리카(Grade A · Ultra-High Purity Fused Silica)</strong>는 SiLiCA가 공급하는 최상위 등급의 용융실리카로, SiO₂ 순도 99.9% 이상과 100% 무정형 구조를 보유합니다. 자체 광산(장수백암광산)에서 채광한 고품위 규석을 원료로 전기 아크 용융 후 정밀 분쇄·등급화하여 생산하며, 반도체·광학·항공/방산·의료·에너지 등 최고 수준의 신뢰성과 순도가 요구되는 첨단 산업에 공급됩니다.</p>
+
+      <h2>제품 개요</h2>
+      <p>완전 무정형(amorphous) 구조 덕분에 1000°C 이상의 고온 환경에서도 결정화(devitrification)나 부피 변화가 사실상 발생하지 않으며, 0.6×10⁻⁶/°C 이하의 극저 열팽창계수로 급격한 열충격에서도 치수 안정성을 유지합니다. 금속 불순물 합계 0.03% 미만, 수성추출액 EC 3µs/cm 미만, Cl 3ppm 미만으로 반도체 공정 오염 및 절연 저하 요인을 원천 차단합니다.</p>
+
       <h2>주요 특징</h2>
       <ul>
-        <li>100% 무정형 구조 — 고온 결정화·변형 제로</li>
-        <li>금속 불순물 합계 0.03% 미만 — 반도체 수율 저하 요인 차단</li>
-        <li>60mm 과립부터 1µm(12500 메쉬) 미분까지 맞춤 입도 가공</li>
+        <li><strong>100% 무정형 구조</strong> — 고온 결정화·수축·균열 없음</li>
+        <li><strong>극저 열팽창</strong> — 0.6 × 10⁻⁶/°C 이하, 열충격 내성 최상급</li>
+        <li><strong>초고순도 관리</strong> — Al &lt; 0.01%, Fe &lt; 0.005%, Na/K/Ca &lt; 0.003%</li>
+        <li><strong>고전기절연성</strong> — EC &lt; 3 µs/cm, Cl &lt; 3 ppm</li>
+        <li><strong>맞춤 입도</strong> — 60mm 과립부터 1µm(12,500 메쉬) 미분까지</li>
+        <li><strong>안정 공급</strong> — 자체 광산 + ISO 9001·22000 기반 일관 QC</li>
       </ul>
-      <h2>적용 분야</h2>
-      <p>반도체, 광학, 디스플레이, 항공/방산, 의료, 에너지.</p>`,
+
+      <h2>대표 화학·물리 스펙</h2>
+      <table border="1" cellpadding="6" cellspacing="0" style="border-collapse:collapse; width:100%; margin:12px 0;">
+        <thead><tr><th>항목</th><th>값</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>SiO₂ (순도)</td><td>≥ 99.9%</td><td>초고순도</td></tr>
+          <tr><td>Al (알루미늄)</td><td>&lt; 0.01%</td><td>극미량</td></tr>
+          <tr><td>Fe (철)</td><td>&lt; 0.005%</td><td>극미량</td></tr>
+          <tr><td>K / Na / Ca</td><td>&lt; 0.003%</td><td>알칼리·알칼리토 최소화</td></tr>
+          <tr><td>Mg (마그네슘)</td><td>&lt; 0.001%</td><td>극미량</td></tr>
+          <tr><td>무정형상 (Amorphous)</td><td>100%</td><td>완전 무정형</td></tr>
+          <tr><td>열팽창계수</td><td>&lt; 0.6 × 10⁻⁶/°C</td><td>초저팽창</td></tr>
+          <tr><td>밀도 (Density)</td><td>1.8 – 2.4 × 10³ kg/m³</td><td>균일</td></tr>
+          <tr><td>모스경도 (Mohs)</td><td>7</td><td>내마모성</td></tr>
+          <tr><td>수성추출액 EC / Cl / pH</td><td>&lt; 3 µs/cm / &lt; 3 ppm / 6.5 ± 1</td><td>고절연·중성 안정</td></tr>
+          <tr><td>수분 (Moisture)</td><td>&lt; 0.1%</td><td>건조 관리</td></tr>
+        </tbody>
+      </table>
+
+      <h2>적용 분야 (Applications)</h2>
+      <ul>
+        <li><strong>반도체</strong> — 확산/산화용 보트, 웨이퍼 캐리어, RTP 챔버 부품, 플라즈마 에칭 윈도우, 고순도 웨이퍼 카세트</li>
+        <li><strong>광학</strong> — UV~IR 광학 윈도우, 고출력 레이저 거울, 리소그래피 렌즈, 광섬유 프리폼, 우주망원경 광학계</li>
+        <li><strong>디스플레이</strong> — OLED 증착 마스크 지지대, 유리 기판 반송 부품, 건식 에칭 챔버 부품</li>
+        <li><strong>항공/방산</strong> — 위성 광학 부품, 미사일 돔, 적외선 탐지기 윈도우, 열충격 보호 커버</li>
+        <li><strong>의료</strong> — 분석용 큐벳, 생물반응기 윈도우, 진단 장비 부품, 의료용 광섬유 부품</li>
+        <li><strong>에너지</strong> — 고온 수소 연료전지, 태양광 확산관, 고온 절연 부품</li>
+      </ul>
+
+      <h2>품질 보증 및 공급</h2>
+      <p>SiLiCA는 자체 광산 채광 → 1차 가공 → 전기 아크 용융 → 정밀 분쇄 → 등급화 → 출하의 전 공정을 자체적으로 수행하며, ISO 9001 및 ISO 22000 품질 관리 시스템과 자체 분석실(XRF·ICP·입도분석)을 기반으로 lot 단위 성적서를 제공합니다. 입도·포장(25kg 크라프트, 500/1000kg 톤백) 및 OEM 사양 대응이 가능합니다.</p>`,
   },
   {
     path: "/products/fused-silica-sand",
