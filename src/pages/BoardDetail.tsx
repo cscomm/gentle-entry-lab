@@ -7,6 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLang } from "@/contexts/LanguageContext";
+import RichContent from "@/components/RichContent";
 import { toast } from "sonner";
 
 interface PostMeta {
