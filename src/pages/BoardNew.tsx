@@ -133,14 +133,50 @@ const BoardNew = () => {
             </div>
 
             <div>
-              <label className="mb-2 block text-sm font-semibold text-foreground">{t("form.content")}</label>
+              <div className="mb-2 flex items-center justify-between">
+                <label className="block text-sm font-semibold text-foreground">{t("form.content")}</label>
+                <div className="flex items-center gap-2">
+                  {uploading && (
+                    <span className="inline-flex items-center gap-1 text-xs text-muted-foreground">
+                      <Loader2 className="h-3 w-3 animate-spin" /> 업로드 중…
+                    </span>
+                  )}
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    className="gap-1.5"
+                    onClick={() => fileInputRef.current?.click()}
+                    disabled={uploading}
+                  >
+                    <ImagePlus className="h-3.5 w-3.5" /> 이미지
+                  </Button>
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/*"
+                    multiple
+                    className="hidden"
+                    onChange={(e) => {
+                      if (e.target.files) handleFiles(e.target.files);
+                      e.target.value = "";
+                    }}
+                  />
+                </div>
+              </div>
               <Textarea
+                ref={textareaRef}
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
+                onPaste={onPaste}
                 required
-                rows={10}
-                className="resize-y"
+                rows={12}
+                className="resize-y font-mono text-sm"
+                placeholder={"내용을 입력하세요.\n링크(https://...)와 이미지를 붙여넣을 수 있습니다.\n다른 웹페이지에서 이미지를 복사해 붙여넣으면 자동으로 삽입됩니다."}
               />
+              <p className="mt-1 text-xs text-muted-foreground">
+                URL은 자동으로 링크가 되며, 이미지는 <code>![](URL)</code> 형식으로 삽입됩니다.
+              </p>
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
