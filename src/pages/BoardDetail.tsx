@@ -7,6 +7,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLang } from "@/contexts/LanguageContext";
+import RichContent from "@/components/RichContent";
 import { toast } from "sonner";
 
 interface PostMeta {
@@ -136,9 +137,7 @@ const BoardDetail = () => {
               {/* Content */}
               <div className="px-6 py-8 md:px-10 md:py-10">
                 {unlocked ? (
-                  <div className="whitespace-pre-wrap text-[15px] leading-relaxed text-foreground">
-                    {unlockedContent}
-                  </div>
+                  <RichContent text={unlockedContent} />
                 ) : (
                   <form onSubmit={onUnlock} className="mx-auto max-w-md rounded-xl border border-dashed border-border bg-secondary/30 p-6 text-center">
                     <Lock className="mx-auto mb-3 h-8 w-8 text-muted-foreground" />

@@ -87,6 +87,7 @@ const SiteFooter = () => {
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
           <p>{t("footer.hq")}</p>
+          <p className="mt-1">{t("footer.hq2")}</p>
           <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
             <Link to="/terms" className="hover:text-primary-glow">{t("footer.terms")}</Link>
             <span className="opacity-30">|</span>
