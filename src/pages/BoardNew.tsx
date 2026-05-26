@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Globe, Lock } from "lucide-react";
+import { Globe, ImagePlus, Lock, Loader2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -20,6 +20,79 @@ const BoardNew = () => {
   const [password, setPassword] = useState("");
   const [isPublic, setIsPublic] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const insertAtCursor = (snippet: string) => {
+    const el = textareaRef.current;
+    if (!el) {
+      setContent((c) => c + snippet);
+      return;
+    }
+    const start = el.selectionStart ?? content.length;
+    const end = el.selectionEnd ?? content.length;
+    const next = content.slice(0, start) + snippet + content.slice(end);
+    setContent(next);
+    requestAnimationFrame(() => {
+      el.focus();
+      const pos = start + snippet.length;
+      el.setSelectionRange(pos, pos);
+    });
+  };
+
+  const uploadImageFile = async (file: File): Promise<string | null> => {
+    const ext = (file.name.split(".").pop() || "png").toLowerCase();
+    const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+    const { error } = await supabase.storage
+      .from("board-images")
+      .upload(path, file, { contentType: file.type || "image/png", upsert: false });
+    if (error) {
+      toast.error(error.message);
+      return null;
+    }
+    const { data } = supabase.storage.from("board-images").getPublicUrl(path);
+    return data.publicUrl;
+  };
+
+  const handleFiles = async (files: FileList | File[]) => {
+    const imgs = Array.from(files).filter((f) => f.type.startsWith("image/"));
+    if (imgs.length === 0) return;
+    setUploading(true);
+    for (const f of imgs) {
+      const url = await uploadImageFile(f);
+      if (url) insertAtCursor(`\n![](${url})\n`);
+    }
+    setUploading(false);
+  };
+
+  const onPaste = async (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const cd = e.clipboardData;
+    if (!cd) return;
+    // 1) Direct image files (screenshot, copied image)
+    const files = Array.from(cd.files || []).filter((f) => f.type.startsWith("image/"));
+    if (files.length > 0) {
+      e.preventDefault();
+      await handleFiles(files);
+      return;
+    }
+    // 2) HTML paste from another web page → extract <img src> URLs
+    const html = cd.getData("text/html");
+    if (html && /<img\s/i.test(html)) {
+      const urls = Array.from(html.matchAll(/<img[^>]+src=["']([^"']+)["']/gi))
+        .map((m) => m[1])
+        .filter((u) => /^https?:\/\//i.test(u));
+      if (urls.length > 0) {
+        e.preventDefault();
+        const text = cd.getData("text/plain").trim();
+        const snippet =
+          (text ? text + "\n" : "") + urls.map((u) => `![](${u})`).join("\n");
+        insertAtCursor(snippet);
+        return;
+      }
+    }
+    // otherwise let default paste happen
+  };
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
