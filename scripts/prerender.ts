@@ -115,9 +115,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/silica-gel",
-    title: "실리카겔 (Silica Gel) — 미분 실리카·안티블로킹·소광제·흡착 실리카겔 | SiLiCA",
+    title: "실리카 겔 Silica Gel 공급 전문 — 8종 라인업 | SILICA",
     description:
-      "SiLiCA의 실리카겔 라인업 — 고순도 미분 실리카(Microsilica), 안티블로킹제, 소광제(Matting Agent), 대공극·조공극·A형·B형 실리카겔 및 내수(FNG) 실리카겔까지 8종 제품을 한곳에서 확인하세요.",
+      "고순도 실리카 겔(Silica Gel) 8종 — 미분 실리카·안티블로킹제·소광제·A형/B형 실리카 겔까지 산업용 실리카 소재를 한곳에서 공급합니다.",
     h1: "실리카겔 · Silica Gel — 8종 제품 라인업",
     body: `
       <p>SiLiCA의 실리카겔(Silica Gel) 라인업은 고순도 이산화규소(SiO₂) 기반의 정밀 무기 소재로, 흡착·건조·소광·안티블로킹·미분 충진재 등 광범위한 산업 공정에서 사용됩니다.</p>
