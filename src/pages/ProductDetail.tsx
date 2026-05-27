@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";

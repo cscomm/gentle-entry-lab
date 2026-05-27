@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { silicaAlt } from "@/lib/silicaAlt";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Award, Factory, Globe2, Mountain, ShieldCheck, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";

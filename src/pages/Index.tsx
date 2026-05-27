@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { silicaAlt } from "@/lib/silicaAlt";
 import { ArrowRight, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";

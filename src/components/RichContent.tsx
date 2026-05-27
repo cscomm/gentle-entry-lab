@@ -1,4 +1,5 @@
 // Renders plain-text content with support for:
+import { silicaAlt } from "@/lib/silicaAlt";
 //  - Markdown image syntax: ![alt](url)
 //  - Bare http(s) URLs → clickable links
 //  - Preserves whitespace / line breaks
