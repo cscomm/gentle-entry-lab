@@ -208,7 +208,7 @@ export const routes: Route[] = [
     path: "/",
     title: "용융 실리카·실리카 겔·고순도 실리카 소재 전문 공급 | SILICA",
     description:
-      "SILICA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 고순도 산업용 실리카 소재를 안정적으로 공급하는 전문 기업입니다.",
+      "실리카는 고순도 용융실리카, 침전실리카, 실리카겔 등 다양한 실리카 소재 전문기업입니다.",
     h1: "SiLiCA · 용융 실리카·실리카 겔·고순도 실리카 소재 전문 기업",
     body: `
       <p>SiLiCA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 다양한 고순도 실리카 소재를 반도체·광학·태양광·내화재·의료 산업에 안정적으로 공급합니다.</p>
