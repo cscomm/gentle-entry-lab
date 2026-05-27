@@ -76,9 +76,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/fused-silica-sand",
-    title: "B등급 용융실리카 (Premium) | SiLiCA",
+    title: "B등급 프리미엄 용융 실리카 Fused Silica | SILICA",
     description:
-      "SiO₂ 99.5% 이상, 98% 이상 무정형의 프리미엄 용융실리카 B등급. 태양광·전자/반도체·정밀 주조·특수 소재용 고신뢰 소재.",
+      "SiO₂ 99.5%·무정형 98% 이상의 B등급 프리미엄 용융 실리카(Fused Silica). 태양광·전자/반도체·정밀 주조용 고순도 실리카 소재.",
     h1: "B등급 용융실리카 — 프리미엄 (Premium Fused Silica)",
     body: `
       <p>프리미엄 용융실리카 B등급은 99.5% 이상의 SiO₂ 순도와 98% 이상의 무정형 구조를 갖춘 고품질 소재입니다. 열적 안정성과 화학적 안정성의 최적 균형을 제공합니다.</p>
