@@ -23,9 +23,9 @@ type Route = {
 export const productRoutes: Route[] = [
   {
     path: "/products/fused-silica-block",
-    title: "A등급 용융실리카 (Ultra-High Purity Fused Silica) | SiLiCA",
+    title: "A등급 고순도 용융 실리카 (Fused Silica) | SILICA",
     description:
-      "SiO₂ 99.9% 이상, 100% 무정형 구조의 초고순도 용융실리카 A등급. 열팽창 0.6×10⁻⁶/°C 이하, EC 3µs/cm 미만의 반도체·광학·항공/방산·의료·에너지용 최고 등급 소재.",
+      "SiO₂ 99.9% 이상·100% 무정형의 A등급 고순도 용융 실리카(Fused Silica). 반도체·광학·항공/방산·의료용 산업용 실리카 소재를 공급합니다.",
     h1: "A등급 용융실리카 — 초고순도 (Grade A · Ultra-High Purity Fused Silica)",
     body: `
       <p><strong>A등급 용융실리카(Grade A · Ultra-High Purity Fused Silica)</strong>는 SiLiCA가 공급하는 최상위 등급의 용융실리카로, SiO₂ 순도 99.9% 이상과 100% 무정형 구조를 보유합니다. 자체 광산(장수백암광산)에서 채광한 고품위 규석을 원료로 전기 아크 용융 후 정밀 분쇄·등급화하여 생산하며, 반도체·광학·항공/방산·의료·에너지 등 최고 수준의 신뢰성과 순도가 요구되는 첨단 산업에 공급됩니다.</p>
