@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { silicaAlt } from "@/lib/silicaAlt";
 import { ArrowRight, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -47,7 +48,7 @@ const SilicaGelCategory = () => {
               <div className="aspect-square overflow-hidden bg-secondary/40">
                 <img
                   src={p.image}
-                  alt={isEn ? p.enName : p.name}
+                  alt={silicaAlt(isEn ? p.enName : p.name)}
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
