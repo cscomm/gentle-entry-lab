@@ -195,7 +195,7 @@ export const productRoutes: Route[] = [
     ] as const
   ).map((p) => ({
     path: `/products/${p.slug}`,
-    title: `${p.ko} | SiLiCA 실리카겔`,
+    title: `${p.ko} — 실리카 겔 Silica Gel | SILICA`,
     description: p.desc,
     h1: `${p.ko} · ${p.en}`,
     body: p.body,
