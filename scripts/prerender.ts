@@ -23,9 +23,9 @@ type Route = {
 export const productRoutes: Route[] = [
   {
     path: "/products/fused-silica-block",
-    title: "A등급 용융실리카 (Ultra-High Purity Fused Silica) | SiLiCA",
+    title: "A등급 고순도 용융 실리카 (Fused Silica) | SILICA",
     description:
-      "SiO₂ 99.9% 이상, 100% 무정형 구조의 초고순도 용융실리카 A등급. 열팽창 0.6×10⁻⁶/°C 이하, EC 3µs/cm 미만의 반도체·광학·항공/방산·의료·에너지용 최고 등급 소재.",
+      "SiO₂ 99.9% 이상·100% 무정형의 A등급 고순도 용융 실리카(Fused Silica). 반도체·광학·항공/방산·의료용 산업용 실리카 소재를 공급합니다.",
     h1: "A등급 용융실리카 — 초고순도 (Grade A · Ultra-High Purity Fused Silica)",
     body: `
       <p><strong>A등급 용융실리카(Grade A · Ultra-High Purity Fused Silica)</strong>는 SiLiCA가 공급하는 최상위 등급의 용융실리카로, SiO₂ 순도 99.9% 이상과 100% 무정형 구조를 보유합니다. 자체 광산(장수백암광산)에서 채광한 고품위 규석을 원료로 전기 아크 용융 후 정밀 분쇄·등급화하여 생산하며, 반도체·광학·항공/방산·의료·에너지 등 최고 수준의 신뢰성과 순도가 요구되는 첨단 산업에 공급됩니다.</p>
@@ -76,9 +76,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/fused-silica-sand",
-    title: "B등급 용융실리카 (Premium) | SiLiCA",
+    title: "B등급 프리미엄 용융 실리카 Fused Silica | SILICA",
     description:
-      "SiO₂ 99.5% 이상, 98% 이상 무정형의 프리미엄 용융실리카 B등급. 태양광·전자/반도체·정밀 주조·특수 소재용 고신뢰 소재.",
+      "SiO₂ 99.5%·무정형 98% 이상의 B등급 프리미엄 용융 실리카(Fused Silica). 태양광·전자/반도체·정밀 주조용 고순도 실리카 소재.",
     h1: "B등급 용융실리카 — 프리미엄 (Premium Fused Silica)",
     body: `
       <p>프리미엄 용융실리카 B등급은 99.5% 이상의 SiO₂ 순도와 98% 이상의 무정형 구조를 갖춘 고품질 소재입니다. 열적 안정성과 화학적 안정성의 최적 균형을 제공합니다.</p>
@@ -93,9 +93,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/fused-silica-powder",
-    title: "C등급 용융실리카 (Standard) | SiLiCA",
+    title: "C등급 산업용 용융 실리카 Fused Silica | SILICA",
     description:
-      "SiO₂ 99.0% 이상의 표준 용융실리카 C등급. 건축·페인트·코팅·플라스틱·연마재 등 폭넓은 산업 공정에 안정 공급되는 경제형 소재.",
+      "SiO₂ 99% 이상의 산업용 용융 실리카(Fused Silica) C등급. 건축·페인트·플라스틱·연마재 등 산업용 실리카 소재를 경제적으로 공급합니다.",
     h1: "C등급 용융실리카 — 스탠다드 (Standard Fused Silica)",
     body: `
       <p>스탠다드 용융실리카 C등급은 99.0% 이상의 SiO₂ 순도를 갖춘 산업 표준 소재로, 안정적인 열적·화학적 성능과 우수한 경제성을 동시에 제공합니다.</p>
@@ -104,9 +104,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/high-purity-quartz",
-    title: "고품위 규석 (High-Purity Quartz) | SiLiCA",
+    title: "고순도 천연 규석 High-Purity Quartz | SILICA",
     description:
-      "국내 유일 고품위 규석 광산(장수백암광산)에서 직접 채광·1차 가공하는 고품위 규석. EGS·인조대리석·고급 유리·전자재료·나노 가공용 원료.",
+      "SiO₂ 99.77%, Fe₂O₃ 5ppm급 고순도 천연 규석(High-Purity Quartz). EGS·인조대리석·고급 유리·전자재료·나노 가공용 고순도 실리카 원료.",
     h1: "고품위 규석 (High-Purity Quartz)",
     body: `
       <p>당사는 국내 유일 고품위 규석 광산인 장수백암광산(BAR)을 직접 운영하여, 최저 99.5% 이상의 편차 없는 순도를 보장하는 고품위 규석을 공급합니다.</p>
@@ -115,9 +115,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/silica-gel",
-    title: "실리카겔 (Silica Gel) — 미분 실리카·안티블로킹·소광제·흡착 실리카겔 | SiLiCA",
+    title: "실리카 겔 Silica Gel 공급 전문 — 8종 라인업 | SILICA",
     description:
-      "SiLiCA의 실리카겔 라인업 — 고순도 미분 실리카(Microsilica), 안티블로킹제, 소광제(Matting Agent), 대공극·조공극·A형·B형 실리카겔 및 내수(FNG) 실리카겔까지 8종 제품을 한곳에서 확인하세요.",
+      "고순도 실리카 겔(Silica Gel) 8종 — 미분 실리카·안티블로킹제·소광제·A형/B형 실리카 겔까지 산업용 실리카 소재를 한곳에서 공급합니다.",
     h1: "실리카겔 · Silica Gel — 8종 제품 라인업",
     body: `
       <p>SiLiCA의 실리카겔(Silica Gel) 라인업은 고순도 이산화규소(SiO₂) 기반의 정밀 무기 소재로, 흡착·건조·소광·안티블로킹·미분 충진재 등 광범위한 산업 공정에서 사용됩니다.</p>
@@ -195,7 +195,7 @@ export const productRoutes: Route[] = [
     ] as const
   ).map((p) => ({
     path: `/products/${p.slug}`,
-    title: `${p.ko} | SiLiCA 실리카겔`,
+    title: `${p.ko} — 실리카 겔 Silica Gel | SILICA`,
     description: p.desc,
     h1: `${p.ko} · ${p.en}`,
     body: p.body,
@@ -205,10 +205,25 @@ export const productRoutes: Route[] = [
 
 export const routes: Route[] = [
   {
-    path: "/about",
-    title: "회사소개 — 국내 유일 고품위 규석 광산 직영 | SiLiCA",
+    path: "/",
+    title: "용융 실리카·실리카 겔·고순도 실리카 소재 전문 공급 | SILICA",
     description:
-      "SiLiCA는 국내 유일의 고품위 규석 광산(장수백암광산)을 직접 개발·운영하며 탐사부터 채광·1차 가공·용융·미분쇄까지 일관 공정을 자체 수행하는 석영 소재 전문기업입니다.",
+      "SILICA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 고순도 산업용 실리카 소재를 안정적으로 공급하는 전문 기업입니다.",
+    h1: "SiLiCA · 용융 실리카·실리카 겔·고순도 실리카 소재 전문 기업",
+    body: `
+      <p>SiLiCA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 다양한 고순도 실리카 소재를 반도체·광학·태양광·내화재·의료 산업에 안정적으로 공급합니다.</p>
+      <h2>핵심 제품</h2>
+      <ul>
+        <li><strong>용융 실리카 (Fused Silica)</strong> — A·B·C 등급, 반도체·광학·정밀 주조용</li>
+        <li><strong>실리카 겔 (Silica Gel)</strong> — 흡착·건조·소광·안티블로킹 8종</li>
+        <li><strong>고순도 천연 규석 (High-Purity Quartz)</strong> — EGS·고급 유리·전자재료용</li>
+      </ul>`,
+  },
+  {
+    path: "/about",
+    title: "회사소개 — 고품위 규석 광산 직영 실리카 기업 | SILICA",
+    description:
+      "SILICA는 국내 유일 고품위 규석 광산을 직접 운영하며 용융 실리카·실리카 겔·고순도 실리카 소재의 채광부터 가공까지 일관 공정을 수행하는 전문 기업입니다.",
     h1: "회사소개 · 국내 유일의 고품위 규석 광산을 직접 개발합니다",
     body: `
       <p>당사는 국내 유일의 고품위 규석 광산을 직접 개발·운영하며, 탐사부터 채광·1차 가공까지 자체 수행하여 최고 품질의 고품위 석영을 생산합니다. 원료 선별부터 완제품까지 각 단계의 차별화된 QC 시스템을 통해 고객의 기대를 충족합니다.</p>
@@ -220,23 +235,25 @@ export const routes: Route[] = [
   ...productRoutes,
   {
     path: "/board",
-    title: "게시판 — 공지·업계 소식·기술 정보 | SiLiCA",
+    title: "공지·기술 자료 — 용융 실리카·실리카 겔 소식 | SILICA",
     description:
-      "SiLiCA 공식 게시판. 공지사항, 업계 소식, 용융실리카 및 고순도 규석 관련 기술 정보를 자유롭게 공유하는 공간입니다.",
+      "SILICA 공식 게시판. 용융 실리카(Fused Silica), 실리카 겔(Silica Gel), 고순도 실리카 소재 관련 공지·업계 소식·기술 자료를 공유합니다.",
     h1: "SiLiCA 게시판",
-    body: `<p>공지사항, 업계 소식, 용융실리카·고순도 규석 관련 기술 정보를 자유롭게 공유하는 SiLiCA 공식 게시판입니다.</p>`,
+    body: `<p>공지사항, 업계 소식, 용융 실리카·실리카 겔·고순도 규석 관련 기술 정보를 공유하는 SILICA 공식 게시판입니다.</p>`,
   },
   {
     path: "/terms",
-    title: "이용약관 | SiLiCA",
-    description: "SiLiCA 웹사이트의 이용약관 안내 페이지입니다.",
+    title: "이용약관 — 산업용 실리카 소재 공급 | SILICA",
+    description:
+      "SILICA 웹사이트 이용약관. 용융 실리카·실리카 겔 등 산업용 실리카 소재 공급에 관한 회원과 회사의 권리·의무를 안내합니다.",
     h1: "이용약관",
     body: `<p>본 약관은 SiLiCA 웹사이트 이용에 관한 조건과 절차, 회원과 회사의 권리·의무 및 책임사항을 규정합니다.</p>`,
   },
   {
     path: "/privacy",
-    title: "개인정보처리방침 | SiLiCA",
-    description: "SiLiCA의 개인정보 수집·이용·보관·파기 절차를 안내하는 개인정보처리방침입니다.",
+    title: "개인정보처리방침 — SILICA 실리카 소재 공급",
+    description:
+      "SILICA의 개인정보 수집·이용·보관·파기 절차를 안내하는 개인정보처리방침입니다. 용융 실리카·실리카 겔 공급 문의에 따른 처리 기준을 포함합니다.",
     h1: "개인정보처리방침",
     body: `<p>SiLiCA는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 고충을 신속히 처리하기 위해 본 처리방침을 수립·공개합니다.</p>`,
   },
