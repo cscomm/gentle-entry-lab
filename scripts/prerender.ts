@@ -205,10 +205,25 @@ export const productRoutes: Route[] = [
 
 export const routes: Route[] = [
   {
-    path: "/about",
-    title: "회사소개 — 국내 유일 고품위 규석 광산 직영 | SiLiCA",
+    path: "/",
+    title: "용융 실리카·실리카 겔·고순도 실리카 소재 전문 공급 | SILICA",
     description:
-      "SiLiCA는 국내 유일의 고품위 규석 광산(장수백암광산)을 직접 개발·운영하며 탐사부터 채광·1차 가공·용융·미분쇄까지 일관 공정을 자체 수행하는 석영 소재 전문기업입니다.",
+      "SILICA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 고순도 산업용 실리카 소재를 안정적으로 공급하는 전문 기업입니다.",
+    h1: "SiLiCA · 용융 실리카·실리카 겔·고순도 실리카 소재 전문 기업",
+    body: `
+      <p>SiLiCA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 다양한 고순도 실리카 소재를 반도체·광학·태양광·내화재·의료 산업에 안정적으로 공급합니다.</p>
+      <h2>핵심 제품</h2>
+      <ul>
+        <li><strong>용융 실리카 (Fused Silica)</strong> — A·B·C 등급, 반도체·광학·정밀 주조용</li>
+        <li><strong>실리카 겔 (Silica Gel)</strong> — 흡착·건조·소광·안티블로킹 8종</li>
+        <li><strong>고순도 천연 규석 (High-Purity Quartz)</strong> — EGS·고급 유리·전자재료용</li>
+      </ul>`,
+  },
+  {
+    path: "/about",
+    title: "회사소개 — 고품위 규석 광산 직영 실리카 기업 | SILICA",
+    description:
+      "SILICA는 국내 유일 고품위 규석 광산을 직접 운영하며 용융 실리카·실리카 겔·고순도 실리카 소재의 채광부터 가공까지 일관 공정을 수행하는 전문 기업입니다.",
     h1: "회사소개 · 국내 유일의 고품위 규석 광산을 직접 개발합니다",
     body: `
       <p>당사는 국내 유일의 고품위 규석 광산을 직접 개발·운영하며, 탐사부터 채광·1차 가공까지 자체 수행하여 최고 품질의 고품위 석영을 생산합니다. 원료 선별부터 완제품까지 각 단계의 차별화된 QC 시스템을 통해 고객의 기대를 충족합니다.</p>
@@ -220,23 +235,25 @@ export const routes: Route[] = [
   ...productRoutes,
   {
     path: "/board",
-    title: "게시판 — 공지·업계 소식·기술 정보 | SiLiCA",
+    title: "공지·기술 자료 — 용융 실리카·실리카 겔 소식 | SILICA",
     description:
-      "SiLiCA 공식 게시판. 공지사항, 업계 소식, 용융실리카 및 고순도 규석 관련 기술 정보를 자유롭게 공유하는 공간입니다.",
+      "SILICA 공식 게시판. 용융 실리카(Fused Silica), 실리카 겔(Silica Gel), 고순도 실리카 소재 관련 공지·업계 소식·기술 자료를 공유합니다.",
     h1: "SiLiCA 게시판",
-    body: `<p>공지사항, 업계 소식, 용융실리카·고순도 규석 관련 기술 정보를 자유롭게 공유하는 SiLiCA 공식 게시판입니다.</p>`,
+    body: `<p>공지사항, 업계 소식, 용융 실리카·실리카 겔·고순도 규석 관련 기술 정보를 공유하는 SILICA 공식 게시판입니다.</p>`,
   },
   {
     path: "/terms",
-    title: "이용약관 | SiLiCA",
-    description: "SiLiCA 웹사이트의 이용약관 안내 페이지입니다.",
+    title: "이용약관 — 산업용 실리카 소재 공급 | SILICA",
+    description:
+      "SILICA 웹사이트 이용약관. 용융 실리카·실리카 겔 등 산업용 실리카 소재 공급에 관한 회원과 회사의 권리·의무를 안내합니다.",
     h1: "이용약관",
     body: `<p>본 약관은 SiLiCA 웹사이트 이용에 관한 조건과 절차, 회원과 회사의 권리·의무 및 책임사항을 규정합니다.</p>`,
   },
   {
     path: "/privacy",
-    title: "개인정보처리방침 | SiLiCA",
-    description: "SiLiCA의 개인정보 수집·이용·보관·파기 절차를 안내하는 개인정보처리방침입니다.",
+    title: "개인정보처리방침 — SILICA 실리카 소재 공급",
+    description:
+      "SILICA의 개인정보 수집·이용·보관·파기 절차를 안내하는 개인정보처리방침입니다. 용융 실리카·실리카 겔 공급 문의에 따른 처리 기준을 포함합니다.",
     h1: "개인정보처리방침",
     body: `<p>SiLiCA는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 고충을 신속히 처리하기 위해 본 처리방침을 수립·공개합니다.</p>`,
   },
