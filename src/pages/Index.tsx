@@ -189,7 +189,7 @@ const Index = () => {
           <img
             key={s.img}
             src={s.img}
-            alt={s.alt}
+            alt={silicaAlt(s.alt)}
             width={1920}
             height={1080}
             className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${
@@ -254,7 +254,7 @@ const Index = () => {
       <section id="about" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="relative overflow-hidden rounded-2xl border border-border">
-            <img src={facility} alt="SiLiCA 생산시설" loading="lazy" className="h-[420px] w-full object-cover" />
+            <img src={facility} alt={silicaAlt("생산시설")} loading="lazy" className="h-[420px] w-full object-cover" />
           </div>
           <div>
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -307,7 +307,7 @@ const Index = () => {
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={p.img}
-                    alt={p.title}
+                    alt={silicaAlt(p.title)}
                     loading="lazy"
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />

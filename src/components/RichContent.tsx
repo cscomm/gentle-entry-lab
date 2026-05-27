@@ -27,7 +27,7 @@ const RichContent: React.FC<Props> = ({ text }) => {
         <img
           key={key++}
           src={url}
-          alt=""
+          alt={silicaAlt("게시글 이미지")}
           loading="lazy"
           className="my-3 max-h-[600px] max-w-full rounded-lg border border-border"
         />

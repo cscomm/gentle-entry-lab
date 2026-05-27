@@ -74,7 +74,7 @@ const About = () => {
 
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
-        <img src={heroImage} alt="SiLiCA" className="absolute inset-0 h-full w-full object-cover" />
+        <img src={heroImage} alt={silicaAlt("회사 소개 메인 배너")} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-white">
           <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs tracking-widest backdrop-blur">
@@ -102,7 +102,7 @@ const About = () => {
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="relative overflow-hidden rounded-2xl border border-border">
-            <img src={facility} alt="SiLiCA 생산시설" className="h-[460px] w-full object-cover" />
+            <img src={facility} alt={silicaAlt("생산시설")} className="h-[460px] w-full object-cover" />
           </div>
           <div>
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -139,19 +139,19 @@ const About = () => {
           {/* Photo mosaic */}
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
             <div className="relative col-span-1 overflow-hidden rounded-2xl border border-border md:col-span-2 md:row-span-2">
-              <img src={mineAerial} alt={tr("ab.mine.aerialSub")} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineAerial} alt={silicaAlt(tr("ab.mine.aerialSub"))} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineTunnel} alt={tr("ab.cap.tunnel")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineTunnel} alt={silicaAlt(tr("ab.cap.tunnel"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineOre} alt={tr("ab.cap.ore")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineOre} alt={silicaAlt(tr("ab.cap.ore"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border md:col-span-2">
-              <img src={minePlant} alt={tr("ab.cap.plant")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={minePlant} alt={silicaAlt(tr("ab.cap.plant"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={mineBuilding} alt={tr("ab.cap.building")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={mineBuilding} alt={silicaAlt(tr("ab.cap.building"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
           </div>
 
@@ -159,7 +159,7 @@ const About = () => {
           <div className="mt-16 overflow-hidden rounded-2xl border border-border">
             <div className="grid items-center md:grid-cols-2">
               <div className="relative h-72 md:h-full md:min-h-[360px]">
-                <img src={pProcess} alt="제조 공정" className="absolute inset-0 h-full w-full object-cover" />
+                <img src={pProcess} alt={silicaAlt("제조 공정")} className="absolute inset-0 h-full w-full object-cover" />
               </div>
               <div className="bg-card p-8 md:p-12">
                 <span className="inline-block rounded-full border border-border bg-background px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -234,19 +234,19 @@ const About = () => {
           {/* SDR Photo Mosaic */}
           <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
             <div className="relative col-span-1 overflow-hidden rounded-2xl border border-border md:col-span-2 md:row-span-2">
-              <img src={sdr2} alt={tr("ab.cap.sdrhq")} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={sdr2} alt={silicaAlt(tr("ab.cap.sdrhq"))} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={sdr1} alt={tr("ab.cap.warehouse")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={sdr1} alt={silicaAlt(tr("ab.cap.warehouse"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={sdr4} alt={tr("ab.cap.ingot")} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={sdr4} alt={silicaAlt(tr("ab.cap.ingot"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border md:col-span-2">
-              <img src={sdr3} alt={tr("ab.cap.line")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={sdr3} alt={silicaAlt(tr("ab.cap.line"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
             <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={sdr5} alt={tr("ab.cap.furnace")} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              <img src={sdr5} alt={silicaAlt(tr("ab.cap.furnace"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
             </div>
           </div>
 
