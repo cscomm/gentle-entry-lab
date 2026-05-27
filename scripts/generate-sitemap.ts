@@ -31,11 +31,13 @@ const priorityByPath = (path: string): string => {
 
 const entries: SitemapEntry[] = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
-  ...routes.map((route) => ({
-    path: route.path,
-    changefreq: changefreqByPath(route.path),
-    priority: priorityByPath(route.path),
-  })),
+  ...routes
+    .filter((route) => route.path !== "/")
+    .map((route) => ({
+      path: route.path,
+      changefreq: changefreqByPath(route.path),
+      priority: priorityByPath(route.path),
+    })),
 ];
 
 function generateSitemap(entries: SitemapEntry[]) {
