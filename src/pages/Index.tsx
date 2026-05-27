@@ -289,7 +289,7 @@ const Index = () => {
               {t("products.cat")}
             </span>
             <h2 className="mt-5 text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-              Mineral Product
+              SiLiCA Product
             </h2>
           </div>
 
