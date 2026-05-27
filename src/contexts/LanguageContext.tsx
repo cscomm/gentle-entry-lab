@@ -13,7 +13,7 @@ const LanguageContext = createContext<LangCtx | undefined>(undefined);
 const dict: Record<string, { ko: string; en: string }> = {
   // Nav
   "nav.home": { ko: "홈", en: "Home" },
-  "nav.products": { ko: "제품", en: "Mineral Product" },
+  "nav.products": { ko: "제품", en: "SiLiCA Product" },
   "nav.about": { ko: "회사소개", en: "About" },
   "nav.applications": { ko: "응용분야", en: "Applications" },
   "nav.contact": { ko: "문의하기", en: "Contact" },
@@ -54,7 +54,7 @@ const dict: Record<string, { ko: string; en: string }> = {
   "hero1.title": { ko: "Silica: Nature's Gift to the Future.", en: "Silica: Nature's Gift to the Future." },
   "hero1.sub": { ko: "Technology that Leads Industry", en: "Technology that Leads Industry" },
   "hero1.desc": {
-    ko: "반도체·광학·태양광·내화재·의료 산업에 최적화된 용융실리카, 실리카 겔, 침전실리카, 흄드실리카, 나노실리카까지 — 다양한 고순도 실리카 소재를 한 곳에서 공급합니다.",
+    ko: "반도체·광학·태양광·내화재·의료 산업에 최적화된 용융실리카, 실리카 겔, 침전실리카, 흄드실리카, 나노실리카까지 — 다양한 실리카 소재를 안정적으로 공급합니다.",
     en: "From fused silica, silica gel, precipitated silica, fumed silica, to nano silica — we supply a wide range of high-purity silica materials optimized for semiconductor, optical, solar, refractory, and medical industries.",
   },
   "hero2.title": { ko: "High-Purity Silica Powder", en: "High-Purity Silica Powder" },
@@ -90,7 +90,7 @@ const dict: Record<string, { ko: string; en: string }> = {
   "contact.tag": { ko: "Contact Us", en: "Contact Us" },
   "contact.title": { ko: "프로젝트의 시작,\nSilica가 함께 합니다.", en: "Let's start your project\nwith Silica." },
   "contact.desc": {
-    ko: "최적의 규석 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.",
+    ko: "최적의 실리카 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.",
     en: "We welcome partners from every industry seeking the optimal silica solution.",
   },
   "contact.office": { ko: "사무실", en: "Office" },
