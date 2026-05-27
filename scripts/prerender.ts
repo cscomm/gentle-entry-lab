@@ -104,9 +104,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/high-purity-quartz",
-    title: "고품위 규석 (High-Purity Quartz) | SiLiCA",
+    title: "고순도 천연 규석 High-Purity Quartz | SILICA",
     description:
-      "국내 유일 고품위 규석 광산(장수백암광산)에서 직접 채광·1차 가공하는 고품위 규석. EGS·인조대리석·고급 유리·전자재료·나노 가공용 원료.",
+      "SiO₂ 99.77%, Fe₂O₃ 5ppm급 고순도 천연 규석(High-Purity Quartz). EGS·인조대리석·고급 유리·전자재료·나노 가공용 고순도 실리카 원료.",
     h1: "고품위 규석 (High-Purity Quartz)",
     body: `
       <p>당사는 국내 유일 고품위 규석 광산인 장수백암광산(BAR)을 직접 운영하여, 최저 99.5% 이상의 편차 없는 순도를 보장하는 고품위 규석을 공급합니다.</p>
