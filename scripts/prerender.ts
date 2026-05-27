@@ -93,9 +93,9 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/fused-silica-powder",
-    title: "C등급 용융실리카 (Standard) | SiLiCA",
+    title: "C등급 산업용 용융 실리카 Fused Silica | SILICA",
     description:
-      "SiO₂ 99.0% 이상의 표준 용융실리카 C등급. 건축·페인트·코팅·플라스틱·연마재 등 폭넓은 산업 공정에 안정 공급되는 경제형 소재.",
+      "SiO₂ 99% 이상의 산업용 용융 실리카(Fused Silica) C등급. 건축·페인트·플라스틱·연마재 등 산업용 실리카 소재를 경제적으로 공급합니다.",
     h1: "C등급 용융실리카 — 스탠다드 (Standard Fused Silica)",
     body: `
       <p>스탠다드 용융실리카 C등급은 99.0% 이상의 SiO₂ 순도를 갖춘 산업 표준 소재로, 안정적인 열적·화학적 성능과 우수한 경제성을 동시에 제공합니다.</p>
