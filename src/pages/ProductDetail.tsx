@@ -103,7 +103,7 @@ const ProductDetail = () => {
   }
 
   const others = productCatalog.filter((p) => p.slug !== product.slug && (p.category ?? "quartz") === (product.category ?? "quartz"));
-  const isGradeA = product.slug === "fused-silica-block";
+  const isGradeA = product.slug === "fused-silica-a-grade";
 
   return (
     <div className="min-h-screen bg-background text-foreground">

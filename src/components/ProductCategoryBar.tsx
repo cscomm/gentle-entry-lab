@@ -6,9 +6,9 @@ import { useLang } from "@/contexts/LanguageContext";
 
 const categories: { label: string; en: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products", href: "/#products" },
-  { label: "A등급 용융실리카", en: "Grade A Fused Silica", slug: "fused-silica-block" },
-  { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-sand" },
-  { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-powder" },
+  { label: "A등급 용융실리카", en: "Grade A Fused Silica", slug: "fused-silica-a-grade" },
+  { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-b-grade" },
+  { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-c-grade" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];

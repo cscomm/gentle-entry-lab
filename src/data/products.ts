@@ -33,7 +33,7 @@ export type ProductDetail = {
 
 export const productCatalog: ProductDetail[] = [
   {
-    slug: "fused-silica-block",
+    slug: "fused-silica-a-grade",
     name: "A등급 용융실리카",
     enName: "Grade A · Ultra-High Purity Fused Silica",
     tagline: "반도체 공정의 신뢰를 완성하는 100% 무정형 초정밀 소재",
@@ -69,7 +69,7 @@ export const productCatalog: ProductDetail[] = [
     applications: ["반도체", "광학", "디스플레이", "항공/방산", "의료", "에너지"],
   },
   {
-    slug: "fused-silica-sand",
+    slug: "fused-silica-b-grade",
     name: "B등급 용융실리카",
     enName: "Grade B · Premium Fused Silica",
     tagline: "고순도와 열적 안정성의 최적 균형, 에너지 및 정밀 산업의 표준",
@@ -99,7 +99,7 @@ export const productCatalog: ProductDetail[] = [
     applications: ["태양광", "전자/반도체", "정밀 주조", "특수 소재"],
   },
   {
-    slug: "fused-silica-powder",
+    slug: "fused-silica-c-grade",
     name: "C등급 용융실리카",
     enName: "Grade C · Industrial Fused Silica",
     tagline: "경제성과 실용성을 갖춘 범용 산업 소재",
