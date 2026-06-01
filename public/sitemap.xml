@@ -6,87 +6,92 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/about</loc>
+    <loc>https://silica.co.kr/about/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/fused-silica-block</loc>
+    <loc>https://silica.co.kr/products/fused-silica-block/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/fused-silica-sand</loc>
+    <loc>https://silica.co.kr/products/fused-silica-sand/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/fused-silica-powder</loc>
+    <loc>https://silica.co.kr/products/fused-silica-powder/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/high-purity-quartz</loc>
+    <loc>https://silica.co.kr/products/high-purity-quartz/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel</loc>
+    <loc>https://silica.co.kr/products/silica-gel/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-microsilica</loc>
+    <loc>https://silica.co.kr/applications/silica-gel/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-anti-blocking</loc>
+    <loc>https://silica.co.kr/products/silica-gel-microsilica/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-matting</loc>
+    <loc>https://silica.co.kr/products/silica-gel-anti-blocking/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-large-pore</loc>
+    <loc>https://silica.co.kr/products/silica-gel-matting/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-fng</loc>
+    <loc>https://silica.co.kr/products/silica-gel-large-pore/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-coarse</loc>
+    <loc>https://silica.co.kr/products/silica-gel-fng/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-type-a</loc>
+    <loc>https://silica.co.kr/products/silica-gel-coarse/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/products/silica-gel-type-b</loc>
+    <loc>https://silica.co.kr/products/silica-gel-type-a/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/board</loc>
+    <loc>https://silica.co.kr/products/silica-gel-type-b/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://silica.co.kr/board/</loc>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/terms</loc>
+    <loc>https://silica.co.kr/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://silica.co.kr/privacy</loc>
+    <loc>https://silica.co.kr/privacy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
