@@ -22,7 +22,7 @@ type Route = {
 
 export const productRoutes: Route[] = [
   {
-    path: "/products/fused-silica-block",
+    path: "/products/fused-silica-a-grade",
     title: "A등급 고순도 용융 실리카 (Fused Silica) | SILICA",
     description:
       "SiO₂ 99.9% 이상·100% 무정형의 A등급 고순도 용융 실리카(Fused Silica). 반도체·광학·항공/방산·의료용 산업용 실리카 소재를 공급합니다.",
@@ -75,7 +75,7 @@ export const productRoutes: Route[] = [
       <p>SiLiCA는 자체 광산 채광 → 1차 가공 → 전기 아크 용융 → 정밀 분쇄 → 등급화 → 출하의 전 공정을 자체적으로 수행하며, ISO 9001 및 ISO 22000 품질 관리 시스템과 자체 분석실(XRF·ICP·입도분석)을 기반으로 lot 단위 성적서를 제공합니다. 입도·포장(25kg 크라프트, 500/1000kg 톤백) 및 OEM 사양 대응이 가능합니다.</p>`,
   },
   {
-    path: "/products/fused-silica-sand",
+    path: "/products/fused-silica-b-grade",
     title: "B등급 프리미엄 용융 실리카 Fused Silica | SILICA",
     description:
       "SiO₂ 99.5%·무정형 98% 이상의 B등급 프리미엄 용융 실리카(Fused Silica). 태양광·전자/반도체·정밀 주조용 고순도 실리카 소재.",
@@ -92,7 +92,7 @@ export const productRoutes: Route[] = [
       <p>태양광, 전자/반도체, 정밀 주조, 특수 소재.</p>`,
   },
   {
-    path: "/products/fused-silica-powder",
+    path: "/products/fused-silica-c-grade",
     title: "C등급 산업용 용융 실리카 Fused Silica | SILICA",
     description:
       "SiO₂ 99% 이상의 산업용 용융 실리카(Fused Silica) C등급. 건축·페인트·플라스틱·연마재 등 산업용 실리카 소재를 경제적으로 공급합니다.",
