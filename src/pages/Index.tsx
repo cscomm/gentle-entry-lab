@@ -273,7 +273,7 @@ const Index = () => {
               size="lg"
               className="mt-8 h-12 rounded-full border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground"
             >
-              <Link to="/about">
+              <Link to="/about/">
                 {t("about.btn")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -302,7 +302,7 @@ const Index = () => {
             {filteredProducts.map((p) => (
               <Link
                 key={p.title}
-                to={`/products/${p.slug}`}
+                to={`/products/${p.slug}/`}
                 className="group block overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
               >
                 <div className="aspect-square overflow-hidden">

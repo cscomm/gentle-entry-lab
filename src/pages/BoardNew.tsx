@@ -111,7 +111,7 @@ const BoardNew = () => {
       return;
     }
     toast.success(t("board.created"));
-    navigate("/board");
+    navigate("/board/");
   };
 
   return (
@@ -119,7 +119,7 @@ const BoardNew = () => {
       <SiteHeader />
       <main className="pt-32 pb-20">
         <section className="mx-auto max-w-3xl px-6 md:px-8">
-          <Link to="/board" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/board/" className="text-sm text-muted-foreground hover:text-foreground">
             {t("board.back")}
           </Link>
           <h1 className="mt-4 text-3xl font-bold text-foreground md:text-4xl">
@@ -211,7 +211,7 @@ const BoardNew = () => {
             </div>
 
             <div className="flex items-center justify-end gap-3 pt-2">
-              <Button type="button" variant="outline" onClick={() => navigate("/board")}>
+              <Button type="button" variant="outline" onClick={() => navigate("/board/")}>
                 {t("form.cancel")}
               </Button>
               <Button type="submit" disabled={submitting}>

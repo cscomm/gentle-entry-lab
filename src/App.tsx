@@ -16,6 +16,7 @@ import BoardNew from "./pages/BoardNew.tsx";
 import BoardDetail from "./pages/BoardDetail.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import CanonicalUrl from "./components/CanonicalUrl";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CanonicalUrl />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/products/silica-gel" element={<SilicaGelCategory />} />

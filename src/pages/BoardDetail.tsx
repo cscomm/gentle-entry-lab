@@ -77,7 +77,7 @@ const BoardDetail = () => {
       return;
     }
     toast.success(t("board.deleted"));
-    navigate("/board");
+    navigate("/board/");
   };
 
   const formatDate = (iso: string) =>
@@ -94,7 +94,7 @@ const BoardDetail = () => {
       <SiteHeader />
       <main className="pt-32 pb-20">
         <section className="mx-auto max-w-3xl px-6 md:px-8">
-          <Link to="/board" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link to="/board/" className="text-sm text-muted-foreground hover:text-foreground">
             {t("board.back")}
           </Link>
 
@@ -160,7 +160,7 @@ const BoardDetail = () => {
 
               {/* Actions */}
               <footer className="flex items-center justify-between border-t border-border bg-secondary/30 px-6 py-4 md:px-10">
-                <Link to="/board" className="text-sm text-muted-foreground hover:text-foreground">
+                <Link to="/board/" className="text-sm text-muted-foreground hover:text-foreground">
                   {t("board.back")}
                 </Link>
                 {!showDelete ? (

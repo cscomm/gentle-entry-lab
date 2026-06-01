@@ -104,7 +104,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         .map((p) => (
                           <Link
                             key={p.slug}
-                            to={`/products/${p.slug}`}
+                            to={`/products/${p.slug}/`}
                             className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                           >
                             <div className="font-semibold">{lang === "en" ? p.enName : p.name}</div>
@@ -114,7 +114,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                           </Link>
                         ))}
                       <Link
-                        to="/products/silica-gel"
+                        to="/products/silica-gel/"
                         className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "en" ? "Silica Gel" : "실리카겔"}</div>
@@ -134,7 +134,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         .map((p) => (
                           <Link
                             key={p.slug}
-                            to={`/products/${p.slug}#applications`}
+                            to={`/products/${p.slug}/#applications`}
 
                             className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                           >
@@ -145,7 +145,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                           </Link>
                         ))}
                       <Link
-                        to="/applications/silica-gel"
+                        to="/applications/silica-gel/"
                         className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "en" ? "Silica Gel" : "실리카겔"}</div>
