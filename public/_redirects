@@ -2,4 +2,12 @@
 /sitemap.xml/  /sitemap.xml  200
 /robots.txt    /robots.txt   200
 /robots.txt/   /robots.txt   200
+
+/products/fused-silica-block      /products/fused-silica-a-grade/   301!
+/products/fused-silica-block/     /products/fused-silica-a-grade/   301!
+/products/fused-silica-sand       /products/fused-silica-b-grade/   301!
+/products/fused-silica-sand/      /products/fused-silica-b-grade/   301!
+/products/fused-silica-powder     /products/fused-silica-c-grade/   301!
+/products/fused-silica-powder/    /products/fused-silica-c-grade/   301!
+
 /*             /index.html   200
