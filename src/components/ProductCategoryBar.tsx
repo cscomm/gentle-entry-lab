@@ -34,7 +34,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
         p.slug.toLowerCase().includes(term)
     );
     if (found) {
-      navigate(`/products/${found.slug}`);
+      navigate(`/products/${found.slug}/`);
       setQ("");
     } else {
       navigate(`/#products`);

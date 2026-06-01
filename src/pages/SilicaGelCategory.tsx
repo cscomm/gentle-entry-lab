@@ -42,7 +42,7 @@ const SilicaGelCategory = () => {
           {products.map((p) => (
             <Link
               key={p.slug}
-              to={`/products/${p.slug}`}
+              to={`/products/${p.slug}/`}
               className="group block overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
             >
               <div className="aspect-square overflow-hidden bg-secondary/40">

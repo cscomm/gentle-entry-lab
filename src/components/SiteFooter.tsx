@@ -89,9 +89,9 @@ const SiteFooter = () => {
           <p>{t("footer.hq")}</p>
           <p className="mt-1">{t("footer.hq2")}</p>
           <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <Link to="/terms" className="hover:text-primary-glow">{t("footer.terms")}</Link>
+            <Link to="/terms/" className="hover:text-primary-glow">{t("footer.terms")}</Link>
             <span className="opacity-30">|</span>
-            <Link to="/privacy" className="hover:text-primary-glow">{t("footer.privacy")}</Link>
+            <Link to="/privacy/" className="hover:text-primary-glow">{t("footer.privacy")}</Link>
             <span className="opacity-30">|</span>
             <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
             <span className="opacity-30">|</span>

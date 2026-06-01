@@ -57,7 +57,7 @@ const Board = () => {
               <p className="mt-3 text-muted-foreground">{t("board.subtitle")}</p>
             </div>
             <Button asChild size="lg" className="gap-2">
-              <Link to="/board/new">
+              <Link to="/board/new/">
                 <PenSquare className="h-4 w-4" />
                 {t("board.new")}
               </Link>
@@ -83,7 +83,7 @@ const Board = () => {
               posts.map((p, idx) => (
                 <Link
                   key={p.id}
-                  to={`/board/${p.id}`}
+                  to={`/board/${p.id}/`}
                   className="grid grid-cols-1 gap-1 border-b border-border px-6 py-4 transition hover:bg-secondary/50 md:grid-cols-12 md:items-center md:gap-2"
                 >
                   <div className="hidden text-center text-sm text-muted-foreground md:col-span-1 md:block">
