@@ -74,7 +74,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
           );
         }
         return (
-          <Link key={cat.label} to={`/products/${cat.slug}`} className={className}>
+          <Link key={cat.label} to={`/products/${cat.slug}/`} className={className}>
             {label}
           </Link>
         );
