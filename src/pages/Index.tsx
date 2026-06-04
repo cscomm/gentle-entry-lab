@@ -475,9 +475,6 @@ const Index = () => {
             </div>
           </form>
           </div>
-          <div className="mt-8 text-center text-xs text-background/60">
-            <a href="tel:031-356-5682" className="hover:text-primary-glow">031-356-5682</a>
-          </div>
         </div>
 
       </section>

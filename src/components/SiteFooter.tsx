@@ -44,10 +44,18 @@ const SiteFooter = () => {
             </nav>
           </div>
 
-          {/* Right: copyright */}
-          <p className="text-xs text-muted-foreground">
-            © 2023 SiLiCA. All rights reserved.
-          </p>
+          {/* Right: legal line */}
+          <div className="text-xs text-muted-foreground">
+            <span className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+              <Link to="/terms/" className="hover:text-primary-glow">이용약관</Link>
+              <span className="opacity-30">|</span>
+              <Link to="/privacy/" className="hover:text-primary-glow">개인정보처리방침</Link>
+              <span className="opacity-30">|</span>
+              <span>contact@silica.co.kr · 031-356-5682</span>
+              <span className="opacity-30">|</span>
+              <span>© 2023 SiLiCA. All rights reserved.</span>
+            </span>
+          </div>
         </div>
       </footer>
     );
@@ -86,17 +94,15 @@ const SiteFooter = () => {
         </nav>
 
         <div className="mt-10 border-t border-border pt-6 text-xs text-muted-foreground">
-          <p>{t("footer.hq")}</p>
-          <p className="mt-1">{t("footer.hq2")}</p>
-          <div className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-            <Link to="/terms/" className="hover:text-primary-glow">{t("footer.terms")}</Link>
+          <span className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            <Link to="/terms/" className="hover:text-primary-glow">이용약관</Link>
             <span className="opacity-30">|</span>
-            <Link to="/privacy/" className="hover:text-primary-glow">{t("footer.privacy")}</Link>
+            <Link to="/privacy/" className="hover:text-primary-glow">개인정보처리방침</Link>
             <span className="opacity-30">|</span>
-            <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
+            <span>contact@silica.co.kr · 031-356-5682</span>
             <span className="opacity-30">|</span>
             <span>© 2023 SiLiCA. All rights reserved.</span>
-          </div>
+          </span>
         </div>
       </div>
     </footer>
