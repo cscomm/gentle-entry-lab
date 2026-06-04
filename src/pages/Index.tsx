@@ -380,12 +380,8 @@ const Index = () => {
                       info@silica.co.kr
                     </a>
                   </li>
-                  <li>
-                    <a href="tel:031-356-5682" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
-                      <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
-                      031-356-5682
-                    </a>
-                  </li>
+
+
 
                 </ul>
               </aside>
