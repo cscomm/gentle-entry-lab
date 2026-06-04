@@ -44,8 +44,10 @@ const SiteFooter = () => {
             </nav>
           </div>
 
-          {/* Right: empty */}
-          <span className="text-xs text-muted-foreground" />
+          {/* Right: copyright */}
+          <p className="text-xs text-muted-foreground">
+            © 2023 SiLiCA. All rights reserved.
+          </p>
         </div>
       </footer>
     );
@@ -92,6 +94,8 @@ const SiteFooter = () => {
             <Link to="/privacy/" className="hover:text-primary-glow">{t("footer.privacy")}</Link>
             <span className="opacity-30">|</span>
             <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
+            <span className="opacity-30">|</span>
+            <span>© 2023 SiLiCA. All rights reserved.</span>
           </div>
         </div>
       </div>
