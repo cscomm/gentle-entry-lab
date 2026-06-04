@@ -380,12 +380,8 @@ const Index = () => {
                       info@silica.co.kr
                     </a>
                   </li>
-                  <li>
-                    <a href="tel:031-356-5682" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
-                      <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
-                      031-356-5682
-                    </a>
-                  </li>
+
+
 
                 </ul>
               </aside>
@@ -479,7 +475,11 @@ const Index = () => {
             </div>
           </form>
           </div>
+          <div className="mt-8 text-center text-xs text-background/60">
+            <a href="tel:031-356-5682" className="hover:text-primary-glow">031-356-5682</a>
+          </div>
         </div>
+
       </section>
 
       <SiteFooter />
