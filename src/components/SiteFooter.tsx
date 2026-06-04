@@ -44,8 +44,10 @@ const SiteFooter = () => {
             </nav>
           </div>
 
-          {/* Right: empty */}
-          <span className="text-xs text-muted-foreground" />
+          {/* Right: copyright */}
+          <p className="text-xs text-muted-foreground">
+            © 2023 SiLiCA. All rights reserved.
+          </p>
         </div>
       </footer>
     );
