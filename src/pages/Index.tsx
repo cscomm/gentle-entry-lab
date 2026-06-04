@@ -375,6 +375,12 @@ const Index = () => {
                     <span>{t("footer.address")}</span>
                   </li>
                   <li>
+                    <p className="flex items-center gap-2.5 text-sm text-background/85">
+                      <span className="h-4 w-4 shrink-0 text-primary-glow text-center text-xs leading-4">©</span>
+                      2023 SiLiCA. All rights reserved.
+                    </p>
+                  </li>
+                  <li>
                     <a href="tel:031-356-5682" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
                       <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
                       031-356-5682
