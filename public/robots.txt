@@ -4,6 +4,12 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Yeti
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
 User-agent: Twitterbot
 Allow: /
 
@@ -12,4 +18,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
 Sitemap: https://silica.co.kr/sitemap.xml
