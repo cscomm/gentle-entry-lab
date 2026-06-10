@@ -104,7 +104,7 @@ const dict: Record<string, { ko: string; en: string }> = {
   "form.sending": { ko: "전송 중...", en: "Sending..." },
 
   // Footer
-  "footer.tagline": { ko: "규석전문기업", en: "Silica Specialist" },
+  "footer.tagline": { ko: "실리카전문기업", en: "Silica Specialist" },
   "footer.terms": { ko: "이용약관", en: "Terms" },
   "footer.privacy": { ko: "개인정보처리방침", en: "Privacy Policy" },
   "footer.products": { ko: "제품", en: "Products" },
