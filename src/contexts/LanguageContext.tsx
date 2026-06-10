@@ -18,7 +18,7 @@ const dict: Record<string, { ko: string; en: string }> = {
   "nav.applications": { ko: "응용분야", en: "Applications" },
   "nav.contact": { ko: "문의하기", en: "Contact" },
   "nav.board": { ko: "게시판", en: "Board" },
-  "nav.tagline": { ko: "규석 전문 기업", en: "Silica Specialist" },
+  "nav.tagline": { ko: "실리카 전문 기업", en: "Silica Specialist" },
 
   // Board
   "board.title": { ko: "게시판", en: "Board" },
