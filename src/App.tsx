@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import SilicaGelCategory from "./pages/SilicaGelCategory.tsx";
 import SilicaGelApplications from "./pages/SilicaGelApplications.tsx";
+import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
+import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
