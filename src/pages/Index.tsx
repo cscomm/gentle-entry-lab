@@ -21,7 +21,7 @@ import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
 import pProcess from "@/assets/p-process.jpg";
 import silicaGelHero from "@/assets/silica-gel-hero.jpg";
-import precipitatedSilicaAssetTop from "@/assets/precipitated-silica.png.asset.json";
+import precipitatedSilicaImg from "@/assets/precipitated-silica.jpg";
 import aSemi from "@/assets/a-semicon.jpg";
 import aOptic from "@/assets/a-optics.jpg";
 import aSolar from "@/assets/a-display.jpg";
@@ -45,7 +45,7 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];
 
-const precipitatedSilicaImg = precipitatedSilicaAssetTop.url;
+
 
 const products = [
   { img: gradeA, slug: "fused-silica-a-grade", title: "A등급 용융실리카", enTitle: "Grade A Fused Silica", desc: "초고순도 100% 무정형 용융실리카 — 반도체·광학·항공/방산 전용", enDesc: "Ultra-high-purity 100% amorphous fused silica — for semiconductor, optics, aerospace & defense.", cat: "A등급 용융실리카" },
