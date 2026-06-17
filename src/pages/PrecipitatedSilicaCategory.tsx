@@ -38,7 +38,7 @@ const PrecipitatedSilicaCategory = () => {
 
       {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
           {products.map((p) => (
             <Link
               key={p.slug}
@@ -53,11 +53,11 @@ const PrecipitatedSilicaCategory = () => {
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-base font-semibold leading-snug">{isEn ? p.enName : p.name}</h3>
-                {!isEn && <p className="mt-1 text-xs text-muted-foreground line-clamp-1">{p.enName}</p>}
-                <p className="mt-3 text-sm text-muted-foreground line-clamp-2">{p.tagline}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-xs text-primary transition group-hover:gap-2">
+              <div className="p-4">
+                <h3 className="text-sm font-semibold leading-snug">{isEn ? p.enName : p.name}</h3>
+                {!isEn && <p className="mt-1 text-[11px] text-muted-foreground line-clamp-1">{p.enName}</p>}
+                <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{p.tagline}</p>
+                <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-primary transition group-hover:gap-2">
                   {t("products.detail")} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
               </div>
