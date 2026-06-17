@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
@@ -218,6 +218,211 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* SL-A81 Detailed Content */}
+      {product.slug === "precipitated-silica-sl-a81" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          {/* Product Overview */}
+          <div className="overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/20 shadow-sm">
+            <div className="border-b border-border px-6 py-4 md:px-10">
+              <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+                PRODUCT OVERVIEW
+              </span>
+              <h2 className="mt-4 text-2xl font-bold md:text-3xl">SL-A81 침전 실리카 제품 특징 및 장점</h2>
+            </div>
+            <div className="px-6 py-8 md:px-10">
+              <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+                SL-A81은 <span className="font-semibold text-foreground">BET 비표면적 700~750 m²/g</span>의 초고비표면적을 구현한 고순도 침전 실리카(Precipitated Silica)입니다.
+                일반적인 침전 실리카(150~250 m²/g) 대비 <span className="font-semibold text-foreground">3~4배 수준</span>의 극도로 넓은 표면적을 자랑하며,
+                이는 제품의 주요 경쟁력입니다.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
+                {[
+                  { icon: BarChart3, label: "BET 비표면적", value: "700~750", unit: "m²/g" },
+                  { icon: Gem, label: "SiO₂ 순도", value: "≥99", unit: "%" },
+                  { icon: Scale, label: "평균 입도", value: "7~8", unit: "μm" },
+                  { icon: FlaskConical, label: "DBP 흡수량", value: "90~130", unit: "ml/100g" },
+                ].map((stat) => (
+                  <div key={stat.label} className="rounded-2xl border border-border bg-card p-5 text-center">
+                    <stat.icon className="mx-auto h-6 w-6 text-primary" />
+                    <div className="mt-3 text-xs text-muted-foreground">{stat.label}</div>
+                    <div className="mt-1 text-xl font-bold text-foreground md:text-2xl">
+                      {stat.value}<span className="ml-0.5 text-sm font-medium text-muted-foreground">{stat.unit}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 7 Key Advantages */}
+          <div className="mt-16">
+            <div className="flex items-center gap-3">
+              <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+                KEY ADVANTAGES
+              </span>
+            </div>
+            <h3 className="mt-4 text-2xl font-bold md:text-3xl">✨ 핵심 장점 (총 7가지)</h3>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {[
+                {
+                  num: "1️⃣",
+                  title: "극도로 넓은 비표면적 (700~750 m²/g)",
+                  points: [
+                    "일반 실리카 대비 3~4배 높은 표면적으로, 소량 첨가만으로도 높은 보강 효과 구현",
+                    "첨가제, 흡착제, 기능성 충진재로서의 효율 극대화",
+                    "고분자 사슬과의 접촉 면적 극대화로 물리적 결합력 향상",
+                  ],
+                },
+                {
+                  num: "2️⃣",
+                  title: "고순도(≥99%)로 인한 안정성",
+                  points: [
+                    "불순물(중금속, Na₂SO₄ 등) 함량이 극도로 낮아 화학적 안정성 우수",
+                    "전기적 특성(절연성)이나 열적 안정성이 요구되는 첨단 소재에 적합",
+                    "금속 촉매에 의한 부반응이나 변색 염려가 거의 없음",
+                  ],
+                },
+                {
+                  num: "3️⃣",
+                  title: "미세하고 균일한 입도 (7~8 μm)",
+                  points: [
+                    "7~8μm의 초미세 분말로, 고무·수지·접착제 내 고른 분산성 확보",
+                    "표면 결함 없이 매끄러운 복합재 제조 가능",
+                    "필름, 시트, 코팅재에서 광투과성이나 광택 조절에도 유리",
+                  ],
+                },
+                {
+                  num: "4️⃣",
+                  title: "적절한 DBP 흡수량 (90~130 ml/100g)",
+                  points: [
+                    "과도한 오일 흡수 없이 적정 수준의 구조성 유지",
+                    "시스템 내 점도 급상승을 억제하여 고충전(high loading)이 필요한 배합 설계에도 적용 가능",
+                    "가공 점도가 낮아 생산 효율 향상",
+                  ],
+                },
+                {
+                  num: "5️⃣",
+                  title: "중성 pH (6.5~7.5)로 소재 보호",
+                  points: [
+                    "산성이나 알칼리성 실리카가 유기 바인더나 고무의 가교 구조를 손상시키는 현상 방지",
+                    "경화제, 가교제, 촉매와의 부반응 최소화",
+                    "접착제나 실런트의 경화 시간 및 점도 변화 억제",
+                  ],
+                },
+                {
+                  num: "6️⃣",
+                  title: "뛰어난 백색도 (≥95)",
+                  points: [
+                    "최종 제품의 색상이나 투명도를 해치지 않음",
+                    "착색이나 도장 공정에서 베이스 재료로 활용도 높음",
+                    "식품 접촉용이나 미용·의료용 소재에도 응용 가능",
+                  ],
+                },
+                {
+                  num: "7️⃣",
+                  title: "우수한 열적 안정성",
+                  points: [
+                    "1000℃ 소성 감량 3~5%로, 고온 공정에서도 무게 변화나 휘발 성분 방출이 적음",
+                    "고온 경화, 사출, 압출 공정에서도 물성 유지",
+                  ],
+                  full: true,
+                },
+              ].map((adv) => (
+                <div
+                  key={adv.title}
+                  className={`group overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)] md:p-8 ${adv.full ? "md:col-span-2" : ""}`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-lg font-bold text-primary">
+                      {adv.num}
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold leading-snug">{adv.title}</h4>
+                      <ul className="mt-3 space-y-2">
+                        {adv.points.map((pt, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Application Areas */}
+          <div className="mt-16">
+            <div className="flex items-center gap-3">
+              <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+                APPLICATIONS
+              </span>
+            </div>
+            <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 주요 적용 분야</h3>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {[
+                {
+                  icon: Leaf,
+                  title: "그린타이어 (저연비 타이어)",
+                  points: [
+                    "넓은 비표면적으로 고무 매트릭스와의 결합력 증가",
+                    "회전 저항을 낮춰 연비 향상에 기여",
+                    "젖은 노면에서의 그립력과 내마모성 동시 개선",
+                  ],
+                },
+                {
+                  icon: Zap,
+                  title: "고성능 실리콘 고무 (Silicone Rubber)",
+                  points: [
+                    "높은 비표면적으로 인장강도, 내열성, 내크리프성 향상",
+                    "투명/반투명 실리콘 제품에도 백색도 영향을 최소화하며 보강 가능",
+                    "저압축 영구줄음(Compression set) 특성 개선",
+                  ],
+                },
+                {
+                  icon: Shield,
+                  title: "접착제 및 실런트 (Adhesives & Sealants)",
+                  points: [
+                    "증점 효과 및 틱소트로피(thixotropy) 부여로 도포성 향상",
+                    "접착 강도 및 내수성, 내열접착력 향상",
+                    "에폭시, 우레탄, 아크릴, 실리콘계 접착제에 광범위 적용",
+                  ],
+                },
+                {
+                  icon: Factory,
+                  title: "기타 첨단 소재 분야",
+                  points: [
+                    "배터리 분리막, 촉매 지지체, 기능성 코팅, 방열 소재 등",
+                    "의약품/화장품용 유동성 개선제, 항결집제",
+                    "고순도가 요구되는 전자재료 봉지재",
+                  ],
+                },
+              ].map((app) => (
+                <div
+                  key={app.title}
+                  className="overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+                >
+                  <div className="flex items-center gap-3 border-b border-border bg-secondary/30 px-6 py-4">
+                    <app.icon className="h-5 w-5 text-primary" />
+                    <h4 className="font-bold">{app.title}</h4>
+                  </div>
+                  <ul className="space-y-3 p-6">
+                    {app.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Applications — visual cards with images */}
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">

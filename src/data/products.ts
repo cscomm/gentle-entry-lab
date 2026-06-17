@@ -334,14 +334,22 @@ const PS_FEATURES = [
 const precipitatedProducts: ProductDetail[] = [
   {
     slug: "precipitated-silica-sl-a81",
-    name: "SL-A81 고분산 침전 실리카",
-    enName: "SL-A81 · Highly Dispersible Precipitated Silica",
-    tagline: "BET 700–750 m²/g 초고비표면적의 고분산 보강용 침전 실리카",
+    name: "SL-A81 침전 실리카",
+    enName: "SL-A81 · Precipitated Silica",
+    tagline: "BET 700–750 m²/g 초고비표면적의 보강용 침전 실리카",
     description:
-      "SL-A81은 BET 비표면적 700~750 m²/g 수준의 초고비표면적을 갖는 고분산형 침전 실리카(HDS, Highly Dispersible Silica)입니다. 그린타이어·고성능 실리콘 고무·접착제의 보강 충진재로 사용되어 회전저항 저감, 젖은 노면 그립력 향상, 내마모성 증대를 동시에 구현합니다.",
+      "SL-A81은 BET 비표면적 700~750 m²/g의 초고비표면적을 구현한 고순도 침전 실리카(Precipitated Silica)입니다. 일반적인 침전 실리카(150~250 m²/g) 대비 3~4배 수준의 극도로 넓은 표면적을 자랑하며, 이는 제품의 주요 경쟁력입니다.",
     image: precipitatedSilica,
     category: "precipitated",
-    features: PS_FEATURES,
+    features: [
+      { title: "📊 극도로 넓은 비표면적", desc: "700~750 m²/g — 일반 실리카 대비 3~4배 높은 표면적으로 소량 첨가만으로도 높은 보강 효과 구현" },
+      { title: "🧪 고순도(≥99%) 안정성", desc: "불순물(중금속, Na₂SO₄ 등) 함량이 극도로 낮아 화학적 안정성 우수. 전기적 특성(절연성)이나 열적 안정성이 요구되는 첨단 소재에 적합" },
+      { title: "⚙️ 미세하고 균일한 입도", desc: "7~8μm의 초미세 분말로 고무·수지·접착제 내 고른 분산성 확보. 표면 결함 없이 매끄러운 복합재 제조 가능" },
+      { title: "💧 적절한 DBP 흡수량", desc: "90~130 ml/100g — 과도한 오일 흡수 없이 적정 수준의 구조성 유지. 고충전(high loading) 배합 설계에도 적용 가능" },
+      { title: "⚖️ 중성 pH (6.5~7.5)", desc: "산성이나 알칼리성 실리카가 유기 바인더나 고무의 가교 구조를 손상시키는 현상 방지. 경화제, 가교제, 촉매와의 부반응 최소화" },
+      { title: "✨ 뛰어난 백색도 (≥95)", desc: "최종 제품의 색상이나 투명도를 해치지 않음. 착색이나 도장 공정에서 베이스 재료로 활용도 높음" },
+      { title: "🔥 우수한 열적 안정성", desc: "1000℃ 소성 감량 3~5%로 고온 공정에서도 무게 변화나 휘발 성분 방출이 적음. 고온 경화, 사출, 압출 공정에서도 물성 유지" },
+    ],
     specs: [
       { label: "등급 (Grade)", value: "SL-A81" },
       { label: "외관 (Form)", value: "White powder", note: "순백색 분말" },
