@@ -34,6 +34,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/products/silica-gel" element={<SilicaGelCategory />} />
           <Route path="/applications/silica-gel" element={<SilicaGelApplications />} />
+          <Route path="/products/precipitated-silica" element={<PrecipitatedSilicaCategory />} />
+          <Route path="/applications/precipitated-silica" element={<PrecipitatedSilicaApplications />} />
           <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/terms" element={<Terms />} />
