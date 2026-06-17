@@ -70,6 +70,8 @@ const APP_VISUALS: Record<string, { img?: string; items: string[] }> = {
   "나노 가공": { img: hpqNano, items: ["나노 실리카 원료", "실리카 파우더", "고부가 화학 제품"] },
   // Silica Gel
   "실리카겔": { img: aSilicaGel, items: ["미분 실리카 (Microsilica)", "안티블로킹제 (Anti-blocking)", "소광제 (Matting Agent)", "흡착·건조용 실리카겔", "내수 실리카겔 (FNG)"] },
+  // Precipitated Silica
+  "침전/침강실리카": { img: aSilicaGel, items: ["고무 보강재 (그린타이어·실리콘)", "페인트·코팅·잉크 소광/증점", "식·의약품 고결방지제 (E551)", "치약·화장품 연마/증점", "농약·촉매·윤활제 캐리어"] },
 };
 
 const ProductDetail = () => {

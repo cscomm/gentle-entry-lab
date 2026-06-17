@@ -14,8 +14,11 @@ import sgFng from "@/assets/sg-fng.jpg";
 import sgCoarse from "@/assets/sg-coarse.jpg";
 import sgTypeA from "@/assets/sg-type-a.jpg";
 import sgTypeB from "@/assets/sg-type-b.jpg";
+import precipitatedSilicaAsset from "@/assets/precipitated-silica.jpg.asset.json";
 
-export type ProductCategory = "quartz" | "silica-gel";
+const precipitatedSilica = precipitatedSilicaAsset.url;
+
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated";
 
 export type ProductDetail = {
   slug: string;

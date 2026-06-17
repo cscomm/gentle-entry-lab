@@ -8,6 +8,8 @@ import NotFound from "./pages/NotFound.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import SilicaGelCategory from "./pages/SilicaGelCategory.tsx";
 import SilicaGelApplications from "./pages/SilicaGelApplications.tsx";
+import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
+import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/products/silica-gel" element={<SilicaGelCategory />} />
           <Route path="/applications/silica-gel" element={<SilicaGelApplications />} />
+          <Route path="/products/precipitated-silica" element={<PrecipitatedSilicaCategory />} />
+          <Route path="/applications/precipitated-silica" element={<PrecipitatedSilicaApplications />} />
           <Route path="/products/:slug" element={<ProductDetail />} />
           <Route path="/about" element={<About />} />
           <Route path="/terms" element={<Terms />} />
