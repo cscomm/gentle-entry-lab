@@ -222,47 +222,14 @@ const ProductDetail = () => {
       {/* SL-A81 Detailed Content */}
       {product.slug === "precipitated-silica-sl-a81" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-          {/* Product Overview */}
-          <div className="overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/20 shadow-sm">
-            <div className="border-b border-border px-6 py-4 md:px-10">
-              <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-                PRODUCT OVERVIEW
-              </span>
-              <h2 className="mt-4 text-2xl font-bold md:text-3xl">SL-A81 침전 실리카 제품 특징 및 장점</h2>
-            </div>
-            <div className="px-6 py-8 md:px-10">
-              <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-                SL-A81은 <span className="font-semibold text-foreground">BET 비표면적 700~750 m²/g</span>의 초고비표면적을 구현한 고순도 침전 실리카(Precipitated Silica)입니다.
-                일반적인 침전 실리카(150~250 m²/g) 대비 <span className="font-semibold text-foreground">3~4배 수준</span>의 극도로 넓은 표면적을 자랑하며,
-                이는 제품의 주요 경쟁력입니다.
-              </p>
-              <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-                {[
-                  { icon: BarChart3, label: "BET 비표면적", value: "700~750", unit: "m²/g" },
-                  { icon: Gem, label: "SiO₂ 순도", value: "≥99", unit: "%" },
-                  { icon: Scale, label: "평균 입도", value: "7~8", unit: "μm" },
-                  { icon: FlaskConical, label: "DBP 흡수량", value: "90~130", unit: "ml/100g" },
-                ].map((stat) => (
-                  <div key={stat.label} className="rounded-2xl border border-border bg-card p-5 text-center">
-                    <stat.icon className="mx-auto h-6 w-6 text-primary" />
-                    <div className="mt-3 text-xs text-muted-foreground">{stat.label}</div>
-                    <div className="mt-1 text-xl font-bold text-foreground md:text-2xl">
-                      {stat.value}<span className="ml-0.5 text-sm font-medium text-muted-foreground">{stat.unit}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
           {/* 7 Key Advantages */}
-          <div className="mt-16">
+          <div>
             <div className="flex items-center gap-3">
               <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-                KEY ADVANTAGES
+                KEY FEATURES
               </span>
             </div>
-            <h3 className="mt-4 text-2xl font-bold md:text-3xl">✨ 핵심 장점 (총 7가지)</h3>
+            <h3 className="mt-4 text-2xl font-bold md:text-3xl">✨ 주요 특징</h3>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {[
                 {
