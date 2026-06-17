@@ -325,6 +325,99 @@ const silicaGelProducts: ProductDetail[] = [
 
 productCatalog.push(...silicaGelProducts);
 
+const PS_APPS = ["침전/침강실리카"];
+const PS_FEATURES = [
+  { title: "🧱 합성 무정형 SiO₂", desc: "수용성 규산염과 산의 반응으로 제조된 순백색 무정형 분말" },
+  { title: "🧪 고순도 관리", desc: "SiO₂ ≥ 98~99%, 중금속·납·비소 등 유해 성분 엄격 관리" },
+  { title: "⚙️ 다공성 구조", desc: "높은 비표면적과 흡유량으로 보강·증점·소광·흡착 성능 발휘" },
+  { title: "🌿 광범위 응용", desc: "고무·페인트·플라스틱·식의약·치약·화장품 등 산업 전반 적용" },
+];
+
+const precipitatedProducts: ProductDetail[] = [
+  {
+    slug: "precipitated-silica-sl-a81",
+    name: "SL-A81 고분산 침전 실리카",
+    enName: "SL-A81 · Highly Dispersible Precipitated Silica",
+    tagline: "BET 700–750 m²/g 초고비표면적의 고분산 보강용 침전 실리카",
+    description:
+      "SL-A81은 BET 비표면적 700~750 m²/g 수준의 초고비표면적을 갖는 고분산형 침전 실리카(HDS, Highly Dispersible Silica)입니다. 그린타이어·고성능 실리콘 고무·접착제의 보강 충진재로 사용되어 회전저항 저감, 젖은 노면 그립력 향상, 내마모성 증대를 동시에 구현합니다.",
+    image: precipitatedSilica,
+    category: "precipitated",
+    features: PS_FEATURES,
+    specs: [
+      { label: "등급 (Grade)", value: "SL-A81" },
+      { label: "외관 (Form)", value: "White powder", note: "순백색 분말" },
+      { label: "백색도 (Whiteness)", value: "≥ 95" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 99%", note: "초고순도" },
+      { label: "pH", value: "6.5 – 7.5", note: "중성" },
+      { label: "BET 비표면적", value: "700 – 750 m²/g", note: "초고비표면적" },
+      { label: "DBP 흡유량", value: "90 – 130 ml/100g" },
+      { label: "평균 입자 크기", value: "7 – 8 µm" },
+      { label: "건조 감량 (105℃, 2hr)", value: "3.0 – 4.0 %" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %" },
+    ],
+    applications: PS_APPS,
+  },
+  {
+    slug: "precipitated-silica-si-60",
+    name: "SI-60 미립자 침전 실리카",
+    enName: "SI-60 · Fine Particle Precipitated Silica",
+    tagline: "입도 11–18µm·DBP 230–260의 범용 고무 보강·필러용 실리카",
+    description:
+      "SI-60은 평균 입도 11~18µm의 미립자 침전 실리카로, 우수한 분산성과 보강 성능을 갖춰 신발 밑창·산업용 고무·실리콘 고무·접착제·실란트 등에 폭넓게 사용됩니다. 높은 DBP 흡유량(230~260 ml/100g)으로 증점·요변성(thixotropy) 부여에도 적합합니다.",
+    image: precipitatedSilica,
+    category: "precipitated",
+    features: PS_FEATURES,
+    specs: [
+      { label: "외관 (Form)", value: "White powder" },
+      { label: "백색도 (Whiteness)", value: "97 – 98" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 99%" },
+      { label: "pH", value: "6.5 – 7.5" },
+      { label: "DBP 흡유량", value: "230 – 260 ml/100g" },
+      { label: "입자 크기", value: "11 – 18 µm" },
+      { label: "벌크 밀도", value: "110 – 130 g/L" },
+      { label: "건조 감량 (105℃, 2hr)", value: "4.0 – 6.0 %" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %" },
+      { label: "가용성 염 (Na₂SO₄)", value: "≤ 1.5 %" },
+      { label: "납 함량 (Pb)", value: "≤ 0.0005 %" },
+      { label: "중금속 함량", value: "≤ 0.003 %" },
+      { label: "비소 함량 (As)", value: "≤ 0.0003 %" },
+      { label: "포장 (Package)", value: "15 kg / bag" },
+    ],
+    applications: PS_APPS,
+  },
+  {
+    slug: "precipitated-silica-si-175",
+    name: "SI-175 과립형 침전 실리카",
+    enName: "SI-175 · Granular Precipitated Silica",
+    tagline: "입도 45µm 과립형, 비산 적고 취급 용이한 고무·산업용 침전 실리카",
+    description:
+      "SI-175는 평균 입도 45µm 수준의 과립형(Granular) 침전 실리카로, 비산이 적고 흐름성이 우수하여 대량 자동 계량·혼합 공정에 적합합니다. 고무 보강용, 사료 첨가용 캐리어, 산업용 충진제 등 다양한 분야에 사용됩니다.",
+    image: precipitatedSilica,
+    category: "precipitated",
+    features: PS_FEATURES,
+    specs: [
+      { label: "외관 (Form)", value: "White powder (Granular)" },
+      { label: "백색도 (Whiteness)", value: "97 – 98" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 98%" },
+      { label: "pH", value: "6.5 – 7.5" },
+      { label: "DBP 흡유량", value: "230 – 260 ml/100g" },
+      { label: "입자 크기", value: "45 µm", note: "과립형" },
+      { label: "벌크 밀도", value: "230 – 250 g/L" },
+      { label: "건조 감량 (105℃, 2hr)", value: "4.0 – 6.0 %" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %" },
+      { label: "가용성 염 (Na₂SO₄)", value: "≤ 1.5 %" },
+      { label: "납 함량 (Pb)", value: "≤ 0.0005 %" },
+      { label: "중금속 함량", value: "≤ 0.003 %" },
+      { label: "비소 함량 (As)", value: "≤ 0.0003 %" },
+      { label: "포장 (Package)", value: "20 kg / bag" },
+    ],
+    applications: PS_APPS,
+  },
+];
+
+productCatalog.push(...precipitatedProducts);
+
 export const getProductBySlug = (slug: string) =>
   productCatalog.find((p) => p.slug === slug);
 
