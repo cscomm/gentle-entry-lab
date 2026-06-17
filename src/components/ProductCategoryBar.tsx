@@ -10,6 +10,7 @@ const categories: { label: string; en: string; slug?: string; href?: string }[] 
   { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-b-grade" },
   { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-c-grade" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
+  { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];
 

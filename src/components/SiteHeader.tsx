@@ -115,11 +115,20 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         ))}
                       <Link
                         to="/products/silica-gel/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "en" ? "Silica Gel" : "실리카겔"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/products/precipitated-silica/"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "en" ? "Precipitated Silica" : "침전 실리카"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
                         )}
                       </Link>
                     </div>
@@ -146,11 +155,20 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         ))}
                       <Link
                         to="/applications/silica-gel/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "en" ? "Silica Gel" : "실리카겔"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/applications/precipitated-silica/"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "en" ? "Precipitated Silica" : "침전/침강 실리카"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
                         )}
                       </Link>
                     </div>
