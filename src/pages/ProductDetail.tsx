@@ -210,8 +210,8 @@ const ProductDetail = () => {
               <div key={f.title} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]">
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/10 blur-2xl transition group-hover:bg-primary/20" />
                 <div className="relative">
-                  <h3 className="text-lg font-bold leading-snug">{f.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+                  <h3 className="text-lg font-bold leading-snug">{isEn ? f.enTitle || f.title : f.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{isEn ? f.enDesc || f.desc : f.desc}</p>
                 </div>
               </div>
             ))}
