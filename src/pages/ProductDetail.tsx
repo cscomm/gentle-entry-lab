@@ -143,7 +143,7 @@ const ProductDetail = () => {
               OVERVIEW
             </span>
             <h2 className="mt-6 text-3xl font-bold md:text-4xl">{t("pd.overview")}</h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">{product.description}</p>
+            <p className="mt-6 leading-relaxed text-muted-foreground">{isEn ? product.enDescription || product.description : product.description}</p>
 
             {product.detailImage && (
               <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
