@@ -229,44 +229,68 @@ const ProductDetail = () => {
                 APPLICATIONS
               </span>
             </div>
-            <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 주요 적용 분야</h3>
+            <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 {isEn ? "Key Application Areas" : "주요 적용 분야"}</h3>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               {[
                 {
                   icon: Leaf,
-                  title: "그린타이어 (저연비 타이어)",
-                  points: [
-                    "넓은 비표면적으로 고무 매트릭스와의 결합력 증가",
-                    "회전 저항을 낮춰 연비 향상에 기여",
-                    "젖은 노면에서의 그립력과 내마모성 동시 개선",
-                  ],
+                  title: isEn ? "Green Tires (Low-Fuel-Consumption Tires)" : "그린타이어 (저연비 타이어)",
+                  points: isEn
+                    ? [
+                        "Wide specific surface area increases bonding with the rubber matrix",
+                        "Reduces rolling resistance to improve fuel economy",
+                        "Simultaneously improves wet-grip and abrasion resistance",
+                      ]
+                    : [
+                        "넓은 비표면적으로 고무 매트릭스와의 결합력 증가",
+                        "회전 저항을 낮춰 연비 향상에 기여",
+                        "젖은 노면에서의 그립력과 내마모성 동시 개선",
+                      ],
                 },
                 {
                   icon: Zap,
-                  title: "고성능 실리콘 고무 (Silicone Rubber)",
-                  points: [
-                    "높은 비표면적으로 인장강도, 내열성, 내크리프성 향상",
-                    "투명/반투명 실리콘 제품에도 백색도 영향을 최소화하며 보강 가능",
-                    "저압축 영구줄음(Compression set) 특성 개선",
-                  ],
+                  title: isEn ? "High-Performance Silicone Rubber" : "고성능 실리콘 고무 (Silicone Rubber)",
+                  points: isEn
+                    ? [
+                        "High specific surface area improves tensile strength, heat resistance, and creep resistance",
+                        "Reinforces transparent/semi-transparent silicone products with minimal whitening effect",
+                        "Improves compression set characteristics",
+                      ]
+                    : [
+                        "높은 비표면적으로 인장강도, 내열성, 내크리프성 향상",
+                        "투명/반투명 실리콘 제품에도 백색도 영향을 최소화하며 보강 가능",
+                        "저압축 영구줄음(Compression set) 특성 개선",
+                      ],
                 },
                 {
                   icon: Shield,
-                  title: "접착제 및 실런트 (Adhesives & Sealants)",
-                  points: [
-                    "증점 효과 및 틱소트로피(thixotropy) 부여로 도포성 향상",
-                    "접착 강도 및 내수성, 내열접착력 향상",
-                    "에폭시, 우레탄, 아크릴, 실리콘계 접착제에 광범위 적용",
-                  ],
+                  title: isEn ? "Adhesives & Sealants" : "접착제 및 실런트 (Adhesives & Sealants)",
+                  points: isEn
+                    ? [
+                        "Thickening and thixotropy effects improve coatability",
+                        "Enhanced adhesion strength, water resistance, and heat-resistant bonding",
+                        "Widely applicable to epoxy, urethane, acrylic, and silicone adhesives",
+                      ]
+                    : [
+                        "증점 효과 및 틱소트로피(thixotropy) 부여로 도포성 향상",
+                        "접착 강도 및 내수성, 내열접착력 향상",
+                        "에폭시, 우레탄, 아크릴, 실리콘계 접착제에 광범위 적용",
+                      ],
                 },
                 {
                   icon: Factory,
-                  title: "기타 첨단 소재 분야",
-                  points: [
-                    "배터리 분리막, 촉매 지지체, 기능성 코팅, 방열 소재 등",
-                    "의약품/화장품용 유동성 개선제, 항결집제",
-                    "고순도가 요구되는 전자재료 봉지재",
-                  ],
+                  title: isEn ? "Other Advanced Material Fields" : "기타 첨단 소재 분야",
+                  points: isEn
+                    ? [
+                        "Battery separators, catalyst supports, functional coatings, heat-dissipation materials",
+                        "Flow improvers and anti-caking agents for pharmaceuticals/cosmetics",
+                        "Encapsulant for electronic materials requiring high purity",
+                      ]
+                    : [
+                        "배터리 분리막, 촉매 지지체, 기능성 코팅, 방열 소재 등",
+                        "의약품/화장품용 유동성 개선제, 항결집제",
+                        "고순도가 요구되는 전자재료 봉지재",
+                      ],
                 },
               ].map((app) => (
                 <div
