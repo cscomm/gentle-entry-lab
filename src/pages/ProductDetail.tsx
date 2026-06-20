@@ -124,7 +124,7 @@ const ProductDetail = () => {
             {product.enName.toUpperCase()}
           </span>
           <h1 className="mt-4 text-4xl font-bold md:text-6xl drop-shadow-lg">{isEn ? product.enName : product.name}</h1>
-          {!isEn && <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{product.tagline}</p>}
+          <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{isEn ? product.enTagline || product.tagline : product.tagline}</p>
         </div>
       </section>
 
