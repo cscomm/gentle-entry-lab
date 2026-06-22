@@ -206,17 +206,19 @@ export const productRoutes: Route[] = [
 export const routes: Route[] = [
   {
     path: "/",
-    title: "용융 실리카·실리카 겔·고순도 실리카 소재 전문 공급 | SILICA",
+    title: "용융실리카·규사·흄드.침전실리카.실리카졸겔 전문|SILICA",
     description:
-      "실리카는 고순도 용융실리카, 침전실리카, 실리카겔 등 다양한 실리카 소재 전문기업입니다.",
-    h1: "SiLiCA · 용융 실리카·실리카 겔·고순도 실리카 소재 전문 기업",
+      "실리카는 용융실리카,실리카샌드.규사.침전실리카,흄드실리카.실리카 졸,실리카겔 등 다양한 실리카 소재 전문기업입니다./SILICA",
+    h1: "SiLiCA · 용융 실리카·실리카 겔·흄드 실리카·침전 실리카·고순도 규석 전문 기업",
     body: `
-      <p>SiLiCA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 실리카 겔(Silica Gel) 등 다양한 고순도 실리카 소재를 반도체·광학·태양광·내화재·의료 산업에 안정적으로 공급합니다.</p>
+      <p>SiLiCA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 흄드 실리카(Fumed Silica), 실리카 겔(Silica Gel), 실리카 졸겔 등 다양한 고순도 실리카 소재를 반도체·광학·태양광·내화재·의료 산업에 안정적으로 공급합니다.</p>
       <h2>핵심 제품</h2>
       <ul>
         <li><strong>용융 실리카 (Fused Silica)</strong> — A·B·C 등급, 반도체·광학·정밀 주조용</li>
         <li><strong>실리카 겔 (Silica Gel)</strong> — 흡착·건조·소광·안티블로킹 8종</li>
-        <li><strong>고순도 천연 규석 (High-Purity Quartz)</strong> — EGS·고급 유리·전자재료용</li>
+        <li><strong>침전 실리카 (Precipitated Silica)</strong> — 고무 보강·식의약 고결방지</li>
+        <li><strong>흄드 실리카 (Fumed Silica)</strong> — 실리콘 고무·실란트·도료 첨가제</li>
+        <li><strong>천연 고순도 규석 (High-Purity Quartz)</strong> — EGS·고급 유리·전자재료용</li>
       </ul>`,
   },
   {

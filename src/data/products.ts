@@ -15,7 +15,7 @@ import sgCoarse from "@/assets/sg-coarse.jpg";
 import sgTypeA from "@/assets/sg-type-a.jpg";
 import sgTypeB from "@/assets/sg-type-b.jpg";
 import precipitatedSilica from "@/assets/precipitated-silica.jpg";
-import fumedSilicaAsset from "@/assets/fumed-silica.png.asset.json";
+import fumedSilica from "@/assets/fumed-silica.png";
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed";
 
@@ -493,7 +493,7 @@ const fumedProducts: ProductDetail[] = [
       "HL-200은 사염화규소(SiCl₄)를 1000℃ 이상의 수소·산소 화염 속에서 가수분해하여 제조한 친수성(Hydrophilic) 흄드 실리카(Fumed Silica)입니다. 1차 입자 크기 약 12 nm, BET 비표면적 200 m²/g의 초고비표면적과 3차원 응집 구조를 통해 액상 시스템에 강력한 틱소트로피와 보강 효과를 동시에 부여합니다. 실리콘 고무(HTV/RTV)·실란트·접착제·도료·잉크·불포화 폴리에스테르(UPR)·화장품·의약품 등 거의 모든 첨단 산업에서 보강·증점·소광·요변성·안티-새깅(Anti-Sagging) 기능성 첨가제로 사용됩니다.",
     enDescription:
       "HL-200 is a hydrophilic fumed silica produced by flame hydrolysis of silicon tetrachloride (SiCl₄) at temperatures above 1000°C in a hydrogen/oxygen flame. With a primary particle size of approximately 12 nm, BET specific surface area of 200 m²/g, and a 3D aggregate structure, it simultaneously imparts strong thixotropy and reinforcement to liquid systems. It is used as a reinforcing, thickening, matting, thixotropic, and anti-sagging functional additive across virtually all advanced industries — silicone rubber (HTV/RTV), sealants, adhesives, coatings, inks, unsaturated polyester (UPR), cosmetics, and pharmaceuticals.",
-    image: fumedSilicaAsset.url,
+    image: fumedSilica,
     category: "fumed",
     features: FS_FEATURES,
     specs: [
