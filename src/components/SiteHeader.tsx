@@ -100,7 +100,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz")
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && p.slug !== "high-purity-quartz")
                         .map((p) => (
                           <Link
                             key={p.slug}
@@ -124,11 +124,29 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                       </Link>
                       <Link
                         to="/products/precipitated-silica/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "en" ? "Precipitated Silica" : "침전 실리카"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/products/fumed-silica/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Fumed Silica</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/products/high-purity-quartz/"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
                         )}
                       </Link>
                     </div>
@@ -139,7 +157,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz")
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && p.slug !== "high-purity-quartz")
                         .map((p) => (
                           <Link
                             key={p.slug}
@@ -164,11 +182,29 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                       </Link>
                       <Link
                         to="/applications/precipitated-silica/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "en" ? "Precipitated Silica" : "침전/침강 실리카"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/applications/fumed-silica/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Fumed Silica</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/products/high-purity-quartz/#applications"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
                         )}
                       </Link>
                     </div>
