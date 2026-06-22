@@ -74,6 +74,8 @@ const applicationCategories: { label: string; en: string; href?: string }[] = [
   { label: "태양광 산업", en: "Solar" },
   { label: "전자 소재", en: "Electronic Materials" },
   { label: "실리카겔", en: "Silica Gel", href: "/applications/silica-gel" },
+  { label: "침전 실리카", en: "Precipitated Silica", href: "/applications/precipitated-silica" },
+  { label: "흄드 실리카", en: "Fumed Silica", href: "/applications/fumed-silica" },
 ];
 
 const news = [
