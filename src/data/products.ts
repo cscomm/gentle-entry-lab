@@ -15,8 +15,9 @@ import sgCoarse from "@/assets/sg-coarse.jpg";
 import sgTypeA from "@/assets/sg-type-a.jpg";
 import sgTypeB from "@/assets/sg-type-b.jpg";
 import precipitatedSilica from "@/assets/precipitated-silica.jpg";
+import fumedSilicaAsset from "@/assets/fumed-silica.png.asset.json";
 
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed";
 
 export type ProductDetail = {
   slug: string;
@@ -470,6 +471,53 @@ const precipitatedProducts: ProductDetail[] = [
 ];
 
 productCatalog.push(...precipitatedProducts);
+
+const FS_APPS = ["흄드실리카"];
+const FS_FEATURES = [
+  { title: "🔬 초고비표면적 무정형 SiO₂", desc: "BET 100~400 m²/g의 초미세 비결정성 이산화규소 — 나노 입자 단위의 분자 활성", enTitle: "🔬 Ultra-High SSA Amorphous SiO₂", enDesc: "Ultra-fine non-crystalline silicon dioxide with BET 100–400 m²/g — molecular activity at the nanoparticle scale" },
+  { title: "🧪 고순도(≥99.8%)", desc: "사염화규소(SiCl₄) 화염가수분해로 제조되어 금속 불순물이 ppm 단위로 극미량", enTitle: "🧪 High Purity (≥99.8%)", enDesc: "Produced by flame hydrolysis of silicon tetrachloride (SiCl₄) with trace metal impurities at ppm levels" },
+  { title: "⚙️ 강력한 틱소트로피 부여", desc: "3차원 네트워크 구조 형성으로 액상의 점도·요변성을 극적으로 향상", enTitle: "⚙️ Powerful Thixotropy", enDesc: "Forms 3D network structures that dramatically improve viscosity and thixotropy of liquids" },
+  { title: "💧 친수성·소수성 등급", desc: "표면 처리에 따라 친수성(Hydrophilic) 및 소수성(Hydrophobic) 등급 선택 가능", enTitle: "💧 Hydrophilic & Hydrophobic Grades", enDesc: "Hydrophilic and hydrophobic grades available depending on surface treatment" },
+  { title: "🔥 내열·내화학성", desc: "고온·산·알칼리·유기용제에 강한 안정성으로 가혹 공정에도 적용 가능", enTitle: "🔥 Heat & Chemical Resistance", enDesc: "Stable under high temperatures, acids, alkalis, and organic solvents — suitable for harsh processes" },
+  { title: "✨ 우수한 보강·증점 효과", desc: "실리콘 고무·접착제·실란트의 기계적 강도와 가공성 동시 향상", enTitle: "✨ Excellent Reinforcement & Thickening", enDesc: "Simultaneously improves mechanical strength and processability of silicone rubber, adhesives, and sealants" },
+];
+
+const fumedProducts: ProductDetail[] = [
+  {
+    slug: "fumed-silica-hl-200",
+    name: "HL-200 흄드 실리카",
+    enName: "HL-200 · Hydrophilic Fumed Silica",
+    tagline: "BET 200±25 m²/g · 친수성 표준 등급 — 실리콘 고무·실란트·접착제 보강용",
+    enTagline: "BET 200±25 m²/g · Hydrophilic Standard Grade — Reinforcement for Silicone Rubber, Sealants & Adhesives",
+    description:
+      "HL-200은 사염화규소(SiCl₄)를 1000℃ 이상의 수소·산소 화염 속에서 가수분해하여 제조한 친수성(Hydrophilic) 흄드 실리카(Fumed Silica)입니다. 1차 입자 크기 약 12 nm, BET 비표면적 200 m²/g의 초고비표면적과 3차원 응집 구조를 통해 액상 시스템에 강력한 틱소트로피와 보강 효과를 동시에 부여합니다. 실리콘 고무(HTV/RTV)·실란트·접착제·도료·잉크·불포화 폴리에스테르(UPR)·화장품·의약품 등 거의 모든 첨단 산업에서 보강·증점·소광·요변성·안티-새깅(Anti-Sagging) 기능성 첨가제로 사용됩니다.",
+    enDescription:
+      "HL-200 is a hydrophilic fumed silica produced by flame hydrolysis of silicon tetrachloride (SiCl₄) at temperatures above 1000°C in a hydrogen/oxygen flame. With a primary particle size of approximately 12 nm, BET specific surface area of 200 m²/g, and a 3D aggregate structure, it simultaneously imparts strong thixotropy and reinforcement to liquid systems. It is used as a reinforcing, thickening, matting, thixotropic, and anti-sagging functional additive across virtually all advanced industries — silicone rubber (HTV/RTV), sealants, adhesives, coatings, inks, unsaturated polyester (UPR), cosmetics, and pharmaceuticals.",
+    image: fumedSilicaAsset.url,
+    category: "fumed",
+    features: FS_FEATURES,
+    specs: [
+      { label: "외관 (Appearance)", value: "Fluffy white powder", note: "초경량 백색 분말", enLabel: "Appearance", enNote: "Ultra-light white powder" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 99.8%", note: "초고순도", enLabel: "SiO₂ (Dry Basis)", enNote: "Ultra-high purity" },
+      { label: "표면 특성", value: "Hydrophilic (친수성)", enLabel: "Surface", enNote: "Hydrophilic" },
+      { label: "BET 비표면적", value: "200 ± 25 m²/g", note: "초고비표면적", enLabel: "BET Specific Surface Area", enNote: "Ultra-high SSA" },
+      { label: "1차 입자 크기", value: "약 12 nm", note: "나노 입자", enLabel: "Primary Particle Size", enNote: "Nanoparticle" },
+      { label: "pH (4% 분산액)", value: "3.7 – 4.7", enLabel: "pH (4% dispersion)" },
+      { label: "탭 밀도 (Tapped Density)", value: "약 50 g/L", enLabel: "Tapped Density" },
+      { label: "건조 감량 (105℃, 2hr)", value: "≤ 1.5 %", enLabel: "Loss on Drying (105℃, 2 hr)" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "≤ 2.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)" },
+      { label: "체잔분 (45 µm)", value: "≤ 0.05 %", enLabel: "Sieve Residue (45 µm)" },
+      { label: "Cl⁻ 함량", value: "≤ 250 ppm", enLabel: "Cl⁻ Content" },
+      { label: "Al₂O₃", value: "≤ 0.05 %", enLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "≤ 0.003 %", enLabel: "Fe₂O₃" },
+      { label: "TiO₂", value: "≤ 0.03 %", enLabel: "TiO₂" },
+      { label: "포장 (Package)", value: "10 kg / bag", enLabel: "Package" },
+    ],
+    applications: FS_APPS,
+  },
+];
+
+productCatalog.push(...fumedProducts);
 
 export const getProductBySlug = (slug: string) =>
   productCatalog.find((p) => p.slug === slug);
