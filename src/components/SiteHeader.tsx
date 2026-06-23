@@ -5,7 +5,7 @@ import { productCatalog } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
 const navItems = [
-  { key: "nav.home", href: "/#home" },
+  { key: "nav.home", href: "/" },
   { key: "nav.products", href: "/#products", dropdown: "products" as const },
   { key: "nav.about", href: "/about" },
   { key: "nav.applications", href: "/#applications", dropdown: "applications" as const },
@@ -58,7 +58,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-8">
-        <Link to="/#home" className="inline-flex flex-col leading-tight">
+        <Link to="/" className="inline-flex flex-col leading-tight">
           <span
             className={`text-2xl font-bold tracking-tight transition-colors duration-500 ${
               scrolled ? "text-foreground" : "text-white drop-shadow"
