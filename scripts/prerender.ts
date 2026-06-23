@@ -308,6 +308,38 @@ function buildHtml(template: string, route: Route): string {
   return html;
 }
 
+function priorityFor(path: string): { changefreq: string; priority: string } {
+  if (path === "/") return { changefreq: "weekly", priority: "1.0" };
+  if (path === "/about") return { changefreq: "weekly", priority: "0.9" };
+  if (path.startsWith("/products/")) return { changefreq: "monthly", priority: "0.8" };
+  if (path.startsWith("/applications/")) return { changefreq: "monthly", priority: "0.7" };
+  if (path === "/board") return { changefreq: "daily", priority: "0.7" };
+  return { changefreq: "yearly", priority: "0.3" };
+}
+
+function generateSitemap(): string {
+  const today = new Date().toISOString().slice(0, 10);
+  const urls = routes.map((r) => {
+    const loc = `${BASE_URL}${r.path === "/" ? "/" : r.path + "/"}`;
+    const { changefreq, priority } = priorityFor(r.path);
+    return [
+      `  <url>`,
+      `    <loc>${loc}</loc>`,
+      `    <lastmod>${today}</lastmod>`,
+      `    <changefreq>${changefreq}</changefreq>`,
+      `    <priority>${priority}</priority>`,
+      `  </url>`,
+    ].join("\n");
+  });
+  return [
+    `<?xml version="1.0" encoding="UTF-8"?>`,
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+    ...urls,
+    `</urlset>`,
+    ``,
+  ].join("\n");
+}
+
 function main() {
   if (!existsSync(SOURCE)) {
     console.error(`[prerender] dist/index.html not found at ${SOURCE} — skipping.`);
@@ -322,6 +354,17 @@ function main() {
     count++;
   }
   console.log(`[prerender] generated ${count} static HTML files.`);
+
+  // Auto-generate sitemap.xml from the same route list — keeps Naver/Google/Bing in sync.
+  const sitemapXml = generateSitemap();
+  writeFileSync(resolve(DIST, "sitemap.xml"), sitemapXml);
+  // Also keep the repo-committed public/sitemap.xml current.
+  try {
+    writeFileSync(resolve("public/sitemap.xml"), sitemapXml);
+  } catch {
+    /* ignore in read-only CI */
+  }
+  console.log(`[prerender] generated sitemap.xml with ${routes.length} URLs.`);
 }
 
 if (import.meta.main) {
