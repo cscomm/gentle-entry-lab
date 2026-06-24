@@ -230,26 +230,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Process banner */}
-          <div className="mt-16 overflow-hidden rounded-2xl border border-border">
-            <div className="grid items-center md:grid-cols-2">
-              <div className="relative h-72 md:h-full md:min-h-[360px]">
-                <img src={pProcess} alt={silicaAlt("제조 공정")} className="absolute inset-0 h-full w-full object-cover" />
-              </div>
-              <div className="bg-card p-8 md:p-12">
-                <span className="inline-block rounded-full border border-border bg-background px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-                  {tr("ab.process.tag")}
-                </span>
-                <h3 className="mt-5 text-2xl font-bold md:text-3xl">
-                  {tr("ab.process.title")}<br />
-                  <span className="text-primary">{tr("ab.process.titleAccent")}</span>
-                </h3>
-                <p className="mt-5 text-muted-foreground">
-                  {tr("ab.process.desc")}
-                </p>
-              </div>
-            </div>
-          </div>
 
           {/* SDR Manufacturing Process - 4 step */}
           <div className="mt-20">
@@ -310,6 +290,27 @@ const About = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Process banner */}
+          <div className="mt-16 overflow-hidden rounded-2xl border border-border">
+            <div className="grid items-center md:grid-cols-2">
+              <div className="relative h-72 md:h-full md:min-h-[360px]">
+                <img src={pProcess} alt={silicaAlt("제조 공정")} className="absolute inset-0 h-full w-full object-cover" />
+              </div>
+              <div className="bg-card p-8 md:p-12">
+                <span className="inline-block rounded-full border border-border bg-background px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+                  {tr("ab.process.tag")}
+                </span>
+                <h3 className="mt-5 text-2xl font-bold md:text-3xl">
+                  {tr("ab.process.title")}<br />
+                  <span className="text-primary">{tr("ab.process.titleAccent")}</span>
+                </h3>
+                <p className="mt-5 text-muted-foreground">
+                  {tr("ab.process.desc")}
+                </p>
               </div>
             </div>
           </div>
