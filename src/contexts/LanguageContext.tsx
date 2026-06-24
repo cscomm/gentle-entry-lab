@@ -191,7 +191,7 @@ const dict: Record<string, { ko: string; en: string }> = {
   "ab.process.title": { ko: "광산에서 첨단 산업으로", en: "From Mine to Advanced Industry" },
   "ab.process.titleAccent": { ko: "정밀한 제조 공정", en: "Precision Manufacturing" },
   "ab.process.desc": {
-    ko: "자체 광산에서 채광한 고순도 원광을 1차 가공·정제·용융·미분쇄까지 일관된 공정으로 처리합니다. 단계별 품질 관리(QC)를 통해 편차 없는 순도와 균일한 입도를 보장합니다.",
+    ko: "광산에서 채광한 고순도 원광을 1차 가공·정제·용융·미분쇄까지 일관된 공정으로 처리합니다. 단계별 품질 관리(QC)를 통해 편차 없는 순도와 균일한 입도를 보장합니다.",
     en: "High-purity ore from our own mine is processed through an integrated workflow — primary processing, refining, melting, and micro-grinding. Stage-by-stage QC ensures consistent purity and uniform particle size.",
   },
   "ab.prod.tag": { ko: "PRODUCTION PROCESS", en: "PRODUCTION PROCESS" },
