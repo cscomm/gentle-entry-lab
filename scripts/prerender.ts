@@ -365,6 +365,43 @@ function main() {
     /* ignore in read-only CI */
   }
   console.log(`[prerender] generated sitemap.xml with ${routes.length} URLs.`);
+
+  // ── IndexNow: notify Naver (and other participating engines) of all URLs ──
+  void notifyIndexNow();
+}
+
+const INDEXNOW_KEY = "550e8400e29b41d4a716446655440000";
+const INDEXNOW_HOST = "silica.co.kr";
+
+async function notifyIndexNow() {
+  // Skip when explicitly disabled (e.g. local builds).
+  if (process.env.SKIP_INDEXNOW === "1") {
+    console.log("[indexnow] skipped (SKIP_INDEXNOW=1).");
+    return;
+  }
+  const urlList = routes.map((r) => `${BASE_URL}${r.path === "/" ? "/" : r.path + "/"}`);
+  const payload = {
+    host: INDEXNOW_HOST,
+    key: INDEXNOW_KEY,
+    keyLocation: `${BASE_URL}/${INDEXNOW_KEY}.txt`,
+    urlList,
+  };
+  const endpoints = [
+    "https://searchadvisor.naver.com/indexnow",
+    "https://api.indexnow.org/indexnow",
+  ];
+  for (const ep of endpoints) {
+    try {
+      const res = await fetch(ep, {
+        method: "POST",
+        headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify(payload),
+      });
+      console.log(`[indexnow] ${ep} -> ${res.status} (${urlList.length} URLs)`);
+    } catch (e) {
+      console.warn(`[indexnow] ${ep} failed:`, (e as Error).message);
+    }
+  }
 }
 
 if (import.meta.main) {
