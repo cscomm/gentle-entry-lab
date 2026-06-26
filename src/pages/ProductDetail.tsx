@@ -492,6 +492,7 @@ const ProductDetail = () => {
           </Link>
         </div>
       </section>
+      )}
 
       {/* Related */}
       <section className="bg-secondary/40 py-20">
