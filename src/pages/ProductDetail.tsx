@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap, Wrench, Paintbrush, Pen, Link2, Layers, Battery } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
@@ -316,7 +316,128 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SLH-380S Detailed Applications */}
+      {product.slug === "fumed-silica-slh-380s" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              APPLICATIONS
+            </span>
+          </div>
+          <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 {isEn ? "Application Areas" : "적용 분야"}</h3>
+          <p className="mt-4 text-muted-foreground">
+            {isEn
+              ? "SLH-380S is used in a wide variety of industrial fields."
+              : "SLH-380S는 다양한 산업 분야에서 사용됩니다."}
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                icon: Wrench,
+                title: isEn ? "① Silicone & Sealants" : "① 실리콘 및 실란트",
+                uses: isEn
+                  ? ["RTV Silicone", "Structural Sealants", "Construction Sealants", "Automotive Sealants"]
+                  : ["RTV 실리콘", "구조용 실란트", "건축용 실란트", "자동차 실란트"],
+                effects: isEn
+                  ? ["Viscosity increase", "Sag prevention", "Improved mechanical strength", "Improved workability"]
+                  : ["점도 증가", "처짐 방지", "기계적 강도 향상", "작업성 개선"],
+              },
+              {
+                icon: Paintbrush,
+                title: isEn ? "② Coatings & Paints" : "② 코팅 및 도료",
+                uses: isEn
+                  ? ["Industrial Paints", "Automotive Paints", "UV Coatings", "Wood Coatings"]
+                  : ["산업용 도료", "자동차 도료", "UV 코팅", "목재 코팅"],
+                effects: isEn
+                  ? ["Anti-settling", "Improved scratch resistance", "Viscosity stabilization", "Matte effect", "Improved storage stability"]
+                  : ["침강 방지", "내스크래치성 향상", "점도 안정화", "무광 효과", "저장 안정성 향상"],
+              },
+              {
+                icon: Pen,
+                title: isEn ? "③ Inks" : "③ 잉크",
+                uses: isEn ? ["UV Ink", "Screen Ink", "Digital Ink"] : ["UV Ink", "Screen Ink", "Digital Ink"],
+                effects: isEn
+                  ? ["Pigment dispersion", "Anti-settling", "Improved print quality", "Viscosity control"]
+                  : ["안료 분산", "침강 방지", "인쇄 품질 향상", "점도 조절"],
+              },
+              {
+                icon: Link2,
+                title: isEn ? "④ Adhesives" : "④ 접착제",
+                uses: isEn ? ["Epoxy", "Urethane", "Acrylic Adhesives"] : ["에폭시", "우레탄", "아크릴 접착제"],
+                effects: isEn
+                  ? ["Flow control", "Improved tack", "Improved storage stability"]
+                  : ["흐름성 제어", "점착성 개선", "저장 안정성 향상"],
+              },
+              {
+                icon: Layers,
+                title: isEn ? "⑤ Composites" : "⑤ 복합소재",
+                uses: isEn ? ["CFRP", "GFRP", "Epoxy Composites"] : ["CFRP", "GFRP", "에폭시 복합재"],
+                effects: isEn
+                  ? ["Improved strength", "Improved impact resistance", "Crack prevention"]
+                  : ["강도 향상", "충격 저항 향상", "균열 방지"],
+              },
+              {
+                icon: Battery,
+                title: isEn ? "⑥ Battery Materials" : "⑥ 배터리 소재",
+                uses: isEn ? ["Lithium-ion Batteries", "Electrode Slurries"] : ["리튬이온 배터리", "전극 슬러리"],
+                effects: isEn
+                  ? ["Viscosity control", "Dispersion stabilization", "Improved slurry uniformity"]
+                  : ["점도 조절", "분산 안정화", "슬러리 균일성 향상"],
+              },
+              {
+                icon: Sparkles,
+                title: isEn ? "⑦ Cosmetics" : "⑦ 화장품",
+                uses: isEn ? ["Powder", "Cream", "Sunscreen", "Makeup Products"] : ["파우더", "크림", "선크림", "메이크업 제품"],
+                effects: isEn
+                  ? ["Improved feel", "Oil absorption", "Viscosity control"]
+                  : ["사용감 개선", "유분 흡수", "점도 조절"],
+              },
+            ].map((app) => (
+              <div
+                key={app.title}
+                className="overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="flex items-center gap-3 border-b border-border bg-secondary/30 px-6 py-4">
+                  <app.icon className="h-5 w-5 text-primary" />
+                  <h4 className="font-bold">{app.title}</h4>
+                </div>
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      {isEn ? "Uses" : "용도"}
+                    </h5>
+                    <ul className="space-y-1.5">
+                      {app.uses.map((it, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      {isEn ? "Effects" : "효과"}
+                    </h5>
+                    <ul className="space-y-1.5">
+                      {app.effects.map((it, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Applications — visual cards with images */}
+      {product.slug !== "fumed-silica-slh-380s" && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -371,6 +492,7 @@ const ProductDetail = () => {
           </Link>
         </div>
       </section>
+      )}
 
       {/* Related */}
       <section className="bg-secondary/40 py-20">
