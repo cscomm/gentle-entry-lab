@@ -42,8 +42,8 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-b-grade" },
   { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-c-grade" },
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
-  { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
+  { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];
 
@@ -54,8 +54,8 @@ const products = [
   { img: gradeB, slug: "fused-silica-b-grade", title: "B등급 용융실리카", enTitle: "Grade B Fused Silica", desc: "정밀 주조 및 첨단 산업용 고품질 용융실리카", enDesc: "High-quality fused silica for precision casting and advanced industries.", cat: "B등급 용융실리카" },
   { img: gradeC, slug: "fused-silica-c-grade", title: "C등급 용융실리카", enTitle: "Grade C Fused Silica", desc: "산업용 일반 공정에 최적화된 경제형 용융실리카", enDesc: "Economical fused silica optimized for general industrial processes.", cat: "C등급 용융실리카" },
   { img: precipitatedSilicaImg, slug: "precipitated-silica", title: "침전 실리카", enTitle: "Precipitated Silica", desc: "고무 보강·페인트 소포·식의약 고결방지 등 산업 전반에서 가장 널리 쓰이는 합성 무정형 SiO₂", enDesc: "Synthetic amorphous SiO₂ widely used as rubber reinforcement, paint defoamer, and food/pharma anti-caking agent.", cat: "침전 실리카" },
-  { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", cat: "실리카겔" },
   { img: fumedSilica, slug: "fumed-silica", title: "흄드 실리카", enTitle: "Fumed Silica", desc: "SiCl₄ 화염가수분해 기반 나노급 무정형 SiO₂ — 실리콘 고무·실란트·접착제·도료·전자재료 전반 보강·증점·요변성 첨가제", enDesc: "Nano-scale amorphous SiO₂ from SiCl₄ flame hydrolysis — reinforcing, thickening, thixotropic additive across silicone rubber, sealants, adhesives, coatings and electronics.", cat: "흄드 실리카" },
+  { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", cat: "실리카겔" },
   { img: pProcess, slug: "high-purity-quartz", title: "천연 고순도규석", enTitle: "Natural High-Purity Quartz", desc: "엄선된 광원에서 채광한 고순도 규석", enDesc: "High-purity quartz mined from carefully selected ore deposits.", cat: "천연 고순도규석" },
 ];
 
@@ -73,9 +73,9 @@ const applicationCategories: { label: string; en: string; href?: string }[] = [
   { label: "광학 산업", en: "Optics" },
   { label: "태양광 산업", en: "Solar" },
   { label: "전자 소재", en: "Electronic Materials" },
-  { label: "실리카겔", en: "Silica Gel", href: "/applications/silica-gel" },
   { label: "침전 실리카", en: "Precipitated Silica", href: "/applications/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/applications/fumed-silica" },
+  { label: "실리카겔", en: "Silica Gel", href: "/applications/silica-gel" },
 ];
 
 const news = [
