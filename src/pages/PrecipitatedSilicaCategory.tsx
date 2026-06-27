@@ -38,7 +38,7 @@ const PrecipitatedSilicaCategory = () => {
 
       {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {products.map((p) => (
             <Link
               key={p.slug}
