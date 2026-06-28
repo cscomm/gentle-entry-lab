@@ -43,9 +43,9 @@ export const productCatalog: ProductDetail[] = [
     tagline: "반도체 공정의 신뢰를 완성하는 100% 무정형 초정밀 소재",
     enTagline: "100% Amorphous Ultra-Precision Material That Delivers Semiconductor-Grade Reliability",
     description:
-      "초고순도 용융 실리카 A등급은 99.9% 이상의 SiO₂ 순도와 100% 무정형 구조를 갖춘 최고 등급의 용융 실리카입니다. 반도체·광학·항공/방산·의료·에너지 등 최고 수준의 신뢰성이 요구되는 첨단 산업에 공급됩니다.",
+      "당사가 공급하는 A급 용융 실리카(Fused Silica)는 천연 석영 원석을 초고온에서 용융 및 급냉 과정을 거쳐 제조된 비정질(Amorphous) 이산화규소(SiO₂) 소재로, 반도체·정밀 화학·광학·고온 내열 소재 등 첨단 산업 분야의 핵심 원료로서 그 가치를 인정받고 있습니다. 본 제품은 일반 용융 실리카 대비 엄격한 품질 관리를 통해 불순물 함량을 획기적으로 저감하였으며, 우수한 물리적 특성과 화학적 안정성을 동시에 확보하여 까다로운 공정 환경에서도 최상의 성능을 발휘하도록 설계되었습니다.",
     enDescription:
-      "Grade A Ultra-High Purity Fused Silica is the highest-grade fused silica with ≥99.9% SiO₂ purity and a 100% amorphous structure. It is supplied to cutting-edge industries demanding the utmost reliability, including semiconductors, optics, aerospace/defense, medical, and energy.",
+      "Our Grade A Fused Silica is an amorphous silicon dioxide (SiO₂) material produced by melting natural quartz at ultra-high temperatures and rapidly quenching it. It is recognized as a core raw material across advanced industries such as semiconductors, precision chemicals, optics, and high-temperature refractory applications. Compared to standard fused silica, this product dramatically reduces impurity content through rigorous quality control while simultaneously securing outstanding physical properties and chemical stability — delivering top-tier performance even in the most demanding processes.",
     image: gradeA,
     detailImage: gradeADetail,
     features: [
@@ -54,7 +54,7 @@ export const productCatalog: ProductDetail[] = [
       { title: "🧼 초고순도 관리", desc: "금속 불순물 합계 < 0.03%, 반도체 수율 저하 요인 차단", enTitle: "🧼 Ultra-High Purity Management", enDesc: "Total metallic impurities < 0.03% — eliminates yield-loss factors in semiconductor production" },
       { title: "⚡ 고전기절연성", desc: "EC < 3 µs/cm, Cl < 3 ppm — 전자 부품 절연 최적화", enTitle: "⚡ Superior Electrical Insulation", enDesc: "EC < 3 µs/cm, Cl < 3 ppm — optimized insulation for electronic components" },
       { title: "🔧 맞춤형 입도", desc: "60mm 과립부터 1µm(12500 메쉬) 미분까지 가공 가능", enTitle: "🔧 Custom Particle Sizes", enDesc: "Processable from 60 mm granules down to 1 µm (12,500 mesh) fine powder" },
-      { title: "✅ 안정 공급", desc: "엄격한 QC와 자체 광산 기반의 안정적 공급망", enTitle: "✅ Stable Supply", enDesc: "Stable supply chain backed by strict QC and our own silica mine" },
+      { title: "✅ 안정 공급", desc: "엄격한 QC 기반의 안정적 공급망", enTitle: "✅ Stable Supply", enDesc: "Stable supply chain backed by strict quality control" },
     ],
     specs: [
       { label: "SiO₂ (순도)", value: "≥ 99.9%", note: "초고순도", enLabel: "SiO₂ (Purity)", enNote: "Ultra-high purity" },

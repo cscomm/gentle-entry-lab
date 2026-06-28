@@ -219,6 +219,135 @@ const ProductDetail = () => {
         </div>
       </section>
 
+      {/* Grade A Detailed Technical Content */}
+      {isGradeA && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {isEn ? "Detailed Technical Profile" : "상세 기술 프로파일"}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {isEn
+              ? "An in-depth look at the chemical, physical, electrical, and moisture-control characteristics that define Grade A Fused Silica."
+              : "A급 용융 실리카(Fused Silica)의 화학·물리·전기·수분 관리 측면 핵심 특성을 정밀하게 정리하였습니다."}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: FlaskConical,
+                tag: "01",
+                title: isEn ? "Chemical Purity & Impurity Control" : "화학적 순도 및 불순물 관리",
+                intro: isEn
+                  ? "SiO₂ purity ≥ 99.9% — total metallic impurities controlled to the tens-of-ppm level. Alkali and transition metals that are critical contamination sources in semiconductor and display processes are suppressed to trace levels."
+                  : "SiO₂ 순도 99.9% 이상 — 금속 불순물 합계를 수십 ppm 수준으로 제어하였으며, 반도체·디스플레이 공정의 치명적 오염원인 알칼리·천이 금속을 극미량으로 통제했습니다.",
+                points: isEn
+                  ? [
+                      "Al < 0.01% — minimizes reactivity with refractory bricks and ceramics, preventing structural defects near melting temperatures",
+                      "Fe < 0.005% — suppresses infrared absorption and coloration, securing optical transparency and insulation",
+                      "K · Na · Ca each < 0.003% — virtually at detection limit, ensuring reliability under high-voltage, high-temperature conditions",
+                      "Mg < 0.001% — inhibits crystal nucleation, helping maintain the amorphous structure",
+                    ]
+                  : [
+                      "Al < 0.01% — 내화벽돌·세라믹과의 반응성 최소화, 용융점 부근 구조적 결함 방지",
+                      "Fe < 0.005% — 적외선 흡수 및 착색 억제로 광학적 투명성·절연성 확보",
+                      "K · Na · Ca 각 < 0.003% — 검출 한계 수준으로 통제, 고전압·고온 환경 신뢰성 보장",
+                      "Mg < 0.001% — 결정핵 형성 억제로 무정형 구조 유지에 기여",
+                    ],
+              },
+              {
+                icon: Gem,
+                tag: "02",
+                title: isEn ? "Physical Properties & Structural Excellence" : "물리적 특성 및 구조적 우수성",
+                intro: isEn
+                  ? "A 100% amorphous structure with extremely low thermal expansion, uniform density, and high surface hardness — built for precision and durability."
+                  : "100% 무정형 구조와 초저열팽창, 균일한 밀도, 높은 표면 경도를 동시에 갖춰 정밀성과 내구성을 보장합니다.",
+                points: isEn
+                  ? [
+                      "100% amorphous — no anisotropy, uniform expansion/contraction, outstanding thermal-shock resistance",
+                      "CTE < 0.6 ×10⁻⁶/°C — near-zero dimensional change even with rapid heating/cooling above 1000°C",
+                      "Density 1.8 – 2.4 ×10³ kg/m³ — minimized voids and cracks, reducing chipping during machining",
+                      "Mohs hardness 7 — quartz-level hardness for excellent wear resistance in abrasive environments",
+                    ]
+                  : [
+                      "100% 무정형 — 이방성 없음, 균일한 팽창·수축으로 열충격(Thermal Shock)에 매우 강함",
+                      "열팽창계수 < 0.6 ×10⁻⁶/°C — 1000°C 이상의 급격한 승강온에도 치수 변화 극소",
+                      "밀도 1.8 – 2.4 ×10³ kg/m³ — 기공(Void)·균열(Crack) 최소화, 가공 시 칩(Chip) 발생 억제",
+                      "모스 경도 7 — 천연 석영 수준의 표면 경도로 마모 환경에서 우수한 내구성",
+                    ],
+              },
+              {
+                icon: Zap,
+                tag: "03",
+                title: isEn ? "Electrical Insulation & Chemical Stability" : "전기적 절연성 및 화학적 안정성",
+                intro: isEn
+                  ? "Tight control of ionic impurities, chloride, and pH delivers maximum insulation, corrosion protection, and process predictability."
+                  : "이온성 불순물·염소·pH를 정밀 관리하여 최고 수준의 절연성과 부식 방지, 공정 예측 가능성을 제공합니다.",
+                points: isEn
+                  ? [
+                      "Aqueous extract EC < 3 µs/cm — minimized leakage current, ideal for transformers, RF substrates, semiconductor cleaning lines",
+                      "Aqueous extract Cl < 3 ppm — effectively prevents corrosion of stainless steel and aluminum in chemical/steam environments",
+                      "Aqueous extract pH 6.5 ± 1 — neutral stability simplifies process control in precision cleaning and pharmaceutical packaging",
+                    ]
+                  : [
+                      "수성추출액 EC < 3 µs/cm — 누설 전류 최소화, 변압기·고주파 기판·반도체 세정 설비에 최적",
+                      "수성추출액 Cl < 3 ppm — 스테인리스강·알루미늄 부식 효과적 방지, 화학·고온 수증기 환경 적합",
+                      "수성추출액 pH 6.5 ± 1 — 중성 안정으로 정밀 세정·의약품 보관 용기 등 공정 관리 용이",
+                    ],
+              },
+              {
+                icon: Thermometer,
+                tag: "04",
+                title: isEn ? "Moisture & Dryness Management (Moisture < 0.1%)" : "수분 및 건도 관리 (Moisture < 0.1%)",
+                intro: isEn
+                  ? "Moisture maintained below 0.1% suppresses surface Si-OH formation, minimizes outgassing in high-temperature vacuum, and secures dimensional stability."
+                  : "수분 함량 0.1% 미만 유지로 표면 수산기(Si-OH) 형성을 억제하여 고온 진공 환경에서의 가스 방출(Outgassing)을 최소화하고 치수 안정성을 확보합니다.",
+                points: isEn
+                  ? [
+                      "Suppresses surface hydroxyl (Si-OH) formation caused by moisture absorption",
+                      "Minimizes outgassing in high-temperature, vacuum environments",
+                      "Maintains dimensional stability even below the glass transition point (Tg)",
+                      "Solves transmittance degradation issues in IR sensor windows and UV lamp housings",
+                    ]
+                  : [
+                      "흡습에 의한 표면 수산기(Si-OH) 형성 억제",
+                      "고온 진공 환경에서의 가스 방출(Outgassing) 최소화",
+                      "유리 전이점(Tg) 이하에서도 치수 안정성 확보",
+                      "적외선 센서 윈도우·UV 램프 하우징 소재의 광투과율 저하 문제 해결",
+                    ],
+              },
+            ].map((sec) => (
+              <div
+                key={sec.tag}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/30 p-8 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
+                <div className="relative">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <sec.icon className="h-6 w-6" />
+                    </div>
+                    <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
+                  </div>
+                  <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {sec.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* SL-A81 Detailed Content */}
       {product.slug === "precipitated-silica-sl-a81" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
