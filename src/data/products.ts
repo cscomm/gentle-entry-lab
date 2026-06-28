@@ -43,9 +43,9 @@ export const productCatalog: ProductDetail[] = [
     tagline: "반도체 공정의 신뢰를 완성하는 100% 무정형 초정밀 소재",
     enTagline: "100% Amorphous Ultra-Precision Material That Delivers Semiconductor-Grade Reliability",
     description:
-      "초고순도 용융 실리카 A등급은 99.9% 이상의 SiO₂ 순도와 100% 무정형 구조를 갖춘 최고 등급의 용융 실리카입니다. 반도체·광학·항공/방산·의료·에너지 등 최고 수준의 신뢰성이 요구되는 첨단 산업에 공급됩니다.",
+      "당사가 공급하는 A급 용융 실리카(Fused Silica)는 천연 석영 원석을 초고온에서 용융 및 급냉 과정을 거쳐 제조된 비정질(Amorphous) 이산화규소(SiO₂) 소재로, 반도체·정밀 화학·광학·고온 내열 소재 등 첨단 산업 분야의 핵심 원료로서 그 가치를 인정받고 있습니다. 본 제품은 일반 용융 실리카 대비 엄격한 품질 관리를 통해 불순물 함량을 획기적으로 저감하였으며, 우수한 물리적 특성과 화학적 안정성을 동시에 확보하여 까다로운 공정 환경에서도 최상의 성능을 발휘하도록 설계되었습니다.",
     enDescription:
-      "Grade A Ultra-High Purity Fused Silica is the highest-grade fused silica with ≥99.9% SiO₂ purity and a 100% amorphous structure. It is supplied to cutting-edge industries demanding the utmost reliability, including semiconductors, optics, aerospace/defense, medical, and energy.",
+      "Our Grade A Fused Silica is an amorphous silicon dioxide (SiO₂) material produced by melting natural quartz at ultra-high temperatures and rapidly quenching it. It is recognized as a core raw material across advanced industries such as semiconductors, precision chemicals, optics, and high-temperature refractory applications. Compared to standard fused silica, this product dramatically reduces impurity content through rigorous quality control while simultaneously securing outstanding physical properties and chemical stability — delivering top-tier performance even in the most demanding processes.",
     image: gradeA,
     detailImage: gradeADetail,
     features: [
