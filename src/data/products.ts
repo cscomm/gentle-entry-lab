@@ -54,7 +54,7 @@ export const productCatalog: ProductDetail[] = [
       { title: "🧼 초고순도 관리", desc: "금속 불순물 합계 < 0.03%, 반도체 수율 저하 요인 차단", enTitle: "🧼 Ultra-High Purity Management", enDesc: "Total metallic impurities < 0.03% — eliminates yield-loss factors in semiconductor production" },
       { title: "⚡ 고전기절연성", desc: "EC < 3 µs/cm, Cl < 3 ppm — 전자 부품 절연 최적화", enTitle: "⚡ Superior Electrical Insulation", enDesc: "EC < 3 µs/cm, Cl < 3 ppm — optimized insulation for electronic components" },
       { title: "🔧 맞춤형 입도", desc: "60mm 과립부터 1µm(12500 메쉬) 미분까지 가공 가능", enTitle: "🔧 Custom Particle Sizes", enDesc: "Processable from 60 mm granules down to 1 µm (12,500 mesh) fine powder" },
-      { title: "✅ 안정 공급", desc: "엄격한 QC와 자체 광산 기반의 안정적 공급망", enTitle: "✅ Stable Supply", enDesc: "Stable supply chain backed by strict QC and our own silica mine" },
+      { title: "✅ 안정 공급", desc: "엄격한 QC 기반의 안정적 공급망", enTitle: "✅ Stable Supply", enDesc: "Stable supply chain backed by strict quality control" },
     ],
     specs: [
       { label: "SiO₂ (순도)", value: "≥ 99.9%", note: "초고순도", enLabel: "SiO₂ (Purity)", enNote: "Ultra-high purity" },
