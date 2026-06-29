@@ -6,7 +6,7 @@ import { useLang } from "@/contexts/LanguageContext";
 
 const PrecipitatedSilicaApplications = () => {
   const { lang } = useLang();
-  const isEn = lang === "en";
+  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
 
   const sections = [
     {

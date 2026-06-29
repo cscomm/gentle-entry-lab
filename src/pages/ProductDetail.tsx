@@ -80,7 +80,7 @@ const ProductDetail = () => {
   const product = slug ? getProductBySlug(slug) : undefined;
   const location = useLocation();
   const { t, lang } = useLang();
-  const isEn = lang === "en";
+  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
   const trApp = (name: string) => t(`app.${name}`);
 
   useEffect(() => {

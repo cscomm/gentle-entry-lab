@@ -10,7 +10,7 @@ import { useLang } from "@/contexts/LanguageContext";
 const PrecipitatedSilicaCategory = () => {
   const { lang, t } = useLang();
   const products = getProductsByCategory("precipitated");
-  const isEn = lang === "en";
+  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
 
   return (
     <div className="min-h-screen bg-background text-foreground">
