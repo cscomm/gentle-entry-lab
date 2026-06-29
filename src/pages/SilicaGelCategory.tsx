@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { ArrowRight, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
@@ -9,7 +10,7 @@ import { useLang } from "@/contexts/LanguageContext";
 const SilicaGelCategory = () => {
   const { lang, t } = useLang();
   const products = getProductsByCategory("silica-gel");
-  const isEn = lang === "en";
+  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -48,13 +49,13 @@ const SilicaGelCategory = () => {
               <div className="aspect-square overflow-hidden bg-secondary/40">
                 <img
                   src={p.image}
-                  alt={silicaAlt(isEn ? p.enName : p.name)}
+                  alt={silicaAlt(pick(lang, p.name, p.enName, p.jaName))}
                   loading="lazy"
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>
               <div className="p-4">
-                <h3 className="text-sm font-semibold leading-snug">{isEn ? p.enName : p.name}</h3>
+                <h3 className="text-sm font-semibold leading-snug">{pick(lang, p.name, p.enName, p.jaName)}</h3>
                 {!isEn && <p className="mt-1 text-[11px] text-muted-foreground line-clamp-1">{p.enName}</p>}
                 <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-primary transition group-hover:gap-2">
                   {t("products.detail")} <ArrowRight className="h-3.5 w-3.5" />

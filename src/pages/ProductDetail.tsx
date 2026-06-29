@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap, Wrench, Paintbrush, Pen, Link2, Layers, Battery } from "lucide-react";
@@ -79,7 +80,7 @@ const ProductDetail = () => {
   const product = slug ? getProductBySlug(slug) : undefined;
   const location = useLocation();
   const { t, lang } = useLang();
-  const isEn = lang === "en";
+  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
   const trApp = (name: string) => t(`app.${name}`);
 
   useEffect(() => {
@@ -123,7 +124,7 @@ const ProductDetail = () => {
             <Sparkles className="h-3.5 w-3.5 text-primary-glow" />
             {product.enName.toUpperCase()}
           </span>
-          <h1 className="mt-4 text-4xl font-bold md:text-6xl drop-shadow-lg">{isEn ? product.enName : product.name}</h1>
+          <h1 className="mt-4 text-4xl font-bold md:text-6xl drop-shadow-lg">{pick(lang, product.name, product.enName, product.jaName)}</h1>
           <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{isEn ? product.enTagline || product.tagline : product.tagline}</p>
         </div>
       </section>
@@ -638,7 +639,7 @@ const ProductDetail = () => {
                   <img src={p.image} alt={silicaAlt(p.name)} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-semibold">{isEn ? p.enName : p.name}</h3>
+                  <h3 className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</h3>
                   {!isEn && <p className="mt-1 text-xs text-muted-foreground">{p.enName}</p>}
                 </div>
               </Link>

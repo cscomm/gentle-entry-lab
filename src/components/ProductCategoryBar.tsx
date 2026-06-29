@@ -4,15 +4,15 @@ import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import { productCatalog } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
-const categories: { label: string; en: string; slug?: string; href?: string }[] = [
-  { label: "전체 제품", en: "All Products", href: "/#products" },
-  { label: "A등급 용융실리카", en: "Grade A Fused Silica", slug: "fused-silica-a-grade" },
-  { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-b-grade" },
-  { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-c-grade" },
-  { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
-  { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
-  { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
-  { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
+const categories: { label: string; en: string; ja: string; slug?: string; href?: string }[] = [
+  { label: "전체 제품", en: "All Products", ja: "全製品", href: "/#products" },
+  { label: "A등급 용융실리카", en: "Grade A Fused Silica", ja: "Aグレード溶融シリカ", slug: "fused-silica-a-grade" },
+  { label: "B등급 용융실리카", en: "Grade B Fused Silica", ja: "Bグレード溶融シリカ", slug: "fused-silica-b-grade" },
+  { label: "C등급 용융실리카", en: "Grade C Fused Silica", ja: "Cグレード溶融シリカ", slug: "fused-silica-c-grade" },
+  { label: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ", href: "/products/precipitated-silica" },
+  { label: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ", href: "/products/fumed-silica" },
+  { label: "실리카겔", en: "Silica Gel", ja: "シリカゲル", href: "/products/silica-gel" },
+  { label: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英", slug: "high-purity-quartz" },
 ];
 
 interface Props {
@@ -67,7 +67,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
             ? "border-primary bg-primary text-primary-foreground"
             : "border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
         }`;
-        const label = lang === "en" ? cat.en : cat.label;
+        const label = lang === "ja" ? cat.ja : lang === "en" ? cat.en : cat.label;
         if (cat.href) {
           return (
             <Link key={cat.label} to={cat.href} className={className}>
@@ -87,7 +87,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder={lang === "en" ? "Search" : "검색"}
+          placeholder={lang === "ja" ? "検索" : lang === "en" ? "Search" : "검색"}
           className="h-9 w-36 rounded-full border border-border bg-card pl-8 pr-3 text-xs outline-none transition focus:border-primary md:w-44 md:text-sm"
         />
       </form>
