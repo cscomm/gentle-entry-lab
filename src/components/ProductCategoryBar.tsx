@@ -87,7 +87,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
-          placeholder={lang === "en" ? "Search" : "검색"}
+          placeholder={lang === "ja" ? "検索" : lang === "en" ? "Search" : "검색"}
           className="h-9 w-36 rounded-full border border-border bg-card pl-8 pr-3 text-xs outline-none transition focus:border-primary md:w-44 md:text-sm"
         />
       </form>
