@@ -67,7 +67,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
             ? "border-primary bg-primary text-primary-foreground"
             : "border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
         }`;
-        const label = lang === "en" ? cat.en : cat.label;
+        const label = lang === "ja" ? cat.ja : lang === "en" ? cat.en : cat.label;
         if (cat.href) {
           return (
             <Link key={cat.label} to={cat.href} className={className}>
