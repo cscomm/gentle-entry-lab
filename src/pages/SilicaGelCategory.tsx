@@ -10,13 +10,23 @@ import { useLang } from "@/contexts/LanguageContext";
 const SilicaGelCategory = () => {
   const { lang, t } = useLang();
   const products = getProductsByCategory("silica-gel");
-  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
+  const tri = (ko: string, en: string, ja: string) => pick(lang, ko, en, ja);
+
+  const title = tri(
+    "실리카겔 · Silica Gel",
+    "Silica Gel · 실리카겔",
+    "シリカゲル · Silica Gel"
+  );
+  const desc = tri(
+    "고순도 실리카겔 및 미분 실리카 제품 — 미분 실리카, 안티블로킹제, 소광제, 다양한 기공 구조의 실리카겔까지 폭넓은 라인업을 제공합니다.",
+    "High-purity silica gel and micronized silica products — micronized powder, anti-blocking, matting agents, and a full range of pore-controlled silica gels.",
+    "高純度シリカゲルおよび微粉シリカ製品 — 微粉シリカ、アンチブロッキング剤、艶消し剤、各種細孔構造のシリカゲルまで幅広いラインアップをご提供します。"
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader transparentAtTop={false} />
 
-      {/* Hero */}
       <section className="bg-gradient-to-br from-secondary/60 via-background to-background pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="mx-auto max-w-7xl px-6">
           <Link to="/#products" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
@@ -26,18 +36,11 @@ const SilicaGelCategory = () => {
             <Sparkles className="h-3.5 w-3.5 text-primary" />
             SILICA GEL
           </span>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
-            {isEn ? "Silica Gel · 실리카겔" : "실리카겔 · Silica Gel"}
-          </h1>
-          <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">
-            {isEn
-              ? "High-purity silica gel and micronized silica products — micronized powder, anti-blocking, matting agents, and a full range of pore-controlled silica gels."
-              : "고순도 실리카겔 및 미분 실리카 제품 — 미분 실리카, 안티블로킹제, 소광제, 다양한 기공 구조의 실리카겔까지 폭넓은 라인업을 제공합니다."}
-          </p>
+          <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">{title}</h1>
+          <p className="mt-5 max-w-2xl text-base text-muted-foreground md:text-lg">{desc}</p>
         </div>
       </section>
 
-      {/* Product grid */}
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
           {products.map((p) => (
@@ -56,7 +59,7 @@ const SilicaGelCategory = () => {
               </div>
               <div className="p-4">
                 <h3 className="text-sm font-semibold leading-snug">{pick(lang, p.name, p.enName, p.jaName)}</h3>
-                {!isEn && <p className="mt-1 text-[11px] text-muted-foreground line-clamp-1">{p.enName}</p>}
+                {lang === "ko" && <p className="mt-1 text-[11px] text-muted-foreground line-clamp-1">{p.enName}</p>}
                 <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-primary transition group-hover:gap-2">
                   {t("products.detail")} <ArrowRight className="h-3.5 w-3.5" />
                 </span>
