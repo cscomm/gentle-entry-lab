@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, ReactNode } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export type Lang = "ko" | "en" | "ja";
 
@@ -9,6 +10,10 @@ interface LangCtx {
 }
 
 const LanguageContext = createContext<LangCtx | undefined>(undefined);
+
+const SUPPORTED: readonly Lang[] = ["ko", "en", "ja"];
+const isLang = (v: string | undefined): v is Lang =>
+  !!v && (SUPPORTED as readonly string[]).includes(v);
 
 const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   // Nav
@@ -245,17 +250,28 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === "undefined") return "ko";
-    return (localStorage.getItem("lang") as Lang) || "ko";
-  });
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const seg = location.pathname.split("/")[1];
+  const lang: Lang = isLang(seg) ? seg : "ko";
 
   useEffect(() => {
-    localStorage.setItem("lang", lang);
-    document.documentElement.lang = lang;
+    try {
+      localStorage.setItem("lang", lang);
+    } catch {
+      /* ignore */
+    }
+    if (typeof document !== "undefined") document.documentElement.lang = lang;
   }, [lang]);
 
-  const setLang = (l: Lang) => setLangState(l);
+  const setLang = (l: Lang) => {
+    // Swap the lang segment in the current URL and navigate.
+    const rest = location.pathname.replace(/^\/(ko|en|ja)(?=\/|$)/, "") || "";
+    const next = `/${l}${rest}${location.search}${location.hash}`;
+    navigate(next);
+  };
+
   const t = (key: string) => {
     const e = dict[key];
     if (!e) return key;
