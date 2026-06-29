@@ -257,6 +257,17 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
             >
               EN
             </button>
+            <button
+              onClick={() => setLang("ja")}
+              className={`rounded-full px-2.5 py-1 transition ${
+                lang === "ja"
+                  ? "bg-primary text-primary-foreground"
+                  : scrolled ? "text-muted-foreground hover:text-foreground" : "text-white/80 hover:text-white"
+              }`}
+              aria-label="日本語"
+            >
+              JA
+            </button>
           </div>
         </nav>
       </div>
