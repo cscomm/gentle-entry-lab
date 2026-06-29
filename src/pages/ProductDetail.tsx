@@ -80,7 +80,8 @@ const ProductDetail = () => {
   const product = slug ? getProductBySlug(slug) : undefined;
   const location = useLocation();
   const { t, lang } = useLang();
-  const isEn = lang !== "ko"; // ja falls back to English for hardcoded literal blocks
+  const tri = (ko: string, en: string, ja: string) =>
+    lang === "ja" ? ja : lang === "en" ? en : ko;
   const trApp = (name: string) => t(`app.${name}`);
 
   useEffect(() => {
@@ -125,7 +126,7 @@ const ProductDetail = () => {
             {product.enName.toUpperCase()}
           </span>
           <h1 className="mt-4 text-4xl font-bold md:text-6xl drop-shadow-lg">{pick(lang, product.name, product.enName, product.jaName)}</h1>
-          <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{isEn ? product.enTagline || product.tagline : product.tagline}</p>
+          <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{pick(lang, product.tagline, product.enTagline, product.jaTagline)}</p>
         </div>
       </section>
 
@@ -144,7 +145,7 @@ const ProductDetail = () => {
               OVERVIEW
             </span>
             <h2 className="mt-6 text-3xl font-bold md:text-4xl">{t("pd.overview")}</h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">{isEn ? product.enDescription || product.description : product.description}</p>
+            <p className="mt-6 leading-relaxed text-muted-foreground">{pick(lang, product.description, product.enDescription, product.jaDescription)}</p>
 
             {product.detailImage && (
               <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
@@ -154,7 +155,12 @@ const ProductDetail = () => {
 
             {isGradeA && (
               <div className="mt-8 grid grid-cols-2 gap-3">
-                {["100% 무정형", "초저열팽창", "초저금속 불순물", "EC < 3 µs/cm", "맞춤 입도 가공"].map((b) => (
+                {(lang === "ja"
+                  ? ["100% 非晶質", "超低熱膨張", "超低金属不純物", "EC < 3 µs/cm", "カスタム粒度加工"]
+                  : lang === "en"
+                  ? ["100% Amorphous", "Ultra-Low CTE", "Ultra-Low Metal Impurities", "EC < 3 µs/cm", "Custom Particle Size"]
+                  : ["100% 무정형", "초저열팽창", "초저금속 불순물", "EC < 3 µs/cm", "맞춤 입도 가공"]
+                ).map((b) => (
                   <div key={b} className="flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/5 px-3 py-2.5 text-xs font-medium text-foreground">
                     <CheckCircle2 className="h-4 w-4 shrink-0 text-primary" />
                     {b}
@@ -184,9 +190,9 @@ const ProductDetail = () => {
                 </div>
                 {product.specs.map((s) => (
                   <div key={s.label} className="grid grid-cols-12 items-center px-6 py-3.5 text-sm transition hover:bg-secondary/30">
-                    <div className="col-span-5 text-muted-foreground">{isEn ? s.enLabel || s.label : s.label}</div>
+                    <div className="col-span-5 text-muted-foreground">{pick(lang, s.label, s.enLabel, s.jaLabel)}</div>
                     <div className="col-span-4 font-semibold text-foreground">{s.value}</div>
-                    <div className="col-span-3 text-right text-xs text-primary">{isEn ? s.enNote || s.note || "—" : s.note ?? "—"}</div>
+                    <div className="col-span-3 text-right text-xs text-primary">{pick(lang, s.note ?? "—", s.enNote ?? s.note ?? "—", s.jaNote ?? s.enNote ?? s.note ?? "—")}</div>
                   </div>
                 ))}
               </div>
@@ -211,8 +217,8 @@ const ProductDetail = () => {
               <div key={f.title} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]">
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/10 blur-2xl transition group-hover:bg-primary/20" />
                 <div className="relative">
-                  <h3 className="text-lg font-bold leading-snug">{isEn ? f.enTitle || f.title : f.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{isEn ? f.enDesc || f.desc : f.desc}</p>
+                  <h3 className="text-lg font-bold leading-snug">{pick(lang, f.title, f.enTitle, f.jaTitle)}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pick(lang, f.desc, f.enDesc, f.jaDesc)}</p>
                 </div>
               </div>
             ))}
@@ -640,7 +646,7 @@ const ProductDetail = () => {
                 </div>
                 <div className="p-5">
                   <h3 className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</h3>
-                  {!isEn && <p className="mt-1 text-xs text-muted-foreground">{p.enName}</p>}
+                  {lang === "ko" && <p className="mt-1 text-xs text-muted-foreground">{p.enName}</p>}
                 </div>
               </Link>
             ))}
