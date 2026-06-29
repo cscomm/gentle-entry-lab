@@ -74,12 +74,11 @@ const App = () => (
           <CanonicalUrl />
           <Routes>
             <Route path="/" element={<RootRedirect />} />
-            {SUPPORTED_LANGS.map((l) => (
-              <Route key={l} path={`/${l}/*`} element={<LangShell />} />
-            ))}
+            <Route path="/:lang/*" element={<LangShell />} />
             {/* Legacy paths without a lang prefix → redirect with detected lang */}
             <Route path="*" element={<LegacyRedirect />} />
           </Routes>
+
         </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
