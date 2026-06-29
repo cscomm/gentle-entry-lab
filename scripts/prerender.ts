@@ -261,13 +261,28 @@ export const routes: Route[] = [
   },
 ];
 
-function buildHtml(template: string, route: Route): string {
-  const url = `${BASE_URL}${route.path}`;
-  const escape = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const LANGS = ["ko", "en", "ja"] as const;
+type LangCode = (typeof LANGS)[number];
+
+const HTML_LANG: Record<LangCode, string> = { ko: "ko-KR", en: "en", ja: "ja" };
+
+const langPath = (lang: LangCode, routePath: string): string => {
+  const base = routePath === "/" ? "" : routePath;
+  return `/${lang}${base}/`;
+};
+
+function buildHtml(template: string, route: Route, lang: LangCode): string {
+  const path = langPath(lang, route.path);
+  const url = `${BASE_URL}${path}`;
+  const escape = (s: string) =>
+    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
   const escTitle = escape(route.title);
   const escDesc = escape(route.description);
 
   let html = template;
+
+  // <html lang="...">
+  html = html.replace(/<html\b[^>]*\blang="[^"]*"/, `<html lang="${HTML_LANG[lang]}"`);
 
   // <title>
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${escTitle}</title>`);
@@ -278,23 +293,33 @@ function buildHtml(template: string, route: Route): string {
     `<meta name="description" content="${escDesc}" />`,
   );
 
-  // canonical
+  // canonical → self-referential, lang-prefixed
   html = html.replace(
     /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
     `<link rel="canonical" href="${url}" />`,
   );
 
-  // og:url, og:title, og:description
+  // og + twitter
   html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}">`);
   html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escTitle}">`);
   html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${escDesc}">`);
-
-  // twitter
+  html = html.replace(/<meta\s+property="og:locale"\s+content="[^"]*"\s*\/?>/, `<meta property="og:locale" content="${HTML_LANG[lang].replace("-", "_")}">`);
   html = html.replace(/<meta\s+name="twitter:url"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:url" content="${url}" />`);
   html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${escTitle}">`);
   html = html.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:description" content="${escDesc}">`);
 
-  // Replace inside #root with route-specific SEO content
+  // hreflang alternates — emit one per language plus x-default → Korean
+  const altTags = [
+    ...LANGS.map(
+      (l) => `<link rel="alternate" hreflang="${l}" href="${BASE_URL}${langPath(l, route.path)}" />`,
+    ),
+    `<link rel="alternate" hreflang="x-default" href="${BASE_URL}${langPath("ko", route.path)}" />`,
+  ].join("\n    ");
+  // Strip any prior alternate tags from the template, then inject ours before </head>.
+  html = html.replace(/\s*<link\s+rel="alternate"[^>]*>/g, "");
+  html = html.replace(/<\/head>/, `    ${altTags}\n  </head>`);
+
+  // SEO body block (Korean source content for all langs — SPA replaces on hydration).
   const seoBlock = `
       <noscript><p>이 사이트를 보시려면 JavaScript를 활성화해 주세요.</p></noscript>
       <div style="max-width: 960px; margin: 0 auto; padding: 40px 20px; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.7;">
@@ -319,22 +344,34 @@ function priorityFor(path: string): { changefreq: string; priority: string } {
 
 function generateSitemap(): string {
   const today = new Date().toISOString().slice(0, 10);
-  const urls = routes.map((r) => {
-    const loc = `${BASE_URL}${r.path === "/" ? "/" : r.path + "/"}`;
+  const blocks: string[] = [];
+  for (const r of routes) {
     const { changefreq, priority } = priorityFor(r.path);
-    return [
-      `  <url>`,
-      `    <loc>${loc}</loc>`,
-      `    <lastmod>${today}</lastmod>`,
-      `    <changefreq>${changefreq}</changefreq>`,
-      `    <priority>${priority}</priority>`,
-      `  </url>`,
-    ].join("\n");
-  });
+    for (const lang of LANGS) {
+      const loc = `${BASE_URL}${langPath(lang, r.path)}`;
+      const alternates = [
+        ...LANGS.map(
+          (l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${BASE_URL}${langPath(l, r.path)}" />`,
+        ),
+        `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${langPath("ko", r.path)}" />`,
+      ].join("\n");
+      blocks.push(
+        [
+          `  <url>`,
+          `    <loc>${loc}</loc>`,
+          `    <lastmod>${today}</lastmod>`,
+          `    <changefreq>${changefreq}</changefreq>`,
+          `    <priority>${priority}</priority>`,
+          alternates,
+          `  </url>`,
+        ].join("\n"),
+      );
+    }
+  }
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
-    ...urls,
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
+    ...blocks,
     `</urlset>`,
     ``,
   ].join("\n");
@@ -348,23 +385,25 @@ function main() {
   const template = readFileSync(SOURCE, "utf-8");
   let count = 0;
   for (const route of routes) {
-    const out = resolve(DIST, route.path.replace(/^\//, ""), "index.html");
-    mkdirSync(dirname(out), { recursive: true });
-    writeFileSync(out, buildHtml(template, route));
-    count++;
+    for (const lang of LANGS) {
+      const relPath = route.path === "/" ? lang : `${lang}${route.path}`;
+      const out = resolve(DIST, relPath, "index.html");
+      mkdirSync(dirname(out), { recursive: true });
+      writeFileSync(out, buildHtml(template, route, lang));
+      count++;
+    }
   }
-  console.log(`[prerender] generated ${count} static HTML files.`);
+  console.log(`[prerender] generated ${count} static HTML files (3 langs × ${routes.length} routes).`);
 
-  // Auto-generate sitemap.xml from the same route list — keeps Naver/Google/Bing in sync.
+  // Auto-generate sitemap.xml — emits one entry per (lang, route) with hreflang alternates.
   const sitemapXml = generateSitemap();
   writeFileSync(resolve(DIST, "sitemap.xml"), sitemapXml);
-  // Also keep the repo-committed public/sitemap.xml current.
   try {
     writeFileSync(resolve("public/sitemap.xml"), sitemapXml);
   } catch {
     /* ignore in read-only CI */
   }
-  console.log(`[prerender] generated sitemap.xml with ${routes.length} URLs.`);
+  console.log(`[prerender] generated sitemap.xml with ${routes.length * LANGS.length} URLs.`);
 
   // ── IndexNow: notify Naver (and other participating engines) of all URLs ──
   void notifyIndexNow();
@@ -374,12 +413,12 @@ const INDEXNOW_KEY = "550e8400e29b41d4a716446655440000";
 const INDEXNOW_HOST = "silica.co.kr";
 
 async function notifyIndexNow() {
-  // Skip when explicitly disabled (e.g. local builds).
   if (process.env.SKIP_INDEXNOW === "1") {
     console.log("[indexnow] skipped (SKIP_INDEXNOW=1).");
     return;
   }
-  const urlList = routes.map((r) => `${BASE_URL}${r.path === "/" ? "/" : r.path + "/"}`);
+  const urlList: string[] = [];
+  for (const r of routes) for (const l of LANGS) urlList.push(`${BASE_URL}${langPath(l, r.path)}`);
   const payload = {
     host: INDEXNOW_HOST,
     key: INDEXNOW_KEY,

@@ -3,11 +3,12 @@
 /robots.txt    /robots.txt   200
 /robots.txt/   /robots.txt   200
 
-/products/fused-silica-block      /products/fused-silica-a-grade/   301!
-/products/fused-silica-block/     /products/fused-silica-a-grade/   301!
-/products/fused-silica-sand       /products/fused-silica-b-grade/   301!
-/products/fused-silica-sand/      /products/fused-silica-b-grade/   301!
-/products/fused-silica-powder     /products/fused-silica-c-grade/   301!
-/products/fused-silica-powder/    /products/fused-silica-c-grade/   301!
+# Legacy product slugs → canonical Korean URLs (other languages handled by the SPA).
+/products/fused-silica-block      /ko/products/fused-silica-a-grade/   301!
+/products/fused-silica-block/     /ko/products/fused-silica-a-grade/   301!
+/products/fused-silica-sand       /ko/products/fused-silica-b-grade/   301!
+/products/fused-silica-sand/      /ko/products/fused-silica-b-grade/   301!
+/products/fused-silica-powder     /ko/products/fused-silica-c-grade/   301!
+/products/fused-silica-powder/    /ko/products/fused-silica-c-grade/   301!
 
 /*             /index.html   200

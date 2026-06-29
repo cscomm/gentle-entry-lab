@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "@/lib/router";
 import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap, Wrench, Paintbrush, Pen, Link2, Layers, Battery } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, productCatalog } from "@/data/products";

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { pick } from "@/lib/lang";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "@/lib/router";
 import { ChevronDown, Search } from "lucide-react";
 import { productCatalog } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
