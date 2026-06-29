@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { pick } from "@/lib/lang";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Search } from "lucide-react";
 import { productCatalog } from "@/data/products";
@@ -107,7 +108,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                             to={`/products/${p.slug}/`}
                             className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                           >
-                            <div className="font-semibold">{lang === "en" ? p.enName : p.name}</div>
+                            <div className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</div>
                             {lang === "ko" && (
                               <div className="mt-0.5 text-xs text-muted-foreground">{p.enName}</div>
                             )}
@@ -165,7 +166,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
 
                             className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                           >
-                            <div className="font-semibold">{lang === "en" ? p.enName : p.name}</div>
+                            <div className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</div>
                             {lang === "ko" && (
                               <div className="mt-0.5 text-xs text-muted-foreground">{p.enName}</div>
                             )}

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -325,9 +326,9 @@ const Index = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="text-sm font-semibold leading-snug">
-                    {lang === "en" ? p.enTitle : `${p.title} (${p.enTitle})`}
+                    {pick(lang, `${p.title} (${p.enTitle})`, p.enTitle, p.jaTitle)}
                   </h3>
-                  <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2">{lang === "en" ? p.enDesc : p.desc}</p>
+                  <p className="mt-1.5 text-xs text-muted-foreground line-clamp-2">{pick(lang, p.desc, p.enDesc, p.jaDesc)}</p>
                   <span className="mt-3 inline-flex items-center gap-1.5 text-xs text-primary-glow transition group-hover:gap-2">
                     {t("products.detail")} <ArrowRight className="h-3.5 w-3.5" />
                   </span>
