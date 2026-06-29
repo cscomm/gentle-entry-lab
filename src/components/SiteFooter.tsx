@@ -30,17 +30,11 @@ const SiteFooter = () => {
               </span>
             </div>
             <nav className="flex flex-wrap items-center gap-x-5 text-sm font-medium text-foreground/80">
-              {navItems.map((item) =>
-                item.external ? (
-                  <a key={item.label} href={item.to} className="transition hover:text-primary-glow">
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link key={item.label} to={item.to} className="transition hover:text-primary-glow">
-                    {item.label}
-                  </Link>
-                )
-              )}
+              {navItems.map((item) => (
+                <Link key={item.label} to={item.to} className="transition hover:text-primary-glow">
+                  {item.label}
+                </Link>
+              ))}
             </nav>
           </div>
 
@@ -79,15 +73,9 @@ const SiteFooter = () => {
         <nav className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium text-foreground/80">
           {navItems.map((item, i) => (
             <div key={item.label} className="flex items-center gap-x-8">
-              {item.external ? (
-                <a href={item.to} className="transition hover:text-primary-glow">
-                  {item.label}
-                </a>
-              ) : (
-                <Link to={item.to} className="transition hover:text-primary-glow">
-                  {item.label}
-                </Link>
-              )}
+              <Link to={item.to} className="transition hover:text-primary-glow">
+                {item.label}
+              </Link>
               {i < navItems.length - 1 && (
                 <span className="text-border" aria-hidden="true">|</span>
               )}

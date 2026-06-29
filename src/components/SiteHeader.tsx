@@ -78,7 +78,6 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
         </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {navItems.map((item) => {
-            const isInternal = item.href.startsWith("/") && !item.href.includes("#");
             const linkClass = `relative inline-flex items-center gap-1 text-[15px] font-semibold tracking-wide transition-colors duration-500 hover:text-primary-glow ${
               scrolled ? "text-foreground/85" : "text-white/95 [text-shadow:_0_1px_2px_rgb(0_0_0_/_45%)]"
             }`;
@@ -91,11 +90,9 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
 
             return (
               <div key={item.key} className="group relative">
-                {isInternal ? (
-                  <Link to={item.href} className={linkClass}>{inner}</Link>
-                ) : (
-                  <a href={item.href} className={linkClass}>{inner}</a>
-                )}
+                <Link to={item.href} className={linkClass}>{inner}</Link>
+
+
 
                 {item.dropdown === "products" && (
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
