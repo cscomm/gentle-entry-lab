@@ -66,3 +66,4 @@ export {
   useMatch,
   useRoutes,
 } from "react-router-dom";
+export type { LinkProps, NavLinkProps, NavigateOptions, To } from "react-router-dom";
