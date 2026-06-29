@@ -11,6 +11,7 @@ import SilicaGelApplications from "./pages/SilicaGelApplications.tsx";
 import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
 import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
+import ScrollToHash from "./components/ScrollToHash";
 import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
 import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
@@ -43,6 +44,8 @@ const LangShell = () => {
     return <Navigate to={`/${detectInitialLang()}${rest}${search}${hash}`} replace />;
   }
   return (
+    <>
+    <ScrollToHash />
     <Routes>
       <Route index element={<Index />} />
       <Route path="products/silica-gel" element={<SilicaGelCategory />} />
@@ -61,6 +64,7 @@ const LangShell = () => {
       <Route path="unsubscribe" element={<Unsubscribe />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 };
 
