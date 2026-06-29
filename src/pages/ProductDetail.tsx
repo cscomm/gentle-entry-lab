@@ -473,74 +473,98 @@ const ProductDetail = () => {
               APPLICATIONS
             </span>
           </div>
-          <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 {isEn ? "Application Areas" : "적용 분야"}</h3>
+          <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 {tri("적용 분야", "Application Areas", "適用分野")}</h3>
           <p className="mt-4 text-muted-foreground">
-            {isEn
-              ? "SLH-380S is used in a wide variety of industrial fields."
-              : "SLH-380S는 다양한 산업 분야에서 사용됩니다."}
+            {tri(
+              "SLH-380S는 다양한 산업 분야에서 사용됩니다.",
+              "SLH-380S is used in a wide variety of industrial fields.",
+              "SLH-380Sは多様な産業分野で使用されています。"
+            )}
           </p>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 icon: Wrench,
-                title: isEn ? "① Silicone & Sealants" : "① 실리콘 및 실란트",
-                uses: isEn
-                  ? ["RTV Silicone", "Structural Sealants", "Construction Sealants", "Automotive Sealants"]
-                  : ["RTV 실리콘", "구조용 실란트", "건축용 실란트", "자동차 실란트"],
-                effects: isEn
-                  ? ["Viscosity increase", "Sag prevention", "Improved mechanical strength", "Improved workability"]
-                  : ["점도 증가", "처짐 방지", "기계적 강도 향상", "작업성 개선"],
+                title: tri("① 실리콘 및 실란트", "① Silicone & Sealants", "① シリコーン・シーラント"),
+                uses: tri(
+                  "RTV 실리콘|구조용 실란트|건축용 실란트|자동차 실란트",
+                  "RTV Silicone|Structural Sealants|Construction Sealants|Automotive Sealants",
+                  "RTVシリコーン|構造用シーラント|建築用シーラント|自動車用シーラント"
+                ).split("|"),
+                effects: tri(
+                  "점도 증가|처짐 방지|기계적 강도 향상|작업성 개선",
+                  "Viscosity increase|Sag prevention|Improved mechanical strength|Improved workability",
+                  "粘度増加|垂れ防止|機械的強度向上|作業性改善"
+                ).split("|"),
               },
               {
                 icon: Paintbrush,
-                title: isEn ? "② Coatings & Paints" : "② 코팅 및 도료",
-                uses: isEn
-                  ? ["Industrial Paints", "Automotive Paints", "UV Coatings", "Wood Coatings"]
-                  : ["산업용 도료", "자동차 도료", "UV 코팅", "목재 코팅"],
-                effects: isEn
-                  ? ["Anti-settling", "Improved scratch resistance", "Viscosity stabilization", "Matte effect", "Improved storage stability"]
-                  : ["침강 방지", "내스크래치성 향상", "점도 안정화", "무광 효과", "저장 안정성 향상"],
+                title: tri("② 코팅 및 도료", "② Coatings & Paints", "② コーティング・塗料"),
+                uses: tri(
+                  "산업용 도료|자동차 도료|UV 코팅|목재 코팅",
+                  "Industrial Paints|Automotive Paints|UV Coatings|Wood Coatings",
+                  "産業用塗料|自動車塗料|UVコーティング|木材コーティング"
+                ).split("|"),
+                effects: tri(
+                  "침강 방지|내스크래치성 향상|점도 안정화|무광 효과|저장 안정성 향상",
+                  "Anti-settling|Improved scratch resistance|Viscosity stabilization|Matte effect|Improved storage stability",
+                  "沈降防止|耐スクラッチ性向上|粘度安定化|マット効果|貯蔵安定性向上"
+                ).split("|"),
               },
               {
                 icon: Pen,
-                title: isEn ? "③ Inks" : "③ 잉크",
-                uses: isEn ? ["UV Ink", "Screen Ink", "Digital Ink"] : ["UV Ink", "Screen Ink", "Digital Ink"],
-                effects: isEn
-                  ? ["Pigment dispersion", "Anti-settling", "Improved print quality", "Viscosity control"]
-                  : ["안료 분산", "침강 방지", "인쇄 품질 향상", "점도 조절"],
+                title: tri("③ 잉크", "③ Inks", "③ インク"),
+                uses: tri("UV Ink|Screen Ink|Digital Ink", "UV Ink|Screen Ink|Digital Ink", "UVインク|スクリーンインク|デジタルインク").split("|"),
+                effects: tri(
+                  "안료 분산|침강 방지|인쇄 품질 향상|점도 조절",
+                  "Pigment dispersion|Anti-settling|Improved print quality|Viscosity control",
+                  "顔料分散|沈降防止|印刷品質向上|粘度調節"
+                ).split("|"),
               },
               {
                 icon: Link2,
-                title: isEn ? "④ Adhesives" : "④ 접착제",
-                uses: isEn ? ["Epoxy", "Urethane", "Acrylic Adhesives"] : ["에폭시", "우레탄", "아크릴 접착제"],
-                effects: isEn
-                  ? ["Flow control", "Improved tack", "Improved storage stability"]
-                  : ["흐름성 제어", "점착성 개선", "저장 안정성 향상"],
+                title: tri("④ 접착제", "④ Adhesives", "④ 接着剤"),
+                uses: tri("에폭시|우레탄|아크릴 접착제", "Epoxy|Urethane|Acrylic Adhesives", "エポキシ|ウレタン|アクリル接着剤").split("|"),
+                effects: tri(
+                  "흐름성 제어|점착성 개선|저장 안정성 향상",
+                  "Flow control|Improved tack|Improved storage stability",
+                  "流動性制御|粘着性改善|貯蔵安定性向上"
+                ).split("|"),
               },
               {
                 icon: Layers,
-                title: isEn ? "⑤ Composites" : "⑤ 복합소재",
-                uses: isEn ? ["CFRP", "GFRP", "Epoxy Composites"] : ["CFRP", "GFRP", "에폭시 복합재"],
-                effects: isEn
-                  ? ["Improved strength", "Improved impact resistance", "Crack prevention"]
-                  : ["강도 향상", "충격 저항 향상", "균열 방지"],
+                title: tri("⑤ 복합소재", "⑤ Composites", "⑤ 複合素材"),
+                uses: tri("CFRP|GFRP|에폭시 복합재", "CFRP|GFRP|Epoxy Composites", "CFRP|GFRP|エポキシ複合材").split("|"),
+                effects: tri(
+                  "강도 향상|충격 저항 향상|균열 방지",
+                  "Improved strength|Improved impact resistance|Crack prevention",
+                  "強度向上|耐衝撃性向上|亀裂防止"
+                ).split("|"),
               },
               {
                 icon: Battery,
-                title: isEn ? "⑥ Battery Materials" : "⑥ 배터리 소재",
-                uses: isEn ? ["Lithium-ion Batteries", "Electrode Slurries"] : ["리튬이온 배터리", "전극 슬러리"],
-                effects: isEn
-                  ? ["Viscosity control", "Dispersion stabilization", "Improved slurry uniformity"]
-                  : ["점도 조절", "분산 안정화", "슬러리 균일성 향상"],
+                title: tri("⑥ 배터리 소재", "⑥ Battery Materials", "⑥ 電池材料"),
+                uses: tri("리튬이온 배터리|전극 슬러리", "Lithium-ion Batteries|Electrode Slurries", "リチウムイオン電池|電極スラリー").split("|"),
+                effects: tri(
+                  "점도 조절|분산 안정화|슬러리 균일성 향상",
+                  "Viscosity control|Dispersion stabilization|Improved slurry uniformity",
+                  "粘度調節|分散安定化|スラリー均一性向上"
+                ).split("|"),
               },
               {
                 icon: Sparkles,
-                title: isEn ? "⑦ Cosmetics" : "⑦ 화장품",
-                uses: isEn ? ["Powder", "Cream", "Sunscreen", "Makeup Products"] : ["파우더", "크림", "선크림", "메이크업 제품"],
-                effects: isEn
-                  ? ["Improved feel", "Oil absorption", "Viscosity control"]
-                  : ["사용감 개선", "유분 흡수", "점도 조절"],
+                title: tri("⑦ 화장품", "⑦ Cosmetics", "⑦ 化粧品"),
+                uses: tri(
+                  "파우더|크림|선크림|메이크업 제품",
+                  "Powder|Cream|Sunscreen|Makeup Products",
+                  "パウダー|クリーム|日焼け止め|メイクアップ製品"
+                ).split("|"),
+                effects: tri(
+                  "사용감 개선|유분 흡수|점도 조절",
+                  "Improved feel|Oil absorption|Viscosity control",
+                  "使用感改善|油分吸収|粘度調節"
+                ).split("|"),
               },
             ].map((app) => (
               <div
@@ -554,7 +578,7 @@ const ProductDetail = () => {
                 <div className="p-6">
                   <div className="mb-4">
                     <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      {isEn ? "Uses" : "용도"}
+                      {tri("용도", "Uses", "用途")}
                     </h5>
                     <ul className="space-y-1.5">
                       {app.uses.map((it, i) => (
@@ -567,7 +591,7 @@ const ProductDetail = () => {
                   </div>
                   <div>
                     <h5 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      {isEn ? "Effects" : "효과"}
+                      {tri("효과", "Effects", "効果")}
                     </h5>
                     <ul className="space-y-1.5">
                       {app.effects.map((it, i) => (
