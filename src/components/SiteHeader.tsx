@@ -118,7 +118,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/products/precipitated-silica/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Precipitated Silica" : "침전 실리카"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "沈降シリカ" : lang === "en" ? "Precipitated Silica" : "침전 실리카"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
                         )}
@@ -127,7 +127,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/products/fumed-silica/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "ヒュームドシリカ" : lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Fumed Silica</div>
                         )}
@@ -136,7 +136,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/products/silica-gel/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Silica Gel" : "실리카겔"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
                         )}
@@ -145,7 +145,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/products/high-purity-quartz/"
                         className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
                         )}
@@ -176,7 +176,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/applications/precipitated-silica/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Precipitated Silica" : "침전/침강 실리카"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "沈降/沈殿シリカ" : lang === "en" ? "Precipitated Silica" : "침전/침강 실리카"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
                         )}
@@ -185,7 +185,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/applications/fumed-silica/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "ヒュームドシリカ" : lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Fumed Silica</div>
                         )}
@@ -194,7 +194,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/applications/silica-gel/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Silica Gel" : "실리카겔"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
                         )}
@@ -203,7 +203,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/products/high-purity-quartz/#applications"
                         className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
                         )}
@@ -222,7 +222,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder={lang === "en" ? "Search" : "검색"}
+              placeholder={lang === "ja" ? "検索" : lang === "en" ? "Search" : "검색"}
               className={`h-9 w-40 rounded-full border pl-8 pr-3 text-sm outline-none transition focus:border-primary ${
                 scrolled
                   ? "border-border/60 bg-card text-foreground placeholder:text-muted-foreground"
