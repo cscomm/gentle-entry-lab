@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";

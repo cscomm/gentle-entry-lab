@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { ArrowRight, Sparkles } from "lucide-react";
