@@ -43,6 +43,8 @@ const LangShell = () => {
     return <Navigate to={`/${detectInitialLang()}${rest}${search}${hash}`} replace />;
   }
   return (
+    <>
+    <ScrollToHash />
     <Routes>
       <Route index element={<Index />} />
       <Route path="products/silica-gel" element={<SilicaGelCategory />} />
