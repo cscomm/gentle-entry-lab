@@ -45,6 +45,8 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
+  { label: "규사", en: "Silica Sand", slug: "silica-sand" },
+  { label: "규사분말", en: "Silica Powder", slug: "silica-powder" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];
 
