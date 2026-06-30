@@ -162,7 +162,7 @@ export const productCatalog: ProductDetail[] = [
       { title: "🧼 초저 철분", desc: "Fe₂O₃ 5ppm — 황변 없이 투명도 및 백색도 핵심 유지", enTitle: "🧼 Ultra-Low Iron Content", jaTitle: "🧼 超低鉄分", enDesc: "Fe₂O₃ 5 ppm — maintains transparency and whiteness without yellowing", jaDesc: "Fe₂O₃ 5ppm — 黄変なしに透明度および白色度を中核的に維持" },
       { title: "⚡ 우수한 절연 성능", desc: "EC 2.12 µs/cm — 전자재료 충진재(Filler) 신뢰성 확보", enTitle: "⚡ Excellent Insulation Performance", jaTitle: "⚡ 優れた絶縁性能", enDesc: "EC 2.12 µs/cm — ensures reliability as an electronic-material filler", jaDesc: "EC 2.12 µs/cm — 電子材料用充填材(Filler)の信頼性確保" },
       { title: "✨ 최상급 백색도", desc: "L 97.92 — 고급 인조대리석·건축 내외장재 최적", enTitle: "✨ Top-Grade Whiteness", jaTitle: "✨ 最上級の白色度", enDesc: "L 97.92 — optimal for premium engineered stone and architectural interior/exterior materials", jaDesc: "L 97.92 — 高級人造大理石・建築内外装材に最適" },
-      { title: "📐 균일 입도", desc: "1~10mm 균일 입도로 후속 공정 효율 극대화", enTitle: "📐 Uniform Particle Size", jaTitle: "📐 均一な粒度", enDesc: "Uniform 1–10 mm grain size maximizes downstream process efficiency", jaDesc: "1~10mmの均一な粒度で後続工程の効率を極大化" },
+      { title: "📐 균일 입도", desc: "고객 맞춤 입도 가공", enTitle: "📐 Uniform Particle Size", jaTitle: "📐 均一な粒度", enDesc: "Custom particle-size processing tailored to customer requirements", jaDesc: "お客様に合わせたカスタム粒度加工" },
       { title: "🧪 중성 안정", desc: "pH 6.73 — 다양한 화학 공정에 적용 가능", enTitle: "🧪 Neutral Stability", jaTitle: "🧪 中性安定", enDesc: "pH 6.73 — applicable to diverse chemical processes", jaDesc: "pH 6.73 — 多様な化学工程に適用可能" },
     ],
     specs: [
