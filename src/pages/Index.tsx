@@ -16,6 +16,8 @@ import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
+import silicaSandImg from "@/assets/silica-sand.jpg";
+import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
 import gradeA from "@/assets/grade-a-hero.png";
 import gradeB from "@/assets/grade-b-silica.png";
