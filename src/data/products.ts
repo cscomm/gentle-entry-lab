@@ -173,7 +173,7 @@ export const productCatalog: ProductDetail[] = [
       { label: "백색도 (Whiteness L)", value: "97.92", note: "최상급 백색도", enLabel: "Whiteness (L)", jaLabel: "白色度 (Whiteness L)", enNote: "Top-grade whiteness", jaNote: "最上級の白色度" },
       { label: "전기전도도 (E.C)", value: "2.12 µs/cm", note: "절연성 우수", enLabel: "Electrical Conductivity (E.C)", jaLabel: "電気伝導度 (E.C)", enNote: "Excellent insulation", jaNote: "絶縁性に優れる" },
       { label: "pH (수소이온농도)", value: "6.73", note: "중성 안정", enLabel: "pH", jaLabel: "pH (水素イオン濃度)", enNote: "Neutral stability", jaNote: "中性安定" },
-      { label: "입도 (Grain Size)", value: "1 ~ 10 mm", note: "균일 입도", enLabel: "Grain Size", jaLabel: "粒度 (Grain Size)", enNote: "Uniform", jaNote: "均一粒度" },
+      { label: "입도 (Grain Size)", value: "고객 맞춤 입도 가공", enValue: "Custom particle-size processing tailored to customer requirements", jaValue: "お客様に合わせたカスタム粒度加工", note: "균일 입도", enLabel: "Grain Size", jaLabel: "粒度 (Grain Size)", enNote: "Uniform", jaNote: "均一粒度" },
     ],
     applications: ["EGS / 인조대리석", "고급 유리", "전자재료", "정밀 주조", "나노 가공"],
   },
