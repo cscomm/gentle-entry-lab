@@ -173,7 +173,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && p.slug !== "high-purity-quartz")
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder"].includes(p.slug))
                         .map((p) => (
                           <Link
                             key={p.slug}
