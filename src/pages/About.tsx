@@ -6,7 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { useLang } from "@/contexts/LanguageContext";
 import facility from "@/assets/facility.jpg";
-import heroImage from "@/assets/hero-about-new.png";
+import heroImageAsset from "@/assets/hero-about-v3.png.asset.json";
 import mineAerial from "@/assets/mine-aerial.png";
 import mineTunnel from "@/assets/mine-tunnel.jpg";
 import mineOre from "@/assets/mine-ore.jpg";
@@ -75,7 +75,7 @@ const About = () => {
 
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[420px] w-full overflow-hidden">
-        <img src={heroImage} alt={silicaAlt("회사 소개 메인 배너")} className="absolute inset-0 h-full w-full object-cover" />
+        <img src={heroImageAsset.url} alt={silicaAlt("회사 소개 메인 배너")} className="absolute inset-0 h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/70" />
         <div className="relative z-10 mx-auto flex h-full max-w-5xl flex-col items-center justify-center px-6 text-center text-white">
           <span className="inline-block rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs tracking-widest backdrop-blur">
