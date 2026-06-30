@@ -98,7 +98,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && p.slug !== "high-purity-quartz")
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder"].includes(p.slug))
                         .map((p) => (
                           <Link
                             key={p.slug}
@@ -139,6 +139,24 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         )}
                       </Link>
                       <Link
+                        to="/products/silica-sand/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "珪砂" : lang === "en" ? "Silica Sand" : "규사"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sand</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/products/silica-powder/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "珪砂粉末" : lang === "en" ? "Silica Powder" : "규사분말"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Powder</div>
+                        )}
+                      </Link>
+                      <Link
                         to="/products/high-purity-quartz/"
                         className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
@@ -155,7 +173,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && p.slug !== "high-purity-quartz")
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder"].includes(p.slug))
                         .map((p) => (
                           <Link
                             key={p.slug}
@@ -194,6 +212,24 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/applications/silica-sand/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "珪砂" : lang === "en" ? "Silica Sand" : "규사"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sand</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/applications/silica-powder/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "珪砂粉末" : lang === "en" ? "Silica Powder" : "규사분말"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Powder</div>
                         )}
                       </Link>
                       <Link

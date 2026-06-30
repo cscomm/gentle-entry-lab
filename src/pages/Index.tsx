@@ -16,6 +16,8 @@ import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
+import silicaSandImg from "@/assets/silica-sand.jpg";
+import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
 import gradeA from "@/assets/grade-a-hero.png";
 import gradeB from "@/assets/grade-b-silica.png";
@@ -45,6 +47,8 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
+  { label: "규사", en: "Silica Sand", slug: "silica-sand" },
+  { label: "규사분말", en: "Silica Powder", slug: "silica-powder" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];
 
@@ -57,6 +61,8 @@ const products = [
  { img: precipitatedSilicaImg, slug: "precipitated-silica", title: "침전 실리카", enTitle: "Precipitated Silica", jaTitle: "沈降シリカ", desc: "고무 보강·페인트 소포·식의약 고결방지 등 산업 전반에서 가장 널리 쓰이는 합성 무정형 SiO₂", enDesc: "Synthetic amorphous SiO₂ widely used as rubber reinforcement, paint defoamer, and food/pharma anti-caking agent.", jaDesc: "ゴム補強・塗料消泡・食品/医薬の固結防止など、産業全般で最も広く使用される合成非晶質SiO₂", cat: "침전 실리카" },
  { img: fumedSilica, slug: "fumed-silica", title: "흄드 실리카", enTitle: "Fumed Silica", jaTitle: "ヒュームドシリカ", desc: "SiCl₄ 화염가수분해 기반 나노급 무정형 SiO₂ — 실리콘 고무·실란트·접착제·도료·전자재료 전반 보강·증점·요변성 첨가제", enDesc: "Nano-scale amorphous SiO₂ from SiCl₄ flame hydrolysis — reinforcing, thickening, thixotropic additive across silicone rubber, sealants, adhesives, coatings and electronics.", jaDesc: "SiCl₄の火炎加水分解によるナノレベル非晶質SiO₂ — シリコーンゴム・シーラント・接着剤・塗料・電子材料全般の補強・増粘・チキソトロピー添加剤", cat: "흄드 실리카" },
  { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", jaTitle: "シリカゲル", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", jaDesc: "高純度シリカゲル・微粉シリカ・アンチブロッキング・艶消し剤などフルラインナップ", cat: "실리카겔" },
+ { img: silicaSandImg, slug: "silica-sand", title: "규사", enTitle: "Silica Sand", jaTitle: "珪砂", desc: "유리·주조·여과·인조잔디·건축용 고순도 산업 규사 — 입도 맞춤 공급", enDesc: "High-purity industrial silica sand for glass, foundry, filtration, artificial turf and construction — custom grain sizes.", jaDesc: "ガラス・鋳造・濾過・人工芝・建築用の高純度産業用シリカサンド — 粒度カスタム供給", cat: "규사" },
+ { img: silicaPowderImg, slug: "silica-powder", title: "규사분말", enTitle: "Silica Powder", jaTitle: "珪砂粉末", desc: "도료·플라스틱·인조대리석·건축 자재용 고백색 미분 실리카 충진재", enDesc: "High-whiteness micronized silica filler for paints, plastics, engineered stone and construction materials.", jaDesc: "塗料・プラスチック・人造大理石・建築資材用の高白色微粉シリカ充填材", cat: "규사분말" },
  { img: pProcess, slug: "high-purity-quartz", title: "천연 고순도규석", enTitle: "Natural High-Purity Quartz", jaTitle: "天然高純度石英", desc: "엄선된 광원에서 채광한 고순도 규석", enDesc: "High-purity quartz mined from carefully selected ore deposits.", jaDesc: "厳選された鉱床から採掘した高純度石英", cat: "천연 고순도규석" },
 ];
 
@@ -77,6 +83,8 @@ const applicationCategories: { label: string; en: string; href?: string }[] = [
   { label: "침전 실리카", en: "Precipitated Silica", href: "/applications/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/applications/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/applications/silica-gel" },
+  { label: "규사", en: "Silica Sand", href: "/applications/silica-sand" },
+  { label: "규사분말", en: "Silica Powder", href: "/applications/silica-powder" },
 ];
 
 const news = [
