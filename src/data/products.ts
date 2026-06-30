@@ -34,7 +34,7 @@ export type ProductDetail = {
   detailImage?: string;
   category?: ProductCategory;
   features: { title: string; desc: string; enTitle?: string; enDesc?: string; jaTitle?: string; jaDesc?: string }[];
-  specs: { label: string; value: string; note?: string; enLabel?: string; enNote?: string; jaLabel?: string; jaNote?: string }[];
+  specs: { label: string; value: string; note?: string; enLabel?: string; enValue?: string; enNote?: string; jaLabel?: string; jaValue?: string; jaNote?: string }[];
   applications: string[];
 };
 
