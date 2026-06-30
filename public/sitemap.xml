@@ -540,4 +540,124 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/privacy/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/privacy/" />
   </url>
+  <url>
+    <loc>https://silica.co.kr/ko/products/silica-sand/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/products/silica-sand/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/en/products/silica-sand/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/products/silica-sand/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ja/products/silica-sand/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/products/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/products/silica-sand/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ko/applications/silica-sand/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/applications/silica-sand/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/en/applications/silica-sand/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/applications/silica-sand/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ja/applications/silica-sand/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/applications/silica-sand/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/applications/silica-sand/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ko/products/silica-powder/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/products/silica-powder/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/en/products/silica-powder/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/products/silica-powder/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ja/products/silica-powder/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/products/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/products/silica-powder/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ko/applications/silica-powder/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/applications/silica-powder/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/en/applications/silica-powder/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/applications/silica-powder/" />
+  </url>
+  <url>
+    <loc>https://silica.co.kr/ja/applications/silica-powder/</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://silica.co.kr/ko/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://silica.co.kr/en/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://silica.co.kr/ja/applications/silica-powder/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://silica.co.kr/ko/applications/silica-powder/" />
+  </url>
 </urlset>
