@@ -6,7 +6,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { useLang } from "@/contexts/LanguageContext";
 import facility from "@/assets/facility.jpg";
-import heroImage from "@/assets/hero-about-new.png";
+import heroImageAsset from "@/assets/hero-about-v3.png.asset.json";
 import mineAerial from "@/assets/mine-aerial.png";
 import mineTunnel from "@/assets/mine-tunnel.jpg";
 import mineOre from "@/assets/mine-ore.jpg";
