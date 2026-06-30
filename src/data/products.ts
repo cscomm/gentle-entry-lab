@@ -148,6 +148,59 @@ export const productCatalog: ProductDetail[] = [
     applications: ["건축 및 건자재", "페인트 및 코팅", "플라스틱/고무", "연마 및 내마모재", "기타 산업용"],
   },
   {
+    slug: "silica-sand",
+    name: "규사",
+    enName: "Silica Sand", jaName: "珪砂 (シリカサンド)",
+    tagline: "고순도 SiO₂ 규사 — 입도별 맞춤 공급 가능한 산업용 규사",
+    enTagline: "High-Purity SiO₂ Silica Sand — Industrial Silica Sand Available in Custom Grain Sizes",
+    jaTagline: "高純度SiO₂珪砂 — 粒度別カスタム供給可能な産業用シリカサンド",
+    description:
+      "고순도 천연 규석을 정제·선별하여 제조한 산업용 규사입니다. 유리·주조·여과·인조잔디·건축 등 다양한 분야에 사용되며, 고객 요구에 맞춰 입도와 포장을 맞춤 공급합니다.",
+    enDescription:
+      "Industrial silica sand manufactured by refining and screening high-purity natural quartz. Used across glass, foundry, filtration, artificial turf, and construction industries, with customized grain size and packaging.",
+    jaDescription:
+      "高純度天然石英を精製・選別して製造した産業用シリカサンドです。ガラス・鋳造・濾過・人工芝・建築など多様な分野で使用され、お客様のご要望に合わせて粒度と包装をカスタム供給いたします。",
+    image: silicaSandImg,
+    category: "quartz",
+    features: [
+      { title: "🧱 고순도 SiO₂", desc: "고순도 이산화규소 기반의 안정적인 산업용 규사", enTitle: "🧱 High-Purity SiO₂", jaTitle: "🧱 高純度SiO₂", enDesc: "Stable industrial silica sand based on high-purity silicon dioxide", jaDesc: "高純度二酸化ケイ素ベースの安定した産業用シリカサンド" },
+      { title: "📐 고객 맞춤 입도", desc: "고객 요구사항에 맞춘 입도 가공 및 선별", enTitle: "📐 Custom Grain Size", jaTitle: "📐 カスタム粒度", enDesc: "Grain-size processing and screening tailored to customer requirements", jaDesc: "お客様のご要求に合わせた粒度加工および選別" },
+    ],
+    specs: [
+      { label: "주성분", value: "SiO₂", enLabel: "Main Component", jaLabel: "主成分" },
+      { label: "입도 (Grain Size)", value: "고객 맞춤 입도 가공", enValue: "Custom particle-size processing", jaValue: "お客様に合わせたカスタム粒度加工", enLabel: "Grain Size", jaLabel: "粒度 (Grain Size)" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
+    ],
+    applications: ["규사"],
+  },
+  {
+    slug: "silica-powder",
+    name: "규사분말",
+    enName: "Silica Powder", jaName: "珪砂粉末 (シリカパウダー)",
+    tagline: "고백색·고순도 규사분말 — 충진재·도료·건축용 미분 실리카 원료",
+    enTagline: "High-Whiteness, High-Purity Silica Powder — Micronized Silica for Fillers, Coatings, and Construction",
+    jaTagline: "高白色・高純度シリカパウダー — 充填材・塗料・建築用微粉シリカ原料",
+    description:
+      "고순도 규사를 미분쇄하여 제조한 백색 분말 형태의 산업용 규사분말입니다. 페인트·코팅·플라스틱 충진재·건축 자재·인조대리석 등 다양한 산업 분야의 기능성 필러로 사용됩니다.",
+    enDescription:
+      "Industrial silica powder in white powder form, produced by finely grinding high-purity silica sand. Used as a functional filler across paints, coatings, plastic fillers, construction materials, and engineered stone applications.",
+    jaDescription:
+      "高純度シリカサンドを微粉砕して製造した白色粉末形態の産業用シリカパウダーです。塗料・コーティング・プラスチック充填材・建築資材・人造大理石など多様な産業分野の機能性フィラーとして使用されます。",
+    image: silicaPowderImg,
+    category: "quartz",
+    features: [
+      { title: "✨ 우수한 백색도", desc: "고백색 분말로 도료·인조대리석 등 색상이 중요한 용도에 적합", enTitle: "✨ Excellent Whiteness", jaTitle: "✨ 優れた白色度", enDesc: "High-whiteness powder ideal for color-critical applications such as coatings and engineered stone", jaDesc: "高白色粉末で塗料・人造大理石など色合いが重要な用途に最適" },
+      { title: "📐 맞춤 입도", desc: "고객 요구에 맞춘 미분 입도 가공", enTitle: "📐 Custom Particle Size", jaTitle: "📐 カスタム粒度", enDesc: "Custom fine-powder particle-size processing per customer requirements", jaDesc: "お客様のご要求に合わせた微粉粒度加工" },
+    ],
+    specs: [
+      { label: "주성분", value: "SiO₂", enLabel: "Main Component", jaLabel: "主成分" },
+      { label: "외관", value: "백색 분말", enValue: "White powder", jaValue: "白色粉末", enLabel: "Form", jaLabel: "形態" },
+      { label: "입도 (Particle Size)", value: "고객 맞춤 입도 가공", enValue: "Custom particle-size processing", jaValue: "お客様に合わせたカスタム粒度加工", enLabel: "Particle Size", jaLabel: "粒度 (Particle Size)" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
+    ],
+    applications: ["규사분말"],
+  },
+  {
     slug: "high-purity-quartz",
     name: "천연 고순도규석",
     enName: "Natural High-Purity Quartz", jaName: "天然高純度石英",
