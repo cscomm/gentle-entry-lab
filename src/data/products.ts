@@ -16,6 +16,8 @@ import sgTypeA from "@/assets/sg-type-a.jpg";
 import sgTypeB from "@/assets/sg-type-b.jpg";
 import precipitatedSilica from "@/assets/precipitated-silica.jpg";
 import fumedSilica from "@/assets/fumed-silica.png";
+import silicaSandImg from "@/assets/silica-sand.jpg";
+import silicaPowderImg from "@/assets/silica-powder.jpg";
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed";
 
