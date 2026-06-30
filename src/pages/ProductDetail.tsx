@@ -191,7 +191,7 @@ const ProductDetail = () => {
                 {product.specs.map((s) => (
                   <div key={s.label} className="grid grid-cols-12 items-center px-6 py-3.5 text-sm transition hover:bg-secondary/30">
                     <div className="col-span-5 text-muted-foreground">{pick(lang, s.label, s.enLabel, s.jaLabel)}</div>
-                    <div className="col-span-4 font-semibold text-foreground">{s.value}</div>
+                    <div className="col-span-4 font-semibold text-foreground">{pick(lang, s.value, s.enValue ?? s.value, s.jaValue ?? s.enValue ?? s.value)}</div>
                     <div className="col-span-3 text-right text-xs text-primary">{pick(lang, s.note ?? "—", s.enNote ?? s.note ?? "—", s.jaNote ?? s.enNote ?? s.note ?? "—")}</div>
                   </div>
                 ))}
