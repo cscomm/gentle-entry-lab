@@ -332,6 +332,14 @@ export const routes: Route[] = [
     title: "용융실리카·규사·흄드.침전실리카.실리카졸겔 전문|SILICA",
     description:
       "실리카는 용융실리카,실리카샌드.규사.침전실리카,흄드실리카.실리카 졸,실리카겔 등 다양한 실리카 소재 전문기업입니다./SILICA",
+    titleI18n: {
+      en: "High-Purity Fused Silica, Silica Sand, Fumed & Precipitated Silica Supplier | SILICA",
+      ja: "溶融シリカ・珪砂・ヒュームド/沈降シリカ・シリカゲル 専門メーカー | SILICA",
+    },
+    descriptionI18n: {
+      en: "Korean industrial silica manufacturer supplying fused silica (Grade A/B/C), high-purity quartz, silica sand & powder, silica gel, fumed and precipitated silica for semiconductor, optics, solar, refractory and medical industries.",
+      ja: "溶融シリカ(A/B/Cグレード)、高純度石英、珪砂・珪砂粉末、シリカゲル、ヒュームドシリカ、沈降シリカを半導体・光学・太陽光・耐火・医療向けに安定供給する韓国のシリカ専門メーカー。",
+    },
     h1: "SiLiCA · 용융 실리카·실리카 겔·흄드 실리카·침전 실리카·고순도 규석 전문 기업",
     body: `
       <p>SiLiCA는 용융 실리카(Fused Silica), 침전 실리카(Precipitated Silica), 흄드 실리카(Fumed Silica), 실리카 겔(Silica Gel), 실리카 졸겔 등 다양한 고순도 실리카 소재를 반도체·광학·태양광·내화재·의료 산업에 안정적으로 공급합니다.</p>
@@ -349,6 +357,14 @@ export const routes: Route[] = [
     title: "회사소개 — 고품위 규석 광산 직영 실리카 기업 | SILICA",
     description:
       "SILICA는 국내 유일 고품위 규석 광산을 직접 운영하며 용융 실리카·실리카 겔·고순도 실리카 소재의 채광부터 가공까지 일관 공정을 수행하는 전문 기업입니다.",
+    titleI18n: {
+      en: "About SILICA — Integrated High-Purity Quartz & Fused Silica Manufacturer | SILICA",
+      ja: "会社案内 — 高品位石英原料から加工まで一貫生産のシリカ専門メーカー | SILICA",
+    },
+    descriptionI18n: {
+      en: "SILICA operates an integrated supply chain — from a Korean high-purity quartz source to fused silica melting, milling and grading — with ISO 9001 / 22000 QC for semiconductor, optics and industrial customers worldwide.",
+      ja: "SILICAは韓国の高品位石英原料から溶融・粉砕・等級化までを一貫生産。ISO 9001/22000品質管理体制のもと、半導体・光学・産業分野の顧客に高純度シリカ素材を安定供給します。",
+    },
     h1: "회사소개 · 국내 유일의 고품위 규석 광산을 직접 개발합니다",
     body: `
       <p>당사는 국내 유일의 고품위 규석 광산을 직접 개발·운영하며, 탐사부터 채광·1차 가공까지 자체 수행하여 최고 품질의 고품위 석영을 생산합니다. 원료 선별부터 완제품까지 각 단계의 차별화된 QC 시스템을 통해 고객의 기대를 충족합니다.</p>
@@ -363,6 +379,14 @@ export const routes: Route[] = [
     title: "공지·기술 자료 — 용융 실리카·실리카 겔 소식 | SILICA",
     description:
       "SILICA 공식 게시판. 용융 실리카(Fused Silica), 실리카 겔(Silica Gel), 고순도 실리카 소재 관련 공지·업계 소식·기술 자료를 공유합니다.",
+    titleI18n: {
+      en: "News & Technical Notes — Fused Silica, Silica Gel Updates | SILICA",
+      ja: "お知らせ・技術資料 — 溶融シリカ・シリカゲル最新情報 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Official SILICA board — announcements, industry news and technical notes on fused silica, silica gel and high-purity silica materials.",
+      ja: "SILICA公式掲示板。溶融シリカ、シリカゲル、高純度シリカ素材に関するお知らせ・業界情報・技術資料を公開しています。",
+    },
     h1: "SiLiCA 게시판",
     body: `<p>공지사항, 업계 소식, 용융 실리카·실리카 겔·고순도 규석 관련 기술 정보를 공유하는 SILICA 공식 게시판입니다.</p>`,
   },
@@ -371,6 +395,14 @@ export const routes: Route[] = [
     title: "이용약관 — 산업용 실리카 소재 공급 | SILICA",
     description:
       "SILICA 웹사이트 이용약관. 용융 실리카·실리카 겔 등 산업용 실리카 소재 공급에 관한 회원과 회사의 권리·의무를 안내합니다.",
+    titleI18n: {
+      en: "Terms of Service — Industrial Silica Materials Supply | SILICA",
+      ja: "利用規約 — 産業用シリカ素材の供給 | SILICA",
+    },
+    descriptionI18n: {
+      en: "SILICA website terms of service governing the supply of industrial silica materials including fused silica and silica gel.",
+      ja: "溶融シリカ・シリカゲル等 産業用シリカ素材の供給に関するSILICAウェブサイト利用規約。",
+    },
     h1: "이용약관",
     body: `<p>본 약관은 SiLiCA 웹사이트 이용에 관한 조건과 절차, 회원과 회사의 권리·의무 및 책임사항을 규정합니다.</p>`,
   },
@@ -379,6 +411,14 @@ export const routes: Route[] = [
     title: "개인정보처리방침 — SILICA 실리카 소재 공급",
     description:
       "SILICA의 개인정보 수집·이용·보관·파기 절차를 안내하는 개인정보처리방침입니다. 용융 실리카·실리카 겔 공급 문의에 따른 처리 기준을 포함합니다.",
+    titleI18n: {
+      en: "Privacy Policy — SILICA Industrial Silica Materials",
+      ja: "プライバシーポリシー — SILICA シリカ素材供給",
+    },
+    descriptionI18n: {
+      en: "SILICA privacy policy — how we collect, use, store and dispose of personal information, including inquiries related to fused silica and silica gel supply.",
+      ja: "溶融シリカ・シリカゲル供給に関するお問い合わせを含む個人情報の収集・利用・保管・廃棄に関するSILICAのプライバシーポリシー。",
+    },
     h1: "개인정보처리방침",
     body: `<p>SiLiCA는 개인정보 보호법 제30조에 따라 정보주체의 개인정보를 보호하고 고충을 신속히 처리하기 위해 본 처리방침을 수립·공개합니다.</p>`,
   },
