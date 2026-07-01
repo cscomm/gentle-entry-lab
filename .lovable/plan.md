@@ -1,53 +1,51 @@
+
 ## 목표
-현재 토글 방식 다국어를 언어별 독립 URL(`/ko`, `/en`, `/ja`) 구조로 전환하고 hreflang/sitemap을 자동화합니다. (요청에서 `/kr`, `/jp`로 적어주셨지만 SEO 표준은 ISO 639-1 코드인 `ko`, `ja` 입니다. 검색엔진 인식 측면에서 `/ko`, `/en`, `/ja` 사용을 권장합니다. 원하시면 `/kr`, `/jp`로도 가능합니다 — 진행 전 확인 부탁드립니다.)
+업로드된 PDF(중텅 석영 샘플 카탈로그)를 기반으로 7개 새로운 실리카 분말 카테고리(총 13개 하위 모델)를 사이트에 등록. 한국어·영어·일본어 3개 언어 지원, 카테고리 바 재구성, SEO 프리렌더까지.
 
-## 변경 범위
+## 신규 7개 카테고리 (슬러그 · 모델)
 
-### 1. 라우팅 (`src/App.tsx`)
-- 모든 라우트를 `/:lang(ko|en|ja)/...` prefix 아래로 이동.
-- 루트 `/` 접근 시 브라우저 `navigator.language` 또는 저장된 선호 언어 기준 `/ko` (기본) 등으로 301 redirect (클라이언트 `<Navigate replace>`).
-- 잘못된 lang 코드 → `/ko`로 fallback.
-- 기존 경로 (`/about`, `/products/...` 등) 접근 시 `/ko/about` 등으로 자동 redirect (구글이 기존 인덱싱한 URL 보존).
+| # | 슬러그 | 카테고리 (KO/EN/JA) | 하위 모델 |
+|---|---|---|---|
+| 1 | `spherical-silica-powder` | 구형 실리카 분말 / Spherical Silica Powder / 球状シリカ粉末 | SL-QG · SL-QG-L |
+| 2 | `round-corner-silica-powder` | 원각 실리카 분말 / Round Corner Silica Powder / 円角シリカ粉末 | SL-YJG · SL-YRG |
+| 3 | `angular-silica-powder` | 각형 실리카 분말 / Angular Silica Powder / 角形シリカ粉末 | SL-RG · SL-JG |
+| 4 | `low-radiation-silica-powder` | 저방사 실리카 분말 / Low-α Silica Powder / 低放射シリカ粉末 | SL-CL · SL-FL |
+| 5 | `surface-modified-silica-powder` | 활성(표면개질) 실리카 분말 / Surface-Modified Silica Powder / 表面改質シリカ粉末 | SL-HJG · SL-HRG |
+| 6 | `silica-sand-granule` | 실리카 사 · 입자 / Silica Sand & Granule / シリカサンド・粒 | SL-CS · SL-FS |
+| 7 | `lead-free-glass-powder` | 무연유리분말 / Lead-Free Glass Powder / 無鉛ガラス粉末 | SL-ZT |
 
-### 2. 언어 컨텍스트 (`src/contexts/LanguageContext.tsx`)
-- `useParams().lang`을 source of truth로 사용. localStorage는 fallback으로만.
-- `setLang(l)` → `navigate(현재경로의 lang 부분만 교체)`로 변경.
+원본 이름의 `SINO-` prefix를 모두 `SL-`로 변경.
 
-### 3. 내부 링크 일괄 보정
-- `<Link to="/about">` 등 모든 정적 링크를 `useLang()` 기반 헬퍼 `localePath('/about')`로 교체.
-- 영향 파일: `SiteHeader.tsx`, `SiteFooter.tsx`, `ProductCategoryBar.tsx`, `Index.tsx`, `ProductDetail.tsx`, 카테고리/응용분야 페이지 8개, `Board*`, `About`, `Terms`, `Privacy`.
+## 카테고리 바 순서 (요청대로)
+- **1행**: 전체 제품 · 구형 · 원각 · 각형 · 저방사 · 활성 · 실리카 사·입자 (1~6)
+- **2행**: A등급 · B등급 · C등급 · 침전 · 흄드 · 규사 · 규사분말 · 천연규석 · **무연유리분말**(끝)
+- **3행/끝**: 실리카겔 (아래로 이동)
 
-### 4. SEO — hreflang & canonical (`src/components/CanonicalUrl.tsx`)
-- 현재 경로에서 lang 부분을 제거한 base path 추출.
-- 매 페이지에 다음 태그 자동 삽입:
-```
-<link rel="canonical" href="https://silica.co.kr/{lang}{path}/">
-<link rel="alternate" hreflang="ko" href=".../ko{path}/">
-<link rel="alternate" hreflang="en" href=".../en{path}/">
-<link rel="alternate" hreflang="ja" href=".../ja{path}/">
-<link rel="alternate" hreflang="x-default" href=".../ko{path}/">
-<html lang="{lang}"> 동적 갱신
-```
+## 이미지 처리
+PDF 내 각 시리즈 대표 SEM/제품 사진(img_pN_1.jpg)을 추출 → AI 이미지 편집으로:
+- 좌상단 파란 삼각형 "产品特点/Product Features" 리본 제거
+- 로고·워터마크 제거, 배경 정리, 선명도 향상
+- `src/assets/`에 저장 (7장, 각 카테고리 1장)
 
-### 5. 사이트맵 자동화 (`scripts/generate-sitemap.ts` 신규 + `package.json` predev/prebuild)
-- 라우트 목록을 단일 소스(`src/lib/routes.ts`)로 추출.
-- 빌드 시 각 라우트 × 3개 언어 = URL 생성, 각 URL에 hreflang `xhtml:link` 형제 태그 포함.
-- 기존 `public/sitemap.xml`은 generator가 덮어쓰도록 변경.
+## 상세 페이지 구성
+각 상세 페이지에 아래 섹션 렌더:
+1. 히어로 (제품명·태그라인·대표사진)
+2. **하위 모델 표** (모델코드 · 원료/공법 · 대표 특성) — 규사 페이지와 동일 컨셉
+3. 기본 특성 및 화학 조성 스펙 카드
+4. 주요 특징 (Product Features) 아이콘 카드
+5. 주요 응용 분야 (기존 applications 렌더)
 
-### 6. 리다이렉트 (`public/_redirects`)
-- 기존 `/products/fused-silica-block` 등 legacy 301 규칙은 `/ko/products/...`로 갱신.
-- Lovable 호스팅은 `_redirects`를 처리하지 않으므로 동일 매핑을 `App.tsx`의 React Router `<Navigate>`로도 추가 (이중 안전망).
+## 파일 수정 목록
+- `src/data/products.ts` — 7개 신규 엔트리 추가 (KO/EN/JA), subModels 필드 확장
+- `src/pages/ProductDetail.tsx` — 하위 모델 테이블 렌더 로직 추가
+- `src/components/ProductCategoryBar.tsx` — 순서 재편, 2행 wrap 처리
+- `src/components/SiteHeader.tsx` — 제품 드롭다운에 7개 신규 항목
+- `src/pages/Index.tsx` — 제품 그리드에 신규 카테고리 추가
+- `scripts/prerender.ts` — 7개 신규 라우트 + 3개 언어 SEO 메타
+- `public/sitemap.xml` — 자동 재생성
 
-### 7. 향후 추가 페이지 규칙 (메모리에 저장)
-새 페이지 추가 시 항상:
-- `src/lib/routes.ts` 배열에 path 등록
-- 컴포넌트는 `localePath` 헬퍼로 내부 링크 작성
-- 번역 키를 `LanguageContext` dict에 ko/en/ja 3개 모두 추가
-- sitemap은 자동 반영 (수동 작업 불필요)
-이 규칙을 `mem://core` 및 `mem://features/i18n-routing`에 저장.
+## 확인 요청
+1. **응용분야 페이지**: 신규 7개 카테고리에도 `/applications/{slug}/` 별도 페이지를 만들까요? 아니면 상세페이지 내 응용 분야 섹션만으로 충분한가요? (규사·분말은 상세페이지 응용 섹션을 지운 상태)
+2. **이미지 톤**: PDF 이미지가 SEM 흑백 사진이 대부분입니다. 그대로 유지 vs 컬러 톤 보정 중 어느 쪽이 좋을까요?
 
-## 확인 사항 (진행 전)
-1. URL 코드: `/ko /en /ja` (권장, SEO 표준) vs `/kr /en /jp` (요청 그대로) — 어느 쪽으로 진행할까요?
-2. 기본 언어 결정: 첫 방문자가 `/` 접근 시 (a) 항상 `/ko`로 / (b) 브라우저 언어 감지 후 매칭되는 lang으로 / (c) 한국어 우선 + 그 외는 영어 — 중 선택.
-
-확인되면 위 7단계를 한 번에 적용합니다.
+승인 주시면 순서대로 진행하겠습니다.
