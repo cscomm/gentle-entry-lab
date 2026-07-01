@@ -90,6 +90,14 @@ export const productRoutes: Route[] = [
     title: "B등급 프리미엄 용융 실리카 Fused Silica | SILICA",
     description:
       "SiO₂ 99.5%·무정형 98% 이상의 B등급 프리미엄 용융 실리카(Fused Silica). 태양광·전자/반도체·정밀 주조용 고순도 실리카 소재.",
+    titleI18n: {
+      en: "Grade B Premium Fused Silica (SiO₂ ≥99.5%, ≥98% amorphous) | SILICA",
+      ja: "Bグレード プレミアム溶融シリカ Fused Silica (SiO₂ 99.5%以上) | SILICA",
+    },
+    descriptionI18n: {
+      en: "Premium fused silica, Grade B — SiO₂ ≥99.5%, ≥98% amorphous, CTE <0.8×10⁻⁶/°C. Optimized for solar, electronics/semiconductor and precision investment casting. ppm-level Al/Fe control, custom grading 1µm–60mm.",
+      ja: "SiO₂ 99.5%以上・非晶質98%以上のBグレード プレミアム溶融シリカ。太陽光・電子/半導体・精密鋳造向けに最適な高純度Fused Silica素材。ppmレベルの不純物管理と1µm〜60mmのカスタム粒度。",
+    },
     h1: "B등급 용융실리카 — 프리미엄 (Premium Fused Silica)",
     body: `
       <p>프리미엄 용융실리카 B등급은 99.5% 이상의 SiO₂ 순도와 98% 이상의 무정형 구조를 갖춘 고품질 소재입니다. 열적 안정성과 화학적 안정성의 최적 균형을 제공합니다.</p>
@@ -107,6 +115,14 @@ export const productRoutes: Route[] = [
     title: "C등급 산업용 용융 실리카 Fused Silica | SILICA",
     description:
       "SiO₂ 99% 이상의 산업용 용융 실리카(Fused Silica) C등급. 건축·페인트·플라스틱·연마재 등 산업용 실리카 소재를 경제적으로 공급합니다.",
+    titleI18n: {
+      en: "Grade C Standard Industrial Fused Silica (SiO₂ ≥99%) | SILICA",
+      ja: "Cグレード 産業用 溶融シリカ Fused Silica (SiO₂ 99%以上) | SILICA",
+    },
+    descriptionI18n: {
+      en: "Standard industrial fused silica, Grade C — SiO₂ ≥99%, stable thermal/chemical performance with excellent cost efficiency. For construction, paints & coatings, plastics/rubber and abrasives. Reliable bulk supply.",
+      ja: "SiO₂ 99%以上の産業用溶融シリカ Cグレード。安定した熱・化学特性と優れた経済性を両立。建築・塗料・プラスチック・研磨材向けにコストパフォーマンスの高いFused Silica素材を安定供給。",
+    },
     h1: "C등급 용융실리카 — 스탠다드 (Standard Fused Silica)",
     body: `
       <p>스탠다드 용융실리카 C등급은 99.0% 이상의 SiO₂ 순도를 갖춘 산업 표준 소재로, 안정적인 열적·화학적 성능과 우수한 경제성을 동시에 제공합니다.</p>
@@ -118,6 +134,14 @@ export const productRoutes: Route[] = [
     title: "규사 Silica Sand — 고순도 산업용 규사 공급 | SILICA",
     description:
       "유리·주조·여과·인조잔디·건축·골프장용 고순도 산업 규사(Silica Sand). 입도 맞춤 공급이 가능한 SiLiCA 규사 제품 라인업.",
+    titleI18n: {
+      en: "High-Purity Silica Sand for Glass, Foundry & Filtration | SILICA",
+      ja: "高純度 珪砂 (Silica Sand) — ガラス・鋳造・濾過向け | SILICA",
+    },
+    descriptionI18n: {
+      en: "High-purity industrial silica sand (SiO₂) for glass, foundry, water filtration, artificial turf, construction and golf courses. Custom particle size grading (SLS20–SLS100) with reliable bulk supply.",
+      ja: "ガラス・鋳造・水処理濾過・人工芝・建築・ゴルフ場用の高純度SiO₂珪砂(Silica Sand)。SLS20〜SLS100までカスタム粒度対応、安定したバルク供給を実現。",
+    },
     h1: "규사 (Silica Sand)",
     body: `<p>SiLiCA의 규사(Silica Sand)는 유리, 주조, 여과, 인조잔디, 건축, 골프장 등 광범위한 산업 분야의 핵심 원료로 사용되는 고순도 SiO₂ 규사입니다.</p><h2>주요 용도</h2><p>판유리/특수유리 원료, 주조용 모래, 정수 여과재, 인조잔디 충진재, 건축 모르타르, 스포츠 시설.</p>`,
   },
@@ -126,6 +150,14 @@ export const productRoutes: Route[] = [
     title: "규사 · 규사분말 응용분야 Silica Sand & Powder Applications | SILICA",
     description:
       "고순도 규사(Silica Sand)와 규사분말(Silica Powder)의 산업별 응용 분야 — 유리 제조, 특수 유리, 주조, 수처리, 페인트·플라스틱, 인조대리석, 화학 원료 등.",
+    titleI18n: {
+      en: "Silica Sand & Silica Powder Applications — Glass, Foundry, Coatings | SILICA",
+      ja: "珪砂・珪砂粉末の用途分野 — ガラス・鋳造・塗料・人工大理石 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of high-purity silica sand (SiO₂ ≥99.5%) and silica powder — flat/tempered/optical/solar glass, foundry molds, water filtration, paints & plastics fillers, engineered stone and silica chemistry.",
+      ja: "SiO₂ 99.5%以上の高純度珪砂・珪砂粉末の産業別用途 — 板ガラス/強化/光学/太陽光ガラス、鋳型、水処理、塗料・プラスチック充填材、人工大理石、水ガラス等シリカ化学原料まで。",
+    },
     h1: "규사 · 규사분말 응용분야",
     body: `<p>SiO₂ 99.5% 이상의 고순도 규사와 규사분말은 건축·특수 유리, 주조, 수처리, 페인트·코팅·플라스틱, 인조대리석, 실리카 화학 원료 등 광범위한 산업 분야의 핵심 원료로 사용됩니다.</p><h2>주요 응용 산업</h2><p>유리 제조(평판/강화/복층/광학/태양광/의료), 주조(사형/수지사/정밀 인베스트먼트), 수처리 여과, 페인트·플라스틱 기능성 필러, 인조대리석 및 건축 몰탈, 화학 원료(물유리·백탄·실리콘·실리카겔), 샌드블라스팅 및 스포츠 규사.</p>`,
   },
@@ -134,6 +166,14 @@ export const productRoutes: Route[] = [
     title: "규사분말 Silica Powder — 고백색 미분 실리카 충진재 | SILICA",
     description:
       "도료·플라스틱·인조대리석·건축 자재용 고백색·고순도 미분 실리카 규사분말(Silica Powder). SiLiCA 기능성 충진재 라인업.",
+    titleI18n: {
+      en: "High-Whiteness Silica Powder for Coatings, Plastics & Engineered Stone | SILICA",
+      ja: "高白色 珪砂粉末 Silica Powder — 塗料・プラスチック・人工大理石用 | SILICA",
+    },
+    descriptionI18n: {
+      en: "High-whiteness, high-purity micronized silica powder (SLP200/SLP325) for paints & coatings, plastics/rubber, engineered stone/artificial marble, putties and sealants. Functional filler with stable particle distribution.",
+      ja: "塗料・コーティング、プラスチック/ゴム、人工大理石、パテ・シーラント向けの高白色・高純度 微粉シリカ(SLP200/SLP325)。安定した粒度分布の機能性フィラー。",
+    },
     h1: "규사분말 (Silica Powder)",
     body: `<p>SiLiCA의 규사분말(Silica Powder)은 도료·코팅·플라스틱·인조대리석·건축 자재에 사용되는 고백색·고순도 미분 실리카 기능성 충진재입니다.</p><h2>주요 용도</h2><p>페인트/코팅 필러, 플라스틱·고무 충진재, 인조대리석·엔지니어드 스톤, 퍼티·실란트, 건축 자재.</p>`,
   },
@@ -142,6 +182,14 @@ export const productRoutes: Route[] = [
     title: "고순도 천연 규석 High-Purity Quartz | SILICA",
     description:
       "SiO₂ 99.77%, Fe₂O₃ 5ppm급 고순도 천연 규석(High-Purity Quartz). EGS·인조대리석·고급 유리·전자재료·나노 가공용 고순도 실리카 원료.",
+    titleI18n: {
+      en: "High-Purity Quartz (SiO₂ 99.77%, Fe₂O₃ 5ppm) for Semiconductor & EGS | SILICA",
+      ja: "高純度石英 High-Purity Quartz (SiO₂ 99.77%・Fe₂O₃ 5ppm級) | SILICA",
+    },
+    descriptionI18n: {
+      en: "Natural high-purity quartz — SiO₂ 99.77%, Fe₂O₃ 5 ppm class. Feedstock for engineered/quartz stone (EGS), premium glass, electronic materials and nano-grade processing. Consistent batch-to-batch purity.",
+      ja: "SiO₂ 99.77%、Fe₂O₃ 5ppm級の天然高純度石英(High-Purity Quartz)。人工大理石(EGS)、高級ガラス、電子材料、ナノ加工向け高純度シリカ原料。ロット間ばらつきの少ない安定品質。",
+    },
     h1: "고품위 규석 (High-Purity Quartz)",
     body: `
       <p>당사는 국내 유일 고품위 규석 광산인 장수백암광산(BAR)을 직접 운영하여, 최저 99.5% 이상의 편차 없는 순도를 보장하는 고품위 규석을 공급합니다.</p>
@@ -153,6 +201,14 @@ export const productRoutes: Route[] = [
     title: "실리카 겔 Silica Gel 공급 전문 — 8종 라인업 | SILICA",
     description:
       "고순도 실리카 겔(Silica Gel) 8종 — 미분 실리카·안티블로킹제·소광제·A형/B형 실리카 겔까지 산업용 실리카 소재를 한곳에서 공급합니다.",
+    titleI18n: {
+      en: "Silica Gel Supplier — 8 Grades (Type A/B, Anti-blocking, Matting) | SILICA",
+      ja: "シリカゲル Silica Gel 供給専門 — 8種ラインアップ | SILICA",
+    },
+    descriptionI18n: {
+      en: "Full silica gel line-up — 8 grades including micronized silica, anti-blocking agent, matting agent, large/coarse-pore gels, water-resistant FNG, and Type A/B desiccants. High-purity SiO₂ industrial silica from one supplier.",
+      ja: "高純度SiO₂系シリカゲル8種 — 微粉シリカ、アンチブロッキング剤、艶消し剤、大細孔/粗細孔ゲル、耐水性FNG、A型/B型乾燥剤まで産業用シリカ素材をワンストップ供給。",
+    },
     h1: "실리카겔 · Silica Gel — 8종 제품 라인업",
     body: `
       <p>SiLiCA의 실리카겔(Silica Gel) 라인업은 고순도 이산화규소(SiO₂) 기반의 정밀 무기 소재로, 흡착·건조·소광·안티블로킹·미분 충진재 등 광범위한 산업 공정에서 사용됩니다.</p>
