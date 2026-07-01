@@ -254,7 +254,13 @@ export const productCatalog: ProductDetail[] = [
       { label: "포장", value: "25kg 지대 / 500kg 벌크백 / 1톤 톤백 / OEM 포장", enValue: "25 kg bag / 500 kg bulk bag / 1-ton bag / OEM packaging", jaValue: "25kg紙袋 / 500kgバルクバッグ / 1トンバッグ / OEM包装", enLabel: "Packaging", jaLabel: "包装" },
     ],
     applications: ["규사분말"],
+    subModelsColumnLabel: { ko: "입도 (Mesh)", en: "Grain Size (Mesh)", ja: "粒度 (Mesh)" },
+    subModels: [
+      { code: "SLP200", spec: "약 200 Mesh", enSpec: "Approx. 200 Mesh", jaSpec: "約200 Mesh", name: "규사 분말", enName: "Silica Powder", jaName: "珪砂粉末" },
+      { code: "SLP325", spec: "325 ~ 1000 Mesh", name: "고미분 규사 분말", enName: "Ultra-Fine Silica Powder", jaName: "高微細珪砂粉末" },
+    ],
   },
+
   {
     slug: "high-purity-quartz",
     name: "천연 고순도규석",
