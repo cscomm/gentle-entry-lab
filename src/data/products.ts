@@ -748,7 +748,7 @@ const advSeriesProducts: ProductDetail[] = [
     features: [
       { title: "💎 고강도·고내마모", desc: "각진 입자 구조로 복합재 기계적 물성 극대화", enTitle: "💎 High Strength & Wear Resistance", jaTitle: "💎 高強度・高耐摩耗", enDesc: "Angular structure maximizes mechanical properties of composites", jaDesc: "角状構造で複合材の機械的物性を極大化" },
       { title: "🔧 2종 그레이드", desc: "용융형(SL-RG) · 결정형(SL-JG) 선택 가능", enTitle: "🔧 Dual Grade Lineup", jaTitle: "🔧 2種グレード", enDesc: "Choice of fused SL-RG and crystalline SL-JG", jaDesc: "溶融質(SL-RG)・結晶質(SL-JG)の選択が可能" },
-      { title: "🧪 고순도 SiO₂ ≥ 99.5%", desc: "저철·저알칼리 관리로 절연 신뢰성 확보", enTitle: "🧪 High-Purity SiO₂ ≥ 99.5%", jaTitle: "🧪 高純度SiO₂ ≥ 99.5%", enDesc: "Low-iron/low-alkali control ensures insulation reliability", jaDesc: "低鉄・低アルカリ管理で絶縁信頼性を確保" },
+      { title: "🧪 고순도 SiO₂ 98.0 ~ 99.95%", desc: "저철·저알칼리 관리로 절연 신뢰성 확보", enTitle: "🧪 High-Purity SiO₂ 98.0–99.95%", jaTitle: "🧪 高純度SiO₂ 98.0~99.95%", enDesc: "Low-iron/low-alkali control ensures insulation reliability", jaDesc: "低鉄・低アルカリ管理で絶縁信頼性を確保" },
       { title: "⚙️ 광범위 입도", desc: "D50 1 ~ 45 µm 맞춤 생산 가능", enTitle: "⚙️ Wide PSD Range", jaTitle: "⚙️ 広範な粒度", enDesc: "Custom D50 from 1 to 45 µm available", jaDesc: "D50 1~45 µm カスタム生産可能" },
       { title: "💰 경제적 가격", desc: "구형 대비 낮은 원가의 표준 필러", enTitle: "💰 Cost-Effective", jaTitle: "💰 経済的価格", enDesc: "Standard filler with lower cost than spherical grades", jaDesc: "球状品対比低コストの標準フィラー" },
       { title: "🔥 열적 안정성", desc: "고온 공정에서도 안정적 물성 유지", enTitle: "🔥 Thermal Stability", jaTitle: "🔥 熱的安定性", enDesc: "Maintains properties under high-temperature processes", jaDesc: "高温工程でも安定した物性を維持" },
