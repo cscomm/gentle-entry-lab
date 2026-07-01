@@ -218,18 +218,9 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         to="/applications/silica-sand/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "ja" ? "珪砂" : lang === "en" ? "Silica Sand" : "규사"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "珪砂・珪砂粉末" : lang === "en" ? "Silica Sand & Powder" : "규사 · 규사분말"}</div>
                         {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sand</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/applications/silica-powder/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "珪砂粉末" : lang === "en" ? "Silica Powder" : "규사분말"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Powder</div>
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sand & Powder</div>
                         )}
                       </Link>
                       <Link
