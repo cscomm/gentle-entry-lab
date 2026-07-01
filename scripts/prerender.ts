@@ -12,10 +12,14 @@ const BASE_URL = "https://silica.co.kr";
 const DIST = resolve("dist");
 const SOURCE = resolve(DIST, "index.html");
 
+type LangCode = "ko" | "en" | "ja";
+type I18n = Partial<Record<LangCode, string>>;
 type Route = {
   path: string;        // url path, e.g. "/about"
-  title: string;
-  description: string;
+  title: string;                 // Korean (default)
+  description: string;           // Korean (default)
+  titleI18n?: I18n;              // per-language override (en/ja)
+  descriptionI18n?: I18n;        // per-language override (en/ja)
   h1: string;
   body: string;        // inner HTML for SEO content
 };
