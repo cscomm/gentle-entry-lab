@@ -36,6 +36,7 @@ export type SubModel = {
   name?: string;
   enName?: string;
   jaName?: string;
+  slug?: string;
 };
 
 export type ProductDetail = {
@@ -57,6 +58,8 @@ export type ProductDetail = {
   applications: string[];
   subModels?: SubModel[];
   subModelsColumnLabel?: { ko: string; en: string; ja: string };
+  isCategoryIndex?: boolean;
+  parentSlug?: string;
 };
 
 
@@ -680,9 +683,10 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "10 / 20 kg 지대 · OEM", enValue: "10 / 20 kg bag · OEM", jaValue: "10 / 20 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "특성", en: "Feature", ja: "特性" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-QG", spec: "일반 구형", enSpec: "Standard Spherical", jaSpec: "一般球状", name: "구형 실리카 분말", enName: "Spherical Silica Powder", jaName: "球状シリカ粉末" },
-      { code: "SL-QG-L", spec: "저방사(Low-α) 구형", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "저방사 구형 실리카 분말", enName: "Low-Alpha Spherical Silica Powder", jaName: "低α線球状シリカ粉末" },
+      { code: "SL-QG", slug: "sl-qg", spec: "일반 구형", enSpec: "Standard Spherical", jaSpec: "一般球状", name: "SL-QG 일반 구형 실리카 분말", enName: "SL-QG · Standard Spherical Silica Powder", jaName: "SL-QG 一般球状シリカ粉末" },
+      { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사(Low-α) 구형", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "SL-QG-L 저방사 구형 실리카 분말", enName: "SL-QG-L · Low-Alpha Spherical Silica Powder", jaName: "SL-QG-L 低α線球状シリカ粉末" },
     ],
     applications: ["반도체 EMC", "CCL / PCB", "언더필 / 봉지재", "고열전도 소재"],
   },
@@ -720,9 +724,10 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "20 kg bag · 500 kg bulk · OEM", jaValue: "20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-YJG", spec: "결정형 원각", enSpec: "Crystalline Round-Corner", jaSpec: "結晶質 丸角" },
-      { code: "SL-YRG", spec: "용융형 원각", enSpec: "Fused Round-Corner", jaSpec: "溶融質 丸角" },
+      { code: "SL-YJG", slug: "sl-yjg", spec: "결정형 원각", enSpec: "Crystalline Round-Corner", jaSpec: "結晶質 丸角", name: "SL-YJG 결정형 원각 실리카 분말", enName: "SL-YJG · Crystalline Round-Corner Silica Powder", jaName: "SL-YJG 結晶質丸角シリカ粉末" },
+      { code: "SL-YRG", slug: "sl-yrg", spec: "용융형 원각", enSpec: "Fused Round-Corner", jaSpec: "溶融質 丸角", name: "SL-YRG 용융형 원각 실리카 분말", enName: "SL-YRG · Fused Round-Corner Silica Powder", jaName: "SL-YRG 溶融質丸角シリカ粉末" },
     ],
     applications: ["CCL / PCB", "도전성 페이스트", "산업용 코팅", "고내마모 복합재"],
   },
@@ -761,9 +766,10 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "20 kg bag · 500 kg bulk · OEM", jaValue: "20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-RG", spec: "용융형 각형", enSpec: "Fused Angular", jaSpec: "溶融質 角形" },
-      { code: "SL-JG", spec: "결정형 각형", enSpec: "Crystalline Angular", jaSpec: "結晶質 角形" },
+      { code: "SL-RG", slug: "sl-rg", spec: "용융형 각형", enSpec: "Fused Angular", jaSpec: "溶融質 角形", name: "SL-RG 용융형 각형 실리카 분말", enName: "SL-RG · Fused Angular Silica Powder", jaName: "SL-RG 溶融質角形シリカ粉末" },
+      { code: "SL-JG", slug: "sl-jg", spec: "결정형 각형", enSpec: "Crystalline Angular", jaSpec: "結晶質 角形", name: "SL-JG 결정형 각형 실리카 분말", enName: "SL-JG · Crystalline Angular Silica Powder", jaName: "SL-JG 結晶質角形シリカ粉末" },
     ],
     applications: ["EMC / 봉지재", "산업 도료", "접착제 · 실란트", "고무 보강", "인조 대리석", "전기 절연재"],
   },
@@ -802,9 +808,10 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "10 / 20 kg 지대 · OEM", enValue: "10 / 20 kg bag · OEM", jaValue: "10 / 20 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-CL", spec: "저방사 결정형", enSpec: "Low-Radiation Crystalline", jaSpec: "低α線 結晶質" },
-      { code: "SL-FL", spec: "저방사 용융형", enSpec: "Low-Radiation Fused", jaSpec: "低α線 溶融質" },
+      { code: "SL-CL", slug: "sl-cl", spec: "저방사 결정형", enSpec: "Low-Radiation Crystalline", jaSpec: "低α線 結晶質", name: "SL-CL 저방사 결정형 실리카 분말", enName: "SL-CL · Low-Radiation Crystalline Silica Powder", jaName: "SL-CL 低α線結晶質シリカ粉末" },
+      { code: "SL-FL", slug: "sl-fl", spec: "저방사 용융형", enSpec: "Low-Radiation Fused", jaSpec: "低α線 溶融質", name: "SL-FL 저방사 용융형 실리카 분말", enName: "SL-FL · Low-Radiation Fused Silica Powder", jaName: "SL-FL 低α線溶融質シリカ粉末" },
     ],
     applications: ["HBM / DDR5", "AI 반도체 EMC", "언더필 / 봉지재", "어드밴스드 패키징"],
   },
@@ -817,11 +824,11 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "Silane-Coupling Surface Modification for Maximum Resin Compatibility and Dispersion",
     jaTagline: "シランカップリング表面改質で樹脂親和性・分散性を極大化",
     description:
-      "활성(표면개질) 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시·아미노·비닐·메타크릴 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 결정형(SL-HJG)과 용융형(SL-HRG) 2종으로 공급되며 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
+      "활성(표면개질) 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시 실란 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 표준 등급 SL-DRG07과 고순도 등급 SL-DRG07-A 2종으로 공급되며, 반도체 EMC·언더필, 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
     enDescription:
-      "Surface-Modified Silica Powder is a functional filler in which silane coupling agents (epoxy, amino, vinyl, methacryl, etc.) are chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Supplied as crystalline SL-HJG and fused SL-HRG grades, optimized for epoxy, phenolic, silicone and acrylic resin matrices.",
+      "Surface-Modified Silica Powder is a functional filler in which epoxy-silane coupling agent is chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Supplied as standard SL-DRG07 and high-purity SL-DRG07-A grades — optimized for semiconductor EMC/underfill and epoxy, phenolic, silicone and acrylic resin matrices.",
     jaDescription:
-      "活性(表面改質)シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシ・アミノ・ビニル・メタクリルなど)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。結晶質(SL-HJG)・溶融質(SL-HRG)の2種で供給され、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
+      "活性(表面改質)シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシシラン)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。標準グレードSL-DRG07・高純度グレードSL-DRG07-Aの2種で供給され、半導体EMC・アンダーフィル、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
     image: surfaceModImg,
     category: "advanced-series",
     features: [
@@ -842,9 +849,10 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "20 kg 지대 · OEM", enValue: "20 kg bag · OEM", jaValue: "20 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-HJG", spec: "활성 결정형", enSpec: "Active Crystalline", jaSpec: "活性 結晶質" },
-      { code: "SL-HRG", spec: "활성 용융형", enSpec: "Active Fused", jaSpec: "活性 溶融質" },
+      { code: "SL-DRG07", slug: "sl-drg07", spec: "표준 등급 (에폭시 실란 표면처리)", enSpec: "Standard Grade (Epoxy-Silane Treated)", jaSpec: "標準グレード (エポキシシラン表面処理)", name: "SL-DRG07 활성 실리카 분말", enName: "SL-DRG07 · Surface-Modified Silica Powder", jaName: "SL-DRG07 活性シリカ粉末" },
+      { code: "SL-DRG07-A", slug: "sl-drg07-a", spec: "고순도 등급 (에폭시 실란 표면처리)", enSpec: "High-Purity Grade (Epoxy-Silane Treated)", jaSpec: "高純度グレード (エポキシシラン表面処理)", name: "SL-DRG07-A 활성 실리카 분말", enName: "SL-DRG07-A · Surface-Modified Silica Powder", jaName: "SL-DRG07-A 活性シリカ粉末" },
     ],
     applications: ["에폭시 복합재", "실리콘 실란트", "고성능 접착제", "코팅 · 잉크"],
   },
@@ -882,9 +890,10 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "25 kg 지대 · 1 톤 톤백 · OEM", enValue: "25 kg bag · 1-ton bag · OEM", jaValue: "25 kg 紙袋 · 1トンバッグ · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-CS", spec: "결정 석영사", enSpec: "Crystalline Quartz Sand", jaSpec: "結晶石英砂" },
-      { code: "SL-FS", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
+      { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사", enSpec: "Crystalline Quartz Sand", jaSpec: "結晶石英砂", name: "SL-CS 결정 석영사", enName: "SL-CS · Crystalline Quartz Sand", jaName: "SL-CS 結晶石英砂" },
+      { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂", name: "SL-FS 용융 석영사", enName: "SL-FS · Fused Quartz Sand", jaName: "SL-FS 溶融石英砂" },
     ],
     applications: ["유리 원료", "정밀 주조", "연마재", "워터 필터", "스포츠 표면재"],
   },
@@ -923,14 +932,98 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "포장", value: "5 / 10 kg 지대 · OEM", enValue: "5 / 10 kg bag · OEM", jaValue: "5 / 10 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    isCategoryIndex: true,
     subModels: [
-      { code: "SL-ZT", spec: "무연 봉착 유리 프릿", enSpec: "Lead-Free Sealing Glass Frit", jaSpec: "無鉛封着ガラスフリット" },
+      { code: "SL-ZT", slug: "sl-zt", spec: "무연 봉착 유리 프릿", enSpec: "Lead-Free Sealing Glass Frit", jaSpec: "無鉛封着ガラスフリット", name: "SL-ZT 무연 봉착 유리 프릿", enName: "SL-ZT · Lead-Free Sealing Glass Frit", jaName: "SL-ZT 無鉛封着ガラスフリット" },
     ],
     applications: ["전자 부품 봉착", "디스플레이", "태양전지", "세라믹 · 금속 봉착"],
   },
 ];
 
 productCatalog.push(...advSeriesProducts);
+
+// ============= Generate child ProductDetail entries for each SL sub-model =============
+// Non-활성 sub-models inherit features/specs/applications from parent; 활성 (SL-DRG07/-A) get PDF-specific data.
+const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
+  "sl-drg07": {
+    tagline: "SiO₂ ≥99.7% · D50 6-9μm · 에폭시 실란 표면처리 표준 등급",
+    enTagline: "SiO₂ ≥99.7% · D50 6–9 µm · Standard Grade with Epoxy-Silane Surface Treatment",
+    jaTagline: "SiO₂ ≥99.7% · D50 6-9μm · エポキシシラン表面処理 標準グレード",
+    description: "SL-DRG07은 정밀한 입도 분포와 엄격한 화학적 순도 관리를 통해 반도체, 세라믹 및 첨단 소재 산업의 공정 효율성을 극대화하는 고순도 표면개질(에폭시 실란) 실리카입니다. SiO₂ ≥99.7%(대표치 99.75%)와 D50 6.6μm 수준의 균일한 입도 분포로 EMC·언더필·고신뢰성 접착제 배합에 최적화되어 있습니다.",
+    enDescription: "SL-DRG07 is a high-purity epoxy-silane surface-modified silica engineered for semiconductor, ceramic and advanced material industries, delivering process efficiency through precise particle size distribution and rigorous chemical purity. With SiO₂ ≥99.7% (typical 99.75%) and uniform D50 around 6.6 µm, it is optimized for EMC, underfill and high-reliability adhesive formulations.",
+    jaDescription: "SL-DRG07は精密な粒度分布と厳格な化学的純度管理により、半導体・セラミックス・先端素材産業の工程効率を最大化する高純度表面改質(エポキシシラン)シリカです。SiO₂ ≥99.7%(代表値99.75%)、D50 約6.6μmの均一な粒度分布で、EMC・アンダーフィル・高信頼性接着剤配合に最適化されています。",
+    specs: [
+      { label: "품번 (Code)", value: "SL-DRG07", enLabel: "Code", jaLabel: "品番 (Code)" },
+      { label: "외관", value: "백색 표면개질 분말", enValue: "White surface-modified powder", jaValue: "白色表面改質粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "표면 처리제", value: "에폭시 실란 (Epoxy silane)", enValue: "Epoxy silane", jaValue: "エポキシシラン (Epoxy silane)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "SiO₂", value: "≥ 99.7 % (대표치 99.75)", enValue: "≥ 99.7 % (typ. 99.75)", jaValue: "≥ 99.7 % (代表値 99.75)", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Al₂O₃", value: "≤ 0.3 % (대표치 0.12)", enValue: "≤ 0.3 % (typ. 0.12)", jaValue: "≤ 0.3 % (代表値 0.12)", enLabel: "Al₂O₃", jaLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "≤ 0.01 % (대표치 0.005)", enValue: "≤ 0.01 % (typ. 0.005)", jaValue: "≤ 0.01 % (代表値 0.005)", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "수용액 EC", value: "< 10 μs/cm (대표치 6.8)", enValue: "< 10 μs/cm (typ. 6.8)", jaValue: "< 10 μs/cm (代表値 6.8)", enLabel: "Aqueous EC", jaLabel: "水溶液 EC" },
+      { label: "Cl⁻", value: "< 5 ppm (대표치 1.23)", enValue: "< 5 ppm (typ. 1.23)", jaValue: "< 5 ppm (代表値 1.23)", enLabel: "Cl⁻", jaLabel: "Cl⁻" },
+      { label: "Na⁺", value: "< 5 ppm (대표치 1.26)", enValue: "< 5 ppm (typ. 1.26)", jaValue: "< 5 ppm (代表値 1.26)", enLabel: "Na⁺", jaLabel: "Na⁺" },
+      { label: "D10", value: "1.796 μm", enLabel: "D10", jaLabel: "D10" },
+      { label: "D50", value: "6.631 μm (범위 6-9)", enValue: "6.631 μm (range 6-9)", jaValue: "6.631 μm (範囲 6-9)", enLabel: "D50", jaLabel: "D50" },
+      { label: "D90", value: "19.559 μm", enLabel: "D90", jaLabel: "D90" },
+    ],
+  },
+  "sl-drg07-a": {
+    tagline: "SiO₂ 대표치 99.80% · Fe₂O₃ 30ppm급 · 고순도 등급",
+    enTagline: "SiO₂ typ. 99.80% · Fe₂O₃ 30 ppm-class · High-Purity Grade",
+    jaTagline: "SiO₂ 代表値 99.80% · Fe₂O₃ 30ppm級 · 高純度グレード",
+    description: "SL-DRG07-A는 SL-DRG07 대비 더욱 엄격한 순도 관리를 적용한 고순도 등급 표면개질(에폭시 실란) 실리카입니다. SiO₂ 대표치 99.80%, Fe₂O₃ 30 ppm급의 초저철분과 D50 6.4μm 수준의 미세 균일 입도로 HBM·AI 반도체용 EMC 및 고신뢰성 언더필에 대응합니다. 입도 분포는 고객 요구에 따라 조정 가능합니다.",
+    enDescription: "SL-DRG07-A applies even stricter purity control than SL-DRG07 — a high-purity epoxy-silane surface-modified silica with SiO₂ typical 99.80%, Fe₂O₃ 30 ppm-class ultra-low iron and fine, uniform D50 of about 6.4 µm. Designed for HBM/AI semiconductor EMC and high-reliability underfill. Particle size distribution can be adjusted per customer requirement.",
+    jaDescription: "SL-DRG07-AはSL-DRG07よりさらに厳格な純度管理を適用した高純度グレードの表面改質(エポキシシラン)シリカです。SiO₂代表値99.80%、Fe₂O₃ 30ppm級の超低鉄分、D50約6.4μmの微細均一粒度でHBM・AI半導体用EMCおよび高信頼性アンダーフィルに対応します。粒度分布はお客様のご要求に応じて調整可能です。",
+    specs: [
+      { label: "품번 (Code)", value: "SL-DRG07-A", enLabel: "Code", jaLabel: "品番 (Code)" },
+      { label: "외관", value: "백색 표면개질 분말", enValue: "White surface-modified powder", jaValue: "白色表面改質粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "표면 처리제", value: "에폭시 실란 (Epoxy silane)", enValue: "Epoxy silane", jaValue: "エポキシシラン (Epoxy silane)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "SiO₂", value: "≥ 99.7 % (대표치 99.80)", enValue: "≥ 99.7 % (typ. 99.80)", jaValue: "≥ 99.7 % (代表値 99.80)", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Al₂O₃", value: "≤ 0.3 % (대표치 0.08)", enValue: "≤ 0.3 % (typ. 0.08)", jaValue: "≤ 0.3 % (代表値 0.08)", enLabel: "Al₂O₃", jaLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "≤ 0.01 % (대표치 0.003)", enValue: "≤ 0.01 % (typ. 0.003)", jaValue: "≤ 0.01 % (代表値 0.003)", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "수용액 EC", value: "< 10 μs/cm (대표치 6.2)", enValue: "< 10 μs/cm (typ. 6.2)", jaValue: "< 10 μs/cm (代表値 6.2)", enLabel: "Aqueous EC", jaLabel: "水溶液 EC" },
+      { label: "Cl⁻", value: "< 5 ppm (대표치 1.02)", enValue: "< 5 ppm (typ. 1.02)", jaValue: "< 5 ppm (代表値 1.02)", enLabel: "Cl⁻", jaLabel: "Cl⁻" },
+      { label: "Na⁺", value: "< 5 ppm (대표치 1.13)", enValue: "< 5 ppm (typ. 1.13)", jaValue: "< 5 ppm (代表値 1.13)", enLabel: "Na⁺", jaLabel: "Na⁺" },
+      { label: "D10", value: "1.788 μm", enLabel: "D10", jaLabel: "D10" },
+      { label: "D50", value: "6.442 μm (범위 6-9)", enValue: "6.442 μm (range 6-9)", jaValue: "6.442 μm (範囲 6-9)", enLabel: "D50", jaLabel: "D50" },
+      { label: "D90", value: "18.427 μm", enLabel: "D90", jaLabel: "D90" },
+      { label: "비고", value: "입도 분포는 사용 환경·요구에 따라 조정 가능", enValue: "PSD adjustable per customer requirement", jaValue: "粒度分布はご要望に応じて調整可能", enLabel: "Remarks", jaLabel: "備考" },
+    ],
+  },
+};
+
+const generatedChildren: ProductDetail[] = [];
+for (const parent of advSeriesProducts) {
+  if (!parent.subModels) continue;
+  for (const sm of parent.subModels) {
+    if (!sm.slug) continue;
+    const override = surfaceModelOverrides[sm.slug];
+    const childName = sm.name ?? `${sm.code} ${parent.name}`;
+    const childEnName = sm.enName ?? `${sm.code} · ${parent.enName}`;
+    const childJaName = sm.jaName ?? `${sm.code} ${parent.jaName ?? parent.enName}`;
+    generatedChildren.push({
+      slug: sm.slug,
+      name: childName,
+      enName: childEnName,
+      jaName: childJaName,
+      tagline: override?.tagline ?? `${sm.code} — ${sm.spec}`,
+      enTagline: override?.enTagline ?? `${sm.code} — ${sm.enSpec ?? sm.spec}`,
+      jaTagline: override?.jaTagline ?? `${sm.code} — ${sm.jaSpec ?? sm.spec}`,
+      description: override?.description ?? parent.description,
+      enDescription: override?.enDescription ?? parent.enDescription,
+      jaDescription: override?.jaDescription ?? parent.jaDescription,
+      image: parent.image,
+      category: parent.category,
+      parentSlug: parent.slug,
+      features: parent.features,
+      specs: override?.specs ?? parent.specs,
+      applications: parent.applications,
+    });
+  }
+}
+productCatalog.push(...generatedChildren);
+
+
 
 
 export const getProductBySlug = (slug: string) =>

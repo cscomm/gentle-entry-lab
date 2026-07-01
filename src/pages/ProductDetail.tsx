@@ -106,12 +106,85 @@ const ProductDetail = () => {
     );
   }
 
-  const others = productCatalog.filter((p) => p.slug !== product.slug && (p.category ?? "quartz") === (product.category ?? "quartz"));
+  const others = product.parentSlug
+    ? productCatalog.filter((p) => p.parentSlug === product.parentSlug && p.slug !== product.slug)
+    : productCatalog.filter((p) => p.slug !== product.slug && !p.isCategoryIndex && !p.parentSlug && (p.category ?? "quartz") === (product.category ?? "quartz"));
   const isGradeA = product.slug === "fused-silica-a-grade";
   const isSilicaSand = product.slug === "silica-sand";
   const isSilicaPowder = product.slug === "silica-powder";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
+  const children = product.isCategoryIndex
+    ? productCatalog.filter((p) => p.parentSlug === product.slug)
+    : [];
+
+  // ============= Category-Index Layout (for SL-series parent categories) =============
+  if (product.isCategoryIndex) {
+    return (
+      <div className="min-h-screen bg-background text-foreground">
+        <SiteHeader transparentAtTop={false} />
+
+        <section className="bg-gradient-to-br from-secondary/60 via-background to-background pt-32 pb-16 md:pt-40 md:pb-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <Link to="/#products" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
+              ← {t("products.cat")}
+            </Link>
+            <span className="mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              <Sparkles className="h-3.5 w-3.5 text-primary" />
+              {product.enName.toUpperCase()}
+            </span>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
+              {pick(lang, product.name, product.enName, product.jaName)} · {product.enName}
+            </h1>
+            <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
+              {pick(lang, product.description, product.enDescription, product.jaDescription)}
+            </p>
+          </div>
+        </section>
+
+        {/* Category bar */}
+        <div className="mx-auto max-w-7xl px-6 pt-8">
+          <div className="overflow-x-auto rounded-xl border border-border/60 bg-card/60 px-4 py-3 backdrop-blur-sm">
+            <ProductCategoryBar activeSlug={product.slug} />
+          </div>
+        </div>
+
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {children.map((p) => (
+              <Link
+                key={p.slug}
+                to={`/products/${p.slug}/`}
+                className="group block overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="aspect-square overflow-hidden bg-secondary/40">
+                  <img
+                    src={p.image}
+                    alt={silicaAlt(pick(lang, p.name, p.enName, p.jaName))}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold leading-snug">{pick(lang, p.name, p.enName, p.jaName)}</h3>
+                  {lang === "ko" && <p className="mt-1 text-xs text-muted-foreground line-clamp-1">{p.enName}</p>}
+                  <p className="mt-3 text-sm text-muted-foreground line-clamp-3">
+                    {pick(lang, p.tagline, p.enTagline, p.jaTagline)}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary transition group-hover:gap-2">
+                    {t("products.detail")} <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <SiteFooter />
+      </div>
+    );
+  }
+
 
 
   return (
