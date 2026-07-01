@@ -289,8 +289,7 @@ export const routes: Route[] = [
   },
 ];
 
-const LANGS = ["ko", "en", "ja"] as const;
-type LangCode = (typeof LANGS)[number];
+const LANGS = ["ko", "en", "ja"] as const satisfies readonly LangCode[];
 
 const HTML_LANG: Record<LangCode, string> = { ko: "ko-KR", en: "en", ja: "ja" };
 
