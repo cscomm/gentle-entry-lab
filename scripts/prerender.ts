@@ -112,11 +112,11 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/applications/silica-sand",
-    title: "규사 Silica Sand 응용분야 | SILICA",
+    title: "규사 · 규사분말 응용분야 Silica Sand & Powder Applications | SILICA",
     description:
-      "고순도 규사(Silica Sand)의 산업별 응용 분야 — 유리·주조·여과·인조잔디·건축·골프장.",
-    h1: "규사 응용분야",
-    body: `<p>고순도 규사는 유리·주조·여과·인조잔디·건축·골프장 등 다양한 산업 분야에서 사용됩니다.</p>`,
+      "고순도 규사(Silica Sand)와 규사분말(Silica Powder)의 산업별 응용 분야 — 유리 제조, 특수 유리, 주조, 수처리, 페인트·플라스틱, 인조대리석, 화학 원료 등.",
+    h1: "규사 · 규사분말 응용분야",
+    body: `<p>SiO₂ 99.5% 이상의 고순도 규사와 규사분말은 건축·특수 유리, 주조, 수처리, 페인트·코팅·플라스틱, 인조대리석, 실리카 화학 원료 등 광범위한 산업 분야의 핵심 원료로 사용됩니다.</p><h2>주요 응용 산업</h2><p>유리 제조(평판/강화/복층/광학/태양광/의료), 주조(사형/수지사/정밀 인베스트먼트), 수처리 여과, 페인트·플라스틱 기능성 필러, 인조대리석 및 건축 몰탈, 화학 원료(물유리·백탄·실리콘·실리카겔), 샌드블라스팅 및 스포츠 규사.</p>`,
   },
   {
     path: "/products/silica-powder",
@@ -125,14 +125,6 @@ export const productRoutes: Route[] = [
       "도료·플라스틱·인조대리석·건축 자재용 고백색·고순도 미분 실리카 규사분말(Silica Powder). SiLiCA 기능성 충진재 라인업.",
     h1: "규사분말 (Silica Powder)",
     body: `<p>SiLiCA의 규사분말(Silica Powder)은 도료·코팅·플라스틱·인조대리석·건축 자재에 사용되는 고백색·고순도 미분 실리카 기능성 충진재입니다.</p><h2>주요 용도</h2><p>페인트/코팅 필러, 플라스틱·고무 충진재, 인조대리석·엔지니어드 스톤, 퍼티·실란트, 건축 자재.</p>`,
-  },
-  {
-    path: "/applications/silica-powder",
-    title: "규사분말 Silica Powder 응용분야 | SILICA",
-    description:
-      "고백색·고순도 규사분말(Silica Powder)의 산업별 응용 분야 — 페인트·코팅·플라스틱·인조대리석·건축 자재.",
-    h1: "규사분말 응용분야",
-    body: `<p>고백색·고순도 규사분말은 페인트, 코팅, 플라스틱 충진재, 인조대리석, 건축 자재 등 다양한 산업 분야의 기능성 필러로 사용됩니다.</p>`,
   },
   {
     path: "/products/high-purity-quartz",
