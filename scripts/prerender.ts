@@ -38,6 +38,7 @@ export const productRoutes: Route[] = [
       en: "Ultra-high purity fused silica, Grade A — SiO₂ ≥99.9%, 100% amorphous, ultra-low CTE <0.6×10⁻⁶/°C. Supplied to semiconductor, optics, aerospace/defense and medical industries. Custom particle size 1µm–60mm.",
       ja: "SiO₂ 99.9%以上・100%非晶質のAグレード高純度溶融シリカ(Fused Silica)。極低熱膨張、半導体・光学・航空宇宙・医療向け高純度シリカ素材を1µm〜60mmの粒度で供給。",
     },
+    h1: "A등급 용융실리카 — 초고순도 (Grade A · Ultra-High Purity Fused Silica)",
     body: `
       <p><strong>A등급 용융실리카(Grade A · Ultra-High Purity Fused Silica)</strong>는 SiLiCA가 공급하는 최상위 등급의 용융실리카로, SiO₂ 순도 99.9% 이상과 100% 무정형 구조를 보유합니다. 자체 광산(장수백암광산)에서 채광한 고품위 규석을 원료로 전기 아크 용융 후 정밀 분쇄·등급화하여 생산하며, 반도체·광학·항공/방산·의료·에너지 등 최고 수준의 신뢰성과 순도가 요구되는 첨단 산업에 공급됩니다.</p>
 
