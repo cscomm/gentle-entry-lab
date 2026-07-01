@@ -110,6 +110,9 @@ const ProductDetail = () => {
   const isGradeA = product.slug === "fused-silica-a-grade";
   const isSilicaSand = product.slug === "silica-sand";
   const isSilicaPowder = product.slug === "silica-powder";
+  const subModels = product.subModels;
+  const subModelsLabel = product.subModelsColumnLabel;
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
