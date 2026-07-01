@@ -824,11 +824,11 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "Silane-Coupling Surface Modification for Maximum Resin Compatibility and Dispersion",
     jaTagline: "シランカップリング表面改質で樹脂親和性・分散性を極大化",
     description:
-      "활성(표면개질) 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시·아미노·비닐·메타크릴 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 결정형(SL-HJG)과 용융형(SL-HRG) 2종으로 공급되며 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
+      "활성(표면개질) 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시 실란 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 표준 등급 SL-DRG07과 고순도 등급 SL-DRG07-A 2종으로 공급되며, 반도체 EMC·언더필, 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
     enDescription:
-      "Surface-Modified Silica Powder is a functional filler in which silane coupling agents (epoxy, amino, vinyl, methacryl, etc.) are chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Supplied as crystalline SL-HJG and fused SL-HRG grades, optimized for epoxy, phenolic, silicone and acrylic resin matrices.",
+      "Surface-Modified Silica Powder is a functional filler in which epoxy-silane coupling agent is chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Supplied as standard SL-DRG07 and high-purity SL-DRG07-A grades — optimized for semiconductor EMC/underfill and epoxy, phenolic, silicone and acrylic resin matrices.",
     jaDescription:
-      "活性(表面改質)シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシ・アミノ・ビニル・メタクリルなど)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。結晶質(SL-HJG)・溶融質(SL-HRG)の2種で供給され、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
+      "活性(表面改質)シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシシラン)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。標準グレードSL-DRG07・高純度グレードSL-DRG07-Aの2種で供給され、半導体EMC・アンダーフィル、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
     image: surfaceModImg,
     category: "advanced-series",
     features: [
