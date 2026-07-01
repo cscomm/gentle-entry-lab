@@ -36,6 +36,7 @@ export type SubModel = {
   name?: string;
   enName?: string;
   jaName?: string;
+  slug?: string;
 };
 
 export type ProductDetail = {
@@ -57,6 +58,8 @@ export type ProductDetail = {
   applications: string[];
   subModels?: SubModel[];
   subModelsColumnLabel?: { ko: string; en: string; ja: string };
+  isCategoryIndex?: boolean;
+  parentSlug?: string;
 };
 
 
