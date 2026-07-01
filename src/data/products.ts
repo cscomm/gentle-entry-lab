@@ -942,6 +942,89 @@ const advSeriesProducts: ProductDetail[] = [
 
 productCatalog.push(...advSeriesProducts);
 
+// ============= Generate child ProductDetail entries for each SL sub-model =============
+// Non-활성 sub-models inherit features/specs/applications from parent; 활성 (SL-DRG07/-A) get PDF-specific data.
+const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
+  "sl-drg07": {
+    tagline: "SiO₂ ≥99.7% · D50 6-9μm · 에폭시 실란 표면처리 표준 등급",
+    enTagline: "SiO₂ ≥99.7% · D50 6–9 µm · Standard Grade with Epoxy-Silane Surface Treatment",
+    jaTagline: "SiO₂ ≥99.7% · D50 6-9μm · エポキシシラン表面処理 標準グレード",
+    description: "SL-DRG07은 정밀한 입도 분포와 엄격한 화학적 순도 관리를 통해 반도체, 세라믹 및 첨단 소재 산업의 공정 효율성을 극대화하는 고순도 표면개질(에폭시 실란) 실리카입니다. SiO₂ ≥99.7%(대표치 99.75%)와 D50 6.6μm 수준의 균일한 입도 분포로 EMC·언더필·고신뢰성 접착제 배합에 최적화되어 있습니다.",
+    enDescription: "SL-DRG07 is a high-purity epoxy-silane surface-modified silica engineered for semiconductor, ceramic and advanced material industries, delivering process efficiency through precise particle size distribution and rigorous chemical purity. With SiO₂ ≥99.7% (typical 99.75%) and uniform D50 around 6.6 µm, it is optimized for EMC, underfill and high-reliability adhesive formulations.",
+    jaDescription: "SL-DRG07は精密な粒度分布と厳格な化学的純度管理により、半導体・セラミックス・先端素材産業の工程効率を最大化する高純度表面改質(エポキシシラン)シリカです。SiO₂ ≥99.7%(代表値99.75%)、D50 約6.6μmの均一な粒度分布で、EMC・アンダーフィル・高信頼性接着剤配合に最適化されています。",
+    specs: [
+      { label: "품번 (Code)", value: "SL-DRG07", enLabel: "Code", jaLabel: "品番 (Code)" },
+      { label: "외관", value: "백색 표면개질 분말", enValue: "White surface-modified powder", jaValue: "白色表面改質粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "표면 처리제", value: "에폭시 실란 (Epoxy silane)", enValue: "Epoxy silane", jaValue: "エポキシシラン (Epoxy silane)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "SiO₂", value: "≥ 99.7 % (대표치 99.75)", enValue: "≥ 99.7 % (typ. 99.75)", jaValue: "≥ 99.7 % (代表値 99.75)", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Al₂O₃", value: "≤ 0.3 % (대표치 0.12)", enValue: "≤ 0.3 % (typ. 0.12)", jaValue: "≤ 0.3 % (代表値 0.12)", enLabel: "Al₂O₃", jaLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "≤ 0.01 % (대표치 0.005)", enValue: "≤ 0.01 % (typ. 0.005)", jaValue: "≤ 0.01 % (代表値 0.005)", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "수용액 EC", value: "< 10 μs/cm (대표치 6.8)", enValue: "< 10 μs/cm (typ. 6.8)", jaValue: "< 10 μs/cm (代表値 6.8)", enLabel: "Aqueous EC", jaLabel: "水溶液 EC" },
+      { label: "Cl⁻", value: "< 5 ppm (대표치 1.23)", enValue: "< 5 ppm (typ. 1.23)", jaValue: "< 5 ppm (代表値 1.23)", enLabel: "Cl⁻", jaLabel: "Cl⁻" },
+      { label: "Na⁺", value: "< 5 ppm (대표치 1.26)", enValue: "< 5 ppm (typ. 1.26)", jaValue: "< 5 ppm (代表値 1.26)", enLabel: "Na⁺", jaLabel: "Na⁺" },
+      { label: "D10", value: "1.796 μm", enLabel: "D10", jaLabel: "D10" },
+      { label: "D50", value: "6.631 μm (범위 6-9)", enValue: "6.631 μm (range 6-9)", jaValue: "6.631 μm (範囲 6-9)", enLabel: "D50", jaLabel: "D50" },
+      { label: "D90", value: "19.559 μm", enLabel: "D90", jaLabel: "D90" },
+    ],
+  },
+  "sl-drg07-a": {
+    tagline: "SiO₂ 대표치 99.80% · Fe₂O₃ 30ppm급 · 고순도 등급",
+    enTagline: "SiO₂ typ. 99.80% · Fe₂O₃ 30 ppm-class · High-Purity Grade",
+    jaTagline: "SiO₂ 代表値 99.80% · Fe₂O₃ 30ppm級 · 高純度グレード",
+    description: "SL-DRG07-A는 SL-DRG07 대비 더욱 엄격한 순도 관리를 적용한 고순도 등급 표면개질(에폭시 실란) 실리카입니다. SiO₂ 대표치 99.80%, Fe₂O₃ 30 ppm급의 초저철분과 D50 6.4μm 수준의 미세 균일 입도로 HBM·AI 반도체용 EMC 및 고신뢰성 언더필에 대응합니다. 입도 분포는 고객 요구에 따라 조정 가능합니다.",
+    enDescription: "SL-DRG07-A applies even stricter purity control than SL-DRG07 — a high-purity epoxy-silane surface-modified silica with SiO₂ typical 99.80%, Fe₂O₃ 30 ppm-class ultra-low iron and fine, uniform D50 of about 6.4 µm. Designed for HBM/AI semiconductor EMC and high-reliability underfill. Particle size distribution can be adjusted per customer requirement.",
+    jaDescription: "SL-DRG07-AはSL-DRG07よりさらに厳格な純度管理を適用した高純度グレードの表面改質(エポキシシラン)シリカです。SiO₂代表値99.80%、Fe₂O₃ 30ppm級の超低鉄分、D50約6.4μmの微細均一粒度でHBM・AI半導体用EMCおよび高信頼性アンダーフィルに対応します。粒度分布はお客様のご要求に応じて調整可能です。",
+    specs: [
+      { label: "품번 (Code)", value: "SL-DRG07-A", enLabel: "Code", jaLabel: "品番 (Code)" },
+      { label: "외관", value: "백색 표면개질 분말", enValue: "White surface-modified powder", jaValue: "白色表面改質粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "표면 처리제", value: "에폭시 실란 (Epoxy silane)", enValue: "Epoxy silane", jaValue: "エポキシシラン (Epoxy silane)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "SiO₂", value: "≥ 99.7 % (대표치 99.80)", enValue: "≥ 99.7 % (typ. 99.80)", jaValue: "≥ 99.7 % (代表値 99.80)", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Al₂O₃", value: "≤ 0.3 % (대표치 0.08)", enValue: "≤ 0.3 % (typ. 0.08)", jaValue: "≤ 0.3 % (代表値 0.08)", enLabel: "Al₂O₃", jaLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "≤ 0.01 % (대표치 0.003)", enValue: "≤ 0.01 % (typ. 0.003)", jaValue: "≤ 0.01 % (代表値 0.003)", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "수용액 EC", value: "< 10 μs/cm (대표치 6.2)", enValue: "< 10 μs/cm (typ. 6.2)", jaValue: "< 10 μs/cm (代表値 6.2)", enLabel: "Aqueous EC", jaLabel: "水溶液 EC" },
+      { label: "Cl⁻", value: "< 5 ppm (대표치 1.02)", enValue: "< 5 ppm (typ. 1.02)", jaValue: "< 5 ppm (代表値 1.02)", enLabel: "Cl⁻", jaLabel: "Cl⁻" },
+      { label: "Na⁺", value: "< 5 ppm (대표치 1.13)", enValue: "< 5 ppm (typ. 1.13)", jaValue: "< 5 ppm (代表値 1.13)", enLabel: "Na⁺", jaLabel: "Na⁺" },
+      { label: "D10", value: "1.788 μm", enLabel: "D10", jaLabel: "D10" },
+      { label: "D50", value: "6.442 μm (범위 6-9)", enValue: "6.442 μm (range 6-9)", jaValue: "6.442 μm (範囲 6-9)", enLabel: "D50", jaLabel: "D50" },
+      { label: "D90", value: "18.427 μm", enLabel: "D90", jaLabel: "D90" },
+      { label: "비고", value: "입도 분포는 사용 환경·요구에 따라 조정 가능", enValue: "PSD adjustable per customer requirement", jaValue: "粒度分布はご要望に応じて調整可能", enLabel: "Remarks", jaLabel: "備考" },
+    ],
+  },
+};
+
+const generatedChildren: ProductDetail[] = [];
+for (const parent of advSeriesProducts) {
+  if (!parent.subModels) continue;
+  for (const sm of parent.subModels) {
+    if (!sm.slug) continue;
+    const override = surfaceModelOverrides[sm.slug];
+    const childName = sm.name ?? `${sm.code} ${parent.name}`;
+    const childEnName = sm.enName ?? `${sm.code} · ${parent.enName}`;
+    const childJaName = sm.jaName ?? `${sm.code} ${parent.jaName ?? parent.enName}`;
+    generatedChildren.push({
+      slug: sm.slug,
+      name: childName,
+      enName: childEnName,
+      jaName: childJaName,
+      tagline: override?.tagline ?? `${sm.code} — ${sm.spec}`,
+      enTagline: override?.enTagline ?? `${sm.code} — ${sm.enSpec ?? sm.spec}`,
+      jaTagline: override?.jaTagline ?? `${sm.code} — ${sm.jaSpec ?? sm.spec}`,
+      description: override?.description ?? parent.description,
+      enDescription: override?.enDescription ?? parent.enDescription,
+      jaDescription: override?.jaDescription ?? parent.jaDescription,
+      image: parent.image,
+      category: parent.category,
+      parentSlug: parent.slug,
+      features: parent.features,
+      specs: override?.specs ?? parent.specs,
+      applications: parent.applications,
+    });
+  }
+}
+productCatalog.push(...generatedChildren);
+
+
+
 
 export const getProductBySlug = (slug: string) =>
   productCatalog.find((p) => p.slug === slug);
