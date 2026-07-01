@@ -98,7 +98,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <div className="invisible absolute left-1/2 top-full z-50 max-h-[80vh] w-72 -translate-x-1/2 overflow-y-auto pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
-                        .filter((p) => p.category === "advanced-series")
+                        .filter((p) => p.category === "advanced-series" && p.isCategoryIndex)
                         .map((p) => (
                           <Link
                             key={p.slug}
