@@ -18,8 +18,25 @@ import precipitatedSilica from "@/assets/precipitated-silica.jpg";
 import fumedSilica from "@/assets/fumed-silica.png";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
+import sphericalImg from "@/assets/spherical-silica-powder.jpg";
+import roundCornerImg from "@/assets/round-corner-silica-powder.jpg";
+import angularImg from "@/assets/angular-silica-powder.jpg";
+import lowRadImg from "@/assets/low-radiation-silica-powder.jpg";
+import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
+import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
+import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
+
+export type SubModel = {
+  code: string;
+  spec: string;
+  enSpec?: string;
+  jaSpec?: string;
+  name?: string;
+  enName?: string;
+  jaName?: string;
+};
 
 export type ProductDetail = {
   slug: string;
@@ -38,7 +55,10 @@ export type ProductDetail = {
   features: { title: string; desc: string; enTitle?: string; enDesc?: string; jaTitle?: string; jaDesc?: string }[];
   specs: { label: string; value: string; note?: string; enLabel?: string; enValue?: string; enNote?: string; jaLabel?: string; jaValue?: string; jaNote?: string }[];
   applications: string[];
+  subModels?: SubModel[];
+  subModelsColumnLabel?: { ko: string; en: string; ja: string };
 };
+
 
 export const productCatalog: ProductDetail[] = [
   {
@@ -187,9 +207,17 @@ export const productCatalog: ProductDetail[] = [
       { label: "포장", value: "25kg 지대 / 500kg 벌크백 / 1톤 톤백 / OEM 포장", enValue: "25 kg bag / 500 kg bulk bag / 1-ton bag / OEM packaging", jaValue: "25kg紙袋 / 500kgバルクバッグ / 1トンバッグ / OEM包装", enLabel: "Packaging", jaLabel: "包装" },
     ],
     applications: ["규사"],
+    subModelsColumnLabel: { ko: "입도 (Mesh)", en: "Grain Size (Mesh)", ja: "粒度 (Mesh)" },
+    subModels: [
+      { code: "SLS20", spec: "20 ~ 40 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+      { code: "SLS40", spec: "40 ~ 70 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+      { code: "SLS70", spec: "70 ~ 140 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+      { code: "SLS100", spec: "100 ~ 200 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+    ],
   },
   {
     slug: "silica-powder",
+
     name: "규사분말",
     enName: "Silica Powder", jaName: "珪砂粉末 (シリカパウダー)",
     tagline: "고순도 규사를 미세 분쇄한 산업용 분말 — 균일 입도·고백색·고순도 SiO₂",
@@ -226,7 +254,13 @@ export const productCatalog: ProductDetail[] = [
       { label: "포장", value: "25kg 지대 / 500kg 벌크백 / 1톤 톤백 / OEM 포장", enValue: "25 kg bag / 500 kg bulk bag / 1-ton bag / OEM packaging", jaValue: "25kg紙袋 / 500kgバルクバッグ / 1トンバッグ / OEM包装", enLabel: "Packaging", jaLabel: "包装" },
     ],
     applications: ["규사분말"],
+    subModelsColumnLabel: { ko: "입도 (Mesh)", en: "Grain Size (Mesh)", ja: "粒度 (Mesh)" },
+    subModels: [
+      { code: "SLP200", spec: "약 200 Mesh", enSpec: "Approx. 200 Mesh", jaSpec: "約200 Mesh", name: "규사 분말", enName: "Silica Powder", jaName: "珪砂粉末" },
+      { code: "SLP325", spec: "325 ~ 1000 Mesh", name: "고미분 규사 분말", enName: "Ultra-Fine Silica Powder", jaName: "高微細珪砂粉末" },
+    ],
   },
+
   {
     slug: "high-purity-quartz",
     name: "천연 고순도규석",
@@ -607,6 +641,297 @@ const fumedProducts: ProductDetail[] = [
 ];
 
 productCatalog.push(...fumedProducts);
+
+// ============= Advanced Series (7 new categories, SL series) =============
+const advSeriesProducts: ProductDetail[] = [
+  {
+    slug: "spherical-silica-powder",
+    name: "구형 실리카 분말",
+    enName: "Spherical Silica Powder",
+    jaName: "球状シリカ粉末",
+    tagline: "고구형도·저점도·저열팽창의 반도체·EMC용 프리미엄 구형 실리카",
+    enTagline: "High Sphericity · Low Viscosity · Low CTE — Premium Spherical Silica for Semiconductor EMC",
+    jaTagline: "高球形度・低粘度・低熱膨張の半導体・EMC用プレミアム球状シリカ",
+    description:
+      "구형 실리카 분말은 화염 용융 공정을 통해 완전한 구(球) 형태로 성형된 고순도 무정형 SiO₂ 분말입니다. 낮은 수지 점도, 우수한 유동성, 낮은 열팽창계수를 바탕으로 반도체 EMC(Epoxy Molding Compound), CCL(Copper Clad Laminate), 언더필, 봉지재 등 첨단 전자 소재의 핵심 필러로 사용됩니다. 일반 구형(SL-QG)과 저방사(Low-α) 구형(SL-QG-L) 2종 라인업으로 공급됩니다.",
+    enDescription:
+      "Spherical Silica Powder is a high-purity amorphous SiO₂ powder formed into perfect spheres via a flame-fusion process. Thanks to its low resin viscosity, excellent flowability and low CTE, it is used as a key filler in advanced electronic materials such as semiconductor EMC (Epoxy Molding Compound), CCL, underfill and encapsulants. Supplied in two grades: standard SL-QG and low-alpha SL-QG-L.",
+    jaDescription:
+      "球状シリカ粉末は火炎溶融工程を経て完全な球形に成形された高純度非晶質SiO₂粉末です。低粘度・優れた流動性・低熱膨張係数により、半導体EMC(エポキシ封止材)・CCL・アンダーフィル・封止材など先端電子素材の主要フィラーとして使用されます。標準品SL-QGおよび低α線グレードSL-QG-Lの2種を供給します。",
+    image: sphericalImg,
+    category: "advanced-series",
+    features: [
+      { title: "🔵 고구형도 (>95%)", desc: "완전 구형에 가까운 입자로 수지 점도 최소화 및 유동성 극대화", enTitle: "🔵 High Sphericity (>95%)", jaTitle: "🔵 高球形度 (>95%)", enDesc: "Near-perfect spheres minimize resin viscosity and maximize flowability", jaDesc: "完全球形に近い粒子で樹脂粘度を最小化し流動性を極大化" },
+      { title: "🧪 초고순도 SiO₂ ≥ 99.9%", desc: "저알칼리·저철분으로 반도체 EMC 신뢰성 확보", enTitle: "🧪 Ultra-High Purity SiO₂ ≥ 99.9%", jaTitle: "🧪 超高純度SiO₂ ≥ 99.9%", enDesc: "Low alkali and low iron ensure semiconductor EMC reliability", jaDesc: "低アルカリ・低鉄分で半導体EMCの信頼性を確保" },
+      { title: "🌡️ 저열팽창 (CTE < 0.6)", desc: "실리콘 웨이퍼와의 열팽창 정합성 우수 — 크랙·박리 최소화", enTitle: "🌡️ Low CTE (< 0.6)", jaTitle: "🌡️ 低熱膨張 (CTE < 0.6)", enDesc: "Excellent CTE match with silicon wafer — minimizes cracking and delamination", jaDesc: "シリコンウェハとの熱膨張整合性に優れ、クラック・剥離を最小化" },
+      { title: "☢️ 저방사 등급(SL-QG-L)", desc: "α-line ≤ 0.001 cph/cm² — 첨단 메모리 소프트 에러 방지", enTitle: "☢️ Low-Alpha Grade (SL-QG-L)", jaTitle: "☢️ 低α線グレード(SL-QG-L)", enDesc: "α-emission ≤ 0.001 cph/cm² — prevents soft errors in advanced memory", jaDesc: "α線 ≤ 0.001 cph/cm² — 先端メモリのソフトエラーを防止" },
+      { title: "⚙️ 고충전율", desc: "구형 입자로 90wt% 이상 고충전 배합 가능", enTitle: "⚙️ High Loading Capability", jaTitle: "⚙️ 高充填率", enDesc: "Spherical shape enables ≥90 wt% high loading formulations", jaDesc: "球状粒子で90wt%以上の高充填配合が可能" },
+      { title: "📐 정밀 입도 관리", desc: "D50 0.5 ~ 30 µm 맞춤 공급, 협관 입도 분포", enTitle: "📐 Precise PSD Control", jaTitle: "📐 精密な粒度管理", enDesc: "Customizable D50 0.5–30 µm with narrow PSD", jaDesc: "D50 0.5~30 µmのカスタム供給、狭い粒度分布" },
+    ],
+    specs: [
+      { label: "외관", value: "백색 구형 분말", enValue: "White spherical powder", jaValue: "白色球状粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂ 순도", value: "≥ 99.9%", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+      { label: "구형도", value: "> 95%", enLabel: "Sphericity", jaLabel: "球形度" },
+      { label: "평균 입도 D50", value: "0.5 ~ 30 µm (맞춤)", enValue: "0.5–30 µm (customizable)", jaValue: "0.5~30 µm (カスタム)", enLabel: "Mean Particle Size D50", jaLabel: "平均粒度 D50" },
+      { label: "비표면적 (BET)", value: "1 ~ 8 m²/g", enLabel: "BET SSA", jaLabel: "BET比表面積" },
+      { label: "α선 방사량 (SL-QG-L)", value: "≤ 0.001 cph/cm²", enLabel: "α-Emission (SL-QG-L)", jaLabel: "α線放射量 (SL-QG-L)" },
+      { label: "Fe 함량", value: "≤ 20 ppm", enLabel: "Fe Content", jaLabel: "Fe含有量" },
+      { label: "수분", value: "≤ 0.1 %", enLabel: "Moisture", jaLabel: "水分" },
+      { label: "포장", value: "10 / 20 kg 지대 · OEM", enValue: "10 / 20 kg bag · OEM", jaValue: "10 / 20 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "특성", en: "Feature", ja: "特性" },
+    subModels: [
+      { code: "SL-QG", spec: "일반 구형", enSpec: "Standard Spherical", jaSpec: "一般球状", name: "구형 실리카 분말", enName: "Spherical Silica Powder", jaName: "球状シリカ粉末" },
+      { code: "SL-QG-L", spec: "저방사(Low-α) 구형", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "저방사 구형 실리카 분말", enName: "Low-Alpha Spherical Silica Powder", jaName: "低α線球状シリカ粉末" },
+    ],
+    applications: ["반도체 EMC", "CCL / PCB", "언더필 / 봉지재", "고열전도 소재"],
+  },
+  {
+    slug: "round-corner-silica-powder",
+    name: "원각 실리카 분말",
+    enName: "Round Corner Silica Powder",
+    jaName: "丸角シリカ粉末",
+    tagline: "각형과 구형의 장점을 겸비한 원각 실리카 — 우수한 유동성과 경제성",
+    enTagline: "Combining Angular Strength with Spherical Flow — Balanced Round-Corner Silica",
+    jaTagline: "角形と球状の長所を兼備した丸角シリカ — 優れた流動性と経済性",
+    description:
+      "원각 실리카 분말은 각형 실리카의 모서리를 라운딩(round-corner) 처리하여 구형에 근접한 유동성과 낮은 수지 점도, 우수한 충전성을 갖춘 하이브리드형 필러입니다. 구형 대비 경제성이 우수하며, 결정형 SL-YJG와 용융형 SL-YRG 2종으로 공급되어 CCL, 도전성 페이스트, 산업용 코팅, 고내마모 복합재 등에 폭넓게 사용됩니다.",
+    enDescription:
+      "Round Corner Silica Powder is a hybrid filler produced by rounding the corners of angular silica, delivering near-spherical flow, low resin viscosity, and excellent packing. It offers superior cost-performance compared to fully spherical grades, and is available in crystalline SL-YJG and fused SL-YRG grades — widely used in CCL, conductive pastes, industrial coatings, and high-wear composites.",
+    jaDescription:
+      "丸角シリカ粉末は角形シリカの角を丸め(round-corner)処理し、球状に近い流動性・低樹脂粘度・優れた充填性を備えたハイブリッド型フィラーです。球状品と比較して経済性に優れ、結晶質SL-YJGおよび溶融質SL-YRGの2種で供給され、CCL・導電性ペースト・産業用コーティング・高耐摩耗複合材などに幅広く使用されます。",
+    image: roundCornerImg,
+    category: "advanced-series",
+    features: [
+      { title: "🟢 원각 형상 (Round Corner)", desc: "각형의 모서리를 라운딩 처리하여 구형에 근접한 유동성 구현", enTitle: "🟢 Round-Corner Shape", jaTitle: "🟢 丸角形状 (Round Corner)", enDesc: "Rounded corners deliver near-spherical flow performance", jaDesc: "角形の角を丸め処理し、球状に近い流動性を実現" },
+      { title: "💰 우수한 경제성", desc: "구형 실리카 대비 20~40% 낮은 원가로 유사 성능 확보", enTitle: "💰 Excellent Cost Efficiency", jaTitle: "💰 優れた経済性", enDesc: "20–40% cost reduction versus spherical silica with similar performance", jaDesc: "球状シリカ対比20~40%低いコストで同等性能を確保" },
+      { title: "🔧 2종 라인업", desc: "결정형(SL-YJG)·용융형(SL-YRG) 선택 가능", enTitle: "🔧 Two Grade Lineup", jaTitle: "🔧 2種ラインアップ", enDesc: "Choice of crystalline SL-YJG and fused SL-YRG", jaDesc: "結晶質(SL-YJG)・溶融質(SL-YRG)の選択が可能" },
+      { title: "🧬 고충전성", desc: "원각 구조로 고충전 배합 시에도 점도 상승 최소화", enTitle: "🧬 High Loading", jaTitle: "🧬 高充填性", enDesc: "Round-corner structure minimizes viscosity rise at high loading", jaDesc: "丸角構造で高充填配合時にも粘度上昇を最小化" },
+      { title: "🛡️ 우수한 내마모성", desc: "각형의 강도와 구형의 매끄러움 동시 확보", enTitle: "🛡️ Excellent Wear Resistance", jaTitle: "🛡️ 優れた耐摩耗性", enDesc: "Angular strength combined with spherical smoothness", jaDesc: "角形の強度と球状の滑らかさを同時に確保" },
+      { title: "📐 맞춤 입도", desc: "D50 1 ~ 40 µm 요구 사양별 공급", enTitle: "📐 Custom PSD", jaTitle: "📐 カスタム粒度", enDesc: "D50 1–40 µm supplied per requirements", jaDesc: "D50 1~40 µm 要求仕様別に供給" },
+    ],
+    specs: [
+      { label: "외관", value: "백색 원각 분말", enValue: "White round-corner powder", jaValue: "白色丸角粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂ 순도", value: "≥ 99.5%", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+      { label: "형상", value: "원각(Round Corner)", enValue: "Round Corner", jaValue: "丸角(Round Corner)", enLabel: "Shape", jaLabel: "形状" },
+      { label: "평균 입도 D50", value: "1 ~ 40 µm (맞춤)", enValue: "1–40 µm (customizable)", jaValue: "1~40 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
+      { label: "비표면적 (BET)", value: "1 ~ 6 m²/g", enLabel: "BET SSA", jaLabel: "BET比表面積" },
+      { label: "수분", value: "≤ 0.1 %", enLabel: "Moisture", jaLabel: "水分" },
+      { label: "포장", value: "20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "20 kg bag · 500 kg bulk · OEM", jaValue: "20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    subModels: [
+      { code: "SL-YJG", spec: "결정형 원각", enSpec: "Crystalline Round-Corner", jaSpec: "結晶質 丸角" },
+      { code: "SL-YRG", spec: "용융형 원각", enSpec: "Fused Round-Corner", jaSpec: "溶融質 丸角" },
+    ],
+    applications: ["CCL / PCB", "도전성 페이스트", "산업용 코팅", "고내마모 복합재"],
+  },
+  {
+    slug: "angular-silica-powder",
+    name: "각형 실리카 분말",
+    enName: "Angular Silica Powder",
+    jaName: "角形シリカ粉末",
+    tagline: "고강도·고내마모의 각형 실리카 — 산업 전반의 표준 필러",
+    enTagline: "High Strength · High Wear Resistance — Industry-Standard Angular Silica Filler",
+    jaTagline: "高強度・高耐摩耗の角形シリカ — 産業全般の標準フィラー",
+    description:
+      "각형 실리카 분말은 고순도 SiO₂를 정밀 분쇄한 각진 형태의 무기 분체 필러로, 뛰어난 기계적 강도와 내마모성, 우수한 절연 특성을 제공합니다. 용융형(SL-RG)과 결정형(SL-JG) 2종으로 공급되며 EMC, 산업 도료, 접착제, 고무 보강, 인조 대리석, 전기 절연재 등 다양한 산업에서 표준 필러로 사용됩니다.",
+    enDescription:
+      "Angular Silica Powder is an angular inorganic filler produced by precision milling of high-purity SiO₂. It provides outstanding mechanical strength, wear resistance and excellent insulation. Supplied as fused SL-RG and crystalline SL-JG grades, it is used across broad industries — EMC, industrial coatings, adhesives, rubber reinforcement, engineered stone and electrical insulation.",
+    jaDescription:
+      "角形シリカ粉末は高純度SiO₂を精密粉砕した角状の無機フィラーで、優れた機械的強度・耐摩耗性・絶縁特性を提供します。溶融質(SL-RG)および結晶質(SL-JG)の2種で供給され、EMC・産業塗料・接着剤・ゴム補強・人造大理石・電気絶縁材など幅広い産業で標準フィラーとして使用されます。",
+    image: angularImg,
+    category: "advanced-series",
+    features: [
+      { title: "💎 고강도·고내마모", desc: "각진 입자 구조로 복합재 기계적 물성 극대화", enTitle: "💎 High Strength & Wear Resistance", jaTitle: "💎 高強度・高耐摩耗", enDesc: "Angular structure maximizes mechanical properties of composites", jaDesc: "角状構造で複合材の機械的物性を極大化" },
+      { title: "🔧 2종 그레이드", desc: "용융형(SL-RG) · 결정형(SL-JG) 선택 가능", enTitle: "🔧 Dual Grade Lineup", jaTitle: "🔧 2種グレード", enDesc: "Choice of fused SL-RG and crystalline SL-JG", jaDesc: "溶融質(SL-RG)・結晶質(SL-JG)の選択が可能" },
+      { title: "🧪 고순도 SiO₂ ≥ 99.5%", desc: "저철·저알칼리 관리로 절연 신뢰성 확보", enTitle: "🧪 High-Purity SiO₂ ≥ 99.5%", jaTitle: "🧪 高純度SiO₂ ≥ 99.5%", enDesc: "Low-iron/low-alkali control ensures insulation reliability", jaDesc: "低鉄・低アルカリ管理で絶縁信頼性を確保" },
+      { title: "⚙️ 광범위 입도", desc: "D50 1 ~ 45 µm 맞춤 생산 가능", enTitle: "⚙️ Wide PSD Range", jaTitle: "⚙️ 広範な粒度", enDesc: "Custom D50 from 1 to 45 µm available", jaDesc: "D50 1~45 µm カスタム生産可能" },
+      { title: "💰 경제적 가격", desc: "구형 대비 낮은 원가의 표준 필러", enTitle: "💰 Cost-Effective", jaTitle: "💰 経済的価格", enDesc: "Standard filler with lower cost than spherical grades", jaDesc: "球状品対比低コストの標準フィラー" },
+      { title: "🔥 열적 안정성", desc: "고온 공정에서도 안정적 물성 유지", enTitle: "🔥 Thermal Stability", jaTitle: "🔥 熱的安定性", enDesc: "Maintains properties under high-temperature processes", jaDesc: "高温工程でも安定した物性を維持" },
+    ],
+    specs: [
+      { label: "외관", value: "백색 각형 분말", enValue: "White angular powder", jaValue: "白色角形粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂ 순도", value: "≥ 99.5%", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+      { label: "형상", value: "각형 (Angular)", enValue: "Angular", jaValue: "角形 (Angular)", enLabel: "Shape", jaLabel: "形状" },
+      { label: "평균 입도 D50", value: "1 ~ 45 µm (맞춤)", enValue: "1–45 µm (customizable)", jaValue: "1~45 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
+      { label: "비표면적 (BET)", value: "2 ~ 10 m²/g", enLabel: "BET SSA", jaLabel: "BET比表面積" },
+      { label: "모스경도", value: "7", enLabel: "Mohs Hardness", jaLabel: "モース硬度" },
+      { label: "수분", value: "≤ 0.1 %", enLabel: "Moisture", jaLabel: "水分" },
+      { label: "포장", value: "20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "20 kg bag · 500 kg bulk · OEM", jaValue: "20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    subModels: [
+      { code: "SL-RG", spec: "용융형 각형", enSpec: "Fused Angular", jaSpec: "溶融質 角形" },
+      { code: "SL-JG", spec: "결정형 각형", enSpec: "Crystalline Angular", jaSpec: "結晶質 角形" },
+    ],
+    applications: ["EMC / 봉지재", "산업 도료", "접착제 · 실란트", "고무 보강", "인조 대리석", "전기 절연재"],
+  },
+  {
+    slug: "low-radiation-silica-powder",
+    name: "저방사 실리카 분말",
+    enName: "Low-Radiation Silica Powder",
+    jaName: "低α線シリカ粉末",
+    tagline: "α선 ≤ 0.001 cph/cm² — 첨단 메모리·HBM·AI 반도체용 저방사 실리카",
+    enTagline: "α-Emission ≤ 0.001 cph/cm² — Low-Radiation Silica for Advanced Memory, HBM and AI Semiconductors",
+    jaTagline: "α線 ≤ 0.001 cph/cm² — 先端メモリ・HBM・AI半導体用低α線シリカ",
+    description:
+      "저방사 실리카 분말은 우라늄(U)·토륨(Th) 등 방사성 불순물을 극한까지 제거하여 α선 방사량을 0.001 cph/cm² 이하로 관리한 초고순도 SiO₂ 필러입니다. HBM, DDR5, 어드밴스드 패키징 등 소프트 에러에 극도로 민감한 첨단 메모리 반도체 EMC·언더필의 필수 소재이며, 결정형(SL-CL)과 용융형(SL-FL) 2종으로 공급됩니다.",
+    enDescription:
+      "Low-Radiation Silica Powder is an ultra-high-purity SiO₂ filler in which radioactive impurities (U, Th) have been reduced to the ultimate level, keeping α-emission ≤ 0.001 cph/cm². It is an essential material for EMC and underfill of soft-error-sensitive advanced memory devices such as HBM, DDR5 and advanced packaging. Supplied as crystalline SL-CL and fused SL-FL grades.",
+    jaDescription:
+      "低α線シリカ粉末は、ウラン(U)・トリウム(Th)などの放射性不純物を極限まで除去し、α線放射量を0.001 cph/cm²以下に管理した超高純度SiO₂フィラーです。HBM・DDR5・アドバンストパッケージングなどソフトエラーに極めて敏感な先端メモリ半導体のEMC・アンダーフィルの必須素材で、結晶質(SL-CL)・溶融質(SL-FL)の2種で供給されます。",
+    image: lowRadImg,
+    category: "advanced-series",
+    features: [
+      { title: "☢️ 초저 α선 방사량", desc: "≤ 0.001 cph/cm² — 소프트 에러 원천 차단", enTitle: "☢️ Ultra-Low α-Emission", jaTitle: "☢️ 超低α線放射量", enDesc: "≤ 0.001 cph/cm² — eliminates soft errors at the source", jaDesc: "≤ 0.001 cph/cm² — ソフトエラーを源から遮断" },
+      { title: "🧬 U/Th 극미량 관리", desc: "우라늄·토륨 ppb 단위 정밀 제어", enTitle: "🧬 U/Th ppb-Level Control", jaTitle: "🧬 U/Th 極微量管理", enDesc: "Uranium/Thorium controlled at ppb level", jaDesc: "ウラン・トリウムをppb単位で精密制御" },
+      { title: "💾 HBM/AI 반도체 대응", desc: "HBM3E, DDR5, AP, 고집적 메모리 EMC용 표준", enTitle: "💾 HBM/AI Semiconductor Ready", jaTitle: "💾 HBM/AI半導体対応", enDesc: "Standard for HBM3E, DDR5, AP and high-density memory EMC", jaDesc: "HBM3E、DDR5、AP、高集積メモリEMC用の標準" },
+      { title: "🔧 2종 그레이드", desc: "결정형(SL-CL) · 용융형(SL-FL) 선택 가능", enTitle: "🔧 Dual Grade", jaTitle: "🔧 2種グレード", enDesc: "Crystalline SL-CL and fused SL-FL grades available", jaDesc: "結晶質(SL-CL)・溶融質(SL-FL)の選択が可能" },
+      { title: "🧪 초고순도 SiO₂", desc: "≥ 99.95%, 알칼리·염소 극저 관리", enTitle: "🧪 Ultra-High Purity", jaTitle: "🧪 超高純度SiO₂", enDesc: "≥ 99.95% with ultra-low alkali and chloride", jaDesc: "≥ 99.95%、アルカリ・塩素を極低管理" },
+      { title: "📐 정밀 입도", desc: "D50 0.5 ~ 20 µm 맞춤 공급", enTitle: "📐 Precision PSD", jaTitle: "📐 精密粒度", enDesc: "Customizable D50 0.5–20 µm", jaDesc: "D50 0.5~20 µmカスタム供給" },
+    ],
+    specs: [
+      { label: "외관", value: "백색 미세 분말", enValue: "White fine powder", jaValue: "白色微粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂ 순도", value: "≥ 99.95 %", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+      { label: "α선 방사량", value: "≤ 0.001 cph/cm²", enLabel: "α-Emission", jaLabel: "α線放射量" },
+      { label: "U (우라늄)", value: "≤ 0.5 ppb", enLabel: "U (Uranium)", jaLabel: "U (ウラン)" },
+      { label: "Th (토륨)", value: "≤ 0.5 ppb", enLabel: "Th (Thorium)", jaLabel: "Th (トリウム)" },
+      { label: "평균 입도 D50", value: "0.5 ~ 20 µm (맞춤)", enValue: "0.5–20 µm (customizable)", jaValue: "0.5~20 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
+      { label: "수분", value: "≤ 0.1 %", enLabel: "Moisture", jaLabel: "水分" },
+      { label: "포장", value: "10 / 20 kg 지대 · OEM", enValue: "10 / 20 kg bag · OEM", jaValue: "10 / 20 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    subModels: [
+      { code: "SL-CL", spec: "저방사 결정형", enSpec: "Low-Radiation Crystalline", jaSpec: "低α線 結晶質" },
+      { code: "SL-FL", spec: "저방사 용융형", enSpec: "Low-Radiation Fused", jaSpec: "低α線 溶融質" },
+    ],
+    applications: ["HBM / DDR5", "AI 반도체 EMC", "언더필 / 봉지재", "어드밴스드 패키징"],
+  },
+  {
+    slug: "surface-modified-silica-powder",
+    name: "활성 실리카 분말",
+    enName: "Surface-Modified Silica Powder",
+    jaName: "活性(表面改質)シリカ粉末",
+    tagline: "실란 커플링 표면개질로 수지 친화성·분산성 극대화",
+    enTagline: "Silane-Coupling Surface Modification for Maximum Resin Compatibility and Dispersion",
+    jaTagline: "シランカップリング表面改質で樹脂親和性・分散性を極大化",
+    description:
+      "활성(표면개질) 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시·아미노·비닐·메타크릴 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 결정형(SL-HJG)과 용융형(SL-HRG) 2종으로 공급되며 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
+    enDescription:
+      "Surface-Modified Silica Powder is a functional filler in which silane coupling agents (epoxy, amino, vinyl, methacryl, etc.) are chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Supplied as crystalline SL-HJG and fused SL-HRG grades, optimized for epoxy, phenolic, silicone and acrylic resin matrices.",
+    jaDescription:
+      "活性(表面改質)シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシ・アミノ・ビニル・メタクリルなど)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。結晶質(SL-HJG)・溶融質(SL-HRG)の2種で供給され、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
+    image: surfaceModImg,
+    category: "advanced-series",
+    features: [
+      { title: "🧬 실란 커플링 표면개질", desc: "에폭시·아미노·비닐·메타크릴 등 맞춤 개질", enTitle: "🧬 Silane Coupling Surface Modification", jaTitle: "🧬 シランカップリング表面改質", enDesc: "Custom modification with epoxy, amino, vinyl, methacryl and more", jaDesc: "エポキシ・アミノ・ビニル・メタクリルなどカスタム改質" },
+      { title: "🔗 강력한 계면 접착", desc: "수지-필러 계면 결합력 강화로 기계적 물성 향상", enTitle: "🔗 Strong Interfacial Adhesion", jaTitle: "🔗 強力な界面接着", enDesc: "Enhanced resin-filler bonding improves mechanical properties", jaDesc: "樹脂-フィラー界面結合力の強化で機械的物性が向上" },
+      { title: "🌊 우수한 분산성", desc: "응집 최소화 및 균일 분산으로 가공성 향상", enTitle: "🌊 Excellent Dispersibility", jaTitle: "🌊 優れた分散性", enDesc: "Minimized agglomeration and uniform dispersion improve processability", jaDesc: "凝集を最小化し均一分散で加工性を向上" },
+      { title: "💧 내수성·내습성", desc: "가수분해 억제로 장기 신뢰성 확보", enTitle: "💧 Water/Humidity Resistance", jaTitle: "💧 耐水性・耐湿性", enDesc: "Hydrolysis suppression ensures long-term reliability", jaDesc: "加水分解抑制で長期信頼性を確保" },
+      { title: "🔧 2종 그레이드", desc: "결정형(SL-HJG) · 용융형(SL-HRG) 선택", enTitle: "🔧 Dual Grade", jaTitle: "🔧 2種グレード", enDesc: "Crystalline SL-HJG and fused SL-HRG", jaDesc: "結晶質(SL-HJG)・溶融質(SL-HRG)の選択" },
+      { title: "⚙️ 맞춤 사양", desc: "커플링제 종류, 처리량, 입도 요구별 대응", enTitle: "⚙️ Custom Spec", jaTitle: "⚙️ カスタム仕様", enDesc: "Custom coupling agent type, loading and PSD", jaDesc: "カップリング剤種類・処理量・粒度要求別に対応" },
+    ],
+    specs: [
+      { label: "외관", value: "백색 표면개질 분말", enValue: "White surface-modified powder", jaValue: "白色表面改質粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂ 순도", value: "≥ 99.5 %", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+      { label: "표면 처리제", value: "실란 커플링 (에폭시·아미노·비닐 등)", enValue: "Silane coupling (epoxy/amino/vinyl, etc.)", jaValue: "シランカップリング(エポキシ・アミノ・ビニル等)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "탄소 함량", value: "0.3 ~ 1.5 % (조정 가능)", enValue: "0.3–1.5 % (adjustable)", jaValue: "0.3~1.5 % (調整可能)", enLabel: "Carbon Content", jaLabel: "炭素含有量" },
+      { label: "평균 입도 D50", value: "1 ~ 30 µm (맞춤)", enValue: "1–30 µm (customizable)", jaValue: "1~30 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
+      { label: "수분", value: "≤ 0.3 %", enLabel: "Moisture", jaLabel: "水分" },
+      { label: "포장", value: "20 kg 지대 · OEM", enValue: "20 kg bag · OEM", jaValue: "20 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    subModels: [
+      { code: "SL-HJG", spec: "활성 결정형", enSpec: "Active Crystalline", jaSpec: "活性 結晶質" },
+      { code: "SL-HRG", spec: "활성 용융형", enSpec: "Active Fused", jaSpec: "活性 溶融質" },
+    ],
+    applications: ["에폭시 복합재", "실리콘 실란트", "고성능 접착제", "코팅 · 잉크"],
+  },
+  {
+    slug: "silica-sand-granule",
+    name: "실리카 사 · 입자",
+    enName: "Silica Sand & Granule",
+    jaName: "シリカサンド・粒",
+    tagline: "고순도 결정·용융 석영사 — 유리·주조·연마·필터용 산업 표준 소재",
+    enTagline: "High-Purity Crystalline & Fused Quartz Sand — Industrial Standard for Glass, Casting, Abrasives and Filtration",
+    jaTagline: "高純度結晶・溶融石英砂 — ガラス・鋳造・研磨・フィルター用産業標準素材",
+    description:
+      "실리카 사 및 입자 시리즈는 고순도 석영을 선별·정제한 결정형 석영사(SL-CS)와 초고온 용융을 거친 용융형 석영사(SL-FS)로 구성됩니다. 유리 원료, 정밀 주조, 연마재, 워터필터, 스포츠 표면재 등 광범위한 산업 분야에 사용되며, 입도 20 mesh부터 200 mesh까지 맞춤 공급이 가능합니다.",
+    enDescription:
+      "The Silica Sand & Granule series consists of crystalline quartz sand (SL-CS) — purified from high-grade quartz — and fused quartz sand (SL-FS) processed at ultra-high temperature. Used across broad industries including glass raw material, precision casting, abrasives, water filtration and sports surface materials. Custom grain size available from 20 to 200 mesh.",
+    jaDescription:
+      "シリカサンド・粒シリーズは高純度石英を選別・精製した結晶質石英砂(SL-CS)と超高温溶融を経た溶融質石英砂(SL-FS)で構成されます。ガラス原料・精密鋳造・研磨材・浄水フィルター・スポーツ表面材など幅広い産業分野に使用され、粒度20 meshから200 meshまでカスタム供給が可能です。",
+    image: sandGranuleImg,
+    category: "advanced-series",
+    features: [
+      { title: "🪨 결정·용융 2종 라인업", desc: "결정형 SL-CS · 용융형 SL-FS 선택 가능", enTitle: "🪨 Crystalline & Fused Lineup", jaTitle: "🪨 結晶・溶融 2種ラインアップ", enDesc: "Choice of crystalline SL-CS and fused SL-FS", jaDesc: "結晶質SL-CS・溶融質SL-FSの選択が可能" },
+      { title: "🧪 고순도 SiO₂ ≥ 99.7%", desc: "저철분·저알칼리 관리로 고급 유리·전자 원료 대응", enTitle: "🧪 High Purity SiO₂ ≥ 99.7%", jaTitle: "🧪 高純度SiO₂ ≥ 99.7%", enDesc: "Low-iron/low-alkali control for premium glass and electronic raw material", jaDesc: "低鉄・低アルカリ管理で高級ガラス・電子原料に対応" },
+      { title: "📐 광범위 입도 (20 ~ 200 mesh)", desc: "요구 사양별 맞춤 선별 공급", enTitle: "📐 Wide Grain Size Range", jaTitle: "📐 広範な粒度 (20~200 mesh)", enDesc: "Custom-screened supply per requirement", jaDesc: "要求仕様別にカスタム選別供給" },
+      { title: "🛡️ 우수한 내마모성", desc: "모스경도 7 — 연마·워터필터 최적", enTitle: "🛡️ Excellent Wear Resistance", jaTitle: "🛡️ 優れた耐摩耗性", enDesc: "Mohs 7 — optimal for abrasives and water filtration", jaDesc: "モース硬度7 — 研磨・浄水フィルターに最適" },
+      { title: "🔥 고내열성", desc: "1600℃ 이상 고온 공정에도 안정", enTitle: "🔥 High Heat Resistance", jaTitle: "🔥 高耐熱性", enDesc: "Stable in high-temperature processes above 1600℃", jaDesc: "1600℃以上の高温工程でも安定" },
+      { title: "🌍 안정 공급", desc: "국내·중국 이원화 공급망으로 물량 안정성 확보", enTitle: "🌍 Stable Supply", jaTitle: "🌍 安定供給", enDesc: "Dual Korea/China supply chain ensures volume stability", jaDesc: "韓国・中国二元化サプライチェーンで数量の安定性を確保" },
+    ],
+    specs: [
+      { label: "외관", value: "무색·백색 결정·용융 입자", enValue: "Colorless / white crystalline & fused granules", jaValue: "無色・白色 結晶・溶融粒子", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂ 순도", value: "≥ 99.7 %", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+      { label: "Fe₂O₃", value: "≤ 100 ppm", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "입도", value: "20 ~ 200 mesh (맞춤 생산)", enValue: "20–200 mesh (custom)", jaValue: "20~200 mesh (カスタム生産)", enLabel: "Grain Size", jaLabel: "粒度" },
+      { label: "모스경도", value: "7", enLabel: "Mohs Hardness", jaLabel: "モース硬度" },
+      { label: "내열 온도", value: "≥ 1600 ℃", enLabel: "Heat Resistance", jaLabel: "耐熱温度" },
+      { label: "포장", value: "25 kg 지대 · 1 톤 톤백 · OEM", enValue: "25 kg bag · 1-ton bag · OEM", jaValue: "25 kg 紙袋 · 1トンバッグ · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    subModels: [
+      { code: "SL-CS", spec: "결정 석영사", enSpec: "Crystalline Quartz Sand", jaSpec: "結晶石英砂" },
+      { code: "SL-FS", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
+    ],
+    applications: ["유리 원료", "정밀 주조", "연마재", "워터 필터", "스포츠 표면재"],
+  },
+  {
+    slug: "lead-free-glass-powder",
+    name: "무연유리분말",
+    enName: "Lead-Free Glass Powder",
+    jaName: "無鉛ガラス粉末",
+    tagline: "친환경 무연 조성 · 저융점 봉착 유리 프릿 (SL-ZT)",
+    enTagline: "Eco-Friendly Lead-Free Composition · Low-Melting Sealing Glass Frit (SL-ZT)",
+    jaTagline: "環境配慮型 無鉛組成 · 低融点封着ガラスフリット (SL-ZT)",
+    description:
+      "SL-ZT 무연유리분말은 납(Pb)을 사용하지 않는 친환경 저융점 봉착 유리 프릿으로, RoHS·REACH 규제에 완전 부합합니다. 400 ~ 550℃의 저융점 특성과 우수한 접착·봉착 성능을 통해 전자 부품, 디스플레이, 태양전지, 세라믹·금속 봉착 등 고부가가치 응용에 사용됩니다.",
+    enDescription:
+      "SL-ZT Lead-Free Glass Powder is an eco-friendly low-melting sealing glass frit that eliminates lead (Pb), fully compliant with RoHS and REACH. With a low melting range of 400–550℃ and excellent adhesion/sealing performance, it is used in high-value applications such as electronic components, displays, solar cells, and ceramic/metal sealing.",
+    jaDescription:
+      "SL-ZT無鉛ガラス粉末は鉛(Pb)を使用しない環境配慮型の低融点封着ガラスフリットで、RoHS・REACH規制に完全準拠します。400~550℃の低融点特性と優れた接着・封着性能により、電子部品・ディスプレイ・太陽電池・セラミック/金属封着など高付加価値用途に使用されます。",
+    image: leadFreeGlassImg,
+    category: "advanced-series",
+    features: [
+      { title: "🌿 완전 무연 조성", desc: "RoHS · REACH 규제 완전 부합의 친환경 소재", enTitle: "🌿 Fully Lead-Free", jaTitle: "🌿 完全無鉛組成", enDesc: "Eco-friendly material fully compliant with RoHS and REACH", jaDesc: "RoHS・REACH規制に完全準拠する環境配慮素材" },
+      { title: "🔥 저융점 (400 ~ 550℃)", desc: "저온 봉착으로 기판·부품 열손상 최소화", enTitle: "🔥 Low Melting Point (400–550℃)", jaTitle: "🔥 低融点 (400~550℃)", enDesc: "Low-temperature sealing minimizes thermal damage to substrates and components", jaDesc: "低温封着で基板・部品の熱損傷を最小化" },
+      { title: "🔗 우수한 봉착 성능", desc: "세라믹·금속·유리 이종 접합 안정성", enTitle: "🔗 Excellent Sealing", jaTitle: "🔗 優れた封着性能", enDesc: "Stable dissimilar bonding of ceramics, metals and glass", jaDesc: "セラミック・金属・ガラス異種接合の安定性" },
+      { title: "🌡️ 열팽창 정합성", desc: "다양한 기판 CTE에 맞춘 조성 커스터마이징", enTitle: "🌡️ CTE Matching", jaTitle: "🌡️ 熱膨張整合性", enDesc: "Composition customized to match various substrate CTEs", jaDesc: "多様な基板CTEに合わせた組成カスタマイズ" },
+      { title: "🧪 고순도 관리", desc: "중금속·염소·황 등 유해 성분 엄격 관리", enTitle: "🧪 High-Purity Control", jaTitle: "🧪 高純度管理", enDesc: "Strict control of heavy metals, chloride and sulfur", jaDesc: "重金属・塩素・硫黄など有害成分を厳格管理" },
+      { title: "📐 미세 균일 분말", desc: "D50 3 ~ 15 µm 정밀 관리로 균일 도포성", enTitle: "📐 Fine Uniform Powder", jaTitle: "📐 微細均一粉末", enDesc: "Precise D50 3–15 µm control for uniform application", jaDesc: "D50 3~15 µmの精密管理で均一な塗布性" },
+    ],
+    specs: [
+      { label: "외관", value: "미세 백색·담황색 분말", enValue: "Fine white / pale yellow powder", jaValue: "微細白色・淡黄色粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "조성", value: "무연(Pb-Free) · Bi/Zn/B/Si 계", enValue: "Pb-Free · Bi/Zn/B/Si system", jaValue: "無鉛(Pb-Free) · Bi/Zn/B/Si系", enLabel: "Composition", jaLabel: "組成" },
+      { label: "연화점(Ts)", value: "350 ~ 450 ℃", enLabel: "Softening Point (Ts)", jaLabel: "軟化点(Ts)" },
+      { label: "봉착 온도", value: "400 ~ 550 ℃", enLabel: "Sealing Temperature", jaLabel: "封着温度" },
+      { label: "열팽창계수 (CTE)", value: "6 ~ 11 ×10⁻⁶/℃ (조정 가능)", enValue: "6–11 ×10⁻⁶/℃ (adjustable)", jaValue: "6~11 ×10⁻⁶/℃ (調整可能)", enLabel: "CTE", jaLabel: "熱膨張係数 (CTE)" },
+      { label: "평균 입도 D50", value: "3 ~ 15 µm (맞춤)", enValue: "3–15 µm (customizable)", jaValue: "3~15 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
+      { label: "납 함량 (Pb)", value: "≤ 100 ppm", enLabel: "Lead Content (Pb)", jaLabel: "鉛含有量 (Pb)" },
+      { label: "포장", value: "5 / 10 kg 지대 · OEM", enValue: "5 / 10 kg bag · OEM", jaValue: "5 / 10 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
+    subModels: [
+      { code: "SL-ZT", spec: "무연 봉착 유리 프릿", enSpec: "Lead-Free Sealing Glass Frit", jaSpec: "無鉛封着ガラスフリット" },
+    ],
+    applications: ["전자 부품 봉착", "디스플레이", "태양전지", "세라믹 · 금속 봉착"],
+  },
+];
+
+productCatalog.push(...advSeriesProducts);
+
 
 export const getProductBySlug = (slug: string) =>
   productCatalog.find((p) => p.slug === slug);

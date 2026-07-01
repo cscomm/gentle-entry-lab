@@ -325,7 +325,85 @@ export const productRoutes: Route[] = [
     body: p.body,
   })),
 
+  // ============= Advanced SL Series (7 new categories) =============
+  ...(
+    [
+      {
+        slug: "spherical-silica-powder",
+        ko: "구형 실리카 분말 (SL-QG / SL-QG-L)",
+        en: "Spherical Silica Powder (SL-QG / SL-QG-L)",
+        ja: "球状シリカ粉末 (SL-QG / SL-QG-L)",
+        desc: "고구형도(>95%)·저열팽창의 반도체 EMC용 프리미엄 구형 실리카. 일반(SL-QG)·저방사(SL-QG-L) 2종 라인업.",
+        descEn: "Premium spherical silica for semiconductor EMC — high sphericity (>95%), low CTE. Two grades: standard SL-QG and low-alpha SL-QG-L.",
+        descJa: "高球形度(>95%)・低熱膨張の半導体EMC用プレミアム球状シリカ。標準SL-QG・低α線SL-QG-Lの2種ラインアップ。",
+      },
+      {
+        slug: "round-corner-silica-powder",
+        ko: "원각 실리카 분말 (SL-YJG / SL-YRG)",
+        en: "Round Corner Silica Powder (SL-YJG / SL-YRG)",
+        ja: "丸角シリカ粉末 (SL-YJG / SL-YRG)",
+        desc: "각형과 구형의 장점을 겸비한 원각 실리카. 결정형(SL-YJG)·용융형(SL-YRG) 2종 공급.",
+        descEn: "Round-corner hybrid silica combining angular strength and spherical flow. Supplied as crystalline SL-YJG and fused SL-YRG.",
+        descJa: "角形と球状の長所を兼備した丸角シリカ。結晶質(SL-YJG)・溶融質(SL-YRG)の2種供給。",
+      },
+      {
+        slug: "angular-silica-powder",
+        ko: "각형 실리카 분말 (SL-RG / SL-JG)",
+        en: "Angular Silica Powder (SL-RG / SL-JG)",
+        ja: "角形シリカ粉末 (SL-RG / SL-JG)",
+        desc: "고강도·고내마모의 산업 표준 각형 실리카. 용융형(SL-RG)·결정형(SL-JG).",
+        descEn: "Industry-standard angular silica with high strength and wear resistance. Fused SL-RG and crystalline SL-JG.",
+        descJa: "高強度・高耐摩耗の産業標準角形シリカ。溶融質(SL-RG)・結晶質(SL-JG)。",
+      },
+      {
+        slug: "low-radiation-silica-powder",
+        ko: "저방사 실리카 분말 (SL-CL / SL-FL)",
+        en: "Low-Radiation Silica Powder (SL-CL / SL-FL)",
+        ja: "低α線シリカ粉末 (SL-CL / SL-FL)",
+        desc: "α선 ≤ 0.001 cph/cm²의 HBM·AI 반도체용 저방사 실리카. 결정형(SL-CL)·용융형(SL-FL).",
+        descEn: "Low-radiation silica for HBM and AI semiconductors — α-emission ≤ 0.001 cph/cm². Crystalline SL-CL and fused SL-FL.",
+        descJa: "α線 ≤ 0.001 cph/cm²のHBM・AI半導体用低α線シリカ。結晶質(SL-CL)・溶融質(SL-FL)。",
+      },
+      {
+        slug: "surface-modified-silica-powder",
+        ko: "활성(표면개질) 실리카 분말 (SL-HJG / SL-HRG)",
+        en: "Surface-Modified Silica Powder (SL-HJG / SL-HRG)",
+        ja: "活性(表面改質)シリカ粉末 (SL-HJG / SL-HRG)",
+        desc: "실란 커플링 표면개질로 수지 친화성·분산성 극대화. 결정형(SL-HJG)·용융형(SL-HRG).",
+        descEn: "Silane-coupling surface modification maximizes resin compatibility and dispersion. Crystalline SL-HJG and fused SL-HRG.",
+        descJa: "シランカップリング表面改質で樹脂親和性・分散性を極大化。結晶質(SL-HJG)・溶融質(SL-HRG)。",
+      },
+      {
+        slug: "silica-sand-granule",
+        ko: "실리카 사·입자 (SL-CS / SL-FS)",
+        en: "Silica Sand & Granule (SL-CS / SL-FS)",
+        ja: "シリカサンド・粒 (SL-CS / SL-FS)",
+        desc: "고순도 결정 석영사(SL-CS)·용융 석영사(SL-FS) 산업 표준 소재. 유리·주조·연마·필터용.",
+        descEn: "High-purity crystalline (SL-CS) and fused (SL-FS) quartz sand. For glass, casting, abrasives and filtration.",
+        descJa: "高純度結晶石英砂(SL-CS)・溶融石英砂(SL-FS)の産業標準素材。ガラス・鋳造・研磨・フィルター用。",
+      },
+      {
+        slug: "lead-free-glass-powder",
+        ko: "무연유리분말 (SL-ZT)",
+        en: "Lead-Free Glass Powder (SL-ZT)",
+        ja: "無鉛ガラス粉末 (SL-ZT)",
+        desc: "친환경 무연 조성 · 400~550℃ 저융점 봉착 유리 프릿. RoHS·REACH 완전 부합.",
+        descEn: "Eco-friendly lead-free sealing glass frit — 400–550℃ low melting point, fully RoHS/REACH compliant.",
+        descJa: "環境配慮型無鉛組成 · 400~550℃低融点封着ガラスフリット。RoHS・REACH完全準拠。",
+      },
+    ] as const
+  ).map((p) => ({
+    path: `/products/${p.slug}`,
+    title: `${p.ko} | SILICA`,
+    description: p.desc,
+    titleI18n: { en: `${p.en} | SILICA`, ja: `${p.ja} | SILICA` },
+    descriptionI18n: { en: p.descEn, ja: p.descJa },
+    h1: `${p.ko} · ${p.en}`,
+    body: `<p>${p.desc}</p><h2>${p.en}</h2><p>${p.descEn}</p>`,
+  })),
+
 ];
+
 
 export const routes: Route[] = [
   {

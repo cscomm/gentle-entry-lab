@@ -110,6 +110,9 @@ const ProductDetail = () => {
   const isGradeA = product.slug === "fused-silica-a-grade";
   const isSilicaSand = product.slug === "silica-sand";
   const isSilicaPowder = product.slug === "silica-powder";
+  const subModels = product.subModels;
+  const subModelsLabel = product.subModelsColumnLabel;
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -266,8 +269,8 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* Silica Powder — Representative Products Table */}
-      {isSilicaPowder && (
+      {/* Generic Sub-Models Lineup Table (for Advanced Series & Silica Powder) */}
+      {subModels && !isSilicaSand && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <div className="flex items-center gap-3">
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -279,9 +282,9 @@ const ProductDetail = () => {
           </h3>
           <p className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
-              "표준 입도별 2종 라인업을 기본 공급하며, 그 외 입도·SiO₂·Fe·백색도 사양은 상담을 통해 맞춤 생산이 가능합니다.",
-              "Two standard grain-size grades are offered as our base lineup. Additional grain sizes, SiO₂, Fe, and whiteness specs are available via custom production upon consultation.",
-              "標準粒度別の2種ラインアップを基本供給しており、その他の粒度・SiO₂・Fe・白色度仕様はご相談によりカスタム生産が可能です。"
+              "아래 대표 라인업을 기본 공급하며, 그 외 입도·순도·표면처리 등 세부 사양은 상담을 통해 맞춤 생산이 가능합니다.",
+              "The representative lineup below is our standard offering. Additional grain sizes, purity levels, surface treatments and detailed specs are available via custom production upon consultation.",
+              "以下の代表ラインアップを基本供給しており、その他の粒度・純度・表面処理など詳細仕様はご相談によりカスタム生産が可能です。"
             )}
           </p>
 
@@ -294,7 +297,7 @@ const ProductDetail = () => {
                       {tri("품번", "Code", "品番")}
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold tracking-[0.2em]">
-                      {tri("입도 (Mesh)", "Grain Size (Mesh)", "粒度 (Mesh)")}
+                      {subModelsLabel ? tri(subModelsLabel.ko, subModelsLabel.en, subModelsLabel.ja) : tri("특성", "Feature", "特性")}
                     </th>
                     <th className="px-6 py-4 text-left text-xs font-semibold tracking-[0.2em]">
                       {tri("제품명", "Product", "製品名")}
@@ -302,14 +305,15 @@ const ProductDetail = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  {[
-                    { code: "SLP200", mesh: tri("약 200 Mesh", "Approx. 200 Mesh", "約200 Mesh"), name: tri("규사 분말", "Silica Powder", "珪砂粉末") },
-                    { code: "SLP325", mesh: "325 ~ 1000 Mesh", name: tri("고미분 규사 분말", "Ultra-Fine Silica Powder", "高微細珪砂粉末") },
-                  ].map((row) => (
+                  {subModels.map((row) => (
                     <tr key={row.code} className="transition hover:bg-secondary/40">
                       <td className="px-6 py-4 font-mono text-base font-semibold text-primary">{row.code}</td>
-                      <td className="px-6 py-4 font-medium text-foreground">{row.mesh}</td>
-                      <td className="px-6 py-4 text-muted-foreground">{row.name}</td>
+                      <td className="px-6 py-4 font-medium text-foreground">{tri(row.spec, row.enSpec ?? row.spec, row.jaSpec ?? row.spec)}</td>
+                      <td className="px-6 py-4 text-muted-foreground">
+                        {row.name || row.enName || row.jaName
+                          ? tri(row.name ?? product.name, row.enName ?? product.enName, row.jaName ?? product.jaName ?? product.enName)
+                          : tri(product.name, product.enName, product.jaName ?? product.enName)}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -319,13 +323,14 @@ const ProductDetail = () => {
 
           <p className="mt-4 text-xs text-muted-foreground">
             {tri(
-              "※ 표준 규격 외 입도, 이산화규소(SiO₂) 함량, 철(Fe) 함량, 백색도 등 다양한 사양은 상담을 통해 맞춤 생산이 가능합니다.",
-              "※ Beyond the standard specifications, custom production is available for grain size, SiO₂ content, Fe content, whiteness, and more — please contact us for details.",
-              "※ 標準規格以外の粒度、二酸化ケイ素(SiO₂)含有量、鉄(Fe)含有量、白色度など多様な仕様はご相談によりカスタム生産が可能です。"
+              "※ 표준 규격 외 입도·순도·표면처리·조성 등 다양한 사양은 상담을 통해 맞춤 생산이 가능합니다.",
+              "※ Beyond the standard specs, custom production is available for grain size, purity, surface treatment, composition and more — please contact us.",
+              "※ 標準規格以外の粒度・純度・表面処理・組成など多様な仕様はご相談によりカスタム生産が可能です。"
             )}
           </p>
         </section>
       )}
+
 
       {/* Features */}
       <section className="bg-secondary/40 py-20 md:py-28">
