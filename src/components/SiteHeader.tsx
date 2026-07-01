@@ -95,8 +95,22 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
 
 
                 {item.dropdown === "products" && (
-                  <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-50 max-h-[80vh] w-72 -translate-x-1/2 overflow-y-auto pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
+                      {productCatalog
+                        .filter((p) => p.category === "advanced-series")
+                        .map((p) => (
+                          <Link
+                            key={p.slug}
+                            to={`/products/${p.slug}/`}
+                            className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                          >
+                            <div className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</div>
+                            {lang === "ko" && (
+                              <div className="mt-0.5 text-xs text-muted-foreground">{p.enName}</div>
+                            )}
+                          </Link>
+                        ))}
                       {productCatalog
                         .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder"].includes(p.slug))
                         .map((p) => (
@@ -130,15 +144,6 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         )}
                       </Link>
                       <Link
-                        to="/products/silica-gel/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
-                        )}
-                      </Link>
-                      <Link
                         to="/products/silica-sand/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
@@ -158,16 +163,26 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                       </Link>
                       <Link
                         to="/products/high-purity-quartz/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
                         )}
                       </Link>
+                      <Link
+                        to="/products/silica-gel/"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
+                        )}
+                      </Link>
                     </div>
                   </div>
                 )}
+
 
                 {item.dropdown === "applications" && (
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
