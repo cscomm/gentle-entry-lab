@@ -18,8 +18,25 @@ import precipitatedSilica from "@/assets/precipitated-silica.jpg";
 import fumedSilica from "@/assets/fumed-silica.png";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
+import sphericalImg from "@/assets/spherical-silica-powder.jpg";
+import roundCornerImg from "@/assets/round-corner-silica-powder.jpg";
+import angularImg from "@/assets/angular-silica-powder.jpg";
+import lowRadImg from "@/assets/low-radiation-silica-powder.jpg";
+import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
+import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
+import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
+
+export type SubModel = {
+  code: string;
+  spec: string;
+  enSpec?: string;
+  jaSpec?: string;
+  name?: string;
+  enName?: string;
+  jaName?: string;
+};
 
 export type ProductDetail = {
   slug: string;
@@ -38,7 +55,10 @@ export type ProductDetail = {
   features: { title: string; desc: string; enTitle?: string; enDesc?: string; jaTitle?: string; jaDesc?: string }[];
   specs: { label: string; value: string; note?: string; enLabel?: string; enValue?: string; enNote?: string; jaLabel?: string; jaValue?: string; jaNote?: string }[];
   applications: string[];
+  subModels?: SubModel[];
+  subModelsColumnLabel?: { ko: string; en: string; ja: string };
 };
+
 
 export const productCatalog: ProductDetail[] = [
   {
