@@ -127,14 +127,6 @@ export const productRoutes: Route[] = [
     body: `<p>SiLiCA의 규사분말(Silica Powder)은 도료·코팅·플라스틱·인조대리석·건축 자재에 사용되는 고백색·고순도 미분 실리카 기능성 충진재입니다.</p><h2>주요 용도</h2><p>페인트/코팅 필러, 플라스틱·고무 충진재, 인조대리석·엔지니어드 스톤, 퍼티·실란트, 건축 자재.</p>`,
   },
   {
-    path: "/applications/silica-powder",
-    title: "규사분말 Silica Powder 응용분야 | SILICA",
-    description:
-      "고백색·고순도 규사분말(Silica Powder)의 산업별 응용 분야 — 페인트·코팅·플라스틱·인조대리석·건축 자재.",
-    h1: "규사분말 응용분야",
-    body: `<p>고백색·고순도 규사분말은 페인트, 코팅, 플라스틱 충진재, 인조대리석, 건축 자재 등 다양한 산업 분야의 기능성 필러로 사용됩니다.</p>`,
-  },
-  {
     path: "/products/high-purity-quartz",
     title: "고순도 천연 규석 High-Purity Quartz | SILICA",
     description:
