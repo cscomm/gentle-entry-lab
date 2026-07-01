@@ -19,6 +19,7 @@ import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
+import aboutSilicaAsset from "@/assets/about-silica.png.asset.json";
 import gradeA from "@/assets/grade-a-hero.png";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
