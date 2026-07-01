@@ -19,6 +19,7 @@ import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
+import aboutSilicaAsset from "@/assets/about-silica.png.asset.json";
 import gradeA from "@/assets/grade-a-hero.png";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
@@ -274,7 +275,7 @@ const Index = () => {
       <section id="about" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="relative overflow-hidden rounded-2xl border border-border">
-            <img src={facility} alt={silicaAlt("생산시설")} loading="lazy" className="h-[420px] w-full object-cover" />
+            <img src={aboutSilicaAsset.url} alt={silicaAlt("실리카 제품 샘플")} loading="lazy" className="h-[420px] w-full object-cover" />
           </div>
           <div>
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
