@@ -150,12 +150,12 @@ const ProductDetail = () => {
         </div>
 
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {children.map((p) => (
               <Link
                 key={p.slug}
                 to={`/products/${p.slug}/`}
-                className="group block overflow-hidden rounded-2xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+                className="group block overflow-hidden rounded-xl border border-border bg-card transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
               >
                 <div className="aspect-square overflow-hidden bg-secondary/40">
                   <img
@@ -165,14 +165,11 @@ const ProductDetail = () => {
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold leading-snug">{pick(lang, p.name, p.enName, p.jaName)}</h3>
-                  {lang === "ko" && <p className="mt-1 text-xs text-muted-foreground line-clamp-1">{p.enName}</p>}
-                  <p className="mt-3 text-sm text-muted-foreground line-clamp-3">
-                    {pick(lang, p.tagline, p.enTagline, p.jaTagline)}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm text-primary transition group-hover:gap-2">
-                    {t("products.detail")} <ArrowRight className="h-4 w-4" />
+                <div className="p-3">
+                  <h3 className="text-sm font-semibold leading-snug line-clamp-2">{pick(lang, p.name, p.enName, p.jaName)}</h3>
+                  {lang === "ko" && <p className="mt-1 text-[11px] text-muted-foreground line-clamp-1">{p.enName}</p>}
+                  <span className="mt-2 inline-flex items-center gap-1 text-xs text-primary transition group-hover:gap-1.5">
+                    {t("products.detail")} <ArrowRight className="h-3 w-3" />
                   </span>
                 </div>
               </Link>
