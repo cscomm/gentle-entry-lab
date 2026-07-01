@@ -207,9 +207,17 @@ export const productCatalog: ProductDetail[] = [
       { label: "포장", value: "25kg 지대 / 500kg 벌크백 / 1톤 톤백 / OEM 포장", enValue: "25 kg bag / 500 kg bulk bag / 1-ton bag / OEM packaging", jaValue: "25kg紙袋 / 500kgバルクバッグ / 1トンバッグ / OEM包装", enLabel: "Packaging", jaLabel: "包装" },
     ],
     applications: ["규사"],
+    subModelsColumnLabel: { ko: "입도 (Mesh)", en: "Grain Size (Mesh)", ja: "粒度 (Mesh)" },
+    subModels: [
+      { code: "SLS20", spec: "20 ~ 40 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+      { code: "SLS40", spec: "40 ~ 70 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+      { code: "SLS70", spec: "70 ~ 140 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+      { code: "SLS100", spec: "100 ~ 200 Mesh", name: "규사", enName: "Silica Sand", jaName: "珪砂" },
+    ],
   },
   {
     slug: "silica-powder",
+
     name: "규사분말",
     enName: "Silica Powder", jaName: "珪砂粉末 (シリカパウダー)",
     tagline: "고순도 규사를 미세 분쇄한 산업용 분말 — 균일 입도·고백색·고순도 SiO₂",
