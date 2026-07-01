@@ -304,8 +304,10 @@ function buildHtml(template: string, route: Route, lang: LangCode): string {
   const url = `${BASE_URL}${path}`;
   const escape = (s: string) =>
     s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  const escTitle = escape(route.title);
-  const escDesc = escape(route.description);
+  const localTitle = route.titleI18n?.[lang] ?? route.title;
+  const localDesc = route.descriptionI18n?.[lang] ?? route.description;
+  const escTitle = escape(localTitle);
+  const escDesc = escape(localDesc);
 
   let html = template;
 
