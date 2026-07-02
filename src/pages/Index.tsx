@@ -23,7 +23,7 @@ import aboutSilica from "@/assets/about-silica.jpg";
 import gradeA from "@/assets/grade-a-hero.png";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
-import pProcess from "@/assets/p-process.jpg";
+import highPurityQuartz from "@/assets/high-purity-quartz-raw.jpg";
 import silicaGelHero from "@/assets/silica-gel-hero.jpg";
 import precipitatedSilicaImg from "@/assets/precipitated-silica.jpg";
 import fumedSilica from "@/assets/fumed-silica.png";

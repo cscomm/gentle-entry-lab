@@ -4,7 +4,7 @@ import gradeB from "@/assets/grade-b-silica.png";
 import gradeBDetail from "@/assets/grade-b-detail.png";
 import gradeC from "@/assets/grade-c-silica.png";
 import gradeCDetail from "@/assets/grade-c-detail.png";
-import pProcess from "@/assets/p-process.jpg";
+import highPurityQuartz from "@/assets/high-purity-quartz-raw.jpg";
 import hpqDetail from "@/assets/hpq-detail.jpg";
 import sgMicrosilica from "@/assets/sg-microsilica.jpg";
 import sgAntiblocking from "@/assets/sg-antiblocking.jpg";
