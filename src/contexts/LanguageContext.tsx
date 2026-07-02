@@ -120,7 +120,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   // Product detail page
   "pd.overview": { ko: "제품 개요", en: "Product Overview", ja: "製品概要" },
   "pd.features": { ko: "주요 특징", en: "Key Features", ja: "主な特徴" },
-  "pd.applications": { ko: "적용 범위", en: "Applications", ja: "適用範囲" },
+  "pd.applications": { ko: "응용분야", en: "Applications", ja: "応用分野" },
   "pd.applications.desc": { ko: "고객 산업별 맞춤형 솔루션 — 각 분야의 신뢰성 요구를 완벽히 충족합니다", en: "Tailored solutions for every industry — meeting the highest reliability standards.", ja: "お客様の産業別カスタマイズソリューション — 各分野の信頼性要求を完全に満たします" },
   "pd.related": { ko: "다른 제품 살펴보기", en: "Explore Other Products", ja: "他の製品を見る" },
   "pd.inquire": { ko: "제품 문의하기", en: "Inquire About This Product", ja: "製品について問い合わせる" },
