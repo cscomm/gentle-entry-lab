@@ -429,6 +429,176 @@ export const productRoutes: Route[] = [
     body: `<p>${p.desc}</p><h2>${p.en}</h2><p>${p.descEn}</p>`,
   })),
 
+  // ============= Category & Application pages (SSR completeness) =============
+  {
+    path: "/products/precipitated-silica",
+    title: "침전 실리카 Precipitated Silica — 고무·식의약·치약용 | SILICA",
+    description:
+      "고무 보강·식의약 고결방지·치약 연마제용 고순도 침전 실리카(Precipitated Silica). BET 100–250 m²/g, 흡유량 200–320 ml/100g 규격의 SiLiCA 침전실리카 라인업.",
+    titleI18n: {
+      en: "Precipitated Silica — Rubber Reinforcement, Food & Dental | SILICA",
+      ja: "沈降シリカ Precipitated Silica — ゴム補強・食品/医薬品・歯磨き用 | SILICA",
+    },
+    descriptionI18n: {
+      en: "High-purity precipitated silica for rubber (tire, footwear) reinforcement, food/pharma anti-caking and dental abrasives. BET 100–250 m²/g, oil absorption 200–320 ml/100g.",
+      ja: "タイヤ・靴底などのゴム補強、食品/医薬品固結防止、歯磨き用研磨剤向けの高純度沈降シリカ。BET 100–250 m²/g、吸油量200–320 ml/100g。",
+    },
+    h1: "침전 실리카 · Precipitated Silica",
+    body: `
+      <p>SiLiCA의 침전 실리카(Precipitated Silica)는 규산나트륨과 산의 습식 반응으로 제조되는 다공성 고순도 SiO₂ 분말로, 고무 보강·식품/의약 고결방지·치약 연마제·사료·농약 담체 등 광범위한 산업에서 사용됩니다.</p>
+      <h2>주요 특성</h2>
+      <ul>
+        <li>SiO₂ 순도: ≥ 98%</li>
+        <li>BET 비표면적: 100 – 250 m²/g</li>
+        <li>흡유량(DBP): 200 – 320 ml/100g</li>
+        <li>평균 입도: 3 – 25 µm</li>
+        <li>pH: 6 – 8 (중성 안정)</li>
+      </ul>
+      <h2>주요 응용 분야</h2>
+      <ul>
+        <li>타이어·신발창·컨베이어벨트 등 <strong>고무 보강재</strong></li>
+        <li>분유·조미료·비타민 등 <strong>식·의약 고결방지제</strong></li>
+        <li><strong>치약 연마제</strong> 및 구강 케어 제품</li>
+        <li>사료·농약·비료 담체(캐리어)</li>
+        <li>페인트·잉크 소광제 및 증점제</li>
+      </ul>`,
+  },
+  {
+    path: "/applications/precipitated-silica",
+    title: "침전 실리카 응용분야 — 고무·식품·치약·사료 | SILICA",
+    description:
+      "침전 실리카(Precipitated Silica)의 산업별 응용 분야 — 그린 타이어, 신발창, 식품 고결방지제, 치약 연마제, 사료·농약 담체, 배터리 세퍼레이터까지.",
+    titleI18n: {
+      en: "Precipitated Silica Applications — Tires, Food, Dental, Battery | SILICA",
+      ja: "沈降シリカの用途分野 — グリーンタイヤ・食品・歯磨き・電池 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of precipitated silica — green tires, footwear soles, food anti-caking, toothpaste abrasive, feed/pesticide carriers, battery separators and paint matting.",
+      ja: "沈降シリカの産業別用途 — グリーンタイヤ、靴底、食品固結防止、歯磨き研磨剤、飼料・農薬担体、電池セパレーター、塗料艶消し。",
+    },
+    h1: "침전 실리카 응용분야 · Precipitated Silica Applications",
+    body: `
+      <p>침전 실리카는 높은 비표면적과 흡유량, 우수한 보강·분산 특성으로 자동차·소비재·식품·의약·에너지 등 다양한 산업의 핵심 기능성 소재로 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>그린 타이어</strong> — 저연비·저소음 타이어의 보강 필러</li>
+        <li><strong>신발/컨베이어 고무</strong> — 인장강도 및 내마모성 향상</li>
+        <li><strong>식품·의약</strong> — 분말 제품의 고결방지·유동성 개선</li>
+        <li><strong>치약</strong> — 저마모 연마제 및 증점제</li>
+        <li><strong>사료·농약</strong> — 액상 원료의 분말화 담체</li>
+        <li><strong>이차전지</strong> — 세퍼레이터 코팅용 무기 필러</li>
+      </ul>`,
+  },
+  {
+    path: "/products/fumed-silica",
+    title: "흄드 실리카 Fumed Silica — 실리콘·실란트·도료 첨가제 | SILICA",
+    description:
+      "SiO₂ ≥99.8%, BET 100–400 m²/g 고순도 흄드 실리카(Fumed Silica). 실리콘 고무·실란트·도료·잉크의 증점·틱소트로피·보강용 나노 실리카 소재.",
+    titleI18n: {
+      en: "Fumed Silica — Silicone, Sealant, Coatings Additive | SILICA",
+      ja: "ヒュームドシリカ Fumed Silica — シリコーン・シーラント・塗料添加剤 | SILICA",
+    },
+    descriptionI18n: {
+      en: "High-purity fumed silica (SiO₂ ≥99.8%, BET 100–400 m²/g) — nano-silica thickener, thixotrope and reinforcement for silicone rubber, sealants, coatings and inks. Hydrophilic and hydrophobic grades.",
+      ja: "SiO₂≥99.8%・BET 100–400 m²/gの高純度ヒュームドシリカ。シリコーンゴム・シーラント・塗料・インキ用の増粘・チキソ性・補強ナノシリカ。親水性/疎水性グレード対応。",
+    },
+    h1: "흄드 실리카 · Fumed Silica",
+    body: `
+      <p>흄드 실리카(Fumed Silica)는 SiCl₄를 고온 화염 가수분해하여 제조되는 나노급 무정형 SiO₂ 분말입니다. 1차 입자 7–40 nm, 비표면적 100–400 m²/g의 초미세 구조로 뛰어난 증점·틱소트로피·보강·유동성 개선 효과를 제공합니다.</p>
+      <h2>주요 특성</h2>
+      <ul>
+        <li>SiO₂ 순도: ≥ 99.8% (초고순도 무정형)</li>
+        <li>1차 입자: 7 – 40 nm</li>
+        <li>BET 비표면적: 100 – 400 m²/g</li>
+        <li>친수성(Hydrophilic) / 소수성(Hydrophobic) 그레이드</li>
+        <li>탭 밀도: 40 – 60 g/L</li>
+      </ul>
+      <h2>주요 응용 분야</h2>
+      <ul>
+        <li>실리콘 고무·실란트 <strong>보강 필러</strong></li>
+        <li>페인트·잉크·접착제 <strong>증점·틱소성 부여제</strong></li>
+        <li>불포화 폴리에스터·에폭시 수지 <strong>흐름 조절</strong></li>
+        <li>분체 유동성 개선 및 <strong>고결방지제</strong></li>
+        <li>화장품·의약 제제용 <strong>기능성 첨가제</strong></li>
+      </ul>`,
+  },
+  {
+    path: "/applications/fumed-silica",
+    title: "흄드 실리카 응용분야 — 실리콘·도료·접착제·CMP | SILICA",
+    description:
+      "흄드 실리카(Fumed Silica)의 산업별 응용 분야 — 실리콘 고무, 실란트/접착제, 도료·잉크, 불포화 폴리에스터, 반도체 CMP 슬러리, 화장품·의약 등.",
+    titleI18n: {
+      en: "Fumed Silica Applications — Silicone, Coatings, CMP Slurry | SILICA",
+      ja: "ヒュームドシリカの用途分野 — シリコーン・塗料・CMPスラリー | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of fumed silica — silicone rubber reinforcement, sealants/adhesives thixotropy, paints & inks, unsaturated polyester, semiconductor CMP slurry, cosmetics and pharma.",
+      ja: "ヒュームドシリカの産業別用途 — シリコーンゴム補強、シーラント・接着剤のチキソ化、塗料・インキ、不飽和ポリエステル、半導体CMPスラリー、化粧品・医薬品。",
+    },
+    h1: "흄드 실리카 응용분야 · Fumed Silica Applications",
+    body: `
+      <p>흄드 실리카는 초미세 나노 SiO₂ 구조를 기반으로 증점·틱소성·보강·유동성 개선 효과를 제공하여 자동차·건축·전자·에너지·소비재 등 광범위한 산업에서 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>실리콘 고무·실란트</strong> — 인장·인열 강도 향상</li>
+        <li><strong>도료·잉크·접착제</strong> — 흐름 억제 및 침강 방지</li>
+        <li><strong>불포화 폴리에스터·에폭시</strong> — 요변성 부여</li>
+        <li><strong>반도체 CMP 슬러리</strong> — 웨이퍼 평탄화 연마재</li>
+        <li><strong>화장품·의약</strong> — 유동성·질감 개선</li>
+        <li><strong>이차전지·에너지</strong> — 전해질 겔화 및 세퍼레이터 첨가제</li>
+      </ul>`,
+  },
+  {
+    path: "/applications/silica-gel",
+    title: "실리카 겔 응용분야 — 흡습·촉매·코팅·필름 | SILICA",
+    description:
+      "실리카 겔(Silica Gel)의 산업별 응용 분야 — 식품/전자 방습제, 촉매 담체, 도료 소광제, 안티블로킹, 크로마토그래피 충전재, 정밀 무기 소재.",
+    titleI18n: {
+      en: "Silica Gel Applications — Desiccant, Catalyst, Matting, Film | SILICA",
+      ja: "シリカゲルの用途分野 — 乾燥剤・触媒・艶消し・フィルム | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of silica gel — food/electronic desiccant, catalyst supports, coating matting agents, film anti-blocking, chromatography media and precision inorganic fillers.",
+      ja: "シリカゲルの産業別用途 — 食品/電子製品乾燥剤、触媒担体、塗料艶消し剤、フィルムアンチブロッキング、クロマトグラフィー充填材、精密無機フィラー。",
+    },
+    h1: "실리카 겔 응용분야 · Silica Gel Applications",
+    body: `
+      <p>고순도 SiO₂ 기반 실리카 겔은 다공성 구조와 넓은 비표면적을 이용해 흡착·건조·촉매 담체·소광·안티블로킹 등 다양한 산업 공정에 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>방습·건조제</strong> — 식품, 전자, 의약, 정밀기기 포장</li>
+        <li><strong>도료·잉크 소광제</strong> — 균일한 무광 효과</li>
+        <li><strong>필름 안티블로킹</strong> — PE/PP/PET 필름 표면 처리</li>
+        <li><strong>촉매 담체</strong> — 화학·정유·수소 공정</li>
+        <li><strong>크로마토그래피</strong> — 정제·분리 충전재</li>
+        <li><strong>정밀 무기 소재</strong> — 반도체·디스플레이 공정 첨가제</li>
+      </ul>`,
+  },
+  {
+    path: "/applications/silica-powder",
+    title: "규사분말 응용분야 — 도료·플라스틱·인조대리석·건축 | SILICA",
+    description:
+      "고백색·고순도 규사분말(Silica Powder)의 산업별 응용 분야 — 페인트·코팅 필러, 플라스틱·고무 충진재, 인조대리석, 퍼티·실란트, 건축 자재.",
+    titleI18n: {
+      en: "Silica Powder Applications — Coatings, Plastics, Engineered Stone | SILICA",
+      ja: "珪砂粉末の用途分野 — 塗料・プラスチック・人工大理石・建築 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Applications of high-whiteness silica powder — paint/coating fillers, plastic and rubber reinforcement, engineered stone/artificial marble, putties, sealants and construction materials.",
+      ja: "高白色・高純度珪砂粉末の産業別用途 — 塗料/コーティングフィラー、プラスチック・ゴム補強、人工大理石、パテ・シーラント、建築材料。",
+    },
+    h1: "규사분말 응용분야 · Silica Powder Applications",
+    body: `
+      <p>SiLiCA의 규사분말은 SiO₂ 99.5% 이상의 고백색·고순도 미분 실리카로, 도료·플라스틱·인조대리석·건축 자재 등에 기능성 충진재로 광범위하게 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>페인트·코팅</strong> — 은폐력·내마모성 향상 필러</li>
+        <li><strong>플라스틱·고무</strong> — 강도·치수안정성 보강</li>
+        <li><strong>인조대리석·엔지니어드 스톤</strong> — 고백색 무기 필러</li>
+        <li><strong>퍼티·실란트</strong> — 요변성 및 표면 강도 개선</li>
+        <li><strong>건축 자재</strong> — 몰탈·타일·바닥재 기능성 원료</li>
+      </ul>`,
+  },
 ];
 
 
