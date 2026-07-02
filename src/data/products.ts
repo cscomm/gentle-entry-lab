@@ -274,7 +274,7 @@ export const productCatalog: ProductDetail[] = [
       "프리미엄 천연 고순도 쿼츠는 엄격한 광맥 선별과 정제 공정을 거쳐 SiO₂ 99.77%, Fe₂O₃ 5ppm 수준의 초고순도와 L 97.92의 최상급 백색도를 달성합니다. EGS·인조대리석, 고급 유리, 전자재료, 정밀 주조, 나노 가공 등 부가가치가 높은 산업의 기초 소재로 사용됩니다.",
     enDescription:
       "Premium Natural High-Purity Quartz achieves ultra-high purity of SiO₂ 99.77% and Fe₂O₃ 5 ppm, along with top-grade whiteness of L 97.92, through rigorous vein selection and refining processes. It serves as a foundational material for high-value-added industries such as EGS/engineered stone, premium glass, electronic materials, precision casting, and nano processing.", jaDescription: "プレミアム天然高純度石英は、厳格な鉱脈選別と精製工程を経て、SiO₂ 99.77%、Fe₂O₃ 5ppmレベルの超高純度とL 97.92の最上級の白色度を達成します。EGS・人造大理石、高級ガラス、電子材料、精密鋳造、ナノ加工など付加価値の高い産業の基礎素材として使用されます。",
-    image: pProcess,
+    image: highPurityQuartz,
     detailImage: hpqDetail,
     features: [
       { title: "🧱 압도적 순도", desc: "SiO₂ 99.773% — EGS·특수 유리·전자재료 기초 소재로 적합", enTitle: "🧱 Overwhelming Purity", jaTitle: "🧱 圧倒的な純度", enDesc: "SiO₂ 99.773% — ideal base material for EGS, specialty glass, and electronic materials", jaDesc: "SiO₂ 99.773% — EGS・特殊ガラス・電子材料の基礎素材に最適" },

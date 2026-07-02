@@ -80,7 +80,7 @@ const products = [
   // Row 3 — Sand / Powder / Quartz / Silica Gel
   { img: silicaSandImg, slug: "silica-sand", title: "규사", enTitle: "Silica Sand", jaTitle: "珪砂", desc: "유리·주조·여과·인조잔디·건축용 고순도 산업 규사 — 입도 맞춤 공급", enDesc: "High-purity industrial silica sand for glass, foundry, filtration, artificial turf and construction — custom grain sizes.", jaDesc: "ガラス・鋳造・濾過・人工芝・建築用の高純度産業用シリカサンド — 粒度カスタム供給", cat: "규사" },
   { img: silicaPowderImg, slug: "silica-powder", title: "규사분말", enTitle: "Silica Powder", jaTitle: "珪砂粉末", desc: "도료·플라스틱·인조대리석·건축 자재용 고백색 미분 실리카 충진재", enDesc: "High-whiteness micronized silica filler for paints, plastics, engineered stone and construction materials.", jaDesc: "塗料・プラスチック・人造大理石・建築資材用の高白色微粉シリカ充填材", cat: "규사분말" },
-  { img: pProcess, slug: "high-purity-quartz", title: "천연 고순도규석", enTitle: "Natural High-Purity Quartz", jaTitle: "天然高純度石英", desc: "엄선된 광원에서 채광한 고순도 규석", enDesc: "High-purity quartz mined from carefully selected ore deposits.", jaDesc: "厳選された鉱床から採掘した高純度石英", cat: "천연 고순도규석" },
+  { img: highPurityQuartz, slug: "high-purity-quartz", title: "천연 고순도규석", enTitle: "Natural High-Purity Quartz", jaTitle: "天然高純度石英", desc: "엄선된 광원에서 채광한 고순도 규석", enDesc: "High-purity quartz mined from carefully selected ore deposits.", jaDesc: "厳選された鉱床から採掘した高純度石英", cat: "천연 고순도규석" },
   { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", jaTitle: "シリカゲル", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", jaDesc: "高純度シリカゲル・微粉シリカ・アンチブロッキング・艶消し剤などフルラインナップ", cat: "실리카겔" },
 ];
 
