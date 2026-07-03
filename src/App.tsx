@@ -13,6 +13,7 @@ import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplicatio
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
 import ScrollToHash from "./components/ScrollToHash";
 import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
+import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
 import SilicaSandApplications from "./pages/SilicaSandApplications.tsx";
 import SilicaPowderApplications from "./pages/SilicaPowderApplications.tsx";
 import About from "./pages/About.tsx";
