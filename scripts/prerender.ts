@@ -383,6 +383,15 @@ export const productRoutes: Route[] = [
         descJa: "高純度結晶石英砂(SL-CS)・溶融石英砂(SL-FS)の産業標準素材。ガラス・鋳造・研磨・フィルター用。",
       },
       {
+        slug: "hf04-high-purity-fused-silica-powder",
+        ko: "고순도 용융 실리카 분말 (SL-HF04)",
+        en: "SL-HF04 · Ultra-High-Purity Fused Silica Powder",
+        ja: "SL-HF04 高純度溶融シリカ粉末",
+        desc: "SiO₂ 99.96%·D50 3.8µm 초고순도 미분 용융 실리카. 반도체 EMC·언더필·CCL·5G 기판·어드밴스드 패키징용 프리미엄 필러.",
+        descEn: "SL-HF04 ultra-high-purity micronized fused silica — SiO₂ 99.96%, D50 3.8 µm. Premium filler for semiconductor EMC, underfill, CCL, 5G substrates and advanced packaging.",
+        descJa: "SiO₂ 99.96%・D50 3.8µmの超高純度微粉溶融シリカ。半導体EMC・アンダーフィル・CCL・5G基板・先端パッケージ用プレミアムフィラー。",
+      },
+      {
         slug: "lead-free-glass-powder",
         ko: "무연유리분말 (SL-ZT)",
         en: "Lead-Free Glass Powder (SL-ZT)",
