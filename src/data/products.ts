@@ -892,6 +892,7 @@ const advSeriesProducts: ProductDetail[] = [
     subModels: [
       { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사", enSpec: "Crystalline Quartz Sand", jaSpec: "結晶石英砂", name: "SL-CS 결정 석영사", enName: "SL-CS · Crystalline Quartz Sand", jaName: "SL-CS 結晶石英砂" },
       { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂", name: "SL-FS 용융 석영사", enName: "SL-FS · Fused Quartz Sand", jaName: "SL-FS 溶融石英砂" },
+      { code: "SL-HF04", slug: "sl-hf04", spec: "고순도 용융 실리카 분말 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fused Silica Powder (SiO₂ 99.96% · D50 3.8 µm)", jaSpec: "高純度溶融シリカ粉末 (SiO₂ 99.96% · D50 3.8µm)", name: "SL-HF04 고순도 용융 실리카 분말", enName: "SL-HF04 · Ultra-High-Purity Fused Silica Powder", jaName: "SL-HF04 高純度溶融シリカ粉末" },
     ],
     applications: ["유리 원료", "정밀 주조", "연마재", "워터 필터", "스포츠 표면재"],
   },
