@@ -26,6 +26,44 @@ type Route = {
 
 export const productRoutes: Route[] = [
   {
+    path: "/products/fused-silica",
+    title: "용융실리카(Fused Silica) — A·B·C 등급 + 전 SL 시리즈 통합 카테고리 | SILICA",
+    description:
+      "A·B·C 등급 고순도 용융실리카(Fused Silica)와 SL-QG·SL-QG-L·SL-YRG·SL-RG·SL-FL·SL-HRG·SL-FS·SL-HF04 전 SL 시리즈를 통합 공급. 반도체 EMC·언더필·CCL·저방사(Low-α)·정밀 주조·광학·항공/방산용.",
+    titleI18n: {
+      en: "Fused Silica — Grades A/B/C + Full SL-Series Unified Category | SILICA",
+      ja: "溶融シリカ(Fused Silica) — A・B・Cグレード+全SLシリーズ統合カテゴリ | SILICA",
+    },
+    descriptionI18n: {
+      en: "Unified fused silica category: high-purity Grade A/B/C plus every SL-series fused variant (SL-QG, SL-QG-L, SL-YRG, SL-RG, SL-FL, SL-HRG, SL-FS, SL-HF04) — for semiconductor EMC, underfill, CCL, low-α, precision casting, optics and aerospace/defense.",
+      ja: "A・B・Cグレードの高純度溶融シリカと、SL-QG・SL-QG-L・SL-YRG・SL-RG・SL-FL・SL-HRG・SL-FS・SL-HF04の全SLシリーズ溶融シリカを統合。半導体EMC・アンダーフィル・CCL・低α線・精密鋳造・光学・航空/防衛向け。",
+    },
+    h1: "용융실리카 — Fused Silica 통합 카테고리",
+    body: `
+      <p><strong>용융실리카(Fused Silica)</strong>는 천연 석영을 1,800℃ 이상의 초고온에서 용융·급냉하여 얻는 비정질(Amorphous) 이산화규소(SiO₂) 소재로, 극저 열팽창·우수한 열충격 저항·화학적 안정성·전기 절연성을 동시에 갖춘 첨단 산업의 핵심 원료입니다.</p>
+      <h2>대표 등급 (A · B · C)</h2>
+      <ul>
+        <li><strong>A등급</strong> — SiO₂ ≥ 99.9%, 100% 무정형, CTE &lt; 0.6 ×10⁻⁶/℃ (반도체·광학·항공/방산·의료용)</li>
+        <li><strong>B등급</strong> — SiO₂ ≥ 99.5%, ≥98% 무정형 (태양광·전자/반도체·정밀 주조)</li>
+        <li><strong>C등급</strong> — SiO₂ ≥ 99%, ≥95% 무정형 (건축·코팅·플라스틱·연마재)</li>
+      </ul>
+      <h2>전 SL 시리즈 용융 라인업</h2>
+      <ul>
+        <li><strong>SL-QG</strong> — 화염 용융 구형, 저응력·고구형도</li>
+        <li><strong>SL-QG-L</strong> — 저방사(Low-α) 구형, HBM/DDR5/AI 반도체용</li>
+        <li><strong>SL-YRG</strong> — 용융형 원각, 구형에 근접한 유동성 + 경제성</li>
+        <li><strong>SL-RG</strong> — 용융형 각형, 고강도·고내마모 표준 필러</li>
+        <li><strong>SL-FL</strong> — 저방사 용융 (α ≤ 0.001 cph/cm²)</li>
+        <li><strong>SL-HRG</strong> — 활성(실란 표면개질) 용융, 유기 매트릭스 상용성</li>
+        <li><strong>SL-FS</strong> — 용융 석영사, 내화·정밀 주조·특수 유리 원료</li>
+        <li><strong>SL-HF04</strong> — SiO₂ 99.96% · D50 3.8µm 초고순도 미분 용융 (반도체 EMC·언더필·5G 기판)</li>
+      </ul>
+      <h2>주요 응용 분야</h2>
+      <p>반도체 EMC · 언더필 · 어드밴스드 패키징, CCL/PCB · 5G 고주파 기판, HBM · DDR5 · AI 반도체(저방사), 광학 렌즈 · 정밀 광학 부품, 항공·방산·우주 소재, 정밀 주조·세라믹 코어, 고온 내화·특수 유리, 태양광·에너지.</p>
+      <h2>공급 & 커스텀</h2>
+      <p>입도(1 µm ~ 60 mm), 순도, 표면처리, 포장(10/20 kg 지대 · 500 kg 벌크백 · OEM) 등 고객 요구 사양에 맞춰 커스텀 생산이 가능합니다.</p>`,
+  },
+  {
     path: "/products/fused-silica-a-grade",
     title: "A등급 고순도 용융 실리카 (Fused Silica) | SILICA",
     description:
