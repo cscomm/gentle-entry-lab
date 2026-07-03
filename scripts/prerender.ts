@@ -383,15 +383,6 @@ export const productRoutes: Route[] = [
         descJa: "高純度結晶石英砂(SL-CS)・溶融石英砂(SL-FS)の産業標準素材。ガラス・鋳造・研磨・フィルター用。",
       },
       {
-        slug: "hf04-high-purity-fused-silica-powder",
-        ko: "고순도 용융 실리카 분말 (SL-HF04)",
-        en: "SL-HF04 · Ultra-High-Purity Fused Silica Powder",
-        ja: "SL-HF04 高純度溶融シリカ粉末",
-        desc: "SiO₂ 99.96%·D50 3.8µm 초고순도 미분 용융 실리카. 반도체 EMC·언더필·CCL·5G 기판·어드밴스드 패키징용 프리미엄 필러.",
-        descEn: "SL-HF04 ultra-high-purity micronized fused silica — SiO₂ 99.96%, D50 3.8 µm. Premium filler for semiconductor EMC, underfill, CCL, 5G substrates and advanced packaging.",
-        descJa: "SiO₂ 99.96%・D50 3.8µmの超高純度微粉溶融シリカ。半導体EMC・アンダーフィル・CCL・5G基板・先端パッケージ用プレミアムフィラー。",
-      },
-      {
         slug: "lead-free-glass-powder",
         ko: "무연유리분말 (SL-ZT)",
         en: "Lead-Free Glass Powder (SL-ZT)",
@@ -426,6 +417,7 @@ export const productRoutes: Route[] = [
       { slug: "sl-drg07-a", parent: "surface-modified-silica-powder", ko: "SL-DRG07-A 활성(에폭시 실란) 실리카 분말 고순도 등급", en: "SL-DRG07-A · High-Purity Surface-Modified Silica Powder", ja: "SL-DRG07-A 活性(エポキシシラン)シリカ粉末 高純度グレード", desc: "SiO₂ 대표치 99.80%·Fe₂O₃ 30ppm급 고순도 활성 실리카 SL-DRG07-A. HBM/AI EMC 대응.", descEn: "SL-DRG07-A high-purity surface-modified silica — SiO₂ typ. 99.80%, Fe₂O₃ 30 ppm-class, for HBM/AI EMC.", descJa: "SiO₂代表値99.80%・Fe₂O₃ 30ppm級の高純度活性シリカSL-DRG07-A。HBM/AI EMC対応。" },
       { slug: "sl-cs", parent: "silica-sand-granule", ko: "SL-CS 결정 석영사", en: "SL-CS · Crystalline Quartz Sand", ja: "SL-CS 結晶石英砂", desc: "고순도 결정 석영사 SL-CS. 유리·정밀 주조·연마·워터 필터용 산업 표준.", descEn: "SL-CS high-purity crystalline quartz sand for glass, precision casting, abrasives and water filtration.", descJa: "高純度結晶石英砂SL-CS。ガラス・精密鋳造・研磨・浄水フィルター用産業標準。" },
       { slug: "sl-fs", parent: "silica-sand-granule", ko: "SL-FS 용융 석영사", en: "SL-FS · Fused Quartz Sand", ja: "SL-FS 溶融石英砂", desc: "초고온 용융 석영사 SL-FS. 고온 공정·정밀 주조용 프리미엄 소재.", descEn: "SL-FS fused quartz sand processed at ultra-high temperature — premium material for high-temperature and precision casting.", descJa: "超高温溶融石英砂SL-FS。高温工程・精密鋳造用プレミアム素材。" },
+      { slug: "sl-hf04", parent: "silica-sand-granule", ko: "SL-HF04 고순도 용융 실리카 분말", en: "SL-HF04 · Ultra-High-Purity Fused Silica Powder", ja: "SL-HF04 高純度溶融シリカ粉末", desc: "SiO₂ 99.96%·D50 3.8µm 초고순도 미분 용융 실리카 SL-HF04. 반도체 EMC·언더필·CCL·5G 기판·어드밴스드 패키징용 프리미엄 필러.", descEn: "SL-HF04 ultra-high-purity micronized fused silica — SiO₂ 99.96%, D50 3.8 µm. Premium filler for semiconductor EMC, underfill, CCL, 5G substrates and advanced packaging.", descJa: "SL-HF04 SiO₂ 99.96%・D50 3.8µmの超高純度微粉溶融シリカ。半導体EMC・アンダーフィル・CCL・5G基板・先端パッケージ用プレミアムフィラー。" },
       { slug: "sl-zt", parent: "lead-free-glass-powder", ko: "SL-ZT 무연 봉착 유리 프릿", en: "SL-ZT · Lead-Free Sealing Glass Frit", ja: "SL-ZT 無鉛封着ガラスフリット", desc: "친환경 무연 저융점(400~550℃) 봉착 유리 프릿 SL-ZT. RoHS·REACH 완전 부합.", descEn: "SL-ZT eco-friendly lead-free low-melting (400–550℃) sealing glass frit, fully RoHS/REACH compliant.", descJa: "環境配慮型無鉛低融点(400~550℃)封着ガラスフリットSL-ZT。RoHS・REACH完全準拠。" },
     ] as const
   ).map((p) => ({
