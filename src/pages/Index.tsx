@@ -50,9 +50,6 @@ const navItems = [
 const productCategories: { label: string; en: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products" },
   { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
-  { label: "A등급 용융실리카", en: "Grade A Fused Silica", slug: "fused-silica-a-grade" },
-  { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-b-grade" },
-  { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-c-grade" },
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
@@ -73,9 +70,6 @@ const products = [
   { img: sandGranuleImg, slug: "silica-sand-granule", title: "실리카 사·입자", enTitle: "Silica Sand & Granule", jaTitle: "シリカサンド・粒", desc: "SL-CS / SL-FS — 결정·용융 석영사 및 입자 — 내화·주조·정밀 산업용", enDesc: "SL-CS / SL-FS — crystalline & fused quartz sand and granules for refractory, foundry and precision industries.", jaDesc: "SL-CS / SL-FS — 結晶・溶融石英砂および粒 — 耐火・鋳造・精密産業用", cat: "실리카 사·입자" },
   // Row 2 — Fused / Precipitated / Fumed + Lead-Free
   { img: gradeA, slug: "fused-silica", title: "용융실리카", enTitle: "Fused Silica", jaTitle: "溶融シリカ", desc: "A · B · C 등급 + 전 SL 시리즈 용융실리카 통합 카테고리 — 반도체·광학·EMC·정밀 주조 전용", enDesc: "Unified category with A/B/C grades and every SL-series fused silica — for semiconductor, optics, EMC and precision casting.", jaDesc: "A・B・Cグレード+全SLシリーズ溶融シリカを統合したカテゴリ — 半導体・光学・EMC・精密鋳造向け", cat: "용융실리카" },
-  { img: gradeA, slug: "fused-silica-a-grade", title: "A등급 용융실리카", enTitle: "Grade A Fused Silica", jaTitle: "Aグレード溶融シリカ", desc: "초고순도 100% 무정형 용융실리카 — 반도체·광학·항공/방산 전용", enDesc: "Ultra-high-purity 100% amorphous fused silica — for semiconductor, optics, aerospace & defense.", jaDesc: "超高純度100%非晶質の溶融シリカ — 半導体・光学・航空/防衛向け", cat: "A등급 용융실리카" },
-  { img: gradeB, slug: "fused-silica-b-grade", title: "B등급 용융실리카", enTitle: "Grade B Fused Silica", jaTitle: "Bグレード溶融シリカ", desc: "정밀 주조 및 첨단 산업용 고품질 용융실리카", enDesc: "High-quality fused silica for precision casting and advanced industries.", jaDesc: "精密鋳造および先端産業向けの高品質溶融シリカ", cat: "B등급 용융실리카" },
-  { img: gradeC, slug: "fused-silica-c-grade", title: "C등급 용융실리카", enTitle: "Grade C Fused Silica", jaTitle: "Cグレード溶融シリカ", desc: "산업용 일반 공정에 최적화된 경제형 용융실리카", enDesc: "Economical fused silica optimized for general industrial processes.", jaDesc: "産業用一般工程に最適化された経済型溶融シリカ", cat: "C등급 용융실리카" },
   { img: precipitatedSilicaImg, slug: "precipitated-silica", title: "침전 실리카", enTitle: "Precipitated Silica", jaTitle: "沈降シリカ", desc: "고무 보강·페인트 소포·식의약 고결방지 등 산업 전반에서 가장 널리 쓰이는 합성 무정형 SiO₂", enDesc: "Synthetic amorphous SiO₂ widely used as rubber reinforcement, paint defoamer, and food/pharma anti-caking agent.", jaDesc: "ゴム補強・塗料消泡・食品/医薬の固結防止など、産業全般で最も広く使用される合成非晶質SiO₂", cat: "침전 실리카" },
   { img: fumedSilica, slug: "fumed-silica", title: "흄드 실리카", enTitle: "Fumed Silica", jaTitle: "ヒュームドシリカ", desc: "SiCl₄ 화염가수분해 기반 나노급 무정형 SiO₂ — 실리콘 고무·실란트·접착제·도료·전자재료 전반", enDesc: "Nano-scale amorphous SiO₂ from SiCl₄ flame hydrolysis — reinforcing/thickening additive across silicones, sealants, coatings & electronics.", jaDesc: "SiCl₄の火炎加水分解によるナノレベル非晶質SiO₂ — シリコーン・シーラント・塗料・電子材料全般の補強/増粘添加剤", cat: "흄드 실리카" },
   { img: leadFreeGlassImg, slug: "lead-free-glass-powder", title: "무연유리분말", enTitle: "Lead-Free Glass Powder", jaTitle: "無鉛ガラス粉末", desc: "SL-ZT — 무연·친환경 유리분말, 300~850℃ 유리화 온도의 전자 페이스트·봉착재", enDesc: "SL-ZT — lead-free eco-friendly glass powder with 300–850 °C vitrification for electronic pastes and sealing.", jaDesc: "SL-ZT — 無鉛・環境対応ガラス粉末、300~850℃のガラス化温度で電子ペースト・封着材向け", cat: "무연유리분말" },

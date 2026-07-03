@@ -13,6 +13,7 @@ import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplicatio
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
 import ScrollToHash from "./components/ScrollToHash";
 import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
+import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
 import SilicaSandApplications from "./pages/SilicaSandApplications.tsx";
 import SilicaPowderApplications from "./pages/SilicaPowderApplications.tsx";
 import About from "./pages/About.tsx";
@@ -56,6 +57,7 @@ const LangShell = () => {
       <Route path="applications/precipitated-silica" element={<PrecipitatedSilicaApplications />} />
       <Route path="products/fumed-silica" element={<FumedSilicaCategory />} />
       <Route path="applications/fumed-silica" element={<FumedSilicaApplications />} />
+      <Route path="applications/fused-silica" element={<FusedSilicaApplications />} />
       <Route path="applications/silica-sand" element={<SilicaSandApplications />} />
       <Route path="applications/silica-powder" element={<SilicaPowderApplications />} />
       <Route path="products/:slug" element={<ProductDetail />} />
