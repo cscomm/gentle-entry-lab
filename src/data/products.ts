@@ -863,11 +863,11 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "High-Purity Crystalline & Fused Quartz Sand — Industrial Standard for Glass, Casting, Abrasives and Filtration",
     jaTagline: "高純度結晶・溶融石英砂 — ガラス・鋳造・研磨・フィルター用産業標準素材",
     description:
-      "실리카 사 및 입자 시리즈는 고순도 석영을 선별·정제한 결정형 석영사(SL-CS)와 초고온 용융을 거친 용융형 석영사(SL-FS)로 구성됩니다. 유리 원료, 정밀 주조, 연마재, 워터필터, 스포츠 표면재 등 광범위한 산업 분야에 사용되며, 입도 20 mesh부터 200 mesh까지 맞춤 공급이 가능합니다.",
+      "실리카 사 및 입자 시리즈는 고순도 석영을 선별·정제한 결정형 석영사(SL-CS), 초고온 용융을 거친 용융형 석영사(SL-FS), 그리고 반도체·첨단 패키징용 초고순도 미분 용융 실리카(SL-HF04)로 구성됩니다. SL-CS는 SiO₂ 98.0~99.9%의 결정 석영사로 유리 원료·정밀 주조·연마재·워터 필터·스포츠 표면재 등 광범위한 산업에 사용되며, SL-FS는 SiO₂ 99.0~99.99%·저열팽창(0.5×10⁻⁶)·우수한 내화학성을 바탕으로 고온 공정과 정밀 주조에 적합합니다. SL-HF04는 SiO₂ 99.96%·Fe₂O₃ ~12 ppm·D50 3.8µm의 초미분 비정질 용융 실리카로, 반도체 EMC·언더필·어드밴스드 패키징·CCL/PCB·5G 고주파 기판·고열전도 소재 등 최첨단 전자·반도체 분야에 최적화된 프리미엄 필러입니다. 세 라인업 모두 국내·중국 이원화 공급망을 통해 안정적으로 공급됩니다.",
     enDescription:
-      "The Silica Sand & Granule series consists of crystalline quartz sand (SL-CS) — purified from high-grade quartz — and fused quartz sand (SL-FS) processed at ultra-high temperature. Used across broad industries including glass raw material, precision casting, abrasives, water filtration and sports surface materials. Custom grain size available from 20 to 200 mesh.",
+      "The Silica Sand & Granule series comprises crystalline quartz sand (SL-CS) purified from high-grade quartz, fused quartz sand (SL-FS) processed at ultra-high temperature, and ultra-high-purity micronized fused silica (SL-HF04) for semiconductor and advanced packaging use. SL-CS (SiO₂ 98.0–99.9%) serves a wide range of industries including glass raw material, precision casting, abrasives, water filtration and sports surfaces. SL-FS (SiO₂ 99.0–99.99%) offers low CTE (0.5×10⁻⁶) and excellent chemical resistance for high-temperature processes and precision casting. SL-HF04 is an ultra-fine amorphous fused silica (SiO₂ 99.96%, Fe₂O₃ ~12 ppm, D50 3.8 µm) — a premium filler optimized for semiconductor EMC, underfill, advanced packaging, CCL/PCB, 5G high-frequency substrates and high-thermal-conductivity materials. All three lineups are supplied through a stable dual Korea/China supply chain.",
     jaDescription:
-      "シリカサンド・粒シリーズは高純度石英を選別・精製した結晶質石英砂(SL-CS)と超高温溶融を経た溶融質石英砂(SL-FS)で構成されます。ガラス原料・精密鋳造・研磨材・浄水フィルター・スポーツ表面材など幅広い産業分野に使用され、粒度20 meshから200 meshまでカスタム供給が可能です。",
+      "シリカサンド・粒シリーズは高純度石英を選別・精製した結晶質石英砂(SL-CS)、超高温溶融を経た溶融質石英砂(SL-FS)、そして半導体・先端パッケージ用の超高純度微粉溶融シリカ(SL-HF04)で構成されます。SL-CSはSiO₂ 98.0~99.9%の結晶石英砂で、ガラス原料・精密鋳造・研磨材・浄水フィルター・スポーツ表面材など幅広い産業に使用されます。SL-FSはSiO₂ 99.0~99.99%・低熱膨張(0.5×10⁻⁶)・優れた耐化学性を備え、高温工程や精密鋳造に適します。SL-HF04はSiO₂ 99.96%・Fe₂O₃ ~12 ppm・D50 3.8µmの超微粉非晶質溶融シリカで、半導体EMC・アンダーフィル・先端パッケージング・CCL/PCB・5G高周波基板・高熱伝導材料など最先端の電子・半導体分野に最適化されたプレミアムフィラーです。3つのラインアップはすべて韓国・中国二元化サプライチェーンで安定供給されます。",
     image: sandGranuleImg,
     category: "advanced-series",
     features: [
