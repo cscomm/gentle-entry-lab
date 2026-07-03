@@ -1258,6 +1258,87 @@ for (const parent of advSeriesProducts) {
 }
 productCatalog.push(...generatedChildren);
 
+// ============= Aggregated Category: All Fused Silica =============
+// Virtual category grouping every fused-silica product (A/B/C grades + all
+// SL-series fused variants). Each member also keeps its original category.
+export const fusedSilicaCategoryMembers = [
+  "fused-silica-a-grade",
+  "fused-silica-b-grade",
+  "fused-silica-c-grade",
+  "sl-qg",
+  "sl-qg-l",
+  "sl-yrg",
+  "sl-rg",
+  "sl-fl",
+  "sl-hrg",
+  "sl-fs",
+  "sl-hf04",
+];
+
+productCatalog.push({
+  slug: "fused-silica",
+  name: "용융실리카",
+  enName: "Fused Silica",
+  jaName: "溶融シリカ",
+  tagline: "A · B · C 등급 + 전 SL 시리즈 용융실리카를 한 곳에서 — 반도체·광학·EMC·정밀 주조·첨단 패키징 전용",
+  enTagline: "A · B · C grades and every SL-series fused silica in one place — for semiconductor, optics, EMC, precision casting and advanced packaging",
+  jaTagline: "A・B・Cグレード+全SLシリーズ溶融シリカを一箇所で — 半導体・光学・EMC・精密鋳造・先端パッケージング向け",
+  description:
+    "용융실리카(Fused Silica)는 천연 석영을 1,800℃ 이상의 초고온에서 용융·급냉하여 얻어지는 비정질(Amorphous) 이산화규소(SiO₂) 소재로, 극저 열팽창(0.5~0.6 ×10⁻⁶/℃)·우수한 열충격 저항성·높은 화학적 안정성·뛰어난 전기 절연성을 동시에 갖춘 첨단 산업의 핵심 원료입니다. SiLiCA는 순도·용도별로 A등급(SiO₂ ≥99.9%, 100% 무정형)·B등급(≥99.5%)·C등급(≥99%)의 세 가지 대표 등급과 함께, 반도체 EMC·언더필·CCL·저방사(Low-α)·활성(표면개질)·원각·각형·미분·석영사 등 형상·기능별 전 SL 시리즈 용융실리카 라인업을 모두 이 카테고리에 통합 공급합니다. 각 제품은 원래 소속 카테고리에도 그대로 유지되므로, 형상·기능별로도 탐색 가능합니다.",
+  enDescription:
+    "Fused Silica is an amorphous SiO₂ material made by melting natural quartz at over 1,800°C and rapidly quenching it. It delivers ultra-low CTE (0.5–0.6 ×10⁻⁶/°C), excellent thermal-shock resistance, chemical stability and electrical insulation — a core raw material for advanced industries. SiLiCA supplies Grade A (SiO₂ ≥99.9%, 100% amorphous), Grade B (≥99.5%) and Grade C (≥99%) as flagship purity tiers, together with the full SL-series fused-silica lineup by shape/function: spherical (SL-QG), low-α spherical (SL-QG-L), round-corner (SL-YRG), angular (SL-RG), low-radiation (SL-FL), surface-modified (SL-HRG), fused quartz sand (SL-FS) and ultra-high-purity fine powder (SL-HF04). Every product also remains in its original category.",
+  jaDescription:
+    "溶融シリカ(Fused Silica)は、天然石英を1,800℃以上の超高温で溶融・急冷して得られる非晶質(Amorphous)二酸化ケイ素(SiO₂)素材で、極低熱膨張(0.5~0.6 ×10⁻⁶/℃)・優れた耐熱衝撃性・高い化学的安定性・優れた電気絶縁性を兼ね備えた先端産業の核心原料です。SiLiCAはAグレード(SiO₂ ≥99.9%、100%非晶質)、Bグレード(≥99.5%)、Cグレード(≥99%)の代表3グレードに加え、半導体EMC・アンダーフィル・CCL・低α線・活性(表面改質)・丸角・角形・微粉・石英砂など、形状/機能別のSLシリーズ溶融シリカラインアップをすべて本カテゴリに統合供給します。各製品は元のカテゴリにもそのまま残ります。",
+  image: gradeA,
+  category: "advanced-series",
+  isCategoryIndex: true,
+  features: [
+    { title: "🏅 A · B · C 3등급 순도 라인업", desc: "SiO₂ 99% / 99.5% / 99.9% 이상 — 용도·예산별 최적 등급 선택", enTitle: "🏅 A/B/C 3-Tier Purity Lineup", jaTitle: "🏅 A・B・C 3等級純度ラインアップ", enDesc: "SiO₂ ≥99% / ≥99.5% / ≥99.9% — pick the tier matching your process and budget", jaDesc: "SiO₂ 99% / 99.5% / 99.9%以上 — 用途・予算に合わせて選択" },
+    { title: "🌡️ 극저 열팽창 & 열충격 저항", desc: "CTE 0.5~0.6 ×10⁻⁶/℃ — 급열/급냉 반복 공정에서도 크랙·변형 최소화", enTitle: "🌡️ Ultra-Low CTE & Thermal Shock Resistance", jaTitle: "🌡️ 極低熱膨張と耐熱衝撃性", enDesc: "CTE 0.5–0.6 ×10⁻⁶/°C — minimal cracking/warping under rapid heat cycles", jaDesc: "CTE 0.5~0.6 ×10⁻⁶/℃ — 急熱・急冷サイクルでもクラック/変形を最小化" },
+    { title: "🔷 전 SL 시리즈 형상 라인업", desc: "구형(SL-QG)·원각(SL-YRG)·각형(SL-RG)·미분(SL-HF04)·석영사(SL-FS) 등 형상·입도·기능별 커버", enTitle: "🔷 Full SL-Series Shape Lineup", jaTitle: "🔷 全SLシリーズ形状ラインアップ", enDesc: "Spherical (SL-QG), round-corner (SL-YRG), angular (SL-RG), fine powder (SL-HF04), quartz sand (SL-FS) and more", jaDesc: "球状(SL-QG)・丸角(SL-YRG)・角形(SL-RG)・微粉(SL-HF04)・石英砂(SL-FS)など形状・粒度・機能別に対応" },
+    { title: "☢️ 저방사(Low-α) 대응", desc: "SL-QG-L / SL-FL — HBM·DDR5·AI 반도체 소프트에러 방지용 α선 ≤ 0.001 cph/cm²", enTitle: "☢️ Low-α Options", jaTitle: "☢️ 低α線対応", enDesc: "SL-QG-L / SL-FL — α ≤ 0.001 cph/cm² for HBM, DDR5, AI-semiconductor soft-error suppression", jaDesc: "SL-QG-L / SL-FL — HBM・DDR5・AI半導体のソフトエラー抑制用 α線 ≤ 0.001 cph/cm²" },
+    { title: "⚗️ 표면개질(활성) 그레이드", desc: "SL-HRG — 실란 커플링 처리로 유기 매트릭스와의 접착·분산성 극대화", enTitle: "⚗️ Surface-Modified Grade", jaTitle: "⚗️ 表面改質(活性)グレード", enDesc: "SL-HRG — silane-coupled treatment maximizes adhesion and dispersion in organic matrices", jaDesc: "SL-HRG — シランカップリング処理で有機マトリクスとの接着・分散性を最大化" },
+    { title: "📐 광범위 입도 · 맞춤 공급", desc: "60mm 과립부터 1µm(D50) 미분까지 고객 요구사양별 커스텀 생산", enTitle: "📐 Wide PSD & Custom Supply", jaTitle: "📐 広範な粒度・カスタム供給", enDesc: "From 60 mm granules down to 1 µm (D50) fine powder — custom per requirement", jaDesc: "60mm顆粒から1µm(D50)微粉までカスタム生産" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "A / B / C 등급 + SL-QG · SL-QG-L · SL-YRG · SL-RG · SL-FL · SL-HRG · SL-FS · SL-HF04", enValue: "A/B/C grades + SL-QG · SL-QG-L · SL-YRG · SL-RG · SL-FL · SL-HRG · SL-FS · SL-HF04", jaValue: "A/B/Cグレード + SL-QG · SL-QG-L · SL-YRG · SL-RG · SL-FL · SL-HRG · SL-FS · SL-HF04", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "SiO₂ 순도 범위", value: "≥ 99.0 % ~ ≥ 99.99 % (등급별)", enValue: "≥99.0% – ≥99.99% (by grade)", jaValue: "≥99.0% ~ ≥99.99% (グレード別)", enLabel: "SiO₂ Purity Range", jaLabel: "SiO₂純度範囲" },
+    { label: "구조", value: "비정형(Amorphous) 95 ~ 100 %", enValue: "Amorphous 95–100%", jaValue: "非晶質 95~100%", enLabel: "Structure", jaLabel: "構造" },
+    { label: "열팽창계수 (CTE)", value: "0.5 ~ 0.8 ×10⁻⁶/℃", enLabel: "CTE", jaLabel: "熱膨張係数 (CTE)" },
+    { label: "형상 옵션", value: "구형 · 원각 · 각형 · 미분 · 과립 · 석영사", enValue: "Spherical · round-corner · angular · fine · granular · quartz sand", jaValue: "球状 · 丸角 · 角形 · 微粉 · 顆粒 · 石英砂", enLabel: "Shape Options", jaLabel: "形状オプション" },
+    { label: "입도 범위", value: "1 µm ~ 60 mm (D50 · 맞춤)", enValue: "1 µm – 60 mm (D50 · customizable)", jaValue: "1µm~60mm (D50·カスタム)", enLabel: "PSD Range", jaLabel: "粒度範囲" },
+    { label: "저방사(Low-α)", value: "SL-QG-L / SL-FL 그레이드 — α ≤ 0.001 cph/cm²", enValue: "SL-QG-L / SL-FL grades — α ≤ 0.001 cph/cm²", jaValue: "SL-QG-L / SL-FLグレード — α ≤ 0.001 cph/cm²", enLabel: "Low-α Option", jaLabel: "低α線オプション" },
+    { label: "표면개질", value: "SL-HRG (실란 커플링) 그레이드 별도 공급", enValue: "SL-HRG (silane-coupled) grade available", jaValue: "SL-HRG (シランカップリング)グレード供給可", enLabel: "Surface Modification", jaLabel: "表面改質" },
+    { label: "포장", value: "10 / 20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "10 / 20 kg bag · 500 kg bulk · OEM", jaValue: "10 / 20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
+  ],
+  subModelsColumnLabel: { ko: "등급 / 형상", en: "Grade / Shape", ja: "グレード/形状" },
+  subModels: [
+    { code: "GRADE-A", slug: "fused-silica-a-grade", spec: "A등급 · SiO₂ ≥99.9% · 100% 무정형", enSpec: "Grade A · SiO₂ ≥99.9% · 100% amorphous", jaSpec: "Aグレード · SiO₂ ≥99.9% · 100%非晶質" },
+    { code: "GRADE-B", slug: "fused-silica-b-grade", spec: "B등급 · SiO₂ ≥99.5% · ≥98% 무정형", enSpec: "Grade B · SiO₂ ≥99.5% · ≥98% amorphous", jaSpec: "Bグレード · SiO₂ ≥99.5% · ≥98%非晶質" },
+    { code: "GRADE-C", slug: "fused-silica-c-grade", spec: "C등급 · SiO₂ ≥99% · ≥95% 무정형", enSpec: "Grade C · SiO₂ ≥99% · ≥95% amorphous", jaSpec: "Cグレード · SiO₂ ≥99% · ≥95%非晶質" },
+    { code: "SL-QG", slug: "sl-qg", spec: "구형 (화염 용융)", enSpec: "Spherical (flame-fusion)", jaSpec: "球状 (火炎溶融)" },
+    { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사(Low-α) 구형", enSpec: "Low-α Spherical", jaSpec: "低α線 球状" },
+    { code: "SL-YRG", slug: "sl-yrg", spec: "용융형 원각", enSpec: "Fused Round-Corner", jaSpec: "溶融質 丸角" },
+    { code: "SL-RG", slug: "sl-rg", spec: "용융형 각형", enSpec: "Fused Angular", jaSpec: "溶融質 角形" },
+    { code: "SL-FL", slug: "sl-fl", spec: "저방사 용융", enSpec: "Low-Radiation Fused", jaSpec: "低α線 溶融質" },
+    { code: "SL-HRG", slug: "sl-hrg", spec: "활성(표면개질) 용융", enSpec: "Surface-Modified Fused", jaSpec: "活性(表面改質) 溶融" },
+    { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
+    { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },
+  ],
+  applications: [
+    "반도체 EMC · 언더필 · 어드밴스드 패키징",
+    "CCL / PCB · 5G 고주파 기판",
+    "HBM · DDR5 · AI 반도체 (저방사 그레이드)",
+    "광학 렌즈 · 정밀 광학 부품",
+    "항공 · 방산 · 우주 소재",
+    "정밀 주조 · 세라믹 코어",
+    "고온 내화 · 특수 유리",
+    "태양광 · 에너지",
+  ],
+});
+
+
+
 
 
 
