@@ -144,7 +144,21 @@ const ProductDetail = () => {
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
   const children = product.isCategoryIndex
-    ? productCatalog.filter((p) => p.parentSlug === product.slug)
+    ? (() => {
+        const byParent = productCatalog.filter((p) => p.parentSlug === product.slug);
+        const refSlugs = (product.subModels ?? [])
+          .map((sm) => sm.slug)
+          .filter((s): s is string => !!s);
+        const referenced = refSlugs
+          .map((slug) => productCatalog.find((p) => p.slug === slug))
+          .filter((p): p is typeof productCatalog[number] => !!p);
+        const seen = new Set<string>();
+        return [...byParent, ...referenced].filter((p) => {
+          if (seen.has(p.slug)) return false;
+          seen.add(p.slug);
+          return true;
+        });
+      })()
     : [];
 
   // ============= Category-Index Layout (for SL-series parent categories) =============
