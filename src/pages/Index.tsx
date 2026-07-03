@@ -49,6 +49,7 @@ const navItems = [
 
 const productCategories: { label: string; en: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products" },
+  { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
   { label: "A등급 용융실리카", en: "Grade A Fused Silica", slug: "fused-silica-a-grade" },
   { label: "B등급 용융실리카", en: "Grade B Fused Silica", slug: "fused-silica-b-grade" },
   { label: "C등급 용융실리카", en: "Grade C Fused Silica", slug: "fused-silica-c-grade" },
