@@ -381,6 +381,7 @@ export const productRoutes: Route[] = [
         desc: "고순도 결정 석영사(SL-CS)·용융 석영사(SL-FS) 산업 표준 소재. 유리·주조·연마·필터용.",
         descEn: "High-purity crystalline (SL-CS) and fused (SL-FS) quartz sand. For glass, casting, abrasives and filtration.",
         descJa: "高純度結晶石英砂(SL-CS)・溶融石英砂(SL-FS)の産業標準素材。ガラス・鋳造・研磨・フィルター用。",
+      },
       {
         slug: "hf04-high-purity-fused-silica-powder",
         ko: "고순도 용융 실리카 분말 (SL-HF04)",
