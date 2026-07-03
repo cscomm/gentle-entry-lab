@@ -588,6 +588,35 @@ export const productRoutes: Route[] = [
       </ul>`,
   },
   {
+    path: "/applications/fused-silica",
+    title: "용융실리카 응용분야 — 반도체 EMC·광학·항공/방산·정밀 주조 | SILICA",
+    description:
+      "용융실리카(Fused Silica)의 산업별 응용 분야 — 반도체 EMC·언더필·어드밴스드 패키징, CCL·PCB·5G 고주파 기판, 정밀 주조, 광학·광섬유, 항공·방산·우주, 태양광·에너지, 특수 유리·세라믹, 인조 대리석·건축 자재.",
+    titleI18n: {
+      en: "Fused Silica Applications — Semiconductor EMC, Optics, Aerospace, Casting | SILICA",
+      ja: "溶融シリカの用途分野 — 半導体EMC・光学・航空/防衛・精密鋳造 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of fused silica — semiconductor EMC/underfill/advanced packaging, CCL/PCB/5G substrates, precision investment casting, optics & optical fiber, aerospace/defense/space, solar & energy, specialty glass & ceramics, engineered stone & construction.",
+      ja: "溶融シリカの産業別用途 — 半導体EMC/アンダーフィル/先端パッケージング、CCL/PCB/5G基板、精密鋳造、光学・光ファイバー、航空/防衛/宇宙、太陽光・エネルギー、特殊ガラス・セラミックス、人造大理石・建築材料。",
+    },
+    h1: "용융실리카 응용분야 · Fused Silica Applications",
+    body: `
+      <p>용융실리카(Fused Silica)는 극저 열팽창(0.5~0.6 ×10⁻⁶/℃)·초고온 안정성·저 유전율·고 절연·우수한 화학적 내구성을 동시에 갖춘 첨단 산업의 핵심 원료입니다. A · B · C 등급과 전 SL 시리즈(SL-QG · SL-QG-L · SL-YRG · SL-RG · SL-FL · SL-HRG · SL-FS · SL-HF04) 라인업이 국가 기간산업 전반에 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>반도체 EMC · 언더필 · 어드밴스드 패키징</strong> — FC-BGA, 2.5D/3D, WLP, Fan-Out, HBM/DDR5/AI 저방사(Low-α)</li>
+        <li><strong>CCL · PCB · 5G 고주파 기판</strong> — HDI, IC 기판, ABF, AiP, mmWave, 자율주행 레이더</li>
+        <li><strong>정밀 주조 · 세라믹 코어</strong> — 항공기·발전용 가스터빈 블레이드, 니켈/티타늄 초합금</li>
+        <li><strong>광학 · 광섬유 · 정밀 광학</strong> — 광섬유 프리폼, UV/DUV/EUV 렌즈, 우주망원경 미러</li>
+        <li><strong>항공 · 방산 · 우주</strong> — 재돌입체 노즈콘, 극초음속 리딩엣지, 레이돔, TPS</li>
+        <li><strong>고온 내화 · 특수 유리 · 세라믹</strong> — 슬라이딩 게이트 노즐, 석영 유리, LAS 저열팽창 세라믹</li>
+        <li><strong>태양광 · 에너지 · 리튬 배터리</strong> — 단결정 Si 성장용 석영 도가니, SiO/SiOx 음극재</li>
+        <li><strong>산업용 도료 · 접착제 · 실란트</strong> — 저 CTE 고성능 컴파운드, 전기 절연, UV 경화 접착제</li>
+        <li><strong>인조 대리석 · 엔지니어드 스톤 · 건축 자재</strong> — 쿼츠 카운터탑, HPC/UHPC 포졸란 첨가제</li>
+      </ul>`,
+  },
+  {
     path: "/applications/silica-gel",
     title: "실리카 겔 응용분야 — 흡습·촉매·코팅·필름 | SILICA",
     description:
