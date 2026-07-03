@@ -25,6 +25,7 @@ import lowRadImg from "@/assets/low-radiation-silica-powder.jpg";
 import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
 import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
+import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
