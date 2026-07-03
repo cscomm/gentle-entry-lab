@@ -1,6 +1,6 @@
 import { defineTool } from "@lovable.dev/mcp-js";
 import { z } from "zod";
-import { productCatalog, type ProductCategory } from "@/data/products";
+import { productCatalog, type ProductCategory } from "../catalog.generated";
 
 const CATEGORIES = ["quartz", "silica-gel", "precipitated", "fumed", "advanced-series"] as const;
 
