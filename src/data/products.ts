@@ -1284,7 +1284,7 @@ productCatalog.push({
   enTagline: "A · B · C grades and every SL-series fused silica in one place — for semiconductor, optics, EMC, precision casting and advanced packaging",
   jaTagline: "A・B・Cグレード+全SLシリーズ溶融シリカを一箇所で — 半導体・光学・EMC・精密鋳造・先端パッケージング向け",
   description:
-    "용융실리카(Fused Silica)는 천연 석영을 1,800℃ 이상의 초고온에서 용융·급냉하여 얻어지는 비정질(Amorphous) 이산화규소(SiO₂) 소재로, 극저 열팽창(0.5~0.6 ×10⁻⁶/℃)·우수한 열충격 저항성·높은 화학적 안정성·뛰어난 전기 절연성을 동시에 갖춘 첨단 산업의 핵심 원료입니다. SiLiCA는 순도·용도별로 A등급(SiO₂ ≥99.9%, 100% 무정형)·B등급(≥99.5%)·C등급(≥99%)의 세 가지 대표 등급과 함께, 반도체 EMC·언더필·CCL·저방사선(Low-α)·활성(표면개질)·모서리 라운드·각상·미분·석영사 등 형상·기능별 전 SL 시리즈 용융실리카 라인업을 모두 이 카테고리에 통합 공급합니다. 각 제품은 원래 소속 카테고리에도 그대로 유지되므로, 형상·기능별로도 탐색 가능합니다.",
+    "용융실리카(Fused Silica)는 천연 석영을 1,800℃ 이상의 초고온에서 용융·급냉하여 얻어지는 비정질(Amorphous) 이산화규소(SiO₂) 소재로, 극저 열팽창(0.5~0.6 ×10⁻⁶/℃)·우수한 열충격 저항성·높은 화학적 안정성·뛰어난 전기 절연성을 동시에 갖춘 첨단 산업의 핵심 원료입니다. SiLiCA는 순도·용도별로 A등급(SiO₂ ≥99.9%, 100% 무정형)·B등급(≥99.5%)·C등급(≥99%)의 세 가지 대표 등급과 함께, 반도체 EMC·언더필·CCL·저방사선(Low-α)·표면개질·모서리 라운드·각상·미분·석영사 등 형상·기능별 전 SL 시리즈 용융실리카 라인업을 모두 이 카테고리에 통합 공급합니다. 각 제품은 원래 소속 카테고리에도 그대로 유지되므로, 형상·기능별로도 탐색 가능합니다.",
   enDescription:
     "Fused Silica is an amorphous SiO₂ material made by melting natural quartz at over 1,800°C and rapidly quenching it. It delivers ultra-low CTE (0.5–0.6 ×10⁻⁶/°C), excellent thermal-shock resistance, chemical stability and electrical insulation — a core raw material for advanced industries. SiLiCA supplies Grade A (SiO₂ ≥99.9%, 100% amorphous), Grade B (≥99.5%) and Grade C (≥99%) as flagship purity tiers, together with the full SL-series fused-silica lineup by shape/function: spherical (SL-QG), low-α spherical (SL-QG-L), round-corner (SL-YRG), angular (SL-RG), low-radiation (SL-FL), surface-modified (SL-HRG), fused quartz sand (SL-FS) and ultra-high-purity fine powder (SL-HF04). Every product also remains in its original category.",
   jaDescription:
@@ -1321,7 +1321,7 @@ productCatalog.push({
     { code: "SL-YRG", slug: "sl-yrg", spec: "용융형 모서리 라운드", enSpec: "Fused Round-Corner", jaSpec: "溶融質 丸角" },
     { code: "SL-RG", slug: "sl-rg", spec: "용융형 각상", enSpec: "Fused Angular", jaSpec: "溶融質 角形" },
     { code: "SL-FL", slug: "sl-fl", spec: "저방사선 용융", enSpec: "Low-Alpha Fused", jaSpec: "低α線 溶融質" },
-    { code: "SL-HRG", slug: "sl-hrg", spec: "활성(표면개질) 용융", enSpec: "Surface-Modified Fused", jaSpec: "活性(表面改質) 溶融" },
+    { code: "SL-HRG", slug: "sl-hrg", spec: "표면개질 용융", enSpec: "Surface-Modified Fused", jaSpec: "活性(表面改質) 溶融" },
     { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
     { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },
   ],
