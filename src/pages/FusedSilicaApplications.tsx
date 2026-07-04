@@ -17,7 +17,7 @@ const FusedSilicaApplications = () => {
         "半導体EMC・アンダーフィル・先端パッケージング"
       ),
       desc: t(
-        "용융실리카는 반도체 후공정(Back-End)에서 가장 중요한 무기 필러입니다. 에폭시 몰딩 컴파운드(EMC)에 최대 88~92 wt%까지 고충전되어, 실리콘 다이와 유사한 극저 열팽창계수(CTE 0.5×10⁻⁶/℃)를 구현함으로써 리플로우 솔더링·온도 사이클 시 다이·기판 간 열응력에 의한 크랙·박리·와이어 단선을 근본적으로 억제합니다. 완전 무정형(Amorphous) 구조와 초저 α선 방사(Low-α 그레이드 ≤ 0.001 cph/cm²)는 HBM·DDR5·AI 반도체의 소프트 에러(SEU)를 원천 차단하며, 구형(SL-QG) · 초미분(SL-HF04) 그레이드는 언더필(Capillary Underfill, MUF), 어드밴스드 패키징(FC-BGA, 2.5D/3D 인터포저, WLP, PoP, Fan-Out) 등 미세 갭 충전이 요구되는 최첨단 공정에 필수적으로 사용됩니다.",
+        "용융실리카는 반도체 후공정(Back-End)에서 가장 중요한 무기 필러입니다. 에폭시 몰딩 컴파운드(EMC)에 최대 88~92 wt%까지 고충전되어, 실리콘 다이와 유사한 극저 열팽창계수(CTE 0.5×10⁻⁶/℃)를 구현함으로써 리플로우 솔더링·온도 사이클 시 다이·기판 간 열응력에 의한 크랙·박리·와이어 단선을 근본적으로 억제합니다. 완전 무정형(Amorphous) 구조와 초저 α선 방사(Low-α 그레이드 ≤ 0.001 cph/cm²)는 HBM·DDR5·AI 반도체의 소프트 에러(SEU)를 원천 차단하며, 구상(SL-QG) · 초미분(SL-HF04) 그레이드는 언더필(Capillary Underfill, MUF), 어드밴스드 패키징(FC-BGA, 2.5D/3D 인터포저, WLP, PoP, Fan-Out) 등 미세 갭 충전이 요구되는 최첨단 공정에 필수적으로 사용됩니다.",
         "Fused silica is the single most important inorganic filler in semiconductor back-end packaging. Loaded up to 88–92 wt% in epoxy molding compounds (EMC), its ultra-low CTE (0.5×10⁻⁶/°C) matches the silicon die and eliminates cracking, delamination and wire-bond breakage caused by thermal stress during reflow soldering and temperature cycling. Its fully amorphous structure and ultra-low alpha emission (Low-α grade ≤ 0.001 cph/cm²) suppress soft errors (SEU) in HBM, DDR5 and AI semiconductors, while spherical (SL-QG) and ultra-fine (SL-HF04) grades are essential for underfill (capillary underfill, MUF) and advanced packaging processes — FC-BGA, 2.5D/3D interposers, WLP, PoP and Fan-Out — where narrow-gap flow is critical.",
         "溶融シリカは、半導体後工程(バックエンド)において最も重要な無機フィラーです。エポキシモールドコンパウンド(EMC)に最大88~92 wt%まで高充填され、シリコンダイに近い極低熱膨張係数(CTE 0.5×10⁻⁶/℃)を実現することで、リフローはんだ付けや温度サイクル時の熱応力によるクラック・剥離・ワイヤ断線を根本から抑制します。完全非晶質(Amorphous)構造と超低α線放射(Low-αグレード ≤ 0.001 cph/cm²)はHBM・DDR5・AI半導体のソフトエラー(SEU)を防止し、球状(SL-QG)・超微粉(SL-HF04)グレードはアンダーフィル(キャピラリーアンダーフィル、MUF)、先端パッケージング(FC-BGA、2.5D/3Dインターポーザ、WLP、PoP、Fan-Out)など微細ギャップ充填が要求される最先端工程に不可欠です。"
       ),
@@ -25,7 +25,7 @@ const FusedSilicaApplications = () => {
         t("에폭시 몰딩 컴파운드 (EMC)", "Epoxy molding compound (EMC)", "エポキシモールドコンパウンド(EMC)"),
         t("언더필 (CUF / MUF / NCF)", "Underfill (CUF / MUF / NCF)", "アンダーフィル(CUF/MUF/NCF)"),
         t("어드밴스드 패키징 — FC-BGA · 2.5D/3D · WLP · PoP · Fan-Out", "Advanced packaging — FC-BGA / 2.5D/3D / WLP / PoP / Fan-Out", "先端パッケージング — FC-BGA・2.5D/3D・WLP・PoP・Fan-Out"),
-        t("HBM · DDR5 · AI 반도체용 저방사(Low-α) EMC", "HBM / DDR5 / AI-semiconductor Low-α EMC", "HBM・DDR5・AI半導体向け低α線EMC"),
+        t("HBM · DDR5 · AI 반도체용 저방사선(Low-α) EMC", "HBM / DDR5 / AI-semiconductor Low-α EMC", "HBM・DDR5・AI半導体向け低α線EMC"),
         t("다이 어태치 · 봉지재 · 언더-몰드 접착제", "Die-attach, encapsulants, under-mold adhesives", "ダイアタッチ・封止材・アンダーモールド接着剤"),
       ],
     },
@@ -36,7 +36,7 @@ const FusedSilicaApplications = () => {
         "CCL・PCB・5G高周波基板"
       ),
       desc: t(
-        "동박적층판(CCL)과 PCB 프리프레그에서 용융실리카는 저 유전율(Dk)·저 유전손실(Df)·저 CTE·고 절연을 동시에 부여하는 필수 필러입니다. 5G/6G·mmWave 통신, 광-전 융합(CPO), 자율주행 레이더, 서버·데이터센터 스위칭 IC 등 신호 손실이 곧 성능 저하로 이어지는 고주파 응용에서, 구형·원각 용융실리카(SL-QG / SL-YRG)는 수지 유동성을 유지하면서도 배선 밀도가 극단적으로 높은 고밀도 다층 기판(HDI, IC 기판, ABF)의 치수 안정성과 신뢰성을 확보합니다. 초미분 SL-HF04(D50 3.8µm)는 초박형 프리프레그 및 5G AiP(Antenna-in-Package) 기판 등 극박·초정밀 층 구성에도 대응합니다.",
+        "동박적층판(CCL)과 PCB 프리프레그에서 용융실리카는 저 유전율(Dk)·저 유전손실(Df)·저 CTE·고 절연을 동시에 부여하는 필수 필러입니다. 5G/6G·mmWave 통신, 광-전 융합(CPO), 자율주행 레이더, 서버·데이터센터 스위칭 IC 등 신호 손실이 곧 성능 저하로 이어지는 고주파 응용에서, 구상·모서리 라운드 용융실리카(SL-QG / SL-YRG)는 수지 유동성을 유지하면서도 배선 밀도가 극단적으로 높은 고밀도 다층 기판(HDI, IC 기판, ABF)의 치수 안정성과 신뢰성을 확보합니다. 초미분 SL-HF04(D50 3.8µm)는 초박형 프리프레그 및 5G AiP(Antenna-in-Package) 기판 등 극박·초정밀 층 구성에도 대응합니다.",
         "In copper-clad laminates (CCL) and PCB prepregs, fused silica delivers low dielectric constant (Dk), low dissipation factor (Df), low CTE and high insulation simultaneously. For 5G/6G, mmWave, co-packaged optics (CPO), automotive radar and data-center switching ICs — where signal loss directly translates to lost performance — spherical and round-corner fused silica (SL-QG, SL-YRG) preserve resin flow while ensuring the dimensional stability and reliability of ultra-high-density HDI, IC substrates and ABF layers. Ultra-fine SL-HF04 (D50 3.8 µm) supports ultra-thin prepregs and 5G AiP (Antenna-in-Package) substrates.",
         "銅張積層板(CCL)およびPCBプリプレグにおいて、溶融シリカは低誘電率(Dk)・低誘電損失(Df)・低CTE・高絶縁性を同時に付与する必須フィラーです。5G/6G・mmWave通信、光電融合(CPO)、車載レーダー、サーバー・データセンター向けスイッチングICなど信号損失が性能低下に直結する高周波用途で、球状・丸角溶融シリカ(SL-QG / SL-YRG)は樹脂流動性を維持しつつ、高密度多層基板(HDI、ICパッケージ基板、ABF)の寸法安定性と信頼性を確保します。超微粉SL-HF04(D50 3.8µm)は超薄型プリプレグや5G AiP(Antenna-in-Package)基板にも対応します。"
       ),
@@ -150,7 +150,7 @@ const FusedSilicaApplications = () => {
         "産業用塗料・接着剤・シーラント・高性能コンパウンド"
       ),
       desc: t(
-        "각형(SL-RG)·원각(SL-YRG)·활성(SL-HRG) 등 용융실리카 시리즈는 산업용 도료·접착제·실란트에서 저 CTE·고 내마모·고 절연·저 흡습을 부여하는 고성능 필러로 사용됩니다. 특히 실란 커플링 표면처리된 활성 그레이드(SL-HRG)는 유기 매트릭스와의 강한 계면 결합을 형성하여 에폭시·폴리우레탄·아크릴 수지의 인장강도·굴곡강도·내구성을 향상시킵니다. 고온용 세라믹 접착제, 정밀 인쇄용 UV 잉크, 전기 절연 컴파운드, 광학용 UV 경화 접착제, 자동차·산업 로봇용 고성능 실란트 등 신뢰성이 요구되는 응용에 폭넓게 사용됩니다.",
+        "각상(SL-RG)·모서리 라운드(SL-YRG)·활성(SL-HRG) 등 용융실리카 시리즈는 산업용 도료·접착제·실란트에서 저 CTE·고 내마모·고 절연·저 흡습을 부여하는 고성능 필러로 사용됩니다. 특히 실란 커플링 표면처리된 활성 그레이드(SL-HRG)는 유기 매트릭스와의 강한 계면 결합을 형성하여 에폭시·폴리우레탄·아크릴 수지의 인장강도·굴곡강도·내구성을 향상시킵니다. 고온용 세라믹 접착제, 정밀 인쇄용 UV 잉크, 전기 절연 컴파운드, 광학용 UV 경화 접착제, 자동차·산업 로봇용 고성능 실란트 등 신뢰성이 요구되는 응용에 폭넓게 사용됩니다.",
         "The fused-silica series — angular (SL-RG), round-corner (SL-YRG), surface-modified (SL-HRG) and more — is used as a high-performance filler in industrial coatings, adhesives and sealants to provide low CTE, high wear resistance, high insulation and low moisture pickup. In particular, silane-coupled surface-modified grades (SL-HRG) form strong interfacial bonds with organic matrices, improving the tensile, flexural strength and durability of epoxy, polyurethane and acrylic resins. Applications include high-temperature ceramic adhesives, precision UV inks, electrical insulation compounds, optical UV-curable adhesives and high-performance sealants for automotive and industrial-robot use.",
         "角形(SL-RG)・丸角(SL-YRG)・活性(SL-HRG)などの溶融シリカシリーズは、産業用塗料・接着剤・シーラントにおいて低CTE・高耐摩耗・高絶縁・低吸湿を付与する高性能フィラーとして使用されます。特に、シランカップリング表面処理された活性グレード(SL-HRG)は、有機マトリクスとの強い界面結合を形成し、エポキシ・ポリウレタン・アクリル樹脂の引張強度・曲げ強度・耐久性を向上させます。高温用セラミック接着剤、精密印刷用UVインキ、電気絶縁コンパウンド、光学用UV硬化接着剤、自動車・産業ロボット用高性能シーラントなど、信頼性が要求される用途に幅広く使用されます。"
       ),
@@ -169,7 +169,7 @@ const FusedSilicaApplications = () => {
         "人造大理石・エンジニアードストーン・建築資材"
       ),
       desc: t(
-        "각형·결정형 실리카와 함께 용융실리카(SL-RG, SL-JG)는 인조 대리석·엔지니어드 스톤(쿼츠 스톤)·솔리드 서페이스 제품의 핵심 충진재로 사용됩니다. 우수한 백색도·내마모성·내약품성·저 흡수율을 부여하여 주방 상판, 욕실 벽재, 상업용 카운터, 고급 바닥재 등에 사용되며, 특히 용융 그레이드는 낮은 열팽창과 우수한 화학적 안정성으로 열충격과 오염에 강한 프리미엄 제품 제조에 유리합니다. 시멘트·모르타르 첨가재, 고성능 콘크리트(HPC/UHPC) 포졸란 첨가제, 실리카 흄 대체재로도 사용되어 건축물 내구성과 화학 저항성을 향상시킵니다.",
+        "각상·결정형 실리카와 함께 용융실리카(SL-RG, SL-JG)는 인조 대리석·엔지니어드 스톤(쿼츠 스톤)·솔리드 서페이스 제품의 핵심 충진재로 사용됩니다. 우수한 백색도·내마모성·내약품성·저 흡수율을 부여하여 주방 상판, 욕실 벽재, 상업용 카운터, 고급 바닥재 등에 사용되며, 특히 용융 그레이드는 낮은 열팽창과 우수한 화학적 안정성으로 열충격과 오염에 강한 프리미엄 제품 제조에 유리합니다. 시멘트·모르타르 첨가재, 고성능 콘크리트(HPC/UHPC) 포졸란 첨가제, 실리카 흄 대체재로도 사용되어 건축물 내구성과 화학 저항성을 향상시킵니다.",
         "Together with angular and crystalline silica, fused silica (SL-RG, SL-JG) is a core filler for engineered stone (quartz stone), solid surface and artificial marble products. It provides high whiteness, wear resistance, chemical resistance and low water absorption for kitchen countertops, bathroom walls, commercial counters and premium flooring. Fused grades in particular offer low thermal expansion and excellent chemical stability, making them ideal for premium products resistant to thermal shock and staining. It is also used as a cement/mortar additive, as a pozzolanic additive for high-performance concrete (HPC / UHPC) and as a silica-fume alternative — improving building durability and chemical resistance.",
         "角形・結晶質シリカとともに溶融シリカ(SL-RG、SL-JG)は、人造大理石・エンジニアードストーン(クォーツストーン)・ソリッドサーフェス製品の中核充填材として使用されます。優れた白色度・耐摩耗性・耐薬品性・低吸水率を付与し、キッチンカウンター、バスルーム壁材、商業用カウンター、高級床材などに使用されます。特に溶融グレードは低熱膨張と優れた化学的安定性により、耐熱衝撃・耐汚染性のプレミアム製品製造に有利です。セメント・モルタル添加材、高性能コンクリート(HPC/UHPC)ポゾラン添加剤、シリカフューム代替材としても使用され、建築物の耐久性と化学抵抗性を向上させます。"
       ),
