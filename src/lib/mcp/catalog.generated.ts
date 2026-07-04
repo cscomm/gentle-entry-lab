@@ -777,15 +777,15 @@ const advSeriesProducts: ProductDetail[] = [
   {
     slug: "low-radiation-silica-powder",
     name: "저방사 실리카 분말",
-    enName: "Low-Radiation Silica Powder",
+    enName: "Low-Alpha Silica Powder",
     jaName: "低α線シリカ粉末",
     tagline: "α선 ≤ 0.001 cph/cm² — 첨단 메모리·HBM·AI 반도체용 저방사 실리카",
-    enTagline: "α-Emission ≤ 0.001 cph/cm² — Low-Radiation Silica for Advanced Memory, HBM and AI Semiconductors",
+    enTagline: "α-Emission ≤ 0.001 cph/cm² — Low-Alpha Silica for Advanced Memory, HBM and AI Semiconductors",
     jaTagline: "α線 ≤ 0.001 cph/cm² — 先端メモリ・HBM・AI半導体用低α線シリカ",
     description:
       "저방사 실리카 분말은 우라늄(U)·토륨(Th) 등 방사성 불순물을 극한까지 제거하여 α선 방사량을 0.001 cph/cm² 이하로 관리한 초고순도 SiO₂ 필러입니다. HBM, DDR5, 어드밴스드 패키징 등 소프트 에러에 극도로 민감한 첨단 메모리 반도체 EMC·언더필의 필수 소재이며, 결정형(SL-CL)과 용융형(SL-FL) 2종으로 공급됩니다.",
     enDescription:
-      "Low-Radiation Silica Powder is an ultra-high-purity SiO₂ filler in which radioactive impurities (U, Th) have been reduced to the ultimate level, keeping α-emission ≤ 0.001 cph/cm². It is an essential material for EMC and underfill of soft-error-sensitive advanced memory devices such as HBM, DDR5 and advanced packaging. Supplied as crystalline SL-CL and fused SL-FL grades.",
+      "Low-Alpha Silica Powder is an ultra-high-purity SiO₂ filler in which radioactive impurities (U, Th) have been reduced to the ultimate level, keeping α-emission ≤ 0.001 cph/cm². It is an essential material for EMC and underfill of soft-error-sensitive advanced memory devices such as HBM, DDR5 and advanced packaging. Supplied as crystalline SL-CL and fused SL-FL grades.",
     jaDescription:
       "低α線シリカ粉末は、ウラン(U)・トリウム(Th)などの放射性不純物を極限まで除去し、α線放射量を0.001 cph/cm²以下に管理した超高純度SiO₂フィラーです。HBM・DDR5・アドバンストパッケージングなどソフトエラーに極めて敏感な先端メモリ半導体のEMC・アンダーフィルの必須素材で、結晶質(SL-CL)・溶融質(SL-FL)の2種で供給されます。",
     image: lowRadImg,
@@ -810,8 +810,8 @@ const advSeriesProducts: ProductDetail[] = [
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
     isCategoryIndex: true,
     subModels: [
-      { code: "SL-CL", slug: "sl-cl", spec: "저방사 결정형", enSpec: "Low-Radiation Crystalline", jaSpec: "低α線 結晶質", name: "SL-CL 저방사 결정형 실리카 분말", enName: "SL-CL · Low-Radiation Crystalline Silica Powder", jaName: "SL-CL 低α線結晶質シリカ粉末" },
-      { code: "SL-FL", slug: "sl-fl", spec: "저방사 용융형", enSpec: "Low-Radiation Fused", jaSpec: "低α線 溶融質", name: "SL-FL 저방사 용융형 실리카 분말", enName: "SL-FL · Low-Radiation Fused Silica Powder", jaName: "SL-FL 低α線溶融質シリカ粉末" },
+      { code: "SL-CL", slug: "sl-cl", spec: "저방사 결정형", enSpec: "Low-Alpha Crystalline", jaSpec: "低α線 結晶質", name: "SL-CL 저방사 결정형 실리카 분말", enName: "SL-CL · Low-Alpha Crystalline Silica Powder", jaName: "SL-CL 低α線結晶質シリカ粉末" },
+      { code: "SL-FL", slug: "sl-fl", spec: "저방사 용융형", enSpec: "Low-Alpha Fused", jaSpec: "低α線 溶融質", name: "SL-FL 저방사 용융형 실리카 분말", enName: "SL-FL · Low-Alpha Fused Silica Powder", jaName: "SL-FL 低α線溶融質シリカ粉末" },
     ],
     applications: ["HBM / DDR5", "AI 반도체 EMC", "언더필 / 봉지재", "어드밴스드 패키징"],
   },
@@ -859,7 +859,7 @@ const advSeriesProducts: ProductDetail[] = [
   {
     slug: "silica-sand-granule",
     name: "실리카 사 · 입자",
-    enName: "Silica Sand & Granule",
+    enName: "Silica Powder & Granule",
     jaName: "シリカサンド・粒",
     tagline: "고순도 결정·용융 석영사 — 유리·주조·연마·필터용 산업 표준 소재",
     enTagline: "High-Purity Crystalline & Fused Quartz Sand — Industrial Standard for Glass, Casting, Abrasives and Filtration",
@@ -867,7 +867,7 @@ const advSeriesProducts: ProductDetail[] = [
     description:
       "실리카 사 및 입자 시리즈는 고순도 석영을 선별·정제한 결정형 석영사(SL-CS), 초고온 용융을 거친 용융형 석영사(SL-FS), 그리고 반도체·첨단 패키징용 초고순도 미분 용융 실리카(SL-HF04)로 구성됩니다. SL-CS는 SiO₂ 98.0~99.9%의 결정 석영사로 유리 원료·정밀 주조·연마재·워터 필터·스포츠 표면재 등 광범위한 산업에 사용되며, SL-FS는 SiO₂ 99.0~99.99%·저열팽창(0.5×10⁻⁶)·우수한 내화학성을 바탕으로 고온 공정과 정밀 주조에 적합합니다. SL-HF04는 SiO₂ 99.96%·Fe₂O₃ ~12 ppm·D50 3.8µm의 초미분 비정질 용융 실리카로, 반도체 EMC·언더필·어드밴스드 패키징·CCL/PCB·5G 고주파 기판·고열전도 소재 등 최첨단 전자·반도체 분야에 최적화된 프리미엄 필러입니다. 세 라인업 모두 국내·중국 이원화 공급망을 통해 안정적으로 공급됩니다.",
     enDescription:
-      "The Silica Sand & Granule series comprises crystalline quartz sand (SL-CS) purified from high-grade quartz, fused quartz sand (SL-FS) processed at ultra-high temperature, and ultra-high-purity micronized fused silica (SL-HF04) for semiconductor and advanced packaging use. SL-CS (SiO₂ 98.0–99.9%) serves a wide range of industries including glass raw material, precision casting, abrasives, water filtration and sports surfaces. SL-FS (SiO₂ 99.0–99.99%) offers low CTE (0.5×10⁻⁶) and excellent chemical resistance for high-temperature processes and precision casting. SL-HF04 is an ultra-fine amorphous fused silica (SiO₂ 99.96%, Fe₂O₃ ~12 ppm, D50 3.8 µm) — a premium filler optimized for semiconductor EMC, underfill, advanced packaging, CCL/PCB, 5G high-frequency substrates and high-thermal-conductivity materials. All three lineups are supplied through a stable dual Korea/China supply chain.",
+      "The Silica Powder & Granule series comprises crystalline quartz sand (SL-CS) purified from high-grade quartz, fused quartz sand (SL-FS) processed at ultra-high temperature, and ultra-high-purity micronized fused silica (SL-HF04) for semiconductor and advanced packaging use. SL-CS (SiO₂ 98.0–99.9%) serves a wide range of industries including glass raw material, precision casting, abrasives, water filtration and sports surfaces. SL-FS (SiO₂ 99.0–99.99%) offers low CTE (0.5×10⁻⁶) and excellent chemical resistance for high-temperature processes and precision casting. SL-HF04 is an ultra-fine amorphous fused silica (SiO₂ 99.96%, Fe₂O₃ ~12 ppm, D50 3.8 µm) — a premium filler optimized for semiconductor EMC, underfill, advanced packaging, CCL/PCB, 5G high-frequency substrates and high-thermal-conductivity materials. All three lineups are supplied through a stable dual Korea/China supply chain.",
     jaDescription:
       "シリカサンド・粒シリーズは高純度石英を選別・精製した結晶質石英砂(SL-CS)、超高温溶融を経た溶融質石英砂(SL-FS)、そして半導体・先端パッケージ用の超高純度微粉溶融シリカ(SL-HF04)で構成されます。SL-CSはSiO₂ 98.0~99.9%の結晶石英砂で、ガラス原料・精密鋳造・研磨材・浄水フィルター・スポーツ表面材など幅広い産業に使用されます。SL-FSはSiO₂ 99.0~99.99%・低熱膨張(0.5×10⁻⁶)・優れた耐化学性を備え、高温工程や精密鋳造に適します。SL-HF04はSiO₂ 99.96%・Fe₂O₃ ~12 ppm・D50 3.8µmの超微粉非晶質溶融シリカで、半導体EMC・アンダーフィル・先端パッケージング・CCL/PCB・5G高周波基板・高熱伝導材料など最先端の電子・半導体分野に最適化されたプレミアムフィラーです。3つのラインアップはすべて韓国・中国二元化サプライチェーンで安定供給されます。",
     image: sandGranuleImg,
@@ -1174,7 +1174,7 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
       { label: "특성", value: "무연·무해·친환경, EU 규제 부합, 우수한 전기 절연성, 고강도 결합성", enValue: "Lead-free / non-toxic / eco-friendly · EU compliant · good electrical insulation · high-strength bonding", jaValue: "無鉛・無害・環境配慮 · EU規制準拠 · 優れた電気絶縁性 · 高強度結合性", enLabel: "Features", jaLabel: "特性" },
     ],
   },
-  // ===== Silica Sand & Granule — HF04 (High-purity fused silica micro-powder) =====
+  // ===== Silica Powder & Granule — HF04 (High-purity fused silica micro-powder) =====
   "sl-hf04": {
     tagline: "SiO₂ 99.96% · D50 3.8µm — 반도체·전자소재용 초고순도 미분 용융 실리카 (SL-HF04)",
     enTagline: "SiO₂ 99.96% · D50 3.8 µm — Ultra-High-Purity Micronized Fused Silica for Semiconductor & Electronic Materials (SL-HF04)",
@@ -1322,7 +1322,7 @@ productCatalog.push({
     { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사(Low-α) 구형", enSpec: "Low-α Spherical", jaSpec: "低α線 球状" },
     { code: "SL-YRG", slug: "sl-yrg", spec: "용융형 원각", enSpec: "Fused Round-Corner", jaSpec: "溶融質 丸角" },
     { code: "SL-RG", slug: "sl-rg", spec: "용융형 각형", enSpec: "Fused Angular", jaSpec: "溶融質 角形" },
-    { code: "SL-FL", slug: "sl-fl", spec: "저방사 용융", enSpec: "Low-Radiation Fused", jaSpec: "低α線 溶融質" },
+    { code: "SL-FL", slug: "sl-fl", spec: "저방사 용융", enSpec: "Low-Alpha Fused", jaSpec: "低α線 溶融質" },
     { code: "SL-HRG", slug: "sl-hrg", spec: "활성(표면개질) 용융", enSpec: "Surface-Modified Fused", jaSpec: "活性(表面改質) 溶融" },
     { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
     { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },

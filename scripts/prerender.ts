@@ -396,7 +396,7 @@ export const productRoutes: Route[] = [
       {
         slug: "low-radiation-silica-powder",
         ko: "저방사 실리카 분말 (SL-CL / SL-FL)",
-        en: "Low-Radiation Silica Powder (SL-CL / SL-FL)",
+        en: "Low-Alpha Silica Powder (SL-CL / SL-FL)",
         ja: "低α線シリカ粉末 (SL-CL / SL-FL)",
         desc: "α선 ≤ 0.001 cph/cm²의 HBM·AI 반도체용 저방사 실리카. 결정형(SL-CL)·용융형(SL-FL).",
         descEn: "Low-radiation silica for HBM and AI semiconductors — α-emission ≤ 0.001 cph/cm². Crystalline SL-CL and fused SL-FL.",
@@ -414,7 +414,7 @@ export const productRoutes: Route[] = [
       {
         slug: "silica-sand-granule",
         ko: "실리카 사·입자 (SL-CS / SL-FS)",
-        en: "Silica Sand & Granule (SL-CS / SL-FS)",
+        en: "Silica Powder & Granule (SL-CS / SL-FS)",
         ja: "シリカサンド・粒 (SL-CS / SL-FS)",
         desc: "고순도 결정 석영사(SL-CS)·용융 석영사(SL-FS) 산업 표준 소재. 유리·주조·연마·필터용.",
         descEn: "High-purity crystalline (SL-CS) and fused (SL-FS) quartz sand. For glass, casting, abrasives and filtration.",
@@ -449,8 +449,8 @@ export const productRoutes: Route[] = [
       { slug: "sl-yrg", parent: "round-corner-silica-powder", ko: "SL-YRG 용융형 원각 실리카 분말", en: "SL-YRG · Fused Round-Corner Silica Powder", ja: "SL-YRG 溶融質丸角シリカ粉末", desc: "용융형 원각 실리카 SL-YRG. 저열팽창·저점도의 하이브리드 필러.", descEn: "SL-YRG fused round-corner silica — hybrid filler with low CTE and low viscosity.", descJa: "溶融質丸角シリカSL-YRG。低熱膨張・低粘度のハイブリッドフィラー。" },
       { slug: "sl-rg", parent: "angular-silica-powder", ko: "SL-RG 용융형 각형 실리카 분말", en: "SL-RG · Fused Angular Silica Powder", ja: "SL-RG 溶融質角形シリカ粉末", desc: "용융형 각형 실리카 SL-RG. 고강도·고내마모 산업 표준 필러.", descEn: "SL-RG fused angular silica — industry-standard filler with high strength and wear resistance.", descJa: "溶融質角形シリカSL-RG。高強度・高耐摩耗の産業標準フィラー。" },
       { slug: "sl-jg", parent: "angular-silica-powder", ko: "SL-JG 결정형 각형 실리카 분말", en: "SL-JG · Crystalline Angular Silica Powder", ja: "SL-JG 結晶質角形シリカ粉末", desc: "결정형 각형 실리카 SL-JG. 경제성과 성능을 겸비한 범용 필러.", descEn: "SL-JG crystalline angular silica — general-purpose filler balancing cost and performance.", descJa: "結晶質角形シリカSL-JG。経済性と性能を兼備した汎用フィラー。" },
-      { slug: "sl-cl", parent: "low-radiation-silica-powder", ko: "SL-CL 저방사 결정형 실리카 분말", en: "SL-CL · Low-Radiation Crystalline Silica Powder", ja: "SL-CL 低α線結晶質シリカ粉末", desc: "저방사 결정형 실리카 SL-CL. U/Th ppb급 관리로 HBM/AI 반도체 대응.", descEn: "SL-CL low-radiation crystalline silica with ppb-level U/Th control for HBM and AI semiconductors.", descJa: "低α線結晶質シリカSL-CL。U/Th ppb級管理でHBM・AI半導体対応。" },
-      { slug: "sl-fl", parent: "low-radiation-silica-powder", ko: "SL-FL 저방사 용융형 실리카 분말", en: "SL-FL · Low-Radiation Fused Silica Powder", ja: "SL-FL 低α線溶融質シリカ粉末", desc: "저방사 용융형 실리카 SL-FL. 어드밴스드 패키징용 필수 소재.", descEn: "SL-FL low-radiation fused silica — essential material for advanced semiconductor packaging.", descJa: "低α線溶融質シリカSL-FL。アドバンスドパッケージング用必須素材。" },
+      { slug: "sl-cl", parent: "low-radiation-silica-powder", ko: "SL-CL 저방사 결정형 실리카 분말", en: "SL-CL · Low-Alpha Crystalline Silica Powder", ja: "SL-CL 低α線結晶質シリカ粉末", desc: "저방사 결정형 실리카 SL-CL. U/Th ppb급 관리로 HBM/AI 반도체 대응.", descEn: "SL-CL low-radiation crystalline silica with ppb-level U/Th control for HBM and AI semiconductors.", descJa: "低α線結晶質シリカSL-CL。U/Th ppb級管理でHBM・AI半導体対応。" },
+      { slug: "sl-fl", parent: "low-radiation-silica-powder", ko: "SL-FL 저방사 용융형 실리카 분말", en: "SL-FL · Low-Alpha Fused Silica Powder", ja: "SL-FL 低α線溶融質シリカ粉末", desc: "저방사 용융형 실리카 SL-FL. 어드밴스드 패키징용 필수 소재.", descEn: "SL-FL low-radiation fused silica — essential material for advanced semiconductor packaging.", descJa: "低α線溶融質シリカSL-FL。アドバンスドパッケージング用必須素材。" },
       { slug: "sl-drg07", parent: "surface-modified-silica-powder", ko: "SL-DRG07 활성(에폭시 실란) 실리카 분말", en: "SL-DRG07 · Surface-Modified (Epoxy-Silane) Silica Powder", ja: "SL-DRG07 活性(エポキシシラン)シリカ粉末", desc: "SiO₂ ≥99.7%·D50 6-9μm·에폭시 실란 표면처리 표준 등급 활성 실리카 SL-DRG07.", descEn: "SL-DRG07 standard-grade surface-modified silica — SiO₂ ≥99.7%, D50 6–9 µm, epoxy-silane treated.", descJa: "SiO₂ ≥99.7%・D50 6-9μm・エポキシシラン表面処理標準グレードの活性シリカSL-DRG07。" },
       { slug: "sl-drg07-a", parent: "surface-modified-silica-powder", ko: "SL-DRG07-A 활성(에폭시 실란) 실리카 분말 고순도 등급", en: "SL-DRG07-A · High-Purity Surface-Modified Silica Powder", ja: "SL-DRG07-A 活性(エポキシシラン)シリカ粉末 高純度グレード", desc: "SiO₂ 대표치 99.80%·Fe₂O₃ 30ppm급 고순도 활성 실리카 SL-DRG07-A. HBM/AI EMC 대응.", descEn: "SL-DRG07-A high-purity surface-modified silica — SiO₂ typ. 99.80%, Fe₂O₃ 30 ppm-class, for HBM/AI EMC.", descJa: "SiO₂代表値99.80%・Fe₂O₃ 30ppm級の高純度活性シリカSL-DRG07-A。HBM/AI EMC対応。" },
       { slug: "sl-cs", parent: "silica-sand-granule", ko: "SL-CS 결정 석영사", en: "SL-CS · Crystalline Quartz Sand", ja: "SL-CS 結晶石英砂", desc: "고순도 결정 석영사 SL-CS. 유리·정밀 주조·연마·워터 필터용 산업 표준.", descEn: "SL-CS high-purity crystalline quartz sand for glass, precision casting, abrasives and water filtration.", descJa: "高純度結晶石英砂SL-CS。ガラス・精密鋳造・研磨・浄水フィルター用産業標準。" },
