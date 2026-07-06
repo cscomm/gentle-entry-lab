@@ -5,7 +5,7 @@ import { Link, useLocation } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Mail, Clock, Phone, Send, MessageSquare } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
@@ -382,7 +382,7 @@ const Index = () => {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-            {/* Left: Slogan + small office card */}
+            {/* Left: Slogan */}
             <div className="lg:col-span-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
                 <MessageSquare className="h-3.5 w-3.5" /> {t("contact.tag")}
@@ -393,30 +393,6 @@ const Index = () => {
               <p className="mt-5 text-sm text-background/70">
                 {t("contact.desc")}
               </p>
-
-              {/* Compact office card */}
-              <aside className="mt-8 rounded-2xl border border-background/15 bg-background/5 p-5 backdrop-blur-xl">
-                <div className="flex items-center gap-2">
-                  <span className="text-[10px] tracking-widest text-primary-glow">OFFICE</span>
-                  <span className="h-px flex-1 bg-background/15" />
-                  <span className="text-xs text-background/60">{t("contact.office")}</span>
-                </div>
-                <ul className="mt-4 space-y-2.5 text-sm">
-                  <li className="flex items-start gap-2.5 text-background/85">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
-                    <span>{t("footer.address")}</span>
-                  </li>
-                  <li>
-                    <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
-                      <Mail className="h-4 w-4 shrink-0 text-primary-glow" />
-                      info@silica.co.kr
-                    </a>
-                  </li>
-
-
-
-                </ul>
-              </aside>
             </div>
 
           <form
@@ -489,7 +465,7 @@ const Index = () => {
                       setForm({ ...form, message: e.target.value.slice(0, 500) })
                     }
                     className="mt-2 min-h-32 border-background/20 bg-background/10 text-background placeholder:text-background/40 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40"
-                    placeholder="문의하실 내용을 입력해 주세요"
+                    placeholder="문의하실 내용을 입력해 주세요. 용도나 최종 제품 정보를 구체적으로 알려주시면 더 정확하고 빠른 상담이 가능합니다."
                   />
                   <div className="mt-1 text-right text-xs text-background/50">
                     {form.message.length}/500자
