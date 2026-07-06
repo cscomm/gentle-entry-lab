@@ -90,9 +90,8 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "contact.tag": { ko: "Contact Us", en: "Contact Us", ja: "Contact Us" },
   "contact.title": { ko: "프로젝트의 시작,\nSilica가 함께 합니다.", en: "Let's start your project\nwith Silica.", ja: "プロジェクトの始まりは、\nSilicaが共にします。" },
   "contact.desc": {
-    ko: "최적의 실리카 솔루션이 필요하신 모든 산업 분야의 파트너를 환영합니다.",
+    ko: "최적의 실리카 솔루션이 필요한 모든 산업 분야의 파트너를 환영합니다.",
     en: "We welcome partners from every industry seeking the optimal silica solution.", ja: "最適なシリカソリューションを必要とするあらゆる産業分野のパートナーを歓迎します。" },
-  "contact.office": { ko: "사무실", en: "Office", ja: "オフィス" },
   "contact.form": { ko: "문의 양식", en: "Inquiry Form", ja: "お問い合わせフォーム" },
   "form.name": { ko: "이름 *", en: "Name *", ja: "お名前 *" },
   "form.phone": { ko: "연락처 *", en: "Phone *", ja: "ご連絡先 *" },
