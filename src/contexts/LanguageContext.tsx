@@ -59,8 +59,8 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "hero1.title": { ko: "Silica: Nature's Gift to the Future.", en: "Silica: Nature's Gift to the Future.", ja: "Silica: Nature's Gift to the Future." },
   "hero1.sub": { ko: "Technology that Leads Industry", en: "Technology that Leads Industry", ja: "Technology that Leads Industry" },
   "hero1.desc": {
-    ko: "반도체·광학·태양광·내화재·의료 산업에 최적화된 용융실리카, 실리카 겔, 침전실리카, 흄드실리카, 나노실리카까지 — 다양한 실리카 소재를 안정적으로 공급합니다.",
-    en: "From fused silica, silica gel, precipitated silica, fumed silica, to nano silica — we supply a wide range of high-purity silica materials optimized for semiconductor, optical, solar, refractory, and medical industries.", ja: "半導体・光学・太陽光・耐火材・医療産業に最適化された溶融シリカ、シリカゲル、沈降シリカ、ヒュームドシリカ、ナノシリカまで — 多様なシリカ素材を安定的に供給します。" },
+    ko: "Fused Silica부터 Nano Silica까지,\n고순도 실리카의 모든 것을 한곳에서.\n각 산업군에 맞는 맞춤형 초고순도 실리카 소재를 공급합니다.",
+    en: "From Fused Silica to Nano Silica,\nall high-purity silica in one place.\nWe supply custom ultra-high-purity silica materials tailored to every industry.", ja: "Fused SilicaからNano Silicaまで、\n高純度シリカのすべてを一か所で。\n各産業に最適なカスタム型超高純度シリカ素材を供給します。" },
   "hero2.title": { ko: "High-Purity Silica Powder", en: "High-Purity Silica Powder", ja: "High-Purity Silica Powder" },
   "hero2.sub": { ko: "A New Standard for Precision Industries", en: "A New Standard for Precision Industries", ja: "A New Standard for Precision Industries" },
   "hero2.desc": {
