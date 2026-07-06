@@ -382,7 +382,7 @@ const Index = () => {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-            {/* Left: Slogan + small office card */}
+            {/* Left: Slogan */}
             <div className="lg:col-span-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
                 <MessageSquare className="h-3.5 w-3.5" /> {t("contact.tag")}
@@ -393,7 +393,7 @@ const Index = () => {
               <p className="mt-5 text-sm text-background/70">
                 {t("contact.desc")}
               </p>
-
+            </div>
 
           <form
             onSubmit={handleSubmit}
