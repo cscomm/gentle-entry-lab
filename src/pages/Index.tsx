@@ -382,7 +382,7 @@ const Index = () => {
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
-            {/* Left: Slogan */}
+            {/* Left: Slogan + small office card */}
             <div className="lg:col-span-5">
               <span className="inline-flex items-center gap-2 rounded-full border border-background/20 bg-background/5 px-4 py-1.5 text-xs tracking-widest text-background/80 backdrop-blur">
                 <MessageSquare className="h-3.5 w-3.5" /> {t("contact.tag")}
@@ -393,6 +393,26 @@ const Index = () => {
               <p className="mt-5 text-sm text-background/70">
                 {t("contact.desc")}
               </p>
+
+              {/* Compact office card */}
+              <aside className="mt-8 rounded-2xl border border-background/15 bg-background/5 p-5 backdrop-blur-xl">
+                <div className="flex items-center gap-2">
+                  <span className="text-[10px] tracking-widest text-primary-glow">OFFICE</span>
+                  <span className="h-px flex-1 bg-background/15" />
+                </div>
+                <ul className="mt-4 space-y-2.5 text-sm">
+                  <li className="flex items-start gap-2.5 text-background/85">
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
+                    <span>{t("footer.address")}</span>
+                  </li>
+                  <li>
+                    <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
+                      <Mail className="h-4 w-4 shrink-0 text-primary-glow" />
+                      info@silica.co.kr
+                    </a>
+                  </li>
+                </ul>
+              </aside>
             </div>
 
           <form
