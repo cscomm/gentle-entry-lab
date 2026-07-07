@@ -254,7 +254,7 @@ const Index = () => {
           <p key={`s-${slideIdx}`} className="mt-6 text-2xl font-light text-white/95 md:text-3xl drop-shadow animate-in fade-in duration-700">
             {slides[slideIdx].sub}
           </p>
-          <p key={`d-${slideIdx}`} className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow animate-in fade-in duration-1000">
+          <p key={`d-${slideIdx}`} className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow animate-in fade-in duration-1000 break-keep break-words whitespace-pre-line">
             {slides[slideIdx].desc}
           </p>
           <Button
