@@ -698,7 +698,7 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "Combining Angular Strength with Spherical Flow — Balanced Round-Corner Silica",
     jaTagline: "角形と球状の長所を兼備した丸角シリカ — 優れた流動性と経済性",
     description:
-      "모서리 라운드 실리카 분말은 각상 실리카의 모서리를 라운딩(round-corner) 처리하여 구상에 근접한 유동성과 낮은 수지 점도, 우수한 충전성을 갖춘 하이브리드형 필러입니다. 구상 대비 경제성이 우수하며, 결정형 SL-YJG와 용융형 SL-YRG 2종으로 공급되어 CCL, 도전성 페이스트, 산업용 코팅, 고내마모 복합재 등에 폭넓게 사용됩니다.",
+      "모서리 라운드 실리카 분말은 각상 실리카의 모서리를 라운딩(round-corner) 처리하여 구상에 근접한 유동성과 낮은 수지 점도, 우수한 충전성을 갖춘 하이브리드형 필러입니다. 구상 대비 경제성이 우수하며, 결정형 SL-YJG와 용융형 SL-YRG 을 기본으로 고객의 요구를 적용한 맟춤 가공 생산 하여  CCL, 도전성 페이스트, 산업용 코팅, 고내마모 복합재 등에 폭넓게 사용됩니다.",
     enDescription:
       "Round Corner Silica Powder is a hybrid filler produced by rounding the corners of angular silica, delivering near-spherical flow, low resin viscosity, and excellent packing. It offers superior cost-performance compared to fully spherical grades, and is available in crystalline SL-YJG and fused SL-YRG grades — widely used in CCL, conductive pastes, industrial coatings, and high-wear composites.",
     jaDescription:
@@ -781,7 +781,7 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "α-Emission ≤ 0.001 cph/cm² — Low-Alpha Silica for Advanced Memory, HBM and AI Semiconductors",
     jaTagline: "α線 ≤ 0.001 cph/cm² — 先端メモリ・HBM・AI半導体用低α線シリカ",
     description:
-      "저방사선 실리카 분말은 우라늄(U)·토륨(Th) 등 방사성 불순물을 극한까지 제거하여 α선 방사량을 0.001 cph/cm² 이하로 관리한 초고순도 SiO₂ 필러입니다. HBM, DDR5, 어드밴스드 패키징 등 소프트 에러에 극도로 민감한 첨단 메모리 반도체 EMC·언더필의 필수 소재이며, 결정형(SL-CL)과 용융형(SL-FL) 2종으로 공급됩니다.",
+      "저방사선 실리카 분말은 우라늄(U)·토륨(Th) 등 방사성 불순물을 극한까지 제거하여 α선 방사량을 0.001 cph/cm² 이하로 관리한 초고순도 SiO₂ 필러입니다. HBM, DDR5, 어드밴스드 패키징 등 소프트 에러에 극도로 민감한 첨단 메모리 반도체 EMC·언더필의 필수 소재이며, 결정형(SL-CL)과 용융형(SL-FL) 을 기본으로 하여 상세 맞춤 가공 공급 합니다.",
     enDescription:
       "Low-Alpha Silica Powder is an ultra-high-purity SiO₂ filler in which radioactive impurities (U, Th) have been reduced to the ultimate level, keeping α-emission ≤ 0.001 cph/cm². It is an essential material for EMC and underfill of soft-error-sensitive advanced memory devices such as HBM, DDR5 and advanced packaging. Supplied as crystalline SL-CL and fused SL-FL grades.",
     jaDescription:
