@@ -659,7 +659,7 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "High Sphericity · Low Viscosity · Low CTE — Premium Spherical Silica for Semiconductor EMC",
     jaTagline: "高球形度・低粘度・低熱膨張の半導体・EMC用プレミアム球状シリカ",
     description:
-      "구상 실리카 분말은 화염 용융 공정을 통해 완전한 구(球) 형태로 성형된 고순도 무정형 SiO₂ 분말입니다. 낮은 수지 점도, 우수한 유동성, 낮은 열팽창계수를 바탕으로 반도체 EMC(Epoxy Molding Compound), CCL(Copper Clad Laminate), 언더필, 봉지재 등 첨단 전자 소재의 핵심 필러로 사용됩니다. 일반 구상(SL-QG)과 저방사선(Low-α) 구상(SL-QG-L) 2종 라인업으로 공급됩니다.",
+      "구상 실리카 분말은 화염 용융 공정을 통해 완전한 구(球) 형태로 성형된 고순도 무정형 SiO₂ 분말입니다. 낮은 수지 점도, 우수한 유동성, 낮은 열팽창계수를 바탕으로 반도체 EMC(Epoxy Molding Compound), CCL(Copper Clad Laminate), 언더필, 봉지재 등 첨단 전자 소재의 핵심 필러로 사용됩니다. 일반 구상(SL-QG)과 저방사선(Low-α) 구상(SL-QG-L) 2종 시리즈를 기준으로 고객 맞춤 생산 공급합니다.",
     enDescription:
       "Spherical Silica Powder is a high-purity amorphous SiO₂ powder formed into perfect spheres via a flame-fusion process. Thanks to its low resin viscosity, excellent flowability and low CTE, it is used as a key filler in advanced electronic materials such as semiconductor EMC (Epoxy Molding Compound), CCL, underfill and encapsulants. Supplied in two grades: standard SL-QG and low-alpha SL-QG-L.",
     jaDescription:
