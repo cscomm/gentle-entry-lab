@@ -867,7 +867,7 @@ var advSeriesProducts = [
       { label: "\uC5F0\uD654\uC810(Ts)", value: "350 ~ 450 \u2103", enLabel: "Softening Point (Ts)", jaLabel: "\u8EDF\u5316\u70B9(Ts)" },
       { label: "\uBD09\uCC29 \uC628\uB3C4", value: "400 ~ 550 \u2103", enLabel: "Sealing Temperature", jaLabel: "\u5C01\u7740\u6E29\u5EA6" },
       { label: "\uC5F4\uD33D\uCC3D\uACC4\uC218 (CTE)", value: "6 ~ 11 \xD710\u207B\u2076/\u2103 (\uC870\uC815 \uAC00\uB2A5)", enValue: "6\u201311 \xD710\u207B\u2076/\u2103 (adjustable)", jaValue: "6~11 \xD710\u207B\u2076/\u2103 (\u8ABF\u6574\u53EF\u80FD)", enLabel: "CTE", jaLabel: "\u71B1\u81A8\u5F35\u4FC2\u6570 (CTE)" },
-      { label: "\uD3C9\uADE0 \uC785\uB3C4 D50", value: "3 ~ 15 \xB5m (\uB9DE\uCDA4)", enValue: "3\u201315 \xB5m (customizable)", jaValue: "3~15 \xB5m (\u30AB\u30B9\u30BF\u30E0)", enLabel: "Mean D50", jaLabel: "\u5E73\u5747\u7C92\u5EA6 D50" },
+      { label: "\uD3C9\uADE0 \uC785\uB3C4 D50", value: "3 ~ 20 \xB5m (\uB9DE\uCDA4)", enValue: "3\u201320 \xB5m (customizable)", jaValue: "3~20 \xB5m (\u30AB\u30B9\u30BF\u30E0)", enLabel: "Mean D50", jaLabel: "\u5E73\u5747\u7C92\u5EA6 D50" },
       { label: "\uB0A9 \uD568\uB7C9 (Pb)", value: "\u2264 100 ppm", enLabel: "Lead Content (Pb)", jaLabel: "\u925B\u542B\u6709\u91CF (Pb)" },
       { label: "\uD3EC\uC7A5", value: "5 / 10 kg \uC9C0\uB300 \xB7 OEM", enValue: "5 / 10 kg bag \xB7 OEM", jaValue: "5 / 10 kg \u7D19\u888B \xB7 OEM", enLabel: "Packaging", jaLabel: "\u5305\u88C5" }
     ],

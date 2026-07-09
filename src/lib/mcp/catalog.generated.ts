@@ -927,7 +927,7 @@ const advSeriesProducts: ProductDetail[] = [
       { label: "연화점(Ts)", value: "350 ~ 450 ℃", enLabel: "Softening Point (Ts)", jaLabel: "軟化点(Ts)" },
       { label: "봉착 온도", value: "400 ~ 550 ℃", enLabel: "Sealing Temperature", jaLabel: "封着温度" },
       { label: "열팽창계수 (CTE)", value: "6 ~ 11 ×10⁻⁶/℃ (조정 가능)", enValue: "6–11 ×10⁻⁶/℃ (adjustable)", jaValue: "6~11 ×10⁻⁶/℃ (調整可能)", enLabel: "CTE", jaLabel: "熱膨張係数 (CTE)" },
-      { label: "평균 입도 D50", value: "3 ~ 15 µm (맞춤)", enValue: "3–15 µm (customizable)", jaValue: "3~15 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
+      { label: "평균 입도 D50", value: "3 ~ 20 µm (맞춤)", enValue: "3–20 µm (customizable)", jaValue: "3~20 µm (カスタム)", enLabel: "Mean D50", jaLabel: "平均粒度 D50" },
       { label: "납 함량 (Pb)", value: "≤ 100 ppm", enLabel: "Lead Content (Pb)", jaLabel: "鉛含有量 (Pb)" },
       { label: "포장", value: "5 / 10 kg 지대 · OEM", enValue: "5 / 10 kg bag · OEM", jaValue: "5 / 10 kg 紙袋 · OEM", enLabel: "Packaging", jaLabel: "包装" },
     ],
