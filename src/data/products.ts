@@ -905,11 +905,11 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "Eco-Friendly Lead-Free Composition · Low-Melting Sealing Glass Frit (SL-ZT)",
     jaTagline: "環境配慮型 無鉛組成 · 低融点封着ガラスフリット (SL-ZT)",
     description:
-      "SL-ZT 무연유리분말은 납(Pb)을 사용하지 않는 친환경 저융점 봉착 유리 프릿으로, RoHS·REACH 규제에 완전 부합합니다. 400 ~ 550℃의 저융점 특성과 우수한 접착·봉착 성능을 통해 전자 부품, 디스플레이, 태양전지, 세라믹·금속 봉착 등 고부가가치 응용에 사용됩니다.",
+      "SL-ZT 무연 유리 분말(Lead-Free Glass Powder) 시리즈는 환경 유해 물질인 납(Pb)을 완전히 배제하고, 친환경적인 조성으로 설계된 고순도 미세 유리 분말입니다. 본 제품은 기존 납계 유리 분말이 가지는 저온 소결성(低溫燒結性)과 우수한 유전 특성을 그대로 유지하면서도, RoHS, REACH 등 글로벌 환경 규제를 완벽하게 충족하는 친환경 대체 소재입니다.\n\n당사의 무연 유리 분말은 최첨단 용융-급냉 공정과 정밀 분쇄 기술을 통해 입도 분포가 균일하고, 비표면적이 일정하여 다양한 산업 현장에서 우수한 공정 안정성을 제공합니다. 특히, 유리 전이 온도(Tg)와 연화점(Sp)을 용도에 맞게 정밀 조절할 수 있어, 고온 공정이 필요한 전자 부품부터 정밀 코팅 재료까지 폭넓게 적용 가능합니다.",
     enDescription:
-      "SL-ZT Lead-Free Glass Powder is an eco-friendly low-melting sealing glass frit that eliminates lead (Pb), fully compliant with RoHS and REACH. With a low melting range of 400–550℃ and excellent adhesion/sealing performance, it is used in high-value applications such as electronic components, displays, solar cells, and ceramic/metal sealing.",
+      "The SL-ZT Lead-Free Glass Powder series is a high-purity micro glass powder designed with an eco-friendly composition that completely eliminates lead (Pb), an environmentally harmful substance. While preserving the low-temperature sinterability and excellent dielectric properties of conventional lead-based glass powders, this product fully satisfies global environmental regulations such as RoHS and REACH as a green alternative material.\n\nOur lead-free glass powder is manufactured through state-of-the-art melting-quenching and precision grinding technologies, delivering uniform particle size distribution and consistent specific surface area for excellent process stability across diverse industrial sites. In particular, the glass transition temperature (Tg) and softening point (Sp) can be precisely tuned to the application, making it suitable for a wide range of uses from electronic components requiring high-temperature processes to precision coating materials.",
     jaDescription:
-      "SL-ZT無鉛ガラス粉末は鉛(Pb)を使用しない環境配慮型の低融点封着ガラスフリットで、RoHS・REACH規制に完全準拠します。400~550℃の低融点特性と優れた接着・封着性能により、電子部品・ディスプレイ・太陽電池・セラミック/金属封着など高付加価値用途に使用されます。",
+      "SL-ZT無鉛ガラス粉末シリーズは、環境有害物質である鉛(Pb)を完全に排除し、環境配慮型の組成で設計された高純度微細ガラス粉末です。本製品は、従来の鉛系ガラス粉末が持つ低温焼結性と優れた誘電特性をそのまま維持しながら、RoHS、REACHなどのグローバル環境規制を完全に満たす環境配慮型代替素材です。\n\n当社の無鉛ガラス粉末は、最先端の溶融・急冷工程と精密粉砕技術を通じて粒度分布が均一で、比表面積が一定であり、様々な産業現場で優れた工程安定性を提供します。特に、ガラス転移温度(Tg)と軟化点(Sp)を用途に合わせて精密調整できるため、高温工程が必要な電子部品から精密コーティング材料まで幅広く適用可能です。",
     image: leadFreeGlassImg,
     category: "advanced-series",
     features: [
