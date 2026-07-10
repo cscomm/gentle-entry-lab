@@ -319,7 +319,133 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Silica Sand — Representative Products Table */}
+      {/* SL-SPH-300 — Particle Size & Chemistry Technical Tables */}
+      {product.slug === "sl-sph-300" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DATA
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">
+            🔬 {tri("입도 분석 및 화학 조성", "Particle Size Analysis & Chemistry", "粒度分析および化学組成")}
+          </h3>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-SPH-300은 화학합성 공정을 통해 좁고 균일한 아미크론급 입도 분포와 초고순도 조성을 동시에 실현합니다. 아래는 대표 TDS 데이터입니다.",
+              "SL-SPH-300 achieves a narrow, uniform submicron particle size distribution and ultra-high-purity composition through a chemical synthesis process. Representative TDS data below.",
+              "SL-SPH-300は化学合成プロセスにより、狭く均一なサブミクロン粒度分布と超高純度組成を同時に実現します。以下は代表TDSデータです。"
+            )}
+          </p>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {/* Particle Size Table */}
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="bg-primary/10 px-6 py-4">
+                <h4 className="text-lg font-bold text-foreground">
+                  📐 {tri("입도 분석 (Particle Size)", "Particle Size Analysis", "粒度分析")}
+                </h4>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-foreground text-background">
+                      <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("항목", "Item", "項目")}</th>
+                      <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("측정값", "Value", "測定値")}</th>
+                      <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("단위", "Unit", "単位")}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {[
+                      { item: tri("평균 입경 (D50)", "Mean Size (D50)", "平均粒径 (D50)"), val: "0.38", unit: "µm" },
+                      { item: tri("최대 입경 (D100)", "Max Size (D100)", "最大粒径 (D100)"), val: "≤ 0.8", unit: "µm" },
+                      { item: tri("비표면적 (SSA)", "Specific Surface Area", "比表面積 (SSA)"), val: "8.5", unit: "m²/g" },
+                      { item: tri("수분", "Moisture", "水分"), val: "0.12", unit: "%" },
+                      { item: "PH", val: "6.1", unit: "—" },
+                      { item: tri("전기전도도 (EC)", "Electrical Conductivity", "電気伝導度 (EC)"), val: "8.9", unit: "µS/cm" },
+                    ].map((r) => (
+                      <tr key={r.item} className="transition hover:bg-secondary/40">
+                        <td className="px-6 py-3 font-medium text-foreground">{r.item}</td>
+                        <td className="px-6 py-3 font-mono font-semibold text-primary">{r.val}</td>
+                        <td className="px-6 py-3 text-muted-foreground">{r.unit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Chemistry Table */}
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="bg-primary/10 px-6 py-4">
+                <h4 className="text-lg font-bold text-foreground">
+                  🧪 {tri("화학 조성 (Chemical Composition)", "Chemical Composition", "化学組成")}
+                </h4>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-foreground text-background">
+                      <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("성분", "Element", "成分")}</th>
+                      <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("측정값", "Value", "測定値")}</th>
+                      <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("단위", "Unit", "単位")}</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {[
+                      { item: "SiO₂", val: "99.98", unit: "%" },
+                      { item: "Fe", val: "1.5", unit: "ppm" },
+                      { item: "Cl⁻", val: "0.9", unit: "ppm" },
+                      { item: "Na⁺", val: "1.7", unit: "ppm" },
+                    ].map((r) => (
+                      <tr key={r.item} className="transition hover:bg-secondary/40">
+                        <td className="px-6 py-3 font-mono font-semibold text-foreground">{r.item}</td>
+                        <td className="px-6 py-3 font-mono font-semibold text-primary">{r.val}</td>
+                        <td className="px-6 py-3 text-muted-foreground">{r.unit}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          {/* SEM image + caption */}
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="grid gap-0 md:grid-cols-2">
+              <div className="aspect-square overflow-hidden bg-black">
+                <img
+                  src={product.image}
+                  alt={silicaAlt(pick(lang, product.name, product.enName, product.jaName))}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="p-8 md:p-10">
+                <span className="inline-block rounded-full border border-border bg-secondary/60 px-3 py-1 text-[10px] font-semibold tracking-[0.2em] text-muted-foreground">
+                  SEM IMAGE
+                </span>
+                <h4 className="mt-4 text-2xl font-bold">
+                  {tri(
+                    "완전 구상 · 균일 입도 확인",
+                    "Perfectly Spherical · Uniform PSD Verified",
+                    "完全球状 · 均一粒度を確認"
+                  )}
+                </h4>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  {tri(
+                    "SEM(주사전자현미경) 이미지에서 확인되는 바와 같이, SL-SPH-300은 응집 없이 개별 분산된 균일한 나노구상 입자로 구성됩니다. 완전 구형에 근접한 형상은 수지 매트릭스 내 최대 충전율(High Filler Loading)을 가능하게 하며, 컴파운드 점도를 획기적으로 낮춰 반도체 EMC·언더필·저유전 CCL의 성형성과 신뢰성을 동시에 향상시킵니다.",
+                    "As shown in the SEM (Scanning Electron Microscope) image, SL-SPH-300 consists of individually dispersed, uniform nano-spherical particles with virtually no agglomeration. Its near-perfect spherical morphology enables the highest filler loading in resin matrices while dramatically reducing compound viscosity — simultaneously improving processability and reliability in semiconductor EMC, underfill and low-Dk CCL.",
+                    "SEM(走査電子顕微鏡)画像で確認されるように、SL-SPH-300は凝集のない、個別に分散した均一なナノ球状粒子で構成されます。ほぼ完全な球形状は樹脂マトリックス中の最大充填率(高フィラーローディング)を可能にし、コンパウンド粘度を大幅に低減することで、半導体EMC・アンダーフィル・低誘電CCLの成形性と信頼性を同時に向上させます。"
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+
       {isSilicaSand && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <div className="flex items-center gap-3">
