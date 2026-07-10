@@ -1227,13 +1227,66 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
       "석영 유리 원료",
     ],
   },
+  "sl-sph-300": {
+    tagline: "SiO₂ 99.98% · D50 0.38 µm — 화학합성 아미크론급 고순도 나노구상실리카 (SL-SPH-300)",
+    enTagline: "SiO₂ 99.98% · D50 0.38 µm — Chemically Synthesized Submicron Ultra-High-Purity Nano Spherical Silica (SL-SPH-300)",
+    jaTagline: "SiO₂ 99.98% · D50 0.38µm — 化学合成サブミクロン級 高純度ナノ球状シリカ (SL-SPH-300)",
+    description:
+      "SL-SPH-300 고순도 나노구상실리카는 졸-겔(Sol-Gel) 기반의 화학합성법으로 제조된 아미크론(submicron)급 완전 구상 SiO₂ 분말입니다. 평균 입경 D50 0.38 µm의 초미세 나노구상 형상과 SiO₂ 99.98%(대표치)의 초고순도를 동시에 만족하며, 100% 무정형(Amorphous) 구조로 열적·화학적 안정성이 뛰어납니다.\n\n첨단 반도체 패키징 분야, 특히 M7급 고밀도 배선 기판, EMC(Epoxy Molding Compound), 언더필(Underfill), FO-WLP·FC-BGA 등 어드밴스드 패키징의 고신뢰성 충진재로 사용되며, 완전 구형에 가까운 입자 형상 덕분에 수지 대비 최대 충전율을 크게 높이면서도 슬러리·컴파운드 점도를 낮게 유지할 수 있습니다. Fe 1.5ppm, Cl⁻ 0.9ppm, Na⁺ 1.7ppm 수준의 극저 금속·이온 불순물은 α선 방출과 이온 마이그레이션을 억제하여 HBM, DDR5, AI 반도체의 소프트에러 저감과 장기 신뢰성 향상에 기여합니다.\n\n좁고 균일한 입도 분포(D100 ≤ 0.8 µm), 8.5 m²/g 수준의 안정된 비표면적, 그리고 세정 공정을 통해 관리된 낮은 전기전도도(EC 8.9 µS/cm)는 5G / 밀리미터파 고주파 기판, 저유전 CCL·프리프레그, 방열 실리콘, 정밀 세라믹, 광학 필름, 리튬이온 이차전지 세라믹 코팅 세퍼레이터 등 최고 수준의 전기·전자·에너지 소재 응용에 최적화된 성능을 제공합니다.",
+    enDescription:
+      "SL-SPH-300 Ultra-High-Purity Nano Spherical Silica is a submicron perfectly spherical SiO₂ powder produced by a sol-gel-based chemical synthesis process. It simultaneously delivers an ultra-fine mean particle size of D50 0.38 µm and an ultra-high SiO₂ purity of 99.98% (typical), with a fully amorphous structure that ensures excellent thermal and chemical stability.\n\nIt is used as a high-reliability filler for the most advanced semiconductor packaging — including M7-class high-density substrates, EMC (Epoxy Molding Compound), underfill, and FO-WLP / FC-BGA advanced packaging. Its near-perfect spherical morphology enables significantly higher filler loading in resin systems while keeping slurry and compound viscosity low. Extremely low metallic and ionic impurities (Fe 1.5 ppm, Cl⁻ 0.9 ppm, Na⁺ 1.7 ppm) suppress alpha-particle emission and ionic migration, contributing to soft-error reduction and long-term reliability in HBM, DDR5 and AI semiconductor devices.\n\nWith a narrow, uniform particle size distribution (D100 ≤ 0.8 µm), a stable specific surface area (~8.5 m²/g), and washed-process-controlled low electrical conductivity (EC 8.9 µS/cm), SL-SPH-300 delivers optimized performance for the most demanding electrical, electronic and energy-material applications — including 5G / millimeter-wave high-frequency substrates, low-Dk CCL / prepregs, thermally conductive silicones, precision ceramics, optical films, and ceramic-coated separators for lithium-ion batteries.",
+    jaDescription:
+      "SL-SPH-300 高純度ナノ球状シリカは、ゾルゲル法をベースとした化学合成プロセスで製造されるサブミクロン級の完全球状SiO₂粉末です。平均粒径D50 0.38 µmの超微細ナノ球状形状と、SiO₂純度99.98%(代表値)の超高純度を同時に実現し、100%非晶質(Amorphous)構造で熱的・化学的安定性に優れます。\n\n先端半導体パッケージ分野、特にM7級高密度配線基板、EMC(封止材)、アンダーフィル、FO-WLP・FC-BGAなどのアドバンスドパッケージにおける高信頼性充填材として使用され、ほぼ完全な球形状により樹脂への最大充填率を大幅に高めながらスラリー・コンパウンド粘度を低く保つことができます。Fe 1.5ppm・Cl⁻ 0.9ppm・Na⁺ 1.7ppmという極めて低い金属・イオン不純物レベルは、α線放出およびイオンマイグレーションを抑制し、HBM・DDR5・AI半導体のソフトエラー低減と長期信頼性向上に貢献します。\n\n狭く均一な粒度分布(D100 ≤ 0.8 µm)、8.5 m²/g水準の安定した比表面積、洗浄工程で管理された低電気伝導度(EC 8.9 µS/cm)により、5G/ミリ波高周波基板、低誘電CCL・プリプレグ、放熱シリコーン、精密セラミックス、光学フィルム、リチウムイオン二次電池のセラミックコーティングセパレーターなど、最高水準の電気・電子・エネルギー素材応用に最適化された性能を提供します。",
+    image: sphSemImg,
+    features: [
+      { title: "🧪 초고순도 SiO₂ 99.98%", desc: "화학합성 공정 · 반도체 그레이드 이상의 초고순도", enTitle: "🧪 Ultra-High Purity SiO₂ 99.98%", jaTitle: "🧪 超高純度SiO₂ 99.98%", enDesc: "Chemically synthesized — beyond semiconductor-grade purity", jaDesc: "化学合成プロセス · 半導体グレードを超える超高純度" },
+      { title: "⚪ 완전 구상 · 아미크론급", desc: "D50 0.38 µm · D100 ≤ 0.8 µm — 최고 수준의 구상도와 미세 입도", enTitle: "⚪ Perfectly Spherical · Submicron", jaTitle: "⚪ 完全球状 · サブミクロン級", enDesc: "D50 0.38 µm · D100 ≤ 0.8 µm — top-class sphericity and fineness", jaDesc: "D50 0.38 µm · D100 ≤ 0.8 µm — 最高水準の球形度と微細粒度" },
+      { title: "🧼 극저 이온·금속 불순물", desc: "Fe 1.5 ppm · Na⁺ 1.7 ppm · Cl⁻ 0.9 ppm — 소프트에러/마이그레이션 억제", enTitle: "🧼 Ultra-Low Ionic / Metallic Impurities", jaTitle: "🧼 極低イオン・金属不純物", enDesc: "Fe 1.5 ppm · Na⁺ 1.7 ppm · Cl⁻ 0.9 ppm — suppresses soft errors & migration", jaDesc: "Fe 1.5 ppm · Na⁺ 1.7 ppm · Cl⁻ 0.9 ppm — ソフトエラー・マイグレーションを抑制" },
+      { title: "🔬 100% 무정형(Amorphous)", desc: "저열팽창 · 우수한 열충격·화학 안정성", enTitle: "🔬 Fully Amorphous", jaTitle: "🔬 100%非晶質", enDesc: "Low CTE · excellent thermal-shock and chemical stability", jaDesc: "低熱膨張 · 優れた熱衝撃・化学安定性" },
+      { title: "💧 저 전기전도도 (EC 8.9 µS/cm)", desc: "정밀 세정 공정 관리 — 고신뢰성 전자 소재 최적", enTitle: "💧 Low Electrical Conductivity", jaTitle: "💧 低電気伝導度 (EC 8.9 µS/cm)", enDesc: "Controlled by precision washing — ideal for high-reliability electronics", jaDesc: "精密洗浄工程で管理 — 高信頼性電子素材に最適" },
+      { title: "⚡ 저유전·저점도 충전", desc: "고충전율 유지하며 낮은 유전율/점도 구현 — 5G·AI 반도체용", enTitle: "⚡ Low-Dk / Low-Viscosity Filling", jaTitle: "⚡ 低誘電・低粘度充填", enDesc: "High loading with low dielectric constant and viscosity — for 5G / AI semis", jaDesc: "高充填率を維持しつつ低誘電率/低粘度を実現 — 5G・AI半導体向け" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-SPH-300", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "백색 나노 미분말", enValue: "White nano-fine powder", jaValue: "白色ナノ微粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "형상", value: "완전 구상 (Spherical, Amorphous)", enValue: "Perfectly spherical (Amorphous)", jaValue: "完全球状 (非晶質)", enLabel: "Morphology", jaLabel: "形状" },
+      { label: "제조 공정", value: "화학합성 (Sol-Gel)", enValue: "Chemical Synthesis (Sol-Gel)", jaValue: "化学合成 (ゾルゲル法)", enLabel: "Process", jaLabel: "製造工程" },
+      { label: "SiO₂ (순도)", value: "99.98 % (대표치)", enValue: "99.98 % (typical)", jaValue: "99.98 % (代表値)", enLabel: "SiO₂ (Purity)", jaLabel: "SiO₂ (純度)" },
+      { label: "Fe", value: "1.5 ppm", enLabel: "Fe", jaLabel: "Fe" },
+      { label: "Cl⁻", value: "0.9 ppm", enLabel: "Cl⁻", jaLabel: "Cl⁻" },
+      { label: "Na⁺", value: "1.7 ppm", enLabel: "Na⁺", jaLabel: "Na⁺" },
+      { label: "평균 입도 D50", value: "0.38 µm", enLabel: "Mean Particle Size D50", jaLabel: "平均粒度 D50" },
+      { label: "최대 입도 D100", value: "≤ 0.8 µm", enValue: "≤ 0.8 µm", jaValue: "≤ 0.8 µm", enLabel: "Max Particle Size D100", jaLabel: "最大粒度 D100" },
+      { label: "비표면적 (SSA)", value: "8.5 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積 (SSA)" },
+      { label: "수분 (Moisture)", value: "0.12 %", enLabel: "Moisture", jaLabel: "水分 (Moisture)" },
+      { label: "PH", value: "6.1", enLabel: "PH", jaLabel: "PH" },
+      { label: "전기전도도 (EC)", value: "8.9 µS/cm", enLabel: "Electrical Conductivity (EC)", jaLabel: "電気伝導度 (EC)" },
+      { label: "포장", value: "5 / 10 kg 지대 · OEM 대응", enValue: "5 / 10 kg bag · OEM available", jaValue: "5 / 10 kg 紙袋 · OEM対応", enLabel: "Packaging", jaLabel: "包装" },
+      { label: "비고", value: "입도 및 표면처리 사양은 고객 요구에 따라 맞춤 대응", enValue: "PSD and surface treatment can be customized upon request", jaValue: "粒度および表面処理仕様は顧客要求に応じてカスタム対応", enLabel: "Note", jaLabel: "備考" },
+    ],
+    applications: [
+      "M7급 반도체 기판",
+      "반도체 EMC (Epoxy Molding Compound)",
+      "언더필 / 봉지재",
+      "어드밴스드 패키징 (FO-WLP · FC-BGA)",
+      "5G / 밀리미터파 고주파 기판",
+      "저유전 CCL / 프리프레그",
+      "고열전도 실리콘",
+      "정밀 세라믹 · 광학 필름",
+      "리튬이온 이차전지 세라믹 코팅 세퍼레이터",
+    ],
+  },
 };
 
+
 const generatedChildren: ProductDetail[] = [];
+const generatedSeen = new Set<string>();
 for (const parent of advSeriesProducts) {
   if (!parent.subModels) continue;
   for (const sm of parent.subModels) {
     if (!sm.slug) continue;
+    if (generatedSeen.has(sm.slug)) continue;
+    generatedSeen.add(sm.slug);
     const override = surfaceModelOverrides[sm.slug];
     const childName = sm.name ?? `${sm.code} ${parent.name}`;
     const childEnName = sm.enName ?? `${sm.code} · ${parent.enName}`;
