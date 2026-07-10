@@ -26,6 +26,7 @@ import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
 import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
+import sphSemImg from "@/assets/sl-sph-300-sem.png";
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
@@ -686,6 +687,7 @@ const advSeriesProducts: ProductDetail[] = [
     subModels: [
       { code: "SL-QG", slug: "sl-qg", spec: "일반 구상", enSpec: "Standard Spherical", jaSpec: "一般球状", name: "SL-QG 일반 구상 실리카 분말", enName: "SL-QG · Standard Spherical Silica Powder", jaName: "SL-QG 一般球状シリカ粉末" },
       { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사선(Low-α) 구상", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "SL-QG-L 저방사선 구상 실리카 분말", enName: "SL-QG-L · Low-Alpha Spherical Silica Powder", jaName: "SL-QG-L 低α線球状シリカ粉末" },
+      { code: "SL-SPH-300", slug: "sl-sph-300", spec: "화학합성 아미크론급 구상 (D50 0.38µm · SiO₂ 99.98%)", enSpec: "Chemically Synthesized Submicron Spherical (D50 0.38 µm · SiO₂ 99.98%)", jaSpec: "化学合成サブミクロン球状 (D50 0.38µm · SiO₂ 99.98%)", name: "SL-SPH-300 고순도 나노구상실리카", enName: "SL-SPH-300 · Ultra-High-Purity Nano Spherical Silica", jaName: "SL-SPH-300 高純度ナノ球状シリカ" },
     ],
     applications: ["반도체 EMC", "CCL / PCB", "언더필 / 봉지재", "고열전도 소재"],
   },
@@ -893,6 +895,7 @@ const advSeriesProducts: ProductDetail[] = [
       { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사", enSpec: "Crystalline Quartz Sand", jaSpec: "結晶石英砂", name: "SL-CS 결정 석영사", enName: "SL-CS · Crystalline Quartz Sand", jaName: "SL-CS 結晶石英砂" },
       { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂", name: "SL-FS 용융 석영사", enName: "SL-FS · Fused Quartz Sand", jaName: "SL-FS 溶融石英砂" },
       { code: "SL-HF04", slug: "sl-hf04", spec: "고순도 용융 실리카 분말 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fused Silica Powder (SiO₂ 99.96% · D50 3.8 µm)", jaSpec: "高純度溶融シリカ粉末 (SiO₂ 99.96% · D50 3.8µm)", name: "SL-HF04 고순도 용융 실리카 분말", enName: "SL-HF04 · Ultra-High-Purity Fused Silica Powder", jaName: "SL-HF04 高純度溶融シリカ粉末" },
+      { code: "SL-SPH-300", slug: "sl-sph-300", spec: "화학합성 나노구상 (D50 0.38µm · SiO₂ 99.98%)", enSpec: "Chemically Synthesized Nano-Spherical (D50 0.38 µm · SiO₂ 99.98%)", jaSpec: "化学合成ナノ球状 (D50 0.38µm · SiO₂ 99.98%)", name: "SL-SPH-300 고순도 나노구상실리카", enName: "SL-SPH-300 · Ultra-High-Purity Nano Spherical Silica", jaName: "SL-SPH-300 高純度ナノ球状シリカ" },
     ],
     applications: ["유리 원료", "정밀 주조", "연마재", "워터 필터", "스포츠 표면재"],
   },
