@@ -59,8 +59,8 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "hero1.title": { ko: "Silica: Nature's Gift to the Future.", en: "Silica: Nature's Gift to the Future.", ja: "Silica: Nature's Gift to the Future." },
   "hero1.sub": { ko: "Technology that Leads Industry", en: "Technology that Leads Industry", ja: "Technology that Leads Industry" },
   "hero1.desc": {
-    ko: "Fused Silica부터 Nano Silica까지,\n고순도 실리카의 모든 것을 한곳에서.\n각 산업군에 맞는 맞춤형 초고순도 실리카 소재를 공급합니다.",
-    en: "From Fused Silica to Nano Silica,\nall high-purity silica in one place.\nWe supply custom ultra-high-purity silica materials tailored to every industry.", ja: "Fused SilicaからNano Silicaまで、\n高純度シリカのすべてを一か所で。\n各産業に最適なカスタム型超高純度シリカ素材を供給します。" },
+    ko: "각 산업군이 요구하는 엄격한 기준에 맞추어,\n고정밀·초고순도 맞춤형 실리카 소재를 공급합니다.",
+    en: "Aligned with the stringent standards each industry demands,\nwe supply high-precision, custom ultra-high-purity silica materials.", ja: "各産業が求める厳しい基準に合わせ、\n高精度・超高純度のカスタムシリカ素材を供給します。" },
   "hero2.title": { ko: "High-Purity Silica Powder", en: "High-Purity Silica Powder", ja: "High-Purity Silica Powder" },
   "hero2.sub": { ko: "A New Standard for Precision Industries", en: "A New Standard for Precision Industries", ja: "A New Standard for Precision Industries" },
   "hero2.desc": {
