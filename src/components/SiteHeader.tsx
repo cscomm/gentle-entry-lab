@@ -99,6 +99,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
                         .filter((p) => p.category === "advanced-series" && p.isCategoryIndex)
+                        .sort((a, b) => (a.slug === "fused-silica" ? -1 : b.slug === "fused-silica" ? 1 : 0))
                         .map((p) => (
                           <Link
                             key={p.slug}
@@ -187,6 +188,15 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                 {item.dropdown === "applications" && (
                   <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
+                      <Link
+                        to="/applications/fused-silica/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "溶融シリカ" : lang === "en" ? "Fused Silica" : "용융실리카"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Fused Silica</div>
+                        )}
+                      </Link>
                       {productCatalog
                         .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade"].includes(p.slug))
                         .map((p) => (
@@ -202,15 +212,6 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                             )}
                           </Link>
                         ))}
-                      <Link
-                        to="/applications/fused-silica/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "溶融シリカ" : lang === "en" ? "Fused Silica" : "용융실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Fused Silica</div>
-                        )}
-                      </Link>
                       <Link
                         to="/applications/precipitated-silica/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"

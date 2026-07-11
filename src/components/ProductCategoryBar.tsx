@@ -6,13 +6,13 @@ import { useLang } from "@/contexts/LanguageContext";
 
 const categories: { label: string; en: string; ja: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products", ja: "全製品", href: "/#products" },
+  { label: "용융실리카", en: "Fused Silica", ja: "溶融シリカ", slug: "fused-silica" },
   { label: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末", slug: "spherical-silica-powder" },
   { label: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末", slug: "round-corner-silica-powder" },
   { label: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末", slug: "angular-silica-powder" },
   { label: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末", slug: "low-radiation-silica-powder" },
   { label: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末", slug: "surface-modified-silica-powder" },
   { label: "실리카 분말·입자", en: "Silica Powder & Granule", ja: "シリカパウダー・粒", slug: "silica-sand-granule" },
-  { label: "용융실리카", en: "Fused Silica", ja: "溶融シリカ", slug: "fused-silica" },
   { label: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ", href: "/products/fumed-silica" },
   { label: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末", slug: "lead-free-glass-powder" },
