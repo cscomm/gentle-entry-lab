@@ -432,8 +432,9 @@ const Index = () => {
               <div className="mt-8 grid gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.name")}</label>
+                    <label htmlFor="contact-name" className="text-xs uppercase tracking-wider text-background/60">{t("form.name")}</label>
                     <Input
+                      id="contact-name"
                       name="이름"
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
@@ -442,8 +443,9 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.phone")}</label>
+                    <label htmlFor="contact-phone" className="text-xs uppercase tracking-wider text-background/60">{t("form.phone")}</label>
                     <Input
+                      id="contact-phone"
                       name="연락처"
                       type="tel"
                       value={form.phone}
@@ -455,8 +457,9 @@ const Index = () => {
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.email")}</label>
+                    <label htmlFor="contact-email" className="text-xs uppercase tracking-wider text-background/60">{t("form.email")}</label>
                     <Input
+                      id="contact-email"
                       name="이메일"
                       type="email"
                       value={form.email}
@@ -466,8 +469,9 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label className="text-xs uppercase tracking-wider text-background/60">{t("form.company")}</label>
+                    <label htmlFor="contact-company" className="text-xs uppercase tracking-wider text-background/60">{t("form.company")}</label>
                     <Input
+                      id="contact-company"
                       name="회사명"
                       value={form.company}
                       onChange={(e) => setForm({ ...form, company: e.target.value })}
@@ -477,8 +481,9 @@ const Index = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="text-xs uppercase tracking-wider text-background/60">{t("form.message")}</label>
+                  <label htmlFor="contact-message" className="text-xs uppercase tracking-wider text-background/60">{t("form.message")}</label>
                   <Textarea
+                    id="contact-message"
                     name="문의내용"
                     value={form.message}
                     onChange={(e) =>
@@ -491,6 +496,7 @@ const Index = () => {
                     {form.message.length}/500자
                   </div>
                 </div>
+
                 <Button
                   type="submit"
                   size="lg"

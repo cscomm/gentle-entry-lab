@@ -122,6 +122,33 @@ const ProductDetail = () => {
     }
   }, [location.hash, slug]);
 
+  useEffect(() => {
+    if (!product) return;
+    const name = pick(lang, product.name, product.enName, product.jaName);
+    const description = pick(lang, product.description, product.enDescription, product.jaDescription);
+    const url = `https://silica.co.kr${location.pathname.endsWith("/") ? location.pathname : location.pathname + "/"}`;
+    const image = product.image?.startsWith("http") ? product.image : `https://silica.co.kr${product.image ?? ""}`;
+    const ld = {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      name,
+      description,
+      image,
+      url,
+      sku: product.slug,
+      brand: { "@type": "Brand", name: "SiLiCA" },
+      manufacturer: { "@type": "Organization", name: "SiLiCA", url: "https://silica.co.kr/" },
+    };
+    const el = document.createElement("script");
+    el.type = "application/ld+json";
+    el.dataset.jsonld = "product";
+    el.textContent = JSON.stringify(ld);
+    document.head.querySelectorAll('script[data-jsonld="product"]').forEach((n) => n.remove());
+    document.head.appendChild(el);
+    return () => { el.remove(); };
+  }, [product, lang, location.pathname]);
+
+
   if (!product) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-background text-foreground">
