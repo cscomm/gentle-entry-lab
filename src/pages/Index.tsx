@@ -55,8 +55,10 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
   { label: "규사", en: "Silica Sand", slug: "silica-sand" },
   { label: "규사분말", en: "Silica Powder", slug: "silica-powder" },
+  { label: "실리카졸", en: "Silica Sol", slug: "silica-sol" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
 ];
+
 
 
 
