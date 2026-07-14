@@ -1394,6 +1394,169 @@ productCatalog.push({
 });
 
 
+// ============= Silica Sol (Colloidal Silica) — category index + 2 children =============
+const silicaSolCommonApps = [
+  "정밀 주조 (인베스트먼트 캐스팅) 셸 몰드",
+  "내화·불소계 코팅 및 도료 바인더",
+  "제지·섬유·부직포 표면 개질",
+  "촉매 담체 및 촉매 바인더",
+  "리튬이온 이차전지 세라믹 코팅 세퍼레이터",
+  "반도체 CMP 슬러리 원료",
+  "실리카·알루미나·지르코니아 세라믹 결합제",
+  "친환경 무기 접착제·경화제",
+  "표면 하드코팅·안티슬립·안티글레어 코팅",
+];
+const silicaSolCommonAppsEn = [
+  "Investment-casting shell binder",
+  "Refractory and inorganic coating binder",
+  "Paper / textile / nonwoven surface modification",
+  "Catalyst support and catalyst binder",
+  "Ceramic-coated separators for lithium-ion batteries",
+  "Feedstock for semiconductor CMP slurry",
+  "Ceramic binder for silica / alumina / zirconia bodies",
+  "Eco-friendly inorganic adhesive and hardener",
+  "Hard, anti-slip and anti-glare surface coatings",
+];
+
+productCatalog.push({
+  slug: "silica-sol",
+  name: "실리카졸 (콜로이달 실리카)",
+  enName: "Silica Sol (Colloidal Silica)",
+  jaName: "シリカゾル (コロイダルシリカ)",
+  tagline: "10 ~ 12 nm 초미립 · 암모니아 안정형 고순도 콜로이달 실리카 라인업",
+  enTagline: "10–12 nm Ultrafine, Ammonia-Stabilized High-Purity Colloidal Silica Lineup",
+  jaTagline: "10~12 nm 超微粒 · アンモニア安定型 高純度コロイダルシリカラインアップ",
+  description:
+    "SL 실리카졸은 물속에 10~12 nm 크기의 초미립 비정질 SiO₂ 나노 입자가 균일하게 분산된 유백색 반투명 콜로이드 용액으로, 암모니아(NH₃) 계열로 안정화된 신형(New Type) 라인업입니다. 넓은 비표면적(약 200~260 m²/g)과 우수한 콜로이드 안정성을 바탕으로 정밀 주조(인베스트먼트 캐스팅)의 셸 몰드 바인더, 내화·세라믹 코팅제, 촉매 담체, 제지·섬유 표면 개질, 반도체 CMP 슬러리 원료, 리튬이온 이차전지 세라믹 코팅 세퍼레이터 등 첨단·전통 산업을 폭넓게 커버합니다.\n\nSiLiCA는 SiO₂ 함량과 알칼리(Na₂O) 수준에 따라 SL-JA25(25~26%)와 SL-JA30(30~31%) 두 가지 표준 그레이드를 공급하며, 고객의 슬러리 배합·바인더 함량·pH 요구에 맞추어 농도, 입자경, 안정제 계열(NH₃/Na)까지 맞춤 대응이 가능합니다. 전 제품은 중국 원산으로 안정된 대량 공급 체계를 갖추고 있으며, 25 kg / 200 kg / 1,000 kg IBC 등 다양한 포장 옵션으로 국내외에 공급됩니다.",
+  enDescription:
+    "SL Silica Sol is a milky-white translucent colloidal solution in which 10–12 nm ultrafine amorphous SiO₂ nanoparticles are uniformly dispersed in water, stabilized with an ammonia (NH₃) system as a New-Type product line. Its very large specific surface area (~200–260 m²/g) and excellent colloidal stability make it suitable for investment-casting shell binders, refractory and ceramic coatings, catalyst supports, paper and textile surface modification, semiconductor CMP slurry feedstock and ceramic-coated separators for lithium-ion batteries.\n\nSiLiCA offers two standard grades — SL-JA25 (SiO₂ 25–26%) and SL-JA30 (SiO₂ 30–31%) — with customizable concentration, particle size and stabilizer system (NH₃/Na) to match customer slurry, binder and pH requirements. All products are of Chinese origin with a stable mass-supply chain, and are shipped in 25 kg / 200 kg / 1,000 kg IBC packaging.",
+  jaDescription:
+    "SLシリカゾルは、水中に10~12 nmの超微粒非晶質SiO₂ナノ粒子を均一に分散させた乳白色半透明のコロイド溶液で、アンモニア(NH₃)系で安定化した新型(New Type)ラインアップです。約200~260 m²/gの大きな比表面積と優れたコロイド安定性を活かし、精密鋳造(インベストメント鋳造)のシェルバインダー、耐火・セラミックコーティング、触媒担体、製紙・繊維の表面改質、半導体CMPスラリー原料、リチウムイオン二次電池のセラミックコーティングセパレーターなど、先端・伝統産業を幅広くカバーします。\n\nSiLiCAはSiO₂濃度とアルカリ(Na₂O)レベルに応じてSL-JA25(25~26%)およびSL-JA30(30~31%)の2種標準グレードを供給し、スラリー配合・バインダー含量・pH要求に合わせて濃度・粒子径・安定剤系(NH₃/Na)までカスタム対応が可能です。全製品は中国原産で安定した量産供給体制を備え、25 kg / 200 kg / 1,000 kg IBCなど多様な包装で供給します。",
+  image: silicaSolImg,
+  detailImage: silicaSolImg,
+  category: "quartz",
+  isCategoryIndex: true,
+  features: [
+    { title: "💧 10~12 nm 초미립 나노 실리카", desc: "균일한 나노 입자경으로 미세 기공 침투·박막 코팅 최적", enTitle: "💧 10–12 nm Ultrafine Nano Silica", jaTitle: "💧 10~12 nm 超微粒ナノシリカ", enDesc: "Uniform nano particle size — ideal for fine-pore penetration and thin-film coating", jaDesc: "均一なナノ粒子径で微細細孔浸透・薄膜コーティングに最適" },
+    { title: "🧪 암모니아 안정형(New Type)", desc: "NH₃ 안정화로 저 Na⁺·저 이온성 — 반도체·전지용 세라믹 코팅 대응", enTitle: "🧪 Ammonia-Stabilized (New Type)", jaTitle: "🧪 アンモニア安定型 (New Type)", enDesc: "NH₃ system — low Na⁺ / low ionic content for semiconductor and battery ceramic coating", jaDesc: "NH₃安定化で低Na⁺・低イオン性 — 半導体・電池向けセラミックコーティングに対応" },
+    { title: "🌡️ 우수한 내열성·소결성", desc: "고온 소성 시 잔류물 최소 · 순수 SiO₂ 결합제 형성", enTitle: "🌡️ Excellent Heat & Sintering Performance", jaTitle: "🌡️ 優れた耐熱性・焼結性", enDesc: "Minimal residue on firing — forms a pure SiO₂ binder network", jaDesc: "高温焼成時の残留物が最少 · 純粋SiO₂結合ネットワークを形成" },
+    { title: "🧱 강력한 결합력", desc: "정밀 주조 셸 강도·내화 코팅 밀착력 극대화", enTitle: "🧱 Strong Binding Power", jaTitle: "🧱 強力な結合力", enDesc: "Maximizes investment-shell strength and refractory-coating adhesion", jaDesc: "精密鋳造シェル強度・耐火コーティング密着力を極大化" },
+    { title: "🌿 친환경 · 무기 · 무독성", desc: "VOC-Free · 유기 바인더 대체 친환경 무기 소재", enTitle: "🌿 Eco-Friendly · Inorganic · Non-Toxic", jaTitle: "🌿 環境配慮 · 無機 · 無毒性", enDesc: "VOC-free — inorganic replacement for organic binders", jaDesc: "VOCフリー · 有機バインダー代替の環境配慮型無機素材" },
+    { title: "🎛️ 2종 표준 그레이드 · 맞춤 대응", desc: "SL-JA25 / SL-JA30 표준 + 농도·입자경·안정제 커스텀", enTitle: "🎛️ Two Standard Grades · Custom Supply", jaTitle: "🎛️ 2種標準グレード · カスタム対応", enDesc: "SL-JA25 / SL-JA30 standard + custom concentration / particle size / stabilizer", jaDesc: "SL-JA25 / SL-JA30 標準 + 濃度・粒子径・安定剤カスタム" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "SL-JA25 / SL-JA30 (신형·NH₃ 안정형)", enValue: "SL-JA25 / SL-JA30 (New Type · NH₃-stabilized)", jaValue: "SL-JA25 / SL-JA30 (新型・NH₃安定型)", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "외관", value: "유백색 반투명 콜로이드 액", enValue: "Milky-white translucent colloidal liquid", jaValue: "乳白色半透明のコロイド液", enLabel: "Appearance", jaLabel: "外観" },
+    { label: "SiO₂ 함량", value: "25 ~ 31 %", enLabel: "SiO₂ Content", jaLabel: "SiO₂含有量" },
+    { label: "평균 입자경", value: "10 ~ 12 nm", enLabel: "Mean Particle Size", jaLabel: "平均粒子径" },
+    { label: "비표면적 (SSA)", value: "약 200 ~ 260 m²/g", enValue: "~200–260 m²/g", jaValue: "約200~260 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積 (SSA)" },
+    { label: "pH", value: "9.0 ~ 9.8", enLabel: "pH", jaLabel: "pH" },
+    { label: "밀도", value: "1.19 ~ 1.21 g/cm³", enLabel: "Density", jaLabel: "密度" },
+    { label: "안정제", value: "NH₃ (신형) · Na 계열 커스텀 대응", enValue: "NH₃ (New Type) · Na-system on request", jaValue: "NH₃(新型) · Na系カスタム対応", enLabel: "Stabilizer", jaLabel: "安定剤" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+    { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC", enLabel: "Packaging", jaLabel: "包装" },
+  ],
+  subModelsColumnLabel: { ko: "그레이드", en: "Grade", ja: "グレード" },
+  subModels: [
+    { code: "SL-JA25", slug: "sl-ja25", spec: "SiO₂ 25~26% · 10~12 nm · NH₃ 안정형", enSpec: "SiO₂ 25–26% · 10–12 nm · NH₃-stabilized", jaSpec: "SiO₂ 25~26% · 10~12 nm · NH₃安定型", name: "SL-JA25 실리카졸", enName: "SL-JA25 · Silica Sol", jaName: "SL-JA25 シリカゾル" },
+    { code: "SL-JA30", slug: "sl-ja30", spec: "SiO₂ 30~31% · 10~11.5 nm · NH₃ 안정형", enSpec: "SiO₂ 30–31% · 10–11.5 nm · NH₃-stabilized", jaSpec: "SiO₂ 30~31% · 10~11.5 nm · NH₃安定型", name: "SL-JA30 실리카졸", enName: "SL-JA30 · Silica Sol", jaName: "SL-JA30 シリカゾル" },
+  ],
+  applications: silicaSolCommonApps,
+});
+
+const silicaSolChildren: ProductDetail[] = [
+  {
+    slug: "sl-ja25",
+    name: "SL-JA25 실리카졸",
+    enName: "SL-JA25 · Silica Sol (New Type)",
+    jaName: "SL-JA25 シリカゾル (新型)",
+    tagline: "SiO₂ 25~26% · 10~12 nm · NH₃ 안정형 표준 콜로이달 실리카",
+    enTagline: "SiO₂ 25–26% · 10–12 nm · NH₃-Stabilized Standard Colloidal Silica",
+    jaTagline: "SiO₂ 25~26% · 10~12 nm · NH₃安定型 標準コロイダルシリカ",
+    description:
+      "SL-JA25는 SiO₂ 25~26% 농도, 평균 입경 10~12 nm의 암모니아(NH₃) 안정형 신형 콜로이달 실리카입니다. 낮은 알칼리(Na₂O ≤ 0.03%)와 우수한 콜로이드 안정성을 바탕으로 정밀 주조 셸 몰드 바인더, 내화 도료, 세라믹 코팅, 촉매 담체, 리튬 이차전지 세라믹 세퍼레이터 코팅 등 저 이온·저 잔류물이 요구되는 응용에 최적화된 표준 그레이드입니다. 원산지는 중국이며, 25 kg / 200 kg / 1,000 kg IBC 포장으로 안정 공급됩니다.",
+    enDescription:
+      "SL-JA25 is an ammonia (NH₃) stabilized New-Type colloidal silica with SiO₂ 25–26% and a mean particle size of 10–12 nm. With low alkali (Na₂O ≤ 0.03%) and excellent colloidal stability, it is the standard grade for applications requiring low ionic content and low residue — investment-casting shell binders, refractory paints, ceramic coatings, catalyst supports and ceramic-coated separators for lithium-ion batteries. Made in China; supplied in 25 kg / 200 kg drums and 1,000 kg IBCs.",
+    jaDescription:
+      "SL-JA25はSiO₂ 25~26%、平均粒子径10~12 nmのアンモニア(NH₃)安定型・新型コロイダルシリカです。低アルカリ(Na₂O ≤ 0.03%)と優れたコロイド安定性を活かし、精密鋳造シェルバインダー、耐火塗料、セラミックコーティング、触媒担体、リチウム二次電池のセラミックセパレーターコーティングなど低イオン・低残留物が求められる用途に最適な標準グレードです。原産地は中国、25 kg / 200 kg ドラム · 1,000 kg IBCで安定供給します。",
+    image: silicaSolImg,
+    detailImage: silicaSolImg,
+    category: "quartz",
+    parentSlug: "silica-sol",
+    features: [
+      { title: "💧 SiO₂ 25 ~ 26 %", desc: "저농도·저점도 표준 그레이드 — 침투성·분산성 우수", enTitle: "💧 SiO₂ 25–26 %", jaTitle: "💧 SiO₂ 25 ~ 26 %", enDesc: "Low-concentration, low-viscosity standard grade — excellent penetration and dispersion", jaDesc: "低濃度・低粘度の標準グレード — 浸透性・分散性に優れる" },
+      { title: "🧪 저 Na₂O ≤ 0.03 %", desc: "낮은 알칼리 · 저 이온성 — 전자·전지 코팅 대응", enTitle: "🧪 Low Na₂O ≤ 0.03 %", jaTitle: "🧪 低Na₂O ≤ 0.03 %", enDesc: "Low alkali / ionic content for electronics and battery coating", jaDesc: "低アルカリ・低イオン性で電子・電池コーティングに対応" },
+      { title: "🔬 평균 입경 10 ~ 12 nm", desc: "초미립 · 넓은 비표면적 → 강한 결합력·소결성", enTitle: "🔬 Mean 10–12 nm", jaTitle: "🔬 平均粒子径 10 ~ 12 nm", enDesc: "Ultrafine, high SSA — strong binding and sintering", jaDesc: "超微粒・高比表面積 → 強い結合力・焼結性" },
+      { title: "🌡️ 우수한 소결성", desc: "고온 소성 시 순수 SiO₂ 결합상 형성", enTitle: "🌡️ Excellent Sintering", jaTitle: "🌡️ 優れた焼結性", enDesc: "Pure SiO₂ binder phase upon firing", jaDesc: "高温焼成時に純粋SiO₂結合相を形成" },
+      { title: "🏭 안정 대량 공급 (중국 원산)", desc: "IBC/드럼 다양한 포장 · 대량 프로젝트 대응", enTitle: "🏭 Mass Supply (Made in China)", jaTitle: "🏭 大量供給 (中国原産)", enDesc: "IBC/drum packaging — supports large-volume projects", jaDesc: "IBC/ドラム多様な包装 · 大量プロジェクト対応" },
+      { title: "🌿 VOC-Free 친환경 무기", desc: "유기 바인더 대체 · 환경 규제 대응", enTitle: "🌿 VOC-Free · Inorganic", jaTitle: "🌿 VOCフリー · 無機", enDesc: "Replaces organic binders — complies with environmental regulations", jaDesc: "有機バインダー代替 · 環境規制対応" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-JA25", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "타입", value: "신형 (New Type) · NH₃ 안정형", enValue: "New Type · NH₃-stabilized", jaValue: "新型 (New Type) · NH₃安定型", enLabel: "Type", jaLabel: "タイプ" },
+      { label: "외관", value: "유백색 반투명 콜로이드 액", enValue: "Milky-white translucent colloidal liquid", jaValue: "乳白色半透明のコロイド液", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂", value: "25 ~ 26 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Na₂O", value: "≤ 0.03 %", enLabel: "Na₂O", jaLabel: "Na₂O" },
+      { label: "pH", value: "9.0 ~ 9.6", enLabel: "pH", jaLabel: "pH" },
+      { label: "점도 (Viscosity)", value: "≤ 7.0 mPa·s", enLabel: "Viscosity", jaLabel: "粘度 (Viscosity)" },
+      { label: "밀도 (Density)", value: "1.19 ~ 1.21 g/cm³", enLabel: "Density", jaLabel: "密度 (Density)" },
+      { label: "평균 입자경", value: "10 ~ 12 nm", enLabel: "Mean Particle Size", jaLabel: "平均粒子径" },
+      { label: "안정제", value: "NH₃ (암모니아 안정형)", enValue: "NH₃ (ammonia-stabilized)", jaValue: "NH₃ (アンモニア安定型)", enLabel: "Stabilizer", jaLabel: "安定剤" },
+      { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+      { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    applications: silicaSolCommonApps,
+  },
+  {
+    slug: "sl-ja30",
+    name: "SL-JA30 실리카졸",
+    enName: "SL-JA30 · Silica Sol (New Type)",
+    jaName: "SL-JA30 シリカゾル (新型)",
+    tagline: "SiO₂ 30~31% · 10~11.5 nm · NH₃ 안정형 고농도 콜로이달 실리카",
+    enTagline: "SiO₂ 30–31% · 10–11.5 nm · NH₃-Stabilized High-Concentration Colloidal Silica",
+    jaTagline: "SiO₂ 30~31% · 10~11.5 nm · NH₃安定型 高濃度コロイダルシリカ",
+    description:
+      "SL-JA30은 SiO₂ 30~31% 고농도, 평균 입경 10~11.5 nm의 암모니아(NH₃) 안정형 신형 콜로이달 실리카로, 비표면적 198~258 m²/g 수준의 초미립 나노 입자를 균일하게 분산시킨 유백색 반투명 콜로이드 액입니다. 고농도 SiO₂ 특성 덕분에 동일 사용량 대비 더 강한 결합력·소결 강도를 확보할 수 있어 정밀 주조 셸 몰드, 내화 코팅, 세라믹 결합제, 촉매 담체, 이차전지 세라믹 세퍼레이터 코팅, CMP 슬러리 원료 등 고성능이 요구되는 응용에 특히 적합합니다. 원산지는 중국이며, 다양한 포장 옵션으로 안정 대량 공급됩니다.",
+    enDescription:
+      "SL-JA30 is an ammonia (NH₃) stabilized New-Type colloidal silica with high SiO₂ content of 30–31% and a mean particle size of 10–11.5 nm. Its ultrafine nanoparticles (SSA 198–258 m²/g) are uniformly dispersed in water as a milky-white translucent colloid. The higher SiO₂ concentration delivers greater binding force and sintering strength per unit dose, making SL-JA30 particularly suitable for investment-casting shell molds, refractory coatings, ceramic binders, catalyst supports, ceramic-coated separators for secondary batteries and CMP slurry feedstock. Made in China; stable mass supply.",
+    jaDescription:
+      "SL-JA30はSiO₂ 30~31%の高濃度、平均粒子径10~11.5 nmのアンモニア(NH₃)安定型・新型コロイダルシリカで、比表面積198~258 m²/gの超微粒ナノ粒子を均一に分散させた乳白色半透明のコロイド液です。高濃度SiO₂により同量使用時により強い結合力・焼結強度を確保でき、精密鋳造シェルバインダー、耐火コーティング、セラミック結合剤、触媒担体、二次電池セラミックセパレーターコーティング、CMPスラリー原料など高性能が求められる用途に特に適します。原産地は中国、多様な包装で安定量産供給します。",
+    image: silicaSolImg,
+    detailImage: silicaSolImg,
+    category: "quartz",
+    parentSlug: "silica-sol",
+    features: [
+      { title: "💧 고농도 SiO₂ 30 ~ 31 %", desc: "동일 사용량 · 더 강한 결합력 및 소결 강도", enTitle: "💧 High SiO₂ 30–31 %", jaTitle: "💧 高濃度 SiO₂ 30 ~ 31 %", enDesc: "Stronger binding and sintering strength per unit dose", jaDesc: "同量使用でより強い結合力・焼結強度" },
+      { title: "🔬 평균 입경 10 ~ 11.5 nm", desc: "초미립 나노 분산 · 미세 기공 침투성 우수", enTitle: "🔬 Mean 10–11.5 nm", jaTitle: "🔬 平均粒子径 10 ~ 11.5 nm", enDesc: "Ultrafine nano dispersion — excellent fine-pore penetration", jaDesc: "超微粒ナノ分散 · 微細細孔浸透性に優れる" },
+      { title: "🧪 SSA 198 ~ 258 m²/g", desc: "매우 넓은 비표면적 · 강한 결합·촉매 담지력", enTitle: "🧪 SSA 198–258 m²/g", jaTitle: "🧪 SSA 198 ~ 258 m²/g", enDesc: "Very high SSA — strong binding and catalyst-loading capacity", jaDesc: "非常に大きい比表面積 · 強い結合・触媒担持力" },
+      { title: "🌡️ 우수한 소결·내열", desc: "고온 소성 시 순수 SiO₂ 결합상 · 저 잔류물", enTitle: "🌡️ Excellent Sintering / Heat", jaTitle: "🌡️ 優れた焼結性・耐熱", enDesc: "Pure SiO₂ phase and low residue on firing", jaDesc: "高温焼成時に純粋SiO₂結合相・低残留物" },
+      { title: "🧱 정밀 주조 셸 강도 극대화", desc: "고농도 실리카졸 → 셸 몰드 강도·박리 저항성 향상", enTitle: "🧱 Max Investment-Shell Strength", jaTitle: "🧱 精密鋳造シェル強度を最大化", enDesc: "High-concentration sol boosts shell strength and delamination resistance", jaDesc: "高濃度シリカゾルでシェル強度・剥離耐性を向上" },
+      { title: "🏭 중국 원산 · 대량 공급", desc: "IBC/드럼 다양한 포장으로 대형 프로젝트 대응", enTitle: "🏭 Made in China · Mass Supply", jaTitle: "🏭 中国原産 · 大量供給", enDesc: "IBC/drum packaging for large-scale projects", jaDesc: "IBC/ドラム多様な包装で大型プロジェクトに対応" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-JA30", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "타입", value: "신형 (New Type) · NH₃ 안정형", enValue: "New Type · NH₃-stabilized", jaValue: "新型 (New Type) · NH₃安定型", enLabel: "Type", jaLabel: "タイプ" },
+      { label: "외관", value: "유백색 반투명 콜로이드 액", enValue: "Milky-white translucent colloidal liquid", jaValue: "乳白色半透明のコロイド液", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂", value: "30 ~ 31 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Na₂O", value: "≤ 0.06 %", enLabel: "Na₂O", jaLabel: "Na₂O" },
+      { label: "pH", value: "9.5 ~ 9.8", enLabel: "pH", jaLabel: "pH" },
+      { label: "점도 (Viscosity)", value: "≤ 7.0 mPa·s", enLabel: "Viscosity", jaLabel: "粘度 (Viscosity)" },
+      { label: "밀도 (Density)", value: "1.19 ~ 1.21 g/cm³", enLabel: "Density", jaLabel: "密度 (Density)" },
+      { label: "평균 입자경", value: "10 ~ 11.5 nm", enLabel: "Mean Particle Size", jaLabel: "平均粒子径" },
+      { label: "비표면적 (SSA)", value: "198 ~ 258 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積 (SSA)" },
+      { label: "안정제", value: "NH₃ (암모니아 안정형)", enValue: "NH₃ (ammonia-stabilized)", jaValue: "NH₃ (アンモニア安定型)", enLabel: "Stabilizer", jaLabel: "安定剤" },
+      { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+      { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    applications: silicaSolCommonApps,
+  },
+];
+productCatalog.push(...silicaSolChildren);
+
+
+
+
+
 
 
 
