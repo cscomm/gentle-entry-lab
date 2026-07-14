@@ -27,6 +27,7 @@ import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
+import silicaSolImg from "@/assets/silica-sol.png";
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
