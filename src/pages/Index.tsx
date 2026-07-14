@@ -38,6 +38,7 @@ import lowRadImg from "@/assets/low-radiation-silica-powder.jpg";
 import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
 import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
+import silicaSolImg from "@/assets/silica-sol.png";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
