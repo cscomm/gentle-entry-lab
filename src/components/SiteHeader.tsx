@@ -113,7 +113,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                           </Link>
                         ))}
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade"].includes(p.slug))
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade", "silica-sol", "sl-ja25", "sl-ja30"].includes(p.slug))
                         .map((p) => (
                           <Link
                             key={p.slug}
@@ -163,21 +163,30 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         )}
                       </Link>
                       <Link
-                        to="/products/high-purity-quartz/"
+                        to="/products/silica-sol/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
-                        <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
+                        <div className="font-semibold">{lang === "ja" ? "シリカゾル" : lang === "en" ? "Silica Sol" : "실리카졸"}</div>
                         {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
+                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sol (Colloidal Silica)</div>
                         )}
                       </Link>
                       <Link
                         to="/products/silica-gel/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >
                         <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
                         {lang === "ko" && (
                           <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
+                        )}
+                      </Link>
+                      <Link
+                        to="/products/high-purity-quartz/"
+                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
                         )}
                       </Link>
                     </div>
@@ -198,7 +207,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         )}
                       </Link>
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade"].includes(p.slug))
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade", "silica-sol", "sl-ja25", "sl-ja30"].includes(p.slug))
                         .map((p) => (
                           <Link
                             key={p.slug}
