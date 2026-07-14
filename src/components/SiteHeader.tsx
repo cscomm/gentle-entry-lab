@@ -113,7 +113,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                           </Link>
                         ))}
                       {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade"].includes(p.slug))
+                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade", "silica-sol", "sl-ja25", "sl-ja30"].includes(p.slug))
                         .map((p) => (
                           <Link
                             key={p.slug}
