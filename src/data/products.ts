@@ -1474,11 +1474,11 @@ const silicaSolChildren: ProductDetail[] = [
     enTagline: "SiO₂ 25–26% · 10–12 nm · NH₃-Stabilized Standard Colloidal Silica",
     jaTagline: "SiO₂ 25~26% · 10~12 nm · NH₃安定型 標準コロイダルシリカ",
     description:
-      "SL-JA25는 SiO₂ 25~26% 농도, 평균 입경 10~12 nm의 암모니아(NH₃) 안정형 신형 콜로이달 실리카입니다. 낮은 알칼리(Na₂O ≤ 0.03%)와 우수한 콜로이드 안정성을 바탕으로 정밀 주조 셸 몰드 바인더, 내화 도료, 세라믹 코팅, 촉매 담체, 리튬 이차전지 세라믹 세퍼레이터 코팅 등 저 이온·저 잔류물이 요구되는 응용에 최적화된 표준 그레이드입니다. 원산지는 중국이며, 25 kg / 200 kg / 1,000 kg IBC 포장으로 안정 공급됩니다.",
+      "SL-JA25는 SiO₂ 25~26% 농도, 평균 입경 10~12 nm의 암모니아(NH₃) 안정형 신형 콜로이달 실리카입니다. 낮은 알칼리(Na₂O ≤ 0.03%)와 우수한 콜로이드 안정성을 바탕으로 정밀 주조 셸 몰드 바인더, 내화 도료, 세라믹 코팅, 촉매 담체, 리튬 이차전지 세라믹 세퍼레이터 코팅 등 저 이온·저 잔류물이 요구되는 응용에 최적화된 표준 그레이드입니다.",
     enDescription:
-      "SL-JA25 is an ammonia (NH₃) stabilized New-Type colloidal silica with SiO₂ 25–26% and a mean particle size of 10–12 nm. With low alkali (Na₂O ≤ 0.03%) and excellent colloidal stability, it is the standard grade for applications requiring low ionic content and low residue — investment-casting shell binders, refractory paints, ceramic coatings, catalyst supports and ceramic-coated separators for lithium-ion batteries. Made in China; supplied in 25 kg / 200 kg drums and 1,000 kg IBCs.",
+      "SL-JA25 is an ammonia (NH₃) stabilized New-Type colloidal silica with SiO₂ 25–26% and a mean particle size of 10–12 nm. With low alkali (Na₂O ≤ 0.03%) and excellent colloidal stability, it is the standard grade for applications requiring low ionic content and low residue — investment-casting shell binders, refractory paints, ceramic coatings, catalyst supports and ceramic-coated separators for lithium-ion batteries.",
     jaDescription:
-      "SL-JA25はSiO₂ 25~26%、平均粒子径10~12 nmのアンモニア(NH₃)安定型・新型コロイダルシリカです。低アルカリ(Na₂O ≤ 0.03%)と優れたコロイド安定性を活かし、精密鋳造シェルバインダー、耐火塗料、セラミックコーティング、触媒担体、リチウム二次電池のセラミックセパレーターコーティングなど低イオン・低残留物が求められる用途に最適な標準グレードです。原産地は中国、25 kg / 200 kg ドラム · 1,000 kg IBCで安定供給します。",
+      "SL-JA25はSiO₂ 25~26%、平均粒子径10~12 nmのアンモニア(NH₃)安定型・新型コロイダルシリカです。低アルカリ(Na₂O ≤ 0.03%)と優れたコロイド安定性を活かし、精密鋳造シェルバインダー、耐火塗料、セラミックコーティング、触媒担体、リチウム二次電池のセラミックセパレーターコーティングなど低イオン・低残留物が求められる用途に最適な標準グレードです。",
     image: silicaSolImg,
     detailImage: silicaSolImg,
     category: "quartz",
