@@ -1531,7 +1531,7 @@ const silicaSolChildren: ProductDetail[] = [
       { title: "🧪 SSA 198 ~ 258 m²/g", desc: "매우 넓은 비표면적 · 강한 결합·촉매 담지력", enTitle: "🧪 SSA 198–258 m²/g", jaTitle: "🧪 SSA 198 ~ 258 m²/g", enDesc: "Very high SSA — strong binding and catalyst-loading capacity", jaDesc: "非常に大きい比表面積 · 強い結合・触媒担持力" },
       { title: "🌡️ 우수한 소결·내열", desc: "고온 소성 시 순수 SiO₂ 결합상 · 저 잔류물", enTitle: "🌡️ Excellent Sintering / Heat", jaTitle: "🌡️ 優れた焼結性・耐熱", enDesc: "Pure SiO₂ phase and low residue on firing", jaDesc: "高温焼成時に純粋SiO₂結合相・低残留物" },
       { title: "🧱 정밀 주조 셸 강도 극대화", desc: "고농도 실리카졸 → 셸 몰드 강도·박리 저항성 향상", enTitle: "🧱 Max Investment-Shell Strength", jaTitle: "🧱 精密鋳造シェル強度を最大化", enDesc: "High-concentration sol boosts shell strength and delamination resistance", jaDesc: "高濃度シリカゾルでシェル強度・剥離耐性を向上" },
-      { title: "🏭 중국 원산 · 대량 공급", desc: "IBC/드럼 다양한 포장으로 대형 프로젝트 대응", enTitle: "🏭 Made in China · Mass Supply", jaTitle: "🏭 中国原産 · 大量供給", enDesc: "IBC/drum packaging for large-scale projects", jaDesc: "IBC/ドラム多様な包装で大型プロジェクトに対応" },
+      { title: "🏭 안정 대량 공급", desc: "IBC/드럼 다양한 포장으로 대형 프로젝트 대응", enTitle: "🏭 Mass Supply", jaTitle: "🏭 大量供給", enDesc: "IBC/drum packaging for large-scale projects", jaDesc: "IBC/ドラム多様な包装で大型プロジェクトに対応" },
     ],
     specs: [
       { label: "제품 코드", value: "SL-JA30", enLabel: "Product Code", jaLabel: "製品コード" },
