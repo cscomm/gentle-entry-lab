@@ -472,7 +472,26 @@ export const productRoutes: Route[] = [
     body: `<p>${p.desc}</p><h2>${p.en}</h2><p>${p.descEn}</p>`,
   })),
 
+  // ============= All Products (paginated index) =============
+  {
+    path: "/products/all",
+    title: "전체 제품 All Products — 실리카 종합 라인업 | SILICA",
+    description:
+      "실리원의 전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지.",
+    titleI18n: {
+      en: "All Products — Complete Silica Lineup | SILICA",
+      ja: "全製品 All Products — シリカ総合ラインアップ | SILICA",
+    },
+    descriptionI18n: {
+      en: "Silione's complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz.",
+      ja: "Silione の全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで。",
+    },
+    h1: "전체 제품 · All Products",
+    body: `<p>SILICA(실리원)의 전 제품군을 한 페이지에서 탐색할 수 있는 통합 인덱스입니다. 용융실리카(A/B/C 등급, 구상, 각상, 모서리 라운드, 저방사선, 표면개질), 침전/흄드/나노 실리카, 실리카겔, 실리카졸, 규사·규사분말, 무연유리분말, 천연 고순도규석까지 모든 라인업을 카테고리·용도별로 확인하실 수 있습니다.</p>`,
+  },
+
   // ============= Category & Application pages (SSR completeness) =============
+
   {
     path: "/products/precipitated-silica",
     title: "침전 실리카 Precipitated Silica — 고무·식의약·치약용 | SILICA",
