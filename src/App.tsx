@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
+import AllProducts from "./pages/AllProducts.tsx";
 import SilicaGelCategory from "./pages/SilicaGelCategory.tsx";
 import SilicaGelApplications from "./pages/SilicaGelApplications.tsx";
 import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
@@ -60,6 +61,8 @@ const LangShell = () => {
       <Route path="applications/fused-silica" element={<FusedSilicaApplications />} />
       <Route path="applications/silica-sand" element={<SilicaSandApplications />} />
       <Route path="applications/silica-powder" element={<SilicaPowderApplications />} />
+      <Route path="products" element={<AllProducts />} />
+      <Route path="products/all" element={<AllProducts />} />
       <Route path="products/:slug" element={<ProductDetail />} />
       <Route path="about" element={<About />} />
       <Route path="terms" element={<Terms />} />
