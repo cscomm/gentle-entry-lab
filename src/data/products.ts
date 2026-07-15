@@ -1516,11 +1516,11 @@ const silicaSolChildren: ProductDetail[] = [
     enTagline: "SiO₂ 30–31% · 10–11.5 nm · NH₃-Stabilized High-Concentration Colloidal Silica",
     jaTagline: "SiO₂ 30~31% · 10~11.5 nm · NH₃安定型 高濃度コロイダルシリカ",
     description:
-      "SL-JA30은 SiO₂ 30~31% 고농도, 평균 입경 10~11.5 nm의 암모니아(NH₃) 안정형 신형 콜로이달 실리카로, 비표면적 198~258 m²/g 수준의 초미립 나노 입자를 균일하게 분산시킨 유백색 반투명 콜로이드 액입니다. 고농도 SiO₂ 특성 덕분에 동일 사용량 대비 더 강한 결합력·소결 강도를 확보할 수 있어 정밀 주조 셸 몰드, 내화 코팅, 세라믹 결합제, 촉매 담체, 이차전지 세라믹 세퍼레이터 코팅, CMP 슬러리 원료 등 고성능이 요구되는 응용에 특히 적합합니다. 원산지는 중국이며, 다양한 포장 옵션으로 안정 대량 공급됩니다.",
+      "SL-JA30은 SiO₂ 30~31% 고농도, 평균 입경 10~11.5 nm의 암모니아(NH₃) 안정형 신형 콜로이달 실리카로, 비표면적 198~258 m²/g 수준의 초미립 나노 입자를 균일하게 분산시킨 유백색 반투명 콜로이드 액입니다. 고농도 SiO₂ 특성 덕분에 동일 사용량 대비 더 강한 결합력·소결 강도를 확보할 수 있어 정밀 주조 셸 몰드, 내화 코팅, 세라믹 결합제, 촉매 담체, 이차전지 세라믹 세퍼레이터 코팅, CMP 슬러리 원료 등 고성능이 요구되는 응용에 특히 적합합니다.",
     enDescription:
-      "SL-JA30 is an ammonia (NH₃) stabilized New-Type colloidal silica with high SiO₂ content of 30–31% and a mean particle size of 10–11.5 nm. Its ultrafine nanoparticles (SSA 198–258 m²/g) are uniformly dispersed in water as a milky-white translucent colloid. The higher SiO₂ concentration delivers greater binding force and sintering strength per unit dose, making SL-JA30 particularly suitable for investment-casting shell molds, refractory coatings, ceramic binders, catalyst supports, ceramic-coated separators for secondary batteries and CMP slurry feedstock. Made in China; stable mass supply.",
+      "SL-JA30 is an ammonia (NH₃) stabilized New-Type colloidal silica with high SiO₂ content of 30–31% and a mean particle size of 10–11.5 nm. Its ultrafine nanoparticles (SSA 198–258 m²/g) are uniformly dispersed in water as a milky-white translucent colloid. The higher SiO₂ concentration delivers greater binding force and sintering strength per unit dose, making SL-JA30 particularly suitable for investment-casting shell molds, refractory coatings, ceramic binders, catalyst supports, ceramic-coated separators for secondary batteries and CMP slurry feedstock.",
     jaDescription:
-      "SL-JA30はSiO₂ 30~31%の高濃度、平均粒子径10~11.5 nmのアンモニア(NH₃)安定型・新型コロイダルシリカで、比表面積198~258 m²/gの超微粒ナノ粒子を均一に分散させた乳白色半透明のコロイド液です。高濃度SiO₂により同量使用時により強い結合力・焼結強度を確保でき、精密鋳造シェルバインダー、耐火コーティング、セラミック結合剤、触媒担体、二次電池セラミックセパレーターコーティング、CMPスラリー原料など高性能が求められる用途に特に適します。原産地は中国、多様な包装で安定量産供給します。",
+      "SL-JA30はSiO₂ 30~31%の高濃度、平均粒子径10~11.5 nmのアンモニア(NH₃)安定型・新型コロイダルシリカで、比表面積198~258 m²/gの超微粒ナノ粒子を均一に分散させた乳白色半透明のコロイド液です。高濃度SiO₂により同量使用時により強い結合力・焼結強度を確保でき、精密鋳造シェルバインダー、耐火コーティング、セラミック結合剤、触媒担体、二次電池セラミックセパレーターコーティング、CMPスラリー原料など高性能が求められる用途に特に適します。",
     image: silicaSolImg,
     detailImage: silicaSolImg,
     category: "quartz",
