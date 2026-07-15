@@ -1488,7 +1488,7 @@ const silicaSolChildren: ProductDetail[] = [
       { title: "🧪 저 Na₂O ≤ 0.03 %", desc: "낮은 알칼리 · 저 이온성 — 전자·전지 코팅 대응", enTitle: "🧪 Low Na₂O ≤ 0.03 %", jaTitle: "🧪 低Na₂O ≤ 0.03 %", enDesc: "Low alkali / ionic content for electronics and battery coating", jaDesc: "低アルカリ・低イオン性で電子・電池コーティングに対応" },
       { title: "🔬 평균 입경 10 ~ 12 nm", desc: "초미립 · 넓은 비표면적 → 강한 결합력·소결성", enTitle: "🔬 Mean 10–12 nm", jaTitle: "🔬 平均粒子径 10 ~ 12 nm", enDesc: "Ultrafine, high SSA — strong binding and sintering", jaDesc: "超微粒・高比表面積 → 強い結合力・焼結性" },
       { title: "🌡️ 우수한 소결성", desc: "고온 소성 시 순수 SiO₂ 결합상 형성", enTitle: "🌡️ Excellent Sintering", jaTitle: "🌡️ 優れた焼結性", enDesc: "Pure SiO₂ binder phase upon firing", jaDesc: "高温焼成時に純粋SiO₂結合相を形成" },
-      { title: "🏭 안정 대량 공급 (중국 원산)", desc: "IBC/드럼 다양한 포장 · 대량 프로젝트 대응", enTitle: "🏭 Mass Supply (Made in China)", jaTitle: "🏭 大量供給 (中国原産)", enDesc: "IBC/drum packaging — supports large-volume projects", jaDesc: "IBC/ドラム多様な包装 · 大量プロジェクト対応" },
+      { title: "🏭 안정 대량 공급", desc: "IBC/드럼 다양한 포장 · 대량 프로젝트 대응", enTitle: "🏭 Mass Supply", jaTitle: "🏭 大量供給", enDesc: "IBC/drum packaging — supports large-volume projects", jaDesc: "IBC/ドラム多様な包装 · 大量プロジェクト対応" },
       { title: "🌿 VOC-Free 친환경 무기", desc: "유기 바인더 대체 · 환경 규제 대응", enTitle: "🌿 VOC-Free · Inorganic", jaTitle: "🌿 VOCフリー · 無機", enDesc: "Replaces organic binders — complies with environmental regulations", jaDesc: "有機バインダー代替 · 環境規制対応" },
     ],
     specs: [
