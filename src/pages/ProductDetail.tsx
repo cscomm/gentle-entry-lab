@@ -138,6 +138,22 @@ const ProductDetail = () => {
       sku: product.slug,
       brand: { "@type": "Brand", name: "SiLiCA" },
       manufacturer: { "@type": "Organization", name: "SiLiCA", url: "https://silica.co.kr/" },
+      offers: {
+        "@type": "Offer",
+        url,
+        priceCurrency: "KRW",
+        price: "0",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "KRW",
+          price: "0",
+          valueAddedTaxIncluded: false,
+        },
+        availability: "https://schema.org/InStock",
+        itemCondition: "https://schema.org/NewCondition",
+        businessFunction: "http://purl.org/goodrelations/v1#Sell",
+        seller: { "@type": "Organization", name: "SiLiCA", url: "https://silica.co.kr/" },
+      },
     };
     const el = document.createElement("script");
     el.type = "application/ld+json";
