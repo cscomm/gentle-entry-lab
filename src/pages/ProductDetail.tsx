@@ -182,6 +182,7 @@ const ProductDetail = () => {
     ? productCatalog.filter((p) => p.parentSlug === product.parentSlug && p.slug !== product.slug)
     : productCatalog.filter((p) => p.slug !== product.slug && !p.isCategoryIndex && !p.parentSlug && (p.category ?? "quartz") === (product.category ?? "quartz"));
   const isGradeA = product.slug === "fused-silica-a-grade";
+  const isGradeB = product.slug === "fused-silica-b-grade";
   const isSilicaSand = product.slug === "silica-sand";
   const isSilicaPowder = product.slug === "silica-powder";
   const subModels = product.subModels;
