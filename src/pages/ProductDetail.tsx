@@ -182,6 +182,7 @@ const ProductDetail = () => {
     ? productCatalog.filter((p) => p.parentSlug === product.parentSlug && p.slug !== product.slug)
     : productCatalog.filter((p) => p.slug !== product.slug && !p.isCategoryIndex && !p.parentSlug && (p.category ?? "quartz") === (product.category ?? "quartz"));
   const isGradeA = product.slug === "fused-silica-a-grade";
+  const isGradeB = product.slug === "fused-silica-b-grade";
   const isSilicaSand = product.slug === "silica-sand";
   const isSilicaPowder = product.slug === "silica-powder";
   const subModels = product.subModels;
@@ -805,6 +806,175 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* Grade B Detailed Technical Content */}
+      {isGradeB && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {tri(
+              "B급 용융 실리카(Fused Silica)의 화학·물리·공정 안정성·가공성 측면 핵심 특성을 정밀하게 정리하였습니다.",
+              "An in-depth look at the chemical, physical, process-stability, and processability characteristics that define Grade B Fused Silica.",
+              "Bグレード溶融シリカ(Fused Silica)の化学・物理・工程安定性・加工性の核心特性を精密に整理しました。"
+            )}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: FlaskConical,
+                tag: "01",
+                title: tri("화학적 순도 및 불순물 관리", "Chemical Purity & Impurity Control", "化学的純度および不純物管理"),
+                intro: tri(
+                  "SiO₂ 순도 99.5% 이상 — 산업용 고신뢰 등급으로 알칼리·천이 금속 및 착색 요인을 ppm 단위로 제어하여 태양광·정밀 주조·특수 소재 공정에 최적화되어 있습니다.",
+                  "SiO₂ purity ≥ 99.5% — a high-reliability industrial grade with alkalis, transition metals, and coloration sources controlled at the ppm level, optimized for solar, precision-casting, and specialty-material processes.",
+                  "SiO₂純度99.5%以上 — アルカリ・遷移金属および着色要因をppm単位で制御した産業用高信頼グレードで、太陽光・精密鋳造・特殊素材工程に最適化されています。"
+                ),
+                points: tri(
+                  [
+                    "Al < 0.03% — 세라믹·내화재와의 반응성 억제, 소결·성형 시 결함 최소화",
+                    "Fe < 0.02% — 태양광 잉곳·유리 원료의 색상 저하 및 광 흡수 방지",
+                    "K · Na 각 < 0.01% — 알칼리 이온 최소화로 열화·마이그레이션 억제",
+                    "Ca < 0.01%, Mg < 0.003% — 미량 관리로 화학적 안정성 및 균일한 물성 확보",
+                  ].join("|"),
+                  [
+                    "Al < 0.03% — suppresses reactivity with ceramics and refractories, minimizing defects during sintering and forming",
+                    "Fe < 0.02% — prevents color degradation and light absorption in solar ingots and glass feedstock",
+                    "K · Na each < 0.01% — minimized alkali ions inhibit degradation and ion migration",
+                    "Ca < 0.01%, Mg < 0.003% — trace-level control secures chemical stability and uniform properties",
+                  ].join("|"),
+                  [
+                    "Al < 0.03% — セラミックス・耐火材との反応性を抑制し、焼結・成形時の欠陥を最小化",
+                    "Fe < 0.02% — 太陽光インゴット・ガラス原料の色調低下および光吸収を防止",
+                    "K · Na 各 < 0.01% — アルカリイオンを最小化し、劣化・マイグレーションを抑制",
+                    "Ca < 0.01%, Mg < 0.003% — 微量管理により化学的安定性と均一な物性を確保",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Gem,
+                tag: "02",
+                title: tri("물리적 특성 및 구조적 안정성", "Physical Properties & Structural Stability", "物理的特性および構造的安定性"),
+                intro: tri(
+                  "98% 이상의 무정형 구조와 낮은 열팽창계수, 균일한 밀도로 고온 공정에서 뛰어난 치수 안정성과 열충격 저항성을 제공합니다.",
+                  "Over 98% amorphous structure combined with a low CTE and uniform density delivers outstanding dimensional stability and thermal-shock resistance in high-temperature processes.",
+                  "98%以上の非晶質構造と低い熱膨張係数、均一な密度により、高温工程で優れた寸法安定性と熱衝撃耐性を提供します。"
+                ),
+                points: tri(
+                  [
+                    "무정형상 > 98% — 이방성 최소화로 균일한 팽창·수축 거동 확보",
+                    "열팽창계수 < 0.8 ×10⁻⁶/°C — 급격한 승강온 환경에서 균열·변형 억제",
+                    "밀도 1.8 – 2.4 ×10³ kg/m³ — 안정된 벌크 밀도로 성형·주조 재현성 우수",
+                    "무색 투명 ~ 고순도 백색 분말 — 최종 제품의 외관 품질과 신뢰성 향상",
+                  ].join("|"),
+                  [
+                    "Amorphous > 98% — minimized anisotropy for uniform expansion/contraction behavior",
+                    "CTE < 0.8 ×10⁻⁶/°C — suppresses cracking and deformation under rapid heating/cooling",
+                    "Density 1.8 – 2.4 ×10³ kg/m³ — stable bulk density with excellent forming and casting reproducibility",
+                    "Colorless-transparent to high-purity white powder — enhances appearance quality and reliability of finished products",
+                  ].join("|"),
+                  [
+                    "非晶質 > 98% — 異方性を最小化し、均一な膨張・収縮挙動を確保",
+                    "熱膨張係数 < 0.8 ×10⁻⁶/°C — 急激な昇降温環境で亀裂・変形を抑制",
+                    "密度 1.8 – 2.4 ×10³ kg/m³ — 安定したバルク密度で成形・鋳造の再現性に優れる",
+                    "無色透明~高純度白色粉末 — 最終製品の外観品質と信頼性を向上",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Zap,
+                tag: "03",
+                title: tri("공정 안정성 및 내구 성능", "Process Stability & Durability", "工程安定性および耐久性能"),
+                intro: tri(
+                  "산·알칼리·유기용제에 대한 우수한 내화학성과 안정된 열적 거동으로 태양광·전자·정밀 주조 등 고신뢰 산업 공정에서 예측 가능한 성능을 보장합니다.",
+                  "Excellent chemical resistance against acids, alkalis, and organic solvents combined with stable thermal behavior guarantees predictable performance in high-reliability industries such as solar, electronics, and precision casting.",
+                  "酸・アルカリ・有機溶剤に対する優れた耐化学性と安定した熱的挙動により、太陽光・電子・精密鋳造など高信頼産業工程で予測可能な性能を保証します。"
+                ),
+                points: tri(
+                  [
+                    "우수한 내화학성 — 산·알칼리·유기용제 환경에서 장기 안정성 확보",
+                    "내열충격성 우수 — 1000°C 급 승강온에도 균열·박리 최소화",
+                    "저알칼리 조성 — 반도체·태양광 잉곳 오염 리스크 저감",
+                    "안정된 로트 관리 — 대량 산업 공급에 적합한 균일 품질 유지",
+                  ].join("|"),
+                  [
+                    "Excellent chemical resistance — long-term stability under acid, alkali, and organic-solvent environments",
+                    "Superior thermal-shock resistance — minimizes cracking and delamination under 1000°C-class heat cycling",
+                    "Low-alkali composition — reduces contamination risk in semiconductor and solar ingot processes",
+                    "Consistent lot control — uniform quality suited to large-scale industrial supply",
+                  ].join("|"),
+                  [
+                    "優れた耐化学性 — 酸・アルカリ・有機溶剤環境で長期安定性を確保",
+                    "内熱衝撃性に優れる — 1000°C級の昇降温でも亀裂・剥離を最小化",
+                    "低アルカリ組成 — 半導体・太陽光インゴット汚染リスクを低減",
+                    "安定したロット管理 — 大量産業供給に適した均一品質を維持",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Thermometer,
+                tag: "04",
+                title: tri("맞춤형 입도 및 가공성", "Custom Particle Size & Processability", "カスタム粒度および加工性"),
+                intro: tri(
+                  "60mm 과립부터 1µm(12500 메쉬) 미분까지 고객 공정에 맞춘 정밀 입도 제어가 가능하며, 수분 관리와 균일한 벌크 특성으로 우수한 가공성을 제공합니다.",
+                  "Precise particle-size control from 60 mm granules down to 1 µm (12,500 mesh) fine powder tailored to customer processes, with moisture management and uniform bulk properties for outstanding processability.",
+                  "60mm顆粒から1µm(12500メッシュ)微粉まで顧客工程に合わせた精密な粒度制御が可能で、水分管理と均一なバルク特性により優れた加工性を提供します。"
+                ),
+                points: tri(
+                  [
+                    "과립·중분·미분 등 광범위 입도 커스텀 대응 가능",
+                    "수분 < 0.1% — 흡습에 의한 응집·가스 방출 억제",
+                    "균일한 벌크 밀도 — 자동 계량·정량 공급 라인에서 재현성 확보",
+                    "표면 균질성 — 컴파운드·주조 슬러리 내 분산성 향상",
+                  ].join("|"),
+                  [
+                    "Wide-range custom sizing from granules to medium and fine powder",
+                    "Moisture < 0.1% — suppresses agglomeration and outgassing caused by moisture absorption",
+                    "Uniform bulk density — ensures reproducibility on automated dosing and metering lines",
+                    "Surface homogeneity — improves dispersion in compounds and casting slurries",
+                  ].join("|"),
+                  [
+                    "顆粒・中粉・微粉など幅広い粒度のカスタム対応が可能",
+                    "水分 < 0.1% — 吸湿による凝集・ガス放出を抑制",
+                    "均一なバルク密度 — 自動計量・定量供給ラインで再現性を確保",
+                    "表面の均質性 — コンパウンド・鋳造スラリー中の分散性を向上",
+                  ].join("|")
+                ).split("|"),
+              },
+            ].map((sec) => (
+              <div
+                key={sec.tag}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/30 p-8 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
+                <div className="relative">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <sec.icon className="h-6 w-6" />
+                    </div>
+                    <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
+                  </div>
+                  <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {sec.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* SL-A81 Detailed Content */}
       {product.slug === "precipitated-silica-sl-a81" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -1023,7 +1193,7 @@ const ProductDetail = () => {
       )}
 
       {/* Applications — visual cards with images */}
-      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && (
+      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
