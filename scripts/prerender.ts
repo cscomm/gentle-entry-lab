@@ -640,6 +640,34 @@ export const productRoutes: Route[] = [
       </ul>`,
   },
   {
+    path: "/applications/quartz",
+    title: "쿼츠 · 결정질 실리카 응용분야 — 반도체·인조대리석·유리·연마 | SILICA",
+    description:
+      "쿼츠(Quartz) · 결정질 실리카(α-Quartz)의 산업별 응용 분야 — 반도체 EMC·CCL/PCB, 인조 대리석·엔지니어드 스톤, 유리·도자기, 정밀 주조, 연마·워터젯, 태양광 잉곳·석영 도가니, 스포츠 표면재.",
+    titleI18n: {
+      en: "Quartz & Crystalline Silica Applications — Semiconductor, Engineered Stone, Glass, Abrasives | SILICA",
+      ja: "クォーツ・結晶質シリカ用途 — 半導体・人造大理石・ガラス・研磨 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of quartz and crystalline silica (α-quartz) — semiconductor EMC & CCL/PCB fillers, engineered stone & quartz countertops, glass & ceramics, precision casting, abrasives & waterjet, solar/semiconductor quartz crucibles, sports surfacing.",
+      ja: "クォーツ・結晶質シリカ(α-クォーツ)の産業別用途 — 半導体EMC・CCL/PCB、人造大理石・エンジニアードストーン、ガラス・陶磁器、精密鋳造、研磨・ウォータージェット、太陽光/半導体用石英ルツボ、スポーツ表面材。",
+    },
+    h1: "쿼츠 · 결정질 실리카 응용분야 · Quartz & Crystalline Silica Applications",
+    body: `
+      <p>쿼츠(Quartz) · 결정질 실리카(α-Quartz)는 SiO₂가 규칙적으로 배열된 결정 구조 소재로, 모스 경도 7의 높은 기계적 강도·1670℃의 뛰어난 내화도·화학적 안정성·풍부한 매장량을 갖춘 산업의 기본 원료입니다. 결정형 구상(SL-QJG)·모서리 라운드(SL-YJG)·각상(SL-JG)·저방사선(SL-CL) 등 형상과 순도별 라인업이 국가 기간산업 전반에 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>반도체 EMC · 언더필 · 어드밴스드 패키징</strong> — 결정형 구상/각상 필러, 저방사선(Low-α) 결정형</li>
+        <li><strong>CCL · PCB · 고밀도 실장 기판</strong> — FR-4, HDI, IC 기판, 도전성 페이스트</li>
+        <li><strong>인조 대리석 · 엔지니어드 스톤 · 건축 자재</strong> — 쿼츠 카운터탑, UHPC, 타일·바닥재</li>
+        <li><strong>유리 · 특수 유리 · 도자기</strong> — 판유리, 태양광 커버 유리, LCD/OLED 백플레인, 위생도기</li>
+        <li><strong>정밀 주조 · 파운드리</strong> — 그린 샌드, 수지 코어, 인베스트먼트 캐스팅</li>
+        <li><strong>연마재 · 워터젯 · 표면 처리</strong> — 샌드블라스팅, 워터젯 커팅, 연마 페이스트, 필터 미디어</li>
+        <li><strong>태양광 · 반도체 · 웨이퍼 원료</strong> — 석영 도가니, 확산로 튜브, 합성 석영 출발 원료</li>
+        <li><strong>스포츠 표면재 · 인조잔디 · 골프 벙커</strong> — 인조잔디 인필, 승마장, 조경 자재</li>
+      </ul>`,
+  },
+  {
     path: "/applications/silica-gel",
     title: "실리카 겔 응용분야 — 흡습·촉매·코팅·필름 | SILICA",
     description:

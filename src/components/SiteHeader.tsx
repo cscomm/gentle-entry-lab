@@ -206,6 +206,15 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                           <div className="mt-0.5 text-xs text-muted-foreground">Fused Silica</div>
                         )}
                       </Link>
+                      <Link
+                        to="/applications/quartz/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "クォーツ・結晶質シリカ" : lang === "en" ? "Quartz · Crystalline Silica" : "쿼츠 · 결정질 실리카"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Quartz · Crystalline Silica</div>
+                        )}
+                      </Link>
                       {productCatalog
                         .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade", "silica-sol", "sl-ja25", "sl-ja30"].includes(p.slug))
                         .map((p) => (
