@@ -153,6 +153,31 @@ const ProductDetail = () => {
         itemCondition: "https://schema.org/NewCondition",
         businessFunction: "http://purl.org/goodrelations/v1#Sell",
         seller: { "@type": "Organization", name: "SiLiCA", url: "https://silica.co.kr/" },
+        hasMerchantReturnPolicy: {
+          "@type": "MerchantReturnPolicy",
+          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+          merchantReturnLink: "https://silica.co.kr/terms",
+        },
+        shippingDetails: {
+          "@type": "OfferShippingDetails",
+          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "KRW" },
+          shippingDestination: { "@type": "DefinedRegion", addressCountry: "KR" },
+          deliveryTime: {
+            "@type": "ShippingDeliveryTime",
+            handlingTime: {
+              "@type": "QuantitativeValue",
+              minValue: 1,
+              maxValue: 3,
+              unitCode: "DAY",
+            },
+            transitTime: {
+              "@type": "QuantitativeValue",
+              minValue: 1,
+              maxValue: 5,
+              unitCode: "DAY",
+            },
+          },
+        },
       },
     };
     const el = document.createElement("script");
