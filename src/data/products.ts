@@ -852,6 +852,8 @@ const advSeriesProducts: ProductDetail[] = [
     subModelsColumnLabel: { ko: "타입", en: "Type", ja: "タイプ" },
     isCategoryIndex: true,
     subModels: [
+      { code: "SL-HJG", slug: "sl-hjg", spec: "표면개질 결정형 (Active Crystalline)", enSpec: "Surface-Modified Crystalline (Active Crystalline)", jaSpec: "表面改質 結晶質 (活性結晶)", name: "SL-HJG 표면개질 결정형 실리카 분말", enName: "SL-HJG · Surface-Modified Crystalline Silica Powder", jaName: "SL-HJG 表面改質 結晶質シリカ粉末" },
+      { code: "SL-HRG", slug: "sl-hrg", spec: "표면개질 용융형 (Active Fused)", enSpec: "Surface-Modified Fused (Active Fused)", jaSpec: "表面改質 溶融質 (活性溶融)", name: "SL-HRG 표면개질 용융형 실리카 분말", enName: "SL-HRG · Surface-Modified Fused Silica Powder", jaName: "SL-HRG 表面改質 溶融質シリカ粉末" },
       { code: "SL-DRG07", slug: "sl-drg07", spec: "표준 등급 (에폭시 실란 표면처리)", enSpec: "Standard Grade (Epoxy-Silane Treated)", jaSpec: "標準グレード (エポキシシラン表面処理)", name: "SL-DRG07 표면개질 실리카 분말", enName: "SL-DRG07 · Surface-Modified Silica Powder", jaName: "SL-DRG07 表面改質シリカ粉末" },
       { code: "SL-DRG07-A", slug: "sl-drg07-a", spec: "고순도 등급 (에폭시 실란 표면처리)", enSpec: "High-Purity Grade (Epoxy-Silane Treated)", jaSpec: "高純度グレード (エポキシシラン表面処理)", name: "SL-DRG07-A 표면개질 실리카 분말", enName: "SL-DRG07-A · Surface-Modified Silica Powder", jaName: "SL-DRG07-A 表面改質シリカ粉末" },
     ],
