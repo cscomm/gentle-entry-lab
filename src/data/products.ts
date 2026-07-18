@@ -994,6 +994,72 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
       { label: "비고", value: "입도 분포는 사용 환경·요구에 따라 조정 가능", enValue: "PSD adjustable per customer requirement", jaValue: "粒度分布はご要望に応じて調整可能", enLabel: "Remarks", jaLabel: "備考" },
     ],
   },
+  // ===== Surface-Modified (Active) HJG / HRG series =====
+  "sl-hjg": {
+    tagline: "활성 결정형 실리카 (Active Crystalline) · 실란 커플링 표면개질 · D50 1~30μm",
+    enTagline: "Active Crystalline Silica · Silane-Coupling Surface Modification · D50 1–30 µm",
+    jaTagline: "活性結晶質シリカ · シランカップリング表面改質 · D50 1~30μm",
+    description:
+      "SL-HJG 시리즈 활성 결정형 실리카 분말은 결정형 실리카(SiO₂) 표면에 실란 커플링제를 화학적으로 결합시켜, 유기 수지 및 고분자 매트릭스와의 계면 친화성·분산성·접착력을 근본적으로 개선한 표면개질(활성) 필러입니다. 커플링제 종류와 처리량은 고객 배합/최종 제품의 특성에 맞추어 조정 가능하며, 저 Na⁺·Cl⁻·전기전도도(E/C) 관리와 균일한 초미세 입도를 통해 반도체·전자·정밀 세라믹 산업에서 안정된 공정성과 신뢰성을 제공합니다.\n\n주요 물성: SiO₂ 98.0~99.9%, 백도 90 이상, 모스경도 7, PH 5~8, 평균 입도 D50 1~30μm(맞춤). 실리카·유기 고분자 재료의 상용성을 향상시키고 이차 가공 제품의 물성 균일성을 개선하며, 충전 부피를 증가시켜 원가 절감과 기계적·전기적 특성 향상에 기여합니다.",
+    enDescription:
+      "SL-HJG series Active Crystalline Silica Powder is a surface-modified (active) filler in which a silane coupling agent is chemically bonded to the surface of crystalline SiO₂ — fundamentally improving interfacial compatibility, dispersion and adhesion with organic resins and polymer matrices. Coupling-agent type and loading are adjusted per the customer's formulation. Together with low Na⁺/Cl⁻/EC control and uniform ultra-fine particle size, it delivers stable processability and reliability across semiconductor, electronics and precision ceramics.\n\nKey properties: SiO₂ 98.0–99.9%, whiteness 90 min, Mohs 7, PH 5–8, D50 1–30 µm (customizable). Effectively improves the compatibility of silica with organic polymer materials, improves the performance uniformity of downstream products, increases filling volume, reduces cost and improves mechanical/electrical performance.",
+    jaDescription:
+      "SL-HJGシリーズ活性結晶質シリカ粉末は、結晶質シリカ(SiO₂)表面にシランカップリング剤を化学結合させ、有機樹脂・高分子マトリクスとの界面親和性・分散性・接着力を根本から改善した表面改質(活性)フィラーです。カップリング剤の種類・処理量はお客様の配合/最終製品の特性に合わせて調整可能で、低Na⁺・Cl⁻・電気伝導度(E/C)管理と均一な超微細粒度により、半導体・電子・精密セラミックス分野で安定した工程性と信頼性を提供します。\n\n主要物性: SiO₂ 98.0~99.9%、白度90以上、モース硬度7、PH 5~8、平均粒度 D50 1~30μm(カスタム)。シリカと有機高分子材料の相容性を向上させ、二次加工製品の物性均一性を改善し、充填体積を増加させることでコスト低減と機械的・電気的特性の向上に寄与します。",
+    specs: [
+      { label: "품번 (Code)", value: "SL-HJG", enLabel: "Code", jaLabel: "品番 (Code)" },
+      { label: "형태", value: "활성 결정형 (Active Crystalline)", enValue: "Active Crystalline", jaValue: "活性結晶質 (Active Crystalline)", enLabel: "Type", jaLabel: "形態" },
+      { label: "외관", value: "백색 분말", enValue: "White powder", jaValue: "白色粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂", value: "98.0 ~ 99.9 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "백도", value: "90 이상", enValue: "90 Min", jaValue: "90以上", enLabel: "Whiteness", jaLabel: "白度" },
+      { label: "모스경도", value: "7", enLabel: "Mohs Hardness", jaLabel: "モース硬度" },
+      { label: "PH", value: "5 ~ 8", enLabel: "PH", jaLabel: "PH" },
+      { label: "D50 (평균 입도)", value: "1 ~ 30 μm (맞춤)", enValue: "1–30 µm (customizable)", jaValue: "1~30 μm (カスタム)", enLabel: "D50 (Mean PSD)", jaLabel: "D50 (平均粒度)" },
+      { label: "표면 처리제", value: "실란 커플링 (고객 배합에 맞춰 조정)", enValue: "Silane coupling (adjusted per customer formula)", jaValue: "シランカップリング (お客様の配合に合わせ調整)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "특성", value: "저 Na⁺·Cl⁻·E/C, 우수한 수지 친화성·분산성", enValue: "Low Na⁺/Cl⁻/E/C, excellent resin compatibility and dispersion", jaValue: "低Na⁺・Cl⁻・E/C, 優れた樹脂親和性・分散性", enLabel: "Features", jaLabel: "特性" },
+    ],
+    applications: [
+      "에폭시 몰딩 컴파운드 (EMC)",
+      "동박 적층판 (CCL) · 인쇄 회로 기판 (PCB)",
+      "집적 회로 (IC) 봉지·언더필",
+      "전자 포팅 컴파운드 · 에폭시 캐스팅",
+      "열 계면 재료 (TIM)",
+      "전기 절연 부품 · 접착제",
+      "도료 · 코팅 · 잉크",
+      "허니컴 세라믹 · 항공 우주 · 실리콘 산업",
+    ],
+  },
+  "sl-hrg": {
+    tagline: "활성 용융형 실리카 (Active Fused) · 실란 커플링 표면개질 · D50 1~30μm",
+    enTagline: "Active Fused Silica · Silane-Coupling Surface Modification · D50 1–30 µm",
+    jaTagline: "活性溶融質シリカ · シランカップリング表面改質 · D50 1~30μm",
+    description:
+      "SL-HRG 시리즈 활성 용융형 실리카 분말은 고순도 용융 실리카(SiO₂) 표면에 실란 커플링제를 화학적으로 결합시켜, 유기 수지·고분자와의 계면 접착력·분산성을 극대화한 표면개질(활성) 필러입니다. 커플링제의 종류와 처리량은 고객의 배합·최종 제품 요구에 따라 조정이 가능합니다. 저열팽창(0.5×10⁻⁶)·저열전도·저 Na⁺/Cl⁻/전기전도도(E/C) 특성과 함께 우수한 기계·화학적 성능을 동시에 제공하여, 반도체 EMC·언더필·고신뢰성 봉지재·5G 고주파 기판 등 최첨단 전자 부품용 필러로 사용됩니다.\n\n주요 물성: SiO₂ 98.0~99.95%, 외관 백색 분말, PH 5~8, 평균 입도 D50 1~30μm(맞춤). 실리카와 유기 고분자 재료의 상용성을 개선하고 하류 제품의 성능을 향상시키며, 충전 부피를 늘려 원가를 절감함과 동시에 기계적·전기적 특성을 향상시킵니다.",
+    enDescription:
+      "SL-HRG series Active Fused Silica Powder is a surface-modified (active) filler in which a silane coupling agent is chemically bonded to the surface of high-purity fused SiO₂ — maximizing interfacial adhesion and dispersion with organic resins and polymers. Coupling-agent type and loading are adjusted per the customer's formulation and end-product requirements. Combined with low CTE (0.5×10⁻⁶), low thermal conductivity, low Na⁺/Cl⁻/EC and excellent mechanical and chemical performance, it serves as a filler for semiconductor EMC, underfill, high-reliability encapsulants, 5G high-frequency substrates and other advanced electronic components.\n\nKey properties: SiO₂ 98.0–99.95%, white powder, PH 5–8, D50 1–30 µm (customizable). Effectively improves the compatibility of silica with organic polymer materials, improves the performance of downstream products, increases filling volume, reduces cost and improves mechanical/electrical performance.",
+    jaDescription:
+      "SL-HRGシリーズ活性溶融質シリカ粉末は、高純度溶融シリカ(SiO₂)表面にシランカップリング剤を化学結合させ、有機樹脂・高分子との界面接着力・分散性を最大化した表面改質(活性)フィラーです。カップリング剤の種類と処理量はお客様の配合・最終製品の要求に応じて調整可能です。低熱膨張(0.5×10⁻⁶)・低熱伝導・低Na⁺/Cl⁻/電気伝導度(E/C)特性と優れた機械的・化学的性能を兼ね備え、半導体EMC・アンダーフィル・高信頼性封止材・5G高周波基板など先端電子部品用フィラーとして使用されます。\n\n主要物性: SiO₂ 98.0~99.95%、外観 白色粉末、PH 5~8、平均粒度 D50 1~30μm(カスタム)。シリカと有機高分子材料の相容性を改善し、下流製品の性能を向上させ、充填体積を増加させることでコスト低減と機械的・電気的特性の向上を実現します。",
+    specs: [
+      { label: "품번 (Code)", value: "SL-HRG", enLabel: "Code", jaLabel: "品番 (Code)" },
+      { label: "형태", value: "활성 용융형 (Active Fused)", enValue: "Active Fused", jaValue: "活性溶融質 (Active Fused)", enLabel: "Type", jaLabel: "形態" },
+      { label: "외관", value: "백색 분말", enValue: "White powder", jaValue: "白色粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "SiO₂", value: "98.0 ~ 99.95 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "PH", value: "5 ~ 8", enLabel: "PH", jaLabel: "PH" },
+      { label: "열팽창계수 (CTE)", value: "0.5 × 10⁻⁶", enLabel: "CTE", jaLabel: "熱膨張係数 (CTE)" },
+      { label: "D50 (평균 입도)", value: "1 ~ 30 μm (맞춤)", enValue: "1–30 µm (customizable)", jaValue: "1~30 μm (カスタム)", enLabel: "D50 (Mean PSD)", jaLabel: "D50 (平均粒度)" },
+      { label: "표면 처리제", value: "실란 커플링 (고객 배합에 맞춰 조정)", enValue: "Silane coupling (adjusted per customer formula)", jaValue: "シランカップリング (お客様の配合に合わせ調整)", enLabel: "Surface Treatment", jaLabel: "表面処理剤" },
+      { label: "특성", value: "저 Na⁺·Cl⁻·E/C, 저 열팽창·저 열전도, 우수한 기계·화학 성능", enValue: "Low Na⁺/Cl⁻/E/C, low CTE & thermal conductivity, excellent mechanical/chemical performance", jaValue: "低Na⁺・Cl⁻・E/C, 低熱膨張・低熱伝導, 優れた機械・化学性能", enLabel: "Features", jaLabel: "特性" },
+    ],
+    applications: [
+      "에폭시 몰딩 컴파운드 (EMC)",
+      "동박 적층판 (CCL) · 인쇄 회로 기판 (PCB)",
+      "집적 회로 (IC) 봉지·언더필",
+      "전자 포팅 컴파운드 · 에폭시 캐스팅",
+      "열 계면 재료 (TIM) · 고열전도 소재",
+      "전기 절연 부품 · 고성능 접착제",
+      "도료 · 코팅 · 잉크",
+      "허니컴 세라믹 · 항공 우주 · 실리콘 산업",
+    ],
+  },
   // ===== Spherical =====
   "sl-qg": {
     tagline: "SiO₂ 99.0 ~ 99.95% · D50 0.1 ~ 40μm · 화염 용융 일반 구상",
