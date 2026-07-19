@@ -28,6 +28,7 @@ const BoardDetail = () => {
   const [loading, setLoading] = useState(true);
   const [unlocked, setUnlocked] = useState(false);
   const [unlockedContent, setUnlockedContent] = useState<string>("");
+  const [translating, setTranslating] = useState(false);
   const [pw, setPw] = useState("");
   const [delPw, setDelPw] = useState("");
   const [showDelete, setShowDelete] = useState(false);
@@ -35,20 +36,51 @@ const BoardDetail = () => {
   useEffect(() => {
     if (!id) return;
     (async () => {
+      setLoading(true);
       const { data } = await supabase
         .from("posts")
         .select("id, title, author_name, is_public, views, created_at, content")
         .eq("id", id)
         .maybeSingle();
       if (data) {
-        setPost(data as PostMeta);
-        setUnlocked(data.is_public);
-        if (data.is_public) setUnlockedContent(data.content);
+        let record = data as PostMeta;
+
+        // For non-Korean views, overlay title/content with translation
+        if (lang === "en" || lang === "ja") {
+          const { data: tr } = await supabase
+            .from("post_translations")
+            .select("title, content")
+            .eq("post_id", id)
+            .eq("lang", lang)
+            .maybeSingle();
+          if (tr) {
+            record = { ...record, title: tr.title, content: tr.content };
+          } else if (record.is_public) {
+            // request on-the-fly translation for public posts
+            setTranslating(true);
+            try {
+              const res = await supabase.functions.invoke("translate-post", {
+                body: { post_id: id, lang },
+              });
+              const t = res.data as { title?: string; content?: string } | null;
+              if (t?.title && t?.content) {
+                record = { ...record, title: t.title, content: t.content };
+              }
+            } catch {
+              /* ignore, fall back to Korean */
+            }
+            setTranslating(false);
+          }
+        }
+
+        setPost(record);
+        setUnlocked(record.is_public);
+        if (record.is_public) setUnlockedContent(record.content);
         await supabase.rpc("increment_post_views", { _post_id: id });
       }
       setLoading(false);
     })();
-  }, [id]);
+  }, [id, lang]);
 
   const onUnlock = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,7 +93,25 @@ const BoardDetail = () => {
       toast.error(t("board.wrongPw"));
       return;
     }
-    setUnlockedContent(data as string);
+    let content = data as string;
+    // Translate unlocked private content for non-Korean views
+    if (lang === "en" || lang === "ja") {
+      setTranslating(true);
+      try {
+        const res = await supabase.functions.invoke("translate-post", {
+          body: { post_id: id, lang },
+        });
+        const tr = res.data as { title?: string; content?: string } | null;
+        if (tr?.content) {
+          content = tr.content;
+          if (tr.title && post) setPost({ ...post, title: tr.title });
+        }
+      } catch {
+        /* keep original */
+      }
+      setTranslating(false);
+    }
+    setUnlockedContent(content);
     setUnlocked(true);
   };
 
@@ -136,6 +186,12 @@ const BoardDetail = () => {
 
               {/* Content */}
               <div className="px-6 py-8 md:px-10 md:py-10">
+                {translating && (
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                    {lang === "ja" ? "翻訳中…" : "Translating…"}
+                  </div>
+                )}
                 {unlocked ? (
                   <RichContent text={unlockedContent} />
                 ) : (
