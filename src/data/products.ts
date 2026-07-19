@@ -825,11 +825,11 @@ const advSeriesProducts: ProductDetail[] = [
     enTagline: "Silane-Coupling Surface Modification for Maximum Resin Compatibility and Dispersion",
     jaTagline: "シランカップリング表面改質で樹脂親和性・分散性を極大化",
     description:
-      "표면개질 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시 실란 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 표준 등급 SL-DRG07과 고순도 등급 SL-DRG07-A 2종으로 공급되며, 반도체 EMC·언더필, 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
+      "표면개질 실리카 분말은 SiO₂ 표면에 실란 커플링제(에폭시 실란 등)를 화학적으로 결합시켜 수지와의 친화성, 분산성, 계면 접착력을 획기적으로 향상시킨 기능성 필러입니다. 활성 결정질 실리카와 활성 용융 실리카를 기준으로 표준모델 SL-HJG와 SL-HRG를 기준으로 입도와 순도 등은 고객사의 요구에 대응하는 등급으로 공급되며, 반도체 EMC·언더필, 에폭시·페놀·실리콘·아크릴 등 다양한 수지 매트릭스에 최적화됩니다.",
     enDescription:
-      "Surface-Modified Silica Powder is a functional filler in which epoxy-silane coupling agent is chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Supplied as standard SL-DRG07 and high-purity SL-DRG07-A grades — optimized for semiconductor EMC/underfill and epoxy, phenolic, silicone and acrylic resin matrices.",
+      "Surface-Modified Silica Powder is a functional filler in which epoxy-silane coupling agent is chemically bonded to the SiO₂ surface, dramatically improving resin compatibility, dispersion and interfacial adhesion. Based on active crystalline silica and active fused silica, with standard models SL-HJG and SL-HRG as the baseline, grades matching particle size, purity and other requirements are supplied to meet customer needs — optimized for semiconductor EMC/underfill and epoxy, phenolic, silicone and acrylic resin matrices.",
     jaDescription:
-      "表面改質シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシシラン)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。標準グレードSL-DRG07・高純度グレードSL-DRG07-Aの2種で供給され、半導体EMC・アンダーフィル、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
+      "表面改質シリカ粉末は、SiO₂表面にシランカップリング剤(エポキシシラン)を化学結合させ、樹脂との親和性・分散性・界面接着力を飛躍的に向上させた機能性フィラーです。活性結晶質シリカと活性溶融シリカを基準とし、標準モデルSL-HJG・SL-HRGを基準に粒度や純度などは顧客の要求に応じたグレードで供給され、半導体EMC・アンダーフィル、エポキシ・フェノール・シリコーン・アクリルなど多様な樹脂マトリックスに最適化されます。",
     image: surfaceModImg,
     category: "advanced-series",
     features: [
