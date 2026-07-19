@@ -186,6 +186,12 @@ const BoardDetail = () => {
 
               {/* Content */}
               <div className="px-6 py-8 md:px-10 md:py-10">
+                {translating && (
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+                    <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
+                    {lang === "ja" ? "翻訳中…" : "Translating…"}
+                  </div>
+                )}
                 {unlocked ? (
                   <RichContent text={unlockedContent} />
                 ) : (
