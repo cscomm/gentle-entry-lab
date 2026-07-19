@@ -157,6 +157,7 @@ const ProductDetail = () => {
           "@type": "MerchantReturnPolicy",
           returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
           merchantReturnLink: "https://silica.co.kr/terms",
+          applicableCountry: "KR",
         },
         shippingDetails: {
           "@type": "OfferShippingDetails",
