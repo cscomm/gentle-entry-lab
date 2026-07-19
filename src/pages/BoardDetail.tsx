@@ -93,7 +93,25 @@ const BoardDetail = () => {
       toast.error(t("board.wrongPw"));
       return;
     }
-    setUnlockedContent(data as string);
+    let content = data as string;
+    // Translate unlocked private content for non-Korean views
+    if (lang === "en" || lang === "ja") {
+      setTranslating(true);
+      try {
+        const res = await supabase.functions.invoke("translate-post", {
+          body: { post_id: id, lang },
+        });
+        const tr = res.data as { title?: string; content?: string } | null;
+        if (tr?.content) {
+          content = tr.content;
+          if (tr.title && post) setPost({ ...post, title: tr.title });
+        }
+      } catch {
+        /* keep original */
+      }
+      setTranslating(false);
+    }
+    setUnlockedContent(content);
     setUnlocked(true);
   };
 
