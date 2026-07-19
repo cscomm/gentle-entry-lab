@@ -101,6 +101,41 @@ export type Database = {
         }
         Relationships: []
       }
+      post_translations: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          lang: string
+          post_id: string
+          title: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          lang: string
+          post_id: string
+          title: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          lang?: string
+          post_id?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "post_translations_post_id_fkey"
+            columns: ["post_id"]
+            isOneToOne: false
+            referencedRelation: "posts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       posts: {
         Row: {
           author_name: string
