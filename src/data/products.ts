@@ -271,12 +271,12 @@ export const productCatalog: ProductDetail[] = [
     slug: "high-purity-quartz",
     name: "천연 고순도규석",
     enName: "Natural High-Purity Quartz", jaName: "天然高純度石英",
-    tagline: "SiO₂ 99.77%, Fe₂O₃ 5ppm, 백색도 L 97.92 — EGS 및 고급 유리의 기준",
-    enTagline: "SiO₂ 99.77%, Fe₂O₃ 5 ppm, Whiteness L 97.92 — The Benchmark for EGS and Premium Glass", jaTagline: "SiO₂ 99.77%、Fe₂O₃ 5ppm、白色度 L 97.92 — EGSおよび高級ガラスの基準",
+    tagline: "SiO₂ 99.77%, Fe₂O₃ 5ppm, 백색도 L 97.92 — 천연 고순도 원석 공급",
+    enTagline: "SiO₂ 99.77%, Fe₂O₃ 5 ppm, Whiteness L 97.92 — Natural High-Purity Raw Stone Supply", jaTagline: "SiO₂ 99.77%、Fe₂O₃ 5ppm、白色度 L 97.92 — 天然高純度原石供給",
     description:
-      "프리미엄 천연 고순도 쿼츠는 엄격한 광맥 선별과 정제 공정을 거쳐 SiO₂ 99.77%, Fe₂O₃ 5ppm 수준의 초고순도와 L 97.92의 최상급 백색도를 달성합니다. EGS·인조대리석, 고급 유리, 전자재료, 정밀 주조, 나노 가공 등 부가가치가 높은 산업의 기초 소재로 사용됩니다.",
+      "프리미엄 천연 고순도 쿼츠는 엄격한 광맥 선별과 정제 공정을 거쳐 SiO₂ 99.77%, Fe₂O₃ 5ppm 수준의 초고순도와 L 97.92의 최상급 백색도를 달성한 천연 원석으로 공급됩니다. 고급 유리, EGS·인조대리석, 전자재료, 정밀 주조, 반도체 크루시블 등 부가가치가 높은 산업의 기초 원료로 사용됩니다.",
     enDescription:
-      "Premium Natural High-Purity Quartz achieves ultra-high purity of SiO₂ 99.77% and Fe₂O₃ 5 ppm, along with top-grade whiteness of L 97.92, through rigorous vein selection and refining processes. It serves as a foundational material for high-value-added industries such as EGS/engineered stone, premium glass, electronic materials, precision casting, and nano processing.", jaDescription: "プレミアム天然高純度石英は、厳格な鉱脈選別と精製工程を経て、SiO₂ 99.77%、Fe₂O₃ 5ppmレベルの超高純度とL 97.92の最上級の白色度を達成します。EGS・人造大理石、高級ガラス、電子材料、精密鋳造、ナノ加工など付加価値の高い産業の基礎素材として使用されます。",
+      "Premium Natural High-Purity Quartz is supplied as a raw stone achieving ultra-high purity of SiO₂ 99.77% and Fe₂O₃ 5 ppm, along with top-grade whiteness of L 97.92, through rigorous vein selection and refining processes. It serves as a foundational raw material for high-value-added industries such as premium glass, EGS/engineered stone, electronic materials, precision casting, and semiconductor crucibles.", jaDescription: "プレミアム天然高純度石英は、厳格な鉱脈選別と精製工程を経て、SiO₂ 99.77%、Fe₂O₃ 5ppmレベルの超高純度とL 97.92の最上級の白色度を達成した天然原石として供給されます。高級ガラス、EGS・人造大理石、電子材料、精密鋳造、半導体ルツボなど付加価値の高い産業の基礎原料として使用されます。",
     image: highPurityQuartz,
     detailImage: hpqDetail,
     features: [
@@ -284,7 +284,7 @@ export const productCatalog: ProductDetail[] = [
       { title: "🧼 초저 철분", desc: "Fe₂O₃ 5ppm — 황변 없이 투명도 및 백색도 핵심 유지", enTitle: "🧼 Ultra-Low Iron Content", jaTitle: "🧼 超低鉄分", enDesc: "Fe₂O₃ 5 ppm — maintains transparency and whiteness without yellowing", jaDesc: "Fe₂O₃ 5ppm — 黄変なしに透明度および白色度を中核的に維持" },
       { title: "⚡ 우수한 절연 성능", desc: "EC 2.12 µs/cm — 전자재료 충진재(Filler) 신뢰성 확보", enTitle: "⚡ Excellent Insulation Performance", jaTitle: "⚡ 優れた絶縁性能", enDesc: "EC 2.12 µs/cm — ensures reliability as an electronic-material filler", jaDesc: "EC 2.12 µs/cm — 電子材料用充填材(Filler)の信頼性確保" },
       { title: "✨ 최상급 백색도", desc: "L 97.92 — 고급 인조대리석·건축 내외장재 최적", enTitle: "✨ Top-Grade Whiteness", jaTitle: "✨ 最上級の白色度", enDesc: "L 97.92 — optimal for premium engineered stone and architectural interior/exterior materials", jaDesc: "L 97.92 — 高級人造大理石・建築内外装材に最適" },
-      { title: "📐 균일 입도", desc: "고객 맞춤 입도 가공", enTitle: "📐 Uniform Particle Size", jaTitle: "📐 均一な粒度", enDesc: "Custom particle-size processing tailored to customer requirements", jaDesc: "お客様に合わせたカスタム粒度加工" },
+      { title: "🪨 천연 원석 공급", desc: "정제된 고순도 천연 원석 형태로 안정 공급", enTitle: "🪨 Natural Raw Stone Supply", jaTitle: "🪨 天然原石供給", enDesc: "Supplied as refined high-purity natural raw stone", jaDesc: "精製された高純度天然原石として安定供給" },
       { title: "🧪 중성 안정", desc: "pH 6.73 — 다양한 화학 공정에 적용 가능", enTitle: "🧪 Neutral Stability", jaTitle: "🧪 中性安定", enDesc: "pH 6.73 — applicable to diverse chemical processes", jaDesc: "pH 6.73 — 多様な化学工程に適用可能" },
     ],
     specs: [
