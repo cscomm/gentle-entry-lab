@@ -7,6 +7,7 @@ import { useLang } from "@/contexts/LanguageContext";
 const categories: { label: string; en: string; ja: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products", ja: "全製品", href: "/products/all" },
   { label: "용융실리카", en: "Fused Silica", ja: "溶融シリカ", slug: "fused-silica" },
+  { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ", slug: "crystalline-silica" },
   { label: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末", slug: "spherical-silica-powder" },
   { label: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末", slug: "round-corner-silica-powder" },
   { label: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末", slug: "angular-silica-powder" },
