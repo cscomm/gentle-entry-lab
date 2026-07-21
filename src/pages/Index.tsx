@@ -39,6 +39,7 @@ import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
 import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import silicaSolImg from "@/assets/silica-sol.png";
+import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
@@ -51,6 +52,7 @@ const navItems = [
 const productCategories: { label: string; en: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products" },
   { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
+  { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", slug: "crystalline-silica" },
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
@@ -66,6 +68,7 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
 const products = [
   // Row 1 — Fused Silica first, then Advanced Series 1~6
   { img: gradeA, slug: "fused-silica", title: "용융실리카", enTitle: "Fused Silica", jaTitle: "溶融シリカ", desc: "A · B · C 등급 + 전 SL 시리즈 용융실리카 통합 카테고리 — 반도체·광학·EMC·정밀 주조 전용", enDesc: "Unified category with A/B/C grades and every SL-series fused silica — for semiconductor, optics, EMC and precision casting.", jaDesc: "A・B・Cグレード+全SLシリーズ溶融シリカを統合したカテゴリ — 半導体・光学・EMC・精密鋳造向け", cat: "용융실리카" },
+  { img: crystallineSilicaImg, slug: "crystalline-silica", title: "쿼츠 · 결정질 실리카", enTitle: "Quartz · Crystalline Silica", jaTitle: "クォーツ・結晶質シリカ", desc: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — α-Quartz 결정질 실리카 전 형상 라인업 통합 카테고리", enDesc: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — unified α-quartz crystalline silica lineup covering every shape and function.", jaDesc: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — α-Quartz結晶質シリカの全形状ラインアップ統合カテゴリ", cat: "쿼츠 · 결정질 실리카" },
   { img: sphericalImg, slug: "spherical-silica-powder", title: "구상 실리카 분말", enTitle: "Spherical Silica Powder", jaTitle: "球状シリカ粉末", desc: "SL-QG / SL-QG-L — EMC·CCL·반도체 봉지재용 고구상·저응력·저열팽창 무정형 SiO₂", enDesc: "SL-QG / SL-QG-L — highly spherical, low-stress, low-CTE amorphous SiO₂ for EMC, CCL and semiconductor encapsulation.", jaDesc: "SL-QG / SL-QG-L — EMC・CCL・半導体封止材向けの高球状・低応力・低熱膨張の非晶質SiO₂", cat: "구상 실리카 분말" },
   { img: roundCornerImg, slug: "round-corner-silica-powder", title: "모서리 라운드 실리카 분말", enTitle: "Round Corner Silica Powder", jaTitle: "丸角シリカ粉末", desc: "SL-YJG / SL-YRG — 각상의 강도와 구상의 유동성을 겸비한 하이브리드 필러", enDesc: "SL-YJG / SL-YRG — hybrid filler combining angular strength with near-spherical flow performance.", jaDesc: "SL-YJG / SL-YRG — 角形の強度と球状の流動性を兼備するハイブリッドフィラー", cat: "모서리 라운드 실리카 분말" },
   { img: angularImg, slug: "angular-silica-powder", title: "각상 실리카 분말", enTitle: "Angular Silica Powder", jaTitle: "角形シリカ粉末", desc: "SL-RG / SL-JG — 우수한 기계강도·내마모·절연성의 표준 각상 필러", enDesc: "SL-RG / SL-JG — standard angular filler with excellent mechanical strength, wear resistance and insulation.", jaDesc: "SL-RG / SL-JG — 優れた機械強度・耐摩耗・絶縁性を持つ標準角形フィラー", cat: "각상 실리카 분말" },

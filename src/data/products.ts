@@ -28,6 +28,7 @@ import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
 import silicaSolImg from "@/assets/silica-sol.png";
+import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
@@ -1459,6 +1460,64 @@ productCatalog.push({
     "태양광 · 에너지",
   ],
 });
+
+
+// ============= Aggregated Category: Quartz · Crystalline Silica (α-Quartz) =============
+productCatalog.push({
+  slug: "crystalline-silica",
+  name: "쿼츠 · 결정질 실리카",
+  enName: "Quartz · Crystalline Silica (α-Quartz)",
+  jaName: "クォーツ・結晶質シリカ (α-石英)",
+  tagline: "구상·모서리 라운드·각상·저방사선·표면개질·석영사 전 결정질(α-Quartz) 실리카 라인업 통합 카테고리",
+  enTagline: "Unified α-quartz crystalline silica lineup — spherical, round-corner, angular, low-α, surface-modified and quartz sand grades in one place",
+  jaTagline: "球状・丸角・角形・低α線・表面改質・石英砂まで、全結晶質(α-Quartz)シリカラインアップを一箇所で",
+  description:
+    "쿼츠(Quartz) · 결정질 실리카(Crystalline Silica, α-Quartz)는 천연 수정 광석을 기반으로 정제·분급·결정 형상 제어를 거쳐 제조되는 고순도 α상 SiO₂ 소재로, 용융(Amorphous) 실리카 대비 높은 경도(Mohs 7)·우수한 화학적 안정성·낮은 단가·풍부한 원료 공급성을 갖춘 산업용 대표 실리카입니다. SiLiCA는 결정질 실리카 라인업을 하나의 카테고리로 통합하여, 모서리 라운드 결정형(SL-YJG)·각상 결정형(SL-JG)·저방사선 결정형(SL-CL)·표면개질 결정형(SL-HJG)·결정 석영사(SL-CS) 등 형상·기능·순도별 전 라인업을 CCL/PCB, 반도체 EMC, 정밀 주조, 세라믹, 산업용 코팅, 고내마모 복합재 등 다양한 산업 요구에 맞춰 커스텀 가공 공급합니다.\n\n각 제품은 원래 소속 카테고리(구상·모서리 라운드·각상·저방사선·표면개질·실리카 분말·입자)에도 그대로 유지되므로, 형상·기능별로도 자유롭게 탐색 가능합니다.",
+  enDescription:
+    "Quartz · Crystalline Silica (α-Quartz) is a high-purity α-phase SiO₂ material refined from natural quartz ore through classification and crystal-shape control. Compared with amorphous fused silica, it offers superior hardness (Mohs 7), excellent chemical stability, cost-competitive pricing and abundant raw-material availability, making it the industrial workhorse silica. SiLiCA consolidates its crystalline lineup — round-corner crystalline (SL-YJG), angular crystalline (SL-JG), low-α crystalline (SL-CL), surface-modified crystalline (SL-HJG) and crystalline quartz sand (SL-CS) — under one category, custom-processed for CCL/PCB, semiconductor EMC, precision casting, ceramics, industrial coatings and high-wear composites.\n\nEach product also remains listed under its original shape/function category (spherical, round-corner, angular, low-α, surface-modified, silica powder & granule), so you can navigate by form factor as well.",
+  jaDescription:
+    "クォーツ(Quartz)・結晶質シリカ(Crystalline Silica, α-Quartz)は、天然石英原石を精製・分級・結晶形状制御して製造される高純度α相SiO₂素材で、溶融(非晶質)シリカに比べ高硬度(モース7)・優れた化学安定性・低コスト・豊富な原料供給性を兼ね備えた産業用の代表的シリカです。SiLiCAは結晶質ラインアップを一つのカテゴリに統合し、丸角結晶質(SL-YJG)・角形結晶質(SL-JG)・低α線結晶質(SL-CL)・表面改質結晶質(SL-HJG)・結晶石英砂(SL-CS)を、CCL/PCB・半導体EMC・精密鋳造・セラミックス・産業用コーティング・高耐摩耗複合材など多様な用途向けにカスタム加工で供給します。\n\n各製品は元の所属カテゴリ(球状・丸角・角形・低α線・表面改質・シリカ粉末/粒)にもそのまま掲載されるため、形状・機能別にも自由に閲覧できます。",
+  image: crystallineSilicaImg,
+  category: "advanced-series",
+  isCategoryIndex: true,
+  features: [
+    { title: "💎 α-Quartz 결정 구조", desc: "천연 석영 기반의 α상 결정질 SiO₂ — 높은 경도(Mohs 7)와 우수한 화학적 안정성", enTitle: "💎 α-Quartz Crystal Structure", jaTitle: "💎 α-Quartz 結晶構造", enDesc: "α-phase crystalline SiO₂ from natural quartz — high hardness (Mohs 7) and excellent chemical stability", jaDesc: "天然石英ベースのα相結晶質SiO₂ — 高硬度(モース7)と優れた化学安定性" },
+    { title: "🔷 전 형상 라인업 통합", desc: "모서리 라운드(SL-YJG)·각상(SL-JG)·저방사선(SL-CL)·표면개질(SL-HJG)·석영사(SL-CS)", enTitle: "🔷 Full Shape Lineup", jaTitle: "🔷 全形状ラインアップ", enDesc: "Round-corner (SL-YJG), angular (SL-JG), low-α (SL-CL), surface-modified (SL-HJG), quartz sand (SL-CS)", jaDesc: "丸角(SL-YJG)・角形(SL-JG)・低α線(SL-CL)・表面改質(SL-HJG)・石英砂(SL-CS)" },
+    { title: "☢️ 저방사선(Low-α) 대응", desc: "SL-CL — HBM·DDR5·AI 반도체 소프트에러 방지용 α선 ≤ 0.001 cph/cm²", enTitle: "☢️ Low-α Grade Available", jaTitle: "☢️ 低α線対応", enDesc: "SL-CL — α ≤ 0.001 cph/cm² for HBM, DDR5, AI-semiconductor soft-error suppression", jaDesc: "SL-CL — HBM・DDR5・AI半導体のソフトエラー抑制用 α線 ≤ 0.001 cph/cm²" },
+    { title: "⚗️ 표면개질(활성) 결정형", desc: "SL-HJG — 실란 커플링 처리로 유기 매트릭스와의 접착·분산성 극대화", enTitle: "⚗️ Surface-Modified Crystalline", jaTitle: "⚗️ 表面改質(活性)結晶質", enDesc: "SL-HJG — silane-coupled to maximize adhesion and dispersion in organic matrices", jaDesc: "SL-HJG — シランカップリング処理で有機マトリクスとの接着・分散性を最大化" },
+    { title: "💰 경제성 & 안정 공급", desc: "용융 대비 낮은 단가와 풍부한 원료 공급성 — 대량 수요·산업용 표준 필러에 최적", enTitle: "💰 Cost-Competitive & Stable Supply", jaTitle: "💰 経済性と安定供給", enDesc: "Lower cost than fused variants with abundant raw-material supply — ideal for high-volume industrial fillers", jaDesc: "溶融品対比の低コストと豊富な原料供給性 — 大量需要・産業用標準フィラーに最適" },
+    { title: "📐 광범위 입도 · 맞춤 공급", desc: "미분(D50 µm)부터 석영사 과립까지 고객 요구 사양별 커스텀 생산", enTitle: "📐 Wide PSD & Custom Supply", jaTitle: "📐 広範な粒度・カスタム供給", enDesc: "From fine powder (D50 µm) to quartz sand granules — custom per requirement", jaDesc: "微粉(D50 µm)から石英砂顆粒までカスタム生産" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS", enValue: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS", jaValue: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "결정 구조", value: "α-Quartz (Trigonal, 결정질)", enValue: "α-Quartz (Trigonal, crystalline)", jaValue: "α-Quartz (三方晶系、結晶質)", enLabel: "Crystal Structure", jaLabel: "結晶構造" },
+    { label: "SiO₂ 순도 범위", value: "≥ 99.5 % ~ ≥ 99.9 % (등급별)", enValue: "≥99.5% – ≥99.9% (by grade)", jaValue: "≥99.5% ~ ≥99.9% (グレード別)", enLabel: "SiO₂ Purity Range", jaLabel: "SiO₂純度範囲" },
+    { label: "경도 (Mohs)", value: "7", enLabel: "Hardness (Mohs)", jaLabel: "硬度 (モース)" },
+    { label: "형상 옵션", value: "모서리 라운드 · 각상 · 저방사선 · 표면개질 · 석영사", enValue: "Round-corner · angular · low-α · surface-modified · quartz sand", jaValue: "丸角 · 角形 · 低α線 · 表面改質 · 石英砂", enLabel: "Shape Options", jaLabel: "形状オプション" },
+    { label: "저방사선(Low-α)", value: "SL-CL 그레이드 — α ≤ 0.001 cph/cm²", enValue: "SL-CL grade — α ≤ 0.001 cph/cm²", jaValue: "SL-CLグレード — α ≤ 0.001 cph/cm²", enLabel: "Low-α Option", jaLabel: "低α線オプション" },
+    { label: "표면개질", value: "SL-HJG (실란 커플링) 그레이드 별도 공급", enValue: "SL-HJG (silane-coupled) grade available", jaValue: "SL-HJG (シランカップリング)グレード供給可", enLabel: "Surface Modification", jaLabel: "表面改質" },
+    { label: "포장", value: "10 / 20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "10 / 20 kg bag · 500 kg bulk · OEM", jaValue: "10 / 20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
+  ],
+  subModelsColumnLabel: { ko: "형상 / 기능", en: "Shape / Function", ja: "形状/機能" },
+  subModels: [
+    { code: "SL-YJG", slug: "sl-yjg", spec: "결정형 모서리 라운드 (CCL·도전성 페이스트·산업 코팅)", enSpec: "Crystalline Round-Corner (CCL, conductive paste, industrial coatings)", jaSpec: "結晶質 丸角 (CCL・導電性ペースト・産業用コーティング)" },
+    { code: "SL-JG", slug: "sl-jg", spec: "결정형 각상 (표준 필러·고내마모 복합재)", enSpec: "Crystalline Angular (standard filler, high-wear composites)", jaSpec: "結晶質 角形 (標準フィラー・高耐摩耗複合材)" },
+    { code: "SL-CL", slug: "sl-cl", spec: "저방사선(Low-α) 결정형 — α ≤ 0.001 cph/cm²", enSpec: "Low-α Crystalline — α ≤ 0.001 cph/cm²", jaSpec: "低α線 結晶質 — α ≤ 0.001 cph/cm²" },
+    { code: "SL-HJG", slug: "sl-hjg", spec: "표면개질(활성) 결정형 — 실란 커플링 처리", enSpec: "Surface-Modified Crystalline — silane-coupled", jaSpec: "表面改質(活性) 結晶質 — シランカップリング処理" },
+    { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사 (유리 원료·정밀 주조·연마재)", enSpec: "Crystalline Quartz Sand (glass raw material, precision casting, abrasives)", jaSpec: "結晶石英砂 (ガラス原料・精密鋳造・研磨材)" },
+  ],
+  applications: [
+    "CCL / PCB · 5G 고주파 기판 (결정형 필러)",
+    "반도체 EMC · 언더필 (저방사선 결정형)",
+    "HBM · DDR5 · AI 반도체 (Low-α 결정형)",
+    "도전성 페이스트 · 산업용 코팅",
+    "고내마모 복합재 · 엔지니어링 플라스틱 필러",
+    "정밀 주조 · 세라믹 코어",
+    "유리 원료 · 특수 유리 · 광학 유리",
+    "연마재 · 워터필터 · 스포츠 표면재",
+  ],
+});
+
 
 
 // ============= Silica Sol (Colloidal Silica) — category index + 2 children =============

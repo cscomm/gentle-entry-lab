@@ -99,7 +99,10 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
                       {productCatalog
                         .filter((p) => p.category === "advanced-series" && p.isCategoryIndex)
-                        .sort((a, b) => (a.slug === "fused-silica" ? -1 : b.slug === "fused-silica" ? 1 : 0))
+                        .sort((a, b) => {
+                          const order = (s: string) => s === "fused-silica" ? 0 : s === "crystalline-silica" ? 1 : 2;
+                          return order(a.slug) - order(b.slug);
+                        })
                         .map((p) => (
                           <Link
                             key={p.slug}
