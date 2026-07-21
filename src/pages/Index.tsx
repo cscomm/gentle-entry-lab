@@ -51,6 +51,7 @@ const navItems = [
 const productCategories: { label: string; en: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products" },
   { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
+  { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", slug: "crystalline-silica" },
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
