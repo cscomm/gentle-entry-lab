@@ -26,6 +26,35 @@ type Route = {
 
 export const productRoutes: Route[] = [
   {
+    path: "/products/crystalline-silica",
+    title: "쿼츠 · 결정질 실리카(Crystalline Silica, α-Quartz) 통합 카테고리 | SILICA",
+    description:
+      "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — 모서리 라운드·각상·저방사선·표면개질·석영사까지 결정질(α-Quartz) 실리카 전 라인업을 통합 공급. CCL·반도체 EMC·정밀 주조·세라믹·산업 코팅용.",
+    titleI18n: {
+      en: "Quartz · Crystalline Silica (α-Quartz) — Unified Category | SILICA",
+      ja: "クォーツ・結晶質シリカ (α-Quartz) 統合カテゴリ | SILICA",
+    },
+    descriptionI18n: {
+      en: "Unified crystalline silica (α-quartz) category: SL-YJG round-corner, SL-JG angular, SL-CL low-α, SL-HJG surface-modified, SL-CS quartz sand — for CCL, semiconductor EMC, precision casting, ceramics and industrial coatings.",
+      ja: "SL-YJG丸角・SL-JG角形・SL-CL低α線・SL-HJG表面改質・SL-CS結晶石英砂まで、結晶質(α-Quartz)シリカの全ラインアップを統合。CCL・半導体EMC・精密鋳造・セラミックス・産業用コーティング向け。",
+    },
+    h1: "쿼츠 · 결정질 실리카 — Quartz · Crystalline Silica (α-Quartz) 통합 카테고리",
+    body: `
+      <p><strong>쿼츠(Quartz) · 결정질 실리카(Crystalline Silica, α-Quartz)</strong>는 천연 수정 광석을 기반으로 정제·분급·결정 형상 제어를 거쳐 제조되는 고순도 α상 SiO₂ 소재입니다. 용융(비정질) 실리카 대비 높은 경도(Mohs 7), 우수한 화학적 안정성, 낮은 단가, 풍부한 원료 공급성을 갖춘 산업용 대표 실리카입니다.</p>
+      <h2>결정질 실리카 라인업</h2>
+      <ul>
+        <li><strong>SL-YJG</strong> — 결정형 모서리 라운드 실리카 (CCL·도전성 페이스트·산업 코팅)</li>
+        <li><strong>SL-JG</strong> — 결정형 각상 실리카 (표준 필러·고내마모 복합재)</li>
+        <li><strong>SL-CL</strong> — 저방사선(Low-α) 결정형 실리카 (α ≤ 0.001 cph/cm², HBM/DDR5/AI 반도체용)</li>
+        <li><strong>SL-HJG</strong> — 표면개질(활성) 결정형 실리카 (실란 커플링, 유기 매트릭스 상용성)</li>
+        <li><strong>SL-CS</strong> — 결정 석영사 (유리 원료·정밀 주조·연마재·워터필터)</li>
+      </ul>
+      <h2>주요 응용 분야</h2>
+      <p>CCL/PCB · 5G 고주파 기판, 반도체 EMC · 언더필, HBM/DDR5/AI 반도체(저방사선), 도전성 페이스트 · 산업용 코팅, 고내마모 복합재 · 엔지니어링 플라스틱 필러, 정밀 주조 · 세라믹 코어, 유리 원료 · 특수/광학 유리, 연마재 · 워터필터 · 스포츠 표면재.</p>
+      <h2>공급 & 커스텀</h2>
+      <p>각 제품은 원래 소속 카테고리(구상·모서리 라운드·각상·저방사선·표면개질·실리카 분말·입자)에도 그대로 유지되어 형상·기능별로도 탐색 가능합니다. 입도·순도·표면처리·포장 등 고객 요구 사양에 맞춘 커스텀 생산이 가능합니다.</p>`,
+  },
+  {
     path: "/products/fused-silica",
     title: "용융실리카(Fused Silica) — A·B·C 등급 + 전 SL 시리즈 통합 카테고리 | SILICA",
     description:
