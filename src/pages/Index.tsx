@@ -39,6 +39,7 @@ import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
 import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import silicaSolImg from "@/assets/silica-sol.png";
+import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
