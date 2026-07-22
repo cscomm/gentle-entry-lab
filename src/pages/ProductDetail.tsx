@@ -517,6 +517,97 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SL-SHS — Full Silica Sol Grade Matrix */}
+      {product.slug === "sl-shs" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+            TECHNICAL DATA · SL-SHS SERIES
+          </span>
+          <h3 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
+            📊 {tri("전체 그레이드 스펙 매트릭스", "Full Grade Specification Matrix", "全グレード仕様マトリクス")}
+          </h3>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-SHS 시리즈 14종 그레이드의 SiO₂ 농도·알칼리(Na₂O)·pH·점도·밀도·평균 입자경·Cl⁻ 범위를 한 표에서 비교할 수 있습니다. 계열별 색상 그룹으로 구분되어 있으며, 사이즈·포장은 커스터마이즈 가능합니다.",
+              "Compare SiO₂ content, alkali (Na₂O), pH, viscosity, density, mean particle size and Cl⁻ range for all 14 SL-SHS grades in one table. Grades are color-grouped by stabilization series; particle size and packaging are customizable.",
+              "SL-SHSシリーズ14グレードのSiO₂濃度・アルカリ(Na₂O)・pH・粘度・密度・平均粒子径・Cl⁻範囲を一つの表で比較できます。系列別にカラーグルーピングされ、粒子径・包装はカスタマイズ可能です。"
+            )}
+          </p>
+
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-[13px] md:text-sm" style={{ fontVariantNumeric: "tabular-nums" }}>
+                <thead>
+                  <tr className="bg-foreground text-background">
+                    <th className="border-r border-background/20 px-3 py-3 text-left text-xs font-semibold tracking-[0.15em] md:px-4">{tri("계열", "Series", "系列")}</th>
+                    <th className="border-r border-background/20 px-3 py-3 text-left text-xs font-semibold tracking-[0.15em] md:px-4">{tri("모델", "Type", "型番")}</th>
+                    <th className="border-r border-background/20 px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">SiO₂ (%)</th>
+                    <th className="border-r border-background/20 px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">Na₂O (%) ≤</th>
+                    <th className="border-r border-background/20 px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">pH</th>
+                    <th className="border-r border-background/20 px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">{tri("점도", "Viscosity", "粘度")}<br/><span className="text-[10px] opacity-80">mPa·s (25℃) ≤</span></th>
+                    <th className="border-r border-background/20 px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">{tri("밀도", "Density", "密度")}<br/><span className="text-[10px] opacity-80">g/cm³ (25℃)</span></th>
+                    <th className="border-r border-background/20 px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">{tri("평균 입경", "Avg Grain", "平均粒径")}<br/><span className="text-[10px] opacity-80">nm</span></th>
+                    <th className="px-3 py-3 text-center text-xs font-semibold tracking-[0.15em] md:px-4">Cl⁻<br/><span className="text-[10px] opacity-80">ppm</span></th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN15", sio2: "15–16", na2o: "0.70", ph: "9.0–11.0", visc: "5", dens: "1.09–1.11", grain: "6–8", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN20", sio2: "20–21", na2o: "0.50", ph: "9.0–11.0", visc: "6", dens: "1.12–1.14", grain: "10–20", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN25", sio2: "25–26", na2o: "0.30", ph: "9.0–10.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN30", sio2: "30–31", na2o: "0.30", ph: "9.0–10.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN40", sio2: "40–41", na2o: "0.60", ph: "9.0–10.5", visc: "25", dens: "1.28–1.30", grain: "10–20", cl: "—" },
+                    { series: "SW", tint: "bg-emerald-500/5", model: "SL-SHS-SW20", sio2: "20–21", na2o: "0.04", ph: "2.0–4.0", visc: "5", dens: "1.12–1.14", grain: "10–20", cl: "—" },
+                    { series: "SW", tint: "bg-emerald-500/5", model: "SL-SHS-SW25", sio2: "25–26", na2o: "0.05", ph: "2.0–4.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
+                    { series: "SW", tint: "bg-emerald-500/5", model: "SL-SHS-SW30", sio2: "30–31", na2o: "0.06", ph: "2.0–4.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JA", tint: "bg-primary/5", model: "SL-SHS-JA30", sio2: "30–31", na2o: "0.06", ph: "8.5–10.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JA", tint: "bg-primary/5", model: "SL-SHS-JA30/40", sio2: "40–41", na2o: "0.10", ph: "9.0–10.0", visc: "12", dens: "1.28–1.30", grain: "20–30", cl: "—" },
+                    { series: "ZX", tint: "bg-amber-500/5", model: "SL-SHS-ZX25", sio2: "25–26", na2o: "0.10", ph: "6.0–8.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
+                    { series: "ZX", tint: "bg-amber-500/5", model: "SL-SHS-ZX30", sio2: "30–31", na2o: "0.12", ph: "6.0–8.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JGC", tint: "bg-fuchsia-500/5", model: "SL-SHS-JGC25", sio2: "25–26", na2o: "0.30", ph: "9.0–10.0", visc: "7", dens: "1.15–1.17", grain: "8–16", cl: "≤ 30" },
+                    { series: "JGC", tint: "bg-fuchsia-500/5", model: "SL-SHS-JGC30", sio2: "30–31", na2o: "0.30", ph: "9.0–10.0", visc: "8", dens: "1.19–1.21", grain: "10–20", cl: "≤ 30" },
+                  ].map((r, i) => (
+                    <tr key={r.model} className={`${r.tint} transition hover:bg-secondary/40`}>
+                      <td className="border-r border-border px-3 py-3 text-xs font-bold tracking-wider text-primary md:px-4">{r.series}</td>
+                      <td className="border-r border-border px-3 py-3 font-mono text-xs font-semibold text-foreground md:px-4 md:text-sm">{r.model}</td>
+                      <td className="border-r border-border px-3 py-3 text-center font-mono font-semibold text-foreground md:px-4">{r.sio2}</td>
+                      <td className="border-r border-border px-3 py-3 text-center font-mono text-muted-foreground md:px-4">{r.na2o}</td>
+                      <td className="border-r border-border px-3 py-3 text-center font-mono text-foreground md:px-4">{r.ph}</td>
+                      <td className="border-r border-border px-3 py-3 text-center font-mono text-foreground md:px-4">{r.visc}</td>
+                      <td className="border-r border-border px-3 py-3 text-center font-mono text-foreground md:px-4">{r.dens}</td>
+                      <td className="border-r border-border px-3 py-3 text-center font-mono font-semibold text-primary md:px-4">{r.grain}</td>
+                      <td className="px-3 py-3 text-center font-mono text-muted-foreground md:px-4">{r.cl}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="border-t border-border bg-secondary/20 px-5 py-4 md:px-7">
+              <ul className="space-y-1.5 text-xs text-muted-foreground md:text-sm">
+                <li className="flex gap-2"><span className="mt-0.5 shrink-0 text-primary">•</span><span>{tri("사이즈 및 포장(25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC 등)은 커스터마이즈 가능합니다.", "Size and packaging (25 kg drum · 200 kg drum · 1,000 kg IBC, etc.) can be customized.", "サイズおよび包装(25 kg ドラム · 200 kg ドラム · 1,000 kg IBC など)はカスタマイズ可能です。")}</span></li>
+                <li className="flex gap-2"><span className="mt-0.5 shrink-0 text-primary">•</span><span>{tri("평균 입자경이 10 nm 미만인 그레이드는 점도에 관한 별도 합의가 필요합니다.", "For grades with average grain diameter under 10 nm, buyer and seller need to agree separately on viscosity.", "平均粒子径が10 nm未満のグレードは、粘度について別途合意が必要です。")}</span></li>
+                <li className="flex gap-2"><span className="mt-0.5 shrink-0 text-primary">•</span><span>{tri("원산지: 중국. 계열별 특성에 맞춰 안정형·pH·이온 농도를 세밀하게 조정 공급합니다.", "Origin: China. Stabilizer, pH and ionic content are precisely adjusted per series.", "原産地:中国。系列別特性に合わせて安定化系・pH・イオン濃度をきめ細かく調整して供給します。")}</span></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Application highlights */}
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {[
+              { icon: "🏗️", ko: "정밀 주조 · 내화 코팅", en: "Investment Casting · Refractory", ja: "精密鋳造 · 耐火コーティング", desc: tri("셸 몰드 바인더 · 세라믹 코팅 · 소결 강도 향상", "Shell binders, ceramic coatings, sintering strength", "シェルバインダー · セラミックコーティング · 焼結強度向上") },
+              { icon: "📄", ko: "제지 · 섬유 · 도료", en: "Paper · Textile · Coatings", ja: "製紙 · 繊維 · 塗料", desc: tri("표면 개질제 · 안티슬립 · 매트 코팅", "Surface modifier, anti-slip, matte coating", "表面改質剤 · アンチスリップ · マットコーティング") },
+              { icon: "🔋", ko: "이차전지 · 촉매 · 실리콘", en: "Batteries · Catalyst · Silicone", ja: "二次電池 · 触媒 · シリコン", desc: tri("고체 전해질 · 촉매 담체 · 실리콘 시트 처리제", "Solid electrolyte, catalyst support, silicone sheet agent", "固体電解質 · 触媒担体 · シリコンシート処理剤") },
+            ].map((c) => (
+              <div key={c.en} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div className="text-3xl">{c.icon}</div>
+                <h4 className="mt-3 text-lg font-bold text-foreground">{tri(c.ko, c.en, c.ja)}</h4>
+                <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* SL-CHR-01 — Column Chromatography A/B/C × Industrial/Reagent */}
       {product.slug === "silica-gel-sl-chr-01" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
