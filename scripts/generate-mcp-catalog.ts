@@ -15,7 +15,13 @@ const importRe = /^import\s+(\w+)\s+from\s+"(@\/assets\/[^"]+)";?\s*$/gm;
 const idents: { name: string; path: string }[] = [];
 let stripped = text.replace(importRe, (_m, name: string, path: string) => {
   idents.push({ name, path });
-  return `const ${name} = ${JSON.stringify(path.replace("@/assets/", "/assets/"))};`;
+  const urlPath = path.replace("@/assets/", "/assets/");
+  // For .asset.json pointer imports, emit an object with a `url` field so
+  // downstream code that reads `.url` still typechecks and runs.
+  if (path.endsWith(".asset.json")) {
+    return `const ${name} = { url: ${JSON.stringify(urlPath)} } as const;`;
+  }
+  return `const ${name} = ${JSON.stringify(urlPath)};`;
 });
 
 const banner = `// AUTO-GENERATED from src/data/products.ts by scripts/generate-mcp-catalog.ts.

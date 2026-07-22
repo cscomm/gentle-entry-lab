@@ -7,6 +7,7 @@ const gradeB = "/assets/grade-b-silica.png";
 const gradeBDetail = "/assets/grade-b-detail.png";
 const gradeC = "/assets/grade-c-silica.png";
 const gradeCDetail = "/assets/grade-c-detail.png";
+const fusedSilicaCategoryImg = "/assets/fused-silica-category.jpg";
 const highPurityQuartz = "/assets/high-purity-quartz-raw.jpg";
 const hpqDetail = "/assets/hpq-detail.jpg";
 const sgMicrosilica = "/assets/sg-microsilica.jpg";
@@ -31,6 +32,34 @@ const leadFreeGlassImg = "/assets/lead-free-glass-powder.jpg";
 const hf04Img = "/assets/hf04-fused-silica-powder.jpg";
 const sphSemImg = "/assets/sl-sph-300-sem.png";
 const silicaSolImg = "/assets/silica-sol.png";
+const crystallineSilicaImg = "/assets/crystalline-silica.jpg";
+const slChr01Asset = { url: "/assets/sl-chr-01.jpg.asset.json" } as const;
+const slChr02Asset = { url: "/assets/sl-chr-02.jpg.asset.json" } as const;
+const slChr03Asset = { url: "/assets/sl-chr-03.jpg.asset.json" } as const;
+const slInd01PhotoAsset = { url: "/assets/sl-ind-01-photo.jpg.asset.json" } as const;
+const slInd02PhotoAsset = { url: "/assets/sl-ind-02-photo.jpg.asset.json" } as const;
+const slInd03PhotoAsset = { url: "/assets/sl-ind-03-photo.jpg.asset.json" } as const;
+const slDes01PhotoAsset = { url: "/assets/sl-des-01-photo.jpg.asset.json" } as const;
+const slDes02PhotoAsset = { url: "/assets/sl-des-02-photo.jpg.asset.json" } as const;
+const slDes03PhotoAsset = { url: "/assets/sl-des-03-photo.jpg.asset.json" } as const;
+const slDes04PhotoAsset = { url: "/assets/sl-des-04-photo.jpg.asset.json" } as const;
+const slDes05PhotoAsset = { url: "/assets/sl-des-05-photo.jpg.asset.json" } as const;
+const slDes06PhotoAsset = { url: "/assets/sl-des-06-photo.jpg.asset.json" } as const;
+const slDes07PhotoAsset = { url: "/assets/sl-des-07-photo.jpg.asset.json" } as const;
+const slChr01Img = slChr01Asset.url;
+const slChr02Img = slChr02Asset.url;
+const slChr03Img = slChr03Asset.url;
+const slInd01Img = slInd01PhotoAsset.url;
+const slInd02Img = slInd02PhotoAsset.url;
+const slInd03Img = slInd03PhotoAsset.url;
+const slDes01Img = slDes01PhotoAsset.url;
+const slDes02Img = slDes02PhotoAsset.url;
+const slDes03Img = slDes03PhotoAsset.url;
+const slDes04Img = slDes04PhotoAsset.url;
+const slDes05Img = slDes05PhotoAsset.url;
+const slDes06Img = slDes06PhotoAsset.url;
+const slDes07Img = slDes07PhotoAsset.url;
+
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
 export type SubModel = {
@@ -65,6 +94,7 @@ export type ProductDetail = {
   subModelsColumnLabel?: { ko: string; en: string; ja: string };
   isCategoryIndex?: boolean;
   parentSlug?: string;
+  useTags?: string[];
 };
 
 
@@ -313,177 +343,466 @@ const SG_FEATURES = [
   { title: "🧪 맞춤형 생산", desc: "포장 및 규격은 고객 요구에 따라 맞춤 제작", enTitle: "🧪 Custom Production", jaTitle: "🧪 カスタマイズ生産", enDesc: "Packaging and specifications tailored to customer requirements", jaDesc: "包装および規格はお客様の要求に応じてカスタマイズ製作" },
 ];
 
+// —— 실리카겔 라인업 (신규 SL-CHR/IND/DES/ALS + 기존 6종) ——
+type SGSpec = { label: string; value: string; enLabel?: string; enValue?: string; jaLabel?: string; jaValue?: string };
+const mkSG = (
+  slug: string,
+  ko: string, en: string, ja: string,
+  koTag: string, enTag: string, jaTag: string,
+  koDesc: string, enDesc: string, jaDesc: string,
+  image: string,
+  specs: SGSpec[],
+  useTags: string[],
+): ProductDetail => ({
+  slug,
+  name: ko, enName: en, jaName: ja,
+  tagline: koTag, enTagline: enTag, jaTagline: jaTag,
+  description: koDesc, enDescription: enDesc, jaDescription: jaDesc,
+  image,
+  category: "silica-gel",
+  features: SG_FEATURES,
+  specs,
+  applications: SG_APPS,
+  useTags,
+});
+
 const silicaGelProducts: ProductDetail[] = [
-  {
-    slug: "silica-gel-microsilica",
-    name: "미분 실리카 (Microsilica)",
-    enName: "Micronized Silica Powder", jaName: "微粉シリカ (Microsilica)",
-    tagline: "고순도 이산화규소 기반 초미세 분말 — 고활성·다공성 무기 정밀 소재",
-    enTagline: "Ultra-Fine Powder Based on High-Purity Silicon Dioxide — A Highly Active, Porous Inorganic Precision Material", jaTagline: "高純度二酸化ケイ素ベースの超微細粉末 — 高活性・多孔性の無機精密素材",
-    description:
-      "미분 실리카는 고순도 이산화규소(SiO₂)를 핵심 성분으로 하여 특수 공정을 통해 초미세 분말 형태로 가공된 고활성·다공성 무기 정밀 소재입니다.",
-    enDescription:
-      "Micronized Silica Powder is a highly active, porous inorganic precision material processed into ultra-fine powder form through a special process, with high-purity silicon dioxide (SiO₂) as its core component.", jaDescription: "微粉シリカは高純度二酸化ケイ素(SiO₂)を核心成分とし、特殊な工程を経て超微細粉末の形態に加工された高活性・多孔質の無機精密素材です。",
-    image: sgMicrosilica,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
-      { label: "입자 크기 (Particle Size)", value: "3 – 10 µm", enLabel: "Particle Size", jaLabel: "粒子径 (Particle Size)" },
-      { label: "포장 / 규격 (Packing)", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格 (Packing)", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-anti-blocking",
-    name: "플라스틱 안티블로킹제",
-    enName: "Anti-blocking Agent", jaName: "プラスチック用アンチブロッキング剤",
-    tagline: "필름·시트 안티블로킹용 고순도 실리카",
-    enTagline: "High-Purity Silica for Anti-Blocking in Films and Sheets", jaTagline: "フィルム・シートのアンチブロッキング用高純度シリカ",
-    description:
-      "고순도 실리카 기반의 안티블로킹제로, 플라스틱 필름·시트의 접착(블로킹)을 효과적으로 방지하며 우수한 광학적 투명성을 유지합니다.",
-    enDescription:
-      "An anti-blocking agent based on high-purity silica that effectively prevents adhesion (blocking) of plastic films and sheets while maintaining excellent optical transparency.", jaDescription: "高純度シリカベースのアンチブロッキング剤で、プラスチックフィルム・シートの接着(ブロッキング)を効果的に防止し、優れた光学的透明性を維持します。",
-    image: sgAntiblocking,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
+  // ===== 기존 6종 (A/B형 삭제, useTags 부여) =====
+  mkSG("silica-gel-microsilica", "미분 실리카 (Microsilica)", "Micronized Silica Powder", "微粉シリカ (Microsilica)",
+    "고순도 이산화규소 기반 초미세 분말 — 고활성·다공성 무기 정밀 소재",
+    "Ultra-Fine Powder Based on High-Purity Silicon Dioxide", "高純度二酸化ケイ素ベースの超微細粉末",
+    "미분 실리카는 고순도 이산화규소(SiO₂)를 핵심 성분으로 하여 특수 공정을 통해 초미세 분말 형태로 가공된 고활성·다공성 무기 정밀 소재입니다. 3–10µm 범위의 균일한 입도로 고분자 충진·보강재, 기능성 코팅, 정밀 무기 소재의 원료로 폭넓게 사용됩니다.",
+    "Micronized Silica Powder is a highly active, porous inorganic precision material processed into ultra-fine powder form (3–10 µm) through a special process, used as filler/reinforcement for polymers, functional coatings, and precision inorganic materials.",
+    "微粉シリカは高純度二酸化ケイ素(SiO₂)を核心成分とし、特殊な工程で3–10µmの超微細粉末に加工された高活性・多孔質の無機精密素材です。",
+    sgMicrosilica,
+    [
+      { label: "입자 크기", value: "3 – 10 µm", enLabel: "Particle Size", jaLabel: "粒子径" },
+      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", enValue: "Customizable", jaLabel: "包装 / 規格", jaValue: "カスタマイズ可能" },
+    ], ["촉매", "산업·공정"]),
+
+  mkSG("silica-gel-anti-blocking", "플라스틱 안티블로킹제", "Anti-blocking Agent", "プラスチック用アンチブロッキング剤",
+    "필름·시트 안티블로킹용 고순도 실리카",
+    "High-Purity Silica for Anti-Blocking in Films and Sheets", "フィルム・シートのアンチブロッキング用高純度シリカ",
+    "고순도 실리카 기반의 안티블로킹제로, PE/PP/PET 필름·시트의 접착(블로킹)을 효과적으로 방지하며 우수한 광학적 투명성을 유지합니다.",
+    "High-purity silica anti-blocking agent that effectively prevents adhesion in PE/PP/PET films and sheets while maintaining excellent optical transparency.",
+    "高純度シリカベースのアンチブロッキング剤で、PE/PP/PETフィルム・シートの接着(ブロッキング)を効果的に防止し、優れた光学透明性を維持します。",
+    sgAntiblocking,
+    [
       { label: "입자 크기", value: "2 – 10 µm", enLabel: "Particle Size", jaLabel: "粒子径" },
-      { label: "비표면적", value: "20 – 380 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積" },
+      { label: "비표면적", value: "20 – 380 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
       { label: "흡유량", value: "150 – 300 ml/100g", enLabel: "Oil Absorption", jaLabel: "吸油量" },
-      { label: "벌크 밀도", value: "50 – 300 kg/m³", enLabel: "Bulk Density", jaLabel: "かさ密度" },
-      { label: "SiO₂ 순도", value: "99%", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-matting",
-    name: "소광제 (Matting Agent)",
-    enName: "Matting Agent", jaName: "艶消し剤 (Matting Agent)",
-    tagline: "도료·코팅용 무광 효과 실리카",
-    enTagline: "Silica Matting Agent for Paints and Coatings", jaTagline: "塗料・コーティング用マット効果シリカ",
-    description:
-      "도료 및 코팅 시스템에 사용되는 소광제(Matting Agent)로, 균일한 무광 효과와 우수한 분산성을 제공합니다.",
-    enDescription:
-      "A matting agent used in paint and coating systems, providing uniform matte effects and excellent dispersibility.", jaDescription: "塗料およびコーティングシステムに使用される艶消し剤(Matting Agent)であり、均一なマット効果と優れた分散性を提供します。",
-    image: sgMatting,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
-      { label: "입자 크기 D50", value: "3.5 – 10 µm", enLabel: "Particle Size D50", jaLabel: "粒子径 D50" },
+      { label: "SiO₂ 순도", value: "99 %", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+    ], ["안티블로킹"]),
+
+  mkSG("silica-gel-matting", "소광제 (Matting Agent)", "Matting Agent", "艶消し剤 (Matting Agent)",
+    "도료·코팅용 무광 효과 실리카",
+    "Silica Matting Agent for Paints and Coatings", "塗料・コーティング用マット効果シリカ",
+    "도료 및 코팅 시스템에 사용되는 소광제(Matting Agent)로, 균일한 무광 효과와 우수한 분산성을 제공합니다. UV 도료, 우드 코팅, 자동차 보수도료, 인쇄 잉크 등에 광범위하게 사용됩니다.",
+    "A matting agent used in paint and coating systems, providing uniform matte effects and excellent dispersibility. Widely used in UV coatings, wood coatings, automotive refinish, and printing inks.",
+    "塗料およびコーティングシステムに使用される艶消し剤で、均一なマット効果と優れた分散性を提供します。",
+    sgMatting,
+    [
+      { label: "입자 크기 D50", value: "3.5 – 10 µm", enLabel: "D50", jaLabel: "粒子径 D50" },
       { label: "흡유량", value: "100 – 330 ml/100g", enLabel: "Oil Absorption", jaLabel: "吸油量" },
-      { label: "pH", value: "3.5 – 8", enLabel: "pH" },
-      { label: "기공 부피 (Pore Volume)", value: "0.4 – 2.2 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積 (Pore Volume)" },
-      { label: "표면 처리", value: "왁스 처리 / 무처리", enLabel: "Surface Treatment", jaLabel: "表面処理", enNote: "Wax-treated / Untreated" },
-      { label: "건조 감량 (105℃)", value: "≤ 5%", enLabel: "Loss on Drying (105℃)", jaLabel: "乾燥減量 (105℃)" },
-      { label: "강열 감량 (1000℃)", value: "≤ 6%", enLabel: "Ignition Loss (1000℃)", jaLabel: "強熱減量 (1000℃)" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-large-pore",
-    name: "대공극 실리카겔",
-    enName: "Large Pore Volume Silica Gel", jaName: "大孔径シリカゲル",
-    tagline: "대공극·고비표면적의 흡착 전용 실리카겔",
-    enTagline: "Adsorption-Grade Silica Gel with Large Pores and High Specific Surface Area", jaTagline: "大孔径・高比表面積の吸着専用シリカゲル",
-    description:
-      "대공극 실리카겔은 큰 기공 직경과 높은 기공 부피를 가져 분자 흡착·촉매 담체용으로 최적화된 실리카겔입니다.",
-    enDescription:
-      "Large Pore Volume Silica Gel features large pore diameters and high pore volume, making it an optimized silica gel for molecular adsorption and catalyst support applications.", jaDescription: "大孔径シリカゲルは、大きな細孔径と高い細孔容積を持ち、分子吸着や触媒担体用に最適化されたシリカゲルです。",
-    image: sgLargePore,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
-      { label: "기공 직경 (Pore Diameter)", value: "16 – 25 nm", enLabel: "Pore Diameter", jaLabel: "細孔径 (Pore Diameter)" },
-      { label: "비표면적", value: "200 – 350 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積" },
+      { label: "pH", value: "3.5 – 8" },
+      { label: "기공 부피", value: "0.4 – 2.2 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
+      { label: "표면 처리", value: "왁스 처리 / 무처리", enLabel: "Surface", enValue: "Wax / Untreated", jaLabel: "表面処理", jaValue: "ワックス / 未処理" },
+    ], ["소광"]),
+
+  mkSG("silica-gel-large-pore", "대공극 실리카겔", "Large Pore Silica Gel", "大孔径シリカゲル",
+    "대공극·고비표면적의 흡착 전용 실리카겔",
+    "Adsorption-Grade Silica Gel with Large Pores", "大孔径・高比表面積の吸着専用シリカゲル",
+    "대공극 실리카겔은 큰 기공 직경과 높은 기공 부피를 가져 분자 흡착·촉매 담체용으로 최적화된 실리카겔입니다.",
+    "Large Pore Silica Gel features large pore diameters and high pore volume, optimized for molecular adsorption and catalyst support applications.",
+    "大孔径シリカゲルは、大きな細孔径と高い細孔容積を持ち、分子吸着や触媒担体用に最適化されたシリカゲルです。",
+    sgLargePore,
+    [
+      { label: "기공 직경", value: "16 – 25 nm", enLabel: "Pore Diameter", jaLabel: "細孔径" },
+      { label: "비표면적", value: "200 – 350 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
       { label: "기공 부피", value: "1.2 – 2.2 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-fng",
-    name: "내수 실리카겔 (FNG)",
-    enName: "FNG Water-Resistant Silica Gel", jaName: "耐水シリカゲル (FNG)",
-    tagline: "가혹 환경 전용 고성능 내수 실리카겔",
-    enTagline: "High-Performance Water-Resistant Silica Gel for Harsh Environments", jaTagline: "過酷環境専用の高性能耐水シリカゲル",
-    description:
-      "내수 실리카겔 FNG는 가혹한 환경에서도 안정적으로 동작하도록 설계된 고성능 실리카 소재로, 우수한 내수성·내후성·화학적 안정성을 갖추고 있습니다.",
-    enDescription:
-      "FNG Water-Resistant Silica Gel is a high-performance silica material designed to operate stably in harsh environments, featuring excellent water resistance, weather resistance, and chemical stability.", jaDescription: "耐水シリカゲルFNGは過酷な環境でも安定して機能するように設計された高性能シリカ素材で、優れた耐水性・耐候性・化学的安定性を備えています。",
-    image: sgFng,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
-      { label: "특성", value: "내수성 · 내후성 · 화학적 안정성", enLabel: "Characteristics", jaLabel: "特性", enNote: "Water resistance · Weather resistance · Chemical stability" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-coarse",
-    name: "조공극 실리카겔",
-    enName: "Coarse Pore Silica Gel", jaName: "粗孔シリカゲル",
-    tagline: "중간 기공 크기의 범용 흡착 실리카겔",
-    enTagline: "General-Purpose Adsorption Silica Gel with Medium Pore Size", jaTagline: "中孔径の汎用吸着シリカゲル",
-    description:
-      "조공극 실리카겔(Coarse Pore Silica Gel)은 균형 잡힌 기공 구조로 다양한 산업용 흡착·건조·정제 공정에 사용됩니다.",
-    enDescription:
-      "Coarse Pore Silica Gel features a balanced pore structure and is used in various industrial adsorption, drying, and purification processes.", jaDescription: "粗孔シリカゲル(Coarse Pore Silica Gel)は、バランスの取れた細孔構造により、多様な産業用の吸着・乾燥・精製工程に使用されます。",
-    image: sgCoarse,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
+    ], ["산업·공정", "촉매"]),
+
+  mkSG("silica-gel-fng", "내수 실리카겔 (FNG)", "FNG Water-Resistant Silica Gel", "耐水シリカゲル (FNG)",
+    "가혹 환경 전용 고성능 내수 실리카겔",
+    "High-Performance Water-Resistant Silica Gel", "過酷環境専用の高性能耐水シリカゲル",
+    "내수 실리카겔 FNG는 가혹한 환경에서도 안정적으로 동작하도록 설계된 고성능 실리카 소재로, 우수한 내수성·내후성·화학적 안정성을 갖추고 있습니다.",
+    "FNG Water-Resistant Silica Gel is a high-performance material designed for harsh environments, featuring excellent water/weather resistance and chemical stability.",
+    "耐水シリカゲルFNGは過酷な環境でも安定機能する高性能シリカ素材で、優れた耐水性・耐候性・化学的安定性を備えています。",
+    sgFng,
+    [
+      { label: "특성", value: "내수성 · 내후성 · 화학적 안정성", enLabel: "Characteristics", enValue: "Water / Weather / Chemical resistance", jaLabel: "特性", jaValue: "耐水・耐候・化学的安定性" },
+    ], ["건조·흡습", "산업·공정"]),
+
+  mkSG("silica-gel-coarse", "조공극 실리카겔", "Coarse Pore Silica Gel", "粗孔シリカゲル",
+    "중간 기공 크기의 범용 흡착 실리카겔",
+    "General-Purpose Adsorption Silica Gel", "中孔径の汎用吸着シリカゲル",
+    "조공극 실리카겔은 균형 잡힌 기공 구조로 다양한 산업용 흡착·건조·정제 공정에 사용됩니다.",
+    "Coarse Pore Silica Gel features a balanced pore structure for various industrial adsorption, drying and purification processes.",
+    "粗孔シリカゲルは、バランスの取れた細孔構造で多様な産業用の吸着・乾燥・精製工程に使用されます。",
+    sgCoarse,
+    [
       { label: "기공 직경", value: "8 – 12.5 nm", enLabel: "Pore Diameter", jaLabel: "細孔径" },
-      { label: "비표면적", value: "300 – 400 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積" },
+      { label: "비표면적", value: "300 – 400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
       { label: "기공 부피", value: "0.8 – 1.0 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-type-a",
-    name: "A형 실리카겔",
-    enName: "Silica Gel Type A", jaName: "A型シリカゲル",
-    tagline: "고비표면적 · 미세기공 흡착용 실리카겔",
-    enTagline: "High Specific Surface Area · Fine-Pore Adsorption Silica Gel", jaTagline: "高比表面積・微細気孔の吸着用シリカゲル",
-    description:
-      "A형 실리카겔은 미세기공(2–3 nm)과 매우 높은 비표면적을 가진 표준 흡착용 실리카겔로, 건조제·흡습제 등에 폭넓게 사용됩니다.",
-    enDescription:
-      "Silica Gel Type A is a standard adsorption silica gel with micropores (2–3 nm) and very high specific surface area, widely used as a desiccant and moisture absorber.", jaDescription: "A型シリカゲルは微細気孔(2–3 nm)と非常に高い比表面積を持つ標準吸着用のシリカゲルであり、乾燥剤・吸湿剤などに幅広く使用されます。",
-    image: sgTypeA,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
-      { label: "기공 직경", value: "2.0 – 3.0 nm", enLabel: "Pore Diameter", jaLabel: "細孔径" },
-      { label: "비표면적", value: "650 – 800 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積" },
-      { label: "기공 부피", value: "0.4 – 0.5 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
-  {
-    slug: "silica-gel-type-b",
-    name: "B형 실리카겔",
-    enName: "Silica Gel Type B", jaName: "B型シリカゲル",
-    tagline: "중간 기공·균형 특성의 다용도 실리카겔",
-    enTagline: "Multipurpose Silica Gel with Medium Pores and Balanced Properties", jaTagline: "中孔径・バランス特性の多用途シリカゲル",
-    description:
-      "B형 실리카겔은 중간 크기 기공(4.5–7 nm)과 적정한 비표면적을 갖춘 다목적 실리카겔로, 습도 변화가 큰 환경의 흡습 용도에 적합합니다.",
-    enDescription:
-      "Silica Gel Type B is a multipurpose silica gel with medium-sized pores (4.5–7 nm) and moderate specific surface area, suitable for moisture absorption in environments with large humidity fluctuations.", jaDescription: "B型シリカゲルは中程度の気孔(4.5–7 nm)と適正な比表面積を備えた多目的シリカゲルで、湿度変化の大きい環境での吸湿用途に適しています。",
-    image: sgTypeB,
-    category: "silica-gel",
-    features: SG_FEATURES,
-    specs: [
-      { label: "기공 직경", value: "4.5 – 7.0 nm", enLabel: "Pore Diameter", jaLabel: "細孔径" },
-      { label: "비표면적", value: "450 – 650 m²/g", enLabel: "Specific Surface Area", jaLabel: "比表面積" },
-      { label: "기공 부피", value: "0.6 – 0.85 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
-      { label: "포장 / 규격", value: "맞춤 제작 가능", enLabel: "Packing / Spec", jaLabel: "包装 / 規格", enNote: "Customizable" },
-    ],
-    applications: SG_APPS,
-  },
+    ], ["산업·공정", "건조·흡습"]),
+
+  // ===== 신규 SL-CHR : 크로마토그래피용 =====
+  mkSG("silica-gel-sl-chr-01", "SL-CHR-01 컬럼크로마토그래피용 실리카겔 (A/B/C형)",
+    "SL-CHR-01 · Column Chromatography Silica Gel (Type A/B/C)",
+    "SL-CHR-01 カラムクロマトグラフィー用シリカゲル (A/B/C型)",
+    "세공(20–30Å)~조공(90–100Å)까지 3형 · 중약재·석유·유기물 분리정제",
+    "3 pore ranges 20–100Å for herbal, petroleum & organic separation",
+    "細孔(20–30Å)~粗孔(90–100Å)3型 · 生薬・石油・有機物の分離精製",
+    "SL-CHR-01은 백색의 균일한 과립형 컬럼크로마토그래피 전용 실리카겔로, 세공형(A, 20–30Å)·중공형(B, 50–80Å)·조공형(C, 90–100Å) 3종 공극 구조를 지원합니다. 성분별 흡착 보유시간 차이를 이용해 중약재 유효성분 분리정제, 석유제품 정제, 유기가스·액체의 선택적 흡착분리, 촉매담체 등에 사용됩니다. 입도 60–400목 범위에서 맞춤 공급 가능합니다.",
+    "SL-CHR-01 is a white uniform granular silica gel for column chromatography, supporting three pore structures — fine (A, 20–30Å), medium (B, 50–80Å) and coarse (C, 90–100Å). It is used for purifying active ingredients in traditional Chinese medicine, refining petroleum products, selective adsorption of organic gases/liquids and catalyst supports. Available in 60–400 mesh custom sizes.",
+    "SL-CHR-01は白色均一顆粒状のカラムクロマトグラフィー専用シリカゲルで、細孔(A, 20–30Å)・中孔(B, 50–80Å)・粗孔(C, 90–100Å)の3種細孔構造をサポートします。生薬有効成分の分離精製、石油製品精製、有機ガス・液体の選択吸着分離、触媒担体に使用されます。",
+    slChr01Img,
+    [
+      { label: "공경 (A/B/C)", value: "20–30 / 50–80 / 90–100 Å", enLabel: "Pore (A/B/C)", jaLabel: "細孔径" },
+      { label: "공용적 (A/B/C)", value: "0.35–0.45 / 0.5–0.7 / 0.85–1.0 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
+      { label: "비표면적 (A/B/C)", value: "≥600 / 450–600 / 320–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "입도", value: "60–400 목 (맞춤)", enLabel: "Mesh", enValue: "60–400 (custom)", jaLabel: "粒度", jaValue: "60–400メッシュ" },
+      { label: "포장", value: "500g/1kg/10–25kg", enLabel: "Packing", jaLabel: "包装" },
+    ], ["크로마토그래피"]),
+
+  mkSG("silica-gel-sl-chr-02", "SL-CHR-02 박막크로마토그래피용 실리카겔 (분말)",
+    "SL-CHR-02 · Thin Layer Chromatography Silica Gel (Powder)",
+    "SL-CHR-02 薄層クロマトグラフィー用シリカゲル (粉末)",
+    "H / HF254 / G / GF254 4형 · 신속 고감도 분석시약",
+    "H / HF254 / G / GF254 4 types for rapid high-sensitivity analysis",
+    "H / HF254 / G / GF254 4型 · 迅速・高感度分析試薬",
+    "SL-CHR-02는 백색 분말로 물·유기용매에 불용인 TLC 전용 실리카겔입니다. H·HF254·G·GF254 4형 공급이며, 의약·농약·염료·고무 컬럼분석용 신속·고감도 분석시약, 석유제품 정제, 액체 선택적 흡착분리, 촉매담체 제조 등에 사용됩니다. 일반 입도 10–40㎛, 고효율 5–10㎛/3–10㎛로 맞춤 가능합니다.",
+    "SL-CHR-02 is a white TLC silica gel powder insoluble in water and organic solvents. Supplied in H, HF254, G and GF254 types for pharmaceutical, agrochemical, dye and rubber column analysis, petroleum refining, selective adsorption and catalyst supports. General 10–40 µm, high-efficiency 5–10 µm / 3–10 µm.",
+    "SL-CHR-02は白色粉末で水・有機溶媒に不溶のTLC専用シリカゲルです。H・HF254・G・GF254の4型を供給し、医薬・農薬・染料・ゴムのカラム分析用試薬、石油製品精製、選択吸着分離、触媒担体などに使用されます。",
+    slChr02Img,
+    [
+      { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "320–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "소석고 함량 (G / GF254)", value: "12–14 %", enLabel: "Gypsum (G / GF254)", jaLabel: "石膏含有量" },
+      { label: "pH (10% 현탁)", value: "6.0–7.0" },
+      { label: "입도", value: "일반 10–40㎛ / 고효율 3–10㎛", enLabel: "Particle Size", jaLabel: "粒度" },
+    ], ["크로마토그래피"]),
+
+  mkSG("silica-gel-sl-chr-03", "SL-CHR-03 TLC 박막크로마토그래피 플레이트",
+    "SL-CHR-03 · TLC Silica Gel Plate",
+    "SL-CHR-03 TLCシリカゲルプレート",
+    "판 두께 0.20±0.03mm · 순백·평탄·치밀 · 정성/정량 분석",
+    "0.20±0.03 mm thickness — pure white, flat, dense for QC analysis",
+    "板厚0.20±0.03 mm · 純白・平坦・緻密 · 定性/定量分析",
+    "SL-CHR-03은 고순도 TLC 실리카겔 분말에 소량의 결합제를 배합해 판상으로 제작한 박막크로마토그래피 플레이트입니다. 표면이 순백색이며 평탄·균일·치밀하고, 의약품·농약·중약재·유기화학·식품의 정성/정량 분석에 광범위하게 사용됩니다. 일반 TLC 실리카겔 대비 분리효과가 우수합니다.",
+    "SL-CHR-03 is a TLC plate made by blending high-purity TLC silica gel powder with a small amount of binder. The pure white, flat, uniform and dense surface delivers superior separation vs bulk TLC gel and is widely used for QC analysis of pharmaceuticals, agrochemicals, herbal medicines, organic chemistry and food.",
+    "SL-CHR-03は高純度TLCシリカゲル粉末に少量のバインダーを配合し板状に加工した薄層クロマトグラフィープレートです。純白・平坦・均一・緻密な表面で分離効果が優れ、医薬品・農薬・生薬・有機化学・食品の定性/定量分析に幅広く使用されます。",
+    slChr03Img,
+    [
+      { label: "판 두께", value: "0.20 ± 0.03 mm", enLabel: "Thickness", jaLabel: "板厚" },
+      { label: "형", value: "H / HF254 / G / GF254", enLabel: "Type", jaLabel: "型" },
+      { label: "규격", value: "75×25 / 100×100 / 200×200 mm", enLabel: "Size", jaLabel: "サイズ" },
+      { label: "재활성화", value: "60–90℃ 1–2시간", enLabel: "Regeneration", enValue: "60–90℃ · 1–2h", jaLabel: "再活性化", jaValue: "60–90℃ · 1–2時間" },
+    ], ["크로마토그래피"]),
+
+  // ===== SL-IND : 산업·공정용 =====
+  mkSG("silica-gel-sl-ind-01", "SL-IND-01 촉매용 미분 실리카겔 (C형)",
+    "SL-IND-01 · Micro-powder Silica Gel for Catalyst (Type C)",
+    "SL-IND-01 触媒用微粉シリカゲル (C型)",
+    "SiO₂ ≥ 98 % · HZSM-5 분자체 합성 전용",
+    "SiO₂ ≥ 98 % — for HZSM-5 molecular sieve synthesis",
+    "SiO₂ ≥ 98 % · HZSM-5分子篩合成専用",
+    "SL-IND-01은 고품질 실리카겔 원료로 가공된 촉매 합성 전용 미분 실리카겔입니다. 순도가 높고 불순물(특히 중금속) 함량이 적으며 입도가 균일해 HZSM-5 분자체 합성에 최적입니다.",
+    "SL-IND-01 is a micro-powder silica gel processed from high-quality raw material for catalyst synthesis. High purity, ultra-low heavy-metal impurities and uniform particle size make it ideal for HZSM-5 molecular sieve synthesis.",
+    "SL-IND-01は高品質シリカゲル原料から加工された触媒合成専用の微粉シリカゲルです。高純度・低不純物(特に重金属)・均一粒度でHZSM-5分子篩合成に最適です。",
+    slInd01Img,
+    [
+      { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "320–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "퇴적밀도", value: "350–500 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
+      { label: "입도합격률", value: "≥ 95 %", enLabel: "Size Pass", jaLabel: "粒度合格率" },
+      { label: "규격", value: "≤35 목 / ≤100 목", enLabel: "Mesh", jaLabel: "メッシュ" },
+    ], ["촉매", "산업·공정"]),
+
+  mkSG("silica-gel-sl-ind-02", "SL-IND-02 유로키나제 흡착용 실리카겔 (C형)",
+    "SL-IND-02 · Urokinase Adsorbent Silica Gel (Type C)",
+    "SL-IND-02 ウロキナーゼ吸着用シリカゲル (C型)",
+    "흡착량(RH100) ≥ 90 % · 유로키나제 정제 전용",
+    "≥90% adsorption (RH100) — dedicated to urokinase purification",
+    "吸着量(RH100) ≥ 90 % · ウロキナーゼ精製専用",
+    "SL-IND-02는 유로키나제 분자구조에 최적화된 비표면적·공극구조 및 활성 컬럼크로마토그래피 특성을 지닌 백색 균일 과립 실리카겔입니다. 유로키나제 분리정제 목적 달성과 동시에 제품 품질·수율을 향상시킵니다.",
+    "SL-IND-02 is a white uniform granular silica gel with SSA, pore structure and active column-chromatography characteristics optimized for urokinase. Delivers separation/purification while improving product quality and yield.",
+    "SL-IND-02はウロキナーゼの分子構造に最適化された比表面積・細孔構造とアクティブカラムクロマト特性を持つ白色均一顆粒シリカゲルです。分離精製と同時に品質・収率を向上させます。",
+    slInd02Img,
+    [
+      { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "300–500 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "pH", value: "6–8" },
+      { label: "가열감량", value: "≤ 5 %", enLabel: "Loss on Heating", jaLabel: "加熱減量" },
+      { label: "규격", value: "40–100 / 60–100 / 40–80 / 60–120 목", enLabel: "Mesh", jaLabel: "メッシュ" },
+    ], ["산업·공정", "식품·의약"]),
+
+  mkSG("silica-gel-sl-ind-03", "SL-IND-03 맥주 여과용 실리카겔 (초광공형)",
+    "SL-IND-03 · Silica Gel for Beer (Super Wide Pore)",
+    "SL-IND-03 ビール濾過用シリカゲル (超広孔型)",
+    "저장기간 180–240일 연장 · 냉장 혼탁 방지 · 맛·거품 영향 無",
+    "Extends shelf life 180–240 days · prevents chill haze · no impact on foam/taste",
+    "保存期間180–240日延長 · 冷蔵混濁防止 · 味/泡に影響なし",
+    "SL-IND-03은 공경 8–16 nm의 비결정질 미세다공성 고체분말로, 산·알칼리·염류와 반응하지 않고 무독·무취·불연성입니다. 넓은 비표면적과 미세공극구조로 맥주 혼탁 유발 단백질을 수 분 내 흡착 제거하여 저장기간을 180–240일 연장하고 냉장 혼탁을 방지하며, 맥주 거품·맛에는 영향을 주지 않습니다.",
+    "SL-IND-03 is an amorphous micro-porous solid powder (8–16 nm pores), non-reactive with acids/alkalis/salts, non-toxic, odorless and non-flammable. Its high SSA and micro-pore structure adsorb haze-forming proteins in minutes, extending beer shelf life 180–240 days and preventing chill haze without affecting foam or taste.",
+    "SL-IND-03は細孔径8–16 nmの非晶質微多孔性固体粉末で、酸・アルカリ・塩と反応せず無毒・無臭・不燃です。ビール混濁の原因タンパクを短時間で吸着除去し保存期間を180–240日延長、冷蔵混濁を防止しつつ泡・味に影響を与えません。",
+    slInd03Img,
+    [
+      { label: "공경", value: "140–180 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "250–320 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "입도 (d50)", value: "7–15 µm", enLabel: "D50", jaLabel: "D50" },
+      { label: "SiO₂", value: "≥ 98 %" },
+      { label: "중금속 (Pb)", value: "≤ 0.003 %", enLabel: "Pb", jaLabel: "重金属 (Pb)" },
+    ], ["산업·공정", "식품·의약"]),
+
+  mkSG("silica-gel-sl-ind-04", "SL-IND-04 대공극 실리카겔 (C형, 구형/괴상)",
+    "SL-IND-04 · Wide Pore Silica Gel (Type C)",
+    "SL-IND-04 大孔径シリカゲル (C型, 球/塊状)",
+    "공기가스 탈수정제 · 절연유 정제 · 촉매담체",
+    "Industrial gas dehydration · insulating oil refining · catalyst support",
+    "工業ガス脱水精製 · 絶縁油精製 · 触媒担体",
+    "SL-IND-04는 백색 괴상 또는 구형의 대공극 실리카겔로, 방습포장, 공업가스 탈수정제, 절연유 내 유기산·고분자물질 제거, 공업 발효공정의 이분자단백 흡착, 촉매 및 촉매담체 등에 사용됩니다.",
+    "SL-IND-04 is a wide-pore silica gel in white lump or bead form, used for moisture-proof packaging, industrial gas dehydration, removal of organic acids/polymers in insulating oil, protein adsorption in fermentation, and as a catalyst/carrier.",
+    "SL-IND-04は白色塊状または球状の大孔径シリカゲルで、防湿包装、工業ガスの脱水精製、絶縁油中の有機酸/高分子物質除去、工業発酵工程での二分子タンパク吸着、触媒・担体などに使用されます。",
+    sgLargePore,
+    [
+      { label: "공경", value: "80–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "300–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "공용적", value: "0.8–1.0 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
+      { label: "규격 (구형/괴상)", value: "2–5.6 / 4–8mm · 0.5–2 / 2–8mm", enLabel: "Size", jaLabel: "サイズ" },
+      { label: "흡착량", value: "≥ 78 %", enLabel: "Adsorption", jaLabel: "吸着量" },
+    ], ["산업·공정", "촉매"]),
+
+  mkSG("silica-gel-sl-ind-05", "SL-IND-05 오일 탈색용 실리카겔 샌드 (C형)",
+    "SL-IND-05 · Silica Gel Sand for Oil Bleaching (Type C)",
+    "SL-IND-05 オイル脱色用シリカゲルサンド (C型)",
+    "여과 방식 탈색 · 폐엔진오일 재생 · 바이오디젤 정제",
+    "Filtration bleaching · waste engine oil regeneration · biodiesel refining",
+    "濾過方式脱色 · 廃エンジンオイル再生 · バイオディーゼル精製",
+    "SL-IND-05는 백색 과립 형태의 실리카겔로, 전통적인 산·알칼리·백토 탈색공정을 여과 방식으로 대체하여 오일 중 불순물·산화물을 직접 제거함으로써 흑변 오일을 투명한 액체로 전환합니다. 흑취 경유 탈취·탈색, 폐엔진오일 재생, 유압유·바이오디젤·동식물유 탈색·정제·탈취에 사용됩니다.",
+    "SL-IND-05 is a white granular silica gel replacing traditional acid/alkali/clay bleaching with filtration to remove impurities and oxidation products, restoring blackened oils to a clear state. Used for diesel deodorization, waste engine oil regeneration, hydraulic oil, biodiesel and animal/vegetable oil refining.",
+    "SL-IND-05は白色顆粒状のシリカゲルで、従来の酸・アルカリ・白土脱色工程を濾過方式に置き換え、オイル中の不純物・酸化物を除去して黒変オイルを透明液体に転換します。ディーゼル脱臭、廃エンジンオイル再生、油圧油・バイオディーゼル・動植物油の精製に使用されます。",
+    sgCoarse,
+    [
+      { label: "공경", value: "85–110 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "300–500 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "pH", value: "6–8" },
+      { label: "퇴적밀도", value: "≥ 380 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
+      { label: "입도", value: "20–120 목", enLabel: "Mesh", jaLabel: "メッシュ" },
+    ], ["산업·공정"]),
+
+  mkSG("silica-gel-sl-ind-06", "SL-IND-06 대공극 마이크로구형 실리카겔 (C형)",
+    "SL-IND-06 · Macro-pored Micro-spherical Silica Gel (Type C)",
+    "SL-IND-06 大孔径マイクロ球状シリカゲル (C型)",
+    "고열안정성·고기계강도의 촉매·촉매담체",
+    "High thermal stability & mechanical strength catalyst / support",
+    "高熱安定性・高機械強度の触媒/担体",
+    "SL-IND-06은 백색 투명/반투명의 마이크로 구형 실리카겔로, 균일한 미세공극구조와 안정적인 물리·화학적 특성, 우수한 열안정성과 높은 기계적 강도를 지닙니다. 멜라민·아닐린·아세트산비닐·부타디엔고무·아크릴로니트릴 등 중요 공업생산 촉매·촉매담체, 방향족 정제, 의약품 정제, 유기가스·액체 선택적 흡착분리, 수중 유해 이온 제거에 활용됩니다.",
+    "SL-IND-06 is a translucent micro-spherical silica gel with uniform micro-pores, stable properties, excellent thermal stability and high mechanical strength. Used as catalyst/support for melamine, aniline, vinyl acetate, butadiene rubber, acrylonitrile production; aromatics/pharmaceutical purification; selective adsorption; ion exchange in water treatment.",
+    "SL-IND-06は白色透明/半透明のマイクロ球状シリカゲルで、均一微細細孔・優れた熱安定性・高い機械強度を有します。メラミン・アニリン・酢酸ビニル・ブタジエンゴム・アクリロニトリル生産の触媒/担体、芳香族精製、医薬品精製、選択吸着分離、水中イオン除去などに活用されます。",
+    sgLargePore,
+    [
+      { label: "공경", value: "80–110 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "300–550 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "공용적", value: "0.8–1.3 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
+      { label: "퇴적밀도", value: "300 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
+      { label: "입도", value: "20–40 / 40–120 목", enLabel: "Mesh", jaLabel: "メッシュ" },
+    ], ["산업·공정", "촉매"]),
+
+  mkSG("silica-gel-sl-ind-07", "SL-IND-07 폐엔진오일 정제용 촉매",
+    "SL-IND-07 · Catalyst for Waste Engine Oil Refining",
+    "SL-IND-07 廃エンジンオイル精製用触媒",
+    "반응온도 290–310℃ · 압쇄강도 ≥ 125–130 N/cm",
+    "290–310℃ reaction · crush strength ≥ 125–130 N/cm",
+    "反応温度290–310℃ · 圧潰強度 ≥ 125–130 N/cm",
+    "SL-IND-07은 폐엔진오일(폐윤활유) 정제 전용 신형 촉매입니다. 반응온도 290–310℃, 공간속도 0.2–0.25 h⁻¹, 상압 조건에서 사용하며, 정기적으로 촉매 건조 공정(0–0.1 MPa, 300–360℃, 6–8시간)이 필요합니다. 산·알칼리와의 접촉을 피해야 하며, 사용 전 30목 체망으로 촉매 분진을 제거해야 합니다.",
+    "SL-IND-07 is a new catalyst dedicated to refining waste engine oil. Operates at 290–310℃, LHSV 0.2–0.25 h⁻¹, atmospheric pressure. Periodic drying (0–0.1 MPa, 300–360℃, 6–8h) required. Avoid acid/alkali contact and screen out dust with 30-mesh sieve before use.",
+    "SL-IND-07は廃エンジンオイル(廃潤滑油)精製専用の新型触媒です。反応温度290–310℃、LHSV 0.2–0.25 h⁻¹、常圧で使用し、定期的な乾燥工程(0–0.1 MPa, 300–360℃, 6–8時間)が必要です。",
+    sgFng,
+    [
+      { label: "규격 (A / B)", value: "Φ2.5×2–10mm / Φ3×2–10mm", enLabel: "Size", jaLabel: "サイズ" },
+      { label: "비표면적 (A / B)", value: "≥ 235 / ≥ 250 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "압쇄강도 (A / B)", value: "≥ 125 / ≥ 130 N/cm", enLabel: "Crush Strength", jaLabel: "圧潰強度" },
+      { label: "원료유", value: "밀도 0.88–0.90 g/ml", enLabel: "Feed Oil", enValue: "Density 0.88–0.90 g/ml", jaLabel: "原料油" },
+    ], ["촉매", "산업·공정"]),
+
+  // ===== SL-DES : 건조제·흡습제 =====
+  mkSG("silica-gel-sl-des-01", "SL-DES-01 세공형 실리카겔 (A형)",
+    "SL-DES-01 · Fine-pored Silica Gel (Type A)",
+    "SL-DES-01 細孔型シリカゲル (A型)",
+    "비표면적 650–800 m²/g · 건조·방습 표준품",
+    "SSA 650–800 m²/g — standard desiccant grade",
+    "比表面積650–800 m²/g · 乾燥・防湿標準品",
+    "SL-DES-01은 투명 또는 반투명 유리질의 구형(펠릿) 또는 괴상 실리카겔입니다. 평균 공경 2.0–3.0 nm, 비표면적 650–800 m²/g로 건조·방습이 주된 용도이며, 촉매담체·흡착제·분리제·변압흡착(PSA) 용도로도 사용됩니다.",
+    "SL-DES-01 is a transparent/translucent glass-like silica gel in pellet or lump form. Average pore 2.0–3.0 nm and SSA 650–800 m²/g make it a standard desiccant, also used for catalyst supports, adsorbents, separators and PSA.",
+    "SL-DES-01は透明または半透明ガラス質の球形(ペレット)/塊状シリカゲルです。平均細孔2.0–3.0 nm、比表面積650–800 m²/gで乾燥・防湿が主用途、触媒担体・吸着剤・分離剤・PSAにも使用されます。",
+    slDes01Img,
+    [
+      { label: "비표면적", value: "650–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "퇴적밀도", value: "≥ 720(펠릿) / ≥ 670(괴상) g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
+      { label: "공용적", value: "0.35–0.45 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
+      { label: "SiO₂", value: "≥ 98 %" },
+      { label: "규격", value: "0.5–8 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["건조·흡습"]),
+
+  mkSG("silica-gel-sl-des-02", "SL-DES-02 변압흡착(PSA)용 실리카겔 (A형)",
+    "SL-DES-02 · Pressure Swing Adsorption (PSA) Silica Gel (Type A)",
+    "SL-DES-02 圧力スイング吸着(PSA)用シリカゲル (A型)",
+    "CO₂ 흡착량 ≥ 20 cm³/g · 압축강도 ≥ 100 N",
+    "CO₂ ≥ 20 cm³/g · crush ≥ 100 N",
+    "CO₂吸着量 ≥ 20 cm³/g · 圧縮強度 ≥ 100 N",
+    "SL-DES-02는 투명/반투명 유리질 세공 구형 실리카겔로, 변압흡착(PSA) 방식의 기체 분리·정제용 첨단 소재입니다. 이산화탄소 회수·분리·정제에 주로 사용되며 합성암모니아공업·식품음료가공업의 이산화탄소 제조, 건조·방습, 유기제품 탈수 정제에도 사용됩니다.",
+    "SL-DES-02 is a transparent/translucent glass-like fine-pored spherical silica gel for pressure swing adsorption (PSA). Primarily used for CO₂ recovery/purification, ammonia synthesis, food & beverage CO₂ production, drying and organic dehydration.",
+    "SL-DES-02は透明/半透明ガラス質細孔球状シリカゲルで、圧力スイング吸着(PSA)による気体分離・精製用の先端素材です。",
+    slDes02Img,
+    [
+      { label: "공경", value: "20–30 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "650–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "구형입도합격률", value: "≥ 90 %", enLabel: "Spherical Pass", jaLabel: "球形合格率" },
+      { label: "가열감량", value: "≤ 2.0 %", enLabel: "Loss on Heating", jaLabel: "加熱減量" },
+      { label: "규격", value: "0.5–8 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["건조·흡습", "산업·공정"]),
+
+  mkSG("silica-gel-sl-des-03", "SL-DES-03 블루 실리카겔 (A형, 습도지시)",
+    "SL-DES-03 · Blue Silica Gel (Type A, Humidity Indicator)",
+    "SL-DES-03 ブルーシリカゲル (A型, 湿度指示)",
+    "청색 → 분홍색 · 상대습도 직관 표시",
+    "Blue → pink — visual RH indicator",
+    "青 → ピンク · 相対湿度を視覚表示",
+    "SL-DES-03은 청색 또는 담청색 유리상 과립(구형/괴상) 실리카겔입니다. 습기 흡수 후 청색에서 분홍색으로 변색되어 상대습도를 직관적으로 표시합니다. 정밀기기·의약품·석유화학·식품·의류·가전·항공·군수 등 밀폐 환경의 방청·방습 및 습도 지시에 광범위하게 사용됩니다.",
+    "SL-DES-03 is a blue/light-blue glass-like granular silica gel (bead/lump). Absorbs moisture and turns pink to visually indicate relative humidity — widely used for rust/moisture protection and humidity indication in precision instruments, pharmaceuticals, petrochemicals, food, garments, appliances, aviation and defense.",
+    "SL-DES-03は青色または淡青色ガラス状顆粒(球/塊)のシリカゲルです。吸湿後に青→ピンクへ変色し相対湿度を視覚表示、精密機器・医薬品・石油化学・食品・衣料・家電・航空・軍需などの密閉環境の防錆・防湿および湿度指示に幅広く使用されます。",
+    slDes03Img,
+    [
+      { label: "RH 20 %", value: "청색 / 연청색", enValue: "Blue / Light blue", jaValue: "青 / 淡青" },
+      { label: "RH 50 %", value: "분홍색", enValue: "Pink", jaValue: "ピンク" },
+      { label: "비표면적", value: "650–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "규격", value: "1–6 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["건조·흡습", "습도지시"]),
+
+  mkSG("silica-gel-sl-des-04", "SL-DES-04 오렌지 실리카겔 (A형, 습도지시)",
+    "SL-DES-04 · Orange Silica Gel (Type A, Humidity Indicator)",
+    "SL-DES-04 オレンジシリカゲル (A型, 湿度指示)",
+    "무코발트 친환경 습도지시 실리카겔",
+    "Cobalt-free eco-friendly humidity indicator silica gel",
+    "無コバルト・環境配慮型 湿度指示シリカゲル",
+    "SL-DES-04는 보라색·귤색·황색 3가지 유형의 구형/불규칙 과립 실리카겔로, 코발트클로라이드를 함유하지 않아 무독·무해합니다. 습도에 따라 색상이 변화해 습도 지시 기능을 제공하며, 블루 실리카겔과 동일한 산업분야(정밀기기·의약·석유화학·식품·의류·가전·항공·군수 등)에 사용됩니다.",
+    "SL-DES-04 comes in three variants (purple, orange, yellow) as spherical/irregular granules, cobalt-chloride-free and non-toxic. Changes color with humidity for RH indication, used in the same fields as blue silica gel (precision instruments, pharma, petrochem, food, garments, appliances, aviation, defense).",
+    "SL-DES-04は紫・橙・黄の3タイプの球形/不定形顆粒シリカゲルで、塩化コバルトを含まず無毒・無害です。湿度に応じて変色し湿度指示機能を提供、ブルーシリカゲルと同じ産業分野で使用されます。",
+    slDes04Img,
+    [
+      { label: "RH 20 %", value: "연갈황색 / 주황색", enValue: "Light amber / Orange", jaValue: "淡黄褐 / オレンジ" },
+      { label: "RH 50 %", value: "연회록색 / 무색", enValue: "Light gray-green / Colorless", jaValue: "淡灰緑 / 無色" },
+      { label: "비표면적", value: "650–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "규격", value: "1–6 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["건조·흡습", "습도지시"]),
+
+  mkSG("silica-gel-sl-des-05", "SL-DES-05 B형 실리카겔",
+    "SL-DES-05 · B Type Silica Gel",
+    "SL-DES-05 B型シリカゲル",
+    "평균 공경 5–8 nm · 공기습도조절·촉매담체·향료",
+    "5–8 nm avg pore — humidity control, catalyst support, fragrance",
+    "平均細孔5–8 nm · 湿度調整・触媒担体・香料",
+    "SL-DES-05는 구형 또는 괴상, 투명/반투명 유리상의 B형 실리카겔입니다. 평균 공경 5.0–8.0 nm, 비표면적 450–600 m²/g로 공기습도조절제, 촉매 및 촉매담체, 향료 실리카겔·반려동물 깔개 재료, 컬럼크로마토그래피 실리카겔 등 정밀화학 원료로 사용됩니다.",
+    "SL-DES-05 is a B-type silica gel in spherical/lump form (transparent/translucent). Avg pore 5.0–8.0 nm, SSA 450–600 m²/g — used as humidity regulator, catalyst support, fragrance carrier, pet litter and column chromatography feedstock.",
+    "SL-DES-05は球形/塊状、透明/半透明ガラス状のB型シリカゲルです。平均細孔5.0–8.0 nm、比表面積450–600 m²/gで湿度調整剤、触媒/担体、香料キャリア、ペットリッター、カラムクロマト原料などに使用されます。",
+    slDes05Img,
+    [
+      { label: "공경", value: "50–80 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "450–600 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "비저항", value: "≥ 5000(우등) / ≥ 3000(일등) Ω·cm", enLabel: "Resistivity", jaLabel: "比抵抗" },
+      { label: "pH", value: "6.7–7.5" },
+      { label: "규격", value: "4–8 mm / 2–5.6 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["건조·흡습", "촉매"]),
+
+  mkSG("silica-gel-sl-des-06", "SL-DES-06 실리카겔 고양이모래 (C형)",
+    "SL-DES-06 · Silica Gel Cat Litter (Type C)",
+    "SL-DES-06 シリカゲル猫砂 (C型)",
+    "크리스탈 고양이모래 · 경량·저파쇄·항균",
+    "Crystal cat litter — lightweight, low crush, antibacterial",
+    "クリスタル猫砂 · 軽量・低破砕・抗菌",
+    "SL-DES-06은 반려동물 배설물의 수분·냄새를 흡수하고 건조 상태를 유지하며 세균 번식을 억제하는 크리스탈 고양이모래입니다. 벤토나이트 등 기존 고양이모래 대비 경량·저파쇄율·무독·무오염의 친환경 제품으로, 흰색/청색/컬러 과립 커스터마이즈가 가능합니다.",
+    "SL-DES-06 is crystal cat litter that absorbs pet waste moisture and odor while keeping surfaces dry and suppressing bacteria. Lighter, less crushable, non-toxic and non-polluting vs bentonite litter — customizable in white/blue/color granules.",
+    "SL-DES-06はペットの排泄物の水分・臭いを吸収し乾燥状態を保ち、菌の繁殖を抑制するクリスタル猫砂です。ベントナイト等の従来品より軽量・低破砕率・無毒・無汚染で、白/青/カラー顆粒のカスタマイズが可能です。",
+    slDes06Img,
+    [
+      { label: "공경", value: "80–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
+      { label: "비표면적", value: "300–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "pH", value: "6–8" },
+      { label: "흡착량", value: "≥ 90 %", enLabel: "Adsorption", jaLabel: "吸着量" },
+      { label: "규격", value: "0.5–8 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["반려동물"]),
+
+  mkSG("silica-gel-sl-des-07", "SL-DES-07 FNG 내수성 실리카겔",
+    "SL-DES-07 · FNG Water-Resistant Silica Gel",
+    "SL-DES-07 FNG耐水性シリカゲル",
+    "수중 무파열율 90–95 % · 압축공기 건조·아세틸렌 흡착",
+    "90–95% no-burst in water · compressed air drying, acetylene adsorption",
+    "水中無破裂率90–95 % · 圧縮空気乾燥・アセチレン吸着",
+    "SL-DES-07은 백색 또는 회백색 과립의 FNG형 내수성 실리카겔로, 일반 실리카겔과 동일한 공극구조·흡착 특성을 지니면서도 내수성이 우수해 물에 젖어도 파열되지 않고 사용수명이 깁니다. 압축공기 건조정화, 아세틸렌·이산화탄소 흡착제, 석유화학·전력·양조업 액체 흡착제 및 촉매담체, 일반 실리카겔의 보호층 완충 건조제로 사용됩니다.",
+    "SL-DES-07 is a white/off-white FNG water-resistant silica gel. It retains the pore structure and adsorption of standard silica gel but resists cracking when wet for longer service life. Used for compressed-air drying, acetylene/CO₂ adsorption, liquid adsorption in petrochemicals/power/brewing, and as protective buffer for standard silica gel.",
+    "SL-DES-07は白色または灰白色のFNG耐水性シリカゲルで、通常シリカゲルの細孔構造・吸着特性を保ちつつ耐水性に優れ、水に濡れても破裂せず長寿命です。",
+    slDes07Img,
+    [
+      { label: "흡착량 (FNG-A / C)", value: "35–36 / 70–72 %", enLabel: "Adsorption", jaLabel: "吸着量" },
+      { label: "압축강도", value: "≥ 68–98 N", enLabel: "Crush Strength", jaLabel: "圧縮強度" },
+      { label: "수중 무파열율", value: "90–95 %", enLabel: "No-burst in water", jaLabel: "水中無破裂率" },
+      { label: "규격", value: "3–5 mm / 4–8 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["건조·흡습", "산업·공정"]),
+
+  // ===== SL-ALS : 알루미나·분자체 (실리카졸은 별도 카테고리) =====
+  mkSG("silica-gel-sl-als-01", "SL-ALS-01 실리카알루미나겔",
+    "SL-ALS-01 · Silica Alumina Gel",
+    "SL-ALS-01 シリカアルミナゲル",
+    "mSiO₂·nAl₂O₃·xH₂O · 강극성·고흡착 · 천연가스 건조",
+    "mSiO₂·nAl₂O₃·xH₂O — high polarity, strong adsorption, natural gas drying",
+    "mSiO₂·nAl₂O₃·xH₂O · 強極性・高吸着 · 天然ガス乾燥",
+    "SL-ALS-01은 화학식 mSiO₂·nAl₂O₃·xH₂O의 실리카알루미나겔로, 화학적으로 안정하고 불연성이며 강알칼리·불화수소산 외 용매에 불용입니다. 세공형 실리카겔보다 강한 표면 극성과 우수한 흡착분리성능, 뛰어난 열안정성을 지녀 압축천연가스·천연가스·기체·액화가스 건조 등에 광범위하게 사용됩니다.",
+    "SL-ALS-01 is a silica alumina gel (mSiO₂·nAl₂O₃·xH₂O). Chemically stable, non-flammable and insoluble in solvents except strong alkali and hydrofluoric acid. Stronger surface polarity and superior adsorption/thermal stability vs fine-pored silica gel — widely used for CNG, natural gas, gaseous and liquefied gas drying.",
+    "SL-ALS-01は化学式mSiO₂·nAl₂O₃·xH₂Oのシリカアルミナゲルで、化学的に安定・不燃性、強アルカリ・フッ化水素酸以外の溶媒に不溶です。細孔型シリカゲルより強い表面極性と優れた吸着分離性能・熱安定性を持ち、CNG・天然ガス・気体・液化ガス乾燥などに広く使用されます。",
+    sgLargePore,
+    [
+      { label: "SiO₂", value: "65–99.5 %" },
+      { label: "비표면적", value: "600 / 600–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "압축강도", value: "≥ 200 / ≥ 150 N/개", enLabel: "Crush Strength", jaLabel: "圧縮強度" },
+      { label: "규격", value: "1–8 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["알루미나·분자체", "산업·공정"]),
+
+  mkSG("silica-gel-sl-als-03", "SL-ALS-03 활성알루미나볼",
+    "SL-ALS-03 · Activated Alumina Ball",
+    "SL-ALS-03 活性アルミナボール",
+    "Al₂O₃ ≥ 92 % · 비가열재생 건조제 · 175–315℃ 재생",
+    "Al₂O₃ ≥ 92 % — non-heat-regenerative desiccant, 175–315℃ regeneration",
+    "Al₂O₃ ≥ 92 % · 非加熱再生型乾燥剤 · 175–315℃再生",
+    "SL-ALS-03은 백색 구형의 다공성 활성알루미나 흡착재입니다. 입도가 균일하고 표면이 매끄러우며 기계적 강도가 높고 흡습력이 강하며, 흡습 후에도 팽창·균열 없이 원형을 유지합니다. 무독·무취·물과 에탄올에 불용이며, 기체·수증기 및 일부 액체 속 수분을 선택적으로 흡착하고 175–315℃ 가열로 재생 가능한 고효율 건조제입니다.",
+    "SL-ALS-03 is a white spherical porous activated alumina adsorbent. Uniform particle size, smooth surface, high mechanical strength and strong moisture absorption without swelling/cracking. Non-toxic, odorless, insoluble in water/ethanol — a high-efficiency desiccant that selectively adsorbs water from gases, vapors and some liquids and regenerates at 175–315℃.",
+    "SL-ALS-03は白色球状の多孔性活性アルミナ吸着材です。均一粒度、滑らかな表面、高い機械強度、強い吸湿力を持ち、吸湿後も膨張・亀裂なく原形を維持します。",
+    sgTypeA,
+    [
+      { label: "Al₂O₃", value: "≥ 92 %" },
+      { label: "비표면적", value: "≥ 280 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
+      { label: "공용적", value: "≥ 0.40 cm³/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
+      { label: "압쇄강도", value: "≥ 130 N/g", enLabel: "Crush Strength", jaLabel: "圧潰強度" },
+      { label: "규격", value: "3–5 / 4–6 / 5–8 / 8–12 / 12–20 mm", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["알루미나·분자체", "건조·흡습"]),
+
+  mkSG("silica-gel-sl-als-04", "SL-ALS-04 분자체 (4A)",
+    "SL-ALS-04 · Molecular Sieve (4A)",
+    "SL-ALS-04 分子篩 (4A)",
+    "공경 4Å · 물·메탄올·에탄올 선택 흡착 · 산업용 최다 사용",
+    "4Å pore — selective adsorption of water/methanol/ethanol, most widely used",
+    "細孔4Å · 水・メタノール・エタノール選択吸着 · 産業用最多使用",
+    "SL-ALS-04는 공경 4Å의 4A 분자체로, 물·메탄올·에탄올·황화수소·이산화황·이산화탄소·에틸렌·프로필렌을 흡착하며 직경 4Å을 초과하는 분자(프로판 포함)는 흡착하지 않습니다. 물에 대한 선택적 흡착성이 가장 높아 산업용 분자체 중 사용량이 가장 많으며, 천연가스·냉매 등 기체·액체 심층건조, 아르곤 생산정제, 의약품·전자부품 정적건조, 도료·연료·코팅제 탈수제에 사용됩니다.",
+    "SL-ALS-04 is a 4Å (4A) molecular sieve that adsorbs water, methanol, ethanol, H₂S, SO₂, CO₂, ethylene and propylene while excluding molecules > 4Å (incl. propane). Its selectivity for water makes it the most widely used industrial sieve — for deep drying of natural gas/refrigerants, argon production, static drying of pharmaceuticals/electronics and dehydration of paints/fuels/coatings.",
+    "SL-ALS-04は細孔径4Åの4A分子篩で、水・メタノール・エタノール・H₂S・SO₂・CO₂・エチレン・プロピレンを吸着し、4Å超の分子(プロパン含む)は吸着しません。水への選択的吸着性が最も高く、産業用分子篩の中で最多使用されます。",
+    sgTypeA,
+    [
+      { label: "정적수분흡착", value: "≥ 21 %", enLabel: "Static Water Adsorption", jaLabel: "静的水吸着" },
+      { label: "메탄올흡착", value: "≥ 15 %", enLabel: "Methanol Adsorption", jaLabel: "メタノール吸着" },
+      { label: "압축강도", value: "≥ 30–70 N", enLabel: "Crush Strength", jaLabel: "圧縮強度" },
+      { label: "함수율", value: "≤ 1.5 %", enLabel: "Moisture", jaLabel: "含水率" },
+      { label: "규격", value: "1.5–5.0 mm (조형/구형)", enLabel: "Size", jaLabel: "サイズ" },
+    ], ["알루미나·분자체", "건조·흡습"]),
 ];
 
 productCatalog.push(...silicaGelProducts);
@@ -1414,7 +1733,7 @@ productCatalog.push({
     "Fused Silica is an amorphous SiO₂ material made by melting natural quartz at over 1,800°C and rapidly quenching it. It delivers ultra-low CTE (0.5–0.6 ×10⁻⁶/°C), excellent thermal-shock resistance, chemical stability and electrical insulation — a core raw material for advanced industries. SiLiCA supplies Grade A (SiO₂ ≥99.9%, 100% amorphous), Grade B (≥99.5%) and Grade C (≥99%) as flagship purity tiers, together with the full SL-series fused-silica lineup by shape/function: spherical (SL-QG), low-α spherical (SL-QG-L), round-corner (SL-YRG), angular (SL-RG), low-radiation (SL-FL), surface-modified (SL-HRG), fused quartz sand (SL-FS) and ultra-high-purity fine powder (SL-HF04). We supply these as custom-processed products centered on the fused-silica lineup.",
   jaDescription:
     "溶融シリカ(Fused Silica)は、天然石英を1,800℃以上の超高温で溶融・急冷して得られる非晶質(Amorphous)二酸化ケイ素(SiO₂)素材で、極低熱膨張(0.5~0.6 ×10⁻⁶/℃)・優れた耐熱衝撃性・高い化学的安定性・優れた電気絶縁性を兼ね備えた先端産業の核心原料です。SiLiCAはAグレード(SiO₂ ≥99.9%、100%非晶質)、Bグレード(≥99.5%)、Cグレード(≥99%)の代表3グレードに加え、半導体EMC・アンダーフィル・CCL・低α線・表面改質・丸角・角形・微粉・石英砂など、形状/機能別のSLシリーズ溶融シリカラインアップを中心に、カスタム加工で供給します。",
-  image: gradeA,
+  image: fusedSilicaCategoryImg,
   category: "advanced-series",
   isCategoryIndex: true,
   features: [
@@ -1461,6 +1780,64 @@ productCatalog.push({
     "태양광 · 에너지",
   ],
 });
+
+
+// ============= Aggregated Category: Quartz · Crystalline Silica (α-Quartz) =============
+productCatalog.push({
+  slug: "crystalline-silica",
+  name: "쿼츠 · 결정질 실리카",
+  enName: "Quartz · Crystalline Silica (α-Quartz)",
+  jaName: "クォーツ・結晶質シリカ (α-石英)",
+  tagline: "구상·모서리 라운드·각상·저방사선·표면개질·석영사 전 결정질(α-Quartz) 실리카 라인업 통합 카테고리",
+  enTagline: "Unified α-quartz crystalline silica lineup — spherical, round-corner, angular, low-α, surface-modified and quartz sand grades in one place",
+  jaTagline: "球状・丸角・角形・低α線・表面改質・石英砂まで、全結晶質(α-Quartz)シリカラインアップを一箇所で",
+  description:
+    "쿼츠(Quartz) · 결정질 실리카(Crystalline Silica, α-Quartz)는 천연 수정 광석을 기반으로 정제·분급·결정 형상 제어를 거쳐 제조되는 고순도 α상 SiO₂ 소재로, 용융(Amorphous) 실리카 대비 높은 경도(Mohs 7)·우수한 화학적 안정성·낮은 단가·풍부한 원료 공급성을 갖춘 산업용 대표 실리카입니다. SiLiCA는 결정질 실리카 라인업을 하나의 카테고리로 통합하여, 모서리 라운드 결정형(SL-YJG)·각상 결정형(SL-JG)·저방사선 결정형(SL-CL)·표면개질 결정형(SL-HJG)·결정 석영사(SL-CS) 등 형상·기능·순도별 전 라인업을 CCL/PCB, 반도체 EMC, 정밀 주조, 세라믹, 산업용 코팅, 고내마모 복합재 등 다양한 산업 요구에 맞춰 커스텀 가공 공급합니다.\n\n각 제품은 원래 소속 카테고리(구상·모서리 라운드·각상·저방사선·표면개질·실리카 분말·입자)에도 그대로 유지되므로, 형상·기능별로도 자유롭게 탐색 가능합니다.",
+  enDescription:
+    "Quartz · Crystalline Silica (α-Quartz) is a high-purity α-phase SiO₂ material refined from natural quartz ore through classification and crystal-shape control. Compared with amorphous fused silica, it offers superior hardness (Mohs 7), excellent chemical stability, cost-competitive pricing and abundant raw-material availability, making it the industrial workhorse silica. SiLiCA consolidates its crystalline lineup — round-corner crystalline (SL-YJG), angular crystalline (SL-JG), low-α crystalline (SL-CL), surface-modified crystalline (SL-HJG) and crystalline quartz sand (SL-CS) — under one category, custom-processed for CCL/PCB, semiconductor EMC, precision casting, ceramics, industrial coatings and high-wear composites.\n\nEach product also remains listed under its original shape/function category (spherical, round-corner, angular, low-α, surface-modified, silica powder & granule), so you can navigate by form factor as well.",
+  jaDescription:
+    "クォーツ(Quartz)・結晶質シリカ(Crystalline Silica, α-Quartz)は、天然石英原石を精製・分級・結晶形状制御して製造される高純度α相SiO₂素材で、溶融(非晶質)シリカに比べ高硬度(モース7)・優れた化学安定性・低コスト・豊富な原料供給性を兼ね備えた産業用の代表的シリカです。SiLiCAは結晶質ラインアップを一つのカテゴリに統合し、丸角結晶質(SL-YJG)・角形結晶質(SL-JG)・低α線結晶質(SL-CL)・表面改質結晶質(SL-HJG)・結晶石英砂(SL-CS)を、CCL/PCB・半導体EMC・精密鋳造・セラミックス・産業用コーティング・高耐摩耗複合材など多様な用途向けにカスタム加工で供給します。\n\n各製品は元の所属カテゴリ(球状・丸角・角形・低α線・表面改質・シリカ粉末/粒)にもそのまま掲載されるため、形状・機能別にも自由に閲覧できます。",
+  image: crystallineSilicaImg,
+  category: "advanced-series",
+  isCategoryIndex: true,
+  features: [
+    { title: "💎 α-Quartz 결정 구조", desc: "천연 석영 기반의 α상 결정질 SiO₂ — 높은 경도(Mohs 7)와 우수한 화학적 안정성", enTitle: "💎 α-Quartz Crystal Structure", jaTitle: "💎 α-Quartz 結晶構造", enDesc: "α-phase crystalline SiO₂ from natural quartz — high hardness (Mohs 7) and excellent chemical stability", jaDesc: "天然石英ベースのα相結晶質SiO₂ — 高硬度(モース7)と優れた化学安定性" },
+    { title: "🔷 전 형상 라인업 통합", desc: "모서리 라운드(SL-YJG)·각상(SL-JG)·저방사선(SL-CL)·표면개질(SL-HJG)·석영사(SL-CS)", enTitle: "🔷 Full Shape Lineup", jaTitle: "🔷 全形状ラインアップ", enDesc: "Round-corner (SL-YJG), angular (SL-JG), low-α (SL-CL), surface-modified (SL-HJG), quartz sand (SL-CS)", jaDesc: "丸角(SL-YJG)・角形(SL-JG)・低α線(SL-CL)・表面改質(SL-HJG)・石英砂(SL-CS)" },
+    { title: "☢️ 저방사선(Low-α) 대응", desc: "SL-CL — HBM·DDR5·AI 반도체 소프트에러 방지용 α선 ≤ 0.001 cph/cm²", enTitle: "☢️ Low-α Grade Available", jaTitle: "☢️ 低α線対応", enDesc: "SL-CL — α ≤ 0.001 cph/cm² for HBM, DDR5, AI-semiconductor soft-error suppression", jaDesc: "SL-CL — HBM・DDR5・AI半導体のソフトエラー抑制用 α線 ≤ 0.001 cph/cm²" },
+    { title: "⚗️ 표면개질(활성) 결정형", desc: "SL-HJG — 실란 커플링 처리로 유기 매트릭스와의 접착·분산성 극대화", enTitle: "⚗️ Surface-Modified Crystalline", jaTitle: "⚗️ 表面改質(活性)結晶質", enDesc: "SL-HJG — silane-coupled to maximize adhesion and dispersion in organic matrices", jaDesc: "SL-HJG — シランカップリング処理で有機マトリクスとの接着・分散性を最大化" },
+    { title: "💰 경제성 & 안정 공급", desc: "용융 대비 낮은 단가와 풍부한 원료 공급성 — 대량 수요·산업용 표준 필러에 최적", enTitle: "💰 Cost-Competitive & Stable Supply", jaTitle: "💰 経済性と安定供給", enDesc: "Lower cost than fused variants with abundant raw-material supply — ideal for high-volume industrial fillers", jaDesc: "溶融品対比の低コストと豊富な原料供給性 — 大量需要・産業用標準フィラーに最適" },
+    { title: "📐 광범위 입도 · 맞춤 공급", desc: "미분(D50 µm)부터 석영사 과립까지 고객 요구 사양별 커스텀 생산", enTitle: "📐 Wide PSD & Custom Supply", jaTitle: "📐 広範な粒度・カスタム供給", enDesc: "From fine powder (D50 µm) to quartz sand granules — custom per requirement", jaDesc: "微粉(D50 µm)から石英砂顆粒までカスタム生産" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS", enValue: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS", jaValue: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "결정 구조", value: "α-Quartz (Trigonal, 결정질)", enValue: "α-Quartz (Trigonal, crystalline)", jaValue: "α-Quartz (三方晶系、結晶質)", enLabel: "Crystal Structure", jaLabel: "結晶構造" },
+    { label: "SiO₂ 순도 범위", value: "≥ 99.5 % ~ ≥ 99.9 % (등급별)", enValue: "≥99.5% – ≥99.9% (by grade)", jaValue: "≥99.5% ~ ≥99.9% (グレード別)", enLabel: "SiO₂ Purity Range", jaLabel: "SiO₂純度範囲" },
+    { label: "경도 (Mohs)", value: "7", enLabel: "Hardness (Mohs)", jaLabel: "硬度 (モース)" },
+    { label: "형상 옵션", value: "모서리 라운드 · 각상 · 저방사선 · 표면개질 · 석영사", enValue: "Round-corner · angular · low-α · surface-modified · quartz sand", jaValue: "丸角 · 角形 · 低α線 · 表面改質 · 石英砂", enLabel: "Shape Options", jaLabel: "形状オプション" },
+    { label: "저방사선(Low-α)", value: "SL-CL 그레이드 — α ≤ 0.001 cph/cm²", enValue: "SL-CL grade — α ≤ 0.001 cph/cm²", jaValue: "SL-CLグレード — α ≤ 0.001 cph/cm²", enLabel: "Low-α Option", jaLabel: "低α線オプション" },
+    { label: "표면개질", value: "SL-HJG (실란 커플링) 그레이드 별도 공급", enValue: "SL-HJG (silane-coupled) grade available", jaValue: "SL-HJG (シランカップリング)グレード供給可", enLabel: "Surface Modification", jaLabel: "表面改質" },
+    { label: "포장", value: "10 / 20 kg 지대 · 500 kg 벌크백 · OEM", enValue: "10 / 20 kg bag · 500 kg bulk · OEM", jaValue: "10 / 20 kg 紙袋 · 500 kg バルク · OEM", enLabel: "Packaging", jaLabel: "包装" },
+  ],
+  subModelsColumnLabel: { ko: "형상 / 기능", en: "Shape / Function", ja: "形状/機能" },
+  subModels: [
+    { code: "SL-YJG", slug: "sl-yjg", spec: "결정형 모서리 라운드 (CCL·도전성 페이스트·산업 코팅)", enSpec: "Crystalline Round-Corner (CCL, conductive paste, industrial coatings)", jaSpec: "結晶質 丸角 (CCL・導電性ペースト・産業用コーティング)" },
+    { code: "SL-JG", slug: "sl-jg", spec: "결정형 각상 (표준 필러·고내마모 복합재)", enSpec: "Crystalline Angular (standard filler, high-wear composites)", jaSpec: "結晶質 角形 (標準フィラー・高耐摩耗複合材)" },
+    { code: "SL-CL", slug: "sl-cl", spec: "저방사선(Low-α) 결정형 — α ≤ 0.001 cph/cm²", enSpec: "Low-α Crystalline — α ≤ 0.001 cph/cm²", jaSpec: "低α線 結晶質 — α ≤ 0.001 cph/cm²" },
+    { code: "SL-HJG", slug: "sl-hjg", spec: "표면개질(활성) 결정형 — 실란 커플링 처리", enSpec: "Surface-Modified Crystalline — silane-coupled", jaSpec: "表面改質(活性) 結晶質 — シランカップリング処理" },
+    { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사 (유리 원료·정밀 주조·연마재)", enSpec: "Crystalline Quartz Sand (glass raw material, precision casting, abrasives)", jaSpec: "結晶石英砂 (ガラス原料・精密鋳造・研磨材)" },
+  ],
+  applications: [
+    "CCL / PCB · 5G 고주파 기판 (결정형 필러)",
+    "반도체 EMC · 언더필 (저방사선 결정형)",
+    "HBM · DDR5 · AI 반도체 (Low-α 결정형)",
+    "도전성 페이스트 · 산업용 코팅",
+    "고내마모 복합재 · 엔지니어링 플라스틱 필러",
+    "정밀 주조 · 세라믹 코어",
+    "유리 원료 · 특수 유리 · 광학 유리",
+    "연마재 · 워터필터 · 스포츠 표면재",
+  ],
+});
+
 
 
 // ============= Silica Sol (Colloidal Silica) — category index + 2 children =============
@@ -1622,11 +1999,586 @@ const silicaSolChildren: ProductDetail[] = [
 ];
 productCatalog.push(...silicaSolChildren);
 
+// ============= Extended Precipitated / Fumed Silica Catalog (China supplier) =============
+// Assign useTags to legacy products so filters cover the full lineup
+const _legacyTags: Record<string, string[]> = {
+  "precipitated-silica-sl-a81": ["고무", "접착제"],
+  "precipitated-silica-si-60": ["고무", "접착제"],
+  "precipitated-silica-si-175": ["고무", "사료"],
+  "fumed-silica-slh-380s": ["고무", "도료", "접착제", "의약"],
+};
+productCatalog.forEach((p) => { if (!p.useTags && _legacyTags[p.slug]) p.useTags = _legacyTags[p.slug]; });
 
+type SpecRow = { label: string; value: string; note?: string; enLabel?: string; enValue?: string; enNote?: string; jaLabel?: string; jaValue?: string; jaNote?: string };
 
+const mkPS = (
+  code: string,
+  koName: string, enName: string, jaName: string,
+  koTag: string, enTag: string, jaTag: string,
+  koDesc: string, enDesc: string, jaDesc: string,
+  specs: SpecRow[],
+  useTags: string[],
+): ProductDetail => ({
+  slug: `precipitated-silica-${code.toLowerCase()}`,
+  name: `${code} ${koName}`,
+  enName: `${code} · ${enName}`,
+  jaName: `${code} ${jaName}`,
+  tagline: koTag, enTagline: enTag, jaTagline: jaTag,
+  description: koDesc, enDescription: enDesc, jaDescription: jaDesc,
+  image: precipitatedSilica,
+  category: "precipitated",
+  features: PS_FEATURES,
+  specs,
+  applications: PS_APPS,
+  useTags,
+});
 
+const mkFS = (
+  code: string,
+  koName: string, enName: string, jaName: string,
+  koTag: string, enTag: string, jaTag: string,
+  koDesc: string, enDesc: string, jaDesc: string,
+  specs: SpecRow[],
+  useTags: string[],
+): ProductDetail => ({
+  slug: `fumed-silica-${code.toLowerCase()}`,
+  name: `${code} ${koName}`,
+  enName: `${code} · ${enName}`,
+  jaName: `${code} ${jaName}`,
+  tagline: koTag, enTagline: enTag, jaTagline: jaTag,
+  description: koDesc, enDescription: enDesc, jaDescription: jaDesc,
+  image: fumedSilica,
+  category: "fumed",
+  features: FS_FEATURES,
+  specs,
+  applications: FS_APPS,
+  useTags,
+});
 
+// —— 침전 실리카 확장 라인업 ——
+const precipitatedExtProducts: ProductDetail[] = [
+  // 소광제 (도료·코팅용)
+  mkPS("SL-CT-102", "침전 실리카 (도료 소광 · 초미세 겸용)", "Precipitated Silica (Matting & Ultrafine Dual-Use)", "沈降シリカ(艶消し・超微粒兼用)",
+    "BET 230–260 m²/g · DBP 220–320 · 도료 소광과 범용 보강을 겸비한 초미세 실리카",
+    "BET 230–260 m²/g · DBP 220–320 — dual-use ultra-fine silica for paint matting and general-purpose reinforcement",
+    "BET 230–260 m²/g · DBP 220–320 — 塗料艶消しと汎用補強を兼備した超微細シリカ",
+    "SL-CT-102는 도료·잉크의 소광제와 초미세 이산화규소 두 용도를 겸비한 침전 실리카입니다. 5μm 평균 입경과 230–260 m²/g의 높은 비표면적, 1.4–1.5 ml/g의 공극 부피로 일반 장식페인트·목재·가구·분체도료의 소광 효과와 필름 형성 후 매끄러운 촉감을 동시에 구현합니다. SiO₂ 98.5% · 중성 pH(6.9–7.1)로 유·수성 도료 시스템 모두에서 안정적으로 분산됩니다.",
+    "SL-CT-102 is a precipitated silica that combines paint/ink matting and general ultrafine SiO₂ functions. With an average particle size of 5 μm, high BET (230–260 m²/g) and 1.4–1.5 ml/g pore volume, it delivers matting and smooth-touch finishes in decorative, wood, furniture and powder coatings. SiO₂ 98.5% with neutral pH (6.9–7.1) enables stable dispersion in both solvent- and water-based systems.",
+    "SL-CT-102は塗料・インキ用艶消し剤と超微細二酸化ケイ素の両用途を兼備した沈降シリカです。平均粒径5μm、BET 230–260 m²/g、細孔容積1.4–1.5 ml/gにより、装飾塗料・木材・家具・粉体塗料での艶消し効果と滑らかな仕上がりを同時に実現します。SiO₂ 98.5%・中性pH(6.9–7.1)で油性・水性塗料に安定分散します。",
+    [
+      { label: "외관", value: "백색 분말" },
+      { label: "SiO₂", value: "98.5 %" },
+      { label: "pH", value: "6.9–7.1" },
+      { label: "BET", value: "230–260 m²/g" },
+      { label: "DBP 흡유량", value: "220–320" },
+      { label: "평균 입경", value: "5 μm" },
+      { label: "공극 부피", value: "1.4–1.5 ml/g" },
+      { label: "주용도", value: "장식페인트·목재·가구·분체도료" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["도료", "소광"]),
 
+  mkPS("SL-CT-107", "침전 실리카 (도료 소광 · 젤법)", "Precipitated Silica Matting Agent (Gel Method)", "沈降シリカ 艶消し剤(ゲル法)",
+    "BET 280 m²/g · DBP 360–400 · 젤법 제조 고분산 소광제",
+    "BET 280 m²/g · DBP 360–400 — gel-method matting agent with high dispersibility",
+    "BET 280 m²/g · DBP 360–400 · ゲル法製造の高分散艶消し剤",
+    "SL-CT-107은 젤법으로 제조된 백색 침전 실리카 소광제입니다. 280 m²/g의 비표면적, DBP 360–400, 1.8 ml/g의 대공극 구조로 가구·목재·권강페인트에서 우수한 소광 성능과 부드러운 촉감을 동시에 제공합니다. 5μm 평균 입경으로 필름 표면 요철을 미세하게 형성해 눈부심 없는 무광 마감을 완성합니다.",
+    "SL-CT-107 is a gel-method white precipitated silica matting agent. Its 280 m²/g surface area, DBP 360–400 and 1.8 ml/g high pore volume deliver strong matting and smooth touch in furniture, wood and coil coatings. The 5 μm average particle creates a fine micro-texture that produces glare-free matte finishes.",
+    "SL-CT-107はゲル法で製造された白色沈降シリカ艶消し剤です。BET 280 m²/g、DBP 360–400、細孔容積1.8 ml/gの構造で家具・木材・コイル塗料に優れた艶消し性能と滑らかな触感を提供します。平均粒径5μmが微細な表面凹凸を形成し、まぶしさのないマット仕上げを実現します。",
+    [
+      { label: "외관", value: "백색 분말(젤법)" },
+      { label: "SiO₂", value: "98.5 %" },
+      { label: "pH", value: "6.9–7.1" },
+      { label: "BET", value: "280 m²/g" },
+      { label: "DBP", value: "360–400" },
+      { label: "평균 입경", value: "5 μm" },
+      { label: "공극 부피", value: "1.8 ml/g" },
+      { label: "주용도", value: "가구·목재·권강페인트" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["도료", "소광"]),
+
+  mkPS("SL-CT-1031", "침전 실리카 (도료 소광 · 잉크 흡착)", "Precipitated Silica (Matting & Ink Absorbing)", "沈降シリカ(艶消し・インキ吸着)",
+    "미세 3μm 입자 · DBP 340–380 · 잉크 흡착과 도료 소광 겸용",
+    "Fine 3 μm particle · DBP 340–380 — dual matting and ink-absorbing grade",
+    "微細3μm粒子 · DBP 340–380 · 塗料艶消しとインキ吸着を兼備",
+    "SL-CT-1031은 3μm 급 미세 입도와 DBP 340–380의 높은 흡유량으로 도료 소광과 인화지·잉크 흡착을 동시에 만족시키는 다기능 침전 실리카입니다. 98.6%의 SiO₂ 순도와 중성 pH로 유성·수성 시스템 모두에서 안정적으로 사용되며, 잉크젯 코팅·고흡착 도료·특수 인쇄용지에 최적화되어 있습니다.",
+    "SL-CT-1031 delivers dual matting and ink/paper absorption performance with 3 μm fine particles and high DBP (340–380). SiO₂ 98.6% and neutral pH make it compatible with solvent- and water-based systems, optimized for inkjet coatings, high-absorption paints and specialty printing papers.",
+    "SL-CT-1031は3μm級の微細粒度とDBP 340–380の高吸油量で塗料艶消しと印刷紙・インキ吸着を同時に満たす多機能沈降シリカです。SiO₂ 98.6%・中性pHで油性・水性系に安定使用でき、インクジェットコーティング・高吸着塗料・特殊印刷紙に最適化されています。",
+    [
+      { label: "외관", value: "백색 분말" },
+      { label: "SiO₂", value: "98.6 %" },
+      { label: "pH", value: "6.9–7.1" },
+      { label: "BET", value: "250–270 m²/g" },
+      { label: "DBP", value: "340–380" },
+      { label: "평균 입경", value: "3 μm" },
+      { label: "공극 부피", value: "1.2 ml/g" },
+      { label: "주용도", value: "고흡착 도료·잉크·인화지" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["도료", "소광"]),
+
+  mkPS("SL-CT-104", "침전 실리카 (도료 소광 · 실리콘고무 겸용)", "Precipitated Silica (Matting & Silicone Rubber Dual-Use)", "沈降シリカ(艶消し・シリコーンゴム兼用)",
+    "고급 유성도료·잉크 소광과 실리콘고무 보강을 동시 지원",
+    "Supports premium solvent-borne paint/ink matting and silicone rubber reinforcement",
+    "高級油性塗料・インキ艶消しとシリコーンゴム補強を同時支援",
+    "SL-CT-104는 도료용 등급(SiO₂ 98.6%)과 고무용 등급(SiO₂ 99.8%)이 함께 제공되는 이중 용도 침전 실리카입니다. BET 200 / 185 m²/g 수준으로 고급 유성도료·잉크의 소광 성능과 실리콘고무·엘라스토머의 인장·인열·경도 보강을 동시에 만족합니다. D50 3–4μm의 미세 입자로 매끄러운 마감과 균일 분산을 제공합니다.",
+    "SL-CT-104 is a dual-purpose precipitated silica offered in a paint grade (SiO₂ 98.6%) and a silicone rubber grade (SiO₂ 99.8%). BET 200 / 185 m²/g simultaneously meets matting requirements for premium solvent paints/inks and reinforcement (tensile, tear, hardness) for silicone rubber. D50 3–4 μm delivers smooth finishes and uniform dispersion.",
+    "SL-CT-104は塗料用グレード(SiO₂ 98.6%)とゴム用グレード(SiO₂ 99.8%)が提供されるデュアル用途の沈降シリカです。BET 200 / 185 m²/gで高級油性塗料・インキの艶消しとシリコーンゴム・エラストマーの引張・引裂・硬度補強を同時に実現。D50 3–4μmで滑らかな仕上がりと均一分散を提供します。",
+    [
+      { label: "외관", value: "백색 분말" },
+      { label: "SiO₂", value: "98.6 % / 99.8 %(고무용)" },
+      { label: "pH", value: "6.9–7.1 / 6.0" },
+      { label: "BET", value: "200 / 185 m²/g" },
+      { label: "DBP / 흡유값", value: "240 / 3.2 cm³/g" },
+      { label: "평균 입경", value: "3 μm / D50 3–4 μm" },
+      { label: "주용도", value: "고급 유성도료·잉크, 실리콘고무 보강" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["도료", "소광", "고무"]),
+
+  mkPS("SL-CT-107L", "침전 실리카 (유기 표면처리 소광제)", "Precipitated Silica (Organic Surface-Treated Matting Agent)", "沈降シリカ(有機表面処理艶消し剤)",
+    "SiO₂ 99.9% · BET 320 m²/g · 유기처리 프리미엄 소광제",
+    "SiO₂ 99.9% · BET 320 m²/g — organically treated premium matting agent",
+    "SiO₂ 99.9% · BET 320 m²/g · 有機処理プレミアム艶消し剤",
+    "SL-CT-107L은 표면을 유기 처리한 고순도(99.9%) 침전 실리카로, 320 m²/g의 초고비표면적과 DBP 400의 대흡유량, 1.8 ml/g의 대공극을 갖춘 프리미엄 소광제입니다. 고급 가구도료·무광 자동차 클리어·가죽 조제·광택유 등 최고 등급 마감이 요구되는 분야에 사용되며, 유기 처리로 유성 시스템에서의 침강 방지 및 재분산성이 우수합니다.",
+    "SL-CT-107L is an organically surface-treated high-purity (99.9%) precipitated silica — a premium matting agent with ultra-high 320 m²/g BET, DBP 400 and 1.8 ml/g pore volume. Designed for premium furniture coatings, matte automotive clears, leather chemicals and polish oils, its organic treatment provides excellent anti-settling and redispersibility in solvent systems.",
+    "SL-CT-107Lは表面を有機処理した高純度(99.9%)沈降シリカで、BET 320 m²/g、DBP 400、細孔容積1.8 ml/gの超高性能艶消し剤です。高級家具塗料・マット自動車クリア・皮革薬剤・光沢油など最高級仕上げに使用され、有機処理により油性系での沈降防止・再分散性に優れます。",
+    [
+      { label: "외관", value: "백색 분말(유기처리)" },
+      { label: "SiO₂", value: "99.9 %" },
+      { label: "pH", value: "6.9–7.1" },
+      { label: "BET", value: "320 m²/g" },
+      { label: "DBP", value: "400" },
+      { label: "평균 입경", value: "2 μm" },
+      { label: "공극 부피", value: "1.8 ml/g" },
+      { label: "주용도", value: "고급 가구도료·무광도료·가죽조제·광택유" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["도료", "소광"]),
+
+  // 초미세 이산화규소 (범용 보강·증점)
+  mkPS("SL-CT-101", "초미세 침전 실리카", "Ultrafine Precipitated Silica", "超微細沈降シリカ",
+    "BET 185–205 m²/g · 실리콘고무·도료·접착제 범용 초미세 실리카",
+    "BET 185–205 m²/g — general-purpose ultrafine silica for silicone rubber, paint, adhesives",
+    "BET 185–205 m²/g · シリコーンゴム・塗料・接着剤汎用の超微細シリカ",
+    "SL-CT-101은 실리콘고무·유성 도료·1액형 접착제 등에서 널리 쓰이는 범용 초미세 침전 실리카입니다. BET 185–205 m²/g, 흡유값 2.3–2.8 cm³/g로 안정된 보강·증점·요변성을 제공하며, 8–10μm의 균일 입자로 배합 안정성과 취급성이 우수합니다.",
+    "SL-CT-101 is a general-purpose ultrafine precipitated silica widely used in silicone rubber, solvent-borne paints and one-part adhesives. BET 185–205 m²/g and oil absorption 2.3–2.8 cm³/g provide stable reinforcement, thickening and thixotropy; 8–10 μm particles ensure formulation stability and easy handling.",
+    "SL-CT-101はシリコーンゴム・油性塗料・1液型接着剤で広く使用される汎用超微細沈降シリカです。BET 185–205 m²/g、吸油値2.3–2.8 cm³/gで安定した補強・増粘・チキソ性を提供し、8–10μmの均一粒子で配合安定性と取り扱い性に優れます。",
+    [
+      { label: "SiO₂", value: "98 %" },
+      { label: "pH", value: "6.5–7.5" },
+      { label: "BET", value: "185–205 m²/g" },
+      { label: "평균 입경", value: "8–10 μm" },
+      { label: "흡유값", value: "2.3–2.8 cm³/g" },
+      { label: "강열감량", value: "4–6 %" },
+      { label: "건조감량", value: "4–6 %" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제"]),
+
+  mkPS("SL-CT-101AH", "초미세 침전 실리카", "Ultrafine Precipitated Silica", "超微細沈降シリカ",
+    "BET 180–200 m²/g · 실리콘고무·도료·접착제 고안정 등급",
+    "BET 180–200 m²/g — high-stability grade for silicone rubber, paint, adhesives",
+    "BET 180–200 m²/g · シリコーンゴム・塗料・接着剤の高安定グレード",
+    "SL-CT-101AH는 SL-CT-101과 동일 계열의 초미세 침전 실리카로, 흡유값과 입도가 유사하면서도 배치 간 편차가 낮게 관리된 고안정성 등급입니다. 실리콘고무의 인장 강도·경도 부여, 유성 도료·잉크의 침강 방지·증점, RTV/1액형 접착제의 요변성 개선에 폭넓게 적용됩니다.",
+    "SL-CT-101AH is an ultrafine precipitated silica in the same family as SL-CT-101, offering a high-stability grade with tightly controlled batch-to-batch variation. Broadly used for tensile/hardness reinforcement in silicone rubber, anti-settling and thickening in solvent paints/inks, and thixotropy in RTV and one-part adhesives.",
+    "SL-CT-101AHはSL-CT-101と同系列の超微細沈降シリカで、吸油値と粒度は同等ながらバッチ間ばらつきを抑えた高安定グレードです。シリコーンゴムの引張強度・硬度付与、油性塗料・インキの沈降防止・増粘、RTV/1液型接着剤のチキソ性改善に幅広く適用されます。",
+    [
+      { label: "SiO₂", value: "98 %" },
+      { label: "BET", value: "180–200 m²/g" },
+      { label: "평균 입경", value: "7–10 μm" },
+      { label: "흡유값", value: "2.3–2.8 cm³/g" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제"]),
+
+  mkPS("SL-CT-99", "초미세 침전 실리카", "Ultrafine Precipitated Silica", "超微細沈降シリカ",
+    "45–70μm 조립형 · 취급 용이한 저비산 범용 실리카",
+    "45–70 μm coarse grade — easy-to-handle, low-dust general silica",
+    "45–70μm 粗粒型・取り扱い容易な低飛散汎用シリカ",
+    "SL-CT-99는 평균 45–70μm의 조립형 침전 실리카로, 자동 계량·투입 라인에서 비산이 매우 적고 흐름성이 우수합니다. SiO₂ 96% · BET 165–200 m²/g · 흡유값 2.0–3.5 cm³/g로 범용 고무 보강·페인트 증점·접착제 필러 용도에 경제적으로 활용됩니다.",
+    "SL-CT-99 is a coarse (45–70 μm) precipitated silica with very low dust and excellent flow in automatic weighing lines. SiO₂ 96%, BET 165–200 m²/g and oil absorption 2.0–3.5 cm³/g make it an economical choice for general rubber reinforcement, paint thickening and adhesive fillers.",
+    "SL-CT-99は平均45–70μmの粗粒型沈降シリカで、自動計量・投入ラインでの飛散が非常に少なく流動性に優れます。SiO₂ 96%、BET 165–200 m²/g、吸油値2.0–3.5 cm³/gで汎用ゴム補強・塗料増粘・接着剤フィラーに経済的です。",
+    [
+      { label: "SiO₂", value: "96 %" },
+      { label: "BET", value: "165–200 m²/g" },
+      { label: "평균 입경", value: "45–70 μm" },
+      { label: "흡유값", value: "2.0–3.5 cm³/g" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제"]),
+
+  mkPS("SL-CT-103", "초미세 침전 실리카 (고비표면적)", "Ultrafine Precipitated Silica (High SSA)", "超微細沈降シリカ(高比表面積)",
+    "BET 240–380 m²/g · 고보강 · 고증점 요구 배합용",
+    "BET 240–380 m²/g — for high-reinforcement, high-thickening formulations",
+    "BET 240–380 m²/g · 高補強・高増粘用途向け",
+    "SL-CT-103은 BET 240–380 m²/g의 초고비표면적을 갖춘 침전 실리카로, 소량 첨가로 강한 보강·증점 효과가 필요한 실리콘 고무·특수 접착제·프리미엄 도료에 적합합니다. 흡유값 3.0–4.0 cm³/g로 대량의 오일·수지를 흡수하여 요변성·처짐 방지 기능을 부여합니다.",
+    "SL-CT-103 is a precipitated silica with ultra-high BET 240–380 m²/g, suitable for silicone rubber, specialty adhesives and premium coatings requiring strong reinforcement and thickening at low loadings. Oil absorption 3.0–4.0 cm³/g absorbs large amounts of oil/resin to impart thixotropy and anti-sagging.",
+    "SL-CT-103はBET 240–380 m²/gの超高比表面積を持つ沈降シリカで、少量添加で強い補強・増粘効果を要するシリコーンゴム・特殊接着剤・プレミアム塗料に適合。吸油値3.0–4.0 cm³/gで大量のオイル・樹脂を吸収し、チキソ性と液だれ防止性を付与します。",
+    [
+      { label: "SiO₂", value: "98 %" },
+      { label: "BET", value: "240–380 m²/g" },
+      { label: "평균 입경", value: "6–8 μm" },
+      { label: "흡유값", value: "3.0–4.0 cm³/g" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제"]),
+
+  // 담체·충전재용
+  mkPS("SL-CT-601", "담체·충전재용 침전 실리카", "Precipitated Silica Carrier / Filler", "担体・充填剤用沈降シリカ",
+    "BET 220–250 m²/g · 사료·농약·도자기 유약용 다공성 캐리어",
+    "BET 220–250 m²/g — porous carrier for feed, agrochemicals and ceramic glaze",
+    "BET 220–250 m²/g · 飼料・農薬・陶磁器釉薬用の多孔性担体",
+    "SL-CT-601은 45μm 조립·다공성 침전 실리카로, 사료 첨가제·농약 원제·도자기 유약의 담체(carrier) 및 충전재로 사용됩니다. 220–250 m²/g의 높은 비표면적과 DBP 310–370의 흡유량이 유효 성분의 균일한 담지와 서방출 효과를 부여하며, 취급성이 우수한 조립형입니다.",
+    "SL-CT-601 is a 45 μm porous precipitated silica used as a carrier and filler for feed additives, agrochemical actives and ceramic glazes. Its 220–250 m²/g BET and 310–370 DBP provide uniform loading and controlled release of actives while offering easy-handling coarse morphology.",
+    "SL-CT-601は45μm粗粒・多孔性の沈降シリカで、飼料添加剤・農薬原体・陶磁器釉薬の担体(carrier)および充填剤として使用されます。BET 220–250 m²/g、DBP 310–370により有効成分の均一担持と徐放効果を付与し、取り扱い性に優れる粗粒型です。",
+    [
+      { label: "SiO₂(건품)", value: "93.0–99.0 %" },
+      { label: "pH", value: "6.8–7.0" },
+      { label: "BET", value: "220–250 m²/g" },
+      { label: "DBP", value: "310–370 ml/100g" },
+      { label: "입경", value: "45 μm" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["사료", "농약", "도자기"]),
+
+  mkPS("SL-CT-602", "담체·충전재용 침전 실리카", "Precipitated Silica Carrier / Filler", "担体・充填剤用沈降シリカ",
+    "BET 220–270 m²/g · 미세 6μm · 정밀 담지 및 균일 분산용",
+    "BET 220–270 m²/g · fine 6 μm — for precise loading and uniform dispersion",
+    "BET 220–270 m²/g · 微細6μm · 精密担持と均一分散用",
+    "SL-CT-602는 6μm의 미세 입도를 가진 담체·충전재용 침전 실리카로, 유효 성분의 정밀 담지, 균일 분산과 함께 우수한 흡유·흡습 기능을 제공합니다. 사료·프리믹스·수용성 농약·유약 안료 분산에 최적화되어 있습니다.",
+    "SL-CT-602 is a fine (6 μm) carrier/filler precipitated silica delivering precise active loading, uniform dispersion and strong oil/moisture absorption. Optimized for feed premixes, water-soluble agrochemicals and glaze pigment dispersion.",
+    "SL-CT-602は6μmの微細粒度を持つ担体・充填剤用沈降シリカで、有効成分の精密担持・均一分散と優れた吸油・吸湿機能を提供します。飼料プレミックス・水溶性農薬・釉薬顔料分散に最適化されています。",
+    [
+      { label: "SiO₂(건품)", value: "93.0–99.0 %" },
+      { label: "pH", value: "6.8–7.0" },
+      { label: "BET", value: "220–270 m²/g" },
+      { label: "DBP", value: "310–360 ml/100g" },
+      { label: "입경", value: "6 μm" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["사료", "농약", "도자기"]),
+
+  // 실리콘고무 보강용
+  mkPS("SL-CT-30", "실리콘고무 보강용 침전 실리카", "Silicone Rubber Reinforcement Silica", "シリコーンゴム補強用沈降シリカ",
+    "BET 120–170 m²/g · 투명 실리콘고무 제품용 저구조 실리카",
+    "BET 120–170 m²/g — low-structure silica for transparent silicone rubber",
+    "BET 120–170 m²/g · 透明シリコーンゴム製品用の低構造シリカ",
+    "SL-CT-30은 실리콘 고무 전용으로 개발된 침전 실리카로, BET 120–170 m²/g의 중간 비표면적과 260 ml/100g의 DBP로 안정된 보강 성능을 제공합니다. SiO₂ ≥ 98%, pH ≥ 7의 저이온 등급으로 투명·반투명 실리콘고무 제품(케이블, 의료 튜브, 케이스류)의 광학적 특성과 물성을 동시에 만족시킵니다.",
+    "SL-CT-30 is a precipitated silica developed for silicone rubber, offering stable reinforcement with BET 120–170 m²/g and 260 ml/100g DBP. SiO₂ ≥ 98% and pH ≥ 7 low-ionic grade satisfies both optical clarity and mechanical properties in transparent/semi-transparent silicone products (cables, medical tubing, cases).",
+    "SL-CT-30はシリコーンゴム専用に開発された沈降シリカで、BET 120–170 m²/g、DBP 260 ml/100gで安定した補強性能を提供します。SiO₂ ≥ 98%、pH ≥ 7の低イオングレードで透明・半透明シリコーン製品(ケーブル、医療チューブ、ケース類)の光学特性と物性を同時に満たします。",
+    [
+      { label: "SiO₂", value: "≥ 98 %" },
+      { label: "pH", value: "≥ 7" },
+      { label: "BET", value: "120–170 m²/g" },
+      { label: "평균 입경", value: "8 μm" },
+      { label: "DBP", value: "260 ml/100g" },
+      { label: "강열감량", value: "≤ 7.0 %" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무"]),
+
+  // 기능성 마스터배치용
+  mkPS("SL-CT-MB-107", "기능성 마스터배치용 침전 실리카", "Functional Masterbatch Silica", "機能性マスターバッチ用沈降シリカ",
+    "BET 280–300 m²/g · PP/PE 필름·시트 마스터배치 전용 충전재",
+    "BET 280–300 m²/g — dedicated filler for PP/PE film & sheet masterbatch",
+    "BET 280–300 m²/g · PP/PE フィルム・シート用マスターバッチ専用充填剤",
+    "SL-CT-MB-107은 PP·PE 필름·시트용 기능성 마스터배치 전용 침전 실리카입니다. SiO₂ ≥ 99% 고순도, BET 280–300 m²/g, DBP 170–180, <5μm의 미세 입도로 안티블로킹·매트·투명 필름 개질에 최적화되어 있으며, 수지 내 균일 분산과 낮은 겔·이물 발생률을 보장합니다.",
+    "SL-CT-MB-107 is a functional-masterbatch precipitated silica dedicated to PP/PE films and sheets. SiO₂ ≥ 99% high purity, BET 280–300 m²/g, DBP 170–180 and <5 μm fine particles are optimized for anti-blocking, matte and transparent film modification, guaranteeing uniform dispersion and low gel/defect rates.",
+    "SL-CT-MB-107はPP・PEフィルム・シート用機能性マスターバッチ専用の沈降シリカです。SiO₂ ≥ 99%高純度、BET 280–300 m²/g、DBP 170–180、<5μmの微細粒度でアンチブロッキング・マット・透明フィルム改質に最適化されており、樹脂内均一分散と低ゲル・欠陥率を保証します。",
+    [
+      { label: "외관", value: "백색 분말" },
+      { label: "SiO₂", value: "≥ 99 %" },
+      { label: "pH", value: "6.5–7.5" },
+      { label: "BET", value: "280–300 m²/g" },
+      { label: "DBP", value: "170–180" },
+      { label: "평균 입경", value: "< 5 μm" },
+      { label: "주용도", value: "PP/PE 필름·시트 마스터배치 충전재" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["플라스틱"]),
+
+  // 일반 이산화규소 (백탄흑 · 고무보강)
+  mkPS("SL-CT-199", "타이어·고무 보강용 백탄흑 (침전 실리카)", "White Carbon Black — Tire/Rubber Reinforcement", "白炭黒 — タイヤ・ゴム補強用",
+    "BET 220–280 m²/g · DBP 300–370 · 그린타이어·산업고무 표준 보강용",
+    "BET 220–280 m²/g · DBP 300–370 — standard reinforcement for green tires and industrial rubber",
+    "BET 220–280 m²/g · DBP 300–370 · グリーンタイヤ・産業用ゴムの標準補強用",
+    "SL-CT-199는 타이어·산업용 고무의 표준 보강용 백탄흑(침전 실리카)입니다. BET 220–280 m²/g의 고비표면적과 DBP 300–370의 대구조 특성으로 인장·인열 강도와 마모성을 크게 향상시키며, 그린타이어(연비 저감형)의 저저항·저발열 특성 구현에 핵심 소재로 사용됩니다.",
+    "SL-CT-199 is a standard white carbon black (precipitated silica) for tire and industrial rubber reinforcement. BET 220–280 m²/g and 300–370 DBP significantly improve tensile/tear strength and abrasion, and it is a key material for green (low-rolling-resistance, low-heat-buildup) tires.",
+    "SL-CT-199はタイヤ・産業用ゴムの標準補強用白炭黒(沈降シリカ)です。BET 220–280 m²/gの高比表面積とDBP 300–370の大構造特性で引張・引裂強度と耐摩耗性を大幅に向上させ、グリーンタイヤ(低燃費型)の低抵抗・低発熱化に核心素材として使用されます。",
+    [
+      { label: "SiO₂(건품)", value: "98.5–99.9 %" },
+      { label: "pH", value: "6.0–7.0" },
+      { label: "BET", value: "220–280 m²/g" },
+      { label: "DBP", value: "300–370 ml/100g" },
+      { label: "입경", value: "325 mesh" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무"]),
+
+  mkPS("SL-CT-299", "타이어·고무 보강용 백탄흑 (침전 실리카)", "White Carbon Black — Tire/Rubber Reinforcement", "白炭黒 — タイヤ・ゴム補強用",
+    "BET 175–220 m²/g · DBP 250–300 · 중저강도 고무 배합용 경제형",
+    "BET 175–220 m²/g · DBP 250–300 — economical grade for medium-strength rubber",
+    "BET 175–220 m²/g · DBP 250–300 · 中低強度ゴム配合の経済型",
+    "SL-CT-299는 SL-CT-199 대비 중간 비표면적을 가진 경제형 백탄흑입니다. 200 mesh 조립 입도로 취급이 용이하며, 신발 밑창·산업용 벨트·컨베이어·호스 등 중강도 고무 제품에 폭넓게 적용됩니다.",
+    "SL-CT-299 is an economical white carbon black with medium BET compared to SL-CT-199. 200 mesh coarse particles make it easy to handle and broadly applicable to shoe soles, industrial belts, conveyors and hoses.",
+    "SL-CT-299はSL-CT-199に比べ中間比表面積の経済型白炭黒です。200 mesh粗粒で取り扱いやすく、靴底・産業ベルト・コンベア・ホースなど中強度ゴム製品に幅広く適用されます。",
+    [
+      { label: "SiO₂(건품)", value: "98.5–99.0 %" },
+      { label: "pH", value: "6.0–7.0" },
+      { label: "BET", value: "175–220 m²/g" },
+      { label: "DBP", value: "250–300 ml/100g" },
+      { label: "입경", value: "200 mesh" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무"]),
+
+  // 소수성 백탄흑
+  mkPS("SL-CT-HPB-001", "소수성 백탄흑 (침전법)", "Hydrophobic White Carbon Black (Precipitation)", "疎水性白炭黒(沈降法)",
+    "표면 소수화 처리 · 유성 매체 내 분산성 강화 실리카",
+    "Surface-hydrophobized silica with enhanced dispersion in oil-based media",
+    "表面疎水化処理・油性媒体内の分散性強化シリカ",
+    "SL-CT-HPB-001은 침전법으로 제조된 백탄흑을 실란/실록산으로 표면 소수화 처리한 등급으로, 유성 도료·잉크·실리콘 고무 등 비극성 매체에서 우수한 분산성과 침강 방지 효과를 나타냅니다. 상세 스펙은 요청 시 시트로 제공합니다.",
+    "SL-CT-HPB-001 is a precipitated white carbon black surface-hydrophobized with silane/siloxane, providing excellent dispersion and anti-settling in non-polar media such as solvent paints, inks and silicone rubber. Detailed spec sheet available on request.",
+    "SL-CT-HPB-001は沈降法白炭黒をシラン/シロキサンで疎水化処理したグレードで、油性塗料・インキ・シリコーンゴムなど非極性媒体で優れた分散性と沈降防止効果を示します。詳細スペックは要請時にシートで提供します。",
+    [
+      { label: "제조법", value: "침전법 + 표면 소수화" },
+      { label: "주용도", value: "유성 도료·잉크·실리콘 고무" },
+      { label: "포장", value: "10 kg / bag" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료"]),
+
+  mkPS("SL-CT-HPB-002", "소수성 나노 백탄흑 (졸-겔법)", "Hydrophobic Nano White Carbon Black (Sol-Gel)", "疎水性ナノ白炭黒(ゾル-ゲル法)",
+    "졸-겔법 나노 콜로이드 실리카 · 입경 <100 nm",
+    "Sol-gel colloidal nano silica with particle size <100 nm",
+    "ゾル-ゲル法によるナノコロイダルシリカ · 粒径<100 nm",
+    "SL-CT-HPB-002는 졸-겔(Sol-Gel)법으로 제조된 투명 콜로이드 나노 입자(입경 100 nm 이하) 소수성 실리카입니다. 고급 잉크·투명 코팅·전자 소재의 나노 필러로 활용되며, 상세 스펙은 요청 시 시트로 제공합니다.",
+    "SL-CT-HPB-002 is a hydrophobic silica composed of transparent colloidal nanoparticles (<100 nm) produced by the sol-gel method. Used as a nano filler in premium inks, transparent coatings and electronic materials. Detailed spec sheet available on request.",
+    "SL-CT-HPB-002はゾル-ゲル(Sol-Gel)法で製造された透明コロイダルナノ粒子(粒径100 nm以下)の疎水性シリカです。高級インキ・透明コーティング・電子素材のナノフィラーとして活用され、詳細スペックは要請時にシートで提供します。",
+    [
+      { label: "제조법", value: "졸-겔법(Sol-Gel)" },
+      { label: "입경", value: "< 100 nm" },
+      { label: "주용도", value: "고급 잉크·투명 코팅·전자 소재" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료"]),
+
+  mkPS("SL-DF-010", "소포제용 고소수성 침전 실리카", "Hydrophobic Silica for Defoamer", "消泡剤用高疎水性沈降シリカ",
+    "광유·실리콘오일 기반 소포제용 · 강산·강알칼리 환경 대응",
+    "For mineral- and silicone-oil based defoamers · works in strong acid/alkali environments",
+    "鉱油・シリコーンオイル系消泡剤用 · 強酸・強アルカリ環境対応",
+    "SL-DF-010은 광유·실리콘오일 기반 산업용 소포제 전용으로 개발된 고소수성 침전 실리카입니다. 광유 기반 소포제에서 소포 효율을 3~5배, 실리콘오일 기반에서 약 2배 개선하며, 강산·강알칼리 환경에서도 안정적으로 작동하는 것이 특징입니다.",
+    "SL-DF-010 is a highly hydrophobic precipitated silica developed exclusively for mineral- and silicone-oil based industrial defoamers. It improves defoaming efficiency 3–5× in mineral-oil defoamers and ~2× in silicone-oil defoamers, and remains stable under strong acid/alkali environments.",
+    "SL-DF-010は鉱油・シリコーンオイル系産業用消泡剤専用に開発された高疎水性沈降シリカです。鉱油系消泡剤で消泡効率を3~5倍、シリコーンオイル系で約2倍改善し、強酸・強アルカリ環境でも安定作動するのが特徴です。",
+    [
+      { label: "성질", value: "고소수성(Highly hydrophobic)" },
+      { label: "주용도", value: "광유·실리콘오일 기반 소포제" },
+      { label: "특성", value: "강산·강알칼리 안정" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["소포제"]),
+
+  // 식품·사료·특수 용도
+  mkPS("SL-FGD-001", "식품첨가물용 침전 실리카 (고결방지제)", "Food-Grade Precipitated Silica (Anti-Caking)", "食品添加物用沈降シリカ(固結防止剤)",
+    "GB 25576-2020 부합 · 조미료·분유·시리얼 고결방지제",
+    "Compliant with GB 25576-2020 — anti-caking for seasonings, milk powder, cereals",
+    "GB 25576-2020適合 · 調味料・粉ミルク・シリアルの固結防止剤",
+    "SL-FGD-001은 중국 식품안전 국가표준 GB 25576-2020에 부합하는 식품첨가물용 침전 실리카(고결방지제)입니다. Pb·As·중금속을 극도로 낮게 관리하여 조미료·분유·인스턴트 커피·시리얼·건강기능식품 등 다양한 식품에서 안전한 고결 방지·자유 흐름 효과를 제공합니다.",
+    "SL-FGD-001 is a food-additive precipitated silica (anti-caking agent) compliant with China's GB 25576-2020 food-safety standard. Ultra-low Pb/As/heavy metals ensure safe anti-caking and free-flow performance in seasonings, milk powder, instant coffee, cereals and functional foods.",
+    "SL-FGD-001は中国食品安全国家規格GB 25576-2020に適合する食品添加物用沈降シリカ(固結防止剤)です。Pb・As・重金属を極めて低く管理し、調味料・粉ミルク・インスタントコーヒー・シリアル・機能性食品に安全な固結防止・流動性付与効果を提供します。",
+    [
+      { label: "규격", value: "GB 25576-2020" },
+      { label: "SiO₂(灼烧후)", value: "≥ 96.0 %" },
+      { label: "건조감량", value: "≤ 7 %" },
+      { label: "강열감량", value: "≤ 8.5 %" },
+      { label: "Pb", value: "≤ 5 mg/kg" },
+      { label: "As", value: "≤ 3 mg/kg" },
+      { label: "중금속(Pb 환산)", value: "≤ 30 mg/kg" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["식품"]),
+
+  mkPS("SL-TPS-001", "치약용 침전 실리카 (증점형)", "Toothpaste Silica (Thickening Type)", "歯磨き粉用沈降シリカ(増粘型)",
+    "치약 페이스트 증점·구조 형성용 고흡수 실리카",
+    "High-absorption silica for toothpaste paste thickening and structure",
+    "歯磨きペーストの増粘・構造形成用の高吸収シリカ",
+    "SL-TPS-001은 치약 페이스트의 증점(Thickening)과 요변성 부여를 담당하는 실리카로, 320목 이상의 미세 입도와 17~20 ml/20g의 흡수량으로 안정된 겔 구조를 형성합니다. 굴절률(1.435–1.460)이 치약 매트릭스와 일치하여 투명·반투명 치약 제형에 최적입니다.",
+    "SL-TPS-001 is a thickening/thixotropic silica for toothpaste. Fine 320-mesh particles and 17–20 ml/20g absorption form a stable gel structure, and its refractive index (1.435–1.460) matches the toothpaste matrix, ideal for transparent and translucent pastes.",
+    "SL-TPS-001は歯磨きペーストの増粘(Thickening)とチキソ性付与を担うシリカで、320メッシュ以上の微細粒度と17~20 ml/20gの吸収量で安定したゲル構造を形成します。屈折率(1.435–1.460)が歯磨きマトリックスと一致し、透明・半透明ペーストに最適です。",
+    [
+      { label: "pH(5%)", value: "6.5–8.5" },
+      { label: "세도(320목 통과)", value: "≥ 98 %" },
+      { label: "SiO₂", value: "≥ 96 %" },
+      { label: "흡수량", value: "17–20 ml/20g" },
+      { label: "굴절률(20℃)", value: "1.435–1.460" },
+      { label: "겉보기밀도", value: "≥ 0.30 g/ml" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["치약"]),
+
+  mkPS("SL-TPS-002", "치약용 침전 실리카 (마찰형)", "Toothpaste Silica (Abrasive Type)", "歯磨き粉用沈降シリカ(研磨型)",
+    "적절한 RDA·부드러운 세정력의 치약 연마 실리카",
+    "Toothpaste abrasive silica with appropriate RDA and gentle cleaning",
+    "適切なRDA・優しい洗浄力の歯磨き研磨シリカ",
+    "SL-TPS-002는 치약의 마찰·연마(Abrasive)를 담당하는 실리카로, 30–42 ml/20g의 중간 흡수량과 엄격히 관리된 입도로 부드러운 세정력을 유지하면서 치아 에나멜 손상을 최소화합니다. 굴절률과 pH가 조정되어 있어 안정된 페이스트를 형성합니다.",
+    "SL-TPS-002 is an abrasive silica for toothpaste, with medium 30–42 ml/20g absorption and tightly controlled particle size that delivers gentle cleaning while minimizing enamel damage. Its refractive index and pH are tuned for stable paste formation.",
+    "SL-TPS-002は歯磨きの摩擦・研磨(Abrasive)を担うシリカで、30–42 ml/20gの中間吸収量と厳密管理された粒度で優しい洗浄力を維持しつつエナメル質損傷を最小化します。屈折率とpHが調整され安定したペーストを形成します。",
+    [
+      { label: "pH(5%)", value: "6.5–8.5" },
+      { label: "세도(320목 통과)", value: "≥ 98 %" },
+      { label: "SiO₂", value: "≥ 96 %" },
+      { label: "흡수량", value: "30–42 ml/20g" },
+      { label: "굴절률(20℃)", value: "1.435–1.460" },
+      { label: "겉보기밀도", value: "≥ 0.30 g/ml" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["치약"]),
+
+  mkPS("SL-TPS-003", "치약용 침전 실리카 (증점+연마 혼합형)", "Toothpaste Silica (Thickening + Abrasive Hybrid)", "歯磨き粉用沈降シリカ(増粘+研磨複合型)",
+    "증점과 연마를 동시에 만족하는 통합형 치약 실리카",
+    "Hybrid silica delivering both thickening and abrasion in a single grade",
+    "増粘と研磨を同時に満たす統合型歯磨きシリカ",
+    "SL-TPS-003은 치약의 증점과 연마 기능을 단일 등급으로 통합한 실리카입니다. 54–60 ml/20g의 높은 흡수량과 0.15–0.20 g/ml의 저밀도로 페이스트의 볼륨감·부드러운 사용감을 부여하면서도 적절한 연마 성능을 보유합니다.",
+    "SL-TPS-003 combines thickening and abrasion in a single toothpaste silica. Its high 54–60 ml/20g absorption and 0.15–0.20 g/ml low density provide paste volume and smooth feel while retaining appropriate abrasion.",
+    "SL-TPS-003は歯磨きの増粘と研磨機能を単一グレードに統合したシリカです。54–60 ml/20gの高吸収量と0.15–0.20 g/mlの低密度でペーストのボリューム感と滑らかな使用感を付与しつつ、適切な研磨性能を保持します。",
+    [
+      { label: "pH(5%)", value: "5.5–7.5" },
+      { label: "세도(320목 통과)", value: "≥ 98 %" },
+      { label: "SiO₂", value: "≥ 96 %" },
+      { label: "흡수량", value: "54–60 ml/20g" },
+      { label: "겉보기밀도", value: "0.15–0.20 g/ml" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["치약"]),
+
+  mkPS("SL-ADH-001", "접착제용 백탄흑 (침전 실리카)", "White Carbon Black for Adhesives", "接着剤用白炭黒",
+    "BET ≥ 260 m²/g · DBP 380 · 실리콘 실란트·AB교 전용",
+    "BET ≥ 260 m²/g · DBP 380 — for silicone sealants and AB epoxy adhesives",
+    "BET ≥ 260 m²/g · DBP 380 · シリコーンシーラント・ABエポキシ専用",
+    "SL-ADH-001은 유리 실란트·건축용 실리콘·AB형 에폭시 접착제 등 프리미엄 접착제 전용으로 개발된 침전 실리카입니다. BET 260 m²/g 이상, DBP 380의 대구조 특성으로 강력한 요변성과 처짐 방지, 접착 강도 향상을 동시에 부여합니다.",
+    "SL-ADH-001 is a precipitated silica developed for premium adhesives such as glazing sealants, architectural silicones and AB epoxy adhesives. BET ≥ 260 m²/g and DBP 380 deliver strong thixotropy, anti-sagging and improved bond strength.",
+    "SL-ADH-001はガラスシーラント・建築用シリコーン・AB型エポキシ接着剤などプレミアム接着剤専用に開発された沈降シリカです。BET 260 m²/g以上、DBP 380の大構造特性で強力なチキソ性と液だれ防止、接着強度向上を同時に付与します。",
+    [
+      { label: "SiO₂(건품)", value: "≥ 98 %" },
+      { label: "pH", value: "≥ 6.8" },
+      { label: "BET", value: "≥ 260 m²/g" },
+      { label: "DBP", value: "380 ml/100g" },
+      { label: "입경", value: "5 μm" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["접착제"]),
+
+  mkPS("SL-INR-001", "식품급 불활성분 (곡물 저장 방충용)", "Food-Grade Inert Powder (Grain Storage Insect Control)", "食品級不活性粉末(穀物保管防虫用)",
+    "화학 방제제 없이 물리적 방식으로 해충 방제 · 식품안전기준 부합",
+    "Physical (not chemical) insect control — food-safety compliant",
+    "化学薬剤不使用、物理的防虫 · 食品安全基準適合",
+    "SL-INR-001은 곡물·저장 사료의 방충용으로 사용되는 식품급 불활성 실리카 분말입니다. 화학 방제제 없이 곤충 표피의 왁스층에 미세 상처를 내어 탈수·사멸을 유도하는 물리적 방제 방식으로, 잔류·독성 우려가 없으며 식품안전기준에 부합합니다.",
+    "SL-INR-001 is a food-grade inert silica powder for insect control in stored grain and feed. It works physically by scratching the wax cuticle of insects to cause dehydration — no chemical residues or toxicity, fully compliant with food-safety standards.",
+    "SL-INR-001は穀物・貯蔵飼料の防虫用に使用される食品級不活性シリカ粉末です。化学薬剤を使わず、昆虫表皮のワックス層に微細な傷をつけて脱水・致死させる物理的防除方式で、残留・毒性の懸念がなく食品安全基準に適合します。",
+    [
+      { label: "형태", value: "백색 미세분말" },
+      { label: "방제 방식", value: "물리적(비화학) 방제" },
+      { label: "안전성", value: "식품안전기준 부합" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["식품"]),
+
+  mkPS("SL-VET-001", "수의약품용 건조분말", "Veterinary-Use Drying Powder", "動物薬用乾燥粉末",
+    "수의약품 항결·수분흡수용 · 제립 건조시간 2/3 단축",
+    "Anti-caking / moisture absorption for veterinary drugs — reduces granulation drying time by 1/3",
+    "動物薬用の固結防止・水分吸収用 · 造粒乾燥時間を1/3短縮",
+    "SL-VET-001은 항생제·비타민·중초약(中草藥) 등 수용성 동물약품의 제립·건조·저장 공정에서 사용되는 침전 실리카 기반 건조분말입니다. 우수한 흡습·항결 특성으로 제립 건조 시간을 약 2/3 수준으로 단축시키며, 최종 제제의 유동성과 저장 안정성을 향상시킵니다.",
+    "SL-VET-001 is a precipitated-silica drying powder used in granulation, drying and storage of water-soluble veterinary drugs such as antibiotics, vitamins and Chinese herbal medicines. Strong moisture absorption and anti-caking properties cut granulation drying time to about 1/3, and improve flowability and storage stability of the final product.",
+    "SL-VET-001は抗生物質・ビタミン・中草薬など水溶性動物薬品の造粒・乾燥・貯蔵工程で使用される沈降シリカ系乾燥粉末です。優れた吸湿・固結防止特性で造粒乾燥時間を約1/3に短縮し、最終製剤の流動性と貯蔵安定性を向上させます。",
+    [
+      { label: "형태", value: "백색 미세분말" },
+      { label: "기능", value: "항결·수분흡수" },
+      { label: "특징", value: "제립 건조시간 약 2/3 단축" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["수의약품"]),
+];
+productCatalog.push(...precipitatedExtProducts);
+
+// —— 흄드(기상법) 실리카 확장 라인업 ——
+const fumedExtProducts: ProductDetail[] = [
+  mkFS("SL-FCT-380", "기상법(흄드) 이산화규소", "Fumed Silica", "ヒュームド(気相法)シリカ",
+    "BET 380 m²/g · 초고비표면적 친수성 흄드 실리카",
+    "BET 380 m²/g — ultra-high SSA hydrophilic fumed silica",
+    "BET 380 m²/g · 超高比表面積の親水性ヒュームドシリカ",
+    "SL-FCT-380은 BET 380 ± 30 m²/g의 초고비표면적을 갖춘 친수성 흄드 실리카입니다. SiO₂ ≥ 99.8%의 고순도, 낮은 강열감량과 미세한 체잔사 관리로 실리콘 고무, 열경화성 도료, 반응성 접착제, 의약품 캐리어 등 정밀 산업에 사용되며, 소량으로도 강력한 요변성·증점·보강 효과를 발휘합니다.",
+    "SL-FCT-380 is a hydrophilic fumed silica with ultra-high BET of 380 ± 30 m²/g. SiO₂ ≥ 99.8%, low ignition loss and tightly controlled 45 μm sieve residue make it suitable for silicone rubber, thermosetting paints, reactive adhesives and pharmaceutical carriers — delivering strong thixotropy, thickening and reinforcement at low loadings.",
+    "SL-FCT-380はBET 380 ± 30 m²/gの超高比表面積を持つ親水性ヒュームドシリカです。SiO₂ ≥ 99.8%の高純度、低い強熱減量と微細な篩残管理により、シリコーンゴム、熱硬化性塗料、反応性接着剤、医薬品キャリアなど精密産業に使用され、少量で強力なチキソ性・増粘・補強効果を発揮します。",
+    [
+      { label: "BET", value: "380 ± 30 m²/g" },
+      { label: "현탁액 pH(4%)", value: "3.7–4.5" },
+      { label: "강열감량", value: "≤ 2.5 %" },
+      { label: "체잔사(45μm)", value: "≤ 250 mg/kg" },
+      { label: "충진밀도", value: "40–60 g/L" },
+      { label: "SiO₂", value: "≥ 99.8 %" },
+      { label: "탄소함량", value: "≤ 0.2 %" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제", "의약"]),
+
+  mkFS("SL-FCT-200", "기상법(흄드) 이산화규소", "Fumed Silica", "ヒュームド(気相法)シリカ",
+    "BET 200 m²/g · 중간 비표면적의 범용 친수성 흄드 실리카",
+    "BET 200 m²/g — medium SSA general-purpose hydrophilic fumed silica",
+    "BET 200 m²/g · 中間比表面積の汎用親水性ヒュームドシリカ",
+    "SL-FCT-200은 BET 200 ± 30 m²/g 의 중간 비표면적을 가진 범용 흄드 실리카로, 도료·잉크·접착제·실리콘 실란트·의약품·화장품 등 광범위한 산업에서 표준 등급으로 사용됩니다. 침전실리카 SL-CT-200(소광제)과는 공정·용도가 전혀 다른 별개 제품입니다.",
+    "SL-FCT-200 is a general-purpose fumed silica with medium BET 200 ± 30 m²/g, used as a standard grade in paints, inks, adhesives, silicone sealants, pharmaceuticals and cosmetics. Note: this is a distinct product from precipitated SL-CT-200 (matting agent) — different process and applications.",
+    "SL-FCT-200はBET 200 ± 30 m²/gの中間比表面積を持つ汎用ヒュームドシリカで、塗料・インキ・接着剤・シリコーンシーラント・医薬品・化粧品など幅広い産業で標準グレードとして使用されます。沈降シリカSL-CT-200(艶消し剤)とは工程・用途が異なる別製品です。",
+    [
+      { label: "BET", value: "200 ± 30 m²/g" },
+      { label: "현탁액 pH(4%)", value: "3.7–4.5" },
+      { label: "강열감량", value: "≤ 2.5 %" },
+      { label: "SiO₂", value: "≥ 99.8 %" },
+      { label: "탄소함량", value: "≤ 0.2 %" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제", "의약"]),
+
+  mkFS("SL-FCT-150", "기상법(흄드) 이산화규소", "Fumed Silica", "ヒュームド(気相法)シリカ",
+    "BET 150 m²/g · 저구조 등급 친수성 흄드 실리카",
+    "BET 150 m²/g — low-structure hydrophilic fumed silica",
+    "BET 150 m²/g · 低構造グレードの親水性ヒュームドシリカ",
+    "SL-FCT-150은 BET 150 ± 30 m²/g의 저구조 친수성 흄드 실리카로, 실리콘 고무 배합·투명 실란트·저점도 접착제 등 상대적으로 낮은 증점 효과와 우수한 광학 특성이 요구되는 배합에 적합합니다. 10 kg 다층 크라프트지 포대로 공급됩니다.",
+    "SL-FCT-150 is a low-structure hydrophilic fumed silica (BET 150 ± 30 m²/g) suitable for silicone rubber compounds, transparent sealants and low-viscosity adhesives that require moderate thickening and excellent optical clarity. Supplied in 10 kg multi-layer kraft bags.",
+    "SL-FCT-150はBET 150 ± 30 m²/gの低構造親水性ヒュームドシリカで、シリコーンゴム配合・透明シーラント・低粘度接着剤など相対的に低い増粘効果と優れた光学特性が要求される配合に適合します。10 kg多層クラフト紙袋で供給されます。",
+    [
+      { label: "BET", value: "150 ± 30 m²/g" },
+      { label: "현탁액 pH(4%)", value: "3.7–4.5" },
+      { label: "강열감량", value: "≤ 2.5 %" },
+      { label: "SiO₂", value: "≥ 99.8 %" },
+      { label: "탄소함량", value: "≤ 0.2 %" },
+      { label: "포장", value: "다층 크라프트지 포대, 10 kg/포" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["고무", "도료", "접착제", "의약"]),
+
+  mkFS("SL-FCT-151", "소수성 기상법 이산화규소", "Hydrophobic Fumed Silica", "疎水性ヒュームド(気相法)シリカ",
+    "BET 150 m²/g · 소수성 표면처리 · 도료 침전방지 & 화장품용",
+    "BET 150 m²/g · hydrophobic-treated — anti-settling in paints, cosmetics",
+    "BET 150 m²/g · 疎水性表面処理 · 塗料沈降防止&化粧品用",
+    "SL-FCT-151은 BET 150 ± 25 m²/g의 흄드 실리카를 소수화 처리한 소수성 등급으로, 유성·용제형 도료의 안료 침강 방지, 실리콘 고무·화장품의 요변성 부여에 사용됩니다. SiO₂ ≥ 99.98% · 탄소함량 0.6–1.2%로 우수한 소수성과 비극성 매체 내 분산성을 제공합니다.",
+    "SL-FCT-151 is a hydrophobic-treated fumed silica grade (BET 150 ± 25 m²/g) used for anti-settling of pigments in solvent-borne paints, and thixotropy in silicone rubber and cosmetics. SiO₂ ≥ 99.98% and carbon content 0.6–1.2% provide strong hydrophobicity and dispersion in non-polar media.",
+    "SL-FCT-151はBET 150 ± 25 m²/gのヒュームドシリカを疎水化処理した疎水性グレードで、油性・溶剤型塗料の顔料沈降防止、シリコーンゴム・化粧品のチキソ性付与に使用されます。SiO₂ ≥ 99.98%、炭素含有量0.6–1.2%で優れた疎水性と非極性媒体内分散性を提供します。",
+    [
+      { label: "BET", value: "150 ± 25 m²/g" },
+      { label: "탄소함량", value: "0.6–1.2 %" },
+      { label: "평균 원생입경", value: "7–40 nm" },
+      { label: "압축밀도", value: "30–60 g/L" },
+      { label: "함수량(105℃)", value: "≤ 0.5 %" },
+      { label: "강열손실(1000℃)", value: "1.5–3.0 %" },
+      { label: "pH(4% 분산액)", value: "3.6–4.5" },
+      { label: "SiO₂", value: "≥ 99.98 %" },
+      { label: "원산지", value: "중국" },
+    ],
+    ["도료", "고무"]),
+];
+productCatalog.push(...fumedExtProducts);
 
 
 
