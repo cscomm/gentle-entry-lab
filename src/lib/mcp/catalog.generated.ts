@@ -46,12 +46,26 @@ const slDes04PhotoAsset = { url: "/assets/sl-des-04-photo.jpg.asset.json" } as c
 const slDes05PhotoAsset = { url: "/assets/sl-des-05-photo.jpg.asset.json" } as const;
 const slDes06PhotoAsset = { url: "/assets/sl-des-06-photo.jpg.asset.json" } as const;
 const slDes07PhotoAsset = { url: "/assets/sl-des-07-photo.jpg.asset.json" } as const;
+const slInd04PhotoAsset = { url: "/assets/sl-ind-04-photo.jpg.asset.json" } as const;
+const slInd05PhotoAsset = { url: "/assets/sl-ind-05-photo.jpg.asset.json" } as const;
+const slInd06PhotoAsset = { url: "/assets/sl-ind-06-photo.jpg.asset.json" } as const;
+const slInd07PhotoAsset = { url: "/assets/sl-ind-07-photo.jpg.asset.json" } as const;
+const slAls01PhotoAsset = { url: "/assets/sl-als-01-photo.jpg.asset.json" } as const;
+const slAls03PhotoAsset = { url: "/assets/sl-als-03-photo.jpg.asset.json" } as const;
+const slAls04PhotoAsset = { url: "/assets/sl-als-04-photo.jpg.asset.json" } as const;
 const slChr01Img = slChr01Asset.url;
 const slChr02Img = slChr02Asset.url;
 const slChr03Img = slChr03Asset.url;
 const slInd01Img = slInd01PhotoAsset.url;
 const slInd02Img = slInd02PhotoAsset.url;
 const slInd03Img = slInd03PhotoAsset.url;
+const slInd04Img = slInd04PhotoAsset.url;
+const slInd05Img = slInd05PhotoAsset.url;
+const slInd06Img = slInd06PhotoAsset.url;
+const slInd07Img = slInd07PhotoAsset.url;
+const slAls01Img = slAls01PhotoAsset.url;
+const slAls03Img = slAls03PhotoAsset.url;
+const slAls04Img = slAls04PhotoAsset.url;
 const slDes01Img = slDes01PhotoAsset.url;
 const slDes02Img = slDes02PhotoAsset.url;
 const slDes03Img = slDes03PhotoAsset.url;
@@ -564,7 +578,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-04는 백색 괴상 또는 구형의 대공극 실리카겔로, 방습포장, 공업가스 탈수정제, 절연유 내 유기산·고분자물질 제거, 공업 발효공정의 이분자단백 흡착, 촉매 및 촉매담체 등에 사용됩니다.",
     "SL-IND-04 is a wide-pore silica gel in white lump or bead form, used for moisture-proof packaging, industrial gas dehydration, removal of organic acids/polymers in insulating oil, protein adsorption in fermentation, and as a catalyst/carrier.",
     "SL-IND-04は白色塊状または球状の大孔径シリカゲルで、防湿包装、工業ガスの脱水精製、絶縁油中の有機酸/高分子物質除去、工業発酵工程での二分子タンパク吸着、触媒・担体などに使用されます。",
-    sgLargePore,
+    slInd04Img,
     [
       { label: "공경", value: "80–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "300–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -582,7 +596,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-05는 백색 과립 형태의 실리카겔로, 전통적인 산·알칼리·백토 탈색공정을 여과 방식으로 대체하여 오일 중 불순물·산화물을 직접 제거함으로써 흑변 오일을 투명한 액체로 전환합니다. 흑취 경유 탈취·탈색, 폐엔진오일 재생, 유압유·바이오디젤·동식물유 탈색·정제·탈취에 사용됩니다.",
     "SL-IND-05 is a white granular silica gel replacing traditional acid/alkali/clay bleaching with filtration to remove impurities and oxidation products, restoring blackened oils to a clear state. Used for diesel deodorization, waste engine oil regeneration, hydraulic oil, biodiesel and animal/vegetable oil refining.",
     "SL-IND-05は白色顆粒状のシリカゲルで、従来の酸・アルカリ・白土脱色工程を濾過方式に置き換え、オイル中の不純物・酸化物を除去して黒変オイルを透明液体に転換します。ディーゼル脱臭、廃エンジンオイル再生、油圧油・バイオディーゼル・動植物油の精製に使用されます。",
-    sgCoarse,
+    slInd05Img,
     [
       { label: "공경", value: "85–110 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "300–500 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -600,7 +614,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-06은 백색 투명/반투명의 마이크로 구형 실리카겔로, 균일한 미세공극구조와 안정적인 물리·화학적 특성, 우수한 열안정성과 높은 기계적 강도를 지닙니다. 멜라민·아닐린·아세트산비닐·부타디엔고무·아크릴로니트릴 등 중요 공업생산 촉매·촉매담체, 방향족 정제, 의약품 정제, 유기가스·액체 선택적 흡착분리, 수중 유해 이온 제거에 활용됩니다.",
     "SL-IND-06 is a translucent micro-spherical silica gel with uniform micro-pores, stable properties, excellent thermal stability and high mechanical strength. Used as catalyst/support for melamine, aniline, vinyl acetate, butadiene rubber, acrylonitrile production; aromatics/pharmaceutical purification; selective adsorption; ion exchange in water treatment.",
     "SL-IND-06は白色透明/半透明のマイクロ球状シリカゲルで、均一微細細孔・優れた熱安定性・高い機械強度を有します。メラミン・アニリン・酢酸ビニル・ブタジエンゴム・アクリロニトリル生産の触媒/担体、芳香族精製、医薬品精製、選択吸着分離、水中イオン除去などに活用されます。",
-    sgLargePore,
+    slInd06Img,
     [
       { label: "공경", value: "80–110 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "300–550 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -618,7 +632,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-07은 폐엔진오일(폐윤활유) 정제 전용 신형 촉매입니다. 반응온도 290–310℃, 공간속도 0.2–0.25 h⁻¹, 상압 조건에서 사용하며, 정기적으로 촉매 건조 공정(0–0.1 MPa, 300–360℃, 6–8시간)이 필요합니다. 산·알칼리와의 접촉을 피해야 하며, 사용 전 30목 체망으로 촉매 분진을 제거해야 합니다.",
     "SL-IND-07 is a new catalyst dedicated to refining waste engine oil. Operates at 290–310℃, LHSV 0.2–0.25 h⁻¹, atmospheric pressure. Periodic drying (0–0.1 MPa, 300–360℃, 6–8h) required. Avoid acid/alkali contact and screen out dust with 30-mesh sieve before use.",
     "SL-IND-07は廃エンジンオイル(廃潤滑油)精製専用の新型触媒です。反応温度290–310℃、LHSV 0.2–0.25 h⁻¹、常圧で使用し、定期的な乾燥工程(0–0.1 MPa, 300–360℃, 6–8時間)が必要です。",
-    sgFng,
+    slInd07Img,
     [
       { label: "규격 (A / B)", value: "Φ2.5×2–10mm / Φ3×2–10mm", enLabel: "Size", jaLabel: "サイズ" },
       { label: "비표면적 (A / B)", value: "≥ 235 / ≥ 250 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -760,7 +774,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-ALS-01은 화학식 mSiO₂·nAl₂O₃·xH₂O의 실리카알루미나겔로, 화학적으로 안정하고 불연성이며 강알칼리·불화수소산 외 용매에 불용입니다. 세공형 실리카겔보다 강한 표면 극성과 우수한 흡착분리성능, 뛰어난 열안정성을 지녀 압축천연가스·천연가스·기체·액화가스 건조 등에 광범위하게 사용됩니다.",
     "SL-ALS-01 is a silica alumina gel (mSiO₂·nAl₂O₃·xH₂O). Chemically stable, non-flammable and insoluble in solvents except strong alkali and hydrofluoric acid. Stronger surface polarity and superior adsorption/thermal stability vs fine-pored silica gel — widely used for CNG, natural gas, gaseous and liquefied gas drying.",
     "SL-ALS-01は化学式mSiO₂·nAl₂O₃·xH₂Oのシリカアルミナゲルで、化学的に安定・不燃性、強アルカリ・フッ化水素酸以外の溶媒に不溶です。細孔型シリカゲルより強い表面極性と優れた吸着分離性能・熱安定性を持ち、CNG・天然ガス・気体・液化ガス乾燥などに広く使用されます。",
-    sgLargePore,
+    slAls01Img,
     [
       { label: "SiO₂", value: "65–99.5 %" },
       { label: "비표면적", value: "600 / 600–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -777,7 +791,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-ALS-03은 백색 구형의 다공성 활성알루미나 흡착재입니다. 입도가 균일하고 표면이 매끄러우며 기계적 강도가 높고 흡습력이 강하며, 흡습 후에도 팽창·균열 없이 원형을 유지합니다. 무독·무취·물과 에탄올에 불용이며, 기체·수증기 및 일부 액체 속 수분을 선택적으로 흡착하고 175–315℃ 가열로 재생 가능한 고효율 건조제입니다.",
     "SL-ALS-03 is a white spherical porous activated alumina adsorbent. Uniform particle size, smooth surface, high mechanical strength and strong moisture absorption without swelling/cracking. Non-toxic, odorless, insoluble in water/ethanol — a high-efficiency desiccant that selectively adsorbs water from gases, vapors and some liquids and regenerates at 175–315℃.",
     "SL-ALS-03は白色球状の多孔性活性アルミナ吸着材です。均一粒度、滑らかな表面、高い機械強度、強い吸湿力を持ち、吸湿後も膨張・亀裂なく原形を維持します。",
-    sgTypeA,
+    slAls03Img,
     [
       { label: "Al₂O₃", value: "≥ 92 %" },
       { label: "비표면적", value: "≥ 280 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -795,7 +809,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-ALS-04는 공경 4Å의 4A 분자체로, 물·메탄올·에탄올·황화수소·이산화황·이산화탄소·에틸렌·프로필렌을 흡착하며 직경 4Å을 초과하는 분자(프로판 포함)는 흡착하지 않습니다. 물에 대한 선택적 흡착성이 가장 높아 산업용 분자체 중 사용량이 가장 많으며, 천연가스·냉매 등 기체·액체 심층건조, 아르곤 생산정제, 의약품·전자부품 정적건조, 도료·연료·코팅제 탈수제에 사용됩니다.",
     "SL-ALS-04 is a 4Å (4A) molecular sieve that adsorbs water, methanol, ethanol, H₂S, SO₂, CO₂, ethylene and propylene while excluding molecules > 4Å (incl. propane). Its selectivity for water makes it the most widely used industrial sieve — for deep drying of natural gas/refrigerants, argon production, static drying of pharmaceuticals/electronics and dehydration of paints/fuels/coatings.",
     "SL-ALS-04は細孔径4Åの4A分子篩で、水・メタノール・エタノール・H₂S・SO₂・CO₂・エチレン・プロピレンを吸着し、4Å超の分子(プロパン含む)は吸着しません。水への選択的吸着性が最も高く、産業用分子篩の中で最多使用されます。",
-    sgTypeA,
+    slAls04Img,
     [
       { label: "정적수분흡착", value: "≥ 21 %", enLabel: "Static Water Adsorption", jaLabel: "静的水吸着" },
       { label: "메탄올흡착", value: "≥ 15 %", enLabel: "Methanol Adsorption", jaLabel: "メタノール吸着" },
