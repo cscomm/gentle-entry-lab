@@ -730,32 +730,8 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-IND-01~03 · SL-DES-01~07 — 공식 스펙 표 (이미지) */}
-      {SG_SPEC_TABLES[product.slug] && (
-        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
-          <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-            TECHNICAL DATA · {SG_SPEC_TABLES[product.slug].code}
-          </span>
-          <h3 className="mt-4 text-3xl font-bold md:text-4xl">
-            📊 {tri("공식 스펙 시트", "Official Specification Sheet", "公式スペックシート")}
-          </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
-            {tri(
-              `${SG_SPEC_TABLES[product.slug].code}의 제조사 발행 공식 스펙 시트입니다. 항목·측정 방법·범위 값을 원본 그대로 확인하실 수 있습니다.`,
-              `Manufacturer-issued specification sheet for ${SG_SPEC_TABLES[product.slug].code}. Review items, test methods and value ranges exactly as published.`,
-              `${SG_SPEC_TABLES[product.slug].code}のメーカー発行公式スペックシートです。項目・試験方法・値の範囲を原本のまま確認いただけます。`
-            )}
-          </p>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-sm md:p-6">
-            <img
-              src={SG_SPEC_TABLES[product.slug].url}
-              alt={`${SG_SPEC_TABLES[product.slug].code} ${tri("스펙 표", "spec table", "スペック表")}`}
-              loading="lazy"
-              className="mx-auto h-auto w-full max-w-4xl rounded-lg"
-            />
-          </div>
-        </section>
-      )}
+      {/* Silica gel technical data tables — redesigned HTML rendering */}
+      {silicaGelSpecs[product.slug] && <SpecTable spec={silicaGelSpecs[product.slug]} />}
 
 
 
