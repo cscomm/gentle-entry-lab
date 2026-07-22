@@ -65,6 +65,7 @@ export type ProductDetail = {
   subModelsColumnLabel?: { ko: string; en: string; ja: string };
   isCategoryIndex?: boolean;
   parentSlug?: string;
+  useTags?: string[];
 };
 
 
