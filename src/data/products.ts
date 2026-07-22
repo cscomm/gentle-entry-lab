@@ -507,7 +507,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-01은 고품질 실리카겔 원료로 가공된 촉매 합성 전용 미분 실리카겔입니다. 순도가 높고 불순물(특히 중금속) 함량이 적으며 입도가 균일해 HZSM-5 분자체 합성에 최적입니다.",
     "SL-IND-01 is a micro-powder silica gel processed from high-quality raw material for catalyst synthesis. High purity, ultra-low heavy-metal impurities and uniform particle size make it ideal for HZSM-5 molecular sieve synthesis.",
     "SL-IND-01は高品質シリカゲル原料から加工された触媒合成専用の微粉シリカゲルです。高純度・低不純物(特に重金属)・均一粒度でHZSM-5分子篩合成に最適です。",
-    sgMicrosilica,
+    slInd01Img,
     [
       { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "320–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -525,7 +525,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-02는 유로키나제 분자구조에 최적화된 비표면적·공극구조 및 활성 컬럼크로마토그래피 특성을 지닌 백색 균일 과립 실리카겔입니다. 유로키나제 분리정제 목적 달성과 동시에 제품 품질·수율을 향상시킵니다.",
     "SL-IND-02 is a white uniform granular silica gel with SSA, pore structure and active column-chromatography characteristics optimized for urokinase. Delivers separation/purification while improving product quality and yield.",
     "SL-IND-02はウロキナーゼの分子構造に最適化された比表面積・細孔構造とアクティブカラムクロマト特性を持つ白色均一顆粒シリカゲルです。分離精製と同時に品質・収率を向上させます。",
-    sgLargePore,
+    slInd02Img,
     [
       { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "300–500 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -543,7 +543,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-IND-03은 공경 8–16 nm의 비결정질 미세다공성 고체분말로, 산·알칼리·염류와 반응하지 않고 무독·무취·불연성입니다. 넓은 비표면적과 미세공극구조로 맥주 혼탁 유발 단백질을 수 분 내 흡착 제거하여 저장기간을 180–240일 연장하고 냉장 혼탁을 방지하며, 맥주 거품·맛에는 영향을 주지 않습니다.",
     "SL-IND-03 is an amorphous micro-porous solid powder (8–16 nm pores), non-reactive with acids/alkalis/salts, non-toxic, odorless and non-flammable. Its high SSA and micro-pore structure adsorb haze-forming proteins in minutes, extending beer shelf life 180–240 days and preventing chill haze without affecting foam or taste.",
     "SL-IND-03は細孔径8–16 nmの非晶質微多孔性固体粉末で、酸・アルカリ・塩と反応せず無毒・無臭・不燃です。ビール混濁の原因タンパクを短時間で吸着除去し保存期間を180–240日延長、冷蔵混濁を防止しつつ泡・味に影響を与えません。",
-    sgAntiblocking,
+    slInd03Img,
     [
       { label: "공경", value: "140–180 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "250–320 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -633,7 +633,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-01은 투명 또는 반투명 유리질의 구형(펠릿) 또는 괴상 실리카겔입니다. 평균 공경 2.0–3.0 nm, 비표면적 650–800 m²/g로 건조·방습이 주된 용도이며, 촉매담체·흡착제·분리제·변압흡착(PSA) 용도로도 사용됩니다.",
     "SL-DES-01 is a transparent/translucent glass-like silica gel in pellet or lump form. Average pore 2.0–3.0 nm and SSA 650–800 m²/g make it a standard desiccant, also used for catalyst supports, adsorbents, separators and PSA.",
     "SL-DES-01は透明または半透明ガラス質の球形(ペレット)/塊状シリカゲルです。平均細孔2.0–3.0 nm、比表面積650–800 m²/gで乾燥・防湿が主用途、触媒担体・吸着剤・分離剤・PSAにも使用されます。",
-    sgTypeA,
+    slDes01Img,
     [
       { label: "비표면적", value: "650–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
       { label: "퇴적밀도", value: "≥ 720(펠릿) / ≥ 670(괴상) g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
@@ -651,7 +651,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-02는 투명/반투명 유리질 세공 구형 실리카겔로, 변압흡착(PSA) 방식의 기체 분리·정제용 첨단 소재입니다. 이산화탄소 회수·분리·정제에 주로 사용되며 합성암모니아공업·식품음료가공업의 이산화탄소 제조, 건조·방습, 유기제품 탈수 정제에도 사용됩니다.",
     "SL-DES-02 is a transparent/translucent glass-like fine-pored spherical silica gel for pressure swing adsorption (PSA). Primarily used for CO₂ recovery/purification, ammonia synthesis, food & beverage CO₂ production, drying and organic dehydration.",
     "SL-DES-02は透明/半透明ガラス質細孔球状シリカゲルで、圧力スイング吸着(PSA)による気体分離・精製用の先端素材です。",
-    sgTypeA,
+    slDes02Img,
     [
       { label: "공경", value: "20–30 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "650–800 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -669,7 +669,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-03은 청색 또는 담청색 유리상 과립(구형/괴상) 실리카겔입니다. 습기 흡수 후 청색에서 분홍색으로 변색되어 상대습도를 직관적으로 표시합니다. 정밀기기·의약품·석유화학·식품·의류·가전·항공·군수 등 밀폐 환경의 방청·방습 및 습도 지시에 광범위하게 사용됩니다.",
     "SL-DES-03 is a blue/light-blue glass-like granular silica gel (bead/lump). Absorbs moisture and turns pink to visually indicate relative humidity — widely used for rust/moisture protection and humidity indication in precision instruments, pharmaceuticals, petrochemicals, food, garments, appliances, aviation and defense.",
     "SL-DES-03は青色または淡青色ガラス状顆粒(球/塊)のシリカゲルです。吸湿後に青→ピンクへ変色し相対湿度を視覚表示、精密機器・医薬品・石油化学・食品・衣料・家電・航空・軍需などの密閉環境の防錆・防湿および湿度指示に幅広く使用されます。",
-    sgTypeB,
+    slDes03Img,
     [
       { label: "RH 20 %", value: "청색 / 연청색", enValue: "Blue / Light blue", jaValue: "青 / 淡青" },
       { label: "RH 50 %", value: "분홍색", enValue: "Pink", jaValue: "ピンク" },
@@ -686,7 +686,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-04는 보라색·귤색·황색 3가지 유형의 구형/불규칙 과립 실리카겔로, 코발트클로라이드를 함유하지 않아 무독·무해합니다. 습도에 따라 색상이 변화해 습도 지시 기능을 제공하며, 블루 실리카겔과 동일한 산업분야(정밀기기·의약·석유화학·식품·의류·가전·항공·군수 등)에 사용됩니다.",
     "SL-DES-04 comes in three variants (purple, orange, yellow) as spherical/irregular granules, cobalt-chloride-free and non-toxic. Changes color with humidity for RH indication, used in the same fields as blue silica gel (precision instruments, pharma, petrochem, food, garments, appliances, aviation, defense).",
     "SL-DES-04は紫・橙・黄の3タイプの球形/不定形顆粒シリカゲルで、塩化コバルトを含まず無毒・無害です。湿度に応じて変色し湿度指示機能を提供、ブルーシリカゲルと同じ産業分野で使用されます。",
-    sgTypeB,
+    slDes04Img,
     [
       { label: "RH 20 %", value: "연갈황색 / 주황색", enValue: "Light amber / Orange", jaValue: "淡黄褐 / オレンジ" },
       { label: "RH 50 %", value: "연회록색 / 무색", enValue: "Light gray-green / Colorless", jaValue: "淡灰緑 / 無色" },
@@ -703,7 +703,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-05는 구형 또는 괴상, 투명/반투명 유리상의 B형 실리카겔입니다. 평균 공경 5.0–8.0 nm, 비표면적 450–600 m²/g로 공기습도조절제, 촉매 및 촉매담체, 향료 실리카겔·반려동물 깔개 재료, 컬럼크로마토그래피 실리카겔 등 정밀화학 원료로 사용됩니다.",
     "SL-DES-05 is a B-type silica gel in spherical/lump form (transparent/translucent). Avg pore 5.0–8.0 nm, SSA 450–600 m²/g — used as humidity regulator, catalyst support, fragrance carrier, pet litter and column chromatography feedstock.",
     "SL-DES-05は球形/塊状、透明/半透明ガラス状のB型シリカゲルです。平均細孔5.0–8.0 nm、比表面積450–600 m²/gで湿度調整剤、触媒/担体、香料キャリア、ペットリッター、カラムクロマト原料などに使用されます。",
-    sgTypeB,
+    slDes05Img,
     [
       { label: "공경", value: "50–80 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "450–600 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -721,7 +721,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-06은 반려동물 배설물의 수분·냄새를 흡수하고 건조 상태를 유지하며 세균 번식을 억제하는 크리스탈 고양이모래입니다. 벤토나이트 등 기존 고양이모래 대비 경량·저파쇄율·무독·무오염의 친환경 제품으로, 흰색/청색/컬러 과립 커스터마이즈가 가능합니다.",
     "SL-DES-06 is crystal cat litter that absorbs pet waste moisture and odor while keeping surfaces dry and suppressing bacteria. Lighter, less crushable, non-toxic and non-polluting vs bentonite litter — customizable in white/blue/color granules.",
     "SL-DES-06はペットの排泄物の水分・臭いを吸収し乾燥状態を保ち、菌の繁殖を抑制するクリスタル猫砂です。ベントナイト等の従来品より軽量・低破砕率・無毒・無汚染で、白/青/カラー顆粒のカスタマイズが可能です。",
-    sgFng,
+    slDes06Img,
     [
       { label: "공경", value: "80–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "300–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -739,7 +739,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-DES-07은 백색 또는 회백색 과립의 FNG형 내수성 실리카겔로, 일반 실리카겔과 동일한 공극구조·흡착 특성을 지니면서도 내수성이 우수해 물에 젖어도 파열되지 않고 사용수명이 깁니다. 압축공기 건조정화, 아세틸렌·이산화탄소 흡착제, 석유화학·전력·양조업 액체 흡착제 및 촉매담체, 일반 실리카겔의 보호층 완충 건조제로 사용됩니다.",
     "SL-DES-07 is a white/off-white FNG water-resistant silica gel. It retains the pore structure and adsorption of standard silica gel but resists cracking when wet for longer service life. Used for compressed-air drying, acetylene/CO₂ adsorption, liquid adsorption in petrochemicals/power/brewing, and as protective buffer for standard silica gel.",
     "SL-DES-07は白色または灰白色のFNG耐水性シリカゲルで、通常シリカゲルの細孔構造・吸着特性を保ちつつ耐水性に優れ、水に濡れても破裂せず長寿命です。",
-    sgFng,
+    slDes07Img,
     [
       { label: "흡착량 (FNG-A / C)", value: "35–36 / 70–72 %", enLabel: "Adsorption", jaLabel: "吸着量" },
       { label: "압축강도", value: "≥ 68–98 N", enLabel: "Crush Strength", jaLabel: "圧縮強度" },
