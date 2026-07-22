@@ -30,6 +30,12 @@ import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
 import silicaSolImg from "@/assets/silica-sol.png";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
+import slChr01Asset from "@/assets/sl-chr-01.jpg.asset.json";
+import slChr02Asset from "@/assets/sl-chr-02.jpg.asset.json";
+import slChr03Asset from "@/assets/sl-chr-03.jpg.asset.json";
+const slChr01Img = slChr01Asset.url;
+const slChr02Img = slChr02Asset.url;
+const slChr03Img = slChr03Asset.url;
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
