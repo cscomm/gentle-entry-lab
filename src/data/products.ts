@@ -1414,7 +1414,7 @@ productCatalog.push({
     "Fused Silica is an amorphous SiO₂ material made by melting natural quartz at over 1,800°C and rapidly quenching it. It delivers ultra-low CTE (0.5–0.6 ×10⁻⁶/°C), excellent thermal-shock resistance, chemical stability and electrical insulation — a core raw material for advanced industries. SiLiCA supplies Grade A (SiO₂ ≥99.9%, 100% amorphous), Grade B (≥99.5%) and Grade C (≥99%) as flagship purity tiers, together with the full SL-series fused-silica lineup by shape/function: spherical (SL-QG), low-α spherical (SL-QG-L), round-corner (SL-YRG), angular (SL-RG), low-radiation (SL-FL), surface-modified (SL-HRG), fused quartz sand (SL-FS) and ultra-high-purity fine powder (SL-HF04). We supply these as custom-processed products centered on the fused-silica lineup.",
   jaDescription:
     "溶融シリカ(Fused Silica)は、天然石英を1,800℃以上の超高温で溶融・急冷して得られる非晶質(Amorphous)二酸化ケイ素(SiO₂)素材で、極低熱膨張(0.5~0.6 ×10⁻⁶/℃)・優れた耐熱衝撃性・高い化学的安定性・優れた電気絶縁性を兼ね備えた先端産業の核心原料です。SiLiCAはAグレード(SiO₂ ≥99.9%、100%非晶質)、Bグレード(≥99.5%)、Cグレード(≥99%)の代表3グレードに加え、半導体EMC・アンダーフィル・CCL・低α線・表面改質・丸角・角形・微粉・石英砂など、形状/機能別のSLシリーズ溶融シリカラインアップを中心に、カスタム加工で供給します。",
-  image: gradeA,
+  image: fusedSilicaCategoryImg,
   category: "advanced-series",
   isCategoryIndex: true,
   features: [
