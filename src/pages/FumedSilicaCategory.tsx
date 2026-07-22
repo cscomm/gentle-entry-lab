@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { Link } from "@/lib/router";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
@@ -7,10 +8,21 @@ import SiteFooter from "@/components/SiteFooter";
 import { getProductsByCategory } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
+const FS_TAG_OPTIONS: { ko: string; en: string; ja: string }[] = [
+  { ko: "고무", en: "Rubber", ja: "ゴム" },
+  { ko: "도료", en: "Paint", ja: "塗料" },
+  { ko: "접착제", en: "Adhesive", ja: "接着剤" },
+  { ko: "의약", en: "Pharma", ja: "医薬" },
+];
+
 const FumedSilicaCategory = () => {
   const { lang, t } = useLang();
-  const products = getProductsByCategory("fumed");
+  const products = useMemo(() => getProductsByCategory("fumed"), []);
+  const [tag, setTag] = useState<string>("__all__");
+  const filtered = tag === "__all__" ? products : products.filter((p) => (p.useTags ?? []).includes(tag));
   const tri = (ko: string, en: string, ja: string) => pick(lang, ko, en, ja);
+  const allLabel = pick(lang, "전체", "All", "全体");
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -102,9 +114,47 @@ const FumedSilicaCategory = () => {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+      {/* 용도별 필터 */}
+      <section className="mx-auto max-w-7xl px-6 pt-4">
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={() => setTag("__all__")}
+            className={`rounded-full border px-4 py-1.5 text-xs md:text-sm transition ${
+              tag === "__all__"
+                ? "border-primary bg-primary text-primary-foreground"
+                : "border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
+            }`}
+          >
+            {allLabel}
+          </button>
+          {FS_TAG_OPTIONS.map((opt) => {
+            const label = pick(lang, opt.ko, opt.en, opt.ja);
+            const active = tag === opt.ko;
+            return (
+              <button
+                key={opt.ko}
+                onClick={() => setTag(opt.ko)}
+                className={`rounded-full border px-4 py-1.5 text-xs md:text-sm transition ${
+                  active
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-card text-muted-foreground hover:border-primary hover:text-foreground"
+                }`}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </div>
+        <p className="mt-3 text-xs text-muted-foreground">
+          {pick(lang, "총", "Total", "合計")} {filtered.length}
+          {pick(lang, "개 제품", " products", " 製品")}
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-10 md:py-16">
         <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-          {products.map((p) => (
+          {filtered.map((p) => (
+
             <Link
               key={p.slug}
               to={`/products/${p.slug}/`}
