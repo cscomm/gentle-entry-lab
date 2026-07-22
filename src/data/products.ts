@@ -469,7 +469,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-CHR-03은 고순도 TLC 실리카겔 분말에 소량의 결합제를 배합해 판상으로 제작한 박막크로마토그래피 플레이트입니다. 표면이 순백색이며 평탄·균일·치밀하고, 의약품·농약·중약재·유기화학·식품의 정성/정량 분석에 광범위하게 사용됩니다. 일반 TLC 실리카겔 대비 분리효과가 우수합니다.",
     "SL-CHR-03 is a TLC plate made by blending high-purity TLC silica gel powder with a small amount of binder. The pure white, flat, uniform and dense surface delivers superior separation vs bulk TLC gel and is widely used for QC analysis of pharmaceuticals, agrochemicals, herbal medicines, organic chemistry and food.",
     "SL-CHR-03は高純度TLCシリカゲル粉末に少量のバインダーを配合し板状に加工した薄層クロマトグラフィープレートです。純白・平坦・均一・緻密な表面で分離効果が優れ、医薬品・農薬・生薬・有機化学・食品の定性/定量分析に幅広く使用されます。",
-    sgMatting,
+    slChr03Img,
     [
       { label: "판 두께", value: "0.20 ± 0.03 mm", enLabel: "Thickness", jaLabel: "板厚" },
       { label: "형", value: "H / HF254 / G / GF254", enLabel: "Type", jaLabel: "型" },
