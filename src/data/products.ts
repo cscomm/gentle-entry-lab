@@ -29,6 +29,8 @@ import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
 import silicaSolImg from "@/assets/silica-sol.png";
+import slShsAsset from "@/assets/sl-shs-photo.jpg.asset.json";
+const slShsImg = slShsAsset.url;
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import slChr01Asset from "@/assets/sl-chr-01.jpg.asset.json";
 import slChr02Asset from "@/assets/sl-chr-02.jpg.asset.json";
