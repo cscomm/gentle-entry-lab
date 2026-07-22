@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { Link } from "@/lib/router";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
@@ -7,10 +8,21 @@ import SiteFooter from "@/components/SiteFooter";
 import { getProductsByCategory } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
+const FS_TAG_OPTIONS: { ko: string; en: string; ja: string }[] = [
+  { ko: "고무", en: "Rubber", ja: "ゴム" },
+  { ko: "도료", en: "Paint", ja: "塗料" },
+  { ko: "접착제", en: "Adhesive", ja: "接着剤" },
+  { ko: "의약", en: "Pharma", ja: "医薬" },
+];
+
 const FumedSilicaCategory = () => {
   const { lang, t } = useLang();
-  const products = getProductsByCategory("fumed");
+  const products = useMemo(() => getProductsByCategory("fumed"), []);
+  const [tag, setTag] = useState<string>("__all__");
+  const filtered = tag === "__all__" ? products : products.filter((p) => (p.useTags ?? []).includes(tag));
   const tri = (ko: string, en: string, ja: string) => pick(lang, ko, en, ja);
+  const allLabel = pick(lang, "전체", "All", "全体");
+
 
   return (
     <div className="min-h-screen bg-background text-foreground">
