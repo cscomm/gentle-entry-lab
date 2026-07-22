@@ -29,6 +29,8 @@ import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
 import silicaSolImg from "@/assets/silica-sol.png";
+import slShsAsset from "@/assets/sl-shs-photo.jpg.asset.json";
+const slShsImg = slShsAsset.url;
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import slChr01Asset from "@/assets/sl-chr-01.jpg.asset.json";
 import slChr02Asset from "@/assets/sl-chr-02.jpg.asset.json";
@@ -1917,6 +1919,7 @@ productCatalog.push({
   subModels: [
     { code: "SL-JA25", slug: "sl-ja25", spec: "SiO₂ 25~26% · 10~12 nm · NH₃ 안정형", enSpec: "SiO₂ 25–26% · 10–12 nm · NH₃-stabilized", jaSpec: "SiO₂ 25~26% · 10~12 nm · NH₃安定型", name: "SL-JA25 실리카졸", enName: "SL-JA25 · Silica Sol", jaName: "SL-JA25 シリカゾル" },
     { code: "SL-JA30", slug: "sl-ja30", spec: "SiO₂ 30~31% · 10~11.5 nm · NH₃ 안정형", enSpec: "SiO₂ 30–31% · 10–11.5 nm · NH₃-stabilized", jaSpec: "SiO₂ 30~31% · 10~11.5 nm · NH₃安定型", name: "SL-JA30 실리카졸", enName: "SL-JA30 · Silica Sol", jaName: "SL-JA30 シリカゾル" },
+    { code: "SL-SHS", slug: "sl-shs", spec: "14종 그레이드 · JN/SW/JA/ZX/JGC 시리즈 · 6~30 nm", enSpec: "14-grade lineup · JN/SW/JA/ZX/JGC series · 6–30 nm", jaSpec: "14グレード · JN/SW/JA/ZX/JGC シリーズ · 6~30 nm", name: "SL-SHS 콜로이달 실리카 시리즈", enName: "SL-SHS · Colloidal Silica Full Series", jaName: "SL-SHS コロイダルシリカ シリーズ" },
   ],
   applications: silicaSolCommonApps,
 });
@@ -2004,6 +2007,46 @@ const silicaSolChildren: ProductDetail[] = [
       { label: "안정제", value: "NH₃ (암모니아 안정형)", enValue: "NH₃ (ammonia-stabilized)", jaValue: "NH₃ (アンモニア安定型)", enLabel: "Stabilizer", jaLabel: "安定剤" },
       { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
       { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    applications: silicaSolCommonApps,
+  },
+  {
+    slug: "sl-shs",
+    name: "SL-SHS 콜로이달 실리카 시리즈",
+    enName: "SL-SHS · Colloidal Silica / Silica Sol Full Series",
+    jaName: "SL-SHS コロイダルシリカ シリーズ",
+    tagline: "JN · SW · JA · ZX · JGC 14종 그레이드 · SiO₂ 15~41% · 6~30 nm 풀 라인업",
+    enTagline: "JN · SW · JA · ZX · JGC 14-Grade Lineup · SiO₂ 15–41% · 6–30 nm Full Range",
+    jaTagline: "JN · SW · JA · ZX · JGC 14グレード · SiO₂ 15~41% · 6~30 nm フルラインアップ",
+    description:
+      "SL-SHS는 알칼리(JN)·산성(SW)·암모니아(JA)·저이온(ZX)·특수(JGC) 안정형 등 5개 계열 총 14종 그레이드를 아우르는 콜로이달 실리카(실리카졸) 풀 라인업입니다. SiO₂ 15~41%, 평균 입경 6~30 nm 범위에서 정밀 주조 셸 몰드 바인더, 제지·섬유 표면 개질, 도료·코팅, 내화·세라믹, 실리콘 시트 처리제, 이차전지 고체 전해질, 촉매 담체, 방활 처리제(anti-slip)까지 산업 전반의 요구 사양을 폭넓게 커버합니다.\n\n실리카졸은 물에 분산된 무취·무독·유백색의 나노 실리카 입자로, 10~20 nm 초미립 특성과 큰 비표면적 덕분에 매체의 색상에 영향을 주지 않고 다른 물질과 혼합해도 분산성·투과성이 매우 우수합니다. 수분 증발 후에는 실리카-산소(Si-O) 결합을 통해 소재 표면에 견고히 부착되어 우수한 접착 특성을 발현합니다. JN(알칼리)·SW(산성)·JA(암모니아)·ZX(저 Cl⁻)·JGC(초저 이온) 계열별로 pH·이온도·점도·입자경을 세밀하게 조정 공급하며, 25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC 등 다양한 포장으로 안정 대량 공급됩니다.",
+    enDescription:
+      "SL-SHS is a full-range colloidal silica (silica sol) lineup covering 14 grades across 5 stabilization systems: alkaline (JN), acidic (SW), ammonia (JA), low-ion (ZX) and specialty (JGC). Spanning SiO₂ 15–41% and mean particle size 6–30 nm, the range covers investment-casting shell binders, paper and textile surface modification, paints and coatings, refractories and ceramics, silicon-sheet treatment agents, solid electrolytes for secondary batteries, catalyst supports and anti-slip treatments.\n\nSilica sol is an odorless, non-toxic, milky-white colloid of amorphous SiO₂ nanoparticles dispersed in water. The 10–20 nm ultrafine particle size and high specific surface area allow it to blend with other substances without affecting color, offering excellent dispersibility and permeability. After water evaporation, the colloidal particles bond firmly to material surfaces through Si–O linkages, delivering strong adhesion. Grades in the JN (alkaline), SW (acidic), JA (ammonia), ZX (low-Cl⁻) and JGC (ultra-low-ion) series are supplied with fine adjustments of pH, ionic content, viscosity and particle size, packaged in 25 kg drums, 200 kg drums and 1,000 kg IBCs.",
+    jaDescription:
+      "SL-SHSは、アルカリ(JN)・酸性(SW)・アンモニア(JA)・低イオン(ZX)・特殊(JGC)の5つの安定化系にわたる14グレードを網羅するコロイダルシリカ(シリカゾル)のフルラインアップです。SiO₂ 15~41%、平均粒径6~30 nmの範囲で、精密鋳造シェルバインダー、製紙・繊維の表面改質、塗料・コーティング、耐火・セラミック、シリコンシート処理剤、二次電池固体電解質、触媒担体、防滑処理剤(anti-slip)まで、産業界の幅広い要求仕様をカバーします。\n\nシリカゾルは水中に分散した無臭・無毒・乳白色のナノシリカ粒子で、10~20 nmの超微粒特性と大きな比表面積により、媒体の色に影響を与えず他の物質と混合しても分散性・透過性に優れます。水分蒸発後はSi-O結合を介して素材表面に強固に付着し、優れた接着特性を発現します。JN(アルカリ)・SW(酸性)・JA(アンモニア)・ZX(低Cl⁻)・JGC(超低イオン)の各系列でpH・イオン度・粘度・粒径をきめ細かく調整して供給し、25 kg ドラム · 200 kg ドラム · 1,000 kg IBC など多様な包装で安定大量供給します。",
+    image: slShsImg,
+    detailImage: slShsImg,
+    category: "quartz",
+    parentSlug: "silica-sol",
+    features: [
+      { title: "🎛️ 14종 그레이드 풀 라인업", desc: "JN · SW · JA · ZX · JGC 5개 계열 · 14 그레이드 · 맞춤 대응", enTitle: "🎛️ 14-Grade Full Lineup", jaTitle: "🎛️ 14グレード フルラインアップ", enDesc: "JN · SW · JA · ZX · JGC — 5 series, 14 grades, custom-supply capable", jaDesc: "JN · SW · JA · ZX · JGC 5系列 · 14グレード · カスタム対応" },
+      { title: "💧 6 ~ 30 nm 초미립 나노 입자", desc: "매우 큰 비표면적 · 미세 기공 침투 · 강한 결합력", enTitle: "💧 6–30 nm Ultrafine Nano", jaTitle: "💧 6~30 nm 超微粒ナノ粒子", enDesc: "Very high SSA · fine-pore penetration · strong binding", jaDesc: "非常に大きな比表面積 · 微細細孔浸透 · 強い結合力" },
+      { title: "🧪 SiO₂ 15 ~ 41 % 폭넓은 농도", desc: "저농도 침투용부터 고농도 결합제까지 자유 선택", enTitle: "🧪 SiO₂ 15–41 % Wide Range", jaTitle: "🧪 SiO₂ 15~41 % 幅広い濃度", enDesc: "From low-conc. penetrants to high-conc. binders", jaDesc: "低濃度浸透用から高濃度バインダーまで自由に選択" },
+      { title: "⚖️ pH 2 ~ 11 다중 안정계", desc: "산성(SW)·중성·알칼리(JN)·NH₃(JA) 다양한 시스템 대응", enTitle: "⚖️ Multi-pH Stabilization", jaTitle: "⚖️ pH 2~11 マルチ安定系", enDesc: "Acidic (SW), neutral, alkaline (JN), NH₃ (JA) systems", jaDesc: "酸性(SW)・中性・アルカリ(JN)・NH₃(JA) 各系統に対応" },
+      { title: "🌿 무취·무독·친환경 무기 소재", desc: "VOC-Free · 유기 바인더 대체 · 환경 규제 부합", enTitle: "🌿 Odorless · Non-Toxic · Eco", jaTitle: "🌿 無臭 · 無毒 · 環境配慮型無機素材", enDesc: "VOC-free — replaces organic binders, meets environmental standards", jaDesc: "VOCフリー · 有機バインダー代替 · 環境規制適合" },
+      { title: "🏭 안정 대량 공급 · IBC 대응", desc: "25 kg / 200 kg 드럼 · 1,000 kg IBC 다양한 포장", enTitle: "🏭 Mass Supply · IBC-Ready", jaTitle: "🏭 大量供給 · IBC対応", enDesc: "25 kg / 200 kg drums · 1,000 kg IBC packaging", jaDesc: "25 kg / 200 kg ドラム · 1,000 kg IBC 多様な包装" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-SHS 시리즈", enValue: "SL-SHS Series", jaValue: "SL-SHS シリーズ", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "무취·무독 유백색 콜로이드 액", enValue: "Odorless, non-toxic, milky-white colloidal liquid", jaValue: "無臭・無毒 乳白色コロイド液", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "계열", value: "JN(알칼리) · SW(산성) · JA(NH₃) · ZX(저 Cl⁻) · JGC(초저 이온)", enValue: "JN (alkaline) · SW (acidic) · JA (NH₃) · ZX (low-Cl⁻) · JGC (ultra-low-ion)", jaValue: "JN(アルカリ) · SW(酸性) · JA(NH₃) · ZX(低Cl⁻) · JGC(超低イオン)", enLabel: "Stabilization Series", jaLabel: "安定化系列" },
+      { label: "SiO₂ 함량", value: "15 ~ 41 %", enLabel: "SiO₂ Content", jaLabel: "SiO₂含有量" },
+      { label: "평균 입자경", value: "6 ~ 30 nm", enLabel: "Mean Particle Size", jaLabel: "平均粒子径" },
+      { label: "pH 범위", value: "2.0 ~ 11.0 (그레이드별)", enValue: "2.0 – 11.0 (grade-dependent)", jaValue: "2.0 ~ 11.0 (グレード別)", enLabel: "pH Range", jaLabel: "pH範囲" },
+      { label: "밀도 (Density)", value: "1.09 ~ 1.30 g/cm³", enLabel: "Density", jaLabel: "密度" },
+      { label: "점도 (Viscosity, 25℃)", value: "≤ 5 ~ 25 mPa·s", enLabel: "Viscosity (25 ℃)", jaLabel: "粘度 (25 ℃)" },
+      { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+      { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC · 맞춤 포장", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC · custom", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC · カスタム", enLabel: "Packaging", jaLabel: "包装" },
     ],
     applications: silicaSolCommonApps,
   },
