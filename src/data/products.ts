@@ -433,7 +433,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-CHR-01은 백색의 균일한 과립형 컬럼크로마토그래피 전용 실리카겔로, 세공형(A, 20–30Å)·중공형(B, 50–80Å)·조공형(C, 90–100Å) 3종 공극 구조를 지원합니다. 성분별 흡착 보유시간 차이를 이용해 중약재 유효성분 분리정제, 석유제품 정제, 유기가스·액체의 선택적 흡착분리, 촉매담체 등에 사용됩니다. 입도 60–400목 범위에서 맞춤 공급 가능합니다.",
     "SL-CHR-01 is a white uniform granular silica gel for column chromatography, supporting three pore structures — fine (A, 20–30Å), medium (B, 50–80Å) and coarse (C, 90–100Å). It is used for purifying active ingredients in traditional Chinese medicine, refining petroleum products, selective adsorption of organic gases/liquids and catalyst supports. Available in 60–400 mesh custom sizes.",
     "SL-CHR-01は白色均一顆粒状のカラムクロマトグラフィー専用シリカゲルで、細孔(A, 20–30Å)・中孔(B, 50–80Å)・粗孔(C, 90–100Å)の3種細孔構造をサポートします。生薬有効成分の分離精製、石油製品精製、有機ガス・液体の選択吸着分離、触媒担体に使用されます。",
-    sgLargePore,
+    slChr01Img,
     [
       { label: "공경 (A/B/C)", value: "20–30 / 50–80 / 90–100 Å", enLabel: "Pore (A/B/C)", jaLabel: "細孔径" },
       { label: "공용적 (A/B/C)", value: "0.35–0.45 / 0.5–0.7 / 0.85–1.0 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
