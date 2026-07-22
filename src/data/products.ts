@@ -451,7 +451,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-CHR-02는 백색 분말로 물·유기용매에 불용인 TLC 전용 실리카겔입니다. H·HF254·G·GF254 4형 공급이며, 의약·농약·염료·고무 컬럼분석용 신속·고감도 분석시약, 석유제품 정제, 액체 선택적 흡착분리, 촉매담체 제조 등에 사용됩니다. 일반 입도 10–40㎛, 고효율 5–10㎛/3–10㎛로 맞춤 가능합니다.",
     "SL-CHR-02 is a white TLC silica gel powder insoluble in water and organic solvents. Supplied in H, HF254, G and GF254 types for pharmaceutical, agrochemical, dye and rubber column analysis, petroleum refining, selective adsorption and catalyst supports. General 10–40 µm, high-efficiency 5–10 µm / 3–10 µm.",
     "SL-CHR-02は白色粉末で水・有機溶媒に不溶のTLC専用シリカゲルです。H・HF254・G・GF254の4型を供給し、医薬・農薬・染料・ゴムのカラム分析用試薬、石油製品精製、選択吸着分離、触媒担体などに使用されます。",
-    sgMicrosilica,
+    slChr02Img,
     [
       { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "320–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
