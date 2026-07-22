@@ -26,6 +26,29 @@ import cPlastic from "@/assets/c-plastic.jpg";
 import cAbrasive from "@/assets/c-abrasive.jpg";
 import cIndustrial from "@/assets/c-industrial.jpg";
 import aSilicaGel from "@/assets/a-silica-gel.jpg";
+import slInd01Table from "@/assets/sl-ind-01-table.jpg.asset.json";
+import slInd02Table from "@/assets/sl-ind-02-table.jpg.asset.json";
+import slInd03Table from "@/assets/sl-ind-03-table.jpg.asset.json";
+import slDes01Table from "@/assets/sl-des-01-table.jpg.asset.json";
+import slDes02Table from "@/assets/sl-des-02-table.jpg.asset.json";
+import slDes03Table from "@/assets/sl-des-03-table.jpg.asset.json";
+import slDes04Table from "@/assets/sl-des-04-table.jpg.asset.json";
+import slDes05Table from "@/assets/sl-des-05-table.jpg.asset.json";
+import slDes06Table from "@/assets/sl-des-06-table.jpg.asset.json";
+import slDes07Table from "@/assets/sl-des-07-table.jpg.asset.json";
+
+const SG_SPEC_TABLES: Record<string, { url: string; code: string }> = {
+  "silica-gel-sl-ind-01": { url: slInd01Table.url, code: "SL-IND-01" },
+  "silica-gel-sl-ind-02": { url: slInd02Table.url, code: "SL-IND-02" },
+  "silica-gel-sl-ind-03": { url: slInd03Table.url, code: "SL-IND-03" },
+  "silica-gel-sl-des-01": { url: slDes01Table.url, code: "SL-DES-01" },
+  "silica-gel-sl-des-02": { url: slDes02Table.url, code: "SL-DES-02" },
+  "silica-gel-sl-des-03": { url: slDes03Table.url, code: "SL-DES-03" },
+  "silica-gel-sl-des-04": { url: slDes04Table.url, code: "SL-DES-04" },
+  "silica-gel-sl-des-05": { url: slDes05Table.url, code: "SL-DES-05" },
+  "silica-gel-sl-des-06": { url: slDes06Table.url, code: "SL-DES-06" },
+  "silica-gel-sl-des-07": { url: slDes07Table.url, code: "SL-DES-07" },
+};
 
 const APP_VISUALS: Record<string, { img?: string; items: string[] }> = {
   "반도체": {
