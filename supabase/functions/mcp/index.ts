@@ -25,7 +25,6 @@ var sgMatting = "/assets/sg-matting.jpg";
 var sgLargePore = "/assets/sg-large-pore.jpg";
 var sgFng = "/assets/sg-fng.jpg";
 var sgCoarse = "/assets/sg-coarse.jpg";
-var sgTypeA = "/assets/sg-type-a.jpg";
 var precipitatedSilica = "/assets/precipitated-silica.jpg";
 var fumedSilica = "/assets/fumed-silica.png";
 var silicaSandImg = "/assets/silica-sand.jpg";
@@ -54,12 +53,26 @@ var slDes04PhotoAsset = { url: "/assets/sl-des-04-photo.jpg.asset.json" };
 var slDes05PhotoAsset = { url: "/assets/sl-des-05-photo.jpg.asset.json" };
 var slDes06PhotoAsset = { url: "/assets/sl-des-06-photo.jpg.asset.json" };
 var slDes07PhotoAsset = { url: "/assets/sl-des-07-photo.jpg.asset.json" };
+var slInd04PhotoAsset = { url: "/assets/sl-ind-04-photo.jpg.asset.json" };
+var slInd05PhotoAsset = { url: "/assets/sl-ind-05-photo.jpg.asset.json" };
+var slInd06PhotoAsset = { url: "/assets/sl-ind-06-photo.jpg.asset.json" };
+var slInd07PhotoAsset = { url: "/assets/sl-ind-07-photo.jpg.asset.json" };
+var slAls01PhotoAsset = { url: "/assets/sl-als-01-photo.jpg.asset.json" };
+var slAls03PhotoAsset = { url: "/assets/sl-als-03-photo.jpg.asset.json" };
+var slAls04PhotoAsset = { url: "/assets/sl-als-04-photo.jpg.asset.json" };
 var slChr01Img = slChr01Asset.url;
 var slChr02Img = slChr02Asset.url;
 var slChr03Img = slChr03Asset.url;
 var slInd01Img = slInd01PhotoAsset.url;
 var slInd02Img = slInd02PhotoAsset.url;
 var slInd03Img = slInd03PhotoAsset.url;
+var slInd04Img = slInd04PhotoAsset.url;
+var slInd05Img = slInd05PhotoAsset.url;
+var slInd06Img = slInd06PhotoAsset.url;
+var slInd07Img = slInd07PhotoAsset.url;
+var slAls01Img = slAls01PhotoAsset.url;
+var slAls03Img = slAls03PhotoAsset.url;
+var slAls04Img = slAls04PhotoAsset.url;
 var slDes01Img = slDes01PhotoAsset.url;
 var slDes02Img = slDes02PhotoAsset.url;
 var slDes03Img = slDes03PhotoAsset.url;
@@ -578,7 +591,7 @@ var silicaGelProducts = [
     "SL-IND-04\uB294 \uBC31\uC0C9 \uAD34\uC0C1 \uB610\uB294 \uAD6C\uD615\uC758 \uB300\uACF5\uADF9 \uC2E4\uB9AC\uCE74\uAC94\uB85C, \uBC29\uC2B5\uD3EC\uC7A5, \uACF5\uC5C5\uAC00\uC2A4 \uD0C8\uC218\uC815\uC81C, \uC808\uC5F0\uC720 \uB0B4 \uC720\uAE30\uC0B0\xB7\uACE0\uBD84\uC790\uBB3C\uC9C8 \uC81C\uAC70, \uACF5\uC5C5 \uBC1C\uD6A8\uACF5\uC815\uC758 \uC774\uBD84\uC790\uB2E8\uBC31 \uD761\uCC29, \uCD09\uB9E4 \uBC0F \uCD09\uB9E4\uB2F4\uCCB4 \uB4F1\uC5D0 \uC0AC\uC6A9\uB429\uB2C8\uB2E4.",
     "SL-IND-04 is a wide-pore silica gel in white lump or bead form, used for moisture-proof packaging, industrial gas dehydration, removal of organic acids/polymers in insulating oil, protein adsorption in fermentation, and as a catalyst/carrier.",
     "SL-IND-04\u306F\u767D\u8272\u584A\u72B6\u307E\u305F\u306F\u7403\u72B6\u306E\u5927\u5B54\u5F84\u30B7\u30EA\u30AB\u30B2\u30EB\u3067\u3001\u9632\u6E7F\u5305\u88C5\u3001\u5DE5\u696D\u30AC\u30B9\u306E\u8131\u6C34\u7CBE\u88FD\u3001\u7D76\u7E01\u6CB9\u4E2D\u306E\u6709\u6A5F\u9178/\u9AD8\u5206\u5B50\u7269\u8CEA\u9664\u53BB\u3001\u5DE5\u696D\u767A\u9175\u5DE5\u7A0B\u3067\u306E\u4E8C\u5206\u5B50\u30BF\u30F3\u30D1\u30AF\u5438\u7740\u3001\u89E6\u5A92\u30FB\u62C5\u4F53\u306A\u3069\u306B\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002",
-    sgLargePore,
+    slInd04Img,
     [
       { label: "\uACF5\uACBD", value: "80\u2013100 \xC5", enLabel: "Pore", jaLabel: "\u7D30\u5B54\u5F84" },
       { label: "\uBE44\uD45C\uBA74\uC801", value: "300\u2013400 m\xB2/g", enLabel: "SSA", jaLabel: "\u6BD4\u8868\u9762\u7A4D" },
@@ -599,7 +612,7 @@ var silicaGelProducts = [
     "SL-IND-05\uB294 \uBC31\uC0C9 \uACFC\uB9BD \uD615\uD0DC\uC758 \uC2E4\uB9AC\uCE74\uAC94\uB85C, \uC804\uD1B5\uC801\uC778 \uC0B0\xB7\uC54C\uCE7C\uB9AC\xB7\uBC31\uD1A0 \uD0C8\uC0C9\uACF5\uC815\uC744 \uC5EC\uACFC \uBC29\uC2DD\uC73C\uB85C \uB300\uCCB4\uD558\uC5EC \uC624\uC77C \uC911 \uBD88\uC21C\uBB3C\xB7\uC0B0\uD654\uBB3C\uC744 \uC9C1\uC811 \uC81C\uAC70\uD568\uC73C\uB85C\uC368 \uD751\uBCC0 \uC624\uC77C\uC744 \uD22C\uBA85\uD55C \uC561\uCCB4\uB85C \uC804\uD658\uD569\uB2C8\uB2E4. \uD751\uCDE8 \uACBD\uC720 \uD0C8\uCDE8\xB7\uD0C8\uC0C9, \uD3D0\uC5D4\uC9C4\uC624\uC77C \uC7AC\uC0DD, \uC720\uC555\uC720\xB7\uBC14\uC774\uC624\uB514\uC824\xB7\uB3D9\uC2DD\uBB3C\uC720 \uD0C8\uC0C9\xB7\uC815\uC81C\xB7\uD0C8\uCDE8\uC5D0 \uC0AC\uC6A9\uB429\uB2C8\uB2E4.",
     "SL-IND-05 is a white granular silica gel replacing traditional acid/alkali/clay bleaching with filtration to remove impurities and oxidation products, restoring blackened oils to a clear state. Used for diesel deodorization, waste engine oil regeneration, hydraulic oil, biodiesel and animal/vegetable oil refining.",
     "SL-IND-05\u306F\u767D\u8272\u9846\u7C92\u72B6\u306E\u30B7\u30EA\u30AB\u30B2\u30EB\u3067\u3001\u5F93\u6765\u306E\u9178\u30FB\u30A2\u30EB\u30AB\u30EA\u30FB\u767D\u571F\u8131\u8272\u5DE5\u7A0B\u3092\u6FFE\u904E\u65B9\u5F0F\u306B\u7F6E\u304D\u63DB\u3048\u3001\u30AA\u30A4\u30EB\u4E2D\u306E\u4E0D\u7D14\u7269\u30FB\u9178\u5316\u7269\u3092\u9664\u53BB\u3057\u3066\u9ED2\u5909\u30AA\u30A4\u30EB\u3092\u900F\u660E\u6DB2\u4F53\u306B\u8EE2\u63DB\u3057\u307E\u3059\u3002\u30C7\u30A3\u30FC\u30BC\u30EB\u8131\u81ED\u3001\u5EC3\u30A8\u30F3\u30B8\u30F3\u30AA\u30A4\u30EB\u518D\u751F\u3001\u6CB9\u5727\u6CB9\u30FB\u30D0\u30A4\u30AA\u30C7\u30A3\u30FC\u30BC\u30EB\u30FB\u52D5\u690D\u7269\u6CB9\u306E\u7CBE\u88FD\u306B\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002",
-    sgCoarse,
+    slInd05Img,
     [
       { label: "\uACF5\uACBD", value: "85\u2013110 \xC5", enLabel: "Pore", jaLabel: "\u7D30\u5B54\u5F84" },
       { label: "\uBE44\uD45C\uBA74\uC801", value: "300\u2013500 m\xB2/g", enLabel: "SSA", jaLabel: "\u6BD4\u8868\u9762\u7A4D" },
@@ -620,7 +633,7 @@ var silicaGelProducts = [
     "SL-IND-06\uC740 \uBC31\uC0C9 \uD22C\uBA85/\uBC18\uD22C\uBA85\uC758 \uB9C8\uC774\uD06C\uB85C \uAD6C\uD615 \uC2E4\uB9AC\uCE74\uAC94\uB85C, \uADE0\uC77C\uD55C \uBBF8\uC138\uACF5\uADF9\uAD6C\uC870\uC640 \uC548\uC815\uC801\uC778 \uBB3C\uB9AC\xB7\uD654\uD559\uC801 \uD2B9\uC131, \uC6B0\uC218\uD55C \uC5F4\uC548\uC815\uC131\uACFC \uB192\uC740 \uAE30\uACC4\uC801 \uAC15\uB3C4\uB97C \uC9C0\uB2D9\uB2C8\uB2E4. \uBA5C\uB77C\uBBFC\xB7\uC544\uB2D0\uB9B0\xB7\uC544\uC138\uD2B8\uC0B0\uBE44\uB2D0\xB7\uBD80\uD0C0\uB514\uC5D4\uACE0\uBB34\xB7\uC544\uD06C\uB9B4\uB85C\uB2C8\uD2B8\uB9B4 \uB4F1 \uC911\uC694 \uACF5\uC5C5\uC0DD\uC0B0 \uCD09\uB9E4\xB7\uCD09\uB9E4\uB2F4\uCCB4, \uBC29\uD5A5\uC871 \uC815\uC81C, \uC758\uC57D\uD488 \uC815\uC81C, \uC720\uAE30\uAC00\uC2A4\xB7\uC561\uCCB4 \uC120\uD0DD\uC801 \uD761\uCC29\uBD84\uB9AC, \uC218\uC911 \uC720\uD574 \uC774\uC628 \uC81C\uAC70\uC5D0 \uD65C\uC6A9\uB429\uB2C8\uB2E4.",
     "SL-IND-06 is a translucent micro-spherical silica gel with uniform micro-pores, stable properties, excellent thermal stability and high mechanical strength. Used as catalyst/support for melamine, aniline, vinyl acetate, butadiene rubber, acrylonitrile production; aromatics/pharmaceutical purification; selective adsorption; ion exchange in water treatment.",
     "SL-IND-06\u306F\u767D\u8272\u900F\u660E/\u534A\u900F\u660E\u306E\u30DE\u30A4\u30AF\u30ED\u7403\u72B6\u30B7\u30EA\u30AB\u30B2\u30EB\u3067\u3001\u5747\u4E00\u5FAE\u7D30\u7D30\u5B54\u30FB\u512A\u308C\u305F\u71B1\u5B89\u5B9A\u6027\u30FB\u9AD8\u3044\u6A5F\u68B0\u5F37\u5EA6\u3092\u6709\u3057\u307E\u3059\u3002\u30E1\u30E9\u30DF\u30F3\u30FB\u30A2\u30CB\u30EA\u30F3\u30FB\u9162\u9178\u30D3\u30CB\u30EB\u30FB\u30D6\u30BF\u30B8\u30A8\u30F3\u30B4\u30E0\u30FB\u30A2\u30AF\u30EA\u30ED\u30CB\u30C8\u30EA\u30EB\u751F\u7523\u306E\u89E6\u5A92/\u62C5\u4F53\u3001\u82B3\u9999\u65CF\u7CBE\u88FD\u3001\u533B\u85AC\u54C1\u7CBE\u88FD\u3001\u9078\u629E\u5438\u7740\u5206\u96E2\u3001\u6C34\u4E2D\u30A4\u30AA\u30F3\u9664\u53BB\u306A\u3069\u306B\u6D3B\u7528\u3055\u308C\u307E\u3059\u3002",
-    sgLargePore,
+    slInd06Img,
     [
       { label: "\uACF5\uACBD", value: "80\u2013110 \xC5", enLabel: "Pore", jaLabel: "\u7D30\u5B54\u5F84" },
       { label: "\uBE44\uD45C\uBA74\uC801", value: "300\u2013550 m\xB2/g", enLabel: "SSA", jaLabel: "\u6BD4\u8868\u9762\u7A4D" },
@@ -641,7 +654,7 @@ var silicaGelProducts = [
     "SL-IND-07\uC740 \uD3D0\uC5D4\uC9C4\uC624\uC77C(\uD3D0\uC724\uD65C\uC720) \uC815\uC81C \uC804\uC6A9 \uC2E0\uD615 \uCD09\uB9E4\uC785\uB2C8\uB2E4. \uBC18\uC751\uC628\uB3C4 290\u2013310\u2103, \uACF5\uAC04\uC18D\uB3C4 0.2\u20130.25 h\u207B\xB9, \uC0C1\uC555 \uC870\uAC74\uC5D0\uC11C \uC0AC\uC6A9\uD558\uBA70, \uC815\uAE30\uC801\uC73C\uB85C \uCD09\uB9E4 \uAC74\uC870 \uACF5\uC815(0\u20130.1 MPa, 300\u2013360\u2103, 6\u20138\uC2DC\uAC04)\uC774 \uD544\uC694\uD569\uB2C8\uB2E4. \uC0B0\xB7\uC54C\uCE7C\uB9AC\uC640\uC758 \uC811\uCD09\uC744 \uD53C\uD574\uC57C \uD558\uBA70, \uC0AC\uC6A9 \uC804 30\uBAA9 \uCCB4\uB9DD\uC73C\uB85C \uCD09\uB9E4 \uBD84\uC9C4\uC744 \uC81C\uAC70\uD574\uC57C \uD569\uB2C8\uB2E4.",
     "SL-IND-07 is a new catalyst dedicated to refining waste engine oil. Operates at 290\u2013310\u2103, LHSV 0.2\u20130.25 h\u207B\xB9, atmospheric pressure. Periodic drying (0\u20130.1 MPa, 300\u2013360\u2103, 6\u20138h) required. Avoid acid/alkali contact and screen out dust with 30-mesh sieve before use.",
     "SL-IND-07\u306F\u5EC3\u30A8\u30F3\u30B8\u30F3\u30AA\u30A4\u30EB(\u5EC3\u6F64\u6ED1\u6CB9)\u7CBE\u88FD\u5C02\u7528\u306E\u65B0\u578B\u89E6\u5A92\u3067\u3059\u3002\u53CD\u5FDC\u6E29\u5EA6290\u2013310\u2103\u3001LHSV 0.2\u20130.25 h\u207B\xB9\u3001\u5E38\u5727\u3067\u4F7F\u7528\u3057\u3001\u5B9A\u671F\u7684\u306A\u4E7E\u71E5\u5DE5\u7A0B(0\u20130.1 MPa, 300\u2013360\u2103, 6\u20138\u6642\u9593)\u304C\u5FC5\u8981\u3067\u3059\u3002",
-    sgFng,
+    slInd07Img,
     [
       { label: "\uADDC\uACA9 (A / B)", value: "\u03A62.5\xD72\u201310mm / \u03A63\xD72\u201310mm", enLabel: "Size", jaLabel: "\u30B5\u30A4\u30BA" },
       { label: "\uBE44\uD45C\uBA74\uC801 (A / B)", value: "\u2265 235 / \u2265 250 m\xB2/g", enLabel: "SSA", jaLabel: "\u6BD4\u8868\u9762\u7A4D" },
@@ -807,7 +820,7 @@ var silicaGelProducts = [
     "SL-ALS-01\uC740 \uD654\uD559\uC2DD mSiO\u2082\xB7nAl\u2082O\u2083\xB7xH\u2082O\uC758 \uC2E4\uB9AC\uCE74\uC54C\uB8E8\uBBF8\uB098\uAC94\uB85C, \uD654\uD559\uC801\uC73C\uB85C \uC548\uC815\uD558\uACE0 \uBD88\uC5F0\uC131\uC774\uBA70 \uAC15\uC54C\uCE7C\uB9AC\xB7\uBD88\uD654\uC218\uC18C\uC0B0 \uC678 \uC6A9\uB9E4\uC5D0 \uBD88\uC6A9\uC785\uB2C8\uB2E4. \uC138\uACF5\uD615 \uC2E4\uB9AC\uCE74\uAC94\uBCF4\uB2E4 \uAC15\uD55C \uD45C\uBA74 \uADF9\uC131\uACFC \uC6B0\uC218\uD55C \uD761\uCC29\uBD84\uB9AC\uC131\uB2A5, \uB6F0\uC5B4\uB09C \uC5F4\uC548\uC815\uC131\uC744 \uC9C0\uB140 \uC555\uCD95\uCC9C\uC5F0\uAC00\uC2A4\xB7\uCC9C\uC5F0\uAC00\uC2A4\xB7\uAE30\uCCB4\xB7\uC561\uD654\uAC00\uC2A4 \uAC74\uC870 \uB4F1\uC5D0 \uAD11\uBC94\uC704\uD558\uAC8C \uC0AC\uC6A9\uB429\uB2C8\uB2E4.",
     "SL-ALS-01 is a silica alumina gel (mSiO\u2082\xB7nAl\u2082O\u2083\xB7xH\u2082O). Chemically stable, non-flammable and insoluble in solvents except strong alkali and hydrofluoric acid. Stronger surface polarity and superior adsorption/thermal stability vs fine-pored silica gel \u2014 widely used for CNG, natural gas, gaseous and liquefied gas drying.",
     "SL-ALS-01\u306F\u5316\u5B66\u5F0FmSiO\u2082\xB7nAl\u2082O\u2083\xB7xH\u2082O\u306E\u30B7\u30EA\u30AB\u30A2\u30EB\u30DF\u30CA\u30B2\u30EB\u3067\u3001\u5316\u5B66\u7684\u306B\u5B89\u5B9A\u30FB\u4E0D\u71C3\u6027\u3001\u5F37\u30A2\u30EB\u30AB\u30EA\u30FB\u30D5\u30C3\u5316\u6C34\u7D20\u9178\u4EE5\u5916\u306E\u6EB6\u5A92\u306B\u4E0D\u6EB6\u3067\u3059\u3002\u7D30\u5B54\u578B\u30B7\u30EA\u30AB\u30B2\u30EB\u3088\u308A\u5F37\u3044\u8868\u9762\u6975\u6027\u3068\u512A\u308C\u305F\u5438\u7740\u5206\u96E2\u6027\u80FD\u30FB\u71B1\u5B89\u5B9A\u6027\u3092\u6301\u3061\u3001CNG\u30FB\u5929\u7136\u30AC\u30B9\u30FB\u6C17\u4F53\u30FB\u6DB2\u5316\u30AC\u30B9\u4E7E\u71E5\u306A\u3069\u306B\u5E83\u304F\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002",
-    sgLargePore,
+    slAls01Img,
     [
       { label: "SiO\u2082", value: "65\u201399.5 %" },
       { label: "\uBE44\uD45C\uBA74\uC801", value: "600 / 600\u2013800 m\xB2/g", enLabel: "SSA", jaLabel: "\u6BD4\u8868\u9762\u7A4D" },
@@ -827,7 +840,7 @@ var silicaGelProducts = [
     "SL-ALS-03\uC740 \uBC31\uC0C9 \uAD6C\uD615\uC758 \uB2E4\uACF5\uC131 \uD65C\uC131\uC54C\uB8E8\uBBF8\uB098 \uD761\uCC29\uC7AC\uC785\uB2C8\uB2E4. \uC785\uB3C4\uAC00 \uADE0\uC77C\uD558\uACE0 \uD45C\uBA74\uC774 \uB9E4\uB044\uB7EC\uC6B0\uBA70 \uAE30\uACC4\uC801 \uAC15\uB3C4\uAC00 \uB192\uACE0 \uD761\uC2B5\uB825\uC774 \uAC15\uD558\uBA70, \uD761\uC2B5 \uD6C4\uC5D0\uB3C4 \uD33D\uCC3D\xB7\uADE0\uC5F4 \uC5C6\uC774 \uC6D0\uD615\uC744 \uC720\uC9C0\uD569\uB2C8\uB2E4. \uBB34\uB3C5\xB7\uBB34\uCDE8\xB7\uBB3C\uACFC \uC5D0\uD0C4\uC62C\uC5D0 \uBD88\uC6A9\uC774\uBA70, \uAE30\uCCB4\xB7\uC218\uC99D\uAE30 \uBC0F \uC77C\uBD80 \uC561\uCCB4 \uC18D \uC218\uBD84\uC744 \uC120\uD0DD\uC801\uC73C\uB85C \uD761\uCC29\uD558\uACE0 175\u2013315\u2103 \uAC00\uC5F4\uB85C \uC7AC\uC0DD \uAC00\uB2A5\uD55C \uACE0\uD6A8\uC728 \uAC74\uC870\uC81C\uC785\uB2C8\uB2E4.",
     "SL-ALS-03 is a white spherical porous activated alumina adsorbent. Uniform particle size, smooth surface, high mechanical strength and strong moisture absorption without swelling/cracking. Non-toxic, odorless, insoluble in water/ethanol \u2014 a high-efficiency desiccant that selectively adsorbs water from gases, vapors and some liquids and regenerates at 175\u2013315\u2103.",
     "SL-ALS-03\u306F\u767D\u8272\u7403\u72B6\u306E\u591A\u5B54\u6027\u6D3B\u6027\u30A2\u30EB\u30DF\u30CA\u5438\u7740\u6750\u3067\u3059\u3002\u5747\u4E00\u7C92\u5EA6\u3001\u6ED1\u3089\u304B\u306A\u8868\u9762\u3001\u9AD8\u3044\u6A5F\u68B0\u5F37\u5EA6\u3001\u5F37\u3044\u5438\u6E7F\u529B\u3092\u6301\u3061\u3001\u5438\u6E7F\u5F8C\u3082\u81A8\u5F35\u30FB\u4E80\u88C2\u306A\u304F\u539F\u5F62\u3092\u7DAD\u6301\u3057\u307E\u3059\u3002",
-    sgTypeA,
+    slAls03Img,
     [
       { label: "Al\u2082O\u2083", value: "\u2265 92 %" },
       { label: "\uBE44\uD45C\uBA74\uC801", value: "\u2265 280 m\xB2/g", enLabel: "SSA", jaLabel: "\u6BD4\u8868\u9762\u7A4D" },
@@ -848,7 +861,7 @@ var silicaGelProducts = [
     "SL-ALS-04\uB294 \uACF5\uACBD 4\xC5\uC758 4A \uBD84\uC790\uCCB4\uB85C, \uBB3C\xB7\uBA54\uD0C4\uC62C\xB7\uC5D0\uD0C4\uC62C\xB7\uD669\uD654\uC218\uC18C\xB7\uC774\uC0B0\uD654\uD669\xB7\uC774\uC0B0\uD654\uD0C4\uC18C\xB7\uC5D0\uD2F8\uB80C\xB7\uD504\uB85C\uD544\uB80C\uC744 \uD761\uCC29\uD558\uBA70 \uC9C1\uACBD 4\xC5\uC744 \uCD08\uACFC\uD558\uB294 \uBD84\uC790(\uD504\uB85C\uD310 \uD3EC\uD568)\uB294 \uD761\uCC29\uD558\uC9C0 \uC54A\uC2B5\uB2C8\uB2E4. \uBB3C\uC5D0 \uB300\uD55C \uC120\uD0DD\uC801 \uD761\uCC29\uC131\uC774 \uAC00\uC7A5 \uB192\uC544 \uC0B0\uC5C5\uC6A9 \uBD84\uC790\uCCB4 \uC911 \uC0AC\uC6A9\uB7C9\uC774 \uAC00\uC7A5 \uB9CE\uC73C\uBA70, \uCC9C\uC5F0\uAC00\uC2A4\xB7\uB0C9\uB9E4 \uB4F1 \uAE30\uCCB4\xB7\uC561\uCCB4 \uC2EC\uCE35\uAC74\uC870, \uC544\uB974\uACE4 \uC0DD\uC0B0\uC815\uC81C, \uC758\uC57D\uD488\xB7\uC804\uC790\uBD80\uD488 \uC815\uC801\uAC74\uC870, \uB3C4\uB8CC\xB7\uC5F0\uB8CC\xB7\uCF54\uD305\uC81C \uD0C8\uC218\uC81C\uC5D0 \uC0AC\uC6A9\uB429\uB2C8\uB2E4.",
     "SL-ALS-04 is a 4\xC5 (4A) molecular sieve that adsorbs water, methanol, ethanol, H\u2082S, SO\u2082, CO\u2082, ethylene and propylene while excluding molecules > 4\xC5 (incl. propane). Its selectivity for water makes it the most widely used industrial sieve \u2014 for deep drying of natural gas/refrigerants, argon production, static drying of pharmaceuticals/electronics and dehydration of paints/fuels/coatings.",
     "SL-ALS-04\u306F\u7D30\u5B54\u5F844\xC5\u306E4A\u5206\u5B50\u7BE9\u3067\u3001\u6C34\u30FB\u30E1\u30BF\u30CE\u30FC\u30EB\u30FB\u30A8\u30BF\u30CE\u30FC\u30EB\u30FBH\u2082S\u30FBSO\u2082\u30FBCO\u2082\u30FB\u30A8\u30C1\u30EC\u30F3\u30FB\u30D7\u30ED\u30D4\u30EC\u30F3\u3092\u5438\u7740\u3057\u30014\xC5\u8D85\u306E\u5206\u5B50(\u30D7\u30ED\u30D1\u30F3\u542B\u3080)\u306F\u5438\u7740\u3057\u307E\u305B\u3093\u3002\u6C34\u3078\u306E\u9078\u629E\u7684\u5438\u7740\u6027\u304C\u6700\u3082\u9AD8\u304F\u3001\u7523\u696D\u7528\u5206\u5B50\u7BE9\u306E\u4E2D\u3067\u6700\u591A\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002",
-    sgTypeA,
+    slAls04Img,
     [
       { label: "\uC815\uC801\uC218\uBD84\uD761\uCC29", value: "\u2265 21 %", enLabel: "Static Water Adsorption", jaLabel: "\u9759\u7684\u6C34\u5438\u7740" },
       { label: "\uBA54\uD0C4\uC62C\uD761\uCC29", value: "\u2265 15 %", enLabel: "Methanol Adsorption", jaLabel: "\u30E1\u30BF\u30CE\u30FC\u30EB\u5438\u7740" },
