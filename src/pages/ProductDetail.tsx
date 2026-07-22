@@ -728,6 +728,19 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SL-IND-01~03 · SL-DES-01~07 — official spec table (image) */}
+      {(() => {
+        const tableMap: Record<string, string> = {
+          "silica-gel-sl-ind-01": "/__l5e/assets-v1/" + "" ,
+        };
+        const specTableAssets: Record<string, { url: string; code: string }> = {
+          "silica-gel-sl-ind-01": { url: (require("@/assets/sl-ind-01-table.jpg.asset.json") as any).url, code: "SL-IND-01" },
+        };
+        return null;
+      })()}
+
+
+
 
       {isSilicaSand && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
