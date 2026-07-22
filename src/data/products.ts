@@ -30,6 +30,12 @@ import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
 import silicaSolImg from "@/assets/silica-sol.png";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
+import slChr01Asset from "@/assets/sl-chr-01.jpg.asset.json";
+import slChr02Asset from "@/assets/sl-chr-02.jpg.asset.json";
+import slChr03Asset from "@/assets/sl-chr-03.jpg.asset.json";
+const slChr01Img = slChr01Asset.url;
+const slChr02Img = slChr02Asset.url;
+const slChr03Img = slChr03Asset.url;
 
 export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
 
@@ -427,7 +433,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-CHR-01은 백색의 균일한 과립형 컬럼크로마토그래피 전용 실리카겔로, 세공형(A, 20–30Å)·중공형(B, 50–80Å)·조공형(C, 90–100Å) 3종 공극 구조를 지원합니다. 성분별 흡착 보유시간 차이를 이용해 중약재 유효성분 분리정제, 석유제품 정제, 유기가스·액체의 선택적 흡착분리, 촉매담체 등에 사용됩니다. 입도 60–400목 범위에서 맞춤 공급 가능합니다.",
     "SL-CHR-01 is a white uniform granular silica gel for column chromatography, supporting three pore structures — fine (A, 20–30Å), medium (B, 50–80Å) and coarse (C, 90–100Å). It is used for purifying active ingredients in traditional Chinese medicine, refining petroleum products, selective adsorption of organic gases/liquids and catalyst supports. Available in 60–400 mesh custom sizes.",
     "SL-CHR-01は白色均一顆粒状のカラムクロマトグラフィー専用シリカゲルで、細孔(A, 20–30Å)・中孔(B, 50–80Å)・粗孔(C, 90–100Å)の3種細孔構造をサポートします。生薬有効成分の分離精製、石油製品精製、有機ガス・液体の選択吸着分離、触媒担体に使用されます。",
-    sgLargePore,
+    slChr01Img,
     [
       { label: "공경 (A/B/C)", value: "20–30 / 50–80 / 90–100 Å", enLabel: "Pore (A/B/C)", jaLabel: "細孔径" },
       { label: "공용적 (A/B/C)", value: "0.35–0.45 / 0.5–0.7 / 0.85–1.0 ml/g", enLabel: "Pore Volume", jaLabel: "細孔容積" },
@@ -445,7 +451,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-CHR-02는 백색 분말로 물·유기용매에 불용인 TLC 전용 실리카겔입니다. H·HF254·G·GF254 4형 공급이며, 의약·농약·염료·고무 컬럼분석용 신속·고감도 분석시약, 석유제품 정제, 액체 선택적 흡착분리, 촉매담체 제조 등에 사용됩니다. 일반 입도 10–40㎛, 고효율 5–10㎛/3–10㎛로 맞춤 가능합니다.",
     "SL-CHR-02 is a white TLC silica gel powder insoluble in water and organic solvents. Supplied in H, HF254, G and GF254 types for pharmaceutical, agrochemical, dye and rubber column analysis, petroleum refining, selective adsorption and catalyst supports. General 10–40 µm, high-efficiency 5–10 µm / 3–10 µm.",
     "SL-CHR-02は白色粉末で水・有機溶媒に不溶のTLC専用シリカゲルです。H・HF254・G・GF254の4型を供給し、医薬・農薬・染料・ゴムのカラム分析用試薬、石油製品精製、選択吸着分離、触媒担体などに使用されます。",
-    sgMicrosilica,
+    slChr02Img,
     [
       { label: "공경", value: "90–100 Å", enLabel: "Pore", jaLabel: "細孔径" },
       { label: "비표면적", value: "320–400 m²/g", enLabel: "SSA", jaLabel: "比表面積" },
@@ -463,7 +469,7 @@ const silicaGelProducts: ProductDetail[] = [
     "SL-CHR-03은 고순도 TLC 실리카겔 분말에 소량의 결합제를 배합해 판상으로 제작한 박막크로마토그래피 플레이트입니다. 표면이 순백색이며 평탄·균일·치밀하고, 의약품·농약·중약재·유기화학·식품의 정성/정량 분석에 광범위하게 사용됩니다. 일반 TLC 실리카겔 대비 분리효과가 우수합니다.",
     "SL-CHR-03 is a TLC plate made by blending high-purity TLC silica gel powder with a small amount of binder. The pure white, flat, uniform and dense surface delivers superior separation vs bulk TLC gel and is widely used for QC analysis of pharmaceuticals, agrochemicals, herbal medicines, organic chemistry and food.",
     "SL-CHR-03は高純度TLCシリカゲル粉末に少量のバインダーを配合し板状に加工した薄層クロマトグラフィープレートです。純白・平坦・均一・緻密な表面で分離効果が優れ、医薬品・農薬・生薬・有機化学・食品の定性/定量分析に幅広く使用されます。",
-    sgMatting,
+    slChr03Img,
     [
       { label: "판 두께", value: "0.20 ± 0.03 mm", enLabel: "Thickness", jaLabel: "板厚" },
       { label: "형", value: "H / HF254 / G / GF254", enLabel: "Type", jaLabel: "型" },

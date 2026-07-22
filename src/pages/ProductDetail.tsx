@@ -515,6 +515,219 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SL-CHR-01 — Column Chromatography A/B/C × Industrial/Reagent */}
+      {product.slug === "silica-gel-sl-chr-01" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+            TECHNICAL DATA · SL-CHR-01
+          </span>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">
+            🧪 {tri("A / B / C형 × 공업/시약 등급 스펙", "Type A / B / C × Industrial / Reagent Grade", "A / B / C型 × 工業/試薬グレード仕様")}
+          </h3>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-CHR-01은 3종 공극 구조(A: 세공 / B: 중공 / C: 조공)를 각각 공업 등급(Industrial)과 시약 등급(Reagent)으로 공급합니다. 아래는 대표 스펙 값입니다.",
+              "SL-CHR-01 is supplied in three pore structures (A: fine / B: medium / C: coarse), each available in Industrial and Reagent grades. Representative specifications below.",
+              "SL-CHR-01は3種の細孔構造(A: 細孔 / B: 中孔 / C: 粗孔)を、それぞれ工業(Industrial)グレードと試薬(Reagent)グレードで供給します。以下は代表仕様値です。"
+            )}
+          </p>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-foreground text-background">
+                    <th rowSpan={2} className="px-4 py-3 text-left text-xs font-semibold tracking-[0.15em]">{tri("항목 / Items", "Items", "項目")}</th>
+                    <th colSpan={2} className="px-4 py-2 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-A</th>
+                    <th colSpan={2} className="px-4 py-2 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-B</th>
+                    <th colSpan={2} className="px-4 py-2 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-C</th>
+                  </tr>
+                  <tr className="bg-foreground/90 text-background text-[11px]">
+                    <th className="px-3 py-2 border-l border-background/20">{tri("공업", "Industrial", "工業")}</th>
+                    <th className="px-3 py-2">{tri("시약", "Reagent", "試薬")}</th>
+                    <th className="px-3 py-2 border-l border-background/20">{tri("공업", "Industrial", "工業")}</th>
+                    <th className="px-3 py-2">{tri("시약", "Reagent", "試薬")}</th>
+                    <th className="px-3 py-2 border-l border-background/20">{tri("공업", "Industrial", "工業")}</th>
+                    <th className="px-3 py-2">{tri("시약", "Reagent", "試薬")}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { item: tri("공경 (Pore size, Å)", "Pore size (Å)", "細孔径 (Å)"), row: ["20–30", "20–30", "50–80", "50–80", "90–100", "90–100"] },
+                    { item: tri("공용적 (Pore volume, ml/g)", "Pore volume (ml/g)", "細孔容積 (ml/g)"), row: ["0.35–0.45", "0.35–0.45", "0.5–0.7", "0.5–0.7", "0.85–1.0", "0.85–1.0"] },
+                    { item: tri("비표면적 (SSA, m²/g)", "Specific Surface Area (m²/g)", "比表面積 (m²/g)"), row: ["≥600", "≥600", "450–600", "450–600", "320–400", "320–400"] },
+                    { item: tri("겉보기 밀도 (Bulk, g/L)", "Bulk density (g/L)", "嵩密度 (g/L)"), row: ["≥670", "≥670", "500–600", "500–600", "400–500", "400–500"] },
+                    { item: tri("가열감량 (%, ≤)", "Loss on heating (%, ≤)", "加熱減量 (%, ≤)"), row: ["5", "3", "5", "3", "5", "3"] },
+                    { item: tri("염화물 Cl (%, ≤)", "Chlorides Cl (%, ≤)", "塩化物 Cl (%, ≤)"), row: ["—", "0.02", "—", "0.02", "—", "0.02"] },
+                    { item: tri("철분 Fe (%, ≤)", "Iron Fe (%, ≤)", "鉄 Fe (%, ≤)"), row: ["—", "0.02", "—", "0.02", "—", "0.02"] },
+                  ].map((r) => (
+                    <tr key={r.item} className="transition hover:bg-secondary/40">
+                      <td className="px-4 py-3 font-medium text-foreground">{r.item}</td>
+                      {r.row.map((v, i) => (
+                        <td key={i} className={`px-3 py-3 text-center font-mono text-xs ${i % 2 === 0 ? "border-l border-border" : ""} ${v === "—" ? "text-muted-foreground" : "text-primary font-semibold"}`}>{v}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot className="bg-secondary/40 text-xs">
+                  <tr>
+                    <td className="px-4 py-3 font-semibold text-foreground">{tri("입도 (Size)", "Size", "粒度")}</td>
+                    <td colSpan={6} className="px-4 py-3 text-center font-mono text-foreground">60–100 / 80–120 / 100–200 / 200–300 / 230–400 / 300–400 mesh</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-semibold text-foreground">{tri("포장 (Packing)", "Packing", "包装")}</td>
+                    <td colSpan={6} className="px-4 py-3 text-center text-muted-foreground">500 g / bottle · 1 kg / bag · 10 kg / carton · 20·25 kg / carton · 20 kg / compound bag</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SL-CHR-02 — TLC Powder H / HF254 / G / GF254 */}
+      {product.slug === "silica-gel-sl-chr-02" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+            TECHNICAL DATA · SL-CHR-02
+          </span>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">
+            🧪 {tri("H / HF254 / G / GF254 형별 스펙", "H / HF254 / G / GF254 Type Specifications", "H / HF254 / G / GF254 型別仕様")}
+          </h3>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-CHR-02는 TLC 분석 용도에 맞춰 4가지 형(Type)으로 공급되며, G / GF254 등급은 소석고(CaSO₄·½H₂O) 12–14 %가 첨가되어 결합력이 향상되어 있습니다.",
+              "SL-CHR-02 is offered in four types tailored for TLC analysis. G / GF254 grades contain 12–14 % calcined gypsum (CaSO₄·½H₂O) for enhanced binder strength.",
+              "SL-CHR-02はTLC分析用途に合わせて4種類の型(Type)で供給され、G / GF254グレードは焼石膏(CaSO₄·½H₂O)12–14 %を配合し結合力を高めています。"
+            )}
+          </p>
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-foreground text-background">
+                    <th className="px-4 py-3 text-left text-xs font-semibold tracking-[0.15em]">{tri("항목", "Items", "項目")}</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-H</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-HF254</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-G</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">Type-GF254</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { item: tri("공경 (Å)", "Pore size (Å)", "細孔径 (Å)"), row: ["90–100", "90–100", "90–100", "90–100"] },
+                    { item: tri("공용적 (ml/g)", "Pore volume (ml/g)", "細孔容積 (ml/g)"), row: ["0.85–1.0", "0.85–1.0", "0.85–1.0", "0.85–1.0"] },
+                    { item: tri("비표면적 (m²/g)", "SSA (m²/g)", "比表面積 (m²/g)"), row: ["320–400", "320–400", "320–400", "320–400"] },
+                    { item: tri("겉보기 밀도 (g/L)", "Bulk density (g/L)", "嵩密度 (g/L)"), row: ["400–500", "400–500", "400–500", "400–500"] },
+                    { item: tri("가열감량 (%, ≤)", "Loss on heating (%, ≤)", "加熱減量 (%, ≤)"), row: ["3", "3", "3", "3"] },
+                    { item: tri("소석고 CaSO₄·½H₂O (%)", "Calcined gypsum CaSO₄·½H₂O (%)", "焼石膏 CaSO₄·½H₂O (%)"), row: ["—", "—", "12–14", "12–14"] },
+                    { item: tri("염화물 Cl (%, ≤)", "Chlorides Cl (%, ≤)", "塩化物 Cl (%, ≤)"), row: ["0.02", "0.02", "0.02", "0.02"] },
+                    { item: tri("철분 Fe (%, ≤)", "Iron Fe (%, ≤)", "鉄 Fe (%, ≤)"), row: ["0.02", "0.02", "0.02", "0.02"] },
+                    { item: tri("pH (10% 현탁)", "pH (10% suspension)", "pH (10%懸濁)"), row: ["6.0–7.0", "6.0–7.0", "6.0–7.0", "6.0–7.0"] },
+                    { item: tri("활성 (Activity)", "Activity", "活性"), row: [tri("삼색 분리", "Tricolor separation", "三色分離"), tri("삼색 분리", "Tricolor separation", "三色分離"), tri("삼색 분리", "Tricolor separation", "三色分離"), tri("삼색 분리", "Tricolor separation", "三色分離")] },
+                  ].map((r) => (
+                    <tr key={r.item} className="transition hover:bg-secondary/40">
+                      <td className="px-4 py-3 font-medium text-foreground">{r.item}</td>
+                      {r.row.map((v, i) => (
+                        <td key={i} className={`px-4 py-3 text-center font-mono text-xs border-l border-border ${v === "—" ? "text-muted-foreground" : "text-primary font-semibold"}`}>{v}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot className="bg-secondary/40 text-xs">
+                  <tr>
+                    <td className="px-4 py-3 font-semibold text-foreground">{tri("입도 (µm)", "Size (µm)", "粒度 (µm)")}</td>
+                    <td colSpan={4} className="px-4 py-3 text-center font-mono text-foreground">{tri("일반 10–40 µm · 고효율 5–10 µm / 3–10 µm", "Normal 10–40 µm · High efficiency 5–10 µm / 3–10 µm", "一般 10–40 µm · 高効率 5–10 µm / 3–10 µm")}</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 py-3 font-semibold text-foreground">{tri("포장", "Packing", "包装")}</td>
+                    <td colSpan={4} className="px-4 py-3 text-center text-muted-foreground">{tri("플라스틱 병 · 500 g/병 · 10병/카톤", "Plastic bottle · 500 g/bottle · 10 bottles/carton", "プラスチックボトル · 500 g/本 · 10本/カートン")}</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SL-CHR-03 — TLC Plate */}
+      {product.slug === "silica-gel-sl-chr-03" && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+            TECHNICAL DATA · SL-CHR-03
+          </span>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">
+            🧪 {tri("TLC 플레이트 규격 · 포장 수량", "TLC Plate Specifications & Packing Quantity", "TLCプレート仕様・包装数量")}
+          </h3>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            {tri(
+              "판 두께는 전 형 공통 0.20 ± 0.03 mm이며, 활성도는 삼색 분리(디메틸옐로우·수단레드·인디고) 기준입니다. 규격·형별 표준 포장 수량은 아래와 같습니다.",
+              "Plate thickness is 0.20 ± 0.03 mm across all types; activity is verified by tricolor separation (dimethyl yellow, sudan red, indigo). Standard packing quantities per size and type are shown below.",
+              "板厚は全型共通で0.20 ± 0.03 mm、活性度は三色分離(ジメチルイエロー・スダンレッド・インジゴ)基準です。サイズ・型別の標準包装数量は下記の通りです。"
+            )}
+          </p>
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <div className="text-[10px] tracking-[0.3em] text-primary">THICKNESS</div>
+              <div className="mt-2 text-3xl font-bold text-foreground">0.20 ± 0.03 mm</div>
+              <div className="mt-2 text-sm text-muted-foreground">{tri("전 형(H / HF254 / G / GF254) 공통", "Common to all types (H / HF254 / G / GF254)", "全型(H / HF254 / G / GF254)共通")}</div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <div className="text-[10px] tracking-[0.3em] text-primary">ACTIVITY</div>
+              <div className="mt-2 text-2xl font-bold text-foreground">{tri("삼색 분리", "Tricolor Separation", "三色分離")}</div>
+              <div className="mt-2 text-sm text-muted-foreground">{tri("디메틸옐로우 · 수단레드 · 인디고", "Dimethyl yellow · Sudan red · Indigo", "ジメチルイエロー · スダンレッド · インジゴ")}</div>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <div className="text-[10px] tracking-[0.3em] text-primary">BINDER</div>
+              <div className="mt-2 text-2xl font-bold text-foreground">{tri("G / GF254 전용", "G / GF254 only", "G / GF254 専用")}</div>
+              <div className="mt-2 text-sm text-muted-foreground">{tri("결합제 배합 — 접착력은 G / GF254에 한함", "Adhesive force limited to thin-layer G and GF254", "結合剤配合 — 接着力はG / GF254に限る")}</div>
+            </div>
+          </div>
+
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-foreground text-background">
+                    <th className="px-4 py-3 text-left text-xs font-semibold tracking-[0.15em]">{tri("규격 (mm)", "Size (mm)", "サイズ (mm)")}</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">S ({tri("매/pcs", "pieces", "枚")})</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">M ({tri("매/pcs", "pieces", "枚")})</th>
+                    <th className="px-4 py-3 text-center text-xs font-semibold tracking-[0.15em] border-l border-background/20">L ({tri("매/pcs", "pieces", "枚")})</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { size: "75 × 25", s: "80", m: "320", l: "1600" },
+                    { size: "100 × 20", s: "80", m: "320", l: "1600" },
+                    { size: "100 × 50", s: "40", m: "160", l: "800" },
+                    { size: "100 × 100", s: "20", m: "80", l: "400" },
+                    { size: "200 × 50", s: "20", m: "80", l: "400" },
+                    { size: "200 × 100", s: "10", m: "40", l: "200" },
+                    { size: "200 × 100", s: "/", m: "20", l: "100" },
+                    { size: "200 × 200", s: "/", m: "20", l: "100" },
+                  ].map((r, idx) => (
+                    <tr key={idx} className="transition hover:bg-secondary/40">
+                      <td className="px-4 py-3 font-mono font-semibold text-foreground">{r.size}</td>
+                      <td className={`px-4 py-3 text-center font-mono border-l border-border ${r.s === "/" ? "text-muted-foreground" : "text-primary font-semibold"}`}>{r.s}</td>
+                      <td className="px-4 py-3 text-center font-mono border-l border-border text-primary font-semibold">{r.m}</td>
+                      <td className="px-4 py-3 text-center font-mono border-l border-border text-primary font-semibold">{r.l}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-primary/30 bg-primary/5 p-6 text-sm leading-relaxed text-foreground">
+            <div className="mb-2 text-[11px] font-semibold tracking-[0.2em] text-primary">📝 {tri("보관 · 재활성화", "STORAGE & REGENERATION", "保管・再活性化")}</div>
+            {tri(
+              "건조하고 통풍이 잘되는 장소에 보관하고, 휘발성 물질과 함께 보관하지 않습니다. 개봉 후에는 즉시 밀봉하여 흡습·타 화학물질 흡착으로 인한 분리성능 저하를 방지하세요. 장기 보관 또는 흡습된 TLC 실리카겔 플레이트는 60–90℃에서 1–2시간 건조·활성화 후 사용 가능합니다.",
+              "Store in a dry, well-ventilated place and do not store together with volatile substances. Once opened, reseal immediately to prevent moisture or foreign chemical adsorption. Long-stored or moist TLC plates can be reactivated at 60–90 ℃ for 1–2 hours before use.",
+              "乾燥した通気性の良い場所に保管し、揮発性物質と一緒に保管しないでください。開封後は直ちに密封して吸湿・他化学物質の吸着による分離性能低下を防止します。長期保管または吸湿したTLCシリカゲルプレートは60–90℃で1–2時間乾燥・活性化した後に使用可能です。"
+            )}
+          </div>
+        </section>
+      )}
+
 
       {isSilicaSand && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
