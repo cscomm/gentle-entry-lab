@@ -97,104 +97,38 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                 {item.dropdown === "products" && (
                   <div className="invisible absolute left-1/2 top-full z-50 max-h-[80vh] w-72 -translate-x-1/2 overflow-y-auto pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
-                      {productCatalog
-                        .filter((p) => p.category === "advanced-series" && p.isCategoryIndex)
-                        .sort((a, b) => {
-                          const order = (s: string) => s === "fused-silica" ? 0 : s === "crystalline-silica" ? 1 : 2;
-                          return order(a.slug) - order(b.slug);
-                        })
-                        .map((p) => (
-                          <Link
-                            key={p.slug}
-                            to={`/products/${p.slug}/`}
-                            className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                          >
-                            <div className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</div>
-                            {lang === "ko" && (
-                              <div className="mt-0.5 text-xs text-muted-foreground">{p.enName}</div>
-                            )}
-                          </Link>
-                        ))}
-                      {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade", "silica-sol", "sl-ja25", "sl-ja30"].includes(p.slug))
-                        .map((p) => (
-                          <Link
-                            key={p.slug}
-                            to={`/products/${p.slug}/`}
-                            className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                          >
-                            <div className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</div>
-                            {lang === "ko" && (
-                              <div className="mt-0.5 text-xs text-muted-foreground">{p.enName}</div>
-                            )}
-                          </Link>
-                        ))}
-                      <Link
-                        to="/products/precipitated-silica/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "沈降シリカ" : lang === "en" ? "Precipitated Silica" : "침전 실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/fumed-silica/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "ヒュームドシリカ" : lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Fumed Silica</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/silica-sand/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "珪砂" : lang === "en" ? "Silica Sand" : "규사"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sand</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/silica-powder/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "珪砂粉末" : lang === "en" ? "Silica Powder" : "규사분말"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Powder</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/silica-sol/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "シリカゾル" : lang === "en" ? "Silica Sol" : "실리카졸"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sol (Colloidal Silica)</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/silica-gel/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/high-purity-quartz/"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
-                        )}
-                      </Link>
+                      {[
+                        { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
+                        { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
+                        { to: "/products/precipitated-silica/", ko: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ" },
+                        { to: "/products/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
+                        { to: "/products/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
+                        { to: "/products/silica-sol/", ko: "실리카졸", en: "Silica Sol (Colloidal Silica)", ja: "シリカゾル" },
+                        { to: "/products/surface-modified-silica-powder/", ko: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末" },
+                        { to: "/products/spherical-silica-powder/", ko: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末" },
+                        { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },
+                        { to: "/products/angular-silica-powder/", ko: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末" },
+                        { to: "/products/low-radiation-silica-powder/", ko: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末" },
+                        { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
+                        { to: "/products/silica-sand/", ko: "규사", en: "Silica Sand", ja: "珪砂" },
+                        { to: "/products/silica-powder/", ko: "규사분말", en: "Silica Powder", ja: "珪砂粉末" },
+                        { to: "/products/high-purity-quartz/", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
+                      ].map((it, idx, arr) => (
+                        <Link
+                          key={it.to}
+                          to={it.to}
+                          className={`block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow ${idx < arr.length - 1 ? "border-b border-border/60" : ""}`}
+                        >
+                          <div className="font-semibold">{lang === "ja" ? it.ja : lang === "en" ? it.en : it.ko}</div>
+                          {lang === "ko" && (
+                            <div className="mt-0.5 text-xs text-muted-foreground">{it.en}</div>
+                          )}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 )}
+
 
 
                 {item.dropdown === "applications" && (
