@@ -734,6 +734,36 @@ export const productRoutes: Route[] = [
       </ul>`,
   },
   {
+    path: "/applications/silica-sol",
+    title: "콜로이달 실리카 시리즈 응용분야 — 정밀주조·이차전지·CMP·내화 | SILICA",
+    description:
+      "SL-SHS 콜로이달 실리카(실리카졸) 5개 계열 14종 그레이드의 산업별 응용 분야 — 정밀 주조 셸 몰드, 이차전지 세라믹 세퍼레이터, 반도체 CMP, 내화·세라믹, 제지·잉크젯, 촉매 담체, 방활 처리.",
+    titleI18n: {
+      en: "Colloidal Silica Applications — Investment Casting, Battery Separator, CMP, Refractory | SILICA",
+      ja: "コロイダルシリカ用途分野 — 精密鋳造・二次電池・CMP・耐火 | SILICA",
+    },
+    descriptionI18n: {
+      en: "Industrial applications of SL-SHS colloidal silica (silica sol) across 14 grades and 5 stabilization systems — investment-casting shell binder, Li-ion battery ceramic separator, semiconductor CMP, refractory & ceramic binder, paper/inkjet coating, catalyst supports and anti-slip treatments.",
+      ja: "SL-SHSコロイダルシリカ(シリカゾル)5系列14グレードの産業別用途 — 精密鋳造シェル、二次電池セラミックセパレーター、半導体CMP、耐火・セラミック、製紙・インクジェット、触媒担体、防滑処理。",
+    },
+    h1: "콜로이달 실리카 시리즈 응용분야 · Colloidal Silica Applications",
+    body: `
+      <p>SL-SHS 콜로이달 실리카(실리카졸)는 물속에 균일 분산된 6~30 nm 나노 SiO₂ 입자가 건조 후 Si–O 결합을 통해 소재 표면에 견고히 부착되는 특성을 이용, 정밀 주조부터 첨단 이차전지·반도체까지 광범위 산업에 사용됩니다.</p>
+      <h2>주요 응용 산업</h2>
+      <ul>
+        <li><strong>정밀 주조 (인베스트먼트 캐스팅)</strong> — 항공기 터빈 블레이드·의료 임플란트·골프 헤드용 셸 몰드 바인더</li>
+        <li><strong>리튬 이차전지 · 전고체 전지</strong> — 세라믹 코팅 세퍼레이터, 고체 전해질 성형 바인더 (저 Na⁺ NH₃형 필수)</li>
+        <li><strong>반도체 CMP · 정밀 폴리싱</strong> — Si/SiC/GaN 웨이퍼, 사파이어, LCD/OLED 유리, HDD 기판</li>
+        <li><strong>내화·세라믹·불연 코팅</strong> — 캐스터블 내화물, 모노리식 라이닝, 세라믹 섬유 결합제, 방화문 코팅</li>
+        <li><strong>제지·인쇄·잉크젯</strong> — 표면 강도·마찰계수 향상, 잉크젯 흡수·발색성 최적화</li>
+        <li><strong>촉매 담체·화학 공정</strong> — 정유·석유화학·수소·자동차 배기가스 정화 촉매</li>
+        <li><strong>도료·잉크·수성 코팅</strong> — 무기 하이브리드 도료의 경도·내마모성·요변성·불연성 강화</li>
+        <li><strong>섬유·카펫 방활 (Anti-slip)</strong> — 카펫·러그·양말·요가 매트 뒷면 미끄럼 방지 코팅</li>
+        <li><strong>콘크리트·석재 표면 경화</strong> — Ca(OH)₂와 CSH 결합 형성, 산업용 바닥재·주차장 마감</li>
+        <li><strong>실리콘·이형지·표면 처리</strong> — 실리콘 이형지 박리 조정, 방오·발수 하이브리드 코팅</li>
+      </ul>`,
+  },
+  {
     path: "/applications/silica-powder",
     title: "규사분말 응용분야 — 도료·플라스틱·인조대리석·건축 | SILICA",
     description:
