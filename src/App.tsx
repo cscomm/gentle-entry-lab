@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import AllProducts from "./pages/AllProducts.tsx";
 import SilicaGelCategory from "./pages/SilicaGelCategory.tsx";
 import SilicaGelApplications from "./pages/SilicaGelApplications.tsx";
+import SilicaSolApplications from "./pages/SilicaSolApplications.tsx";
 import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
 import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
