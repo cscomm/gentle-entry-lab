@@ -56,6 +56,7 @@ const LangShell = () => {
       <Route index element={<Index />} />
       <Route path="products/silica-gel" element={<SilicaGelCategory />} />
       <Route path="applications/silica-gel" element={<SilicaGelApplications />} />
+      <Route path="applications/silica-sol" element={<SilicaSolApplications />} />
       <Route path="products/precipitated-silica" element={<PrecipitatedSilicaCategory />} />
       <Route path="applications/precipitated-silica" element={<PrecipitatedSilicaApplications />} />
       <Route path="products/fumed-silica" element={<FumedSilicaCategory />} />
