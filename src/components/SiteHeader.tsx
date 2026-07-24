@@ -195,6 +195,15 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         )}
                       </Link>
                       <Link
+                        to="/applications/silica-sol/"
+                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
+                      >
+                        <div className="font-semibold">{lang === "ja" ? "コロイダルシリカ シリーズ" : lang === "en" ? "Colloidal Silica Series" : "콜로이달 실리카 시리즈"}</div>
+                        {lang === "ko" && (
+                          <div className="mt-0.5 text-xs text-muted-foreground">Colloidal Silica / Silica Sol</div>
+                        )}
+                      </Link>
+                      <Link
                         to="/applications/silica-sand/"
                         className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
                       >

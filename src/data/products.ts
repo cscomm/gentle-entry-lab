@@ -1898,7 +1898,7 @@ productCatalog.push({
   subModels: [
     { code: "SL-JA25", slug: "sl-ja25", spec: "SiO₂ 25~26% · 10~12 nm · NH₃ 안정형", enSpec: "SiO₂ 25–26% · 10–12 nm · NH₃-stabilized", jaSpec: "SiO₂ 25~26% · 10~12 nm · NH₃安定型", name: "SL-JA25 실리카졸", enName: "SL-JA25 · Silica Sol", jaName: "SL-JA25 シリカゾル" },
     { code: "SL-JA30", slug: "sl-ja30", spec: "SiO₂ 30~31% · 10~11.5 nm · NH₃ 안정형", enSpec: "SiO₂ 30–31% · 10–11.5 nm · NH₃-stabilized", jaSpec: "SiO₂ 30~31% · 10~11.5 nm · NH₃安定型", name: "SL-JA30 실리카졸", enName: "SL-JA30 · Silica Sol", jaName: "SL-JA30 シリカゾル" },
-    { code: "SL-SHS", slug: "sl-shs", spec: "14종 그레이드 · JN/SW/JA/ZX/JGC 시리즈 · 6~30 nm", enSpec: "14-grade lineup · JN/SW/JA/ZX/JGC series · 6–30 nm", jaSpec: "14グレード · JN/SW/JA/ZX/JGC シリーズ · 6~30 nm", name: "SL-SHS 콜로이달 실리카 시리즈", enName: "SL-SHS · Colloidal Silica Full Series", jaName: "SL-SHS コロイダルシリカ シリーズ" },
+    { code: "SL-SHS", slug: "sl-shs", spec: "14종 그레이드 · JN/SW/JA/ZX/JGC 시리즈 · 6~30 nm", enSpec: "14-grade lineup · JN/SW/JA/ZX/JGC series · 6–30 nm", jaSpec: "14グレード · JN/SW/JA/ZX/JGC シリーズ · 6~30 nm", name: "콜로이달 실리카 시리즈", enName: "Colloidal Silica Full Series", jaName: "コロイダルシリカ シリーズ" },
   ],
   applications: silicaSolCommonApps,
 });
@@ -1991,9 +1991,9 @@ const silicaSolChildren: ProductDetail[] = [
   },
   {
     slug: "sl-shs",
-    name: "SL-SHS 콜로이달 실리카 시리즈",
-    enName: "SL-SHS · Colloidal Silica / Silica Sol Full Series",
-    jaName: "SL-SHS コロイダルシリカ シリーズ",
+    name: "콜로이달 실리카 시리즈",
+    enName: "Colloidal Silica / Silica Sol Full Series",
+    jaName: "コロイダルシリカ シリーズ",
     tagline: "JN · SW · JA · ZX · JGC 14종 그레이드 · SiO₂ 15~41% · 6~30 nm 풀 라인업",
     enTagline: "JN · SW · JA · ZX · JGC 14-Grade Lineup · SiO₂ 15–41% · 6–30 nm Full Range",
     jaTagline: "JN · SW · JA · ZX · JGC 14グレード · SiO₂ 15~41% · 6~30 nm フルラインアップ",

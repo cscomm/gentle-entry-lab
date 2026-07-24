@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail.tsx";
 import AllProducts from "./pages/AllProducts.tsx";
 import SilicaGelCategory from "./pages/SilicaGelCategory.tsx";
 import SilicaGelApplications from "./pages/SilicaGelApplications.tsx";
+import SilicaSolApplications from "./pages/SilicaSolApplications.tsx";
 import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
 import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
@@ -55,6 +56,7 @@ const LangShell = () => {
       <Route index element={<Index />} />
       <Route path="products/silica-gel" element={<SilicaGelCategory />} />
       <Route path="applications/silica-gel" element={<SilicaGelApplications />} />
+      <Route path="applications/silica-sol" element={<SilicaSolApplications />} />
       <Route path="products/precipitated-silica" element={<PrecipitatedSilicaCategory />} />
       <Route path="applications/precipitated-silica" element={<PrecipitatedSilicaApplications />} />
       <Route path="products/fumed-silica" element={<FumedSilicaCategory />} />
