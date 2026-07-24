@@ -103,6 +103,7 @@ const applicationCategories: { label: string; en: string; href?: string }[] = [
   { label: "침전 실리카", en: "Precipitated Silica", href: "/applications/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/applications/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/applications/silica-gel" },
+  { label: "콜로이달 실리카 시리즈", en: "Colloidal Silica Series", href: "/applications/silica-sol" },
   { label: "규사 · 규사분말", en: "Silica Sand & Powder", href: "/applications/silica-sand" },
 ];
 
