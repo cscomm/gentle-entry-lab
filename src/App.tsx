@@ -18,6 +18,7 @@ import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
 import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
 import QuartzApplications from "./pages/QuartzApplications.tsx";
 import SilicaSandApplications from "./pages/SilicaSandApplications.tsx";
+import SilicaSandCategory from "./pages/SilicaSandCategory.tsx";
 import SilicaPowderApplications from "./pages/SilicaPowderApplications.tsx";
 import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
