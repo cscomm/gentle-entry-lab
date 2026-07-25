@@ -52,7 +52,7 @@ import slAls01Img from "@/assets/sl-als-01-photo.jpg";
 import slAls03Img from "@/assets/sl-als-03-photo.jpg";
 import slAls04Img from "@/assets/sl-als-04-photo.jpg";
 
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series" | "sand";
 
 export type SubModel = {
   code: string;
