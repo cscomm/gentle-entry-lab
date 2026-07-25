@@ -52,7 +52,7 @@ import slAls01Img from "@/assets/sl-als-01-photo.jpg";
 import slAls03Img from "@/assets/sl-als-03-photo.jpg";
 import slAls04Img from "@/assets/sl-als-04-photo.jpg";
 
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series" | "sand";
 
 export type SubModel = {
   code: string;
@@ -198,20 +198,20 @@ export const productCatalog: ProductDetail[] = [
     applications: ["건축 및 건자재", "페인트 및 코팅", "플라스틱/고무", "연마 및 내마모재", "기타 산업용"],
   },
   {
-    slug: "silica-sand",
-    name: "규사",
-    enName: "Silica Sand", jaName: "珪砂 (シリカサンド)",
-    tagline: "고순도 SiO₂·저철·고백색 — 선별·세척·산처리 공정의 산업용 규사",
-    enTagline: "High-Purity SiO₂, Low Iron, High Whiteness — Industrial Silica Sand Processed by Screening, Washing, and Acid Treatment",
-    jaTagline: "高純度SiO₂・低鉄・高白色度 — 選別・洗浄・酸処理工程による産業用シリカサンド",
+    slug: "sls-series",
+    name: "SL-S 시리즈 규사",
+    enName: "SL-S Series Silica Sand", jaName: "SL-Sシリーズ 珪砂",
+    tagline: "고순도 SiO₂·저철·고백색 — 선별·세척·산처리 공정의 산업용 규사 (SL-S 표준 시리즈)",
+    enTagline: "High-Purity SiO₂, Low Iron, High Whiteness — Industrial Silica Sand (SL-S Standard Series)",
+    jaTagline: "高純度SiO₂・低鉄・高白色度 — 選別・洗浄・酸処理工程による産業用シリカサンド(SL-S標準シリーズ)",
     description:
-      "규사는 천연 규석(Quartz)을 원료로 선별, 세척 및 산처리 공정을 거쳐 생산한 고품질 산업용 소재입니다. 높은 이산화규소(SiO₂) 함량과 낮은 철(Fe) 함량, 우수한 백색도를 갖추고 있으며, 균일한 입도와 뛰어난 화학적 안정성으로 다양한 산업 분야에서 안정적인 품질을 제공합니다.",
+      "SL-S 시리즈는 천연 규석(Quartz)을 원료로 선별, 세척 및 산처리 공정을 거쳐 생산한 고품질 산업용 규사 표준 라인업입니다. 높은 이산화규소(SiO₂) 함량과 낮은 철(Fe) 함량, 우수한 백색도를 갖추고 있으며, 균일한 입도와 뛰어난 화학적 안정성으로 다양한 산업 분야에서 안정적인 품질을 제공합니다.",
     enDescription:
-      "Silica Sand is a high-quality industrial material produced from natural quartz through screening, washing, and acid-treatment processes. With high silicon dioxide (SiO₂) content, low iron (Fe) content, and excellent whiteness, it delivers consistent quality across a wide range of industries thanks to its uniform grain size and outstanding chemical stability.",
+      "The SL-S Series is a high-quality industrial silica sand lineup produced from natural quartz through screening, washing, and acid-treatment processes. With high silicon dioxide (SiO₂) content, low iron (Fe) content, and excellent whiteness, it delivers consistent quality across a wide range of industries thanks to its uniform grain size and outstanding chemical stability.",
     jaDescription:
-      "珪砂(シリカサンド)は、天然石英(Quartz)を原料に選別・洗浄および酸処理工程を経て生産する高品質な産業用素材です。高い二酸化ケイ素(SiO₂)含有量と低い鉄(Fe)含有量、優れた白色度を備えており、均一な粒度と優れた化学的安定性により、多様な産業分野で安定した品質を提供します。",
+      "SL-Sシリーズは、天然石英(Quartz)を原料に選別・洗浄および酸処理工程を経て生産する高品質な産業用シリカサンド標準ラインアップです。高い二酸化ケイ素(SiO₂)含有量と低い鉄(Fe)含有量、優れた白色度を備えており、均一な粒度と優れた化学的安定性により、多様な産業分野で安定した品質を提供します。",
     image: silicaSandImg,
-    category: "quartz",
+    category: "sand",
     features: [
       { title: "🪨 천연 규석 원료", desc: "천연 규석(Natural Quartz)을 원료로 생산한 고품질 규사", enTitle: "🪨 Natural Quartz Source", jaTitle: "🪨 天然石英を原料", enDesc: "High-quality silica sand produced from natural quartz", jaDesc: "天然石英(Natural Quartz)を原料に生産した高品質な珪砂" },
       { title: "🧼 불순물 최소화", desc: "선별·세척·산처리 공정으로 불순물을 효과적으로 제거", enTitle: "🧼 Minimized Impurities", jaTitle: "🧼 不純物の最小化", enDesc: "Impurities effectively removed via screening, washing, and acid-treatment", jaDesc: "選別・洗浄・酸処理工程で不純物を効果的に除去" },

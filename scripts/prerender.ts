@@ -199,19 +199,35 @@ export const productRoutes: Route[] = [
   },
   {
     path: "/products/silica-sand",
-    title: "규사 Silica Sand — 고순도 산업용 규사 공급 | SILICA",
+    title: "규사 Silica Sand — 고순도 산업용 규사 카테고리 | SILICA",
     description:
-      "유리·주조·여과·인조잔디·건축·골프장용 고순도 산업 규사(Silica Sand). 입도 맞춤 공급이 가능한 SiLiCA 규사 제품 라인업.",
+      "SL-S 시리즈 등 고순도 산업 규사(Silica Sand) 라인업. 유리·주조·여과·인조잔디·건축·골프장용 입도 맞춤 공급.",
     titleI18n: {
-      en: "High-Purity Silica Sand for Glass, Foundry & Filtration | SILICA",
-      ja: "高純度 珪砂 (Silica Sand) — ガラス・鋳造・濾過向け | SILICA",
+      en: "Silica Sand Category — SL-S Series & More | SILICA",
+      ja: "珪砂カテゴリ — SL-Sシリーズ他 | SILICA",
     },
     descriptionI18n: {
-      en: "High-purity industrial silica sand (SiO₂) for glass, foundry, water filtration, artificial turf, construction and golf courses. Custom particle size grading (SLS20–SLS100) with reliable bulk supply.",
-      ja: "ガラス・鋳造・水処理濾過・人工芝・建築・ゴルフ場用の高純度SiO₂珪砂(Silica Sand)。SLS20〜SLS100までカスタム粒度対応、安定したバルク供給を実現。",
+      en: "High-purity industrial silica sand lineup including the SL-S series — for glass, foundry, water filtration, artificial turf, construction and golf courses.",
+      ja: "SL-Sシリーズ他、高純度産業用珪砂ラインアップ — ガラス・鋳造・濾過・人工芝・建築・ゴルフ場向け。",
     },
     h1: "규사 (Silica Sand)",
-    body: `<p>SiLiCA의 규사(Silica Sand)는 유리, 주조, 여과, 인조잔디, 건축, 골프장 등 광범위한 산업 분야의 핵심 원료로 사용되는 고순도 SiO₂ 규사입니다.</p><h2>주요 용도</h2><p>판유리/특수유리 원료, 주조용 모래, 정수 여과재, 인조잔디 충진재, 건축 모르타르, 스포츠 시설.</p>`,
+    body: `<p>SiLiCA의 규사 카테고리는 SL-S 표준 시리즈를 중심으로 유리·주조·여과·인조잔디·건축 등 광범위한 산업 분야에 고순도 SiO₂ 규사를 공급합니다.</p><h2>주요 시리즈</h2><p>SL-S 시리즈 (SLS20 / SLS40 / SLS70 / SLS100 — 20~200 Mesh 맞춤 입도).</p>`,
+  },
+  {
+    path: "/products/sls-series",
+    title: "SL-S 시리즈 규사 — 고순도 산업용 Silica Sand | SILICA",
+    description:
+      "SL-S 시리즈는 SiO₂ 99.5~99.8%, 저철·고백색 사양의 산업 표준 규사. SLS20~SLS100 맞춤 입도 공급.",
+    titleI18n: {
+      en: "SL-S Series Silica Sand — High-Purity Industrial Sand | SILICA",
+      ja: "SL-Sシリーズ 珪砂 — 高純度産業用シリカサンド | SILICA",
+    },
+    descriptionI18n: {
+      en: "SL-S Series industrial silica sand — SiO₂ 99.5–99.8%, low iron, high whiteness. SLS20 to SLS100 custom grain sizes.",
+      ja: "SL-Sシリーズ 産業用珪砂 — SiO₂ 99.5〜99.8%、低鉄・高白色度。SLS20〜SLS100のカスタム粒度対応。",
+    },
+    h1: "SL-S 시리즈 규사",
+    body: `<p>SL-S 시리즈는 천연 규석을 원료로 선별·세척·산처리 공정을 거쳐 생산한 고순도 산업용 규사 표준 라인업입니다.</p><h2>주요 등급</h2><p>SLS20 (20~40 Mesh) / SLS40 (40~70 Mesh) / SLS70 (70~140 Mesh) / SLS100 (100~200 Mesh).</p>`,
   },
   {
     path: "/applications/silica-sand",
