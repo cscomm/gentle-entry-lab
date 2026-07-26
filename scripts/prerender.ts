@@ -262,6 +262,22 @@ export const productRoutes: Route[] = [
     body: `<p>SiLiCA의 규사분말(Silica Powder)은 도료·코팅·플라스틱·인조대리석·건축 자재에 사용되는 고백색·고순도 미분 실리카 기능성 충진재입니다.</p><h2>주요 용도</h2><p>페인트/코팅 필러, 플라스틱·고무 충진재, 인조대리석·엔지니어드 스톤, 퍼티·실란트, 건축 자재.</p>`,
   },
   {
+    path: "/products/slp-series",
+    title: "SL-P 시리즈 규사분말 — 고백색 미분 실리카 | SILICA",
+    description:
+      "SL-P 시리즈는 SiO₂ 99.5~99.8%, 저철·고백색 미분 실리카 분말. SLP200 / SLP325 맞춤 입도 공급.",
+    titleI18n: {
+      en: "SL-P Series Silica Powder — High-Whiteness Micronized Silica | SILICA",
+      ja: "SL-Pシリーズ 珪砂粉末 — 高白色微粉シリカ | SILICA",
+    },
+    descriptionI18n: {
+      en: "SL-P Series micronized silica powder — SiO₂ 99.5–99.8%, low iron, high whiteness. SLP200 / SLP325 custom grain sizes.",
+      ja: "SL-Pシリーズ 微粉シリカ — SiO₂ 99.5〜99.8%、低鉄・高白色度。SLP200 / SLP325のカスタム粒度対応。",
+    },
+    h1: "SL-P 시리즈 규사분말",
+    body: `<p>SL-P 시리즈는 고순도 규사를 정밀 미세 분쇄하여 생산한 산업용 실리카 분말 표준 라인업입니다.</p><h2>주요 등급</h2><p>SLP200 (약 200 Mesh) / SLP325 (325~1000 Mesh 고미분).</p>`,
+  },
+  {
     path: "/products/high-purity-quartz",
     title: "고순도 천연 규석 High-Purity Quartz | SILICA",
     description:

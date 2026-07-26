@@ -22,7 +22,7 @@ const categories: { label: string; en: string; ja: string; slug?: string; href?:
   { label: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末", slug: "lead-free-glass-powder" },
   // Row 3 — Sand / Powder / Natural High-Purity Quartz
   { label: "규사", en: "Silica Sand", ja: "珪砂", slug: "silica-sand" },
-  { label: "규사분말", en: "Silica Powder", ja: "珪砂粉末", slug: "silica-powder" },
+  { label: "규사분말", en: "Silica Powder", ja: "珪砂粉末", href: "/products/silica-powder" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英", slug: "high-purity-quartz" },
 ];
 
