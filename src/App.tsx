@@ -19,6 +19,7 @@ import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
 import QuartzApplications from "./pages/QuartzApplications.tsx";
 import SilicaSandApplications from "./pages/SilicaSandApplications.tsx";
 import SilicaSandCategory from "./pages/SilicaSandCategory.tsx";
+import SilicaPowderCategory from "./pages/SilicaPowderCategory.tsx";
 import SilicaPowderApplications from "./pages/SilicaPowderApplications.tsx";
 import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
@@ -68,6 +69,8 @@ const LangShell = () => {
       <Route path="applications/silica-powder" element={<SilicaPowderApplications />} />
       <Route path="products/silica-sand" element={<SilicaSandCategory />} />
       <Route path="products/silica-sand/all" element={<SilicaSandCategory />} />
+      <Route path="products/silica-powder" element={<SilicaPowderCategory />} />
+      <Route path="products/silica-powder/all" element={<SilicaPowderCategory />} />
       <Route path="products" element={<AllProducts />} />
       <Route path="products/all" element={<AllProducts />} />
       <Route path="products/:slug" element={<ProductDetail />} />
