@@ -39,47 +39,28 @@ var leadFreeGlassImg = "/assets/lead-free-glass-powder.jpg";
 var hf04Img = "/assets/hf04-fused-silica-powder.jpg";
 var sphSemImg = "/assets/sl-sph-300-sem.png";
 var silicaSolImg = "/assets/silica-sol.png";
+var slShsImg = "/assets/sl-shs-photo.jpg";
 var crystallineSilicaImg = "/assets/crystalline-silica.jpg";
-var slChr01Asset = { url: "/assets/sl-chr-01.jpg.asset.json" };
-var slChr02Asset = { url: "/assets/sl-chr-02.jpg.asset.json" };
-var slChr03Asset = { url: "/assets/sl-chr-03.jpg.asset.json" };
-var slInd01PhotoAsset = { url: "/assets/sl-ind-01-photo.jpg.asset.json" };
-var slInd02PhotoAsset = { url: "/assets/sl-ind-02-photo.jpg.asset.json" };
-var slInd03PhotoAsset = { url: "/assets/sl-ind-03-photo.jpg.asset.json" };
-var slDes01PhotoAsset = { url: "/assets/sl-des-01-photo.jpg.asset.json" };
-var slDes02PhotoAsset = { url: "/assets/sl-des-02-photo.jpg.asset.json" };
-var slDes03PhotoAsset = { url: "/assets/sl-des-03-photo.jpg.asset.json" };
-var slDes04PhotoAsset = { url: "/assets/sl-des-04-photo.jpg.asset.json" };
-var slDes05PhotoAsset = { url: "/assets/sl-des-05-photo.jpg.asset.json" };
-var slDes06PhotoAsset = { url: "/assets/sl-des-06-photo.jpg.asset.json" };
-var slDes07PhotoAsset = { url: "/assets/sl-des-07-photo.jpg.asset.json" };
-var slInd04PhotoAsset = { url: "/assets/sl-ind-04-photo.jpg.asset.json" };
-var slInd05PhotoAsset = { url: "/assets/sl-ind-05-photo.jpg.asset.json" };
-var slInd06PhotoAsset = { url: "/assets/sl-ind-06-photo.jpg.asset.json" };
-var slInd07PhotoAsset = { url: "/assets/sl-ind-07-photo.jpg.asset.json" };
-var slAls01PhotoAsset = { url: "/assets/sl-als-01-photo.jpg.asset.json" };
-var slAls03PhotoAsset = { url: "/assets/sl-als-03-photo.jpg.asset.json" };
-var slAls04PhotoAsset = { url: "/assets/sl-als-04-photo.jpg.asset.json" };
-var slChr01Img = slChr01Asset.url;
-var slChr02Img = slChr02Asset.url;
-var slChr03Img = slChr03Asset.url;
-var slInd01Img = slInd01PhotoAsset.url;
-var slInd02Img = slInd02PhotoAsset.url;
-var slInd03Img = slInd03PhotoAsset.url;
-var slInd04Img = slInd04PhotoAsset.url;
-var slInd05Img = slInd05PhotoAsset.url;
-var slInd06Img = slInd06PhotoAsset.url;
-var slInd07Img = slInd07PhotoAsset.url;
-var slAls01Img = slAls01PhotoAsset.url;
-var slAls03Img = slAls03PhotoAsset.url;
-var slAls04Img = slAls04PhotoAsset.url;
-var slDes01Img = slDes01PhotoAsset.url;
-var slDes02Img = slDes02PhotoAsset.url;
-var slDes03Img = slDes03PhotoAsset.url;
-var slDes04Img = slDes04PhotoAsset.url;
-var slDes05Img = slDes05PhotoAsset.url;
-var slDes06Img = slDes06PhotoAsset.url;
-var slDes07Img = slDes07PhotoAsset.url;
+var slChr01Img = "/assets/sl-chr-01.jpg";
+var slChr02Img = "/assets/sl-chr-02.jpg";
+var slChr03Img = "/assets/sl-chr-03.jpg";
+var slInd01Img = "/assets/sl-ind-01-photo.jpg";
+var slInd02Img = "/assets/sl-ind-02-photo.jpg";
+var slInd03Img = "/assets/sl-ind-03-photo.jpg";
+var slInd04Img = "/assets/sl-ind-04-photo.jpg";
+var slInd05Img = "/assets/sl-ind-05-photo.jpg";
+var slInd06Img = "/assets/sl-ind-06-photo.jpg";
+var slInd07Img = "/assets/sl-ind-07-photo.jpg";
+var slDes01Img = "/assets/sl-des-01-photo.jpg";
+var slDes02Img = "/assets/sl-des-02-photo.jpg";
+var slDes03Img = "/assets/sl-des-03-photo.jpg";
+var slDes04Img = "/assets/sl-des-04-photo.jpg";
+var slDes05Img = "/assets/sl-des-05-photo.jpg";
+var slDes06Img = "/assets/sl-des-06-photo.jpg";
+var slDes07Img = "/assets/sl-des-07-photo.jpg";
+var slAls01Img = "/assets/sl-als-01-photo.jpg";
+var slAls03Img = "/assets/sl-als-03-photo.jpg";
+var slAls04Img = "/assets/sl-als-04-photo.jpg";
 var productCatalog = [
   {
     slug: "fused-silica-a-grade",
@@ -191,18 +172,18 @@ var productCatalog = [
     applications: ["\uAC74\uCD95 \uBC0F \uAC74\uC790\uC7AC", "\uD398\uC778\uD2B8 \uBC0F \uCF54\uD305", "\uD50C\uB77C\uC2A4\uD2F1/\uACE0\uBB34", "\uC5F0\uB9C8 \uBC0F \uB0B4\uB9C8\uBAA8\uC7AC", "\uAE30\uD0C0 \uC0B0\uC5C5\uC6A9"]
   },
   {
-    slug: "silica-sand",
-    name: "\uADDC\uC0AC",
-    enName: "Silica Sand",
-    jaName: "\u73EA\u7802 (\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9)",
-    tagline: "\uACE0\uC21C\uB3C4 SiO\u2082\xB7\uC800\uCCA0\xB7\uACE0\uBC31\uC0C9 \u2014 \uC120\uBCC4\xB7\uC138\uCC99\xB7\uC0B0\uCC98\uB9AC \uACF5\uC815\uC758 \uC0B0\uC5C5\uC6A9 \uADDC\uC0AC",
-    enTagline: "High-Purity SiO\u2082, Low Iron, High Whiteness \u2014 Industrial Silica Sand Processed by Screening, Washing, and Acid Treatment",
-    jaTagline: "\u9AD8\u7D14\u5EA6SiO\u2082\u30FB\u4F4E\u9244\u30FB\u9AD8\u767D\u8272\u5EA6 \u2014 \u9078\u5225\u30FB\u6D17\u6D44\u30FB\u9178\u51E6\u7406\u5DE5\u7A0B\u306B\u3088\u308B\u7523\u696D\u7528\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9",
-    description: "\uADDC\uC0AC\uB294 \uCC9C\uC5F0 \uADDC\uC11D(Quartz)\uC744 \uC6D0\uB8CC\uB85C \uC120\uBCC4, \uC138\uCC99 \uBC0F \uC0B0\uCC98\uB9AC \uACF5\uC815\uC744 \uAC70\uCCD0 \uC0DD\uC0B0\uD55C \uACE0\uD488\uC9C8 \uC0B0\uC5C5\uC6A9 \uC18C\uC7AC\uC785\uB2C8\uB2E4. \uB192\uC740 \uC774\uC0B0\uD654\uADDC\uC18C(SiO\u2082) \uD568\uB7C9\uACFC \uB0AE\uC740 \uCCA0(Fe) \uD568\uB7C9, \uC6B0\uC218\uD55C \uBC31\uC0C9\uB3C4\uB97C \uAC16\uCD94\uACE0 \uC788\uC73C\uBA70, \uADE0\uC77C\uD55C \uC785\uB3C4\uC640 \uB6F0\uC5B4\uB09C \uD654\uD559\uC801 \uC548\uC815\uC131\uC73C\uB85C \uB2E4\uC591\uD55C \uC0B0\uC5C5 \uBD84\uC57C\uC5D0\uC11C \uC548\uC815\uC801\uC778 \uD488\uC9C8\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.",
-    enDescription: "Silica Sand is a high-quality industrial material produced from natural quartz through screening, washing, and acid-treatment processes. With high silicon dioxide (SiO\u2082) content, low iron (Fe) content, and excellent whiteness, it delivers consistent quality across a wide range of industries thanks to its uniform grain size and outstanding chemical stability.",
-    jaDescription: "\u73EA\u7802(\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9)\u306F\u3001\u5929\u7136\u77F3\u82F1(Quartz)\u3092\u539F\u6599\u306B\u9078\u5225\u30FB\u6D17\u6D44\u304A\u3088\u3073\u9178\u51E6\u7406\u5DE5\u7A0B\u3092\u7D4C\u3066\u751F\u7523\u3059\u308B\u9AD8\u54C1\u8CEA\u306A\u7523\u696D\u7528\u7D20\u6750\u3067\u3059\u3002\u9AD8\u3044\u4E8C\u9178\u5316\u30B1\u30A4\u7D20(SiO\u2082)\u542B\u6709\u91CF\u3068\u4F4E\u3044\u9244(Fe)\u542B\u6709\u91CF\u3001\u512A\u308C\u305F\u767D\u8272\u5EA6\u3092\u5099\u3048\u3066\u304A\u308A\u3001\u5747\u4E00\u306A\u7C92\u5EA6\u3068\u512A\u308C\u305F\u5316\u5B66\u7684\u5B89\u5B9A\u6027\u306B\u3088\u308A\u3001\u591A\u69D8\u306A\u7523\u696D\u5206\u91CE\u3067\u5B89\u5B9A\u3057\u305F\u54C1\u8CEA\u3092\u63D0\u4F9B\u3057\u307E\u3059\u3002",
+    slug: "sls-series",
+    name: "SL-S \uC2DC\uB9AC\uC988 \uADDC\uC0AC",
+    enName: "SL-S Series Silica Sand",
+    jaName: "SL-S\u30B7\u30EA\u30FC\u30BA \u73EA\u7802",
+    tagline: "\uACE0\uC21C\uB3C4 SiO\u2082\xB7\uC800\uCCA0\xB7\uACE0\uBC31\uC0C9 \u2014 \uC120\uBCC4\xB7\uC138\uCC99\xB7\uC0B0\uCC98\uB9AC \uACF5\uC815\uC758 \uC0B0\uC5C5\uC6A9 \uADDC\uC0AC (SL-S \uD45C\uC900 \uC2DC\uB9AC\uC988)",
+    enTagline: "High-Purity SiO\u2082, Low Iron, High Whiteness \u2014 Industrial Silica Sand (SL-S Standard Series)",
+    jaTagline: "\u9AD8\u7D14\u5EA6SiO\u2082\u30FB\u4F4E\u9244\u30FB\u9AD8\u767D\u8272\u5EA6 \u2014 \u9078\u5225\u30FB\u6D17\u6D44\u30FB\u9178\u51E6\u7406\u5DE5\u7A0B\u306B\u3088\u308B\u7523\u696D\u7528\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9(SL-S\u6A19\u6E96\u30B7\u30EA\u30FC\u30BA)",
+    description: "SL-S \uC2DC\uB9AC\uC988\uB294 \uCC9C\uC5F0 \uADDC\uC11D(Quartz)\uC744 \uC6D0\uB8CC\uB85C \uC120\uBCC4, \uC138\uCC99 \uBC0F \uC0B0\uCC98\uB9AC \uACF5\uC815\uC744 \uAC70\uCCD0 \uC0DD\uC0B0\uD55C \uACE0\uD488\uC9C8 \uC0B0\uC5C5\uC6A9 \uADDC\uC0AC \uD45C\uC900 \uB77C\uC778\uC5C5\uC785\uB2C8\uB2E4. \uB192\uC740 \uC774\uC0B0\uD654\uADDC\uC18C(SiO\u2082) \uD568\uB7C9\uACFC \uB0AE\uC740 \uCCA0(Fe) \uD568\uB7C9, \uC6B0\uC218\uD55C \uBC31\uC0C9\uB3C4\uB97C \uAC16\uCD94\uACE0 \uC788\uC73C\uBA70, \uADE0\uC77C\uD55C \uC785\uB3C4\uC640 \uB6F0\uC5B4\uB09C \uD654\uD559\uC801 \uC548\uC815\uC131\uC73C\uB85C \uB2E4\uC591\uD55C \uC0B0\uC5C5 \uBD84\uC57C\uC5D0\uC11C \uC548\uC815\uC801\uC778 \uD488\uC9C8\uC744 \uC81C\uACF5\uD569\uB2C8\uB2E4.",
+    enDescription: "The SL-S Series is a high-quality industrial silica sand lineup produced from natural quartz through screening, washing, and acid-treatment processes. With high silicon dioxide (SiO\u2082) content, low iron (Fe) content, and excellent whiteness, it delivers consistent quality across a wide range of industries thanks to its uniform grain size and outstanding chemical stability.",
+    jaDescription: "SL-S\u30B7\u30EA\u30FC\u30BA\u306F\u3001\u5929\u7136\u77F3\u82F1(Quartz)\u3092\u539F\u6599\u306B\u9078\u5225\u30FB\u6D17\u6D44\u304A\u3088\u3073\u9178\u51E6\u7406\u5DE5\u7A0B\u3092\u7D4C\u3066\u751F\u7523\u3059\u308B\u9AD8\u54C1\u8CEA\u306A\u7523\u696D\u7528\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9\u6A19\u6E96\u30E9\u30A4\u30F3\u30A2\u30C3\u30D7\u3067\u3059\u3002\u9AD8\u3044\u4E8C\u9178\u5316\u30B1\u30A4\u7D20(SiO\u2082)\u542B\u6709\u91CF\u3068\u4F4E\u3044\u9244(Fe)\u542B\u6709\u91CF\u3001\u512A\u308C\u305F\u767D\u8272\u5EA6\u3092\u5099\u3048\u3066\u304A\u308A\u3001\u5747\u4E00\u306A\u7C92\u5EA6\u3068\u512A\u308C\u305F\u5316\u5B66\u7684\u5B89\u5B9A\u6027\u306B\u3088\u308A\u3001\u591A\u69D8\u306A\u7523\u696D\u5206\u91CE\u3067\u5B89\u5B9A\u3057\u305F\u54C1\u8CEA\u3092\u63D0\u4F9B\u3057\u307E\u3059\u3002",
     image: silicaSandImg,
-    category: "quartz",
+    category: "sand",
     features: [
       { title: "\u{1FAA8} \uCC9C\uC5F0 \uADDC\uC11D \uC6D0\uB8CC", desc: "\uCC9C\uC5F0 \uADDC\uC11D(Natural Quartz)\uC744 \uC6D0\uB8CC\uB85C \uC0DD\uC0B0\uD55C \uACE0\uD488\uC9C8 \uADDC\uC0AC", enTitle: "\u{1FAA8} Natural Quartz Source", jaTitle: "\u{1FAA8} \u5929\u7136\u77F3\u82F1\u3092\u539F\u6599", enDesc: "High-quality silica sand produced from natural quartz", jaDesc: "\u5929\u7136\u77F3\u82F1(Natural Quartz)\u3092\u539F\u6599\u306B\u751F\u7523\u3057\u305F\u9AD8\u54C1\u8CEA\u306A\u73EA\u7802" },
       { title: "\u{1F9FC} \uBD88\uC21C\uBB3C \uCD5C\uC18C\uD654", desc: "\uC120\uBCC4\xB7\uC138\uCC99\xB7\uC0B0\uCC98\uB9AC \uACF5\uC815\uC73C\uB85C \uBD88\uC21C\uBB3C\uC744 \uD6A8\uACFC\uC801\uC73C\uB85C \uC81C\uAC70", enTitle: "\u{1F9FC} Minimized Impurities", jaTitle: "\u{1F9FC} \u4E0D\u7D14\u7269\u306E\u6700\u5C0F\u5316", enDesc: "Impurities effectively removed via screening, washing, and acid-treatment", jaDesc: "\u9078\u5225\u30FB\u6D17\u6D44\u30FB\u9178\u51E6\u7406\u5DE5\u7A0B\u3067\u4E0D\u7D14\u7269\u3092\u52B9\u679C\u7684\u306B\u9664\u53BB" },
@@ -237,10 +218,10 @@ var productCatalog = [
     ]
   },
   {
-    slug: "silica-powder",
-    name: "\uADDC\uC0AC\uBD84\uB9D0",
-    enName: "Silica Powder",
-    jaName: "\u73EA\u7802\u7C89\u672B (\u30B7\u30EA\u30AB\u30D1\u30A6\u30C0\u30FC)",
+    slug: "slp-series",
+    name: "SL-P \uC2DC\uB9AC\uC988 \uADDC\uC0AC\uBD84\uB9D0",
+    enName: "SL-P Series Silica Powder",
+    jaName: "SL-P\u30B7\u30EA\u30FC\u30BA \u73EA\u7802\u7C89\u672B (\u30B7\u30EA\u30AB\u30D1\u30A6\u30C0\u30FC)",
     tagline: "\uACE0\uC21C\uB3C4 \uADDC\uC0AC\uB97C \uBBF8\uC138 \uBD84\uC1C4\uD55C \uC0B0\uC5C5\uC6A9 \uBD84\uB9D0 \u2014 \uADE0\uC77C \uC785\uB3C4\xB7\uACE0\uBC31\uC0C9\xB7\uACE0\uC21C\uB3C4 SiO\u2082",
     enTagline: "Industrial powder from finely ground high-purity silica \u2014 Uniform particle size, high whiteness, high-purity SiO\u2082",
     jaTagline: "\u9AD8\u7D14\u5EA6\u30B7\u30EA\u30AB\u3092\u5FAE\u7C89\u7815\u3057\u305F\u7523\u696D\u7528\u7C89\u672B \u2014 \u5747\u4E00\u7C92\u5EA6\u30FB\u9AD8\u767D\u8272\u30FB\u9AD8\u7D14\u5EA6SiO\u2082",
@@ -248,7 +229,7 @@ var productCatalog = [
     enDescription: "Silica Powder is an industrial powder material produced by precisely fine-grinding high-purity silica sand. It delivers stable quality based on uniform particle size, excellent whiteness, and high silicon dioxide (SiO\u2082) content, and is used as a raw material across diverse industrial sectors.",
     jaDescription: "\u73EA\u7802\u7C89\u672B(\u30B7\u30EA\u30AB\u30D1\u30A6\u30C0\u30FC)\u306F\u3001\u9AD8\u7D14\u5EA6\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9\u3092\u7CBE\u5BC6\u306B\u5FAE\u7C89\u7815\u3057\u3066\u751F\u7523\u3057\u305F\u7523\u696D\u7528\u7C89\u672B\u7D20\u6750\u3067\u3059\u3002\u5747\u4E00\u306A\u7C92\u5EA6\u3068\u512A\u308C\u305F\u767D\u8272\u5EA6\u3001\u9AD8\u3044\u4E8C\u9178\u5316\u30B1\u30A4\u7D20(SiO\u2082)\u542B\u6709\u91CF\u3092\u57FA\u76E4\u306B\u5B89\u5B9A\u3057\u305F\u54C1\u8CEA\u3092\u63D0\u4F9B\u3057\u3001\u591A\u69D8\u306A\u7523\u696D\u5206\u91CE\u306E\u539F\u6599\u3068\u3057\u3066\u4F7F\u7528\u3055\u308C\u307E\u3059\u3002",
     image: silicaPowderImg,
-    category: "quartz",
+    category: "sand-powder",
     features: [
       { title: "\u{1F3ED} \uACE0\uD488\uC9C8 \uC0B0\uC5C5\uC6A9 \uBD84\uB9D0", desc: "\uACE0\uC21C\uB3C4 \uADDC\uC0AC\uB97C \uBBF8\uC138 \uBD84\uC1C4\uD55C \uACE0\uD488\uC9C8 \uC0B0\uC5C5\uC6A9 \uBD84\uB9D0", enTitle: "\u{1F3ED} High-Quality Industrial Powder", jaTitle: "\u{1F3ED} \u9AD8\u54C1\u8CEA\u306A\u7523\u696D\u7528\u7C89\u672B", enDesc: "High-quality industrial powder produced by finely grinding high-purity silica sand", jaDesc: "\u9AD8\u7D14\u5EA6\u30B7\u30EA\u30AB\u30B5\u30F3\u30C9\u3092\u5FAE\u7C89\u7815\u3057\u305F\u9AD8\u54C1\u8CEA\u306A\u7523\u696D\u7528\u7C89\u672B" },
       { title: "\u{1F9FC} \uC120\uBCC4\xB7\uC138\uCC99\xB7\uC0B0\uCC98\uB9AC", desc: "\uC120\uBCC4, \uC138\uCC99 \uBC0F \uC0B0\uCC98\uB9AC \uACF5\uC815\uC744 \uD1B5\uD55C \uC548\uC815\uC801\uC778 \uD488\uC9C8", enTitle: "\u{1F9FC} Screening\xB7Washing\xB7Acid Treatment", jaTitle: "\u{1F9FC} \u9078\u5225\u30FB\u6D17\u6D44\u30FB\u9178\u51E6\u7406", enDesc: "Stable quality through screening, washing, and acid-treatment processes", jaDesc: "\u9078\u5225\u30FB\u6D17\u6D44\u304A\u3088\u3073\u9178\u51E6\u7406\u5DE5\u7A0B\u306B\u3088\u308B\u5B89\u5B9A\u3057\u305F\u54C1\u8CEA" },
@@ -1883,7 +1864,8 @@ productCatalog.push({
   subModelsColumnLabel: { ko: "\uADF8\uB808\uC774\uB4DC", en: "Grade", ja: "\u30B0\u30EC\u30FC\u30C9" },
   subModels: [
     { code: "SL-JA25", slug: "sl-ja25", spec: "SiO\u2082 25~26% \xB7 10~12 nm \xB7 NH\u2083 \uC548\uC815\uD615", enSpec: "SiO\u2082 25\u201326% \xB7 10\u201312 nm \xB7 NH\u2083-stabilized", jaSpec: "SiO\u2082 25~26% \xB7 10~12 nm \xB7 NH\u2083\u5B89\u5B9A\u578B", name: "SL-JA25 \uC2E4\uB9AC\uCE74\uC878", enName: "SL-JA25 \xB7 Silica Sol", jaName: "SL-JA25 \u30B7\u30EA\u30AB\u30BE\u30EB" },
-    { code: "SL-JA30", slug: "sl-ja30", spec: "SiO\u2082 30~31% \xB7 10~11.5 nm \xB7 NH\u2083 \uC548\uC815\uD615", enSpec: "SiO\u2082 30\u201331% \xB7 10\u201311.5 nm \xB7 NH\u2083-stabilized", jaSpec: "SiO\u2082 30~31% \xB7 10~11.5 nm \xB7 NH\u2083\u5B89\u5B9A\u578B", name: "SL-JA30 \uC2E4\uB9AC\uCE74\uC878", enName: "SL-JA30 \xB7 Silica Sol", jaName: "SL-JA30 \u30B7\u30EA\u30AB\u30BE\u30EB" }
+    { code: "SL-JA30", slug: "sl-ja30", spec: "SiO\u2082 30~31% \xB7 10~11.5 nm \xB7 NH\u2083 \uC548\uC815\uD615", enSpec: "SiO\u2082 30\u201331% \xB7 10\u201311.5 nm \xB7 NH\u2083-stabilized", jaSpec: "SiO\u2082 30~31% \xB7 10~11.5 nm \xB7 NH\u2083\u5B89\u5B9A\u578B", name: "SL-JA30 \uC2E4\uB9AC\uCE74\uC878", enName: "SL-JA30 \xB7 Silica Sol", jaName: "SL-JA30 \u30B7\u30EA\u30AB\u30BE\u30EB" },
+    { code: "SL-SHS", slug: "sl-shs", spec: "14\uC885 \uADF8\uB808\uC774\uB4DC \xB7 JN/SW/JA/ZX/JGC \uC2DC\uB9AC\uC988 \xB7 6~30 nm", enSpec: "14-grade lineup \xB7 JN/SW/JA/ZX/JGC series \xB7 6\u201330 nm", jaSpec: "14\u30B0\u30EC\u30FC\u30C9 \xB7 JN/SW/JA/ZX/JGC \u30B7\u30EA\u30FC\u30BA \xB7 6~30 nm", name: "\uCF5C\uB85C\uC774\uB2EC \uC2E4\uB9AC\uCE74 \uC2DC\uB9AC\uC988", enName: "Colloidal Silica Full Series", jaName: "\u30B3\u30ED\u30A4\u30C0\u30EB\u30B7\u30EA\u30AB \u30B7\u30EA\u30FC\u30BA" }
   ],
   applications: silicaSolCommonApps
 });
@@ -1964,6 +1946,43 @@ var silicaSolChildren = [
       { label: "\uC548\uC815\uC81C", value: "NH\u2083 (\uC554\uBAA8\uB2C8\uC544 \uC548\uC815\uD615)", enValue: "NH\u2083 (ammonia-stabilized)", jaValue: "NH\u2083 (\u30A2\u30F3\u30E2\u30CB\u30A2\u5B89\u5B9A\u578B)", enLabel: "Stabilizer", jaLabel: "\u5B89\u5B9A\u5264" },
       { label: "\uC6D0\uC0B0\uC9C0", value: "\uC911\uAD6D (China)", enValue: "China", jaValue: "\u4E2D\u56FD", enLabel: "Origin", jaLabel: "\u539F\u7523\u5730" },
       { label: "\uD3EC\uC7A5", value: "25 kg \uB4DC\uB7FC \xB7 200 kg \uB4DC\uB7FC \xB7 1,000 kg IBC", enValue: "25 kg drum \xB7 200 kg drum \xB7 1,000 kg IBC", jaValue: "25 kg \u30C9\u30E9\u30E0 \xB7 200 kg \u30C9\u30E9\u30E0 \xB7 1,000 kg IBC", enLabel: "Packaging", jaLabel: "\u5305\u88C5" }
+    ],
+    applications: silicaSolCommonApps
+  },
+  {
+    slug: "sl-shs",
+    name: "\uCF5C\uB85C\uC774\uB2EC \uC2E4\uB9AC\uCE74 \uC2DC\uB9AC\uC988",
+    enName: "Colloidal Silica / Silica Sol Full Series",
+    jaName: "\u30B3\u30ED\u30A4\u30C0\u30EB\u30B7\u30EA\u30AB \u30B7\u30EA\u30FC\u30BA",
+    tagline: "JN \xB7 SW \xB7 JA \xB7 ZX \xB7 JGC 14\uC885 \uADF8\uB808\uC774\uB4DC \xB7 SiO\u2082 15~41% \xB7 6~30 nm \uD480 \uB77C\uC778\uC5C5",
+    enTagline: "JN \xB7 SW \xB7 JA \xB7 ZX \xB7 JGC 14-Grade Lineup \xB7 SiO\u2082 15\u201341% \xB7 6\u201330 nm Full Range",
+    jaTagline: "JN \xB7 SW \xB7 JA \xB7 ZX \xB7 JGC 14\u30B0\u30EC\u30FC\u30C9 \xB7 SiO\u2082 15~41% \xB7 6~30 nm \u30D5\u30EB\u30E9\u30A4\u30F3\u30A2\u30C3\u30D7",
+    description: "SL-SHS\uB294 \uC54C\uCE7C\uB9AC(JN)\xB7\uC0B0\uC131(SW)\xB7\uC554\uBAA8\uB2C8\uC544(JA)\xB7\uC800\uC774\uC628(ZX)\xB7\uD2B9\uC218(JGC) \uC548\uC815\uD615 \uB4F1 5\uAC1C \uACC4\uC5F4 \uCD1D 14\uC885 \uADF8\uB808\uC774\uB4DC\uB97C \uC544\uC6B0\uB974\uB294 \uCF5C\uB85C\uC774\uB2EC \uC2E4\uB9AC\uCE74(\uC2E4\uB9AC\uCE74\uC878) \uD480 \uB77C\uC778\uC5C5\uC785\uB2C8\uB2E4. SiO\u2082 15~41%, \uD3C9\uADE0 \uC785\uACBD 6~30 nm \uBC94\uC704\uC5D0\uC11C \uC815\uBC00 \uC8FC\uC870 \uC178 \uBAB0\uB4DC \uBC14\uC778\uB354, \uC81C\uC9C0\xB7\uC12C\uC720 \uD45C\uBA74 \uAC1C\uC9C8, \uB3C4\uB8CC\xB7\uCF54\uD305, \uB0B4\uD654\xB7\uC138\uB77C\uBBF9, \uC2E4\uB9AC\uCF58 \uC2DC\uD2B8 \uCC98\uB9AC\uC81C, \uC774\uCC28\uC804\uC9C0 \uACE0\uCCB4 \uC804\uD574\uC9C8, \uCD09\uB9E4 \uB2F4\uCCB4, \uBC29\uD65C \uCC98\uB9AC\uC81C(anti-slip)\uAE4C\uC9C0 \uC0B0\uC5C5 \uC804\uBC18\uC758 \uC694\uAD6C \uC0AC\uC591\uC744 \uD3ED\uB113\uAC8C \uCEE4\uBC84\uD569\uB2C8\uB2E4.\n\n\uC2E4\uB9AC\uCE74\uC878\uC740 \uBB3C\uC5D0 \uBD84\uC0B0\uB41C \uBB34\uCDE8\xB7\uBB34\uB3C5\xB7\uC720\uBC31\uC0C9\uC758 \uB098\uB178 \uC2E4\uB9AC\uCE74 \uC785\uC790\uB85C, 10~20 nm \uCD08\uBBF8\uB9BD \uD2B9\uC131\uACFC \uD070 \uBE44\uD45C\uBA74\uC801 \uB355\uBD84\uC5D0 \uB9E4\uCCB4\uC758 \uC0C9\uC0C1\uC5D0 \uC601\uD5A5\uC744 \uC8FC\uC9C0 \uC54A\uACE0 \uB2E4\uB978 \uBB3C\uC9C8\uACFC \uD63C\uD569\uD574\uB3C4 \uBD84\uC0B0\uC131\xB7\uD22C\uACFC\uC131\uC774 \uB9E4\uC6B0 \uC6B0\uC218\uD569\uB2C8\uB2E4. \uC218\uBD84 \uC99D\uBC1C \uD6C4\uC5D0\uB294 \uC2E4\uB9AC\uCE74-\uC0B0\uC18C(Si-O) \uACB0\uD569\uC744 \uD1B5\uD574 \uC18C\uC7AC \uD45C\uBA74\uC5D0 \uACAC\uACE0\uD788 \uBD80\uCC29\uB418\uC5B4 \uC6B0\uC218\uD55C \uC811\uCC29 \uD2B9\uC131\uC744 \uBC1C\uD604\uD569\uB2C8\uB2E4. JN(\uC54C\uCE7C\uB9AC)\xB7SW(\uC0B0\uC131)\xB7JA(\uC554\uBAA8\uB2C8\uC544)\xB7ZX(\uC800 Cl\u207B)\xB7JGC(\uCD08\uC800 \uC774\uC628) \uACC4\uC5F4\uBCC4\uB85C pH\xB7\uC774\uC628\uB3C4\xB7\uC810\uB3C4\xB7\uC785\uC790\uACBD\uC744 \uC138\uBC00\uD558\uAC8C \uC870\uC815 \uACF5\uAE09\uD558\uBA70, 25 kg \uB4DC\uB7FC \xB7 200 kg \uB4DC\uB7FC \xB7 1,000 kg IBC \uB4F1 \uB2E4\uC591\uD55C \uD3EC\uC7A5\uC73C\uB85C \uC548\uC815 \uB300\uB7C9 \uACF5\uAE09\uB429\uB2C8\uB2E4.",
+    enDescription: "SL-SHS is a full-range colloidal silica (silica sol) lineup covering 14 grades across 5 stabilization systems: alkaline (JN), acidic (SW), ammonia (JA), low-ion (ZX) and specialty (JGC). Spanning SiO\u2082 15\u201341% and mean particle size 6\u201330 nm, the range covers investment-casting shell binders, paper and textile surface modification, paints and coatings, refractories and ceramics, silicon-sheet treatment agents, solid electrolytes for secondary batteries, catalyst supports and anti-slip treatments.\n\nSilica sol is an odorless, non-toxic, milky-white colloid of amorphous SiO\u2082 nanoparticles dispersed in water. The 10\u201320 nm ultrafine particle size and high specific surface area allow it to blend with other substances without affecting color, offering excellent dispersibility and permeability. After water evaporation, the colloidal particles bond firmly to material surfaces through Si\u2013O linkages, delivering strong adhesion. Grades in the JN (alkaline), SW (acidic), JA (ammonia), ZX (low-Cl\u207B) and JGC (ultra-low-ion) series are supplied with fine adjustments of pH, ionic content, viscosity and particle size, packaged in 25 kg drums, 200 kg drums and 1,000 kg IBCs.",
+    jaDescription: "SL-SHS\u306F\u3001\u30A2\u30EB\u30AB\u30EA(JN)\u30FB\u9178\u6027(SW)\u30FB\u30A2\u30F3\u30E2\u30CB\u30A2(JA)\u30FB\u4F4E\u30A4\u30AA\u30F3(ZX)\u30FB\u7279\u6B8A(JGC)\u306E5\u3064\u306E\u5B89\u5B9A\u5316\u7CFB\u306B\u308F\u305F\u308B14\u30B0\u30EC\u30FC\u30C9\u3092\u7DB2\u7F85\u3059\u308B\u30B3\u30ED\u30A4\u30C0\u30EB\u30B7\u30EA\u30AB(\u30B7\u30EA\u30AB\u30BE\u30EB)\u306E\u30D5\u30EB\u30E9\u30A4\u30F3\u30A2\u30C3\u30D7\u3067\u3059\u3002SiO\u2082 15~41%\u3001\u5E73\u5747\u7C92\u5F846~30 nm\u306E\u7BC4\u56F2\u3067\u3001\u7CBE\u5BC6\u92F3\u9020\u30B7\u30A7\u30EB\u30D0\u30A4\u30F3\u30C0\u30FC\u3001\u88FD\u7D19\u30FB\u7E4A\u7DAD\u306E\u8868\u9762\u6539\u8CEA\u3001\u5857\u6599\u30FB\u30B3\u30FC\u30C6\u30A3\u30F3\u30B0\u3001\u8010\u706B\u30FB\u30BB\u30E9\u30DF\u30C3\u30AF\u3001\u30B7\u30EA\u30B3\u30F3\u30B7\u30FC\u30C8\u51E6\u7406\u5264\u3001\u4E8C\u6B21\u96FB\u6C60\u56FA\u4F53\u96FB\u89E3\u8CEA\u3001\u89E6\u5A92\u62C5\u4F53\u3001\u9632\u6ED1\u51E6\u7406\u5264(anti-slip)\u307E\u3067\u3001\u7523\u696D\u754C\u306E\u5E45\u5E83\u3044\u8981\u6C42\u4ED5\u69D8\u3092\u30AB\u30D0\u30FC\u3057\u307E\u3059\u3002\n\n\u30B7\u30EA\u30AB\u30BE\u30EB\u306F\u6C34\u4E2D\u306B\u5206\u6563\u3057\u305F\u7121\u81ED\u30FB\u7121\u6BD2\u30FB\u4E73\u767D\u8272\u306E\u30CA\u30CE\u30B7\u30EA\u30AB\u7C92\u5B50\u3067\u300110~20 nm\u306E\u8D85\u5FAE\u7C92\u7279\u6027\u3068\u5927\u304D\u306A\u6BD4\u8868\u9762\u7A4D\u306B\u3088\u308A\u3001\u5A92\u4F53\u306E\u8272\u306B\u5F71\u97FF\u3092\u4E0E\u3048\u305A\u4ED6\u306E\u7269\u8CEA\u3068\u6DF7\u5408\u3057\u3066\u3082\u5206\u6563\u6027\u30FB\u900F\u904E\u6027\u306B\u512A\u308C\u307E\u3059\u3002\u6C34\u5206\u84B8\u767A\u5F8C\u306FSi-O\u7D50\u5408\u3092\u4ECB\u3057\u3066\u7D20\u6750\u8868\u9762\u306B\u5F37\u56FA\u306B\u4ED8\u7740\u3057\u3001\u512A\u308C\u305F\u63A5\u7740\u7279\u6027\u3092\u767A\u73FE\u3057\u307E\u3059\u3002JN(\u30A2\u30EB\u30AB\u30EA)\u30FBSW(\u9178\u6027)\u30FBJA(\u30A2\u30F3\u30E2\u30CB\u30A2)\u30FBZX(\u4F4ECl\u207B)\u30FBJGC(\u8D85\u4F4E\u30A4\u30AA\u30F3)\u306E\u5404\u7CFB\u5217\u3067pH\u30FB\u30A4\u30AA\u30F3\u5EA6\u30FB\u7C98\u5EA6\u30FB\u7C92\u5F84\u3092\u304D\u3081\u7D30\u304B\u304F\u8ABF\u6574\u3057\u3066\u4F9B\u7D66\u3057\u300125 kg \u30C9\u30E9\u30E0 \xB7 200 kg \u30C9\u30E9\u30E0 \xB7 1,000 kg IBC \u306A\u3069\u591A\u69D8\u306A\u5305\u88C5\u3067\u5B89\u5B9A\u5927\u91CF\u4F9B\u7D66\u3057\u307E\u3059\u3002",
+    image: slShsImg,
+    detailImage: slShsImg,
+    category: "quartz",
+    parentSlug: "silica-sol",
+    features: [
+      { title: "\u{1F39B}\uFE0F 14\uC885 \uADF8\uB808\uC774\uB4DC \uD480 \uB77C\uC778\uC5C5", desc: "JN \xB7 SW \xB7 JA \xB7 ZX \xB7 JGC 5\uAC1C \uACC4\uC5F4 \xB7 14 \uADF8\uB808\uC774\uB4DC \xB7 \uB9DE\uCDA4 \uB300\uC751", enTitle: "\u{1F39B}\uFE0F 14-Grade Full Lineup", jaTitle: "\u{1F39B}\uFE0F 14\u30B0\u30EC\u30FC\u30C9 \u30D5\u30EB\u30E9\u30A4\u30F3\u30A2\u30C3\u30D7", enDesc: "JN \xB7 SW \xB7 JA \xB7 ZX \xB7 JGC \u2014 5 series, 14 grades, custom-supply capable", jaDesc: "JN \xB7 SW \xB7 JA \xB7 ZX \xB7 JGC 5\u7CFB\u5217 \xB7 14\u30B0\u30EC\u30FC\u30C9 \xB7 \u30AB\u30B9\u30BF\u30E0\u5BFE\u5FDC" },
+      { title: "\u{1F4A7} 6 ~ 30 nm \uCD08\uBBF8\uB9BD \uB098\uB178 \uC785\uC790", desc: "\uB9E4\uC6B0 \uD070 \uBE44\uD45C\uBA74\uC801 \xB7 \uBBF8\uC138 \uAE30\uACF5 \uCE68\uD22C \xB7 \uAC15\uD55C \uACB0\uD569\uB825", enTitle: "\u{1F4A7} 6\u201330 nm Ultrafine Nano", jaTitle: "\u{1F4A7} 6~30 nm \u8D85\u5FAE\u7C92\u30CA\u30CE\u7C92\u5B50", enDesc: "Very high SSA \xB7 fine-pore penetration \xB7 strong binding", jaDesc: "\u975E\u5E38\u306B\u5927\u304D\u306A\u6BD4\u8868\u9762\u7A4D \xB7 \u5FAE\u7D30\u7D30\u5B54\u6D78\u900F \xB7 \u5F37\u3044\u7D50\u5408\u529B" },
+      { title: "\u{1F9EA} SiO\u2082 15 ~ 41 % \uD3ED\uB113\uC740 \uB18D\uB3C4", desc: "\uC800\uB18D\uB3C4 \uCE68\uD22C\uC6A9\uBD80\uD130 \uACE0\uB18D\uB3C4 \uACB0\uD569\uC81C\uAE4C\uC9C0 \uC790\uC720 \uC120\uD0DD", enTitle: "\u{1F9EA} SiO\u2082 15\u201341 % Wide Range", jaTitle: "\u{1F9EA} SiO\u2082 15~41 % \u5E45\u5E83\u3044\u6FC3\u5EA6", enDesc: "From low-conc. penetrants to high-conc. binders", jaDesc: "\u4F4E\u6FC3\u5EA6\u6D78\u900F\u7528\u304B\u3089\u9AD8\u6FC3\u5EA6\u30D0\u30A4\u30F3\u30C0\u30FC\u307E\u3067\u81EA\u7531\u306B\u9078\u629E" },
+      { title: "\u2696\uFE0F pH 2 ~ 11 \uB2E4\uC911 \uC548\uC815\uACC4", desc: "\uC0B0\uC131(SW)\xB7\uC911\uC131\xB7\uC54C\uCE7C\uB9AC(JN)\xB7NH\u2083(JA) \uB2E4\uC591\uD55C \uC2DC\uC2A4\uD15C \uB300\uC751", enTitle: "\u2696\uFE0F Multi-pH Stabilization", jaTitle: "\u2696\uFE0F pH 2~11 \u30DE\u30EB\u30C1\u5B89\u5B9A\u7CFB", enDesc: "Acidic (SW), neutral, alkaline (JN), NH\u2083 (JA) systems", jaDesc: "\u9178\u6027(SW)\u30FB\u4E2D\u6027\u30FB\u30A2\u30EB\u30AB\u30EA(JN)\u30FBNH\u2083(JA) \u5404\u7CFB\u7D71\u306B\u5BFE\u5FDC" },
+      { title: "\u{1F33F} \uBB34\uCDE8\xB7\uBB34\uB3C5\xB7\uCE5C\uD658\uACBD \uBB34\uAE30 \uC18C\uC7AC", desc: "VOC-Free \xB7 \uC720\uAE30 \uBC14\uC778\uB354 \uB300\uCCB4 \xB7 \uD658\uACBD \uADDC\uC81C \uBD80\uD569", enTitle: "\u{1F33F} Odorless \xB7 Non-Toxic \xB7 Eco", jaTitle: "\u{1F33F} \u7121\u81ED \xB7 \u7121\u6BD2 \xB7 \u74B0\u5883\u914D\u616E\u578B\u7121\u6A5F\u7D20\u6750", enDesc: "VOC-free \u2014 replaces organic binders, meets environmental standards", jaDesc: "VOC\u30D5\u30EA\u30FC \xB7 \u6709\u6A5F\u30D0\u30A4\u30F3\u30C0\u30FC\u4EE3\u66FF \xB7 \u74B0\u5883\u898F\u5236\u9069\u5408" },
+      { title: "\u{1F3ED} \uC548\uC815 \uB300\uB7C9 \uACF5\uAE09 \xB7 IBC \uB300\uC751", desc: "25 kg / 200 kg \uB4DC\uB7FC \xB7 1,000 kg IBC \uB2E4\uC591\uD55C \uD3EC\uC7A5", enTitle: "\u{1F3ED} Mass Supply \xB7 IBC-Ready", jaTitle: "\u{1F3ED} \u5927\u91CF\u4F9B\u7D66 \xB7 IBC\u5BFE\u5FDC", enDesc: "25 kg / 200 kg drums \xB7 1,000 kg IBC packaging", jaDesc: "25 kg / 200 kg \u30C9\u30E9\u30E0 \xB7 1,000 kg IBC \u591A\u69D8\u306A\u5305\u88C5" }
+    ],
+    specs: [
+      { label: "\uC81C\uD488 \uCF54\uB4DC", value: "SL-SHS \uC2DC\uB9AC\uC988", enValue: "SL-SHS Series", jaValue: "SL-SHS \u30B7\u30EA\u30FC\u30BA", enLabel: "Product Code", jaLabel: "\u88FD\u54C1\u30B3\u30FC\u30C9" },
+      { label: "\uC678\uAD00", value: "\uBB34\uCDE8\xB7\uBB34\uB3C5 \uC720\uBC31\uC0C9 \uCF5C\uB85C\uC774\uB4DC \uC561", enValue: "Odorless, non-toxic, milky-white colloidal liquid", jaValue: "\u7121\u81ED\u30FB\u7121\u6BD2 \u4E73\u767D\u8272\u30B3\u30ED\u30A4\u30C9\u6DB2", enLabel: "Appearance", jaLabel: "\u5916\u89B3" },
+      { label: "\uACC4\uC5F4", value: "JN(\uC54C\uCE7C\uB9AC) \xB7 SW(\uC0B0\uC131) \xB7 JA(NH\u2083) \xB7 ZX(\uC800 Cl\u207B) \xB7 JGC(\uCD08\uC800 \uC774\uC628)", enValue: "JN (alkaline) \xB7 SW (acidic) \xB7 JA (NH\u2083) \xB7 ZX (low-Cl\u207B) \xB7 JGC (ultra-low-ion)", jaValue: "JN(\u30A2\u30EB\u30AB\u30EA) \xB7 SW(\u9178\u6027) \xB7 JA(NH\u2083) \xB7 ZX(\u4F4ECl\u207B) \xB7 JGC(\u8D85\u4F4E\u30A4\u30AA\u30F3)", enLabel: "Stabilization Series", jaLabel: "\u5B89\u5B9A\u5316\u7CFB\u5217" },
+      { label: "SiO\u2082 \uD568\uB7C9", value: "15 ~ 41 %", enLabel: "SiO\u2082 Content", jaLabel: "SiO\u2082\u542B\u6709\u91CF" },
+      { label: "\uD3C9\uADE0 \uC785\uC790\uACBD", value: "6 ~ 30 nm", enLabel: "Mean Particle Size", jaLabel: "\u5E73\u5747\u7C92\u5B50\u5F84" },
+      { label: "pH \uBC94\uC704", value: "2.0 ~ 11.0 (\uADF8\uB808\uC774\uB4DC\uBCC4)", enValue: "2.0 \u2013 11.0 (grade-dependent)", jaValue: "2.0 ~ 11.0 (\u30B0\u30EC\u30FC\u30C9\u5225)", enLabel: "pH Range", jaLabel: "pH\u7BC4\u56F2" },
+      { label: "\uBC00\uB3C4 (Density)", value: "1.09 ~ 1.30 g/cm\xB3", enLabel: "Density", jaLabel: "\u5BC6\u5EA6" },
+      { label: "\uC810\uB3C4 (Viscosity, 25\u2103)", value: "\u2264 5 ~ 25 mPa\xB7s", enLabel: "Viscosity (25 \u2103)", jaLabel: "\u7C98\u5EA6 (25 \u2103)" },
+      { label: "\uC6D0\uC0B0\uC9C0", value: "\uC911\uAD6D (China)", enValue: "China", jaValue: "\u4E2D\u56FD", enLabel: "Origin", jaLabel: "\u539F\u7523\u5730" },
+      { label: "\uD3EC\uC7A5", value: "25 kg \uB4DC\uB7FC \xB7 200 kg \uB4DC\uB7FC \xB7 1,000 kg IBC \xB7 \uB9DE\uCDA4 \uD3EC\uC7A5", enValue: "25 kg drum \xB7 200 kg drum \xB7 1,000 kg IBC \xB7 custom", jaValue: "25 kg \u30C9\u30E9\u30E0 \xB7 200 kg \u30C9\u30E9\u30E0 \xB7 1,000 kg IBC \xB7 \u30AB\u30B9\u30BF\u30E0", enLabel: "Packaging", jaLabel: "\u5305\u88C5" }
     ],
     applications: silicaSolCommonApps
   }

@@ -32,49 +32,29 @@ const leadFreeGlassImg = "/assets/lead-free-glass-powder.jpg";
 const hf04Img = "/assets/hf04-fused-silica-powder.jpg";
 const sphSemImg = "/assets/sl-sph-300-sem.png";
 const silicaSolImg = "/assets/silica-sol.png";
+const slShsImg = "/assets/sl-shs-photo.jpg";
 const crystallineSilicaImg = "/assets/crystalline-silica.jpg";
-const slChr01Asset = { url: "/assets/sl-chr-01.jpg.asset.json" } as const;
-const slChr02Asset = { url: "/assets/sl-chr-02.jpg.asset.json" } as const;
-const slChr03Asset = { url: "/assets/sl-chr-03.jpg.asset.json" } as const;
-const slInd01PhotoAsset = { url: "/assets/sl-ind-01-photo.jpg.asset.json" } as const;
-const slInd02PhotoAsset = { url: "/assets/sl-ind-02-photo.jpg.asset.json" } as const;
-const slInd03PhotoAsset = { url: "/assets/sl-ind-03-photo.jpg.asset.json" } as const;
-const slDes01PhotoAsset = { url: "/assets/sl-des-01-photo.jpg.asset.json" } as const;
-const slDes02PhotoAsset = { url: "/assets/sl-des-02-photo.jpg.asset.json" } as const;
-const slDes03PhotoAsset = { url: "/assets/sl-des-03-photo.jpg.asset.json" } as const;
-const slDes04PhotoAsset = { url: "/assets/sl-des-04-photo.jpg.asset.json" } as const;
-const slDes05PhotoAsset = { url: "/assets/sl-des-05-photo.jpg.asset.json" } as const;
-const slDes06PhotoAsset = { url: "/assets/sl-des-06-photo.jpg.asset.json" } as const;
-const slDes07PhotoAsset = { url: "/assets/sl-des-07-photo.jpg.asset.json" } as const;
-const slInd04PhotoAsset = { url: "/assets/sl-ind-04-photo.jpg.asset.json" } as const;
-const slInd05PhotoAsset = { url: "/assets/sl-ind-05-photo.jpg.asset.json" } as const;
-const slInd06PhotoAsset = { url: "/assets/sl-ind-06-photo.jpg.asset.json" } as const;
-const slInd07PhotoAsset = { url: "/assets/sl-ind-07-photo.jpg.asset.json" } as const;
-const slAls01PhotoAsset = { url: "/assets/sl-als-01-photo.jpg.asset.json" } as const;
-const slAls03PhotoAsset = { url: "/assets/sl-als-03-photo.jpg.asset.json" } as const;
-const slAls04PhotoAsset = { url: "/assets/sl-als-04-photo.jpg.asset.json" } as const;
-const slChr01Img = slChr01Asset.url;
-const slChr02Img = slChr02Asset.url;
-const slChr03Img = slChr03Asset.url;
-const slInd01Img = slInd01PhotoAsset.url;
-const slInd02Img = slInd02PhotoAsset.url;
-const slInd03Img = slInd03PhotoAsset.url;
-const slInd04Img = slInd04PhotoAsset.url;
-const slInd05Img = slInd05PhotoAsset.url;
-const slInd06Img = slInd06PhotoAsset.url;
-const slInd07Img = slInd07PhotoAsset.url;
-const slAls01Img = slAls01PhotoAsset.url;
-const slAls03Img = slAls03PhotoAsset.url;
-const slAls04Img = slAls04PhotoAsset.url;
-const slDes01Img = slDes01PhotoAsset.url;
-const slDes02Img = slDes02PhotoAsset.url;
-const slDes03Img = slDes03PhotoAsset.url;
-const slDes04Img = slDes04PhotoAsset.url;
-const slDes05Img = slDes05PhotoAsset.url;
-const slDes06Img = slDes06PhotoAsset.url;
-const slDes07Img = slDes07PhotoAsset.url;
-
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series";
+const slChr01Img = "/assets/sl-chr-01.jpg";
+const slChr02Img = "/assets/sl-chr-02.jpg";
+const slChr03Img = "/assets/sl-chr-03.jpg";
+const slInd01Img = "/assets/sl-ind-01-photo.jpg";
+const slInd02Img = "/assets/sl-ind-02-photo.jpg";
+const slInd03Img = "/assets/sl-ind-03-photo.jpg";
+const slInd04Img = "/assets/sl-ind-04-photo.jpg";
+const slInd05Img = "/assets/sl-ind-05-photo.jpg";
+const slInd06Img = "/assets/sl-ind-06-photo.jpg";
+const slInd07Img = "/assets/sl-ind-07-photo.jpg";
+const slDes01Img = "/assets/sl-des-01-photo.jpg";
+const slDes02Img = "/assets/sl-des-02-photo.jpg";
+const slDes03Img = "/assets/sl-des-03-photo.jpg";
+const slDes04Img = "/assets/sl-des-04-photo.jpg";
+const slDes05Img = "/assets/sl-des-05-photo.jpg";
+const slDes06Img = "/assets/sl-des-06-photo.jpg";
+const slDes07Img = "/assets/sl-des-07-photo.jpg";
+const slAls01Img = "/assets/sl-als-01-photo.jpg";
+const slAls03Img = "/assets/sl-als-03-photo.jpg";
+const slAls04Img = "/assets/sl-als-04-photo.jpg";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series" | "sand" | "sand-powder";
 
 export type SubModel = {
   code: string;
@@ -220,20 +200,20 @@ export const productCatalog: ProductDetail[] = [
     applications: ["건축 및 건자재", "페인트 및 코팅", "플라스틱/고무", "연마 및 내마모재", "기타 산업용"],
   },
   {
-    slug: "silica-sand",
-    name: "규사",
-    enName: "Silica Sand", jaName: "珪砂 (シリカサンド)",
-    tagline: "고순도 SiO₂·저철·고백색 — 선별·세척·산처리 공정의 산업용 규사",
-    enTagline: "High-Purity SiO₂, Low Iron, High Whiteness — Industrial Silica Sand Processed by Screening, Washing, and Acid Treatment",
-    jaTagline: "高純度SiO₂・低鉄・高白色度 — 選別・洗浄・酸処理工程による産業用シリカサンド",
+    slug: "sls-series",
+    name: "SL-S 시리즈 규사",
+    enName: "SL-S Series Silica Sand", jaName: "SL-Sシリーズ 珪砂",
+    tagline: "고순도 SiO₂·저철·고백색 — 선별·세척·산처리 공정의 산업용 규사 (SL-S 표준 시리즈)",
+    enTagline: "High-Purity SiO₂, Low Iron, High Whiteness — Industrial Silica Sand (SL-S Standard Series)",
+    jaTagline: "高純度SiO₂・低鉄・高白色度 — 選別・洗浄・酸処理工程による産業用シリカサンド(SL-S標準シリーズ)",
     description:
-      "규사는 천연 규석(Quartz)을 원료로 선별, 세척 및 산처리 공정을 거쳐 생산한 고품질 산업용 소재입니다. 높은 이산화규소(SiO₂) 함량과 낮은 철(Fe) 함량, 우수한 백색도를 갖추고 있으며, 균일한 입도와 뛰어난 화학적 안정성으로 다양한 산업 분야에서 안정적인 품질을 제공합니다.",
+      "SL-S 시리즈는 천연 규석(Quartz)을 원료로 선별, 세척 및 산처리 공정을 거쳐 생산한 고품질 산업용 규사 표준 라인업입니다. 높은 이산화규소(SiO₂) 함량과 낮은 철(Fe) 함량, 우수한 백색도를 갖추고 있으며, 균일한 입도와 뛰어난 화학적 안정성으로 다양한 산업 분야에서 안정적인 품질을 제공합니다.",
     enDescription:
-      "Silica Sand is a high-quality industrial material produced from natural quartz through screening, washing, and acid-treatment processes. With high silicon dioxide (SiO₂) content, low iron (Fe) content, and excellent whiteness, it delivers consistent quality across a wide range of industries thanks to its uniform grain size and outstanding chemical stability.",
+      "The SL-S Series is a high-quality industrial silica sand lineup produced from natural quartz through screening, washing, and acid-treatment processes. With high silicon dioxide (SiO₂) content, low iron (Fe) content, and excellent whiteness, it delivers consistent quality across a wide range of industries thanks to its uniform grain size and outstanding chemical stability.",
     jaDescription:
-      "珪砂(シリカサンド)は、天然石英(Quartz)を原料に選別・洗浄および酸処理工程を経て生産する高品質な産業用素材です。高い二酸化ケイ素(SiO₂)含有量と低い鉄(Fe)含有量、優れた白色度を備えており、均一な粒度と優れた化学的安定性により、多様な産業分野で安定した品質を提供します。",
+      "SL-Sシリーズは、天然石英(Quartz)を原料に選別・洗浄および酸処理工程を経て生産する高品質な産業用シリカサンド標準ラインアップです。高い二酸化ケイ素(SiO₂)含有量と低い鉄(Fe)含有量、優れた白色度を備えており、均一な粒度と優れた化学的安定性により、多様な産業分野で安定した品質を提供します。",
     image: silicaSandImg,
-    category: "quartz",
+    category: "sand",
     features: [
       { title: "🪨 천연 규석 원료", desc: "천연 규석(Natural Quartz)을 원료로 생산한 고품질 규사", enTitle: "🪨 Natural Quartz Source", jaTitle: "🪨 天然石英を原料", enDesc: "High-quality silica sand produced from natural quartz", jaDesc: "天然石英(Natural Quartz)を原料に生産した高品質な珪砂" },
       { title: "🧼 불순물 최소화", desc: "선별·세척·산처리 공정으로 불순물을 효과적으로 제거", enTitle: "🧼 Minimized Impurities", jaTitle: "🧼 不純物の最小化", enDesc: "Impurities effectively removed via screening, washing, and acid-treatment", jaDesc: "選別・洗浄・酸処理工程で不純物を効果的に除去" },
@@ -268,10 +248,10 @@ export const productCatalog: ProductDetail[] = [
     ],
   },
   {
-    slug: "silica-powder",
+    slug: "slp-series",
 
-    name: "규사분말",
-    enName: "Silica Powder", jaName: "珪砂粉末 (シリカパウダー)",
+    name: "SL-P 시리즈 규사분말",
+    enName: "SL-P Series Silica Powder", jaName: "SL-Pシリーズ 珪砂粉末 (シリカパウダー)",
     tagline: "고순도 규사를 미세 분쇄한 산업용 분말 — 균일 입도·고백색·고순도 SiO₂",
     enTagline: "Industrial powder from finely ground high-purity silica — Uniform particle size, high whiteness, high-purity SiO₂",
     jaTagline: "高純度シリカを微粉砕した産業用粉末 — 均一粒度・高白色・高純度SiO₂",
@@ -282,7 +262,7 @@ export const productCatalog: ProductDetail[] = [
     jaDescription:
       "珪砂粉末(シリカパウダー)は、高純度シリカサンドを精密に微粉砕して生産した産業用粉末素材です。均一な粒度と優れた白色度、高い二酸化ケイ素(SiO₂)含有量を基盤に安定した品質を提供し、多様な産業分野の原料として使用されます。",
     image: silicaPowderImg,
-    category: "quartz",
+    category: "sand-powder",
     features: [
       { title: "🏭 고품질 산업용 분말", desc: "고순도 규사를 미세 분쇄한 고품질 산업용 분말", enTitle: "🏭 High-Quality Industrial Powder", jaTitle: "🏭 高品質な産業用粉末", enDesc: "High-quality industrial powder produced by finely grinding high-purity silica sand", jaDesc: "高純度シリカサンドを微粉砕した高品質な産業用粉末" },
       { title: "🧼 선별·세척·산처리", desc: "선별, 세척 및 산처리 공정을 통한 안정적인 품질", enTitle: "🧼 Screening·Washing·Acid Treatment", jaTitle: "🧼 選別・洗浄・酸処理", enDesc: "Stable quality through screening, washing, and acid-treatment processes", jaDesc: "選別・洗浄および酸処理工程による安定した品質" },
@@ -1920,6 +1900,7 @@ productCatalog.push({
   subModels: [
     { code: "SL-JA25", slug: "sl-ja25", spec: "SiO₂ 25~26% · 10~12 nm · NH₃ 안정형", enSpec: "SiO₂ 25–26% · 10–12 nm · NH₃-stabilized", jaSpec: "SiO₂ 25~26% · 10~12 nm · NH₃安定型", name: "SL-JA25 실리카졸", enName: "SL-JA25 · Silica Sol", jaName: "SL-JA25 シリカゾル" },
     { code: "SL-JA30", slug: "sl-ja30", spec: "SiO₂ 30~31% · 10~11.5 nm · NH₃ 안정형", enSpec: "SiO₂ 30–31% · 10–11.5 nm · NH₃-stabilized", jaSpec: "SiO₂ 30~31% · 10~11.5 nm · NH₃安定型", name: "SL-JA30 실리카졸", enName: "SL-JA30 · Silica Sol", jaName: "SL-JA30 シリカゾル" },
+    { code: "SL-SHS", slug: "sl-shs", spec: "14종 그레이드 · JN/SW/JA/ZX/JGC 시리즈 · 6~30 nm", enSpec: "14-grade lineup · JN/SW/JA/ZX/JGC series · 6–30 nm", jaSpec: "14グレード · JN/SW/JA/ZX/JGC シリーズ · 6~30 nm", name: "콜로이달 실리카 시리즈", enName: "Colloidal Silica Full Series", jaName: "コロイダルシリカ シリーズ" },
   ],
   applications: silicaSolCommonApps,
 });
@@ -2007,6 +1988,46 @@ const silicaSolChildren: ProductDetail[] = [
       { label: "안정제", value: "NH₃ (암모니아 안정형)", enValue: "NH₃ (ammonia-stabilized)", jaValue: "NH₃ (アンモニア安定型)", enLabel: "Stabilizer", jaLabel: "安定剤" },
       { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
       { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC", enLabel: "Packaging", jaLabel: "包装" },
+    ],
+    applications: silicaSolCommonApps,
+  },
+  {
+    slug: "sl-shs",
+    name: "콜로이달 실리카 시리즈",
+    enName: "Colloidal Silica / Silica Sol Full Series",
+    jaName: "コロイダルシリカ シリーズ",
+    tagline: "JN · SW · JA · ZX · JGC 14종 그레이드 · SiO₂ 15~41% · 6~30 nm 풀 라인업",
+    enTagline: "JN · SW · JA · ZX · JGC 14-Grade Lineup · SiO₂ 15–41% · 6–30 nm Full Range",
+    jaTagline: "JN · SW · JA · ZX · JGC 14グレード · SiO₂ 15~41% · 6~30 nm フルラインアップ",
+    description:
+      "SL-SHS는 알칼리(JN)·산성(SW)·암모니아(JA)·저이온(ZX)·특수(JGC) 안정형 등 5개 계열 총 14종 그레이드를 아우르는 콜로이달 실리카(실리카졸) 풀 라인업입니다. SiO₂ 15~41%, 평균 입경 6~30 nm 범위에서 정밀 주조 셸 몰드 바인더, 제지·섬유 표면 개질, 도료·코팅, 내화·세라믹, 실리콘 시트 처리제, 이차전지 고체 전해질, 촉매 담체, 방활 처리제(anti-slip)까지 산업 전반의 요구 사양을 폭넓게 커버합니다.\n\n실리카졸은 물에 분산된 무취·무독·유백색의 나노 실리카 입자로, 10~20 nm 초미립 특성과 큰 비표면적 덕분에 매체의 색상에 영향을 주지 않고 다른 물질과 혼합해도 분산성·투과성이 매우 우수합니다. 수분 증발 후에는 실리카-산소(Si-O) 결합을 통해 소재 표면에 견고히 부착되어 우수한 접착 특성을 발현합니다. JN(알칼리)·SW(산성)·JA(암모니아)·ZX(저 Cl⁻)·JGC(초저 이온) 계열별로 pH·이온도·점도·입자경을 세밀하게 조정 공급하며, 25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC 등 다양한 포장으로 안정 대량 공급됩니다.",
+    enDescription:
+      "SL-SHS is a full-range colloidal silica (silica sol) lineup covering 14 grades across 5 stabilization systems: alkaline (JN), acidic (SW), ammonia (JA), low-ion (ZX) and specialty (JGC). Spanning SiO₂ 15–41% and mean particle size 6–30 nm, the range covers investment-casting shell binders, paper and textile surface modification, paints and coatings, refractories and ceramics, silicon-sheet treatment agents, solid electrolytes for secondary batteries, catalyst supports and anti-slip treatments.\n\nSilica sol is an odorless, non-toxic, milky-white colloid of amorphous SiO₂ nanoparticles dispersed in water. The 10–20 nm ultrafine particle size and high specific surface area allow it to blend with other substances without affecting color, offering excellent dispersibility and permeability. After water evaporation, the colloidal particles bond firmly to material surfaces through Si–O linkages, delivering strong adhesion. Grades in the JN (alkaline), SW (acidic), JA (ammonia), ZX (low-Cl⁻) and JGC (ultra-low-ion) series are supplied with fine adjustments of pH, ionic content, viscosity and particle size, packaged in 25 kg drums, 200 kg drums and 1,000 kg IBCs.",
+    jaDescription:
+      "SL-SHSは、アルカリ(JN)・酸性(SW)・アンモニア(JA)・低イオン(ZX)・特殊(JGC)の5つの安定化系にわたる14グレードを網羅するコロイダルシリカ(シリカゾル)のフルラインアップです。SiO₂ 15~41%、平均粒径6~30 nmの範囲で、精密鋳造シェルバインダー、製紙・繊維の表面改質、塗料・コーティング、耐火・セラミック、シリコンシート処理剤、二次電池固体電解質、触媒担体、防滑処理剤(anti-slip)まで、産業界の幅広い要求仕様をカバーします。\n\nシリカゾルは水中に分散した無臭・無毒・乳白色のナノシリカ粒子で、10~20 nmの超微粒特性と大きな比表面積により、媒体の色に影響を与えず他の物質と混合しても分散性・透過性に優れます。水分蒸発後はSi-O結合を介して素材表面に強固に付着し、優れた接着特性を発現します。JN(アルカリ)・SW(酸性)・JA(アンモニア)・ZX(低Cl⁻)・JGC(超低イオン)の各系列でpH・イオン度・粘度・粒径をきめ細かく調整して供給し、25 kg ドラム · 200 kg ドラム · 1,000 kg IBC など多様な包装で安定大量供給します。",
+    image: slShsImg,
+    detailImage: slShsImg,
+    category: "quartz",
+    parentSlug: "silica-sol",
+    features: [
+      { title: "🎛️ 14종 그레이드 풀 라인업", desc: "JN · SW · JA · ZX · JGC 5개 계열 · 14 그레이드 · 맞춤 대응", enTitle: "🎛️ 14-Grade Full Lineup", jaTitle: "🎛️ 14グレード フルラインアップ", enDesc: "JN · SW · JA · ZX · JGC — 5 series, 14 grades, custom-supply capable", jaDesc: "JN · SW · JA · ZX · JGC 5系列 · 14グレード · カスタム対応" },
+      { title: "💧 6 ~ 30 nm 초미립 나노 입자", desc: "매우 큰 비표면적 · 미세 기공 침투 · 강한 결합력", enTitle: "💧 6–30 nm Ultrafine Nano", jaTitle: "💧 6~30 nm 超微粒ナノ粒子", enDesc: "Very high SSA · fine-pore penetration · strong binding", jaDesc: "非常に大きな比表面積 · 微細細孔浸透 · 強い結合力" },
+      { title: "🧪 SiO₂ 15 ~ 41 % 폭넓은 농도", desc: "저농도 침투용부터 고농도 결합제까지 자유 선택", enTitle: "🧪 SiO₂ 15–41 % Wide Range", jaTitle: "🧪 SiO₂ 15~41 % 幅広い濃度", enDesc: "From low-conc. penetrants to high-conc. binders", jaDesc: "低濃度浸透用から高濃度バインダーまで自由に選択" },
+      { title: "⚖️ pH 2 ~ 11 다중 안정계", desc: "산성(SW)·중성·알칼리(JN)·NH₃(JA) 다양한 시스템 대응", enTitle: "⚖️ Multi-pH Stabilization", jaTitle: "⚖️ pH 2~11 マルチ安定系", enDesc: "Acidic (SW), neutral, alkaline (JN), NH₃ (JA) systems", jaDesc: "酸性(SW)・中性・アルカリ(JN)・NH₃(JA) 各系統に対応" },
+      { title: "🌿 무취·무독·친환경 무기 소재", desc: "VOC-Free · 유기 바인더 대체 · 환경 규제 부합", enTitle: "🌿 Odorless · Non-Toxic · Eco", jaTitle: "🌿 無臭 · 無毒 · 環境配慮型無機素材", enDesc: "VOC-free — replaces organic binders, meets environmental standards", jaDesc: "VOCフリー · 有機バインダー代替 · 環境規制適合" },
+      { title: "🏭 안정 대량 공급 · IBC 대응", desc: "25 kg / 200 kg 드럼 · 1,000 kg IBC 다양한 포장", enTitle: "🏭 Mass Supply · IBC-Ready", jaTitle: "🏭 大量供給 · IBC対応", enDesc: "25 kg / 200 kg drums · 1,000 kg IBC packaging", jaDesc: "25 kg / 200 kg ドラム · 1,000 kg IBC 多様な包装" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-SHS 시리즈", enValue: "SL-SHS Series", jaValue: "SL-SHS シリーズ", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "무취·무독 유백색 콜로이드 액", enValue: "Odorless, non-toxic, milky-white colloidal liquid", jaValue: "無臭・無毒 乳白色コロイド液", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "계열", value: "JN(알칼리) · SW(산성) · JA(NH₃) · ZX(저 Cl⁻) · JGC(초저 이온)", enValue: "JN (alkaline) · SW (acidic) · JA (NH₃) · ZX (low-Cl⁻) · JGC (ultra-low-ion)", jaValue: "JN(アルカリ) · SW(酸性) · JA(NH₃) · ZX(低Cl⁻) · JGC(超低イオン)", enLabel: "Stabilization Series", jaLabel: "安定化系列" },
+      { label: "SiO₂ 함량", value: "15 ~ 41 %", enLabel: "SiO₂ Content", jaLabel: "SiO₂含有量" },
+      { label: "평균 입자경", value: "6 ~ 30 nm", enLabel: "Mean Particle Size", jaLabel: "平均粒子径" },
+      { label: "pH 범위", value: "2.0 ~ 11.0 (그레이드별)", enValue: "2.0 – 11.0 (grade-dependent)", jaValue: "2.0 ~ 11.0 (グレード別)", enLabel: "pH Range", jaLabel: "pH範囲" },
+      { label: "밀도 (Density)", value: "1.09 ~ 1.30 g/cm³", enLabel: "Density", jaLabel: "密度" },
+      { label: "점도 (Viscosity, 25℃)", value: "≤ 5 ~ 25 mPa·s", enLabel: "Viscosity (25 ℃)", jaLabel: "粘度 (25 ℃)" },
+      { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+      { label: "포장", value: "25 kg 드럼 · 200 kg 드럼 · 1,000 kg IBC · 맞춤 포장", enValue: "25 kg drum · 200 kg drum · 1,000 kg IBC · custom", jaValue: "25 kg ドラム · 200 kg ドラム · 1,000 kg IBC · カスタム", enLabel: "Packaging", jaLabel: "包装" },
     ],
     applications: silicaSolCommonApps,
   },
