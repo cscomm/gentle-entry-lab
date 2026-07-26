@@ -52,7 +52,7 @@ import slAls01Img from "@/assets/sl-als-01-photo.jpg";
 import slAls03Img from "@/assets/sl-als-03-photo.jpg";
 import slAls04Img from "@/assets/sl-als-04-photo.jpg";
 
-export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series" | "sand";
+export type ProductCategory = "quartz" | "silica-gel" | "precipitated" | "fumed" | "advanced-series" | "sand" | "sand-powder";
 
 export type SubModel = {
   code: string;
@@ -246,10 +246,10 @@ export const productCatalog: ProductDetail[] = [
     ],
   },
   {
-    slug: "silica-powder",
+    slug: "slp-series",
 
-    name: "규사분말",
-    enName: "Silica Powder", jaName: "珪砂粉末 (シリカパウダー)",
+    name: "SL-P 시리즈 규사분말",
+    enName: "SL-P Series Silica Powder", jaName: "SL-Pシリーズ 珪砂粉末 (シリカパウダー)",
     tagline: "고순도 규사를 미세 분쇄한 산업용 분말 — 균일 입도·고백색·고순도 SiO₂",
     enTagline: "Industrial powder from finely ground high-purity silica — Uniform particle size, high whiteness, high-purity SiO₂",
     jaTagline: "高純度シリカを微粉砕した産業用粉末 — 均一粒度・高白色・高純度SiO₂",
@@ -260,7 +260,7 @@ export const productCatalog: ProductDetail[] = [
     jaDescription:
       "珪砂粉末(シリカパウダー)は、高純度シリカサンドを精密に微粉砕して生産した産業用粉末素材です。均一な粒度と優れた白色度、高い二酸化ケイ素(SiO₂)含有量を基盤に安定した品質を提供し、多様な産業分野の原料として使用されます。",
     image: silicaPowderImg,
-    category: "quartz",
+    category: "sand-powder",
     features: [
       { title: "🏭 고품질 산업용 분말", desc: "고순도 규사를 미세 분쇄한 고품질 산업용 분말", enTitle: "🏭 High-Quality Industrial Powder", jaTitle: "🏭 高品質な産業用粉末", enDesc: "High-quality industrial powder produced by finely grinding high-purity silica sand", jaDesc: "高純度シリカサンドを微粉砕した高品質な産業用粉末" },
       { title: "🧼 선별·세척·산처리", desc: "선별, 세척 및 산처리 공정을 통한 안정적인 품질", enTitle: "🧼 Screening·Washing·Acid Treatment", jaTitle: "🧼 選別・洗浄・酸処理", enDesc: "Stable quality through screening, washing, and acid-treatment processes", jaDesc: "選別・洗浄および酸処理工程による安定した品質" },
