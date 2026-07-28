@@ -1314,6 +1314,177 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* Grade C Detailed Technical Content */}
+      {isGradeC && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {tri(
+              "C급 용융 실리카(Fused Silica)의 화학 조성·물리 구조·경제성·범용 적용성 측면의 핵심 특성을 정밀하게 정리하였습니다.",
+              "An in-depth look at the chemical composition, physical structure, cost efficiency, and general-purpose applicability that define Grade C Fused Silica.",
+              "Cグレード溶融シリカ(Fused Silica)の化学組成・物理構造・経済性・汎用適用性における核心特性を精密に整理しました。"
+            )}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: FlaskConical,
+                tag: "01",
+                title: tri("화학 조성 및 품질 범위", "Chemical Composition & Quality Range", "化学組成および品質範囲"),
+                intro: tri(
+                  "SiO₂ 순도 99% 이상의 범용 산업 등급으로, 불순물 허용 범위를 명확히 규정하여 대량 생산 공정에서도 일정한 품질을 유지합니다.",
+                  "A general-purpose industrial grade with ≥99% SiO₂ purity. Clearly defined impurity tolerances keep quality consistent even in high-volume production.",
+                  "SiO₂純度99%以上の汎用産業グレードで、不純物の許容範囲を明確に規定し、大量生産工程でも一定の品質を維持します。"
+                ),
+                points: tri(
+                  [
+                    "SiO₂ > 99% — 건축·코팅·플라스틱 등 범용 산업 요구 수준 충족",
+                    "Al < 0.1% — 내화·세라믹 배합에서 안정적인 소결 거동 확보",
+                    "Fe < 0.04% — 일반 코팅·충전재 용도의 색상 요구를 충족",
+                    "K · Na · Ca 각 < 0.05%, Mg < 0.01% — 알칼리 이온을 허용 범위 내로 관리",
+                  ].join("|"),
+                  [
+                    "SiO₂ > 99% — meets general industrial requirements for construction, coatings, and plastics",
+                    "Al < 0.1% — stable sintering behavior in refractory and ceramic formulations",
+                    "Fe < 0.04% — satisfies color requirements for standard coatings and fillers",
+                    "K · Na · Ca each < 0.05%, Mg < 0.01% — alkali ions kept within controlled tolerances",
+                  ].join("|"),
+                  [
+                    "SiO₂ > 99% — 建築・コーティング・プラスチックなど汎用産業の要求水準を満たす",
+                    "Al < 0.1% — 耐火・セラミックス配合で安定した焼結挙動を確保",
+                    "Fe < 0.04% — 一般コーティング・充填材用途の色調要求を満たす",
+                    "K · Na · Ca 各 < 0.05%、Mg < 0.01% — アルカリイオンを許容範囲内で管理",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Gem,
+                tag: "02",
+                title: tri("물리 구조 및 내열 안정성", "Physical Structure & Thermal Stability", "物理構造および耐熱安定性"),
+                intro: tri(
+                  "95% 이상의 무정형 구조와 낮은 열팽창계수로 일반 고온 공정에서 균열·변형을 억제하고, 균일한 밀도로 배합 재현성을 확보합니다.",
+                  "Over 95% amorphous structure with a low CTE suppresses cracking and deformation in standard high-temperature processes, while uniform density ensures batching reproducibility.",
+                  "95%以上の非晶質構造と低い熱膨張係数により、一般的な高温工程での亀裂・変形を抑制し、均一な密度で配合再現性を確保します。"
+                ),
+                points: tri(
+                  [
+                    "무정형상 > 95% — 열적·화학적으로 안정된 비결정 구조 유지",
+                    "열팽창계수 < 1.2 ×10⁻⁶/°C — 일반 고온 환경에서 내열충격성 확보",
+                    "밀도 1.8 – 2.4 ×10³ kg/m³ — 균일한 벌크 밀도로 계량·배합 편차 최소화",
+                    "모스 경도 7 — 연마재·내마모 충전재로 활용 가능한 표면 경도",
+                  ].join("|"),
+                  [
+                    "Amorphous > 95% — maintains a thermally and chemically stable non-crystalline structure",
+                    "CTE < 1.2 ×10⁻⁶/°C — thermal-shock resistance for standard high-temperature service",
+                    "Density 1.8 – 2.4 ×10³ kg/m³ — uniform bulk density minimizes dosing and batching deviation",
+                    "Mohs hardness 7 — surface hardness suitable for abrasives and wear-resistant fillers",
+                  ].join("|"),
+                  [
+                    "非晶質 > 95% — 熱的・化学的に安定した非結晶構造を維持",
+                    "熱膨張係数 < 1.2 ×10⁻⁶/°C — 一般的な高温環境で耐熱衝撃性を確保",
+                    "密度 1.8 – 2.4 ×10³ kg/m³ — 均一なバルク密度で計量・配合のばらつきを最小化",
+                    "モース硬度7 — 研磨材・耐摩耗充填材として活用可能な表面硬度",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Zap,
+                tag: "03",
+                title: tri("내화학성 및 공정 신뢰성", "Chemical Resistance & Process Reliability", "耐化学性および工程信頼性"),
+                intro: tri(
+                  "산·알칼리·유기용제에 대한 높은 내구성과 낮은 수분 함량으로 장기 보관 및 연속 생산 라인에서도 안정적인 거동을 보장합니다.",
+                  "High durability against acids, alkalis, and organic solvents plus low moisture content ensures stable behavior in long-term storage and continuous production lines.",
+                  "酸・アルカリ・有機溶剤に対する高い耐久性と低い水分含有量により、長期保管および連続生産ラインでも安定した挙動を保証します。"
+                ),
+                points: tri(
+                  [
+                    "우수한 내화학성 — 산·알칼리·유기용제 환경에서 장기 안정성 유지",
+                    "수분 < 0.1% — 흡습에 의한 응집·케이킹 및 유동성 저하 방지",
+                    "무기 불연성 — 화재 안전성이 요구되는 건자재·도료 배합에 적합",
+                    "로트 간 편차 최소화 — 대량 산업 공급에 적합한 안정적 품질 관리",
+                  ].join("|"),
+                  [
+                    "Excellent chemical resistance — long-term stability in acid, alkali, and solvent environments",
+                    "Moisture < 0.1% — prevents agglomeration, caking, and flowability loss from moisture pickup",
+                    "Inorganic and non-combustible — suitable for fire-safe building materials and paint formulations",
+                    "Minimized lot-to-lot variation — stable quality control for large-volume industrial supply",
+                  ].join("|"),
+                  [
+                    "優れた耐化学性 — 酸・アルカリ・有機溶剤環境で長期安定性を維持",
+                    "水分 < 0.1% — 吸湿による凝集・ケーキングおよび流動性低下を防止",
+                    "無機・不燃性 — 防火性が求められる建材・塗料配合に適合",
+                    "ロット間ばらつきの最小化 — 大量産業供給に適した安定した品質管理",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Thermometer,
+                tag: "04",
+                title: tri("경제성 및 범용 적용성", "Cost Efficiency & General-Purpose Applicability", "経済性および汎用適用性"),
+                intro: tri(
+                  "과립(60mm)부터 미분(1µm)까지 맞춤 입도 생산이 가능하며, 대량 산업 수요에 최적화된 원가 구조로 폭넓은 용도에 경제적으로 적용됩니다.",
+                  "Custom sizing from 60 mm granules to 1 µm fine powder, combined with a cost structure optimized for high-volume industrial demand, enables economical use across a broad range of applications.",
+                  "顆粒(60mm)から微粉(1µm)まで粒度のカスタム生産が可能で、大量産業需要に最適化されたコスト構造により幅広い用途に経済的に適用されます。"
+                ),
+                points: tri(
+                  [
+                    "과립 60mm ~ 미분 1µm(12500 메쉬) 범위의 고객 맞춤 입도 생산",
+                    "건축·건자재 — 인조대리석, 특수 모르타르, 에폭시 바닥재 충전재",
+                    "페인트·코팅 — 내마모·내후성 향상용 기능성 충전재",
+                    "플라스틱·고무 및 연마재 — 치수 안정성 향상, 샌드블라스팅·연마 소재",
+                  ].join("|"),
+                  [
+                    "Custom particle sizing from 60 mm granules down to 1 µm (12,500 mesh) fine powder",
+                    "Construction — engineered stone, specialty mortars, epoxy flooring fillers",
+                    "Paints & coatings — functional filler improving abrasion and weather resistance",
+                    "Plastics, rubber & abrasives — dimensional stability, sandblasting and polishing media",
+                  ].join("|"),
+                  [
+                    "顆粒60mm~微粉1µm(12500メッシュ)範囲の顧客カスタム粒度生産",
+                    "建築・建材 — 人造大理石、特殊モルタル、エポキシ床材の充填材",
+                    "塗料・コーティング — 耐摩耗・耐候性向上のための機能性充填材",
+                    "プラスチック・ゴムおよび研磨材 — 寸法安定性向上、サンドブラスト・研磨素材",
+                  ].join("|")
+                ).split("|"),
+              },
+            ].map((sec) => (
+              <div
+                key={sec.tag}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/30 p-8 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
+                <div className="relative">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <sec.icon className="h-6 w-6" />
+                    </div>
+                    <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
+                  </div>
+                  <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {sec.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+
+
       {/* SL-A81 Detailed Content */}
       {product.slug === "precipitated-silica-sl-a81" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
