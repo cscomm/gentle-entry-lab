@@ -47,9 +47,9 @@ const AllProducts = () => {
   );
   const desc = pick(
     lang,
-    "실리원의 전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지 한 페이지에서 탐색하세요.",
-    "Silione's complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz — all in one place.",
-    "Silione の全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで一覧で。"
+    "전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지 한 페이지에서 탐색하세요.",
+    "Complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz — all in one place.",
+    "全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで一覧で。"
   );
 
   return (

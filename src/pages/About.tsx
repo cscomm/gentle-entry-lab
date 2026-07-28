@@ -212,111 +212,113 @@ const About = () => {
         </div>
       </section>
 
-      {/* SDR Quartz Material - Partner Company */}
-      <section className="bg-secondary/40 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-6">
-          <div className="mx-auto max-w-4xl text-center">
-            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              {tr("ab.sdr.tag")}
-            </span>
-            <h2 className="mt-5 text-3xl font-bold md:text-4xl">
-              SDR <span className="text-primary">{tr("ab.sdr.titleAccent")}</span>
-            </h2>
-            <p
-              className="mt-6 text-left text-muted-foreground md:text-center [&_strong]:text-foreground [&_strong.text-primary]:text-primary"
-              dangerouslySetInnerHTML={{ __html: tr("ab.sdr.p1") }}
-            />
-            <p
-              className="mt-4 text-left text-muted-foreground md:text-center [&_strong]:text-foreground [&_strong.text-primary]:text-primary"
-              dangerouslySetInnerHTML={{ __html: tr("ab.sdr.p2") }}
-            />
-          </div>
-
-          {/* SDR Photo Mosaic */}
-          <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
-            <div className="relative col-span-1 overflow-hidden rounded-2xl border border-border md:col-span-2 md:row-span-2">
-              <img src={sdr2} alt={silicaAlt(tr("ab.cap.sdrhq"))} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={sdr1} alt={silicaAlt(tr("ab.cap.warehouse"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={sdr4} alt={silicaAlt(tr("ab.cap.ingot"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-border md:col-span-2">
-              <img src={sdr3} alt={silicaAlt(tr("ab.cap.line"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-border">
-              <img src={sdr5} alt={silicaAlt(tr("ab.cap.furnace"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
-            </div>
-          </div>
-
-
-          {/* SDR Manufacturing Process - 4 step */}
-          <div className="mt-20">
-            <div className="text-center">
+      {/* SDR Quartz Material - Partner Company (hidden temporarily) */}
+      {false && (
+        <section className="bg-secondary/40 py-20 md:py-28">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-4xl text-center">
               <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-                {tr("ab.sdr.mfg.tag")}
+                {tr("ab.sdr.tag")}
               </span>
-              <h3 className="mt-5 text-2xl font-bold md:text-3xl">
-                {tr("ab.sdr.mfg.title")} <span className="text-primary">{tr("ab.sdr.mfg.titleAccent")}</span>
-              </h3>
-              <p className="mt-3 text-muted-foreground">
-                {tr("ab.sdr.mfg.desc")}
-              </p>
+              <h2 className="mt-5 text-3xl font-bold md:text-4xl">
+                SDR <span className="text-primary">{tr("ab.sdr.titleAccent")}</span>
+              </h2>
+              <p
+                className="mt-6 text-left text-muted-foreground md:text-center [&_strong]:text-foreground [&_strong.text-primary]:text-primary"
+                dangerouslySetInnerHTML={{ __html: tr("ab.sdr.p1") }}
+              />
+              <p
+                className="mt-4 text-left text-muted-foreground md:text-center [&_strong]:text-foreground [&_strong.text-primary]:text-primary"
+                dangerouslySetInnerHTML={{ __html: tr("ab.sdr.p2") }}
+              />
             </div>
 
-            <div className="mt-10 grid gap-4 md:grid-cols-4">
-              {[
-                { n: "01", icon: Gem, title: tr("ab.sdr.mfg.s1.t"), desc: tr("ab.sdr.mfg.s1.d"), color: "from-blue-500/20 to-blue-500/5" },
-                { n: "02", icon: Filter, title: tr("ab.sdr.mfg.s2.t"), desc: tr("ab.sdr.mfg.s2.d"), color: "from-sky-500/20 to-sky-500/5" },
-                { n: "03", icon: Snowflake, title: tr("ab.sdr.mfg.s3.t"), desc: tr("ab.sdr.mfg.s3.d"), color: "from-violet-500/20 to-violet-500/5" },
-                { n: "04", icon: Beaker, title: tr("ab.sdr.mfg.s4.t"), desc: tr("ab.sdr.mfg.s4.d"), color: "from-emerald-500/20 to-emerald-500/5" },
-              ].map((s) => (
-                <div key={s.n} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-60`} />
-                  <div className="relative">
-                    <div className="flex items-center justify-between">
-                      <span className="rounded-md bg-primary/10 px-2 py-1 text-xs font-bold tracking-widest text-primary">{s.n}</span>
-                      <s.icon className="h-6 w-6 text-primary/70" />
-                    </div>
-                    <h4 className="mt-6 text-lg font-bold">{s.title}</h4>
-                    <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
-                  </div>
-                </div>
-              ))}
+            {/* SDR Photo Mosaic */}
+            <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-3 md:grid-rows-2">
+              <div className="relative col-span-1 overflow-hidden rounded-2xl border border-border md:col-span-2 md:row-span-2">
+                <img src={sdr2} alt={silicaAlt(tr("ab.cap.sdrhq"))} className="h-full max-h-[560px] w-full object-cover transition duration-700 hover:scale-105" />
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-border">
+                <img src={sdr1} alt={silicaAlt(tr("ab.cap.warehouse"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-border">
+                <img src={sdr4} alt={silicaAlt(tr("ab.cap.ingot"))} className="h-full min-h-[180px] w-full object-cover transition duration-700 hover:scale-105" />
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-border md:col-span-2">
+                <img src={sdr3} alt={silicaAlt(tr("ab.cap.line"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              </div>
+              <div className="overflow-hidden rounded-2xl border border-border">
+                <img src={sdr5} alt={silicaAlt(tr("ab.cap.furnace"))} className="h-full min-h-[220px] w-full object-cover transition duration-700 hover:scale-105" />
+              </div>
             </div>
 
-            {/* QC strip */}
-            <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
-              <div className="grid items-center gap-6 md:grid-cols-6">
-                <div className="flex items-center gap-3 md:col-span-1">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
-                    <ShieldCheck className="h-5 w-5" />
-                  </div>
-                  <span className="text-sm font-bold">{tr("ab.qc.title")}</span>
-                </div>
+
+            {/* SDR Manufacturing Process - 4 step */}
+            <div className="mt-20">
+              <div className="text-center">
+                <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+                  {tr("ab.sdr.mfg.tag")}
+                </span>
+                <h3 className="mt-5 text-2xl font-bold md:text-3xl">
+                  {tr("ab.sdr.mfg.title")} <span className="text-primary">{tr("ab.sdr.mfg.titleAccent")}</span>
+                </h3>
+                <p className="mt-3 text-muted-foreground">
+                  {tr("ab.sdr.mfg.desc")}
+                </p>
+              </div>
+
+              <div className="mt-10 grid gap-4 md:grid-cols-4">
                 {[
-                  { icon: Thermometer, t: tr("ab.qc.q1.t"), d: tr("ab.qc.q1.d") },
-                  { icon: Droplets, t: tr("ab.qc.q2.t"), d: tr("ab.qc.q2.d") },
-                  { icon: ShieldCheck, t: tr("ab.qc.q3.t"), d: tr("ab.qc.q3.d") },
-                  { icon: FlaskConical, t: tr("ab.qc.q4.t"), d: tr("ab.qc.q4.d") },
-                  { icon: Microscope, t: tr("ab.qc.q5.t"), d: tr("ab.qc.q5.d") },
-                ].map((q) => (
-                  <div key={q.t} className="flex items-start gap-3">
-                    <q.icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-                    <div>
-                      <div className="text-xs font-bold">{q.t}</div>
-                      <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{q.d}</p>
+                  { n: "01", icon: Gem, title: tr("ab.sdr.mfg.s1.t"), desc: tr("ab.sdr.mfg.s1.d"), color: "from-blue-500/20 to-blue-500/5" },
+                  { n: "02", icon: Filter, title: tr("ab.sdr.mfg.s2.t"), desc: tr("ab.sdr.mfg.s2.d"), color: "from-sky-500/20 to-sky-500/5" },
+                  { n: "03", icon: Snowflake, title: tr("ab.sdr.mfg.s3.t"), desc: tr("ab.sdr.mfg.s3.d"), color: "from-violet-500/20 to-violet-500/5" },
+                  { n: "04", icon: Beaker, title: tr("ab.sdr.mfg.s4.t"), desc: tr("ab.sdr.mfg.s4.d"), color: "from-emerald-500/20 to-emerald-500/5" },
+                ].map((s) => (
+                  <div key={s.n} className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${s.color} opacity-60`} />
+                    <div className="relative">
+                      <div className="flex items-center justify-between">
+                        <span className="rounded-md bg-primary/10 px-2 py-1 text-xs font-bold tracking-widest text-primary">{s.n}</span>
+                        <s.icon className="h-6 w-6 text-primary/70" />
+                      </div>
+                      <h4 className="mt-6 text-lg font-bold">{s.title}</h4>
+                      <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
 
-        </div>
-      </section>
+              {/* QC strip */}
+              <div className="mt-6 rounded-2xl border border-border bg-card p-6 md:p-8">
+                <div className="grid items-center gap-6 md:grid-cols-6">
+                  <div className="flex items-center gap-3 md:col-span-1">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                      <ShieldCheck className="h-5 w-5" />
+                    </div>
+                    <span className="text-sm font-bold">{tr("ab.qc.title")}</span>
+                  </div>
+                  {[
+                    { icon: Thermometer, t: tr("ab.qc.q1.t"), d: tr("ab.qc.q1.d") },
+                    { icon: Droplets, t: tr("ab.qc.q2.t"), d: tr("ab.qc.q2.d") },
+                    { icon: ShieldCheck, t: tr("ab.qc.q3.t"), d: tr("ab.qc.q3.d") },
+                    { icon: FlaskConical, t: tr("ab.qc.q4.t"), d: tr("ab.qc.q4.d") },
+                    { icon: Microscope, t: tr("ab.qc.q5.t"), d: tr("ab.qc.q5.d") },
+                  ].map((q) => (
+                    <div key={q.t} className="flex items-start gap-3">
+                      <q.icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
+                      <div>
+                        <div className="text-xs font-bold">{q.t}</div>
+                        <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{q.d}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      )}
 
       <SiteFooter />
     </div>
