@@ -986,7 +986,7 @@ function buildHtml(template: string, route: Route, lang: LangCode): string {
       <div style="max-width: 960px; margin: 0 auto; padding: 40px 20px; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.7;">
         <header><h1>${escape(route.h1)}</h1></header>
         <section>${route.body}</section>
-        <footer><p>SiLiCA · 주식회사 비에이알 · 경기도 화성시 남양읍 화성로 1196 · 전화 031-356-5682</p></footer>
+        <footer><p>SiLiCA · 주식회사 비에이알 · 경기도 화성시 마도면 마도공단로 202 1F · 전화 031-356-5682</p></footer>
       </div>`;
 
   html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script/, `<div id="root">${seoBlock}\n    </div>\n    <script`);

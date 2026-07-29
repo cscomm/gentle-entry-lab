@@ -111,7 +111,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "footer.contact": { ko: "문의하기", en: "Contact", ja: "お問い合わせ" },
   "footer.hq": { ko: "본사 · 전라북도 진안군 동계로 328 · 주식회사 비에이알", en: "HQ · 328 Donggye-ro, Jinan-gun, Jeollabuk-do · BAR Co., Ltd.", ja: "本社 · 全羅北道鎮安郡東渓路328 · 株式会社BAR" },
   "footer.hq2": { ko: "사업자등록번호 565-88-02541 · 대표 박균수", en: "Business Reg. No. 565-88-02541 · CEO Park Gyun-soo", ja: "事業者登録番号 565-88-02541 · 代表 パク・ギュンス" },
-  "footer.address": { ko: "경기도 화성시 남양읍 화성로1196", en: "1196 Hwaseong-ro, Namyang-eup, Hwaseong, Gyeonggi-do", ja: "京畿道華城市南陽邑華城路1196" },
+  "footer.address": { ko: "경기도 화성시 마도면 마도공단로 202 1F", en: "202 Mado Industrial Complex-ro, Mado-myeon, Hwaseong, Gyeonggi-do, 1F", ja: "京畿道華城市麻道面麻道工団路202 1F" },
   "footer.products.title": { ko: "제품", en: "Products", ja: "製品" },
   "footer.about.title": { ko: "회사소개", en: "About", ja: "会社紹介" },
   "footer.applications.title": { ko: "응용분야", en: "Applications", ja: "応用分野" },
