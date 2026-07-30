@@ -19,6 +19,11 @@ import sdr2 from "@/assets/sdr-2.png";
 import sdr3 from "@/assets/sdr-3.png";
 import sdr4 from "@/assets/sdr-4.png";
 import sdr5 from "@/assets/sdr-5.jpg";
+import ptHq from "@/assets/공장1.png.asset.json";
+import ptAerial from "@/assets/공장2.png.asset.json";
+import ptLine from "@/assets/회사3-2.png.asset.json";
+import ptYard from "@/assets/회사1-2.png.asset.json";
+import ptIngot from "@/assets/회사4-2.png.asset.json";
 import { Beaker, Filter, FlaskConical, Gem, Snowflake, Thermometer, Droplets, Microscope } from "lucide-react";
 
 const stats = [
