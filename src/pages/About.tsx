@@ -19,11 +19,11 @@ import sdr2 from "@/assets/sdr-2.png";
 import sdr3 from "@/assets/sdr-3.png";
 import sdr4 from "@/assets/sdr-4.png";
 import sdr5 from "@/assets/sdr-5.jpg";
-import ptHq from "@/assets/partner-hq.png.asset.json";
-import ptAerial from "@/assets/partner-aerial.png.asset.json";
-import ptLine from "@/assets/partner-line.png.asset.json";
-import ptYard from "@/assets/partner-yard.png.asset.json";
-import ptIngot from "@/assets/partner-ingot.png.asset.json";
+import ptHq from "@/assets/partner-hq.png";
+import ptAerial from "@/assets/partner-aerial.png";
+import ptLine from "@/assets/partner-line.png";
+import ptYard from "@/assets/partner-yard.png";
+import ptIngot from "@/assets/partner-ingot.png";
 import { Beaker, Filter, FlaskConical, Gem, Snowflake, Thermometer, Droplets, Microscope } from "lucide-react";
 
 const stats = [
