@@ -230,7 +230,28 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "ab.prod.s5.t": { ko: "볼 밀 가공", en: "Ball Mill Processing", ja: "ボールミル加工" },
   "ab.prod.s5.d": { ko: "볼 밀에서 미세 분쇄 및 표면 처리를 진행하여 입도를 최종 조절합니다.", en: "Ball-mill micro-grinding and surface treatment finalize particle size.", ja: "ボールミルで微粉砕および表面処理を行い、粒度を最終調整します。" },
 
+  // Partner: SINOTENNG-SILICA
+  "ab.pt.tag": { ko: "PARTNER COMPANY · JIANGSU, CHINA", en: "PARTNER COMPANY · JIANGSU, CHINA", ja: "PARTNER COMPANY · JIANGSU, CHINA" },
+  "ab.pt.title": { ko: "SINOTENNG-SILICA", en: "SINOTENNG-SILICA", ja: "SINOTENNG-SILICA" },
+  "ab.pt.sub": { ko: "글로벌 실리카 전문 기업과의 파트너십", en: "Partnership with a global silica specialist", ja: "グローバルシリカ専門企業とのパートナーシップ" },
+  "ab.pt.p1": { ko: "주식회사 실리카는 글로벌 실리카 전문 기업인 <strong>SINOTENNG-SILICA</strong>와 파트너십을 맺고 고품질 실리카 소재를 국내에 공급하고 있습니다.", en: "SILICA Co., Ltd. partners with <strong>SINOTENNG-SILICA</strong>, a global silica specialist, to supply high-quality silica materials in Korea.", ja: "株式会社シリカは、グローバルシリカ専門企業である<strong>SINOTENNG-SILICA</strong>とパートナーシップを結び、高品質シリカ素材を国内に供給しています。" },
+  "ab.pt.p2": { ko: "SINOTENNG-SILICA는 <strong>2001년 설립</strong> 이후 장쑤성 첨단기술단지 내 총 <strong>3만 5천 평 규모</strong>의 생산 부지를 기반으로, 첨단 연구·생산·품질 관리 시스템을 구축해 온 선도 기업입니다. 주요 대학 및 연구 기관과의 지속적인 공동 연구를 통해 최첨단 기술력을 유지하고 있으며, <strong class=\"text-primary\">ISO9001 인증</strong>을 바탕으로 전 세계 20여 개국에 제품을 공급하고 있습니다.", en: "Founded in <strong>2001</strong>, SINOTENNG-SILICA operates a production site of about <strong>115,000 m²</strong> inside a Jiangsu high-tech industrial park, with advanced R&D, manufacturing and quality-control systems. Through continuous joint research with leading universities and institutes it maintains cutting-edge technology, and supplies products to more than 20 countries under <strong class=\"text-primary\">ISO 9001 certification</strong>.", ja: "SINOTENNG-SILICAは<strong>2001年の設立</strong>以来、江蘇省ハイテク団地内に総<strong>約115,000m²</strong>の生産拠点を構え、先端の研究・生産・品質管理システムを築いてきたリーディングカンパニーです。主要大学・研究機関との共同研究により最先端の技術力を維持し、<strong class=\"text-primary\">ISO9001認証</strong>のもと世界20か国以上へ製品を供給しています。" },
+  "ab.pt.p3": { ko: "각형·구상·모서리 라운드 실리카 파우더, 저방사선(Low-Alpha) 및 표면개질 파우더, 과립형 및 무연 유리 파우더 등 SINOTENNG-SILICA의 우수한 제품들은 집적회로, 동박적층판(CCL), 에폭시 몰딩 컴파운드(EMC), 태양광 도가니, 정밀 주조, 코팅·접착제 등 다양한 첨단 산업 분야의 핵심 소재로 활용되고 있습니다.", en: "Angular, spherical and round-corner silica powders, Low-Alpha and surface-modified grades, granules and lead-free glass powders from SINOTENNG-SILICA serve as key materials for integrated circuits, copper clad laminates (CCL), epoxy molding compounds (EMC), solar crucibles, precision casting, coatings and adhesives.", ja: "角状・球状・丸角シリカパウダー、低放射線(Low-Alpha)および表面改質パウダー、顆粒品や無鉛ガラスパウダーなど、SINOTENNG-SILICAの優れた製品は、集積回路、銅張積層板(CCL)、エポキシモールディングコンパウンド(EMC)、太陽光ルツボ、精密鋳造、コーティング・接着剤など幅広い先端産業の基幹素材として使用されています。" },
+  "ab.pt.p4": { ko: "저희 주식회사 실리카는 SINOTENNG-SILICA의 검증된 기술력과 안정적인 글로벌 공급망을 바탕으로 고객사의 니즈에 최적화된 최상의 소재 솔루션을 제공하겠습니다.", en: "Backed by SINOTENNG-SILICA's proven technology and stable global supply chain, we deliver material solutions optimized to each customer's needs.", ja: "当社はSINOTENNG-SILICAの実証された技術力と安定したグローバル供給網を基盤に、お客様のニーズに最適化された最良の素材ソリューションを提供します。" },
+  "ab.pt.st1": { ko: "설립", en: "Founded", ja: "設立" },
+  "ab.pt.st2": { ko: "생산 부지", en: "Production site", ja: "生産拠点" },
+  "ab.pt.st2v": { ko: "35,000평", en: "115,000 m²", ja: "約115,000m²" },
+  "ab.pt.st3": { ko: "수출 국가", en: "Export countries", ja: "輸出国" },
+  "ab.pt.st3v": { ko: "20+", en: "20+", ja: "20+" },
+  "ab.pt.st4": { ko: "품질 인증", en: "Certification", ja: "品質認証" },
+  "ab.pt.cap1": { ko: "SINOTENNG-SILICA 본사 전경", en: "SINOTENNG-SILICA headquarters", ja: "SINOTENNG-SILICA 本社" },
+  "ab.pt.cap2": { ko: "장쑤성 생산 단지 항공 전경", en: "Jiangsu production complex, aerial view", ja: "江蘇省生産団地 空撮" },
+  "ab.pt.cap3": { ko: "자동 계량·포장 라인", en: "Automated weighing & packing line", ja: "自動計量・包装ライン" },
+  "ab.pt.cap4": { ko: "원료 야드 및 물류 창고", en: "Raw material yard & warehouse", ja: "原料ヤード・物流倉庫" },
+  "ab.pt.cap5": { ko: "용융 실리카 인고트", en: "Fused silica ingot", ja: "溶融シリカインゴット" },
+
   // SDR Quartz
+
   "ab.sdr.tag": { ko: "PARTNER COMPANY · JIANGSU, CHINA", en: "PARTNER COMPANY · JIANGSU, CHINA", ja: "PARTNER COMPANY · JIANGSU, CHINA" },
   "ab.sdr.titleAccent": { ko: "Quartz Material", en: "Quartz Material", ja: "Quartz Material" },
   "ab.sdr.p1": {
