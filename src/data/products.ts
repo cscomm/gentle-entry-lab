@@ -1733,6 +1733,53 @@ productCatalog.push({
   ],
 });
 
+// ============= SL-HS12 · High-Purity Crystalline Silica Micro-Powder =============
+productCatalog.push({
+  slug: "sl-hs12",
+  name: "SL-HS12 고순도 결정질 실리카 미분",
+  enName: "SL-HS12 · High-Purity Crystalline Silica Micro-Powder",
+  jaName: "SL-HS12 高純度結晶質シリカ微粉",
+  tagline: "SiO₂ ≥99.85%(대표 99.92%) · D50 12±2 µm — 고순도 석영 원료 기반 결정질 실리카 미분",
+  enTagline: "SiO₂ ≥99.85% (typ. 99.92%) · D50 12±2 µm — crystalline silica micro-powder from high-purity quartz",
+  jaTagline: "SiO₂ ≥99.85%(代表値99.92%) · D50 12±2µm — 高純度石英原料ベースの結晶質シリカ微粉",
+  description:
+    "SL-HS12은 고순도 석영(α-Quartz) 원료를 파쇄·분급 등의 정밀 가공 공정을 거쳐 제조한 결정질 이산화규소(SiO₂) 미분입니다. 규격 SiO₂ ≥99.85%(대표치 99.92%)의 고순도를 확보하면서 Al 35 ppm, Ca 5 ppm, Fe 3 ppm, K 6 ppm, Mg 0.5 ppm, Na 7 ppm 수준의 극저 금속 불순물 대표치를 유지하여, 절연 신뢰성과 색상 안정성이 동시에 요구되는 전자·화학 소재 배합에 적합합니다.\n\n입도는 D50 12±2 µm를 기준으로 관리되며 대표 분포는 D10 2.4 µm · D50 12.1 µm · D100 28.6 µm입니다. 좁고 균일한 입도 분포는 수지 대비 고충전 시에도 안정적인 유동성과 낮은 점도를 유지하게 하여 성형성과 표면 품질을 개선합니다. 수분 함량은 ≤0.2%(대표 0.1%)로 관리되어 보관·혼련 과정에서의 응집과 기포 발생을 억제합니다.\n\n입도 분포(PSD)는 고객의 실제 사용 조건과 요구 사양에 맞추어 조정 가능하며, 결정질 실리카 특유의 높은 경도(Mohs 7)·우수한 화학적 안정성·경제성을 바탕으로 다양한 산업용 충진재 용도에 안정적으로 공급됩니다.",
+  enDescription:
+    "SL-HS12 is a crystalline silicon dioxide (SiO₂) micro-powder manufactured from high-purity quartz raw material through precision crushing and grading. It secures a specification purity of SiO₂ ≥99.85% (typical 99.92%) while maintaining ultra-low typical metallic impurities — Al 35 ppm, Ca 5 ppm, Fe 3 ppm, K 6 ppm, Mg 0.5 ppm, Na 7 ppm — making it suitable for electronic and chemical formulations that demand both insulation reliability and color stability.\n\nParticle size is controlled to D50 12±2 µm, with a typical distribution of D10 2.4 µm, D50 12.1 µm and D100 28.6 µm. The narrow, uniform distribution sustains stable flow and low viscosity even at high filler loading, improving moldability and surface quality. Moisture is held at ≤0.2% (typical 0.1%), suppressing agglomeration and void formation during storage and compounding.\n\nThe particle size distribution (PSD) can be adjusted according to the actual usage situation or user demand. With the high hardness (Mohs 7), excellent chemical stability and cost efficiency characteristic of crystalline silica, SL-HS12 is supplied reliably for a wide range of industrial filler applications.",
+  jaDescription:
+    "SL-HS12は、高純度石英(α-Quartz)原料を破砕・分級などの精密加工工程を経て製造した結晶質二酸化ケイ素(SiO₂)微粉です。規格SiO₂ ≥99.85%(代表値99.92%)の高純度を確保しつつ、Al 35 ppm・Ca 5 ppm・Fe 3 ppm・K 6 ppm・Mg 0.5 ppm・Na 7 ppmという極めて低い金属不純物代表値を維持し、絶縁信頼性と色調安定性が同時に求められる電子・化学素材配合に適しています。\n\n粒度はD50 12±2 µmを基準に管理され、代表分布はD10 2.4 µm・D50 12.1 µm・D100 28.6 µmです。狭く均一な粒度分布により、樹脂への高充填時でも安定した流動性と低粘度を維持し、成形性と表面品位を向上させます。水分は≤0.2%(代表値0.1%)に管理され、保管・混練時の凝集や気泡発生を抑制します。\n\n粒度分布(PSD)はお客様の実際の使用状況・要求仕様に応じて調整可能です。結晶質シリカ特有の高硬度(モース7)・優れた化学安定性・経済性を基盤に、多様な産業用フィラー用途へ安定供給します。",
+  image: crystallineSilicaImg,
+  category: "advanced-series",
+  features: [
+    { title: "🧪 SiO₂ ≥99.85% (대표 99.92%)", desc: "고순도 석영 원료 기반 — 규격 대비 여유 있는 대표 순도 확보", enTitle: "🧪 SiO₂ ≥99.85% (typ. 99.92%)", jaTitle: "🧪 SiO₂ ≥99.85% (代表値99.92%)", enDesc: "From high-purity quartz — typical purity comfortably above specification", jaDesc: "高純度石英原料ベース — 規格に対し余裕のある代表純度" },
+    { title: "🧼 극저 금속 불순물", desc: "Al 35 · Ca 5 · Fe 3 · K 6 · Mg 0.5 · Na 7 ppm (대표치)", enTitle: "🧼 Ultra-Low Metallic Impurities", jaTitle: "🧼 極低金属不純物", enDesc: "Al 35 · Ca 5 · Fe 3 · K 6 · Mg 0.5 · Na 7 ppm (typical)", jaDesc: "Al 35 · Ca 5 · Fe 3 · K 6 · Mg 0.5 · Na 7 ppm (代表値)" },
+    { title: "📐 정밀 입도 D50 12±2 µm", desc: "D10 2.4 · D50 12.1 · D100 28.6 µm — 좁고 균일한 분포", enTitle: "📐 Precise PSD · D50 12±2 µm", jaTitle: "📐 精密粒度 D50 12±2 µm", enDesc: "D10 2.4 · D50 12.1 · D100 28.6 µm — narrow, uniform distribution", jaDesc: "D10 2.4 · D50 12.1 · D100 28.6 µm — 狭く均一な分布" },
+    { title: "💧 저수분 ≤0.2% (대표 0.1%)", desc: "응집·기포 억제로 안정적인 혼련·성형 품질 확보", enTitle: "💧 Low Moisture ≤0.2% (typ. 0.1%)", jaTitle: "💧 低水分 ≤0.2% (代表値0.1%)", enDesc: "Suppresses agglomeration and voids for stable compounding and molding", jaDesc: "凝集・気泡を抑制し安定した混練・成形品質を確保" },
+    { title: "💎 α-Quartz 결정 구조", desc: "Mohs 7의 높은 경도와 우수한 화학적 안정성", enTitle: "💎 α-Quartz Crystal Structure", jaTitle: "💎 α-Quartz 結晶構造", enDesc: "Mohs 7 hardness with excellent chemical stability", jaDesc: "モース7の高硬度と優れた化学安定性" },
+    { title: "🔧 PSD 맞춤 조정", desc: "입도 분포는 고객 사용 조건·요구 사양에 따라 조정 가능", enTitle: "🔧 Customizable PSD", jaTitle: "🔧 PSDカスタム調整", enDesc: "Particle size distribution adjustable per actual usage or user demand", jaDesc: "粒度分布は使用状況・要求仕様に応じて調整可能" },
+  ],
+  specs: [
+    { label: "제품 코드", value: "SL-HS12", enLabel: "Product Code", jaLabel: "製品コード" },
+    { label: "제조 공정", value: "고순도 석영 원료 파쇄 · 분급", enValue: "Crushing & grading of high-purity quartz", jaValue: "高純度石英原料の破砕・分級", enLabel: "Process", jaLabel: "製造工程" },
+    { label: "SiO₂", value: "규격 ≥99.85 % · 대표 99.92 %", enValue: "Spec ≥99.85 % · Typical 99.92 %", jaValue: "規格 ≥99.85 % · 代表値 99.92 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+    { label: "Al", value: "규격 ≤100 ppm · 대표 35 ppm", enValue: "Spec ≤100 ppm · Typical 35 ppm", jaValue: "規格 ≤100 ppm · 代表値 35 ppm", enLabel: "Al", jaLabel: "Al" },
+    { label: "Ca", value: "규격 ≤50 ppm · 대표 5 ppm", enValue: "Spec ≤50 ppm · Typical 5 ppm", jaValue: "規格 ≤50 ppm · 代表値 5 ppm", enLabel: "Ca", jaLabel: "Ca" },
+    { label: "Fe", value: "규격 ≤50 ppm · 대표 3 ppm", enValue: "Spec ≤50 ppm · Typical 3 ppm", jaValue: "規格 ≤50 ppm · 代表値 3 ppm", enLabel: "Fe", jaLabel: "Fe" },
+    { label: "K", value: "규격 ≤50 ppm · 대표 6 ppm", enValue: "Spec ≤50 ppm · Typical 6 ppm", jaValue: "規格 ≤50 ppm · 代表値 6 ppm", enLabel: "K", jaLabel: "K" },
+    { label: "Mg", value: "규격 ≤50 ppm · 대표 0.5 ppm", enValue: "Spec ≤50 ppm · Typical 0.5 ppm", jaValue: "規格 ≤50 ppm · 代表値 0.5 ppm", enLabel: "Mg", jaLabel: "Mg" },
+    { label: "Na", value: "규격 ≤50 ppm · 대표 7 ppm", enValue: "Spec ≤50 ppm · Typical 7 ppm", jaValue: "規格 ≤50 ppm · 代表値 7 ppm", enLabel: "Na", jaLabel: "Na" },
+    { label: "수분 (Moisture)", value: "규격 ≤0.2 % · 대표 0.1 %", enValue: "Spec ≤0.2 % · Typical 0.1 %", jaValue: "規格 ≤0.2 % · 代表値 0.1 %", enLabel: "Moisture", jaLabel: "水分 (Moisture)" },
+    { label: "입도 D10", value: "대표 2.4 µm", enValue: "Typical 2.4 µm", jaValue: "代表値 2.4 µm", enLabel: "Particle Size D10", jaLabel: "粒度 D10" },
+    { label: "입도 D50", value: "규격 12±2 µm · 대표 12.1 µm", enValue: "Spec 12±2 µm · Typical 12.1 µm", jaValue: "規格 12±2 µm · 代表値 12.1 µm", enLabel: "Particle Size D50", jaLabel: "粒度 D50" },
+    { label: "입도 D100", value: "대표 28.6 µm", enValue: "Typical 28.6 µm", jaValue: "代表値 28.6 µm", enLabel: "Particle Size D100", jaLabel: "粒度 D100" },
+    { label: "비고", value: "입도 분포(PSD)는 고객의 사용 조건 및 요구에 따라 조정 가능", enValue: "The particle size distribution (PSD) can be adjusted according to the actual usage situation or user demand", jaValue: "粒度分布(PSD)は使用状況・お客様のご要望に応じて調整可能", enLabel: "Remark", jaLabel: "備考" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Country of Origin", jaLabel: "原産地" },
+  ],
+  applications: [],
+});
+
+
+
 
 
 // ============= Silica Sol (Colloidal Silica) — category index + 2 children =============
