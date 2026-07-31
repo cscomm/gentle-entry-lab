@@ -1484,6 +1484,176 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SL-HS12 Detailed Technical Profile */}
+      {isHS12 && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-HS12 고순도 결정질 실리카 미분의 화학 조성·입도 설계·물성·공정 품질 관리 특성을 정밀하게 정리하였습니다.",
+              "A precise breakdown of the chemical composition, particle-size design, physical properties and process quality control that define SL-HS12 high-purity crystalline silica micro-powder.",
+              "SL-HS12 高純度結晶質シリカ微粉の化学組成・粒度設計・物性・工程品質管理特性を精密に整理しました。"
+            )}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: FlaskConical,
+                tag: "01",
+                title: tri("화학 조성 및 순도 관리", "Chemical Composition & Purity Control", "化学組成および純度管理"),
+                intro: tri(
+                  "규격 SiO₂ ≥99.85%, 대표치 99.92%의 고순도 결정질 SiO₂로, 주요 금속 불순물을 ppm 단위로 상시 관리합니다.",
+                  "High-purity crystalline SiO₂ with a specification of ≥99.85% and a typical value of 99.92%, with key metallic impurities controlled at the ppm level.",
+                  "規格SiO₂ ≥99.85%、代表値99.92%の高純度結晶質SiO₂で、主要金属不純物をppm単位で常時管理します。"
+                ),
+                points: tri(
+                  [
+                    "SiO₂ 규격 ≥99.85 % · 대표 99.92 % — 규격 대비 여유 있는 품질 마진",
+                    "Al ≤100 ppm (대표 35 ppm) — 소결·배합 거동의 안정성 확보",
+                    "Fe ≤50 ppm (대표 3 ppm) — 착색 및 전기 특성 저하 요인 최소화",
+                    "Ca · K · Na 각 ≤50 ppm (대표 5 / 6 / 7 ppm), Mg 대표 0.5 ppm — 알칼리 이온 최소화",
+                  ].join("|"),
+                  [
+                    "SiO₂ spec ≥99.85% · typical 99.92% — comfortable quality margin over specification",
+                    "Al ≤100 ppm (typ. 35 ppm) — stable sintering and formulation behavior",
+                    "Fe ≤50 ppm (typ. 3 ppm) — minimizes discoloration and electrical degradation",
+                    "Ca · K · Na each ≤50 ppm (typ. 5 / 6 / 7 ppm), Mg typ. 0.5 ppm — alkali ions kept minimal",
+                  ].join("|"),
+                  [
+                    "SiO₂ 規格 ≥99.85 % · 代表値 99.92 % — 規格に対し余裕ある品質マージン",
+                    "Al ≤100 ppm (代表値35 ppm) — 焼結・配合挙動の安定性を確保",
+                    "Fe ≤50 ppm (代表値3 ppm) — 着色および電気特性低下要因を最小化",
+                    "Ca · K · Na 各 ≤50 ppm (代表値5 / 6 / 7 ppm)、Mg 代表値0.5 ppm — アルカリイオンを最小化",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: BarChart3,
+                tag: "02",
+                title: tri("입도 설계 및 분포 제어", "Particle Size Design & Distribution Control", "粒度設計および分布制御"),
+                intro: tri(
+                  "D50 12±2 µm를 기준으로 좁고 균일한 분포를 유지하며, 고객 사용 조건에 따라 PSD 커스터마이징이 가능합니다.",
+                  "A narrow, uniform distribution centered on D50 12±2 µm, with PSD customization available per the customer's usage conditions.",
+                  "D50 12±2 µmを基準に狭く均一な分布を維持し、使用条件に応じたPSDのカスタマイズが可能です。"
+                ),
+                points: tri(
+                  [
+                    "D10 2.4 µm · D50 12.1 µm · D100 28.6 µm (대표 분포)",
+                    "미분 과다·조대 입자 최소화로 배합 재현성 향상",
+                    "고충전 시에도 낮은 점도 유지 — 성형성과 표면 품질 개선",
+                    "PSD는 실제 사용 상황 및 요구 사양에 맞춰 조정 가능",
+                  ].join("|"),
+                  [
+                    "D10 2.4 µm · D50 12.1 µm · D100 28.6 µm (typical distribution)",
+                    "Minimal fines and oversize particles for reproducible compounding",
+                    "Low viscosity maintained even at high loading — better moldability and surface quality",
+                    "PSD adjustable to the actual usage situation and required specification",
+                  ].join("|"),
+                  [
+                    "D10 2.4 µm · D50 12.1 µm · D100 28.6 µm (代表分布)",
+                    "微粉過多・粗大粒子を最小化し配合再現性を向上",
+                    "高充填時も低粘度を維持 — 成形性と表面品位を改善",
+                    "PSDは実際の使用状況・要求仕様に応じて調整可能",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Gem,
+                tag: "03",
+                title: tri("결정 구조 및 물리 특성", "Crystal Structure & Physical Properties", "結晶構造および物理特性"),
+                intro: tri(
+                  "천연 고순도 석영 기반의 α-Quartz 결정 구조로, 높은 경도와 화학적 안정성을 제공합니다.",
+                  "An α-quartz crystal structure derived from natural high-purity quartz, delivering high hardness and chemical stability.",
+                  "天然高純度石英ベースのα-Quartz結晶構造で、高硬度と化学的安定性を提供します。"
+                ),
+                points: tri(
+                  [
+                    "α-Quartz(삼방정계) 결정질 SiO₂ — Mohs 경도 7",
+                    "산·알칼리(HF 제외) 및 대부분의 용제에 대한 우수한 내화학성",
+                    "높은 체적 저항과 안정적인 절연 특성",
+                    "용융 실리카 대비 경제적이며 원료 수급이 안정적",
+                  ].join("|"),
+                  [
+                    "α-quartz (trigonal) crystalline SiO₂ — Mohs hardness 7",
+                    "Excellent chemical resistance to acids, alkalis (except HF) and most solvents",
+                    "High volume resistivity and stable insulating behavior",
+                    "More economical than fused silica with stable raw-material availability",
+                  ].join("|"),
+                  [
+                    "α-Quartz(三方晶系)結晶質SiO₂ — モース硬度7",
+                    "酸・アルカリ(HFを除く)および大半の溶剤に対する優れた耐薬品性",
+                    "高い体積抵抗と安定した絶縁特性",
+                    "溶融シリカ対比で経済的、原料供給も安定",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Shield,
+                tag: "04",
+                title: tri("공정 · 품질 관리", "Process & Quality Assurance", "工程・品質管理"),
+                intro: tri(
+                  "파쇄·분급 전 공정에서 수분과 오염을 통제하여 로트 간 편차를 최소화합니다.",
+                  "Moisture and contamination are controlled across the entire crushing and grading process to minimize lot-to-lot variation.",
+                  "破砕・分級の全工程で水分と汚染を管理し、ロット間ばらつきを最小化します。"
+                ),
+                points: tri(
+                  [
+                    "수분 ≤0.2 % (대표 0.1 %) — 응집·기포 발생 억제",
+                    "금속 오염 방지 설비 기반의 파쇄·분급 라인 운용",
+                    "로트별 성적서(SiO₂·금속 불순물·수분·입도) 제공",
+                    "원산지: 중국 · 안정적 대량 공급 체계",
+                  ].join("|"),
+                  [
+                    "Moisture ≤0.2% (typ. 0.1%) — suppresses agglomeration and voids",
+                    "Crushing and grading lines built to prevent metallic contamination",
+                    "Per-lot certificate of analysis (SiO₂, metallic impurities, moisture, PSD)",
+                    "Country of origin: China · stable high-volume supply",
+                  ].join("|"),
+                  [
+                    "水分 ≤0.2 % (代表値0.1 %) — 凝集・気泡発生を抑制",
+                    "金属汚染防止設備に基づく破砕・分級ラインの運用",
+                    "ロット別成績書(SiO₂・金属不純物・水分・粒度)を提供",
+                    "原産地:中国 · 安定した大量供給体制",
+                  ].join("|")
+                ).split("|"),
+              },
+            ].map((sec) => (
+              <div
+                key={sec.tag}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/30 p-8 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
+                <div className="relative">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <sec.icon className="h-6 w-6" />
+                    </div>
+                    <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
+                  </div>
+                  <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {sec.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+
 
 
       {/* SL-A81 Detailed Content */}
