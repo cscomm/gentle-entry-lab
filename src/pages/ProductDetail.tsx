@@ -214,6 +214,7 @@ const ProductDetail = () => {
   const isGradeC = product.slug === "fused-silica-c-grade";
   const isSilicaSand = product.slug === "sls-series";
   const isSilicaPowder = product.slug === "slp-series";
+  const isHS12 = product.slug === "sl-hs12";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
   const children = product.isCategoryIndex
