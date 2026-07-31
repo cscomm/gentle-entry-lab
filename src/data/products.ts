@@ -1719,6 +1719,7 @@ productCatalog.push({
     { code: "SL-CL", slug: "sl-cl", spec: "저방사선(Low-α) 결정형 — α ≤ 0.001 cph/cm²", enSpec: "Low-α Crystalline — α ≤ 0.001 cph/cm²", jaSpec: "低α線 結晶質 — α ≤ 0.001 cph/cm²" },
     { code: "SL-HJG", slug: "sl-hjg", spec: "표면개질(활성) 결정형 — 실란 커플링 처리", enSpec: "Surface-Modified Crystalline — silane-coupled", jaSpec: "表面改質(活性) 結晶質 — シランカップリング処理" },
     { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사 (유리 원료·정밀 주조·연마재)", enSpec: "Crystalline Quartz Sand (glass raw material, precision casting, abrasives)", jaSpec: "結晶石英砂 (ガラス原料・精密鋳造・研磨材)" },
+    { code: "SL-HS12", slug: "sl-hs12", spec: "고순도 결정질 실리카 미분 (SiO₂ ≥99.85% · D50 12±2µm)", enSpec: "High-Purity Crystalline Silica Micro-Powder (SiO₂ ≥99.85% · D50 12±2 µm)", jaSpec: "高純度結晶質シリカ微粉 (SiO₂ ≥99.85% · D50 12±2µm)" },
   ],
   applications: [
     "CCL / PCB · 5G 고주파 기판 (결정형 필러)",
