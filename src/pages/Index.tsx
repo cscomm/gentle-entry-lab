@@ -306,6 +306,9 @@ const Index = () => {
             <p className="mt-6 text-muted-foreground">{t("about.p1")}</p>
             <p className="mt-4 text-muted-foreground">{t("about.p2")}</p>
             <p className="mt-4 text-muted-foreground">{t("about.p3")}</p>
+            <p className="mt-4 text-muted-foreground">{t("about.p4")}</p>
+            <p className="mt-4 text-muted-foreground">{t("about.p5")}</p>
+            <p className="mt-4 text-muted-foreground">{t("about.p6")}</p>
             <Button
               asChild
               variant="outline"
