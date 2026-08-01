@@ -1,0 +1,45 @@
+# 실리원 (SILIWON) — 고순도 실리카 소재 전문 공급사
+
+> 각 산업군이 요구하는 엄격한 기준에 맞추어, 고정밀·초고순도 맞춤형 실리카 소재를 공급합니다.
+> 용융실리카, 쿼츠·결정질 실리카, 침전 실리카, 흄드 실리카, 실리카겔, 콜로이달 실리카(실리카졸),
+> 규사·규사분말, 무연유리분말 등 실리카 전 계열 라인업을 한국어/영어/일본어로 제공합니다.
+> 소재지: 경기도 화성시 마도면 마도공단로 202 1F (Korea)
+
+사이트는 `/ko`, `/en`, `/ja` 경로 접두어로 3개 언어를 제공하며, 모든 페이지는
+정적 HTML(프리렌더)로 제공되어 JavaScript 실행 없이도 본문 내용을 읽을 수 있습니다.
+전체 URL 목록: https://silica.co.kr/sitemap.xml
+
+## 제품 카테고리 (Products)
+
+- [용융실리카 Fused Silica](https://silica.co.kr/ko/products/fumed-silica/): 반도체·CCL·EMC용 고순도 용융 실리카 (A/B/C 등급, SL 시리즈)
+- [쿼츠 · 결정질 실리카 Crystalline Silica](https://silica.co.kr/ko/products/crystalline-silica/): α-Quartz 기반 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말
+- [침전 실리카 Precipitated Silica](https://silica.co.kr/ko/products/precipitated-silica/): 도료 소광·고무 보강·접착제·사료·식품·치약용 침전 실리카 25종
+- [흄드 실리카 Fumed Silica](https://silica.co.kr/ko/products/fumed-silica/): 친수성/소수성 기상법 실리카, 증점·요변성 부여
+- [실리카겔 Silica Gel](https://silica.co.kr/ko/products/silica-gel/): 크로마토그래피(CHR)·산업용(IND)·건조제(DES)·촉매 담체 등 26종
+- [콜로이달 실리카 · 실리카졸 Silica Sol](https://silica.co.kr/ko/products/silica-sol/): SL-JA/SL-SHS 시리즈 수분산 콜로이달 실리카
+- [규사 Silica Sand](https://silica.co.kr/ko/products/silica-sand/): SL-S 시리즈 규사
+- [규사분말 Silica Powder](https://silica.co.kr/ko/products/silica-powder/): SL-P 시리즈 규사분말
+- [전체 제품 보기](https://silica.co.kr/ko/products/all/): 전 라인업 통합 목록 (페이지네이션)
+
+## 응용분야 (Applications)
+
+- [용융실리카 응용분야](https://silica.co.kr/ko/applications/fused-silica/)
+- [쿼츠·결정질 실리카 응용분야](https://silica.co.kr/ko/applications/quartz/)
+- [침전 실리카 응용분야](https://silica.co.kr/ko/applications/precipitated-silica/)
+- [흄드 실리카 응용분야](https://silica.co.kr/ko/applications/fumed-silica/)
+- [실리카겔 응용분야](https://silica.co.kr/ko/applications/silica-gel/)
+- [콜로이달 실리카 시리즈 응용분야](https://silica.co.kr/ko/applications/silica-sol/)
+- [규사 응용분야](https://silica.co.kr/ko/applications/silica-sand/)
+- [규사분말 응용분야](https://silica.co.kr/ko/applications/silica-powder/)
+
+## 회사 정보
+
+- [회사 소개](https://silica.co.kr/ko/about/): 사업 개요, 파트너사(SINOTENNG-SILICA), 생산·공급 체계
+- [기술 게시판](https://silica.co.kr/ko/board/): 실리카 소재 기술 자료 및 공지 (ko/en/ja 자동 번역 제공)
+- [이용약관](https://silica.co.kr/ko/terms/)
+- [개인정보처리방침](https://silica.co.kr/ko/privacy/)
+
+## 다국어 (Other languages)
+
+- English: https://silica.co.kr/en
+- 日本語: https://silica.co.kr/ja
