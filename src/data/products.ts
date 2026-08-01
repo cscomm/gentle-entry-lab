@@ -31,6 +31,7 @@ import sphSemImg from "@/assets/sl-sph-300-sem.png";
 import silicaSolImg from "@/assets/silica-sol.png";
 import slShsImg from "@/assets/sl-shs-photo.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
+import slHs12Img from "@/assets/sl-hs12-crystalline-silica.jpg";
 import slChr01Img from "@/assets/sl-chr-01.jpg";
 import slChr02Img from "@/assets/sl-chr-02.jpg";
 import slChr03Img from "@/assets/sl-chr-03.jpg";
@@ -1748,7 +1749,7 @@ productCatalog.push({
     "SL-HS12 is a crystalline silicon dioxide (SiO₂) micro-powder manufactured from high-purity quartz raw material through precision crushing and grading. It secures a specification purity of SiO₂ ≥99.85% (typical 99.92%) while maintaining ultra-low typical metallic impurities — Al 35 ppm, Ca 5 ppm, Fe 3 ppm, K 6 ppm, Mg 0.5 ppm, Na 7 ppm — making it suitable for electronic and chemical formulations that demand both insulation reliability and color stability.\n\nParticle size is controlled to D50 12±2 µm, with a typical distribution of D10 2.4 µm, D50 12.1 µm and D100 28.6 µm. The narrow, uniform distribution sustains stable flow and low viscosity even at high filler loading, improving moldability and surface quality. Moisture is held at ≤0.2% (typical 0.1%), suppressing agglomeration and void formation during storage and compounding.\n\nThe particle size distribution (PSD) can be adjusted according to the actual usage situation or user demand. With the high hardness (Mohs 7), excellent chemical stability and cost efficiency characteristic of crystalline silica, SL-HS12 is supplied reliably for a wide range of industrial filler applications.",
   jaDescription:
     "SL-HS12は、高純度石英(α-Quartz)原料を破砕・分級などの精密加工工程を経て製造した結晶質二酸化ケイ素(SiO₂)微粉です。規格SiO₂ ≥99.85%(代表値99.92%)の高純度を確保しつつ、Al 35 ppm・Ca 5 ppm・Fe 3 ppm・K 6 ppm・Mg 0.5 ppm・Na 7 ppmという極めて低い金属不純物代表値を維持し、絶縁信頼性と色調安定性が同時に求められる電子・化学素材配合に適しています。\n\n粒度はD50 12±2 µmを基準に管理され、代表分布はD10 2.4 µm・D50 12.1 µm・D100 28.6 µmです。狭く均一な粒度分布により、樹脂への高充填時でも安定した流動性と低粘度を維持し、成形性と表面品位を向上させます。水分は≤0.2%(代表値0.1%)に管理され、保管・混練時の凝集や気泡発生を抑制します。\n\n粒度分布(PSD)はお客様の実際の使用状況・要求仕様に応じて調整可能です。結晶質シリカ特有の高硬度(モース7)・優れた化学安定性・経済性を基盤に、多様な産業用フィラー用途へ安定供給します。",
-  image: crystallineSilicaImg,
+  image: slHs12Img,
   category: "advanced-series",
   features: [
     { title: "🧪 SiO₂ ≥99.85% (대표 99.92%)", desc: "고순도 석영 원료 기반 — 규격 대비 여유 있는 대표 순도 확보", enTitle: "🧪 SiO₂ ≥99.85% (typ. 99.92%)", jaTitle: "🧪 SiO₂ ≥99.85% (代表値99.92%)", enDesc: "From high-purity quartz — typical purity comfortably above specification", jaDesc: "高純度石英原料ベース — 規格に対し余裕のある代表純度" },
