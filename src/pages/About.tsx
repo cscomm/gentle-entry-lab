@@ -120,6 +120,9 @@ const About = () => {
             <p className="mt-6 text-muted-foreground">{tr("ab.overview.p1")}</p>
             <p className="mt-4 text-muted-foreground">{tr("ab.overview.p2")}</p>
             <p className="mt-4 text-muted-foreground">{tr("ab.overview.p3")}</p>
+            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p4")}</p>
+            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p5")}</p>
+            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p6")}</p>
           </div>
         </div>
 
