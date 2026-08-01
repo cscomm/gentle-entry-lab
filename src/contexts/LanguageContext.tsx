@@ -200,14 +200,23 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "ab.overview.tag": { ko: "COMPANY OVERVIEW", en: "COMPANY OVERVIEW", ja: "COMPANY OVERVIEW" },
   "ab.overview.title": { ko: "원료에서 완제품까지", en: "From Raw Material to Finished Product", ja: "原料から完成品まで" },
   "ab.overview.p1": {
-    ko: "당사는 국내에는 현재 유일한 고품위 규석 광산을 직접 개발하여 운영 중이며, 탐사부터 채광 후 1차 공정을 자체적으로 수행하여 최고 품질의 고품위 석영을 생산하고 있습니다.",
-    en: "We directly develop and operate Korea's only high-grade silica mine, performing exploration, mining, and primary processing in-house to produce the highest-quality quartz.", ja: "当社は現在、韓国で唯一の高品位石英鉱山を直接開発して運営しており、探査から採鉱後の1次工程まで自社で行い、最高品質の高品位石英を生産しています。" },
+    ko: "당사는 국내에서 유일하게 고품위 규석 광산을 직접 개발하여 운영 중이며, 탐사부터 채광, 1차 가공 공정까지 자체 수행하여 최고 품질의 고품위 석영을 생산하고 있습니다.",
+    en: "We are the only company in Korea that directly develops and operates a high-grade silica mine, carrying out exploration, mining, and primary processing in-house to produce the highest-quality high-purity quartz.", ja: "当社は、韓国で唯一として高品位石英鉱山を直接開発・運営しており、探査から採鉱、1次加工工程まで自社で行い、最高品質の高純度石英を生産しています。" },
   "ab.overview.p2": {
-    ko: "원료 선별부터 완제품까지 운영되는 각 단계의 차별화된 품질 관리 시스템을 통해 고객의 높은 기대에 부합하는 제품을 생산하고 있습니다.",
-    en: "Our differentiated QC system at every stage — from raw-material sorting to finished products — delivers results that meet our customers' highest expectations.", ja: "原料の選別から完成品に至るまで、各段階で差別化された品質管理システムを運用し、お客様の高い期待に応える製品を生産しています。" },
+    ko: "원료 선별부터 완제품 출하까지 전 과정에 걸친 차별화된 품질 관리 시스템을 통해 고객의 기대에 부합하는 제품을 공급해 왔습니다.",
+    en: "From raw material selection to finished product shipment, we have supplied products that meet customer expectations through a differentiated quality management system across the entire process.", ja: "原料の選別から完成品出荷に至るまで、全工程にわたる差別化された品質管理システムを通じて、お客様の期待に応える製品を供給してまいりました。" },
   "ab.overview.p3": {
-    ko: "실리카의 현지 공장은 글로벌 업체들에게 원료을 공급하고 있는 오랜 경험과 축적된 기술력을 기반으로 ISO 9001, ISO 22000, FSSC 22000 등의 품질 관리 시스템과 작업 환경을 보유 하고 있습니다. 지속적으로 발전 하는 기술의 빠른 적용을 통하여 전자 소재 · 산업용 코팅 · 세라믹 · 내화재 · 주조 · 태양광 및 에너지 소재 및 각종 실리카 첨가물을 다양한 산업분야 전반에 최적의 실리카 솔루션을 제공합니다.",
-    en: "Our ISO 9001-certified facility draws on long experience supplying raw materials to global companies. By rapidly applying evolving technology, we provide optimal silica solutions — including silica additives — for electronics, industrial coatings, ceramics, refractories, casting, solar, and energy materials across all industries.", ja: "シリカの現地工場は、グローバル企業に原料を供給してきた長年の経験と蓄積された技術力を基盤に、ISO 9001、ISO 22000、FSSC 22000などの品質管理システムと作業環境を保有しています。持続的に発展する技術の迅速な適用により、電子素材・産業用コーティング・セラミックス・耐火材・鋳造・太陽光およびエネルギー素材、各種シリカ添加物に関する最適なシリカソリューションを多様な産業分野全般に提供しています。" },
+    ko: "그러나 단일 국내 광산에서 채굴되는 원료 성분의 물리적·화학적 한계와 국내 가공 설비 및 기술적 제약으로 인해, 점차 다양해지고 세분화되는 고객사들의 특수 요구사항(니즈)을 완벽히 충족시키는 데에는 현실적인 어려움이 있었습니다. 특히 고순도화, 미세 입도 제어, 특수 수지/코팅용 첨가물 등 다양한 형태와 스펙의 제품을 국내 여건만으로 원활하게 생산·공급하기에는 한계가 존재했습니다.",
+    en: "However, due to the physical and chemical limitations of raw materials mined from a single domestic mine, as well as domestic processing equipment and technological constraints, it was realistically difficult to perfectly meet the increasingly diverse and specialized needs of customers. In particular, there were limitations to smoothly producing and supplying products with various forms and specifications — such as high-purity, fine particle size control, and special resin/coating additives — relying solely on domestic conditions.", ja: "しかしながら、単一の国内鉱山から採掘される原料成分の物理的・化学的限界と、国内の加工設備および技術的制約により、次第に多様化・細分化するお客様の特殊なニーズを完全に満たすことには現実的な困難がありました。特に、高純度化、微細粒度制御、特殊樹脂/コーティング用添加物など、多様な形状とスペックの製品を国内環境のみで円滑に生産・供給することには限界がありました。" },
+  "ab.overview.p4": {
+    ko: "이에 당사는 다년간 쌓아온 실리카 분야의 전문 지식과 기술 노하우를 바탕으로, 풍부한 고품질 원재료와 첨단 가공 설비를 갖춘 중국 현지 전문 제조 공장을 통해 고객 맞춤형 실리카 제품을 직접 제조하여 안정적으로 공급하고자 본 회사를 설립하게 되었습니다.",
+    en: "Therefore, based on years of accumulated expertise and technical know-how in the silica field, we established this company to directly manufacture and stably supply customized silica products through a specialized local manufacturing factory in China equipped with abundant high-quality raw materials and advanced processing equipment.", ja: "このような背景から、当社は長年にわたり培ってきたシリカ分野の専門知識と技術ノウハウを基盤に、豊富な高品質原料と先端加工設備を備えた中国現地の専門製造工場を通じて、お客様のニーズに合わせたカスタムシリカ製品を直接製造し、安定的に供給するために本会社を設立しました。" },
+  "ab.overview.p5": {
+    ko: "당사의 현지 생산 공장은 글로벌 기업들에 원료를 공급해 온 오랜 경험과 독보적인 기술력을 기탕으로 ISO 9001, ISO 22000, FSSC 22000 등 엄격한 글로벌 품질 및 위생·환경 관리 시스템을 보유하고 있습니다.",
+    en: "Our local production factory holds strict global quality, hygiene, and environmental management systems such as ISO 9001, ISO 22000, and FSSC 22000, backed by extensive experience and unrivaled technology in supplying raw materials to global companies.", ja: "当社の現地生産工場は、グローバル企業に原料を供給してきた長年の経験と独自の技術力を背景に、ISO 9001、ISO 22000、FSSC 22000などの厳格なグローバル品質・衛生・環境管理システムを保有しています。" },
+  "ab.overview.p6": {
+    ko: "주식회사 실리카는 지속적으로 발전하는 선진 기술을 빠르게 적용하여 전자 소재, 산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 제공하겠습니다.",
+    en: "Silica Co., Ltd. will quickly apply continuously advancing cutting-edge technologies to provide optimal silica solutions perfectly tailored to customer needs across all industries, including electronic materials, industrial coatings, ceramics, refractories, casting, solar and energy materials, and various silica additives.", ja: "株式会社シリカは、持続的に発展する先端技術を迅速に適用し、電子素材、産業用コーティング、セラミックス、耐火材、鋳造、太陽光およびエネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを提供してまいります。" },
   "ab.mine.tag": { ko: "JANGSU BAEKAM MINE · BAR", en: "JANGSU BAEKAM MINE · BAR", ja: "JANGSU BAEKAM MINE · BAR" },
   "ab.mine.title": { ko: "장수백암광산", en: "Jangsu Baekam Mine", ja: "長水白岩鉱山" },
   "ab.mine.p1.ko": {
