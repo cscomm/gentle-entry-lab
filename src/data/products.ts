@@ -2662,6 +2662,128 @@ const fumedExtProducts: ProductDetail[] = [
 ];
 productCatalog.push(...fumedExtProducts);
 
+// ============= Applied & Related Silica Materials =============
+const ceramicFritApps = [
+  "위생도기·타일·고급 식기용 유약(Glaze) 프리트 컴파운드",
+  "타일 몸체(Body) 및 엔고베(Engobe) 융합 촉진 첨가제",
+  "저온 소성 유약 기재 · 광택/불투명 유약 조성",
+  "세라믹 바인더 및 비트리파이드 본드(Vitrified Bond) 연마재",
+  "인조석재·엔지니어드 스톤 결합상 원료",
+  "내화물·내열 세라믹 충진재 및 소결 조제",
+  "건축용 세라믹 패널·법랑(Enamel) 프리트 원료",
+  "친환경 무붕소(Boron-free) 유리질 결합제",
+];
+const ceramicFritAppsEn = [
+  "Glaze frit compounds for sanitaryware, tiles and premium tableware",
+  "Fusion-promoting additive for tile bodies and engobes",
+  "Low-temperature firing glaze base for glossy and opaque glaze systems",
+  "Ceramic binder and vitrified-bond abrasives",
+  "Bonding-phase raw material for artificial and engineered stone",
+  "Refractory and heat-resistant ceramic filler / sintering aid",
+  "Architectural ceramic panel and enamel frit feedstock",
+  "Eco-friendly boron-free vitreous binder",
+];
+const ceramicFritAppsJa = [
+  "衛生陶器・タイル・高級食器用の釉薬(グレーズ)フリットコンパウンド",
+  "タイル素地(ボディ)およびエンゴーベの融合促進添加剤",
+  "低温焼成釉薬基材 · 光沢/不透明釉薬組成",
+  "セラミックバインダーおよびビトリファイドボンド砥材",
+  "人造石材・エンジニアードストーンの結合相原料",
+  "耐火物・耐熱セラミックの充填材および焼結助剤",
+  "建築用セラミックパネル・ホーロー(琺瑯)フリット原料",
+  "環境配慮型の無ホウ素(Boron-free)ガラス質結合剤",
+];
+
+const amorphousCeramicFrit: ProductDetail = {
+  slug: "amorphous-ceramic-frit",
+  name: "비정질 세라믹 프리트",
+  enName: "Amorphous Ceramic Frit",
+  jaName: "非晶質セラミックフリット",
+  tagline: "칼슘-알루미노실리케이트계 무붕소 유리 프리트 · SiO₂ 65.68% · 0.1~0.7 mm 과립",
+  enTagline: "Calcium Aluminosilicate Boron-Free Glass Frit · SiO₂ 65.68% · 0.1–0.7 mm Granules",
+  jaTagline: "カルシウムアルミノシリケート系 無ホウ素ガラスフリット · SiO₂ 65.68% · 0.1~0.7 mm 顆粒",
+  description:
+    "비정질 세라믹 프리트(Amorphous Ceramic Frit)는 규석·석회석·장석질 원료를 고온에서 완전 용융시킨 뒤 수냉(Water Quenching)으로 급냉하여 결정 성장을 억제한 유리질(비정질) 세라믹 원료입니다. 결정상이 사실상 존재하지 않기 때문에 상대적으로 낮은 온도에서 균일하게 연화·용융되며, 소성 과정에서 조성 편석 없이 매끄럽고 광택이 우수한 유리막을 형성합니다.\n\n본 제품은 SiO₂ 65.68%를 골격으로 CaO 12.90%, Al₂O₃ 10.00%가 조합된 칼슘-알루미노실리케이트(Calcium Aluminosilicate) 계열 프리트로, Na₂O 4.14% · K₂O 1.98%의 알칼리 용융제와 MgO 4.09%의 점도 조절 성분이 균형 있게 배합되어 있습니다. 특히 Fe₂O₃가 0.09%로 매우 낮아 백색도와 발색 재현성이 요구되는 고급 위생도기·타일·식기 유약에 유리하며, B₂O₃가 0.05% 미만인 무붕소(Boron-free) 조성이라 붕소 규제 대응 및 고온 안정성 측면에서도 강점을 갖습니다.\n\n입도는 0.1~0.35 mm와 0.35~0.7 mm 두 가지 과립(중입자) 형태로 공급되어 계량·이송·습식 분쇄(볼밀) 작업성이 뛰어나며, 유약 슬립 제조 시 분산성과 재현성이 우수합니다. 고객의 소성 온도 프로파일과 열팽창계수(CTE) 매칭 요구에 맞추어 조성 및 입도 커스터마이징이 가능합니다.",
+  enDescription:
+    "Amorphous Ceramic Frit is a vitreous ceramic raw material produced by fully melting silica, limestone and feldspathic raw materials at high temperature and water-quenching the melt to suppress crystal growth. With virtually no crystalline phase, it softens and melts uniformly at comparatively low temperatures and forms a smooth, high-gloss glassy layer without compositional segregation during firing.\n\nThe product is a calcium aluminosilicate frit built on SiO₂ 65.68% with CaO 12.90% and Al₂O₃ 10.00%, balanced by alkali fluxes Na₂O 4.14% and K₂O 1.98% and viscosity-controlling MgO 4.09%. Fe₂O₃ is held to just 0.09%, which favors whiteness and color reproducibility in premium sanitaryware, tile and tableware glazes, while B₂O₃ below 0.05% makes it a boron-free composition — advantageous for boron regulation compliance and high-temperature stability.\n\nIt is supplied in two granular grades, 0.1–0.35 mm and 0.35–0.7 mm, offering excellent handling in weighing, conveying and wet ball-milling, with strong dispersion and reproducibility in glaze slip preparation. Composition and particle size can be customized to match the customer's firing profile and CTE requirements.",
+  jaDescription:
+    "非晶質セラミックフリット(Amorphous Ceramic Frit)は、珪石・石灰石・長石質原料を高温で完全溶融させた後、水冷(急冷)によって結晶成長を抑制したガラス質(非晶質)セラミック原料です。結晶相がほぼ存在しないため比較的低い温度で均一に軟化・溶融し、焼成時に組成偏析のない滑らかで光沢に優れたガラス層を形成します。\n\n本製品はSiO₂ 65.68%を骨格に、CaO 12.90%・Al₂O₃ 10.00%を組み合わせたカルシウムアルミノシリケート系フリットで、アルカリ溶融剤のNa₂O 4.14%・K₂O 1.98%と粘度調整成分のMgO 4.09%がバランスよく配合されています。特にFe₂O₃が0.09%と非常に低く、白色度と発色再現性が求められる高級衛生陶器・タイル・食器の釉薬に有利であり、B₂O₃が0.05%未満の無ホウ素(Boron-free)組成であるため、ホウ素規制対応と高温安定性の面でも強みを持ちます。\n\n粒度は0.1~0.35 mmおよび0.35~0.7 mmの2種の顆粒(中粒子)形態で供給され、計量・搬送・湿式粉砕(ボールミル)の作業性に優れ、釉薬スリップ調製時の分散性と再現性も良好です。焼成温度プロファイルや熱膨張係数(CTE)のマッチング要求に応じて、組成・粒度のカスタマイズが可能です。",
+  image: ceramicFritImg,
+  detailImage: ceramicFritImg,
+  category: "advanced-series",
+  parentSlug: "applied-silica-materials",
+  features: [
+    { title: "🔷 100% 비정질(유리질) 구조", desc: "급냉 유리화로 결정상 제거 — 저온에서 균일 용융, 편석 없는 유약층 형성", enTitle: "🔷 Fully Amorphous (Vitreous) Structure", jaTitle: "🔷 100%非晶質(ガラス質)構造", enDesc: "Rapid-quench vitrification removes crystalline phases — uniform low-temperature melting with no segregation", jaDesc: "急冷ガラス化で結晶相を除去 — 低温で均一溶融、偏析のない釉薬層を形成" },
+    { title: "⚪ 초저 철분 Fe₂O₃ 0.09%", desc: "백색도 유지·발색 재현성 우수 — 고급 위생도기·식기 유약 기재로 적합", enTitle: "⚪ Ultra-Low Iron (Fe₂O₃ 0.09%)", jaTitle: "⚪ 超低鉄分 Fe₂O₃ 0.09%", enDesc: "Preserves whiteness and color reproducibility — ideal base for premium sanitaryware and tableware glazes", jaDesc: "白色度維持・発色再現性に優れ、高級衛生陶器・食器釉薬の基材に最適" },
+    { title: "🌿 무붕소(Boron-free) 조성", desc: "B₂O₃ < 0.05% — 붕소 규제 대응 및 고온 안정형 친환경 프리트", enTitle: "🌿 Boron-Free Composition", jaTitle: "🌿 無ホウ素(Boron-free)組成", enDesc: "B₂O₃ < 0.05% — regulation-friendly and high-temperature-stable eco frit", jaDesc: "B₂O₃ < 0.05% — ホウ素規制対応かつ高温安定型の環境配慮フリット" },
+    { title: "🔥 융점 저하 & 소성 에너지 절감", desc: "CaO·Na₂O·K₂O 용융제 배합으로 소성 온도 하향 — 소결 밀도와 강도 향상", enTitle: "🔥 Lower Melting Point & Energy Saving", jaTitle: "🔥 融点低下・焼成エネルギー削減", enDesc: "CaO/Na₂O/K₂O flux system lowers firing temperature while raising sintered density and strength", jaDesc: "CaO・Na₂O・K₂O溶融剤の配合で焼成温度を下げ、焼結密度と強度を向上" },
+    { title: "🧱 실금(Crazing) 방지 설계", desc: "Al₂O₃ 10% 배합으로 점도·열팽창 정합 — 유약 균열 및 박리 억제", enTitle: "🧱 Crazing-Resistant Design", jaTitle: "🧱 貫入(クレージング)防止設計", enDesc: "10% Al₂O₃ tunes viscosity and thermal expansion matching to suppress glaze cracking and peeling", jaDesc: "Al₂O₃ 10%配合で粘度・熱膨張を整合し、釉薬の亀裂・剥離を抑制" },
+    { title: "📐 2종 과립 입도 · 우수한 작업성", desc: "0.1~0.35 mm / 0.35~0.7 mm — 계량·이송·볼밀 분쇄 효율 최적화", enTitle: "📐 Two Granule Grades · Easy Handling", jaTitle: "📐 2種の顆粒粒度・優れた作業性", enDesc: "0.1–0.35 mm / 0.35–0.7 mm — optimized for weighing, conveying and ball-mill efficiency", jaDesc: "0.1~0.35 mm / 0.35~0.7 mm — 計量・搬送・ボールミル粉砕の効率を最適化" },
+  ],
+  specs: [
+    { label: "제품명", value: "비정질 세라믹 프리트 (非晶陶瓷熔料)", enValue: "Amorphous Ceramic Frit / Ceramic Glass Frit", jaValue: "非晶質セラミックフリット (非晶陶瓷熔料)", enLabel: "Product Name", jaLabel: "製品名" },
+    { label: "계열", value: "칼슘-알루미노실리케이트계 유리 프리트", enValue: "Calcium aluminosilicate glass frit", jaValue: "カルシウムアルミノシリケート系ガラスフリット", enLabel: "System", jaLabel: "系列" },
+    { label: "이산화규소 (SiO₂)", value: "65.68 %", note: "유리질(비정질) 골격을 형성하는 주성분", enNote: "Main network former of the vitreous (amorphous) structure", jaNote: "ガラス質(非晶質)骨格を形成する主成分", enLabel: "Silicon Dioxide (SiO₂)", jaLabel: "二酸化ケイ素 (SiO₂)" },
+    { label: "산화칼슘 (CaO)", value: "12.90 %", note: "융점을 낮추고 화학적 내구성 증대", enNote: "Lowers melting point and increases chemical durability", jaNote: "融点を下げ化学的耐久性を向上", enLabel: "Calcium Oxide (CaO)", jaLabel: "酸化カルシウム (CaO)" },
+    { label: "산화알루미늄 (Al₂O₃)", value: "10.00 %", note: "점도 조절, 실금(Crazing) 방지 및 소성 온도 범위 확대", enNote: "Controls viscosity, prevents crazing and widens the firing range", jaNote: "粘度調整、貫入(クレージング)防止、焼成温度範囲の拡大", enLabel: "Aluminium Oxide (Al₂O₃)", jaLabel: "酸化アルミニウム (Al₂O₃)" },
+    { label: "산화나트륨 (Na₂O)", value: "4.14 %", note: "강력한 용융제(Flux), 열팽창계수 증대", enNote: "Strong flux; increases thermal expansion coefficient", jaNote: "強力な溶融剤(フラックス)、熱膨張係数を増大", enLabel: "Sodium Oxide (Na₂O)", jaLabel: "酸化ナトリウム (Na₂O)" },
+    { label: "산화마그네슘 (MgO)", value: "4.09 %", note: "고온 점도 조절 및 매끄러운 표면 질감 형성", enNote: "Adjusts high-temperature viscosity and produces a smooth surface texture", jaNote: "高温粘度の調整および滑らかな表面質感の形成", enLabel: "Magnesium Oxide (MgO)", jaLabel: "酸化マグネシウム (MgO)" },
+    { label: "산화칼륨 (K₂O)", value: "1.98 %", note: "유약 표면의 광택 개선 및 용융 촉진", enNote: "Improves glaze surface gloss and promotes melting", jaNote: "釉薬表面の光沢改善および溶融促進", enLabel: "Potassium Oxide (K₂O)", jaLabel: "酸化カリウム (K₂O)" },
+    { label: "산화철 (Fe₂O₃)", value: "0.09 %", note: "불순물(철분) — 0.1% 이하로 매우 낮아 백색도 유지에 유리", enNote: "Iron impurity — kept below 0.1%, favorable for maintaining whiteness", jaNote: "不純物(鉄分) — 0.1%以下と非常に低く白色度維持に有利", enLabel: "Iron Oxide (Fe₂O₃)", jaLabel: "酸化鉄 (Fe₂O₃)" },
+    { label: "산화붕소 (B₂O₃)", value: "< 0.05 %", note: "붕소가 거의 들어가지 않은 무붕소(Boron-free)계 프리트", enNote: "Essentially boron-free frit composition", jaNote: "ホウ素をほとんど含まない無ホウ素(Boron-free)系フリット", enLabel: "Boron Oxide (B₂O₃)", jaLabel: "酸化ホウ素 (B₂O₃)" },
+    { label: "입도 분류", value: "0.1 ~ 0.35 mm / 0.35 ~ 0.7 mm (중입자·과립 형태)", enValue: "0.1–0.35 mm / 0.35–0.7 mm (medium granule form)", jaValue: "0.1~0.35 mm / 0.35~0.7 mm (中粒子・顆粒形態)", enLabel: "Particle Size", jaLabel: "粒度分類" },
+    { label: "외관", value: "유백색~미황색 반투명 유리질 과립", enValue: "Milky-white to pale-yellow translucent vitreous granules", jaValue: "乳白色~淡黄色の半透明ガラス質顆粒", enLabel: "Appearance", jaLabel: "外観" },
+    { label: "구조", value: "비정질(Amorphous / Glass Phase)", enValue: "Amorphous (glass phase)", jaValue: "非晶質(アモルファス/ガラス相)", enLabel: "Structure", jaLabel: "構造" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+    { label: "포장", value: "25 kg 크라프트 지대 · 1,000 kg 벌크백 · OEM", enValue: "25 kg kraft bag · 1,000 kg bulk bag · OEM", jaValue: "25 kg クラフト紙袋 · 1,000 kg バルクバッグ · OEM", enLabel: "Packaging", jaLabel: "包装" },
+  ],
+  applications: ceramicFritApps,
+};
+
+const appliedSilicaMaterials: ProductDetail = {
+  slug: "applied-silica-materials",
+  name: "실리카 응용 · 연관 소재",
+  enName: "Applied & Related Silica Materials",
+  jaName: "シリカ応用・関連素材",
+  tagline: "고온 용융·화학 반응·특수 공정으로 기능성을 부여한 실리카 기반 응용 소재 전문 카테고리",
+  enTagline: "A dedicated category of silica-based materials functionalized through high-temperature melting, chemical reaction and special processing",
+  jaTagline: "高温溶融・化学反応・特殊工程で機能性を付与したシリカベース応用素材の専門カテゴリ",
+  description:
+    "본 카테고리는 순수 실리카 원석을 넘어, 고온 용융·화학적 반응·특수 공정 등을 거쳐 제조된 다양한 실리카 기반 응용 및 연관 소재를 모아놓은 전문 카테고리입니다. 건축, 세라믹, 내화물, 화학 바인더 등 다양한 산업 현장의 특수한 니즈에 맞춰 기능성이 강화된 고품질 원료들을 제공합니다.\n\n실리카(SiO₂)는 그 자체로도 훌륭한 산업 소재이지만, 알칼리·알칼리토류 산화물이나 알루미나 등과 결합해 고온에서 용융·급냉되거나, 화학적 반응을 통해 새로운 결합 구조를 형성하면 원석 상태에서는 구현할 수 없는 특성이 발현됩니다. 융점 저하, 유리화(비정질화), 결합력 부여, 열팽창계수 정합, 표면 광택 형성 등이 대표적이며, 이러한 기능성 소재들은 실제 산업 현장에서 완제품의 품질을 좌우하는 핵심 원료로 사용됩니다.\n\nSiLiCA는 원료 배합 설계 단계부터 용융 조건, 급냉(수냉/공냉) 방식, 입도 분급까지 전 공정을 관리하여 로트 간 편차가 적고 재현성 높은 응용 소재를 공급합니다. 도자기·위생도기·타일 유약용 프리트, 세라믹 바인더 및 비트리파이드 본드, 인조석재 결합 원료, 내화물용 소결 조제, 건축용 기능성 충진재 등 각 산업이 요구하는 조성·입도·소성 거동에 맞추어 맞춤 생산이 가능합니다.\n\n모든 제품은 로트별 성적서와 함께 공급되며, 고객의 소성 온도 프로파일, 열팽창계수(CTE) 매칭 요구, 색상·백색도 기준, 규제 대응(무붕소·무연 등) 조건을 반영한 조성 커스터마이징을 지원합니다.",
+  enDescription:
+    "This category goes beyond pure silica raw stone, bringing together silica-based applied and related materials manufactured through high-temperature melting, chemical reaction and specialized processing. It supplies functionally enhanced, high-quality raw materials tailored to the specific needs of construction, ceramics, refractories, chemical binders and other industries.\n\nSilica (SiO₂) is an excellent industrial material on its own, but when combined with alkali, alkaline-earth oxides or alumina and melted and quenched at high temperature — or reacted chemically into new bonding structures — it develops properties unattainable in raw-stone form: lowered melting point, vitrification, binding capability, thermal-expansion matching and surface gloss formation. These functional materials are core inputs that determine finished-product quality on the shop floor.\n\nSiLiCA controls the entire process — batch design, melting conditions, quenching method (water/air) and particle classification — to deliver applied materials with low lot-to-lot variation and high reproducibility. Custom production is available for glaze frits, ceramic binders and vitrified bonds, engineered-stone bonding feedstock, refractory sintering aids and functional construction fillers.\n\nEvery product ships with a per-lot certificate of analysis, and composition can be customized to the customer's firing profile, CTE matching requirements, color and whiteness targets, and regulatory conditions such as boron-free or lead-free formulations.",
+  jaDescription:
+    "本カテゴリは、純粋なシリカ原石にとどまらず、高温溶融・化学反応・特殊工程などを経て製造された多様なシリカベースの応用・関連素材を集めた専門カテゴリです。建築、セラミックス、耐火物、化学バインダーなど、さまざまな産業現場の特殊なニーズに合わせ、機能性を強化した高品質原料を提供します。\n\nシリカ(SiO₂)はそれ自体でも優れた産業素材ですが、アルカリ・アルカリ土類酸化物やアルミナなどと結合して高温で溶融・急冷されたり、化学反応により新たな結合構造を形成すると、原石状態では実現できない特性が発現します。融点低下、ガラス化(非晶質化)、結合力の付与、熱膨張係数の整合、表面光沢の形成などが代表例で、これらの機能性素材は完成品の品質を左右する中核原料として使用されます。\n\nSiLiCAは、原料配合設計から溶融条件、急冷(水冷/空冷)方式、粒度分級まで全工程を管理し、ロット間ばらつきが少なく再現性の高い応用素材を供給します。陶磁器・衛生陶器・タイル釉薬用フリット、セラミックバインダーおよびビトリファイドボンド、人造石材の結合原料、耐火物用焼結助剤、建築用機能性充填材など、各産業が要求する組成・粒度・焼成挙動に合わせたカスタム生産が可能です。\n\nすべての製品はロット別成績書とともに供給され、焼成温度プロファイル、熱膨張係数(CTE)のマッチング要求、色調・白色度基準、無ホウ素・無鉛などの規制対応条件を反映した組成カスタマイズに対応します。",
+  image: ceramicFritImg,
+  category: "advanced-series",
+  isCategoryIndex: true,
+  features: [
+    { title: "🔥 고온 용융·급냉 기반 유리화 소재", desc: "완전 용융 후 급냉으로 결정상을 제거한 비정질 기능성 원료", enTitle: "🔥 High-Temperature Melt & Quench Vitrified Materials", jaTitle: "🔥 高温溶融・急冷によるガラス化素材", enDesc: "Amorphous functional raw materials with crystalline phases removed by full melting and rapid quenching", jaDesc: "完全溶融後の急冷で結晶相を除去した非晶質機能性原料" },
+    { title: "🏗️ 건축 · 세라믹 · 내화물 대응", desc: "타일·위생도기·인조석재·내화 라이닝 등 현장 요구 조성으로 공급", enTitle: "🏗️ Construction · Ceramics · Refractories", jaTitle: "🏗️ 建築・セラミックス・耐火物に対応", enDesc: "Supplied in compositions demanded by tile, sanitaryware, engineered stone and refractory lining applications", jaDesc: "タイル・衛生陶器・人造石材・耐火ライニングなど現場要求組成で供給" },
+    { title: "🧪 화학 바인더 · 결합제 라인업", desc: "세라믹 바인더, 비트리파이드 본드 등 결합 기능이 부여된 소재", enTitle: "🧪 Chemical Binder Lineup", jaTitle: "🧪 化学バインダー・結合剤ラインアップ", enDesc: "Materials with engineered bonding function such as ceramic binders and vitrified bonds", jaDesc: "セラミックバインダー、ビトリファイドボンドなど結合機能を付与した素材" },
+    { title: "🌿 규제 대응 친환경 조성", desc: "무붕소(Boron-free)·무연(Lead-free) 등 환경 규제 대응 조성 설계", enTitle: "🌿 Regulation-Ready Eco Compositions", jaTitle: "🌿 規制対応の環境配慮組成", enDesc: "Boron-free and lead-free composition design for environmental compliance", jaDesc: "無ホウ素(Boron-free)・無鉛(Lead-free)など環境規制対応の組成設計" },
+    { title: "🎛️ 조성 · 입도 맞춤 생산", desc: "소성 온도, CTE 정합, 백색도 기준에 맞춘 커스텀 배합", enTitle: "🎛️ Custom Composition & PSD", jaTitle: "🎛️ 組成・粒度のカスタム生産", enDesc: "Custom batching matched to firing temperature, CTE and whiteness targets", jaDesc: "焼成温度・CTE整合・白色度基準に合わせたカスタム配合" },
+    { title: "📄 로트별 성적서 · 안정 공급", desc: "조성·입도·수분 성적서 제공 및 대량 안정 공급 체계", enTitle: "📄 Per-Lot COA · Stable Supply", jaTitle: "📄 ロット別成績書・安定供給", enDesc: "Certificates for composition, PSD and moisture with stable high-volume supply", jaDesc: "組成・粒度・水分の成績書提供と大量安定供給体制" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "비정질 세라믹 프리트 (Amorphous Ceramic Frit) — 순차 확대 예정", enValue: "Amorphous Ceramic Frit — lineup expanding", jaValue: "非晶質セラミックフリット — 順次拡大予定", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "소재 유형", value: "유리질 프리트 · 세라믹 결합제 · 기능성 충진재", enValue: "Vitreous frits · ceramic binders · functional fillers", jaValue: "ガラス質フリット · セラミック結合剤 · 機能性充填材", enLabel: "Material Types", jaLabel: "素材タイプ" },
+    { label: "주요 산업", value: "건축 · 세라믹 · 내화물 · 화학 바인더 · 인조석재", enValue: "Construction · ceramics · refractories · chemical binders · engineered stone", jaValue: "建築 · セラミックス · 耐火物 · 化学バインダー · 人造石材", enLabel: "Key Industries", jaLabel: "主要産業" },
+    { label: "제조 공정", value: "고온 용융 → 급냉(수냉/공냉) 유리화 → 분급", enValue: "High-temperature melting → water/air quench vitrification → classification", jaValue: "高温溶融 → 急冷(水冷/空冷)ガラス化 → 分級", enLabel: "Process", jaLabel: "製造工程" },
+    { label: "형상 · 입도", value: "과립(0.1 ~ 0.7 mm) · 분말 맞춤 대응", enValue: "Granules (0.1–0.7 mm) · custom powder grades", jaValue: "顆粒(0.1~0.7 mm) · 粉末カスタム対応", enLabel: "Form & PSD", jaLabel: "形状・粒度" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+  ],
+  subModelsColumnLabel: { ko: "소재", en: "Material", ja: "素材" },
+  subModels: [
+    { code: "FRIT", slug: "amorphous-ceramic-frit", spec: "칼슘-알루미노실리케이트계 무붕소 유리 프리트 · SiO₂ 65.68% · 0.1~0.7 mm", enSpec: "Calcium aluminosilicate boron-free glass frit · SiO₂ 65.68% · 0.1–0.7 mm", jaSpec: "カルシウムアルミノシリケート系無ホウ素ガラスフリット · SiO₂ 65.68% · 0.1~0.7 mm", name: "비정질 세라믹 프리트", enName: "Amorphous Ceramic Frit", jaName: "非晶質セラミックフリット" },
+  ],
+  applications: ceramicFritApps,
+};
+
+productCatalog.push(appliedSilicaMaterials, amorphousCeramicFrit);
+
+
+
 
 
 export const getProductBySlug = (slug: string) =>
