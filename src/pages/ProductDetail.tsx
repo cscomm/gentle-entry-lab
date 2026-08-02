@@ -215,6 +215,7 @@ const ProductDetail = () => {
   const isSilicaSand = product.slug === "sls-series";
   const isSilicaPowder = product.slug === "slp-series";
   const isHS12 = product.slug === "sl-hs12";
+  const isFrit = product.slug === "amorphous-ceramic-frit";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
   const children = product.isCategoryIndex
@@ -1652,6 +1653,179 @@ const ProductDetail = () => {
           </div>
         </section>
       )}
+
+      {/* Amorphous Ceramic Frit Detailed Technical Profile */}
+      {isFrit && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {tri(
+              "비정질 세라믹 프리트의 유리 조성 설계, 용융·급냉 공정, 소성 거동 및 품질 관리 특성을 정밀하게 정리하였습니다.",
+              "A precise breakdown of the glass composition design, melting and quenching process, firing behavior and quality control that define this amorphous ceramic frit.",
+              "非晶質セラミックフリットのガラス組成設計、溶融・急冷工程、焼成挙動および品質管理特性を精密に整理しました。"
+            )}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: FlaskConical,
+                tag: "01",
+                title: tri("유리 조성 설계 (칼슘-알루미노실리케이트계)", "Glass Composition Design (Calcium Aluminosilicate System)", "ガラス組成設計(カルシウムアルミノシリケート系)"),
+                intro: tri(
+                  "SiO₂-Al₂O₃-CaO 3원계를 기본 골격으로 Na₂O·K₂O·MgO를 완충제로 배합한 균형형 프리트 조성입니다.",
+                  "A balanced frit composition built on the SiO₂-Al₂O₃-CaO ternary system with Na₂O, K₂O and MgO as buffering components.",
+                  "SiO₂-Al₂O₃-CaOの三元系を基本骨格に、Na₂O・K₂O・MgOを緩衝成分として配合したバランス型フリット組成です。"
+                ),
+                points: tri(
+                  [
+                    "SiO₂ 65.68 % — 유리질(비정질) 네트워크를 형성하는 주 골격 성분",
+                    "CaO 12.90 % — 융점 저하와 화학적 내구성(내알칼리·내수성) 동시 확보",
+                    "Al₂O₃ 10.00 % — 점도 조절, 실금(Crazing) 방지, 소성 온도 범위 확대",
+                    "Na₂O 4.14 % / K₂O 1.98 % — 강력한 용융제(Flux)로 용융 촉진 및 광택 개선",
+                    "MgO 4.09 % — 고온 점도 안정화 및 매끄러운 표면 질감 형성",
+                  ].join("|"),
+                  [
+                    "SiO₂ 65.68% — primary network former of the vitreous (amorphous) structure",
+                    "CaO 12.90% — lowers melting point while securing chemical durability (alkali/water resistance)",
+                    "Al₂O₃ 10.00% — viscosity control, crazing prevention and a wider firing window",
+                    "Na₂O 4.14% / K₂O 1.98% — strong fluxes that promote melting and improve gloss",
+                    "MgO 4.09% — stabilizes high-temperature viscosity and yields a smooth surface texture",
+                  ].join("|"),
+                  [
+                    "SiO₂ 65.68 % — ガラス質(非晶質)ネットワークを形成する主骨格成分",
+                    "CaO 12.90 % — 融点低下と化学的耐久性(耐アルカリ・耐水性)を同時に確保",
+                    "Al₂O₃ 10.00 % — 粘度調整、貫入(クレージング)防止、焼成温度範囲の拡大",
+                    "Na₂O 4.14 % / K₂O 1.98 % — 強力な溶融剤(フラックス)として溶融促進と光沢改善",
+                    "MgO 4.09 % — 高温粘度の安定化および滑らかな表面質感の形成",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Shield,
+                tag: "02",
+                title: tri("불순물 관리 및 무붕소 조성", "Impurity Control & Boron-Free Composition", "不純物管理および無ホウ素組成"),
+                intro: tri(
+                  "철분과 붕소를 극소량으로 관리하여 백색도·발색 재현성과 규제 대응력을 동시에 확보합니다.",
+                  "Iron and boron are held to trace levels, simultaneously securing whiteness, color reproducibility and regulatory compliance.",
+                  "鉄分とホウ素を極少量に管理し、白色度・発色再現性と規制対応力を同時に確保します。"
+                ),
+                points: tri(
+                  [
+                    "Fe₂O₃ 0.09 % (0.1 % 이하) — 착색 요인 최소화로 고백색 유약 기재에 적합",
+                    "B₂O₃ < 0.05 % — 무붕소(Boron-free) 조성으로 붕소 규제 대응 및 고온 안정성 확보",
+                    "붕소 휘발에 의한 표면 결점(핀홀·스컴) 리스크 저감",
+                    "안료 발색 왜곡이 적어 컬러 유약·엔고베 배합의 재현성 향상",
+                  ].join("|"),
+                  [
+                    "Fe₂O₃ 0.09% (below 0.1%) — minimal coloring contribution, ideal for high-whiteness glaze bases",
+                    "B₂O₃ < 0.05% — boron-free composition for regulatory compliance and high-temperature stability",
+                    "Reduced risk of surface defects (pinholes, scumming) caused by boron volatilization",
+                    "Low pigment-shift, improving reproducibility of colored glaze and engobe formulations",
+                  ].join("|"),
+                  [
+                    "Fe₂O₃ 0.09 %(0.1 %以下) — 着色要因を最小化し高白色釉薬基材に最適",
+                    "B₂O₃ < 0.05 % — 無ホウ素(Boron-free)組成でホウ素規制対応と高温安定性を確保",
+                    "ホウ素揮発による表面欠点(ピンホール・スカム)リスクを低減",
+                    "顔料の発色ずれが少なく、カラー釉薬・エンゴーベ配合の再現性を向上",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Gem,
+                tag: "03",
+                title: tri("비정질 구조 및 소성 거동", "Amorphous Structure & Firing Behavior", "非晶質構造および焼成挙動"),
+                intro: tri(
+                  "고온 완전 용융 후 수냉 급냉으로 결정 성장을 억제하여, 저온에서 균일하게 연화·용융되는 유리 상태를 구현합니다.",
+                  "Full high-temperature melting followed by water quenching suppresses crystal growth, producing a glassy state that softens and melts uniformly at lower temperatures.",
+                  "高温での完全溶融後、水冷急冷により結晶成長を抑制し、低温で均一に軟化・溶融するガラス状態を実現します。"
+                ),
+                points: tri(
+                  [
+                    "결정상 부재 — 조성 편석 없이 균일한 용융·유리막 형성",
+                    "소성 온도 하향 가능 — 에너지 절감 및 소결 밀도·강도 향상",
+                    "타일 몸체·엔고베 첨가 시 융합 촉진제로 작용",
+                    "매끄럽고 광택이 우수한 유약 표면 구현, 실금 발생 억제",
+                  ].join("|"),
+                  [
+                    "No crystalline phase — uniform melting and glass-film formation without segregation",
+                    "Allows lower firing temperature — energy savings with higher sintered density and strength",
+                    "Acts as a fusion promoter when added to tile bodies and engobes",
+                    "Produces a smooth, high-gloss glaze surface while suppressing crazing",
+                  ].join("|"),
+                  [
+                    "結晶相が存在せず — 組成偏析のない均一な溶融・ガラス膜形成",
+                    "焼成温度の低減が可能 — 省エネかつ焼結密度・強度の向上",
+                    "タイル素地・エンゴーベへの添加で融合促進剤として作用",
+                    "滑らかで光沢に優れた釉薬表面を実現し、貫入の発生を抑制",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: BarChart3,
+                tag: "04",
+                title: tri("입도 설계 · 작업성 및 품질 관리", "Particle Size, Handling & Quality Assurance", "粒度設計・作業性および品質管理"),
+                intro: tri(
+                  "0.1~0.7 mm 과립 형태의 2종 입도로 공급되어 계량·이송·습식 분쇄 공정에서 우수한 작업성을 제공합니다.",
+                  "Supplied in two granular grades spanning 0.1–0.7 mm, delivering excellent handling in weighing, conveying and wet-milling operations.",
+                  "0.1~0.7 mmの顆粒形態2種の粒度で供給され、計量・搬送・湿式粉砕工程で優れた作業性を提供します。"
+                ),
+                points: tri(
+                  [
+                    "입도 0.1 ~ 0.35 mm / 0.35 ~ 0.7 mm — 용도별 선택 공급",
+                    "과립 형태로 비산·분진 발생이 적고 계량 정확도 우수",
+                    "볼밀 습식 분쇄 시 빠른 분쇄 효율과 균일한 슬립 분산성",
+                    "로트별 성적서(조성·입도·수분) 제공 · 원산지: 중국 · 안정 대량 공급",
+                  ].join("|"),
+                  [
+                    "Particle size 0.1–0.35 mm / 0.35–0.7 mm — selectable by application",
+                    "Granular form minimizes dusting and improves weighing accuracy",
+                    "Fast milling efficiency and uniform slip dispersion in wet ball milling",
+                    "Per-lot certificate (composition, PSD, moisture) · Country of origin: China · stable high-volume supply",
+                  ].join("|"),
+                  [
+                    "粒度 0.1~0.35 mm / 0.35~0.7 mm — 用途別に選択供給",
+                    "顆粒形態のため飛散・粉塵が少なく、計量精度に優れる",
+                    "ボールミル湿式粉砕時の高い粉砕効率と均一なスリップ分散性",
+                    "ロット別成績書(組成・粒度・水分)提供 · 原産地:中国 · 安定した大量供給",
+                  ].join("|")
+                ).split("|"),
+              },
+            ].map((sec) => (
+              <div
+                key={sec.tag}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-card to-secondary/30 p-8 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]"
+              >
+                <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-3xl transition group-hover:bg-primary/20" />
+                <div className="relative">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                      <sec.icon className="h-6 w-6" />
+                    </div>
+                    <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
+                  </div>
+                  <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {sec.points.map((pt, i) => (
+                      <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
 
 
 

@@ -104,6 +104,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                         { to: "/products/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
                         { to: "/products/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
                         { to: "/products/silica-sol/", ko: "실리카졸", en: "Silica Sol (Colloidal Silica)", ja: "シリカゾル" },
+                        { to: "/products/applied-silica-materials/", ko: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材" },
                         { to: "/products/surface-modified-silica-powder/", ko: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末" },
                         { to: "/products/spherical-silica-powder/", ko: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末" },
                         { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },
