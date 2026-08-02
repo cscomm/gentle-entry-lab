@@ -32,6 +32,7 @@ import silicaSolImg from "@/assets/silica-sol.png";
 import slShsImg from "@/assets/sl-shs-photo.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import slHs12Img from "@/assets/sl-hs12-crystalline-silica.jpg";
+import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import slChr01Img from "@/assets/sl-chr-01.jpg";
 import slChr02Img from "@/assets/sl-chr-02.jpg";
 import slChr03Img from "@/assets/sl-chr-03.jpg";
