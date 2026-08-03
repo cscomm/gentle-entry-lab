@@ -216,6 +216,7 @@ const ProductDetail = () => {
   const isSilicaPowder = product.slug === "slp-series";
   const isHS12 = product.slug === "sl-hs12";
   const isFrit = product.slug === "amorphous-ceramic-frit";
+  const isSPJ = product.slug === "sl-spj-300";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
   const children = product.isCategoryIndex
