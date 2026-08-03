@@ -1563,7 +1563,46 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
       "리튬이온 이차전지 세라믹 코팅 세퍼레이터",
     ],
   },
+  "sl-spj-300": {
+    tagline: "구상화율 98% · SiO₂ >99.9% · D50 0.3±0.1 µm — 아미크론급 고구상 실리카 (SL-SPJ-300)",
+    enTagline: "98% Spheroidization · SiO₂ >99.9% · D50 0.3±0.1 µm — Submicron High-Sphericity Silica (SL-SPJ-300)",
+    jaTagline: "球状化率98% · SiO₂ >99.9% · D50 0.3±0.1µm — サブミクロン級高球状シリカ (SL-SPJ-300)",
+    description:
+      "SL-SPJ-300 아미크론 구상 실리카는 구상화율(Spheroidization rate) 규격 >95%, 대표치 98%를 만족하는 아미크론(submicron)급 고구상 SiO₂ 분말입니다. SiO₂ 순도는 규격 >99.9%, 대표치 99.92%이며, 평균 입경 D50 0.3±0.1 µm(대표 0.385 µm), D10 0.219 µm, D90 0.678 µm의 좁은 입도 분포를 가집니다.\n\n비표면적은 10~15 m²/g(대표 11.1 m²/g)로 관리되어 미세 입경에서도 수지·슬러리 배합 시 과도한 점도 상승 없이 안정적인 분산성과 높은 충전율을 확보할 수 있습니다. 수분 <0.2%(대표 0.11%), 수추출액 전기전도도 EC <20 µS/cm(대표 14.36 µS/cm), pH 6.5±1(대표 5.9)로 이온성 불순물이 낮게 관리되어 전자 소재에서 마이그레이션·부식 리스크를 억제합니다.\n\n높은 구상화율에서 기인하는 낮은 마찰·저응력 특성은 반도체 EMC·언더필, 저유전 CCL·프리프레그, 도전성/방열 페이스트, 광학·정밀 코팅, 이차전지 세라믹 코팅 등 초미세 필러가 요구되는 응용에서 유리하며, 입도 분포는 고객의 실제 사용 조건에 맞추어 조정 공급이 가능합니다.",
+    enDescription:
+      "SL-SPJ-300 Submicron Spherical Silica is a submicron high-sphericity SiO₂ powder meeting a spheroidization rate specification of >95% with a typical value of 98%. SiO₂ purity is specified at >99.9% (typical 99.92%), with a narrow particle size distribution of D50 0.3±0.1 µm (typical 0.385 µm), D10 0.219 µm and D90 0.678 µm.\n\nThe specific surface area is controlled to 10–15 m²/g (typical 11.1 m²/g), so even at this fineness the powder disperses stably in resins and slurries and enables high filler loading without excessive viscosity build-up. Moisture <0.2% (typical 0.11%), water-extract conductivity EC <20 µS/cm (typical 14.36 µS/cm) and pH 6.5±1 (typical 5.9) keep ionic impurities low, suppressing migration and corrosion risks in electronic materials.\n\nThe low-friction, low-stress behavior derived from its high spheroidization rate benefits applications requiring ultra-fine fillers — semiconductor EMC and underfill, low-Dk CCL and prepreg, conductive and thermally conductive pastes, optical and precision coatings, and ceramic coatings for secondary batteries. The particle size distribution can be adjusted to the customer's actual operating conditions.",
+    jaDescription:
+      "SL-SPJ-300 サブミクロン球状シリカは、球状化率(Spheroidization rate)規格>95%、代表値98%を満たすサブミクロン級の高球状SiO₂粉末です。SiO₂純度は規格>99.9%、代表値99.92%で、平均粒径D50 0.3±0.1 µm(代表値0.385 µm)、D10 0.219 µm、D90 0.678 µmの狭い粒度分布を有します。\n\n比表面積は10~15 m²/g(代表値11.1 m²/g)に管理され、微細粒径でも樹脂・スラリー配合時に過度な粘度上昇なく安定した分散性と高い充填率を確保できます。水分<0.2%(代表値0.11%)、水抽出液電気伝導度EC<20 µS/cm(代表値14.36 µS/cm)、pH 6.5±1(代表値5.9)とイオン性不純物が低く管理され、電子材料におけるマイグレーション・腐食リスクを抑制します。\n\n高い球状化率に由来する低摩擦・低応力特性は、半導体EMC・アンダーフィル、低誘電CCL・プリプレグ、導電性/放熱ペースト、光学・精密コーティング、二次電池セラミックコーティングなど超微細フィラーを要求される用途で有利であり、粒度分布は顧客の実使用条件に応じて調整供給が可能です。",
+    image: sphSemImg,
+    features: [
+      { title: "⚪ 구상화율 98%", desc: "규격 >95% · 대표치 98% — 높은 구상도로 저마찰·저응력 배합", enTitle: "⚪ 98% Spheroidization Rate", jaTitle: "⚪ 球状化率98%", enDesc: "Spec >95%, typical 98% — high sphericity for low-friction, low-stress formulation", jaDesc: "規格>95% · 代表値98% — 高い球形度で低摩擦・低応力配合" },
+      { title: "🧪 SiO₂ >99.9% 고순도", desc: "대표치 99.92% — 전자·광학용 고순도 필러 그레이드", enTitle: "🧪 High Purity SiO₂ >99.9%", jaTitle: "🧪 SiO₂ >99.9% 高純度", enDesc: "Typical 99.92% — high-purity filler grade for electronics and optics", jaDesc: "代表値99.92% — 電子・光学用高純度フィラーグレード" },
+      { title: "📐 아미크론 입도 D50 0.3 µm", desc: "D10 0.219 · D50 0.385 · D90 0.678 µm — 좁고 균일한 분포", enTitle: "📐 Submicron D50 0.3 µm", jaTitle: "📐 サブミクロン粒度 D50 0.3 µm", enDesc: "D10 0.219 · D50 0.385 · D90 0.678 µm — narrow, uniform distribution", jaDesc: "D10 0.219 · D50 0.385 · D90 0.678 µm — 狭く均一な分布" },
+      { title: "🌀 안정 비표면적 10~15 m²/g", desc: "대표 11.1 m²/g — 미세 입경에서도 점도 상승 억제", enTitle: "🌀 Stable SSA 10–15 m²/g", jaTitle: "🌀 安定した比表面積 10~15 m²/g", enDesc: "Typical 11.1 m²/g — suppresses viscosity build-up despite fineness", jaDesc: "代表値11.1 m²/g — 微細粒径でも粘度上昇を抑制" },
+      { title: "💧 저 이온·저 수분", desc: "EC <20 µS/cm(대표 14.36) · 수분 <0.2%(대표 0.11%)", enTitle: "💧 Low Ionics & Low Moisture", jaTitle: "💧 低イオン・低水分", enDesc: "EC <20 µS/cm (typ. 14.36) · moisture <0.2% (typ. 0.11%)", jaDesc: "EC<20 µS/cm(代表値14.36) · 水分<0.2%(代表値0.11%)" },
+      { title: "🛠️ 입도 맞춤 조정", desc: "고객 실사용 조건에 따라 입도 분포 조정 공급 가능", enTitle: "🛠️ Customizable PSD", jaTitle: "🛠️ 粒度カスタム調整", enDesc: "PSD can be adjusted to the customer's actual usage conditions", jaDesc: "顧客の実使用条件に応じて粒度分布を調整供給可能" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-SPJ-300", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "백색 구상 미분말", enValue: "White spherical fine powder", jaValue: "白色球状微粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "형상", value: "구상 (Spherical)", enValue: "Spherical", jaValue: "球状 (Spherical)", enLabel: "Morphology", jaLabel: "形状" },
+      { label: "구상화율 (규격 / 대표)", value: ">95 % / 98 %", enLabel: "Spheroidization Rate (Spec / Typical)", jaLabel: "球状化率 (規格 / 代表値)" },
+      { label: "SiO₂ (규격 / 대표)", value: ">99.9 % / 99.92 %", enLabel: "SiO₂ (Spec / Typical)", jaLabel: "SiO₂ (規格 / 代表値)" },
+      { label: "수분 (규격 / 대표)", value: "<0.2 % / 0.11 %", enLabel: "Moisture (Spec / Typical)", jaLabel: "水分 (規格 / 代表値)" },
+      { label: "비표면적 SSA (규격 / 대표)", value: "10 ~ 15 m²/g / 11.1 m²/g", enLabel: "SSA (Spec / Typical)", jaLabel: "比表面積 SSA (規格 / 代表値)" },
+      { label: "수추출액 EC (규격 / 대표)", value: "<20 µS/cm / 14.36 µS/cm", enLabel: "Water Extract EC (Spec / Typical)", jaLabel: "水抽出液 EC (規格 / 代表値)" },
+      { label: "수추출액 PH (규격 / 대표)", value: "6.5 ± 1 / 5.9", enLabel: "Water Extract PH (Spec / Typical)", jaLabel: "水抽出液 PH (規格 / 代表値)" },
+      { label: "입도 D10 (대표)", value: "0.219 µm", enLabel: "D10 (Typical)", jaLabel: "粒度 D10 (代表値)" },
+      { label: "입도 D50 (규격 / 대표)", value: "0.3 ± 0.1 µm / 0.385 µm", enLabel: "D50 (Spec / Typical)", jaLabel: "粒度 D50 (規格 / 代表値)" },
+      { label: "입도 D90 (대표)", value: "0.678 µm", enLabel: "D90 (Typical)", jaLabel: "粒度 D90 (代表値)" },
+      { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国 (China)", enLabel: "Country of Origin", jaLabel: "原産国" },
+      { label: "포장", value: "5 / 10 kg 지대 · OEM 대응", enValue: "5 / 10 kg bag · OEM available", jaValue: "5 / 10 kg 紙袋 · OEM対応", enLabel: "Packaging", jaLabel: "包装" },
+      { label: "비고", value: "입도 분포는 고객 실사용 조건에 따라 조정 가능", enValue: "PSD can be adjusted according to the customer's actual situation", jaValue: "粒度分布は顧客の実使用状況に応じて調整可能", enLabel: "Note", jaLabel: "備考" },
+    ],
+    applications: [],
+  },
 };
+
 
 
 const generatedChildren: ProductDetail[] = [];
