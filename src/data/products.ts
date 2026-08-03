@@ -905,7 +905,9 @@ const advSeriesProducts: ProductDetail[] = [
       { code: "SL-QG", slug: "sl-qg", spec: "일반 구상", enSpec: "Standard Spherical", jaSpec: "一般球状", name: "SL-QG 일반 구상 실리카 분말", enName: "SL-QG · Standard Spherical Silica Powder", jaName: "SL-QG 一般球状シリカ粉末" },
       { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사선(Low-α) 구상", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "SL-QG-L 저방사선 구상 실리카 분말", enName: "SL-QG-L · Low-Alpha Spherical Silica Powder", jaName: "SL-QG-L 低α線球状シリカ粉末" },
       { code: "SL-SPH-300", slug: "sl-sph-300", spec: "화학합성 아미크론급 구상 (D50 0.38µm · SiO₂ 99.98%)", enSpec: "Chemically Synthesized Submicron Spherical (D50 0.38 µm · SiO₂ 99.98%)", jaSpec: "化学合成サブミクロン球状 (D50 0.38µm · SiO₂ 99.98%)", name: "SL-SPH-300 고순도 나노구상실리카", enName: "SL-SPH-300 · Ultra-High-Purity Nano Spherical Silica", jaName: "SL-SPH-300 高純度ナノ球状シリカ" },
+      { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "구상화율 98% 아미크론 구상 (D50 0.3±0.1µm · SiO₂ >99.9%)", enSpec: "98% Spheroidization Submicron Spherical (D50 0.3±0.1 µm · SiO₂ >99.9%)", jaSpec: "球状化率98% サブミクロン球状 (D50 0.3±0.1µm · SiO₂ >99.9%)", name: "SL-SPJ-300 아미크론 구상 실리카", enName: "SL-SPJ-300 · Submicron Spherical Silica", jaName: "SL-SPJ-300 サブミクロン球状シリカ" },
     ],
+
     applications: ["반도체 EMC", "CCL / PCB", "언더필 / 봉지재", "고열전도 소재"],
   },
   {
