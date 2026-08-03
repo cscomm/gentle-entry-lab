@@ -2048,8 +2048,171 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SL-SPJ-300 — Detailed Technical Profile */}
+      {isSPJ && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-SPJ-300의 구상화 품질, 화학 순도, 아미크론 입도 설계, 표면·이온 특성을 TDS 기준으로 정밀하게 정리하였습니다.",
+              "A precise, TDS-based breakdown of the spheroidization quality, chemical purity, submicron particle design and surface / ionic characteristics of SL-SPJ-300.",
+              "SL-SPJ-300の球状化品質、化学純度、サブミクロン粒度設計、表面・イオン特性をTDS基準で精密に整理しました。"
+            )}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: Sparkles,
+                tag: "01",
+                title: tri("구상화 품질 관리", "Spheroidization Quality Control", "球状化品質管理"),
+                intro: tri(
+                  "구상화율 규격 >95%, 대표치 98%로 관리되어 입자 간 마찰이 낮고 수지·슬러리 내 유동성이 우수합니다.",
+                  "The spheroidization rate is controlled to a specification of >95% with a typical value of 98%, giving low inter-particle friction and excellent flow in resins and slurries.",
+                  "球状化率は規格>95%、代表値98%で管理され、粒子間摩擦が低く樹脂・スラリー中の流動性に優れます。"
+                ),
+                points: tri(
+                  [
+                    "구상화율 규격 >95 % · 대표치 98 %",
+                    "고구상도에 따른 저마찰·저응력 — 고충전 배합에서도 점도 상승 최소화",
+                    "장비 마모 및 성형 결함 감소",
+                    "균일 구상 형상으로 재현성 높은 분산 거동",
+                  ].join("|"),
+                  [
+                    "Spheroidization rate spec >95% · typical 98%",
+                    "High sphericity means low friction and low stress — minimal viscosity rise at high loading",
+                    "Reduced equipment wear and molding defects",
+                    "Uniform spherical morphology for reproducible dispersion behavior",
+                  ].join("|"),
+                  [
+                    "球状化率 規格>95 % · 代表値98 %",
+                    "高球形度による低摩擦・低応力 — 高充填配合でも粘度上昇を最小化",
+                    "設備摩耗および成形欠陥の低減",
+                    "均一な球状形状で再現性の高い分散挙動",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: FlaskConical,
+                tag: "02",
+                title: tri("화학 순도 및 조성", "Chemical Purity & Composition", "化学純度および組成"),
+                intro: tri(
+                  "SiO₂ 규격 >99.9%, 대표치 99.92%의 고순도 조성으로 전자·광학용 필러 요구 수준을 충족합니다.",
+                  "A high-purity composition with SiO₂ specified at >99.9% (typical 99.92%), meeting the requirements of electronic and optical filler grades.",
+                  "SiO₂規格>99.9%、代表値99.92%の高純度組成で、電子・光学用フィラーの要求水準を満たします。"
+                ),
+                points: tri(
+                  [
+                    "SiO₂ 규격 >99.9 % · 대표 99.92 %",
+                    "수분 규격 <0.2 % · 대표 0.11 % — 보관·배합 안정성 확보",
+                    "저불순물 조성으로 착색·전기 특성 저하 요인 최소화",
+                    "원산지: 중국 (China)",
+                  ].join("|"),
+                  [
+                    "SiO₂ spec >99.9% · typical 99.92%",
+                    "Moisture spec <0.2% · typical 0.11% — stable storage and compounding",
+                    "Low-impurity composition minimizes discoloration and electrical degradation",
+                    "Country of origin: China",
+                  ].join("|"),
+                  [
+                    "SiO₂ 規格>99.9 % · 代表値99.92 %",
+                    "水分 規格<0.2 % · 代表値0.11 % — 保管・配合安定性を確保",
+                    "低不純物組成で着色・電気特性低下要因を最小化",
+                    "原産国:中国 (China)",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: BarChart3,
+                tag: "03",
+                title: tri("아미크론 입도 설계", "Submicron Particle Size Design", "サブミクロン粒度設計"),
+                intro: tri(
+                  "D50 0.3±0.1 µm를 기준으로 D10 0.219 µm ~ D90 0.678 µm의 좁은 분포를 유지하며, 입도는 맞춤 조정이 가능합니다.",
+                  "Centered on D50 0.3±0.1 µm with a narrow distribution from D10 0.219 µm to D90 0.678 µm; the PSD can be customized.",
+                  "D50 0.3±0.1 µmを基準にD10 0.219 µm~D90 0.678 µmの狭い分布を維持し、粒度はカスタム調整が可能です。"
+                ),
+                points: tri(
+                  [
+                    "D10 0.219 µm · D50 0.385 µm(규격 0.3±0.1) · D90 0.678 µm",
+                    "미세 갭 충진 및 박막·미세 패턴 코팅에 유리",
+                    "조대 입자 최소화로 스크린 인쇄·디스펜싱 안정성 향상",
+                    "입도 분포는 고객 실사용 조건에 따라 조정 공급",
+                  ].join("|"),
+                  [
+                    "D10 0.219 µm · D50 0.385 µm (spec 0.3±0.1) · D90 0.678 µm",
+                    "Advantageous for fine-gap filling and thin-film / fine-pattern coating",
+                    "Minimal oversize particles improve screen-printing and dispensing stability",
+                    "PSD supplied adjusted to the customer's actual usage conditions",
+                  ].join("|"),
+                  [
+                    "D10 0.219 µm · D50 0.385 µm(規格0.3±0.1) · D90 0.678 µm",
+                    "微細ギャップ充填および薄膜・微細パターンコーティングに有利",
+                    "粗大粒子の最小化でスクリーン印刷・ディスペンス安定性を向上",
+                    "粒度分布は顧客の実使用条件に応じて調整供給",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Droplets,
+                tag: "04",
+                title: tri("표면 특성 및 이온 관리", "Surface & Ionic Characteristics", "表面特性およびイオン管理"),
+                intro: tri(
+                  "비표면적 10~15 m²/g와 수추출액 EC·pH 관리를 통해 미세 분말임에도 안정적인 배합·신뢰성을 제공합니다.",
+                  "A specific surface area of 10–15 m²/g together with controlled water-extract EC and pH delivers stable compounding and reliability despite the fineness.",
+                  "比表面積10~15 m²/gと水抽出液EC・pHの管理により、微粉でありながら安定した配合性と信頼性を提供します。"
+                ),
+                points: tri(
+                  [
+                    "비표면적 규격 10 ~ 15 m²/g · 대표 11.1 m²/g",
+                    "수추출액 EC 규격 <20 µS/cm · 대표 14.36 µS/cm — 이온성 불순물 저감",
+                    "수추출액 PH 6.5±1 · 대표 5.9 — 중성 근접 안정 영역",
+                    "이온 마이그레이션·부식 리스크 억제로 전자 소재 신뢰성 향상",
+                  ].join("|"),
+                  [
+                    "SSA spec 10–15 m²/g · typical 11.1 m²/g",
+                    "Water-extract EC spec <20 µS/cm · typical 14.36 µS/cm — reduced ionic impurities",
+                    "Water-extract pH 6.5±1 · typical 5.9 — stable near-neutral range",
+                    "Suppressed ionic migration and corrosion risk for higher electronic reliability",
+                  ].join("|"),
+                  [
+                    "比表面積 規格10~15 m²/g · 代表値11.1 m²/g",
+                    "水抽出液EC 規格<20 µS/cm · 代表値14.36 µS/cm — イオン性不純物を低減",
+                    "水抽出液PH 6.5±1 · 代表値5.9 — 中性近傍の安定領域",
+                    "イオンマイグレーション・腐食リスクの抑制で電子材料の信頼性を向上",
+                  ].join("|")
+                ).split("|"),
+              },
+            ].map((c) => (
+              <div key={c.tag} className="overflow-hidden rounded-2xl border border-border bg-card">
+                <div className="flex items-center gap-3 border-b border-border bg-secondary/30 px-6 py-4">
+                  <c.icon className="h-5 w-5 text-primary" />
+                  <span className="font-mono text-xs text-muted-foreground">{c.tag}</span>
+                  <h4 className="font-bold">{c.title}</h4>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-muted-foreground">{c.intro}</p>
+                  <ul className="mt-4 space-y-2">
+                    {c.points.map((p, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Applications — visual cards with images */}
-      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && (
+      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
