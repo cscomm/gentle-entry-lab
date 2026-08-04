@@ -2059,7 +2059,7 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
           <p className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-SPJ-300의 구상화 품질, 화학 순도, 아미크론 입도 설계, 표면·이온 특성을 TDS 기준으로 정밀하게 정리하였습니다.",
+              "SL-SPJ-300의 구상화 품질, 화학 순도, 서브미크론 입도 설계, 표면·이온 특성을 TDS 기준으로 정밀하게 정리하였습니다.",
               "A precise, TDS-based breakdown of the spheroidization quality, chemical purity, submicron particle design and surface / ionic characteristics of SL-SPJ-300.",
               "SL-SPJ-300の球状化品質、化学純度、サブミクロン粒度設計、表面・イオン特性をTDS基準で精密に整理しました。"
             )}
@@ -2130,7 +2130,7 @@ const ProductDetail = () => {
               {
                 icon: BarChart3,
                 tag: "03",
-                title: tri("아미크론 입도 설계", "Submicron Particle Size Design", "サブミクロン粒度設計"),
+                title: tri("서브미크론 입도 설계", "Submicron Particle Size Design", "サブミクロン粒度設計"),
                 intro: tri(
                   "D50 0.3±0.1 µm를 기준으로 D10 0.219 µm ~ D90 0.678 µm의 좁은 분포를 유지하며, 입도는 맞춤 조정이 가능합니다.",
                   "Centered on D50 0.3±0.1 µm with a narrow distribution from D10 0.219 µm to D90 0.678 µm; the PSD can be customized.",
