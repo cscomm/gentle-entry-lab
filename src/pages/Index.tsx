@@ -58,10 +58,10 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
   { label: "실리카졸", en: "Silica Sol", slug: "silica-sol" },
-  { label: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", slug: "applied-silica-materials" },
   { label: "규사", en: "Silica Sand", slug: "silica-sand" },
   { label: "규사분말", en: "Silica Powder", slug: "silica-powder" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", slug: "high-purity-quartz" },
+  { label: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", slug: "applied-silica-materials" },
 ];
 
 
@@ -75,7 +75,6 @@ const products = [
   { img: fumedSilica, slug: "fumed-silica", title: "흄드 실리카", enTitle: "Fumed Silica", jaTitle: "ヒュームドシリカ", desc: "SiCl₄ 화염가수분해 기반 나노급 무정형 SiO₂ — 실리콘 고무·실란트·접착제·도료·전자재료 전반", enDesc: "Nano-scale amorphous SiO₂ from SiCl₄ flame hydrolysis — reinforcing/thickening additive across silicones, sealants, coatings & electronics.", jaDesc: "SiCl₄の火炎加水分解によるナノレベル非晶質SiO₂ — シリコーン・シーラント・塗料・電子材料全般の補強/増粘添加剤", cat: "흄드 실리카" },
   { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", jaTitle: "シリカゲル", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", jaDesc: "高純度シリカゲル・微粉シリカ・アンチブロッキング・艶消し剤などフルラインナップ", cat: "실리카겔" },
   { img: silicaSolImg, slug: "silica-sol", title: "실리카졸", enTitle: "Silica Sol", jaTitle: "シリカゾル", desc: "SL-JA25 / SL-JA30 — 10~12 nm 초미립·암모니아 안정형 고순도 콜로이달 실리카 (정밀 주조·세라믹 코팅·촉매·2차전지)", enDesc: "SL-JA25 / SL-JA30 — 10–12 nm ultrafine, ammonia-stabilized colloidal silica for investment casting, ceramic coating, catalysts and batteries.", jaDesc: "SL-JA25 / SL-JA30 — 10~12 nm 超微粒·アンモニア安定型のコロイダルシリカ (精密鋳造・セラミックコーティング・触媒・二次電池)", cat: "실리카졸" },
-  { img: ceramicFritImg, slug: "applied-silica-materials", title: "실리카 응용 · 연관 소재", enTitle: "Applied & Related Silica Materials", jaTitle: "シリカ応用・関連素材", desc: "고온 용융·화학 반응·특수 공정으로 기능성을 부여한 실리카 기반 응용 소재 — 비정질 세라믹 프리트, 세라믹 바인더, 건축·내화 기능성 원료", enDesc: "Silica-based applied materials functionalized by high-temperature melting, chemical reaction and special processing — amorphous ceramic frit, ceramic binders and functional construction/refractory raw materials.", jaDesc: "高温溶融・化学反応・特殊工程で機能性を付与したシリカベース応用素材 — 非晶質セラミックフリット、セラミックバインダー、建築・耐火用機能性原料", cat: "실리카 응용 · 연관 소재" },
   // Row 2 — Surface-Modified / Spherical / Round-Corner / Angular / Low-Alpha / Lead-Free
   { img: surfaceModImg, slug: "surface-modified-silica-powder", title: "표면개질 실리카 분말", enTitle: "Surface-Modified Silica Powder", jaTitle: "表面改質シリカ粉末", desc: "SL-HJG / SL-HRG — 실란 커플링 표면개질로 유기 매트릭스 상용성 향상", enDesc: "SL-HJG / SL-HRG — silane-coupled surface modification for enhanced compatibility with organic matrices.", jaDesc: "SL-HJG / SL-HRG — シラン処理表面改質により有機マトリクスとの相溶性を向上", cat: "표면개질 실리카 분말" },
   { img: sphericalImg, slug: "spherical-silica-powder", title: "구상 실리카 분말", enTitle: "Spherical Silica Powder", jaTitle: "球状シリカ粉末", desc: "SL-QG / SL-QG-L — EMC·CCL·반도체 봉지재용 고구상·저응력·저열팽창 무정형 SiO₂", enDesc: "SL-QG / SL-QG-L — highly spherical, low-stress, low-CTE amorphous SiO₂ for EMC, CCL and semiconductor encapsulation.", jaDesc: "SL-QG / SL-QG-L — EMC・CCL・半導体封止材向けの高球状・低応力・低熱膨張の非晶質SiO₂", cat: "구상 실리카 분말" },
@@ -87,6 +86,7 @@ const products = [
   { img: silicaSandImg, slug: "silica-sand", title: "규사", enTitle: "Silica Sand", jaTitle: "珪砂", desc: "유리·주조·여과·인조잔디·건축용 고순도 산업 규사 — 입도 맞춤 공급", enDesc: "High-purity industrial silica sand for glass, foundry, filtration, artificial turf and construction — custom grain sizes.", jaDesc: "ガラス・鋳造・濾過・人工芝・建築用の高純度産業用シリカサンド — 粒度カスタム供給", cat: "규사" },
   { img: silicaPowderImg, slug: "silica-powder", title: "규사분말", enTitle: "Silica Powder", jaTitle: "珪砂粉末", desc: "도료·플라스틱·인조대리석·건축 자재용 고백색 미분 실리카 충진재", enDesc: "High-whiteness micronized silica filler for paints, plastics, engineered stone and construction materials.", jaDesc: "塗料・プラスチック・人造大理石・建築資材用の高白色微粉シリカ充填材", cat: "규사분말" },
   { img: highPurityQuartz, slug: "high-purity-quartz", title: "천연 고순도규석", enTitle: "Natural High-Purity Quartz", jaTitle: "天然高純度石英", desc: "엄선된 광원에서 채광한 고순도 규석", enDesc: "High-purity quartz mined from carefully selected ore deposits.", jaDesc: "厳選された鉱床から採掘した高純度石英", cat: "천연 고순도규석" },
+  { img: ceramicFritImg, slug: "applied-silica-materials", title: "실리카 응용 · 연관 소재", enTitle: "Applied & Related Silica Materials", jaTitle: "シリカ応用・関連素材", desc: "고온 용융·화학 반응·특수 공정으로 기능성을 부여한 실리카 기반 응용 소재 — 비정질 세라믹 프리트, 세라믹 바인더, 건축·내화 기능성 원료", enDesc: "Silica-based applied materials functionalized by high-temperature melting, chemical reaction and special processing — amorphous ceramic frit, ceramic binders and functional construction/refractory raw materials.", jaDesc: "高温溶融・化学反応・特殊工程で機能性を付与したシリカベース応用素材 — 非晶質セラミックフリット、セラミックバインダー、建築・耐火用機能性原料", cat: "실리카 응용 · 연관 소재" },
 ];
 
 const applications = [

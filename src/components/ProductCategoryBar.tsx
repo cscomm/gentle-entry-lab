@@ -13,7 +13,6 @@ const categories: { label: string; en: string; ja: string; slug?: string; href?:
   { label: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", ja: "シリカゲル", href: "/products/silica-gel" },
   { label: "실리카졸", en: "Silica Sol", ja: "シリカゾル", slug: "silica-sol" },
-  { label: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材", slug: "applied-silica-materials" },
   // Row 2 — Surface-Modified / Spherical / Round-Corner / Angular / Low-Alpha / Lead-Free
   { label: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末", slug: "surface-modified-silica-powder" },
   { label: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末", slug: "spherical-silica-powder" },
@@ -25,6 +24,7 @@ const categories: { label: string; en: string; ja: string; slug?: string; href?:
   { label: "규사", en: "Silica Sand", ja: "珪砂", slug: "silica-sand" },
   { label: "규사분말", en: "Silica Powder", ja: "珪砂粉末", href: "/products/silica-powder" },
   { label: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英", slug: "high-purity-quartz" },
+  { label: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材", slug: "applied-silica-materials" },
 ];
 
 
