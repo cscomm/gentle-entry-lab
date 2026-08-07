@@ -283,6 +283,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      )}
 
 
       {false && (
