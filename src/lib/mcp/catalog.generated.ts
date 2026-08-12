@@ -34,6 +34,8 @@ const sphSemImg = "/assets/sl-sph-300-sem.png";
 const silicaSolImg = "/assets/silica-sol.png";
 const slShsImg = "/assets/sl-shs-photo.jpg";
 const crystallineSilicaImg = "/assets/crystalline-silica.jpg";
+const slHs12Img = "/assets/sl-hs12-crystalline-silica.jpg";
+const ceramicFritImg = "/assets/amorphous-ceramic-frit.jpg";
 const slChr01Img = "/assets/sl-chr-01.jpg";
 const slChr02Img = "/assets/sl-chr-02.jpg";
 const slChr03Img = "/assets/sl-chr-03.jpg";
@@ -809,105 +811,7 @@ const PS_FEATURES = [
   { title: "🌿 광범위 응용", desc: "고무·페인트·플라스틱·식의약·치약·화장품 등 산업 전반 적용", enTitle: "🌿 Wide Applications", jaTitle: "🌿 広範な応用", enDesc: "Applied across industries: rubber, paint, plastics, food/pharma, toothpaste, cosmetics, and more", jaDesc: "ゴム・塗料・プラスチック・食品医薬品・歯磨き粉・化粧品など産業全般に適用" },
 ];
 
-const precipitatedProducts: ProductDetail[] = [
-  {
-    slug: "precipitated-silica-sl-a81",
-    name: "SL-A81 침전 실리카",
-    enName: "SL-A81 · Precipitated Silica", jaName: "SL-A81 沈降シリカ",
-    tagline: "BET 700–750 m²/g 초고비표면적의 보강용 침전 실리카",
-    enTagline: "Reinforcement-Grade Precipitated Silica with Ultra-High BET 700–750 m²/g", jaTagline: "BET 700–750 m²/g 超高比表面積の補強用沈降シリカ",
-    description:
-      "SL-A81은 BET 비표면적 700~750 m²/g의 초고비표면적을 구현한 고순도 침전 실리카(Precipitated Silica)입니다. 일반적인 침전 실리카(150~250 m²/g) 대비 3~4배 수준의 극도로 넓은 표면적을 자랑하며, 이는 제품의 주요 경쟁력입니다.",
-    enDescription:
-      "SL-A81 is a high-purity precipitated silica achieving an ultra-high BET specific surface area of 700–750 m²/g. This is 3–4 times greater than typical precipitated silica (150–250 m²/g), which is the product's core competitive advantage.", jaDescription: "SL-A81はBET比表面積700~750 m²/gの超高比表面積を実現した高純度沈降シリカ(Precipitated Silica)です。一般的な沈降シリカ(150~250 m²/g)と比較して3~4倍の極めて広い表面積を誇り、これが製品の主な競争力となっています。",
-    image: precipitatedSilica,
-    category: "precipitated",
-    features: [
-      { title: "📊 극도로 넓은 비표면적", desc: "700~750 m²/g — 일반 실리카 대비 3~4배 높은 표면적으로 소량 첨가만으로도 높은 보강 효과 구현", enTitle: "📊 Extremely High Specific Surface Area", jaTitle: "📊 極めて広い比表面積", enDesc: "700–750 m²/g — 3–4× higher than conventional silica, enabling high reinforcement even at low loadings", jaDesc: "700~750 m²/g — 一般的なシリカの3~4倍高い表面積で、少量添加するだけでも高い補強効果を実現" },
-      { title: "🧪 고순도(≥99%) 안정성", desc: "불순물(중금속, Na₂SO₄ 등) 함량이 극도로 낮아 화학적 안정성 우수. 전기적 특성(절연성)이나 열적 안정성이 요구되는 첨단 소재에 적합", enTitle: "🧪 High Purity (≥99%) Stability", jaTitle: "🧪 高純度(≥99%)の安定性", enDesc: "Extremely low impurities (heavy metals, Na₂SO₄, etc.) ensure excellent chemical stability — ideal for advanced materials requiring electrical insulation and thermal stability", jaDesc: "不純物(重金属、Na₂SO₄など)の含有量が極めて低く化学的安定性に優れる。電気的特性(絶縁性)や熱的安定性が要求される先端素材に適合" },
-      { title: "⚙️ 미세하고 균일한 입도", desc: "7~8μm의 초미세 분말로 고무·수지·접착제 내 고른 분산성 확보. 표면 결함 없이 매끄러운 복합재 제조 가능", enTitle: "⚙️ Fine and Uniform Particle Size", jaTitle: "⚙️ 微細かつ均一な粒度", enDesc: "Ultra-fine 7–8 µm powder ensures uniform dispersion in rubber, resin, and adhesives — enabling smooth composite manufacturing without surface defects", jaDesc: "7~8μmの超微細粉末でゴム・樹脂・接着剤内における均一な分散性を確保。表面欠陥のない滑らかな複合材の製造が可能" },
-      { title: "💧 적절한 DBP 흡수량", desc: "90~130 ml/100g — 과도한 오일 흡수 없이 적정 수준의 구조성 유지. 고충전(high loading) 배합 설계에도 적용 가능", enTitle: "💧 Optimal DBP Absorption", jaTitle: "💧 適切なDBP吸油量", enDesc: "90–130 ml/100g — maintains adequate structure without excessive oil absorption, applicable to high-loading formulations", jaDesc: "90~130 ml/100g — 過度なオイル吸収なしに適正なレベルの構造性を維持。高充填(high loading)配合設計にも適用可能" },
-      { title: "⚖️ 중성 pH (6.5~7.5)", desc: "산성이나 알칼리성 실리카가 유기 바인더나 고무의 가교 구조를 손상시키는 현상 방지. 경화제, 가교제, 촉매와의 부반응 최소화", enTitle: "⚖️ Neutral pH (6.5–7.5)", jaTitle: "⚖️ 中性pH (6.5~7.5)", enDesc: "Prevents damage to crosslinking structures in organic binders and rubber caused by acidic or alkaline silica — minimizes side reactions with curing agents, crosslinkers, and catalysts", jaDesc: "酸性やアルカリ性のシリカが有機バインダーやゴムの架橋構造を損傷する現象を防止。硬化剤、架橋剤、触媒との副反応を最小化" },
-      { title: "✨ 뛰어난 백색도 (≥95)", desc: "최종 제품의 색상이나 투명도를 해치지 않음. 착색이나 도장 공정에서 베이스 재료로 활용도 높음", enTitle: "✨ Outstanding Whiteness (≥95)", jaTitle: "✨ 優れた白色度 (≥95)", enDesc: "Does not affect the color or transparency of finished products — highly usable as a base material in coloring and coating processes", jaDesc: "最終製品の色合いや透明度を損なわない。着色や塗装工程でのベース材料としての活用度が高い" },
-      { title: "🔥 우수한 열적 안정성", desc: "1000℃ 소성 감량 3~5%로 고온 공정에서도 무게 변화나 휘발 성분 방출이 적음. 고온 경화, 사출, 압출 공정에서도 물성 유지", enTitle: "🔥 Excellent Thermal Stability", jaTitle: "🔥 優れた熱的安定性", enDesc: "Ignition loss of only 3–5% at 1000°C — minimal weight change or volatile release during high-temperature processes; properties maintained through hot curing, injection, and extrusion", jaDesc: "1000℃焼成減量3~5%で、高温工程でも重量変化や揮発成分の放出が少ない。高温硬化、射出、押出工程でも物性を維持" },
-    ],
-    specs: [
-      { label: "등급 (Grade)", value: "SL-A81", enLabel: "Grade", jaLabel: "グレード (Grade)" },
-      { label: "외관 (Form)", value: "White powder", note: "순백색 분말", enLabel: "Form", jaLabel: "形態 (Form)", enNote: "Pure white powder", jaNote: "純白色粉末" },
-      { label: "백색도 (Whiteness)", value: "≥ 95", enLabel: "Whiteness", jaLabel: "白色度 (Whiteness)" },
-      { label: "SiO₂ (건조 기준)", value: "≥ 99%", note: "초고순도", enLabel: "SiO₂ (Dry Basis)", jaLabel: "SiO₂ (乾燥基準)", enNote: "Ultra-high purity", jaNote: "超高純度" },
-      { label: "pH", value: "6.5 – 7.5", note: "중성", enLabel: "pH", enNote: "Neutral", jaNote: "中性" },
-      { label: "BET 비표면적", value: "700 – 750 m²/g", note: "초고비표면적", enLabel: "BET Specific Surface Area", jaLabel: "BET比表面積", enNote: "Ultra-high SSA", jaNote: "超高比表面積" },
-      { label: "DBP 흡유량", value: "90 – 130 ml/100g", enLabel: "DBP Oil Absorption", jaLabel: "DBP吸油量" },
-      { label: "평균 입자 크기", value: "7 – 8 µm", enLabel: "Average Particle Size", jaLabel: "平均粒子径" },
-      { label: "건조 감량 (105℃, 2hr)", value: "3.0 – 4.0 %", enLabel: "Loss on Drying (105℃, 2 hr)", jaLabel: "乾燥減量 (105℃, 2hr)" },
-      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)", jaLabel: "強熱減量 (1000℃, 2hr)" },
-    ],
-    applications: PS_APPS,
-  },
-  {
-    slug: "precipitated-silica-si-60",
-    name: "SI-60 미립자 침전 실리카",
-    enName: "SI-60 · Fine Particle Precipitated Silica", jaName: "SI-60 微粒子沈降シリカ",
-    tagline: "입도 11–18µm·DBP 230–260의 범용 고무 보강·필러용 실리카",
-    enTagline: "General-Purpose Rubber Reinforcement & Filler Silica with 11–18 µm Particle Size and DBP 230–260", jaTagline: "粒度 11–18µm・DBP 230–260の汎用ゴム補強・フィラー用シリカ",
-    description:
-      "SI-60은 평균 입도 11~18µm의 미립자 침전 실리카로, 우수한 분산성과 보강 성능을 갖춰 신발 밑창·산업용 고무·실리콘 고무·접착제·실란트 등에 폭넓게 사용됩니다. 높은 DBP 흡유량(230~260 ml/100g)으로 증점·요변성(thixotropy) 부여에도 적합합니다.",
-    enDescription:
-      "SI-60 is a fine-particle precipitated silica with an average particle size of 11–18 µm. It offers excellent dispersibility and reinforcement performance, and is widely used in shoe soles, industrial rubber, silicone rubber, adhesives, and sealants. Its high DBP oil absorption (230–260 ml/100g) also makes it suitable for thickening and thixotropy applications.", jaDescription: "SI-60は平均粒度11~18µmの微粒子沈降シリカで、優れた分散性と補強性能を備えており、靴底・産業ゴム・シリコーンゴム・接着剤・シーラントなどに幅広く使用されます。高いDBP吸油量(230~260 ml/100g)により、増粘・チキソ性(thixotropy)の付与にも適しています。",
-    image: precipitatedSilica,
-    category: "precipitated",
-    features: PS_FEATURES,
-    specs: [
-      { label: "외관 (Form)", value: "White powder", enLabel: "Form", jaLabel: "形態 (Form)" },
-      { label: "백색도 (Whiteness)", value: "97 – 98", enLabel: "Whiteness", jaLabel: "白色度 (Whiteness)" },
-      { label: "SiO₂ (건조 기준)", value: "≥ 99%", enLabel: "SiO₂ (Dry Basis)", jaLabel: "SiO₂ (乾燥基準)" },
-      { label: "pH", value: "6.5 – 7.5", enLabel: "pH" },
-      { label: "DBP 흡유량", value: "230 – 260 ml/100g", enLabel: "DBP Oil Absorption", jaLabel: "DBP吸油量" },
-      { label: "입자 크기", value: "11 – 18 µm", enLabel: "Particle Size", jaLabel: "粒子径" },
-      { label: "벌크 밀도", value: "110 – 130 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
-      { label: "건조 감량 (105℃, 2hr)", value: "4.0 – 6.0 %", enLabel: "Loss on Drying (105℃, 2 hr)", jaLabel: "乾燥減量 (105℃, 2hr)" },
-      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)", jaLabel: "強熱減量 (1000℃, 2hr)" },
-      { label: "가용성 염 (Na₂SO₄)", value: "≤ 1.5 %", enLabel: "Soluble Salts (Na₂SO₄)", jaLabel: "可溶性塩 (Na₂SO₄)" },
-      { label: "납 함량 (Pb)", value: "≤ 0.0005 %", enLabel: "Lead Content (Pb)", jaLabel: "鉛含有量 (Pb)" },
-      { label: "중금속 함량", value: "≤ 0.003 %", enLabel: "Heavy Metals", jaLabel: "重金属含有量" },
-      { label: "비소 함량 (As)", value: "≤ 0.0003 %", enLabel: "Arsenic Content (As)", jaLabel: "ヒ素含有量 (As)" },
-      { label: "포장 (Package)", value: "15 kg / bag", enLabel: "Package", jaLabel: "包装 (Package)" },
-    ],
-    applications: PS_APPS,
-  },
-  {
-    slug: "precipitated-silica-si-175",
-    name: "SI-175 침전 실리카",
-    enName: "SI-175 · Precipitated Silica", jaName: "SI-175 沈降シリカ",
-    tagline: "입도 45µm, 비산 적고 취급 용이한 고무·산업용 침전 실리카",
-    enTagline: "45 µm Particle Size, Low Dust, Easy-to-Handle Rubber & Industrial Precipitated Silica", jaTagline: "粒度 45µm、飛散が少なく取り扱いが容易なゴム・産業用沈降シリカ",
-    description:
-      "SI-175는 평균 입도 45µm 수준의 침전 실리카로, 비산이 적고 흐름성이 우수하여 대량 자동 계량·혼합 공정에 적합합니다. 고무 보강용, 사료 첨가용 캐리어, 산업용 충진제 등 다양한 분야에 사용됩니다.",
-    enDescription:
-      "SI-175 is a precipitated silica with an average particle size of around 45 µm. It generates little dust and has excellent flowability, making it ideal for large-scale automatic weighing and mixing processes. It is used in various fields including rubber reinforcement, feed-additive carriers, and industrial fillers.", jaDescription: "SI-175は平均粒度45µmレベルの沈降シリカで、飛散が少なく流動性に優れているため、大量自動計量・混合工程に適しています。ゴム補強用、飼料添加用キャリア、産業用充填剤など多様な分野に使用されます。",
-    image: precipitatedSilica,
-    category: "precipitated",
-    features: PS_FEATURES,
-    specs: [
-      { label: "외관 (Form)", value: "White powder", enLabel: "Form", jaLabel: "形態 (Form)" },
-      { label: "백색도 (Whiteness)", value: "97 – 98", enLabel: "Whiteness", jaLabel: "白色度 (Whiteness)" },
-      { label: "SiO₂ (건조 기준)", value: "≥ 98%", enLabel: "SiO₂ (Dry Basis)", jaLabel: "SiO₂ (乾燥基準)" },
-      { label: "pH", value: "6.5 – 7.5", enLabel: "pH" },
-      { label: "DBP 흡유량", value: "230 – 260 ml/100g", enLabel: "DBP Oil Absorption", jaLabel: "DBP吸油量" },
-      { label: "입자 크기", value: "45 µm", enLabel: "Particle Size", jaLabel: "粒子径" },
-      { label: "벌크 밀도", value: "230 – 250 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
-      { label: "건조 감량 (105℃, 2hr)", value: "4.0 – 6.0 %", enLabel: "Loss on Drying (105℃, 2 hr)", jaLabel: "乾燥減量 (105℃, 2hr)" },
-      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)", jaLabel: "強熱減量 (1000℃, 2hr)" },
-      { label: "가용성 염 (Na₂SO₄)", value: "≤ 1.5 %", enLabel: "Soluble Salts (Na₂SO₄)", jaLabel: "可溶性塩 (Na₂SO₄)" },
-      { label: "납 함량 (Pb)", value: "≤ 0.0005 %", enLabel: "Lead Content (Pb)", jaLabel: "鉛含有量 (Pb)" },
-      { label: "중금속 함량", value: "≤ 0.003 %", enLabel: "Heavy Metals", jaLabel: "重金属含有量" },
-      { label: "비소 함량 (As)", value: "≤ 0.0003 %", enLabel: "Arsenic Content (As)", jaLabel: "ヒ素含有量 (As)" },
-      { label: "포장 (Package)", value: "20 kg / bag", enLabel: "Package", jaLabel: "包装 (Package)" },
-    ],
-    applications: PS_APPS,
-  },
-];
+const precipitatedProducts: ProductDetail[] = [];
 
 productCatalog.push(...precipitatedProducts);
 
@@ -1003,7 +907,9 @@ const advSeriesProducts: ProductDetail[] = [
       { code: "SL-QG", slug: "sl-qg", spec: "일반 구상", enSpec: "Standard Spherical", jaSpec: "一般球状", name: "SL-QG 일반 구상 실리카 분말", enName: "SL-QG · Standard Spherical Silica Powder", jaName: "SL-QG 一般球状シリカ粉末" },
       { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사선(Low-α) 구상", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "SL-QG-L 저방사선 구상 실리카 분말", enName: "SL-QG-L · Low-Alpha Spherical Silica Powder", jaName: "SL-QG-L 低α線球状シリカ粉末" },
       { code: "SL-SPH-300", slug: "sl-sph-300", spec: "화학합성 아미크론급 구상 (D50 0.38µm · SiO₂ 99.98%)", enSpec: "Chemically Synthesized Submicron Spherical (D50 0.38 µm · SiO₂ 99.98%)", jaSpec: "化学合成サブミクロン球状 (D50 0.38µm · SiO₂ 99.98%)", name: "SL-SPH-300 고순도 나노구상실리카", enName: "SL-SPH-300 · Ultra-High-Purity Nano Spherical Silica", jaName: "SL-SPH-300 高純度ナノ球状シリカ" },
+      { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "구상화율 98% 구상 (D50 0.3±0.1µm · SiO₂ >99.9%)", enSpec: "98% Spheroidization Submicron Spherical (D50 0.3±0.1 µm · SiO₂ >99.9%)", jaSpec: "球状化率98% サブミクロン球状 (D50 0.3±0.1µm · SiO₂ >99.9%)", name: "SL-SPJ-300 구상 실리카", enName: "SL-SPJ-300 · Submicron Spherical Silica", jaName: "SL-SPJ-300 サブミクロン球状シリカ" },
     ],
+
     applications: ["반도체 EMC", "CCL / PCB", "언더필 / 봉지재", "고열전도 소재"],
   },
   {
@@ -1659,7 +1565,46 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
       "리튬이온 이차전지 세라믹 코팅 세퍼레이터",
     ],
   },
+  "sl-spj-300": {
+    tagline: "구상화율 98% · SiO₂ >99.9% · D50 0.3±0.1 µm — 서브미크론급 고구상 실리카 (SL-SPJ-300)",
+    enTagline: "98% Spheroidization · SiO₂ >99.9% · D50 0.3±0.1 µm — Submicron High-Sphericity Silica (SL-SPJ-300)",
+    jaTagline: "球状化率98% · SiO₂ >99.9% · D50 0.3±0.1µm — サブミクロン級高球状シリカ (SL-SPJ-300)",
+    description:
+      "SL-SPJ-300 구상 실리카는 구상화율(Spheroidization rate) 규격 >95%, 대표치 98%를 만족하는 서브미크론(submicron)급 고구상 SiO₂ 분말입니다. SiO₂ 순도는 규격 >99.9%, 대표치 99.92%이며, 평균 입경 D50 0.3±0.1 µm(대표 0.385 µm), D10 0.219 µm, D90 0.678 µm의 좁은 입도 분포를 가집니다.\n\n비표면적은 10~15 m²/g(대표 11.1 m²/g)로 관리되어 미세 입경에서도 수지·슬러리 배합 시 과도한 점도 상승 없이 안정적인 분산성과 높은 충전율을 확보할 수 있습니다. 수분 <0.2%(대표 0.11%), 수추출액 전기전도도 EC <20 µS/cm(대표 14.36 µS/cm), pH 6.5±1(대표 5.9)로 이온성 불순물이 낮게 관리되어 전자 소재에서 마이그레이션·부식 리스크를 억제합니다.\n\n높은 구상화율에서 기인하는 낮은 마찰·저응력 특성은 반도체 EMC·언더필, 저유전 CCL·프리프레그, 도전성/방열 페이스트, 광학·정밀 코팅, 이차전지 세라믹 코팅 등 초미세 필러가 요구되는 응용에서 유리하며, 입도 분포는 고객의 실제 사용 조건에 맞추어 조정 공급이 가능합니다.",
+    enDescription:
+      "SL-SPJ-300 Submicron Spherical Silica is a submicron high-sphericity SiO₂ powder meeting a spheroidization rate specification of >95% with a typical value of 98%. SiO₂ purity is specified at >99.9% (typical 99.92%), with a narrow particle size distribution of D50 0.3±0.1 µm (typical 0.385 µm), D10 0.219 µm and D90 0.678 µm.\n\nThe specific surface area is controlled to 10–15 m²/g (typical 11.1 m²/g), so even at this fineness the powder disperses stably in resins and slurries and enables high filler loading without excessive viscosity build-up. Moisture <0.2% (typical 0.11%), water-extract conductivity EC <20 µS/cm (typical 14.36 µS/cm) and pH 6.5±1 (typical 5.9) keep ionic impurities low, suppressing migration and corrosion risks in electronic materials.\n\nThe low-friction, low-stress behavior derived from its high spheroidization rate benefits applications requiring ultra-fine fillers — semiconductor EMC and underfill, low-Dk CCL and prepreg, conductive and thermally conductive pastes, optical and precision coatings, and ceramic coatings for secondary batteries. The particle size distribution can be adjusted to the customer's actual operating conditions.",
+    jaDescription:
+      "SL-SPJ-300 サブミクロン球状シリカは、球状化率(Spheroidization rate)規格>95%、代表値98%を満たすサブミクロン級の高球状SiO₂粉末です。SiO₂純度は規格>99.9%、代表値99.92%で、平均粒径D50 0.3±0.1 µm(代表値0.385 µm)、D10 0.219 µm、D90 0.678 µmの狭い粒度分布を有します。\n\n比表面積は10~15 m²/g(代表値11.1 m²/g)に管理され、微細粒径でも樹脂・スラリー配合時に過度な粘度上昇なく安定した分散性と高い充填率を確保できます。水分<0.2%(代表値0.11%)、水抽出液電気伝導度EC<20 µS/cm(代表値14.36 µS/cm)、pH 6.5±1(代表値5.9)とイオン性不純物が低く管理され、電子材料におけるマイグレーション・腐食リスクを抑制します。\n\n高い球状化率に由来する低摩擦・低応力特性は、半導体EMC・アンダーフィル、低誘電CCL・プリプレグ、導電性/放熱ペースト、光学・精密コーティング、二次電池セラミックコーティングなど超微細フィラーを要求される用途で有利であり、粒度分布は顧客の実使用条件に応じて調整供給が可能です。",
+    image: sphSemImg,
+    features: [
+      { title: "⚪ 구상화율 98%", desc: "규격 >95% · 대표치 98% — 높은 구상도로 저마찰·저응력 배합", enTitle: "⚪ 98% Spheroidization Rate", jaTitle: "⚪ 球状化率98%", enDesc: "Spec >95%, typical 98% — high sphericity for low-friction, low-stress formulation", jaDesc: "規格>95% · 代表値98% — 高い球形度で低摩擦・低応力配合" },
+      { title: "🧪 SiO₂ >99.9% 고순도", desc: "대표치 99.92% — 전자·광학용 고순도 필러 그레이드", enTitle: "🧪 High Purity SiO₂ >99.9%", jaTitle: "🧪 SiO₂ >99.9% 高純度", enDesc: "Typical 99.92% — high-purity filler grade for electronics and optics", jaDesc: "代表値99.92% — 電子・光学用高純度フィラーグレード" },
+      { title: "📐 서브미크론 입도 D50 0.3 µm", desc: "D10 0.219 · D50 0.385 · D90 0.678 µm — 좁고 균일한 분포", enTitle: "📐 Submicron D50 0.3 µm", jaTitle: "📐 サブミクロン粒度 D50 0.3 µm", enDesc: "D10 0.219 · D50 0.385 · D90 0.678 µm — narrow, uniform distribution", jaDesc: "D10 0.219 · D50 0.385 · D90 0.678 µm — 狭く均一な分布" },
+      { title: "🌀 안정 비표면적 10~15 m²/g", desc: "대표 11.1 m²/g — 미세 입경에서도 점도 상승 억제", enTitle: "🌀 Stable SSA 10–15 m²/g", jaTitle: "🌀 安定した比表面積 10~15 m²/g", enDesc: "Typical 11.1 m²/g — suppresses viscosity build-up despite fineness", jaDesc: "代表値11.1 m²/g — 微細粒径でも粘度上昇を抑制" },
+      { title: "💧 저 이온·저 수분", desc: "EC <20 µS/cm(대표 14.36) · 수분 <0.2%(대표 0.11%)", enTitle: "💧 Low Ionics & Low Moisture", jaTitle: "💧 低イオン・低水分", enDesc: "EC <20 µS/cm (typ. 14.36) · moisture <0.2% (typ. 0.11%)", jaDesc: "EC<20 µS/cm(代表値14.36) · 水分<0.2%(代表値0.11%)" },
+      { title: "🛠️ 입도 맞춤 조정", desc: "고객 실사용 조건에 따라 입도 분포 조정 공급 가능", enTitle: "🛠️ Customizable PSD", jaTitle: "🛠️ 粒度カスタム調整", enDesc: "PSD can be adjusted to the customer's actual usage conditions", jaDesc: "顧客の実使用条件に応じて粒度分布を調整供給可能" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-SPJ-300", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "백색 구상 미분말", enValue: "White spherical fine powder", jaValue: "白色球状微粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "형상", value: "구상 (Spherical)", enValue: "Spherical", jaValue: "球状 (Spherical)", enLabel: "Morphology", jaLabel: "形状" },
+      { label: "구상화율 (규격 / 대표)", value: ">95 % / 98 %", enLabel: "Spheroidization Rate (Spec / Typical)", jaLabel: "球状化率 (規格 / 代表値)" },
+      { label: "SiO₂ (규격 / 대표)", value: ">99.9 % / 99.92 %", enLabel: "SiO₂ (Spec / Typical)", jaLabel: "SiO₂ (規格 / 代表値)" },
+      { label: "수분 (규격 / 대표)", value: "<0.2 % / 0.11 %", enLabel: "Moisture (Spec / Typical)", jaLabel: "水分 (規格 / 代表値)" },
+      { label: "비표면적 SSA (규격 / 대표)", value: "10 ~ 15 m²/g / 11.1 m²/g", enLabel: "SSA (Spec / Typical)", jaLabel: "比表面積 SSA (規格 / 代表値)" },
+      { label: "수추출액 EC (규격 / 대표)", value: "<20 µS/cm / 14.36 µS/cm", enLabel: "Water Extract EC (Spec / Typical)", jaLabel: "水抽出液 EC (規格 / 代表値)" },
+      { label: "수추출액 PH (규격 / 대표)", value: "6.5 ± 1 / 5.9", enLabel: "Water Extract PH (Spec / Typical)", jaLabel: "水抽出液 PH (規格 / 代表値)" },
+      { label: "입도 D10 (대표)", value: "0.219 µm", enLabel: "D10 (Typical)", jaLabel: "粒度 D10 (代表値)" },
+      { label: "입도 D50 (규격 / 대표)", value: "0.3 ± 0.1 µm / 0.385 µm", enLabel: "D50 (Spec / Typical)", jaLabel: "粒度 D50 (規格 / 代表値)" },
+      { label: "입도 D90 (대표)", value: "0.678 µm", enLabel: "D90 (Typical)", jaLabel: "粒度 D90 (代表値)" },
+      { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国 (China)", enLabel: "Country of Origin", jaLabel: "原産国" },
+      { label: "포장", value: "5 / 10 kg 지대 · OEM 대응", enValue: "5 / 10 kg bag · OEM available", jaValue: "5 / 10 kg 紙袋 · OEM対応", enLabel: "Packaging", jaLabel: "包装" },
+      { label: "비고", value: "입도 분포는 고객 실사용 조건에 따라 조정 가능", enValue: "PSD can be adjusted according to the customer's actual situation", jaValue: "粒度分布は顧客の実使用状況に応じて調整可能", enLabel: "Note", jaLabel: "備考" },
+    ],
+    applications: [],
+  },
 };
+
 
 
 const generatedChildren: ProductDetail[] = [];
@@ -1711,6 +1656,7 @@ export const fusedSilicaCategoryMembers = [
   "sl-hrg",
   "sl-fs",
   "sl-hf04",
+  "sl-spj-300",
 ];
 
 productCatalog.push({
@@ -1762,6 +1708,7 @@ productCatalog.push({
     { code: "SL-HRG", slug: "sl-hrg", spec: "표면개질 용융", enSpec: "Surface-Modified Fused", jaSpec: "活性(表面改質) 溶融" },
     { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
     { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },
+    { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "서브미크론 구상 용융 (D50 0.3±0.1µm · 구상화율 98%)", enSpec: "Submicron Spherical Fused (D50 0.3±0.1 µm · 98% spheroidization)", jaSpec: "サブミクロン球状溶融 (D50 0.3±0.1µm · 球状化率98%)" },
   ],
   applications: [
     "반도체 EMC · 언더필 · 어드밴스드 패키징",
@@ -1819,6 +1766,7 @@ productCatalog.push({
     { code: "SL-CL", slug: "sl-cl", spec: "저방사선(Low-α) 결정형 — α ≤ 0.001 cph/cm²", enSpec: "Low-α Crystalline — α ≤ 0.001 cph/cm²", jaSpec: "低α線 結晶質 — α ≤ 0.001 cph/cm²" },
     { code: "SL-HJG", slug: "sl-hjg", spec: "표면개질(활성) 결정형 — 실란 커플링 처리", enSpec: "Surface-Modified Crystalline — silane-coupled", jaSpec: "表面改質(活性) 結晶質 — シランカップリング処理" },
     { code: "SL-CS", slug: "sl-cs", spec: "결정 석영사 (유리 원료·정밀 주조·연마재)", enSpec: "Crystalline Quartz Sand (glass raw material, precision casting, abrasives)", jaSpec: "結晶石英砂 (ガラス原料・精密鋳造・研磨材)" },
+    { code: "SL-HS12", slug: "sl-hs12", spec: "고순도 결정질 실리카 미분 (SiO₂ ≥99.85% · D50 12±2µm)", enSpec: "High-Purity Crystalline Silica Micro-Powder (SiO₂ ≥99.85% · D50 12±2 µm)", jaSpec: "高純度結晶質シリカ微粉 (SiO₂ ≥99.85% · D50 12±2µm)" },
   ],
   applications: [
     "CCL / PCB · 5G 고주파 기판 (결정형 필러)",
@@ -1831,6 +1779,53 @@ productCatalog.push({
     "연마재 · 워터필터 · 스포츠 표면재",
   ],
 });
+
+// ============= SL-HS12 · High-Purity Crystalline Silica Micro-Powder =============
+productCatalog.push({
+  slug: "sl-hs12",
+  name: "SL-HS12 고순도 결정질 실리카 미분",
+  enName: "SL-HS12 · High-Purity Crystalline Silica Micro-Powder",
+  jaName: "SL-HS12 高純度結晶質シリカ微粉",
+  tagline: "SiO₂ ≥99.85%(대표 99.92%) · D50 12±2 µm — 고순도 석영 원료 기반 결정질 실리카 미분",
+  enTagline: "SiO₂ ≥99.85% (typ. 99.92%) · D50 12±2 µm — crystalline silica micro-powder from high-purity quartz",
+  jaTagline: "SiO₂ ≥99.85%(代表値99.92%) · D50 12±2µm — 高純度石英原料ベースの結晶質シリカ微粉",
+  description:
+    "SL-HS12은 고순도 석영(α-Quartz) 원료를 파쇄·분급 등의 정밀 가공 공정을 거쳐 제조한 결정질 이산화규소(SiO₂) 미분입니다. 규격 SiO₂ ≥99.85%(대표치 99.92%)의 고순도를 확보하면서 Al 35 ppm, Ca 5 ppm, Fe 3 ppm, K 6 ppm, Mg 0.5 ppm, Na 7 ppm 수준의 극저 금속 불순물 대표치를 유지하여, 절연 신뢰성과 색상 안정성이 동시에 요구되는 전자·화학 소재 배합에 적합합니다.\n\n입도는 D50 12±2 µm를 기준으로 관리되며 대표 분포는 D10 2.4 µm · D50 12.1 µm · D100 28.6 µm입니다. 좁고 균일한 입도 분포는 수지 대비 고충전 시에도 안정적인 유동성과 낮은 점도를 유지하게 하여 성형성과 표면 품질을 개선합니다. 수분 함량은 ≤0.2%(대표 0.1%)로 관리되어 보관·혼련 과정에서의 응집과 기포 발생을 억제합니다.\n\n입도 분포(PSD)는 고객의 실제 사용 조건과 요구 사양에 맞추어 조정 가능하며, 결정질 실리카 특유의 높은 경도(Mohs 7)·우수한 화학적 안정성·경제성을 바탕으로 다양한 산업용 충진재 용도에 안정적으로 공급됩니다.",
+  enDescription:
+    "SL-HS12 is a crystalline silicon dioxide (SiO₂) micro-powder manufactured from high-purity quartz raw material through precision crushing and grading. It secures a specification purity of SiO₂ ≥99.85% (typical 99.92%) while maintaining ultra-low typical metallic impurities — Al 35 ppm, Ca 5 ppm, Fe 3 ppm, K 6 ppm, Mg 0.5 ppm, Na 7 ppm — making it suitable for electronic and chemical formulations that demand both insulation reliability and color stability.\n\nParticle size is controlled to D50 12±2 µm, with a typical distribution of D10 2.4 µm, D50 12.1 µm and D100 28.6 µm. The narrow, uniform distribution sustains stable flow and low viscosity even at high filler loading, improving moldability and surface quality. Moisture is held at ≤0.2% (typical 0.1%), suppressing agglomeration and void formation during storage and compounding.\n\nThe particle size distribution (PSD) can be adjusted according to the actual usage situation or user demand. With the high hardness (Mohs 7), excellent chemical stability and cost efficiency characteristic of crystalline silica, SL-HS12 is supplied reliably for a wide range of industrial filler applications.",
+  jaDescription:
+    "SL-HS12は、高純度石英(α-Quartz)原料を破砕・分級などの精密加工工程を経て製造した結晶質二酸化ケイ素(SiO₂)微粉です。規格SiO₂ ≥99.85%(代表値99.92%)の高純度を確保しつつ、Al 35 ppm・Ca 5 ppm・Fe 3 ppm・K 6 ppm・Mg 0.5 ppm・Na 7 ppmという極めて低い金属不純物代表値を維持し、絶縁信頼性と色調安定性が同時に求められる電子・化学素材配合に適しています。\n\n粒度はD50 12±2 µmを基準に管理され、代表分布はD10 2.4 µm・D50 12.1 µm・D100 28.6 µmです。狭く均一な粒度分布により、樹脂への高充填時でも安定した流動性と低粘度を維持し、成形性と表面品位を向上させます。水分は≤0.2%(代表値0.1%)に管理され、保管・混練時の凝集や気泡発生を抑制します。\n\n粒度分布(PSD)はお客様の実際の使用状況・要求仕様に応じて調整可能です。結晶質シリカ特有の高硬度(モース7)・優れた化学安定性・経済性を基盤に、多様な産業用フィラー用途へ安定供給します。",
+  image: slHs12Img,
+  category: "advanced-series",
+  features: [
+    { title: "🧪 SiO₂ ≥99.85% (대표 99.92%)", desc: "고순도 석영 원료 기반 — 규격 대비 여유 있는 대표 순도 확보", enTitle: "🧪 SiO₂ ≥99.85% (typ. 99.92%)", jaTitle: "🧪 SiO₂ ≥99.85% (代表値99.92%)", enDesc: "From high-purity quartz — typical purity comfortably above specification", jaDesc: "高純度石英原料ベース — 規格に対し余裕のある代表純度" },
+    { title: "🧼 극저 금속 불순물", desc: "Al 35 · Ca 5 · Fe 3 · K 6 · Mg 0.5 · Na 7 ppm (대표치)", enTitle: "🧼 Ultra-Low Metallic Impurities", jaTitle: "🧼 極低金属不純物", enDesc: "Al 35 · Ca 5 · Fe 3 · K 6 · Mg 0.5 · Na 7 ppm (typical)", jaDesc: "Al 35 · Ca 5 · Fe 3 · K 6 · Mg 0.5 · Na 7 ppm (代表値)" },
+    { title: "📐 정밀 입도 D50 12±2 µm", desc: "D10 2.4 · D50 12.1 · D100 28.6 µm — 좁고 균일한 분포", enTitle: "📐 Precise PSD · D50 12±2 µm", jaTitle: "📐 精密粒度 D50 12±2 µm", enDesc: "D10 2.4 · D50 12.1 · D100 28.6 µm — narrow, uniform distribution", jaDesc: "D10 2.4 · D50 12.1 · D100 28.6 µm — 狭く均一な分布" },
+    { title: "💧 저수분 ≤0.2% (대표 0.1%)", desc: "응집·기포 억제로 안정적인 혼련·성형 품질 확보", enTitle: "💧 Low Moisture ≤0.2% (typ. 0.1%)", jaTitle: "💧 低水分 ≤0.2% (代表値0.1%)", enDesc: "Suppresses agglomeration and voids for stable compounding and molding", jaDesc: "凝集・気泡を抑制し安定した混練・成形品質を確保" },
+    { title: "💎 α-Quartz 결정 구조", desc: "Mohs 7의 높은 경도와 우수한 화학적 안정성", enTitle: "💎 α-Quartz Crystal Structure", jaTitle: "💎 α-Quartz 結晶構造", enDesc: "Mohs 7 hardness with excellent chemical stability", jaDesc: "モース7の高硬度と優れた化学安定性" },
+    { title: "🔧 PSD 맞춤 조정", desc: "입도 분포는 고객 사용 조건·요구 사양에 따라 조정 가능", enTitle: "🔧 Customizable PSD", jaTitle: "🔧 PSDカスタム調整", enDesc: "Particle size distribution adjustable per actual usage or user demand", jaDesc: "粒度分布は使用状況・要求仕様に応じて調整可能" },
+  ],
+  specs: [
+    { label: "제품 코드", value: "SL-HS12", enLabel: "Product Code", jaLabel: "製品コード" },
+    { label: "제조 공정", value: "고순도 석영 원료 파쇄 · 분급", enValue: "Crushing & grading of high-purity quartz", jaValue: "高純度石英原料の破砕・分級", enLabel: "Process", jaLabel: "製造工程" },
+    { label: "SiO₂", value: "규격 ≥99.85 % · 대표 99.92 %", enValue: "Spec ≥99.85 % · Typical 99.92 %", jaValue: "規格 ≥99.85 % · 代表値 99.92 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+    { label: "Al", value: "규격 ≤100 ppm · 대표 35 ppm", enValue: "Spec ≤100 ppm · Typical 35 ppm", jaValue: "規格 ≤100 ppm · 代表値 35 ppm", enLabel: "Al", jaLabel: "Al" },
+    { label: "Ca", value: "규격 ≤50 ppm · 대표 5 ppm", enValue: "Spec ≤50 ppm · Typical 5 ppm", jaValue: "規格 ≤50 ppm · 代表値 5 ppm", enLabel: "Ca", jaLabel: "Ca" },
+    { label: "Fe", value: "규격 ≤50 ppm · 대표 3 ppm", enValue: "Spec ≤50 ppm · Typical 3 ppm", jaValue: "規格 ≤50 ppm · 代表値 3 ppm", enLabel: "Fe", jaLabel: "Fe" },
+    { label: "K", value: "규격 ≤50 ppm · 대표 6 ppm", enValue: "Spec ≤50 ppm · Typical 6 ppm", jaValue: "規格 ≤50 ppm · 代表値 6 ppm", enLabel: "K", jaLabel: "K" },
+    { label: "Mg", value: "규격 ≤50 ppm · 대표 0.5 ppm", enValue: "Spec ≤50 ppm · Typical 0.5 ppm", jaValue: "規格 ≤50 ppm · 代表値 0.5 ppm", enLabel: "Mg", jaLabel: "Mg" },
+    { label: "Na", value: "규격 ≤50 ppm · 대표 7 ppm", enValue: "Spec ≤50 ppm · Typical 7 ppm", jaValue: "規格 ≤50 ppm · 代表値 7 ppm", enLabel: "Na", jaLabel: "Na" },
+    { label: "수분 (Moisture)", value: "규격 ≤0.2 % · 대표 0.1 %", enValue: "Spec ≤0.2 % · Typical 0.1 %", jaValue: "規格 ≤0.2 % · 代表値 0.1 %", enLabel: "Moisture", jaLabel: "水分 (Moisture)" },
+    { label: "입도 D10", value: "대표 2.4 µm", enValue: "Typical 2.4 µm", jaValue: "代表値 2.4 µm", enLabel: "Particle Size D10", jaLabel: "粒度 D10" },
+    { label: "입도 D50", value: "규격 12±2 µm · 대표 12.1 µm", enValue: "Spec 12±2 µm · Typical 12.1 µm", jaValue: "規格 12±2 µm · 代表値 12.1 µm", enLabel: "Particle Size D50", jaLabel: "粒度 D50" },
+    { label: "입도 D100", value: "대표 28.6 µm", enValue: "Typical 28.6 µm", jaValue: "代表値 28.6 µm", enLabel: "Particle Size D100", jaLabel: "粒度 D100" },
+    { label: "비고", value: "입도 분포(PSD)는 고객의 사용 조건 및 요구에 따라 조정 가능", enValue: "The particle size distribution (PSD) can be adjusted according to the actual usage situation or user demand", jaValue: "粒度分布(PSD)は使用状況・お客様のご要望に応じて調整可能", enLabel: "Remark", jaLabel: "備考" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Country of Origin", jaLabel: "原産地" },
+  ],
+  applications: [],
+});
+
+
 
 
 
@@ -2533,7 +2528,105 @@ const precipitatedExtProducts: ProductDetail[] = [
       { label: "특징", value: "제립 건조시간 약 2/3 단축" },
       { label: "원산지", value: "중국" },
     ],
-    ["수의약품"]),
+  ["수의약품"]),
+
+  {
+    slug: "precipitated-silica-sl-a81",
+    name: "SL-A81 침전 실리카",
+    enName: "SL-A81 · Precipitated Silica", jaName: "SL-A81 沈降シリカ",
+    tagline: "BET 700–750 m²/g 초고비표면적의 보강용 침전 실리카",
+    enTagline: "Reinforcement-Grade Precipitated Silica with Ultra-High BET 700–750 m²/g", jaTagline: "BET 700–750 m²/g 超高比表面積の補強用沈降シリカ",
+    description:
+      "SL-A81은 BET 비표면적 700~750 m²/g의 초고비표면적을 구현한 고순도 침전 실리카(Precipitated Silica)입니다. 일반적인 침전 실리카(150~250 m²/g) 대비 3~4배 수준의 극도로 넓은 표면적을 자랑하며, 이는 제품의 주요 경쟁력입니다.",
+    enDescription:
+      "SL-A81 is a high-purity precipitated silica achieving an ultra-high BET specific surface area of 700–750 m²/g. This is 3–4 times greater than typical precipitated silica (150–250 m²/g), which is the product's core competitive advantage.", jaDescription: "SL-A81はBET比表面積700~750 m²/gの超高比表面積を実現した高純度沈降シリカ(Precipitated Silica)です。一般的な沈降シリカ(150~250 m²/g)と比較して3~4倍の極めて広い表面積を誇り、これが製品の主な競争力となっています。",
+    image: precipitatedSilica,
+    category: "precipitated",
+    features: [
+      { title: "📊 극도로 넓은 비표면적", desc: "700~750 m²/g — 일반 실리카 대비 3~4배 높은 표면적으로 소량 첨가만으로도 높은 보강 효과 구현", enTitle: "📊 Extremely High Specific Surface Area", jaTitle: "📊 極めて広い比表面積", enDesc: "700–750 m²/g — 3–4× higher than conventional silica, enabling high reinforcement even at low loadings", jaDesc: "700~750 m²/g — 一般的なシリカの3~4倍高い表面積で、少量添加するだけでも高い補強効果を実現" },
+      { title: "🧪 고순도(≥99%) 안정성", desc: "불순물(중금속, Na₂SO₄ 등) 함량이 극도로 낮아 화학적 안정성 우수. 전기적 특성(절연성)이나 열적 안정성이 요구되는 첨단 소재에 적합", enTitle: "🧪 High Purity (≥99%) Stability", jaTitle: "🧪 高純度(≥99%)の安定性", enDesc: "Extremely low impurities (heavy metals, Na₂SO₄, etc.) ensure excellent chemical stability — ideal for advanced materials requiring electrical insulation and thermal stability", jaDesc: "不純物(重金属、Na₂SO₄など)の含有量が極めて低く化学的安定性に優れる。電気的特性(絶縁性)や熱的安定性が要求される先端素材に適合" },
+      { title: "⚙️ 미세하고 균일한 입도", desc: "7~8μm의 초미세 분말로 고무·수지·접착제 내 고른 분산성 확보. 표면 결함 없이 매끄러운 복합재 제조 가능", enTitle: "⚙️ Fine and Uniform Particle Size", jaTitle: "⚙️ 微細かつ均一な粒度", enDesc: "Ultra-fine 7–8 µm powder ensures uniform dispersion in rubber, resin, and adhesives — enabling smooth composite manufacturing without surface defects", jaDesc: "7~8μmの超微細粉末でゴム・樹脂・接着剤内における均一な分散性を確保。表面欠陥のない滑らかな複合材の製造が可能" },
+      { title: "💧 적절한 DBP 흡수량", desc: "90~130 ml/100g — 과도한 오일 흡수 없이 적정 수준의 구조성 유지. 고충전(high loading) 배합 설계에도 적용 가능", enTitle: "💧 Optimal DBP Absorption", jaTitle: "💧 適切なDBP吸油量", enDesc: "90–130 ml/100g — maintains adequate structure without excessive oil absorption, applicable to high-loading formulations", jaDesc: "90~130 ml/100g — 過度なオイル吸収なしに適正なレベルの構造性を維持。高充填(high loading)配合設計にも適用可能" },
+      { title: "⚖️ 중성 pH (6.5~7.5)", desc: "산성이나 알칼리성 실리카가 유기 바인더나 고무의 가교 구조를 손상시키는 현상 방지. 경화제, 가교제, 촉매와의 부반응 최소화", enTitle: "⚖️ Neutral pH (6.5–7.5)", jaTitle: "⚖️ 中性pH (6.5~7.5)", enDesc: "Prevents damage to crosslinking structures in organic binders and rubber caused by acidic or alkaline silica — minimizes side reactions with curing agents, crosslinkers, and catalysts", jaDesc: "酸性やアルカリ性のシリカが有機バインダーやゴムの架橋構造を損傷する現象を防止。硬化剤、架橋剤、触媒との副反応を最小化" },
+      { title: "✨ 뛰어난 백색도 (≥95)", desc: "최종 제품의 색상이나 투명도를 해치지 않음. 착색이나 도장 공정에서 베이스 재료로 활용도 높음", enTitle: "✨ Outstanding Whiteness (≥95)", jaTitle: "✨ 優れた白色度 (≥95)", enDesc: "Does not affect the color or transparency of finished products — highly usable as a base material in coloring and coating processes", jaDesc: "最終製品の色合いや透明度を損なわない。着色や塗装工程でのベース材料としての活用度が高い" },
+      { title: "🔥 우수한 열적 안정성", desc: "1000℃ 소성 감량 3~5%로 고온 공정에서도 무게 변화나 휘발 성분 방출이 적음. 고온 경화, 사출, 압출 공정에서도 물성 유지", enTitle: "🔥 Excellent Thermal Stability", jaTitle: "🔥 優れた熱的安定性", enDesc: "Ignition loss of only 3–5% at 1000°C — minimal weight change or volatile release during high-temperature processes; properties maintained through hot curing, injection, and extrusion", jaDesc: "1000℃焼成減量3~5%で、高温工程でも重量変化や揮発成分の放出が少ない。高温硬化、射出、押出工程でも物性を維持" },
+    ],
+    specs: [
+      { label: "등급 (Grade)", value: "SL-A81", enLabel: "Grade", jaLabel: "グレード (Grade)" },
+      { label: "외관 (Form)", value: "White powder", note: "순백색 분말", enLabel: "Form", jaLabel: "形態 (Form)", enNote: "Pure white powder", jaNote: "純白色粉末" },
+      { label: "백색도 (Whiteness)", value: "≥ 95", enLabel: "Whiteness", jaLabel: "白色度 (Whiteness)" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 99%", note: "초고순도", enLabel: "SiO₂ (Dry Basis)", jaLabel: "SiO₂ (乾燥基準)", enNote: "Ultra-high purity", jaNote: "超高純度" },
+      { label: "pH", value: "6.5 – 7.5", note: "중성", enLabel: "pH", enNote: "Neutral", jaNote: "中性" },
+      { label: "BET 비표면적", value: "700 – 750 m²/g", note: "초고비표면적", enLabel: "BET Specific Surface Area", jaLabel: "BET比表面積", enNote: "Ultra-high SSA", jaNote: "超高比表面積" },
+      { label: "DBP 흡유량", value: "90 – 130 ml/100g", enLabel: "DBP Oil Absorption", jaLabel: "DBP吸油量" },
+      { label: "평균 입자 크기", value: "7 – 8 µm", enLabel: "Average Particle Size", jaLabel: "平均粒子径" },
+      { label: "건조 감량 (105℃, 2hr)", value: "3.0 – 4.0 %", enLabel: "Loss on Drying (105℃, 2 hr)", jaLabel: "乾燥減量 (105℃, 2hr)" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)", jaLabel: "強熱減量 (1000℃, 2hr)" },
+    ],
+    applications: PS_APPS,
+  },
+  {
+    slug: "precipitated-silica-si-60",
+    name: "SI-60 미립자 침전 실리카",
+    enName: "SI-60 · Fine Particle Precipitated Silica", jaName: "SI-60 微粒子沈降シリカ",
+    tagline: "입도 11–18µm·DBP 230–260의 범용 고무 보강·필러용 실리카",
+    enTagline: "General-Purpose Rubber Reinforcement & Filler Silica with 11–18 µm Particle Size and DBP 230–260", jaTagline: "粒度 11–18µm・DBP 230–260の汎用ゴム補強・フィラー用シリカ",
+    description:
+      "SI-60은 평균 입도 11~18µm의 미립자 침전 실리카로, 우수한 분산성과 보강 성능을 갖춰 신발 밑창·산업용 고무·실리콘 고무·접착제·실란트 등에 폭넓게 사용됩니다. 높은 DBP 흡유량(230~260 ml/100g)으로 증점·요변성(thixotropy) 부여에도 적합합니다.",
+    enDescription:
+      "SI-60 is a fine-particle precipitated silica with an average particle size of 11–18 µm. It offers excellent dispersibility and reinforcement performance, and is widely used in shoe soles, industrial rubber, silicone rubber, adhesives, and sealants. Its high DBP oil absorption (230–260 ml/100g) also makes it suitable for thickening and thixotropy applications.", jaDescription: "SI-60は平均粒度11~18µmの微粒子沈降シリカで、優れた分散性と補強性能を備えており、靴底・産業ゴム・シリコーンゴム・接着剤・シーラントなどに幅広く使用されます。高いDBP吸油量(230~260 ml/100g)により、増粘・チキソ性(thixotropy)の付与にも適しています。",
+    image: precipitatedSilica,
+    category: "precipitated",
+    features: PS_FEATURES,
+    specs: [
+      { label: "외관 (Form)", value: "White powder", enLabel: "Form", jaLabel: "形態 (Form)" },
+      { label: "백색도 (Whiteness)", value: "97 – 98", enLabel: "Whiteness", jaLabel: "白色度 (Whiteness)" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 99%", enLabel: "SiO₂ (Dry Basis)", jaLabel: "SiO₂ (乾燥基準)" },
+      { label: "pH", value: "6.5 – 7.5", enLabel: "pH" },
+      { label: "DBP 흡유량", value: "230 – 260 ml/100g", enLabel: "DBP Oil Absorption", jaLabel: "DBP吸油量" },
+      { label: "입자 크기", value: "11 – 18 µm", enLabel: "Particle Size", jaLabel: "粒子径" },
+      { label: "벌크 밀도", value: "110 – 130 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
+      { label: "건조 감량 (105℃, 2hr)", value: "4.0 – 6.0 %", enLabel: "Loss on Drying (105℃, 2 hr)", jaLabel: "乾燥減量 (105℃, 2hr)" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)", jaLabel: "強熱減量 (1000℃, 2hr)" },
+      { label: "가용성 염 (Na₂SO₄)", value: "≤ 1.5 %", enLabel: "Soluble Salts (Na₂SO₄)", jaLabel: "可溶性塩 (Na₂SO₄)" },
+      { label: "납 함량 (Pb)", value: "≤ 0.0005 %", enLabel: "Lead Content (Pb)", jaLabel: "鉛含有量 (Pb)" },
+      { label: "중금속 함량", value: "≤ 0.003 %", enLabel: "Heavy Metals", jaLabel: "重金属含有量" },
+      { label: "비소 함량 (As)", value: "≤ 0.0003 %", enLabel: "Arsenic Content (As)", jaLabel: "ヒ素含有量 (As)" },
+      { label: "포장 (Package)", value: "15 kg / bag", enLabel: "Package", jaLabel: "包装 (Package)" },
+    ],
+    applications: PS_APPS,
+  },
+  {
+    slug: "precipitated-silica-si-175",
+    name: "SI-175 침전 실리카",
+    enName: "SI-175 · Precipitated Silica", jaName: "SI-175 沈降シリカ",
+    tagline: "입도 45µm, 비산 적고 취급 용이한 고무·산업용 침전 실리카",
+    enTagline: "45 µm Particle Size, Low Dust, Easy-to-Handle Rubber & Industrial Precipitated Silica", jaTagline: "粒度 45µm、飛散が少なく取り扱いが容易なゴム・産業用沈降シリカ",
+    description:
+      "SI-175는 평균 입도 45µm 수준의 침전 실리카로, 비산이 적고 흐름성이 우수하여 대량 자동 계량·혼합 공정에 적합합니다. 고무 보강용, 사료 첨가용 캐리어, 산업용 충진제 등 다양한 분야에 사용됩니다.",
+    enDescription:
+      "SI-175 is a precipitated silica with an average particle size of around 45 µm. It generates little dust and has excellent flowability, making it ideal for large-scale automatic weighing and mixing processes. It is used in various fields including rubber reinforcement, feed-additive carriers, and industrial fillers.", jaDescription: "SI-175は平均粒度45µmレベルの沈降シリカで、飛散が少なく流動性に優れているため、大量自動計量・混合工程に適しています。ゴム補強用、飼料添加用キャリア、産業用充填剤など多様な分野に使用されます。",
+    image: precipitatedSilica,
+    category: "precipitated",
+    features: PS_FEATURES,
+    specs: [
+      { label: "외관 (Form)", value: "White powder", enLabel: "Form", jaLabel: "形態 (Form)" },
+      { label: "백색도 (Whiteness)", value: "97 – 98", enLabel: "Whiteness", jaLabel: "白色度 (Whiteness)" },
+      { label: "SiO₂ (건조 기준)", value: "≥ 98%", enLabel: "SiO₂ (Dry Basis)", jaLabel: "SiO₂ (乾燥基準)" },
+      { label: "pH", value: "6.5 – 7.5", enLabel: "pH" },
+      { label: "DBP 흡유량", value: "230 – 260 ml/100g", enLabel: "DBP Oil Absorption", jaLabel: "DBP吸油量" },
+      { label: "입자 크기", value: "45 µm", enLabel: "Particle Size", jaLabel: "粒子径" },
+      { label: "벌크 밀도", value: "230 – 250 g/L", enLabel: "Bulk Density", jaLabel: "かさ密度" },
+      { label: "건조 감량 (105℃, 2hr)", value: "4.0 – 6.0 %", enLabel: "Loss on Drying (105℃, 2 hr)", jaLabel: "乾燥減量 (105℃, 2hr)" },
+      { label: "강열 감량 (1000℃, 2hr)", value: "3.0 – 5.0 %", enLabel: "Ignition Loss (1000℃, 2 hr)", jaLabel: "強熱減量 (1000℃, 2hr)" },
+      { label: "가용성 염 (Na₂SO₄)", value: "≤ 1.5 %", enLabel: "Soluble Salts (Na₂SO₄)", jaLabel: "可溶性塩 (Na₂SO₄)" },
+      { label: "납 함량 (Pb)", value: "≤ 0.0005 %", enLabel: "Lead Content (Pb)", jaLabel: "鉛含有量 (Pb)" },
+      { label: "중금속 함량", value: "≤ 0.003 %", enLabel: "Heavy Metals", jaLabel: "重金属含有量" },
+      { label: "비소 함량 (As)", value: "≤ 0.0003 %", enLabel: "Arsenic Content (As)", jaLabel: "ヒ素含有量 (As)" },
+      { label: "포장 (Package)", value: "20 kg / bag", enLabel: "Package", jaLabel: "包装 (Package)" },
+    ],
+    applications: PS_APPS,
+  }
 ];
 productCatalog.push(...precipitatedExtProducts);
 
@@ -2614,6 +2707,128 @@ const fumedExtProducts: ProductDetail[] = [
     ["도료", "고무"]),
 ];
 productCatalog.push(...fumedExtProducts);
+
+// ============= Applied & Related Silica Materials =============
+const ceramicFritApps = [
+  "위생도기·타일·고급 식기용 유약(Glaze) 프리트 컴파운드",
+  "타일 몸체(Body) 및 엔고베(Engobe) 융합 촉진 첨가제",
+  "저온 소성 유약 기재 · 광택/불투명 유약 조성",
+  "세라믹 바인더 및 비트리파이드 본드(Vitrified Bond) 연마재",
+  "인조석재·엔지니어드 스톤 결합상 원료",
+  "내화물·내열 세라믹 충진재 및 소결 조제",
+  "건축용 세라믹 패널·법랑(Enamel) 프리트 원료",
+  "친환경 무붕소(Boron-free) 유리질 결합제",
+];
+const ceramicFritAppsEn = [
+  "Glaze frit compounds for sanitaryware, tiles and premium tableware",
+  "Fusion-promoting additive for tile bodies and engobes",
+  "Low-temperature firing glaze base for glossy and opaque glaze systems",
+  "Ceramic binder and vitrified-bond abrasives",
+  "Bonding-phase raw material for artificial and engineered stone",
+  "Refractory and heat-resistant ceramic filler / sintering aid",
+  "Architectural ceramic panel and enamel frit feedstock",
+  "Eco-friendly boron-free vitreous binder",
+];
+const ceramicFritAppsJa = [
+  "衛生陶器・タイル・高級食器用の釉薬(グレーズ)フリットコンパウンド",
+  "タイル素地(ボディ)およびエンゴーベの融合促進添加剤",
+  "低温焼成釉薬基材 · 光沢/不透明釉薬組成",
+  "セラミックバインダーおよびビトリファイドボンド砥材",
+  "人造石材・エンジニアードストーンの結合相原料",
+  "耐火物・耐熱セラミックの充填材および焼結助剤",
+  "建築用セラミックパネル・ホーロー(琺瑯)フリット原料",
+  "環境配慮型の無ホウ素(Boron-free)ガラス質結合剤",
+];
+
+const amorphousCeramicFrit: ProductDetail = {
+  slug: "amorphous-ceramic-frit",
+  name: "비정질 세라믹 프리트",
+  enName: "Amorphous Ceramic Frit",
+  jaName: "非晶質セラミックフリット",
+  tagline: "칼슘-알루미노실리케이트계 무붕소 유리 프리트 · SiO₂ 65.68% · 0.1~0.7 mm 과립",
+  enTagline: "Calcium Aluminosilicate Boron-Free Glass Frit · SiO₂ 65.68% · 0.1–0.7 mm Granules",
+  jaTagline: "カルシウムアルミノシリケート系 無ホウ素ガラスフリット · SiO₂ 65.68% · 0.1~0.7 mm 顆粒",
+  description:
+    "비정질 세라믹 프리트(Amorphous Ceramic Frit)는 규석·석회석·장석질 원료를 고온에서 완전 용융시킨 뒤 수냉(Water Quenching)으로 급냉하여 결정 성장을 억제한 유리질(비정질) 세라믹 원료입니다. 결정상이 사실상 존재하지 않기 때문에 상대적으로 낮은 온도에서 균일하게 연화·용융되며, 소성 과정에서 조성 편석 없이 매끄럽고 광택이 우수한 유리막을 형성합니다.\n\n본 제품은 SiO₂ 65.68%를 골격으로 CaO 12.90%, Al₂O₃ 10.00%가 조합된 칼슘-알루미노실리케이트(Calcium Aluminosilicate) 계열 프리트로, Na₂O 4.14% · K₂O 1.98%의 알칼리 용융제와 MgO 4.09%의 점도 조절 성분이 균형 있게 배합되어 있습니다. 특히 Fe₂O₃가 0.09%로 매우 낮아 백색도와 발색 재현성이 요구되는 고급 위생도기·타일·식기 유약에 유리하며, B₂O₃가 0.05% 미만인 무붕소(Boron-free) 조성이라 붕소 규제 대응 및 고온 안정성 측면에서도 강점을 갖습니다.\n\n입도는 0.1~0.35 mm와 0.35~0.7 mm 두 가지 과립(중입자) 형태로 공급되어 계량·이송·습식 분쇄(볼밀) 작업성이 뛰어나며, 유약 슬립 제조 시 분산성과 재현성이 우수합니다. 고객의 소성 온도 프로파일과 열팽창계수(CTE) 매칭 요구에 맞추어 조성 및 입도 커스터마이징이 가능합니다.",
+  enDescription:
+    "Amorphous Ceramic Frit is a vitreous ceramic raw material produced by fully melting silica, limestone and feldspathic raw materials at high temperature and water-quenching the melt to suppress crystal growth. With virtually no crystalline phase, it softens and melts uniformly at comparatively low temperatures and forms a smooth, high-gloss glassy layer without compositional segregation during firing.\n\nThe product is a calcium aluminosilicate frit built on SiO₂ 65.68% with CaO 12.90% and Al₂O₃ 10.00%, balanced by alkali fluxes Na₂O 4.14% and K₂O 1.98% and viscosity-controlling MgO 4.09%. Fe₂O₃ is held to just 0.09%, which favors whiteness and color reproducibility in premium sanitaryware, tile and tableware glazes, while B₂O₃ below 0.05% makes it a boron-free composition — advantageous for boron regulation compliance and high-temperature stability.\n\nIt is supplied in two granular grades, 0.1–0.35 mm and 0.35–0.7 mm, offering excellent handling in weighing, conveying and wet ball-milling, with strong dispersion and reproducibility in glaze slip preparation. Composition and particle size can be customized to match the customer's firing profile and CTE requirements.",
+  jaDescription:
+    "非晶質セラミックフリット(Amorphous Ceramic Frit)は、珪石・石灰石・長石質原料を高温で完全溶融させた後、水冷(急冷)によって結晶成長を抑制したガラス質(非晶質)セラミック原料です。結晶相がほぼ存在しないため比較的低い温度で均一に軟化・溶融し、焼成時に組成偏析のない滑らかで光沢に優れたガラス層を形成します。\n\n本製品はSiO₂ 65.68%を骨格に、CaO 12.90%・Al₂O₃ 10.00%を組み合わせたカルシウムアルミノシリケート系フリットで、アルカリ溶融剤のNa₂O 4.14%・K₂O 1.98%と粘度調整成分のMgO 4.09%がバランスよく配合されています。特にFe₂O₃が0.09%と非常に低く、白色度と発色再現性が求められる高級衛生陶器・タイル・食器の釉薬に有利であり、B₂O₃が0.05%未満の無ホウ素(Boron-free)組成であるため、ホウ素規制対応と高温安定性の面でも強みを持ちます。\n\n粒度は0.1~0.35 mmおよび0.35~0.7 mmの2種の顆粒(中粒子)形態で供給され、計量・搬送・湿式粉砕(ボールミル)の作業性に優れ、釉薬スリップ調製時の分散性と再現性も良好です。焼成温度プロファイルや熱膨張係数(CTE)のマッチング要求に応じて、組成・粒度のカスタマイズが可能です。",
+  image: ceramicFritImg,
+  detailImage: ceramicFritImg,
+  category: "advanced-series",
+  parentSlug: "applied-silica-materials",
+  features: [
+    { title: "🔷 100% 비정질(유리질) 구조", desc: "급냉 유리화로 결정상 제거 — 저온에서 균일 용융, 편석 없는 유약층 형성", enTitle: "🔷 Fully Amorphous (Vitreous) Structure", jaTitle: "🔷 100%非晶質(ガラス質)構造", enDesc: "Rapid-quench vitrification removes crystalline phases — uniform low-temperature melting with no segregation", jaDesc: "急冷ガラス化で結晶相を除去 — 低温で均一溶融、偏析のない釉薬層を形成" },
+    { title: "⚪ 초저 철분 Fe₂O₃ 0.09%", desc: "백색도 유지·발색 재현성 우수 — 고급 위생도기·식기 유약 기재로 적합", enTitle: "⚪ Ultra-Low Iron (Fe₂O₃ 0.09%)", jaTitle: "⚪ 超低鉄分 Fe₂O₃ 0.09%", enDesc: "Preserves whiteness and color reproducibility — ideal base for premium sanitaryware and tableware glazes", jaDesc: "白色度維持・発色再現性に優れ、高級衛生陶器・食器釉薬の基材に最適" },
+    { title: "🌿 무붕소(Boron-free) 조성", desc: "B₂O₃ < 0.05% — 붕소 규제 대응 및 고온 안정형 친환경 프리트", enTitle: "🌿 Boron-Free Composition", jaTitle: "🌿 無ホウ素(Boron-free)組成", enDesc: "B₂O₃ < 0.05% — regulation-friendly and high-temperature-stable eco frit", jaDesc: "B₂O₃ < 0.05% — ホウ素規制対応かつ高温安定型の環境配慮フリット" },
+    { title: "🔥 융점 저하 & 소성 에너지 절감", desc: "CaO·Na₂O·K₂O 용융제 배합으로 소성 온도 하향 — 소결 밀도와 강도 향상", enTitle: "🔥 Lower Melting Point & Energy Saving", jaTitle: "🔥 融点低下・焼成エネルギー削減", enDesc: "CaO/Na₂O/K₂O flux system lowers firing temperature while raising sintered density and strength", jaDesc: "CaO・Na₂O・K₂O溶融剤の配合で焼成温度を下げ、焼結密度と強度を向上" },
+    { title: "🧱 실금(Crazing) 방지 설계", desc: "Al₂O₃ 10% 배합으로 점도·열팽창 정합 — 유약 균열 및 박리 억제", enTitle: "🧱 Crazing-Resistant Design", jaTitle: "🧱 貫入(クレージング)防止設計", enDesc: "10% Al₂O₃ tunes viscosity and thermal expansion matching to suppress glaze cracking and peeling", jaDesc: "Al₂O₃ 10%配合で粘度・熱膨張を整合し、釉薬の亀裂・剥離を抑制" },
+    { title: "📐 2종 과립 입도 · 우수한 작업성", desc: "0.1~0.35 mm / 0.35~0.7 mm — 계량·이송·볼밀 분쇄 효율 최적화", enTitle: "📐 Two Granule Grades · Easy Handling", jaTitle: "📐 2種の顆粒粒度・優れた作業性", enDesc: "0.1–0.35 mm / 0.35–0.7 mm — optimized for weighing, conveying and ball-mill efficiency", jaDesc: "0.1~0.35 mm / 0.35~0.7 mm — 計量・搬送・ボールミル粉砕の効率を最適化" },
+  ],
+  specs: [
+    { label: "제품명", value: "비정질 세라믹 프리트 (非晶陶瓷熔料)", enValue: "Amorphous Ceramic Frit / Ceramic Glass Frit", jaValue: "非晶質セラミックフリット (非晶陶瓷熔料)", enLabel: "Product Name", jaLabel: "製品名" },
+    { label: "계열", value: "칼슘-알루미노실리케이트계 유리 프리트", enValue: "Calcium aluminosilicate glass frit", jaValue: "カルシウムアルミノシリケート系ガラスフリット", enLabel: "System", jaLabel: "系列" },
+    { label: "이산화규소 (SiO₂)", value: "65.68 %", note: "유리질(비정질) 골격을 형성하는 주성분", enNote: "Main network former of the vitreous (amorphous) structure", jaNote: "ガラス質(非晶質)骨格を形成する主成分", enLabel: "Silicon Dioxide (SiO₂)", jaLabel: "二酸化ケイ素 (SiO₂)" },
+    { label: "산화칼슘 (CaO)", value: "12.90 %", note: "융점을 낮추고 화학적 내구성 증대", enNote: "Lowers melting point and increases chemical durability", jaNote: "融点を下げ化学的耐久性を向上", enLabel: "Calcium Oxide (CaO)", jaLabel: "酸化カルシウム (CaO)" },
+    { label: "산화알루미늄 (Al₂O₃)", value: "10.00 %", note: "점도 조절, 실금(Crazing) 방지 및 소성 온도 범위 확대", enNote: "Controls viscosity, prevents crazing and widens the firing range", jaNote: "粘度調整、貫入(クレージング)防止、焼成温度範囲の拡大", enLabel: "Aluminium Oxide (Al₂O₃)", jaLabel: "酸化アルミニウム (Al₂O₃)" },
+    { label: "산화나트륨 (Na₂O)", value: "4.14 %", note: "강력한 용융제(Flux), 열팽창계수 증대", enNote: "Strong flux; increases thermal expansion coefficient", jaNote: "強力な溶融剤(フラックス)、熱膨張係数を増大", enLabel: "Sodium Oxide (Na₂O)", jaLabel: "酸化ナトリウム (Na₂O)" },
+    { label: "산화마그네슘 (MgO)", value: "4.09 %", note: "고온 점도 조절 및 매끄러운 표면 질감 형성", enNote: "Adjusts high-temperature viscosity and produces a smooth surface texture", jaNote: "高温粘度の調整および滑らかな表面質感の形成", enLabel: "Magnesium Oxide (MgO)", jaLabel: "酸化マグネシウム (MgO)" },
+    { label: "산화칼륨 (K₂O)", value: "1.98 %", note: "유약 표면의 광택 개선 및 용융 촉진", enNote: "Improves glaze surface gloss and promotes melting", jaNote: "釉薬表面の光沢改善および溶融促進", enLabel: "Potassium Oxide (K₂O)", jaLabel: "酸化カリウム (K₂O)" },
+    { label: "산화철 (Fe₂O₃)", value: "0.09 %", note: "불순물(철분) — 0.1% 이하로 매우 낮아 백색도 유지에 유리", enNote: "Iron impurity — kept below 0.1%, favorable for maintaining whiteness", jaNote: "不純物(鉄分) — 0.1%以下と非常に低く白色度維持に有利", enLabel: "Iron Oxide (Fe₂O₃)", jaLabel: "酸化鉄 (Fe₂O₃)" },
+    { label: "산화붕소 (B₂O₃)", value: "< 0.05 %", note: "붕소가 거의 들어가지 않은 무붕소(Boron-free)계 프리트", enNote: "Essentially boron-free frit composition", jaNote: "ホウ素をほとんど含まない無ホウ素(Boron-free)系フリット", enLabel: "Boron Oxide (B₂O₃)", jaLabel: "酸化ホウ素 (B₂O₃)" },
+    { label: "입도 분류", value: "0.1 ~ 0.35 mm / 0.35 ~ 0.7 mm (중입자·과립 형태)", enValue: "0.1–0.35 mm / 0.35–0.7 mm (medium granule form)", jaValue: "0.1~0.35 mm / 0.35~0.7 mm (中粒子・顆粒形態)", enLabel: "Particle Size", jaLabel: "粒度分類" },
+    { label: "외관", value: "유백색~미황색 반투명 유리질 과립", enValue: "Milky-white to pale-yellow translucent vitreous granules", jaValue: "乳白色~淡黄色の半透明ガラス質顆粒", enLabel: "Appearance", jaLabel: "外観" },
+    { label: "구조", value: "비정질(Amorphous / Glass Phase)", enValue: "Amorphous (glass phase)", jaValue: "非晶質(アモルファス/ガラス相)", enLabel: "Structure", jaLabel: "構造" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+    { label: "포장", value: "25 kg 크라프트 지대 · 1,000 kg 벌크백 · OEM", enValue: "25 kg kraft bag · 1,000 kg bulk bag · OEM", jaValue: "25 kg クラフト紙袋 · 1,000 kg バルクバッグ · OEM", enLabel: "Packaging", jaLabel: "包装" },
+  ],
+  applications: ceramicFritApps,
+};
+
+const appliedSilicaMaterials: ProductDetail = {
+  slug: "applied-silica-materials",
+  name: "실리카 응용 · 연관 소재",
+  enName: "Applied & Related Silica Materials",
+  jaName: "シリカ応用・関連素材",
+  tagline: "고온 용융·화학 반응·특수 공정으로 기능성을 부여한 실리카 기반 응용 소재 전문 카테고리",
+  enTagline: "A dedicated category of silica-based materials functionalized through high-temperature melting, chemical reaction and special processing",
+  jaTagline: "高温溶融・化学反応・特殊工程で機能性を付与したシリカベース応用素材の専門カテゴリ",
+  description:
+    "본 카테고리는 순수 실리카 원석을 넘어, 고온 용융·화학적 반응·특수 공정 등을 거쳐 제조된 다양한 실리카 기반 응용 및 연관 소재를 모아놓은 전문 카테고리입니다. 건축, 세라믹, 내화물, 화학 바인더 등 다양한 산업 현장의 특수한 니즈에 맞춰 기능성이 강화된 고품질 원료들을 제공합니다.\n\n실리카(SiO₂)는 그 자체로도 훌륭한 산업 소재이지만, 알칼리·알칼리토류 산화물이나 알루미나 등과 결합해 고온에서 용융·급냉되거나, 화학적 반응을 통해 새로운 결합 구조를 형성하면 원석 상태에서는 구현할 수 없는 특성이 발현됩니다. 융점 저하, 유리화(비정질화), 결합력 부여, 열팽창계수 정합, 표면 광택 형성 등이 대표적이며, 이러한 기능성 소재들은 실제 산업 현장에서 완제품의 품질을 좌우하는 핵심 원료로 사용됩니다.\n\nSiLiCA는 원료 배합 설계 단계부터 용융 조건, 급냉(수냉/공냉) 방식, 입도 분급까지 전 공정을 관리하여 로트 간 편차가 적고 재현성 높은 응용 소재를 공급합니다. 도자기·위생도기·타일 유약용 프리트, 세라믹 바인더 및 비트리파이드 본드, 인조석재 결합 원료, 내화물용 소결 조제, 건축용 기능성 충진재 등 각 산업이 요구하는 조성·입도·소성 거동에 맞추어 맞춤 생산이 가능합니다.\n\n모든 제품은 로트별 성적서와 함께 공급되며, 고객의 소성 온도 프로파일, 열팽창계수(CTE) 매칭 요구, 색상·백색도 기준, 규제 대응(무붕소·무연 등) 조건을 반영한 조성 커스터마이징을 지원합니다.",
+  enDescription:
+    "This category goes beyond pure silica raw stone, bringing together silica-based applied and related materials manufactured through high-temperature melting, chemical reaction and specialized processing. It supplies functionally enhanced, high-quality raw materials tailored to the specific needs of construction, ceramics, refractories, chemical binders and other industries.\n\nSilica (SiO₂) is an excellent industrial material on its own, but when combined with alkali, alkaline-earth oxides or alumina and melted and quenched at high temperature — or reacted chemically into new bonding structures — it develops properties unattainable in raw-stone form: lowered melting point, vitrification, binding capability, thermal-expansion matching and surface gloss formation. These functional materials are core inputs that determine finished-product quality on the shop floor.\n\nSiLiCA controls the entire process — batch design, melting conditions, quenching method (water/air) and particle classification — to deliver applied materials with low lot-to-lot variation and high reproducibility. Custom production is available for glaze frits, ceramic binders and vitrified bonds, engineered-stone bonding feedstock, refractory sintering aids and functional construction fillers.\n\nEvery product ships with a per-lot certificate of analysis, and composition can be customized to the customer's firing profile, CTE matching requirements, color and whiteness targets, and regulatory conditions such as boron-free or lead-free formulations.",
+  jaDescription:
+    "本カテゴリは、純粋なシリカ原石にとどまらず、高温溶融・化学反応・特殊工程などを経て製造された多様なシリカベースの応用・関連素材を集めた専門カテゴリです。建築、セラミックス、耐火物、化学バインダーなど、さまざまな産業現場の特殊なニーズに合わせ、機能性を強化した高品質原料を提供します。\n\nシリカ(SiO₂)はそれ自体でも優れた産業素材ですが、アルカリ・アルカリ土類酸化物やアルミナなどと結合して高温で溶融・急冷されたり、化学反応により新たな結合構造を形成すると、原石状態では実現できない特性が発現します。融点低下、ガラス化(非晶質化)、結合力の付与、熱膨張係数の整合、表面光沢の形成などが代表例で、これらの機能性素材は完成品の品質を左右する中核原料として使用されます。\n\nSiLiCAは、原料配合設計から溶融条件、急冷(水冷/空冷)方式、粒度分級まで全工程を管理し、ロット間ばらつきが少なく再現性の高い応用素材を供給します。陶磁器・衛生陶器・タイル釉薬用フリット、セラミックバインダーおよびビトリファイドボンド、人造石材の結合原料、耐火物用焼結助剤、建築用機能性充填材など、各産業が要求する組成・粒度・焼成挙動に合わせたカスタム生産が可能です。\n\nすべての製品はロット別成績書とともに供給され、焼成温度プロファイル、熱膨張係数(CTE)のマッチング要求、色調・白色度基準、無ホウ素・無鉛などの規制対応条件を反映した組成カスタマイズに対応します。",
+  image: ceramicFritImg,
+  category: "advanced-series",
+  isCategoryIndex: true,
+  features: [
+    { title: "🔥 고온 용융·급냉 기반 유리화 소재", desc: "완전 용융 후 급냉으로 결정상을 제거한 비정질 기능성 원료", enTitle: "🔥 High-Temperature Melt & Quench Vitrified Materials", jaTitle: "🔥 高温溶融・急冷によるガラス化素材", enDesc: "Amorphous functional raw materials with crystalline phases removed by full melting and rapid quenching", jaDesc: "完全溶融後の急冷で結晶相を除去した非晶質機能性原料" },
+    { title: "🏗️ 건축 · 세라믹 · 내화물 대응", desc: "타일·위생도기·인조석재·내화 라이닝 등 현장 요구 조성으로 공급", enTitle: "🏗️ Construction · Ceramics · Refractories", jaTitle: "🏗️ 建築・セラミックス・耐火物に対応", enDesc: "Supplied in compositions demanded by tile, sanitaryware, engineered stone and refractory lining applications", jaDesc: "タイル・衛生陶器・人造石材・耐火ライニングなど現場要求組成で供給" },
+    { title: "🧪 화학 바인더 · 결합제 라인업", desc: "세라믹 바인더, 비트리파이드 본드 등 결합 기능이 부여된 소재", enTitle: "🧪 Chemical Binder Lineup", jaTitle: "🧪 化学バインダー・結合剤ラインアップ", enDesc: "Materials with engineered bonding function such as ceramic binders and vitrified bonds", jaDesc: "セラミックバインダー、ビトリファイドボンドなど結合機能を付与した素材" },
+    { title: "🌿 규제 대응 친환경 조성", desc: "무붕소(Boron-free)·무연(Lead-free) 등 환경 규제 대응 조성 설계", enTitle: "🌿 Regulation-Ready Eco Compositions", jaTitle: "🌿 規制対応の環境配慮組成", enDesc: "Boron-free and lead-free composition design for environmental compliance", jaDesc: "無ホウ素(Boron-free)・無鉛(Lead-free)など環境規制対応の組成設計" },
+    { title: "🎛️ 조성 · 입도 맞춤 생산", desc: "소성 온도, CTE 정합, 백색도 기준에 맞춘 커스텀 배합", enTitle: "🎛️ Custom Composition & PSD", jaTitle: "🎛️ 組成・粒度のカスタム生産", enDesc: "Custom batching matched to firing temperature, CTE and whiteness targets", jaDesc: "焼成温度・CTE整合・白色度基準に合わせたカスタム配合" },
+    { title: "📄 로트별 성적서 · 안정 공급", desc: "조성·입도·수분 성적서 제공 및 대량 안정 공급 체계", enTitle: "📄 Per-Lot COA · Stable Supply", jaTitle: "📄 ロット別成績書・安定供給", enDesc: "Certificates for composition, PSD and moisture with stable high-volume supply", jaDesc: "組成・粒度・水分の成績書提供と大量安定供給体制" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "비정질 세라믹 프리트 (Amorphous Ceramic Frit) — 순차 확대 예정", enValue: "Amorphous Ceramic Frit — lineup expanding", jaValue: "非晶質セラミックフリット — 順次拡大予定", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "소재 유형", value: "유리질 프리트 · 세라믹 결합제 · 기능성 충진재", enValue: "Vitreous frits · ceramic binders · functional fillers", jaValue: "ガラス質フリット · セラミック結合剤 · 機能性充填材", enLabel: "Material Types", jaLabel: "素材タイプ" },
+    { label: "주요 산업", value: "건축 · 세라믹 · 내화물 · 화학 바인더 · 인조석재", enValue: "Construction · ceramics · refractories · chemical binders · engineered stone", jaValue: "建築 · セラミックス · 耐火物 · 化学バインダー · 人造石材", enLabel: "Key Industries", jaLabel: "主要産業" },
+    { label: "제조 공정", value: "고온 용융 → 급냉(수냉/공냉) 유리화 → 분급", enValue: "High-temperature melting → water/air quench vitrification → classification", jaValue: "高温溶融 → 急冷(水冷/空冷)ガラス化 → 分級", enLabel: "Process", jaLabel: "製造工程" },
+    { label: "형상 · 입도", value: "과립(0.1 ~ 0.7 mm) · 분말 맞춤 대응", enValue: "Granules (0.1–0.7 mm) · custom powder grades", jaValue: "顆粒(0.1~0.7 mm) · 粉末カスタム対応", enLabel: "Form & PSD", jaLabel: "形状・粒度" },
+    { label: "원산지", value: "중국 (China)", enValue: "China", jaValue: "中国", enLabel: "Origin", jaLabel: "原産地" },
+  ],
+  subModelsColumnLabel: { ko: "소재", en: "Material", ja: "素材" },
+  subModels: [
+    { code: "FRIT", slug: "amorphous-ceramic-frit", spec: "칼슘-알루미노실리케이트계 무붕소 유리 프리트 · SiO₂ 65.68% · 0.1~0.7 mm", enSpec: "Calcium aluminosilicate boron-free glass frit · SiO₂ 65.68% · 0.1–0.7 mm", jaSpec: "カルシウムアルミノシリケート系無ホウ素ガラスフリット · SiO₂ 65.68% · 0.1~0.7 mm", name: "비정질 세라믹 프리트", enName: "Amorphous Ceramic Frit", jaName: "非晶質セラミックフリット" },
+  ],
+  applications: ceramicFritApps,
+};
+
+productCatalog.push(appliedSilicaMaterials, amorphousCeramicFrit);
+
+
 
 
 
