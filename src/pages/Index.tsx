@@ -20,7 +20,7 @@ import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
 import aboutSilica from "@/assets/about-silica.jpg";
-import gradeA from "@/assets/fused-silica-category.jpg";
+import gradeA from "@/assets/fused-silica-category.jpg.asset.json";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
 import highPurityQuartz from "@/assets/high-purity-quartz-raw.jpg";
