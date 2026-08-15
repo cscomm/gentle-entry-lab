@@ -2830,6 +2830,24 @@ productCatalog.push(appliedSilicaMaterials, amorphousCeramicFrit);
 
 
 
+// —— 원산지 표기 (성분/스펙 표에만 기재) ——
+// 규사(sand) · 규사분말(sand-powder) · 천연 고순도 규석은 제외
+const ORIGIN_EXCLUDED_SLUGS = new Set(["sls-series", "slp-series", "high-purity-quartz"]);
+const ORIGIN_EXCLUDED_CATEGORIES = new Set<ProductCategory>(["sand", "sand-powder"]);
+for (let i = 0; i < productCatalog.length; i++) {
+  const p = productCatalog[i];
+  if (ORIGIN_EXCLUDED_SLUGS.has(p.slug)) continue;
+  if (ORIGIN_EXCLUDED_CATEGORIES.has((p.category ?? "quartz") as ProductCategory)) continue;
+  if ((p.specs ?? []).some((r) => r.label.includes("원산지") || r.label.includes("원산국"))) continue;
+  productCatalog[i] = {
+    ...p,
+    specs: [
+      ...(p.specs ?? []),
+      { label: "원산지", value: "중국 (China)", enLabel: "Country of Origin", enValue: "China", jaLabel: "原産地", jaValue: "中国" },
+    ],
+  };
+}
+
 export const getProductBySlug = (slug: string) =>
   productCatalog.find((p) => p.slug === slug);
 
