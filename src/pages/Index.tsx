@@ -54,6 +54,12 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "전체 제품", en: "All Products" },
   { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
   { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", slug: "crystalline-silica" },
+  { label: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", slug: "surface-modified-silica-powder" },
+  { label: "구상 실리카 분말", en: "Spherical Silica Powder", slug: "spherical-silica-powder" },
+  { label: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", slug: "round-corner-silica-powder" },
+  { label: "각상 실리카 분말", en: "Angular Silica Powder", slug: "angular-silica-powder" },
+  { label: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", slug: "low-radiation-silica-powder" },
+  { label: "무연유리분말", en: "Lead-Free Glass Powder", slug: "lead-free-glass-powder" },
   { label: "침전 실리카", en: "Precipitated Silica", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", href: "/products/fumed-silica" },
   { label: "실리카겔", en: "Silica Gel", href: "/products/silica-gel" },
@@ -67,14 +73,11 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
 
 
 
+
 const products = [
-  // Row 1 — Fused / Quartz / Precipitated / Fumed / Gel / Sol
+  // Row 1 — Fused / Quartz
   { img: gradeA, slug: "fused-silica", title: "용융실리카", enTitle: "Fused Silica", jaTitle: "溶融シリカ", desc: "A · B · C 등급 + 전 SL 시리즈 용융실리카 통합 카테고리 — 반도체·광학·EMC·정밀 주조 전용", enDesc: "Unified category with A/B/C grades and every SL-series fused silica — for semiconductor, optics, EMC and precision casting.", jaDesc: "A・B・Cグレード+全SLシリーズ溶融シリカを統合したカテゴリ — 半導体・光学・EMC・精密鋳造向け", cat: "용융실리카" },
   { img: crystallineSilicaImg, slug: "crystalline-silica", title: "쿼츠 · 결정질 실리카", enTitle: "Quartz · Crystalline Silica", jaTitle: "クォーツ・結晶質シリカ", desc: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — α-Quartz 결정질 실리카 전 형상 라인업 통합 카테고리", enDesc: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — unified α-quartz crystalline silica lineup covering every shape and function.", jaDesc: "SL-YJG · SL-JG · SL-CL · SL-HJG · SL-CS — α-Quartz結晶質シリカの全形状ラインアップ統合カテゴリ", cat: "쿼츠 · 결정질 실리카" },
-  { img: precipitatedSilicaImg, slug: "precipitated-silica", title: "침전 실리카", enTitle: "Precipitated Silica", jaTitle: "沈降シリカ", desc: "고무 보강·페인트 소포·식의약 고결방지 등 산업 전반에서 가장 널리 쓰이는 합성 무정형 SiO₂", enDesc: "Synthetic amorphous SiO₂ widely used as rubber reinforcement, paint defoamer, and food/pharma anti-caking agent.", jaDesc: "ゴム補強・塗料消泡・食品/医薬の固結防止など、産業全般で最も広く使用される合成非晶質SiO₂", cat: "침전 실리카" },
-  { img: fumedSilica, slug: "fumed-silica", title: "흄드 실리카", enTitle: "Fumed Silica", jaTitle: "ヒュームドシリカ", desc: "SiCl₄ 화염가수분해 기반 나노급 무정형 SiO₂ — 실리콘 고무·실란트·접착제·도료·전자재료 전반", enDesc: "Nano-scale amorphous SiO₂ from SiCl₄ flame hydrolysis — reinforcing/thickening additive across silicones, sealants, coatings & electronics.", jaDesc: "SiCl₄の火炎加水分解によるナノレベル非晶質SiO₂ — シリコーン・シーラント・塗料・電子材料全般の補強/増粘添加剤", cat: "흄드 실리카" },
-  { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", jaTitle: "シリカゲル", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", jaDesc: "高純度シリカゲル・微粉シリカ・アンチブロッキング・艶消し剤などフルラインナップ", cat: "실리카겔" },
-  { img: silicaSolImg, slug: "silica-sol", title: "실리카졸", enTitle: "Silica Sol", jaTitle: "シリカゾル", desc: "SL-JA25 / SL-JA30 — 10~12 nm 초미립·암모니아 안정형 고순도 콜로이달 실리카 (정밀 주조·세라믹 코팅·촉매·2차전지)", enDesc: "SL-JA25 / SL-JA30 — 10–12 nm ultrafine, ammonia-stabilized colloidal silica for investment casting, ceramic coating, catalysts and batteries.", jaDesc: "SL-JA25 / SL-JA30 — 10~12 nm 超微粒·アンモニア安定型のコロイダルシリカ (精密鋳造・セラミックコーティング・触媒・二次電池)", cat: "실리카졸" },
   // Row 2 — Surface-Modified / Spherical / Round-Corner / Angular / Low-Alpha / Lead-Free
   { img: surfaceModImg, slug: "surface-modified-silica-powder", title: "표면개질 실리카 분말", enTitle: "Surface-Modified Silica Powder", jaTitle: "表面改質シリカ粉末", desc: "SL-HJG / SL-HRG — 실란 커플링 표면개질로 유기 매트릭스 상용성 향상", enDesc: "SL-HJG / SL-HRG — silane-coupled surface modification for enhanced compatibility with organic matrices.", jaDesc: "SL-HJG / SL-HRG — シラン処理表面改質により有機マトリクスとの相溶性を向上", cat: "표면개질 실리카 분말" },
   { img: sphericalImg, slug: "spherical-silica-powder", title: "구상 실리카 분말", enTitle: "Spherical Silica Powder", jaTitle: "球状シリカ粉末", desc: "SL-QG / SL-QG-L — EMC·CCL·반도체 봉지재용 고구상·저응력·저열팽창 무정형 SiO₂", enDesc: "SL-QG / SL-QG-L — highly spherical, low-stress, low-CTE amorphous SiO₂ for EMC, CCL and semiconductor encapsulation.", jaDesc: "SL-QG / SL-QG-L — EMC・CCL・半導体封止材向けの高球状・低応力・低熱膨張の非晶質SiO₂", cat: "구상 실리카 분말" },
@@ -82,12 +85,17 @@ const products = [
   { img: angularImg, slug: "angular-silica-powder", title: "각상 실리카 분말", enTitle: "Angular Silica Powder", jaTitle: "角形シリカ粉末", desc: "SL-RG / SL-JG — 우수한 기계강도·내마모·절연성의 표준 각상 필러", enDesc: "SL-RG / SL-JG — standard angular filler with excellent mechanical strength, wear resistance and insulation.", jaDesc: "SL-RG / SL-JG — 優れた機械強度・耐摩耗・絶縁性を持つ標準角形フィラー", cat: "각상 실리카 분말" },
   { img: lowRadImg, slug: "low-radiation-silica-powder", title: "저방사선 실리카 분말", enTitle: "Low-Alpha Silica Powder", jaTitle: "低α線シリカ粉末", desc: "SL-CL / SL-FL — 소프트에러 억제용 저 α선 방사 고순도 실리카", enDesc: "SL-CL / SL-FL — ultra-low-alpha silica for soft-error suppression in advanced semiconductors.", jaDesc: "SL-CL / SL-FL — ソフトエラー抑制向けの低α線高純度シリカ", cat: "저방사선 실리카 분말" },
   { img: leadFreeGlassImg, slug: "lead-free-glass-powder", title: "무연유리분말", enTitle: "Lead-Free Glass Powder", jaTitle: "無鉛ガラス粉末", desc: "SL-ZT — 무연·친환경 유리분말, 300~850℃ 유리화 온도의 전자 페이스트·봉착재", enDesc: "SL-ZT — lead-free eco-friendly glass powder with 300–850 °C vitrification for electronic pastes and sealing.", jaDesc: "SL-ZT — 無鉛・環境対応ガラス粉末、300~850℃のガラス化温度で電子ペースト・封着材向け", cat: "무연유리분말" },
-  // Row 3 — Sand / Powder / Natural High-Purity Quartz
+  // Row 3 — Precipitated / Fumed / Gel / Sol / Sand / Powder / Natural Quartz / Applied
+  { img: precipitatedSilicaImg, slug: "precipitated-silica", title: "침전 실리카", enTitle: "Precipitated Silica", jaTitle: "沈降シリカ", desc: "고무 보강·페인트 소포·식의약 고결방지 등 산업 전반에서 가장 널리 쓰이는 합성 무정형 SiO₂", enDesc: "Synthetic amorphous SiO₂ widely used as rubber reinforcement, paint defoamer, and food/pharma anti-caking agent.", jaDesc: "ゴム補強・塗料消泡・食品/医薬の固結防止など、産業全般で最も広く使用される合成非晶質SiO₂", cat: "침전 실리카" },
+  { img: fumedSilica, slug: "fumed-silica", title: "흄드 실리카", enTitle: "Fumed Silica", jaTitle: "ヒュームドシリカ", desc: "SiCl₄ 화염가수분해 기반 나노급 무정형 SiO₂ — 실리콘 고무·실란트·접착제·도료·전자재료 전반", enDesc: "Nano-scale amorphous SiO₂ from SiCl₄ flame hydrolysis — reinforcing/thickening additive across silicones, sealants, coatings & electronics.", jaDesc: "SiCl₄の火炎加水分解によるナノレベル非晶質SiO₂ — シリコーン・シーラント・塗料・電子材料全般の補強/増粘添加剤", cat: "흄드 실리카" },
+  { img: silicaGelHero, slug: "silica-gel", title: "실리카겔", enTitle: "Silica Gel", jaTitle: "シリカゲル", desc: "고순도 실리카겔 · 미분 실리카 · 안티블로킹 · 소광제 등 전 라인업", enDesc: "Full lineup of high-purity silica gel, microsilica, anti-blocking and matting agents.", jaDesc: "高純度シリカゲル・微粉シリカ・アンチブロッキング・艶消し剤などフルラインナップ", cat: "실리카겔" },
+  { img: silicaSolImg, slug: "silica-sol", title: "실리카졸", enTitle: "Silica Sol", jaTitle: "シリカゾル", desc: "SL-JA25 / SL-JA30 — 10~12 nm 초미립·암모니아 안정형 고순도 콜로이달 실리카 (정밀 주조·세라믹 코팅·촉매·2차전지)", enDesc: "SL-JA25 / SL-JA30 — 10–12 nm ultrafine, ammonia-stabilized colloidal silica for investment casting, ceramic coating, catalysts and batteries.", jaDesc: "SL-JA25 / SL-JA30 — 10~12 nm 超微粒·アンモニア安定型のコロイダルシリカ (精密鋳造・セラミックコーティング・触媒・二次電池)", cat: "실리카졸" },
   { img: silicaSandImg, slug: "silica-sand", title: "규사", enTitle: "Silica Sand", jaTitle: "珪砂", desc: "유리·주조·여과·인조잔디·건축용 고순도 산업 규사 — 입도 맞춤 공급", enDesc: "High-purity industrial silica sand for glass, foundry, filtration, artificial turf and construction — custom grain sizes.", jaDesc: "ガラス・鋳造・濾過・人工芝・建築用の高純度産業用シリカサンド — 粒度カスタム供給", cat: "규사" },
   { img: silicaPowderImg, slug: "silica-powder", title: "규사분말", enTitle: "Silica Powder", jaTitle: "珪砂粉末", desc: "도료·플라스틱·인조대리석·건축 자재용 고백색 미분 실리카 충진재", enDesc: "High-whiteness micronized silica filler for paints, plastics, engineered stone and construction materials.", jaDesc: "塗料・プラスチック・人造大理石・建築資材用の高白色微粉シリカ充填材", cat: "규사분말" },
   { img: highPurityQuartz, slug: "high-purity-quartz", title: "천연 고순도규석", enTitle: "Natural High-Purity Quartz", jaTitle: "天然高純度石英", desc: "엄선된 광원에서 채광한 고순도 규석", enDesc: "High-purity quartz mined from carefully selected ore deposits.", jaDesc: "厳選された鉱床から採掘した高純度石英", cat: "천연 고순도규석" },
   { img: ceramicFritImg, slug: "applied-silica-materials", title: "실리카 응용 · 연관 소재", enTitle: "Applied & Related Silica Materials", jaTitle: "シリカ応用・関連素材", desc: "고온 용융·화학 반응·특수 공정으로 기능성을 부여한 실리카 기반 응용 소재 — 비정질 세라믹 프리트, 세라믹 바인더, 건축·내화 기능성 원료", enDesc: "Silica-based applied materials functionalized by high-temperature melting, chemical reaction and special processing — amorphous ceramic frit, ceramic binders and functional construction/refractory raw materials.", jaDesc: "高温溶融・化学反応・特殊工程で機能性を付与したシリカベース応用素材 — 非晶質セラミックフリット、セラミックバインダー、建築・耐火用機能性原料", cat: "실리카 응용 · 연관 소재" },
 ];
+
 
 const applications = [
   { img: aSemi, title: "전자 산업", en: "Electronics", desc: "전자 웨이퍼 제조용 고순도 석영 소재", enDesc: "High-purity quartz for semiconductor wafer manufacturing." },
