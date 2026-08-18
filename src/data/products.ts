@@ -1754,6 +1754,7 @@ productCatalog.push({
     { code: "SL-FS", slug: "sl-fs", spec: "용융 석영사", enSpec: "Fused Quartz Sand", jaSpec: "溶融石英砂" },
     { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },
     { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "서브미크론 구상 용융 (D50 0.3±0.1µm · 구상화율 98%)", enSpec: "Submicron Spherical Fused (D50 0.3±0.1 µm · 98% spheroidization)", jaSpec: "サブミクロン球状溶融 (D50 0.3±0.1µm · 球状化率98%)" },
+    { code: "SL-FPO10", slug: "sl-fpo10", spec: "구상 용융 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "Spherical Fused (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "球状溶融 (D50 9.96µm · SiO₂ 99.93%)" },
   ],
   applications: [
     "반도체 EMC · 언더필 · 어드밴스드 패키징",
