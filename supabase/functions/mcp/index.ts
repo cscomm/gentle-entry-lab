@@ -2840,6 +2840,21 @@ var appliedSilicaMaterials = {
   applications: ceramicFritApps
 };
 productCatalog.push(appliedSilicaMaterials, amorphousCeramicFrit);
+var ORIGIN_EXCLUDED_SLUGS = /* @__PURE__ */ new Set(["sls-series", "slp-series", "high-purity-quartz"]);
+var ORIGIN_EXCLUDED_CATEGORIES = /* @__PURE__ */ new Set(["sand", "sand-powder"]);
+for (let i = 0; i < productCatalog.length; i++) {
+  const p = productCatalog[i];
+  if (ORIGIN_EXCLUDED_SLUGS.has(p.slug)) continue;
+  if (ORIGIN_EXCLUDED_CATEGORIES.has(p.category ?? "quartz")) continue;
+  if ((p.specs ?? []).some((r) => r.label.includes("\uC6D0\uC0B0\uC9C0") || r.label.includes("\uC6D0\uC0B0\uAD6D"))) continue;
+  productCatalog[i] = {
+    ...p,
+    specs: [
+      ...p.specs ?? [],
+      { label: "\uC6D0\uC0B0\uC9C0", value: "\uC911\uAD6D (China)", enLabel: "Country of Origin", enValue: "China", jaLabel: "\u539F\u7523\u5730", jaValue: "\u4E2D\u56FD" }
+    ]
+  };
+}
 
 // src/lib/mcp/tools/list-products.ts
 var CATEGORIES = ["quartz", "silica-gel", "precipitated", "fumed", "advanced-series"];
