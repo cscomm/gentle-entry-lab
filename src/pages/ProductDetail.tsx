@@ -2212,8 +2212,171 @@ const ProductDetail = () => {
         </section>
       )}
 
+      {/* SL-FPO10 — Detailed Technical Profile */}
+      {isFPO10 && (
+        <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+          <div className="flex items-center gap-3">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              TECHNICAL DEEP-DIVE
+            </span>
+          </div>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-4 max-w-3xl text-muted-foreground">
+            {tri(
+              "SL-FPO10의 화학 조성, 입도 분포, 구상 용융 구조 및 공정 적합성을 공인 시험 성적서(한국세라믹기술원 2024-4540 · Horiba LA-950)를 기준으로 정리하였습니다.",
+              "The chemical composition, particle size distribution, spherical fused structure and process suitability of SL-FPO10, organized from accredited test data (KICET 2024-4540 · Horiba LA-950).",
+              "SL-FPO10の化学組成、粒度分布、球状溶融構造および工程適合性を公認試験成績書(韓国セラミック技術院2024-4540 · Horiba LA-950)に基づき整理しました。"
+            )}
+          </p>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                icon: FlaskConical,
+                tag: "01",
+                title: tri("화학 조성 및 순도", "Chemical Composition & Purity", "化学組成および純度"),
+                intro: tri(
+                  "ICP-OES / ICP-MS 기반 습식·기기분석 결과 SiO₂ 99.93%의 고순도 조성이 확인되었습니다.",
+                  "Wet and instrumental analysis by ICP-OES / ICP-MS confirms a high-purity composition of SiO₂ 99.93%.",
+                  "ICP-OES / ICP-MSによる湿式・機器分析でSiO₂ 99.93%の高純度組成が確認されました。"
+                ),
+                points: tri(
+                  [
+                    "SiO₂ 99.93 % — 반도체·전자 필러급 순도",
+                    "Al₂O₃ 491 mg/kg · Fe₂O₃ 56.2 mg/kg — 착색·절연 저하 요인 최소화",
+                    "알칼리 성분 Na₂O 20.4 mg/kg · K₂O 33.0 mg/kg 저함량",
+                    "MgO 14.6 · TiO₂ 13.9 · CaO 13.8 mg/kg 미량 관리",
+                  ].join("|"),
+                  [
+                    "SiO₂ 99.93% — semiconductor / electronics filler-grade purity",
+                    "Al₂O₃ 491 mg/kg · Fe₂O₃ 56.2 mg/kg — minimal discoloration and insulation loss",
+                    "Low alkali content: Na₂O 20.4 mg/kg · K₂O 33.0 mg/kg",
+                    "Trace-level MgO 14.6 · TiO₂ 13.9 · CaO 13.8 mg/kg",
+                  ].join("|"),
+                  [
+                    "SiO₂ 99.93 % — 半導体・電子フィラー級の純度",
+                    "Al₂O₃ 491 mg/kg · Fe₂O₃ 56.2 mg/kg — 着色・絶縁低下要因を最小化",
+                    "アルカリ成分 Na₂O 20.4 mg/kg · K₂O 33.0 mg/kg の低含有",
+                    "MgO 14.6 · TiO₂ 13.9 · CaO 13.8 mg/kg の微量管理",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: BarChart3,
+                tag: "02",
+                title: tri("입도 분포 설계", "Particle Size Distribution", "粒度分布設計"),
+                intro: tri(
+                  "Horiba LA-950 습식 레이저 회절 분석 기준 D50 9.96 µm의 좁은 단봉 분포를 형성합니다.",
+                  "Wet laser-diffraction analysis on a Horiba LA-950 shows a narrow single-peak distribution with D50 9.96 µm.",
+                  "Horiba LA-950湿式レーザー回折分析基準でD50 9.96 µmの狭い単峰分布を形成します。"
+                ),
+                points: tri(
+                  [
+                    "D10 8.08 · D50 9.96 · D90 11.72 · D99 13.21 µm",
+                    "평균 9.97 µm · 모드 10.36 µm · 표준편차 1.38 µm",
+                    "15 µm 이상 누적 100 % — 조대 입자 사실상 없음",
+                    "6.7 µm 이하 미분 비율 0.3 % 미만 — 점도 급상승 요인 억제",
+                  ].join("|"),
+                  [
+                    "D10 8.08 · D50 9.96 · D90 11.72 · D99 13.21 µm",
+                    "Mean 9.97 µm · mode 10.36 µm · std. dev. 1.38 µm",
+                    "100% cumulative below 15 µm — virtually no oversize particles",
+                    "Under 0.3% fines below 6.7 µm — suppresses sudden viscosity build-up",
+                  ].join("|"),
+                  [
+                    "D10 8.08 · D50 9.96 · D90 11.72 · D99 13.21 µm",
+                    "平均9.97 µm · モード10.36 µm · 標準偏差1.38 µm",
+                    "15 µm以上は累積100 % — 粗大粒子は実質的に存在しない",
+                    "6.7 µm以下の微粉比率0.3 %未満 — 粘度急上昇要因を抑制",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Sparkles,
+                tag: "03",
+                title: tri("구상 용융 구조 특성", "Spherical Fused Structure", "球状溶融構造の特性"),
+                intro: tri(
+                  "초고온 용융·급냉으로 형성된 비정질 구조를 구상화하여 저점도·저응력·고충전 배합을 구현합니다.",
+                  "The amorphous structure formed by ultra-high-temperature melting and quenching is spheroidized, enabling low-viscosity, low-stress, high-loading formulations.",
+                  "超高温溶融・急冷で形成された非晶質構造を球状化し、低粘度・低応力・高充填配合を実現します。"
+                ),
+                points: tri(
+                  [
+                    "비정질(Amorphous) 구조 — 고온에서도 결정화·변형 억제",
+                    "열팽창계수 약 0.5 ~ 0.6 ×10⁻⁶/℃ — 실리콘 웨이퍼와 정합성 우수",
+                    "구상 형상으로 동일 충전율에서 점도 대폭 저감",
+                    "낮은 유전율·유전손실 — 고주파 기판·저유전 CCL 대응",
+                  ].join("|"),
+                  [
+                    "Amorphous structure — suppresses crystallization and deformation at high temperature",
+                    "CTE approx. 0.5–0.6 ×10⁻⁶/°C — excellent match with silicon wafers",
+                    "Spherical morphology greatly reduces viscosity at a given loading",
+                    "Low dielectric constant and loss — suited to high-frequency substrates and low-Dk CCL",
+                  ].join("|"),
+                  [
+                    "非晶質(Amorphous)構造 — 高温でも結晶化・変形を抑制",
+                    "熱膨張係数 約0.5~0.6 ×10⁻⁶/℃ — シリコンウェハとの整合性に優れる",
+                    "球状形状により同一充填率での粘度を大幅に低減",
+                    "低誘電率・低誘電損失 — 高周波基板・低誘電CCLに対応",
+                  ].join("|")
+                ).split("|"),
+              },
+              {
+                icon: Droplets,
+                tag: "04",
+                title: tri("공정 적합성 및 맞춤 공급", "Process Suitability & Custom Supply", "工程適合性およびカスタム供給"),
+                intro: tri(
+                  "10 µm 급 균일 구상 입자는 도포·성형·인쇄 공정의 안정성을 높이며, 사양은 맞춤 조정이 가능합니다.",
+                  "Uniform 10 µm-class spherical particles improve stability in coating, molding and printing processes, and the specification can be customized.",
+                  "10 µm級の均一な球状粒子は塗布・成形・印刷工程の安定性を高め、仕様はカスタム調整が可能です。"
+                ),
+                points: tri(
+                  [
+                    "디스펜싱·스크린 인쇄 시 노즐 막힘 및 스크래치 결함 최소화",
+                    "고충전 배합으로 저CTE·고열전도 설계 가능",
+                    "실란 커플링 등 표면처리 옵션 대응",
+                    "입도 분포·포장 단위는 고객 실사용 조건에 맞춰 맞춤 가공 공급",
+                  ].join("|"),
+                  [
+                    "Minimizes nozzle clogging and scratch defects in dispensing and screen printing",
+                    "High-loading formulations enable low-CTE, high-thermal-conductivity designs",
+                    "Optional surface treatments such as silane coupling",
+                    "PSD and packaging custom-processed to the customer's actual conditions",
+                  ].join("|"),
+                  [
+                    "ディスペンス・スクリーン印刷時のノズル詰まりおよびスクラッチ欠陥を最小化",
+                    "高充填配合により低CTE・高熱伝導設計が可能",
+                    "シランカップリングなど表面処理オプションに対応",
+                    "粒度分布・包装単位は顧客の実使用条件に合わせてカスタム加工供給",
+                  ].join("|")
+                ).split("|"),
+              },
+            ].map((c) => (
+              <div key={c.tag} className="overflow-hidden rounded-2xl border border-border bg-card">
+                <div className="flex items-center gap-3 border-b border-border bg-secondary/30 px-6 py-4">
+                  <c.icon className="h-5 w-5 text-primary" />
+                  <span className="font-mono text-xs text-muted-foreground">{c.tag}</span>
+                  <h4 className="font-bold">{c.title}</h4>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-muted-foreground">{c.intro}</p>
+                  <ul className="mt-4 space-y-2">
+                    {c.points.map((p, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
+                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Applications — visual cards with images */}
-      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && (
+      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
