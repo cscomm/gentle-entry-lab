@@ -28,6 +28,7 @@ import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
 import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import hf04Img from "@/assets/hf04-fused-silica-powder.jpg";
 import sphSemImg from "@/assets/sl-sph-300-sem.png";
+import slFpo10Img from "@/assets/sl-fpo10-fused-silica.jpg";
 import silicaSolImg from "@/assets/silica-sol.png";
 import slShsImg from "@/assets/sl-shs-photo.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
@@ -906,6 +907,7 @@ const advSeriesProducts: ProductDetail[] = [
       { code: "SL-QG-L", slug: "sl-qg-l", spec: "저방사선(Low-α) 구상", enSpec: "Low-Alpha Spherical", jaSpec: "低α線 球状", name: "SL-QG-L 저방사선 구상 실리카 분말", enName: "SL-QG-L · Low-Alpha Spherical Silica Powder", jaName: "SL-QG-L 低α線球状シリカ粉末" },
       { code: "SL-SPH-300", slug: "sl-sph-300", spec: "화학합성 아미크론급 구상 (D50 0.38µm · SiO₂ 99.98%)", enSpec: "Chemically Synthesized Submicron Spherical (D50 0.38 µm · SiO₂ 99.98%)", jaSpec: "化学合成サブミクロン球状 (D50 0.38µm · SiO₂ 99.98%)", name: "SL-SPH-300 고순도 나노구상실리카", enName: "SL-SPH-300 · Ultra-High-Purity Nano Spherical Silica", jaName: "SL-SPH-300 高純度ナノ球状シリカ" },
       { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "구상화율 98% 구상 (D50 0.3±0.1µm · SiO₂ >99.9%)", enSpec: "98% Spheroidization Submicron Spherical (D50 0.3±0.1 µm · SiO₂ >99.9%)", jaSpec: "球状化率98% サブミクロン球状 (D50 0.3±0.1µm · SiO₂ >99.9%)", name: "SL-SPJ-300 구상 실리카", enName: "SL-SPJ-300 · Submicron Spherical Silica", jaName: "SL-SPJ-300 サブミクロン球状シリカ" },
+      { code: "SL-FPO10", slug: "sl-fpo10", spec: "고순도 구상 용융 실리카 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "High-Purity Spherical Fused Silica (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "高純度球状溶融シリカ (D50 9.96µm · SiO₂ 99.93%)", name: "SL-FPO10 고순도 구상 용융 실리카", enName: "SL-FPO10 · High-Purity Spherical Fused Silica", jaName: "SL-FPO10 高純度球状溶融シリカ" },
     ],
 
     applications: ["반도체 EMC", "CCL / PCB", "언더필 / 봉지재", "고열전도 소재"],
