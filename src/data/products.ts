@@ -1701,6 +1701,7 @@ export const fusedSilicaCategoryMembers = [
   "sl-fs",
   "sl-hf04",
   "sl-spj-300",
+  "sl-fpo10",
 ];
 
 productCatalog.push({
