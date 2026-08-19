@@ -1648,6 +1648,50 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
     ],
     applications: [],
   },
+  "sl-fp10": {
+    tagline: "SiO₂ 99.93% · D50 9.96 µm · 각상 용융 실리카 — 고순도 비정질 각상 필러 (SL-FP10)",
+    enTagline: "SiO₂ 99.93% · D50 9.96 µm Angular Fused Silica — high-purity amorphous angular filler (SL-FP10)",
+    jaTagline: "SiO₂ 99.93% · D50 9.96 µm 角形溶融シリカ — 高純度非晶質角形フィラー (SL-FP10)",
+    description:
+      "SL-FP10은 천연 석영을 초고온에서 용융·급냉하여 얻은 비정질(Amorphous) SiO₂를 정밀 분쇄·분급한 고순도 각상(Angular) 용융 실리카 분말입니다.\n\n입도는 레이저 회절식 입도분석(Horiba LA-950) 기준 D50 9.96 µm, 평균 9.97 µm, 모드 10.36 µm, 표준편차 1.38 µm, D10 8.08 µm, D90 11.72 µm, D99 13.21 µm로 10 µm 급에 집중된 매우 좁은 단봉(單峰) 분포를 가집니다. 15 µm 이상 조대 입자는 사실상 존재하지 않아 도포·인쇄·성형 공정에서 스크래치 및 표면 결함을 억제합니다.\n\n각상 형상은 입자 간 맞물림(interlocking)이 강해 경화물의 기계적 강도·치수 안정성·내마모성을 높이고, 침강을 억제하여 슬러리·페이스트의 형상 유지력(thixotropy)을 개선합니다. 또한 비정질 용융 실리카 특유의 극저 열팽창계수(약 0.5~0.6 ×10⁻⁶/℃)와 낮은 유전율·유전손실, 뛰어난 화학적 안정성으로 EMC·봉지재, CCL·프리프레그, 산업용 도료·접착제, 정밀 주조, 인조대리석·복합소재 등에 적용할 수 있습니다.",
+    enDescription:
+      "SL-FP10 is a high-purity angular fused silica powder produced by melting natural quartz at ultra-high temperature, quenching it into amorphous SiO₂ and precision milling / classifying the particles.\n\nLaser-diffraction analysis (Horiba LA-950) gives D50 9.96 µm, mean 9.97 µm, mode 10.36 µm, standard deviation 1.38 µm, D10 8.08 µm, D90 11.72 µm and D99 13.21 µm — an extremely narrow, single-peak distribution centered on the 10 µm class. Particles above 15 µm are effectively absent, suppressing scratches and surface defects in coating, printing and molding.\n\nThe angular morphology creates strong particle interlocking, raising mechanical strength, dimensional stability and abrasion resistance of the cured body while suppressing settling and improving the shape retention (thixotropy) of slurries and pastes. Together with the ultra-low CTE of amorphous fused silica (approx. 0.5–0.6 ×10⁻⁶/°C), low dielectric constant and loss and excellent chemical stability, it suits EMC and encapsulants, CCL and prepreg, industrial coatings and adhesives, precision casting, engineered stone and composites.",
+    jaDescription:
+      "SL-FP10は、天然石英を超高温で溶融・急冷して得た非晶質(Amorphous)SiO₂を精密粉砕・分級した高純度角形(Angular)溶融シリカ粉末です。\n\n粒度はレーザー回折式粒度分析(Horiba LA-950)基準でD50 9.96 µm、平均9.97 µm、モード10.36 µm、標準偏差1.38 µm、D10 8.08 µm、D90 11.72 µm、D99 13.21 µmと、10 µm級に集中した非常に狭い単峰分布を有します。15 µm以上の粗大粒子は実質的に存在せず、塗布・印刷・成形工程でのスクラッチや表面欠陥を抑制します。\n\n角形形状は粒子間のインターロッキングが強く、硬化物の機械的強度・寸法安定性・耐摩耗性を高め、沈降を抑えてスラリー・ペーストの形状保持性(チキソtrópy)を改善します。さらに非晶質溶融シリカ特有の極低熱膨張係数(約0.5~0.6 ×10⁻⁶/℃)、低誘電率・低誘電損失、優れた化学的安定性により、EMC・封止材、CCL・プリプレグ、産業用塗料・接着剤、精密鋳造、人造大理石・複合素材などに適用できます。",
+    image: slFpo10Img,
+    features: [
+      { title: "🧪 SiO₂ 99.93% 고순도", desc: "습식·기기분석(ICP-OES/ICP-MS) 기준 전자 필러급 순도", enTitle: "🧪 High Purity SiO₂ 99.93%", jaTitle: "🧪 SiO₂ 99.93% 高純度", enDesc: "Electronics filler-grade purity by wet and instrumental analysis (ICP-OES/ICP-MS)", jaDesc: "湿式・機器分析(ICP-OES/ICP-MS)基準の電子フィラー級純度" },
+      { title: "🔶 각상 용융 실리카", desc: "비정질 용융 실리카를 정밀 분쇄 — 강한 맞물림·고강도 보강", enTitle: "🔶 Angular Fused Silica", jaTitle: "🔶 角形溶融シリカ", enDesc: "Precision-milled amorphous fused silica — strong interlocking, high reinforcement", jaDesc: "非晶質溶融シリカを精密粉砕 — 強いインターロッキング・高強度補強" },
+      { title: "📐 D50 9.96 µm 좁은 단봉 분포", desc: "D10 8.08 · D50 9.96 · D90 11.72 µm · 표준편차 1.38 µm", enTitle: "📐 Narrow Single-Peak D50 9.96 µm", jaTitle: "📐 D50 9.96 µm 狭い単峰分布", enDesc: "D10 8.08 · D50 9.96 · D90 11.72 µm · std. dev. 1.38 µm", jaDesc: "D10 8.08 · D50 9.96 · D90 11.72 µm · 標準偏差1.38 µm" },
+      { title: "💪 기계적 강도 · 내마모성", desc: "각상 맞물림 구조로 경화물 강도·치수 안정성·내마모성 향상", enTitle: "💪 Strength & Abrasion Resistance", jaTitle: "💪 機械的強度・耐摩耗性", enDesc: "Angular interlocking improves strength, dimensional stability and wear resistance", jaDesc: "角形のインターロッキング構造で硬化物の強度・寸法安定性・耐摩耗性を向上" },
+      { title: "🌡️ 극저 열팽창 · 저유전", desc: "CTE 약 0.5~0.6 ×10⁻⁶/℃ · 낮은 유전율/유전손실", enTitle: "🌡️ Ultra-Low CTE & Low Dk", jaTitle: "🌡️ 極低熱膨張・低誘電", enDesc: "CTE approx. 0.5–0.6 ×10⁻⁶/°C with low dielectric constant and loss", jaDesc: "CTE約0.5~0.6 ×10⁻⁶/℃ · 低誘電率/低誘電損失" },
+      { title: "🛠️ 맞춤 가공 공급", desc: "입도 분포·표면처리(실란) 옵션을 고객 조건에 맞춰 조정", enTitle: "🛠️ Custom Processing", jaTitle: "🛠️ カスタム加工供給", enDesc: "PSD and optional silane surface treatment adjusted to customer conditions", jaDesc: "粒度分布・表面処理(シラン)オプションを顧客条件に合わせて調整" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-FP10", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "백색 각상 분말", enValue: "White angular powder", jaValue: "白色角形粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "형상 / 구조", value: "각상 (Angular) · 비정질 용융", enValue: "Angular · amorphous fused", jaValue: "角形 · 非晶質溶融", enLabel: "Morphology / Structure", jaLabel: "形状 / 構造" },
+      { label: "SiO₂", value: "99.93 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Al₂O₃", value: "491 mg/kg", enLabel: "Al₂O₃", jaLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "56.2 mg/kg", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "K₂O", value: "33.0 mg/kg", enLabel: "K₂O", jaLabel: "K₂O" },
+      { label: "Na₂O", value: "20.4 mg/kg", enLabel: "Na₂O", jaLabel: "Na₂O" },
+      { label: "MgO", value: "14.6 mg/kg", enLabel: "MgO", jaLabel: "MgO" },
+      { label: "TiO₂", value: "13.9 mg/kg", enLabel: "TiO₂", jaLabel: "TiO₂" },
+      { label: "CaO", value: "13.8 mg/kg", enLabel: "CaO", jaLabel: "CaO" },
+      { label: "입도 D10", value: "8.08 µm", enLabel: "D10", jaLabel: "粒度 D10" },
+      { label: "입도 D50 (Median)", value: "9.96 µm", enLabel: "D50 (Median)", jaLabel: "粒度 D50 (Median)" },
+      { label: "입도 D90", value: "11.72 µm", enLabel: "D90", jaLabel: "粒度 D90" },
+      { label: "입도 D99", value: "13.21 µm", enLabel: "D99", jaLabel: "粒度 D99" },
+      { label: "평균 입경 / 모드", value: "9.97 µm / 10.36 µm", enValue: "9.97 µm / 10.36 µm", jaValue: "9.97 µm / 10.36 µm", enLabel: "Mean / Mode Size", jaLabel: "平均粒径 / モード径" },
+      { label: "표준편차", value: "1.38 µm", enLabel: "Std. Deviation", jaLabel: "標準偏差" },
+      { label: "분석 방법", value: "ICP-OES / ICP-MS 습식·기기분석 · Horiba LA-950 레이저 회절 입도분석", enValue: "ICP-OES / ICP-MS wet & instrumental analysis · Horiba LA-950 laser diffraction PSD", jaValue: "ICP-OES / ICP-MS 湿式・機器分析 · Horiba LA-950 レーザー回折粒度分析", enLabel: "Test Method", jaLabel: "分析方法" },
+      { label: "포장", value: "10 / 20 kg 지대 · OEM 대응", enValue: "10 / 20 kg bag · OEM available", jaValue: "10 / 20 kg 紙袋 · OEM対応", enLabel: "Packaging", jaLabel: "包装" },
+      { label: "비고", value: "입도 분포 및 표면처리는 고객 실사용 조건에 따라 맞춤 조정 가능", enValue: "PSD and surface treatment can be customized to actual usage conditions", jaValue: "粒度分布および表面処理は顧客の実使用条件に応じてカスタム調整可能", enLabel: "Note", jaLabel: "備考" },
+    ],
+    applications: [],
+  },
+
 };
 
 
