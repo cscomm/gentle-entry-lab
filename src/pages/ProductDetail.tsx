@@ -218,6 +218,8 @@ const ProductDetail = () => {
   const isFrit = product.slug === "amorphous-ceramic-frit";
   const isSPJ = product.slug === "sl-spj-300";
   const isFPO10 = product.slug === "sl-fpo10";
+  const isFP10 = product.slug === "sl-fp10";
+  const fpCode = product.slug === "sl-fp10" ? "SL-FP10" : "SL-FPO10";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
   const children = product.isCategoryIndex
@@ -2213,7 +2215,7 @@ const ProductDetail = () => {
       )}
 
       {/* SL-FPO10 — Detailed Technical Profile */}
-      {isFPO10 && (
+      {(isFPO10 || isFP10) && (
         <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <div className="flex items-center gap-3">
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -2223,9 +2225,9 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
           <p className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-FPO10의 화학 조성, 입도 분포, 구상 용융 구조 및 공정 적합성을 공인 시험 성적서(한국세라믹기술원 2024-4540 · Horiba LA-950)를 기준으로 정리하였습니다.",
-              "The chemical composition, particle size distribution, spherical fused structure and process suitability of SL-FPO10, organized from accredited test data (KICET 2024-4540 · Horiba LA-950).",
-              "SL-FPO10の化学組成、粒度分布、球状溶融構造および工程適合性を公認試験成績書(韓国セラミック技術院2024-4540 · Horiba LA-950)に基づき整理しました。"
+              `${fpCode}의 화학 조성, 입도 분포, ${isFP10 ? "각상" : "구상"} 용융 구조 및 공정 적합성을 기기분석 및 레이저 회절 입도분석(Horiba LA-950) 데이터를 기준으로 정리하였습니다.`,
+              `The chemical composition, particle size distribution, ${isFP10 ? "angular" : "spherical"} fused structure and process suitability of ${fpCode}, organized from instrumental analysis and laser-diffraction PSD data (Horiba LA-950).`,
+              `${fpCode}の化学組成、粒度分布、${isFP10 ? "角形" : "球状"}溶融構造および工程適合性を機器分析およびレーザー回折粒度分析(Horiba LA-950)データに基づき整理しました。`
             )}
           </p>
 
@@ -2294,8 +2296,14 @@ const ProductDetail = () => {
               {
                 icon: Sparkles,
                 tag: "03",
-                title: tri("구상 용융 구조 특성", "Spherical Fused Structure", "球状溶融構造の特性"),
-                intro: tri(
+                title: isFP10 ? tri("각상 용융 구조 특성", "Angular Fused Structure", "角形溶融構造の特性") : tri("구상 용융 구조 특성", "Spherical Fused Structure", "球状溶融構造の特性"),
+                intro: isFP10
+                  ? tri(
+                      "초고온 용융·급냉으로 형성된 비정질 구조를 정밀 분쇄하여 강한 입자 맞물림과 고강도 보강 효과를 구현합니다.",
+                      "The amorphous structure formed by ultra-high-temperature melting and quenching is precision-milled, delivering strong particle interlocking and high reinforcement.",
+                      "超高温溶融・急冷で形成された非晶質構造を精密粉砕し、強い粒子インターロッキングと高強度補強効果を実現します。"
+                    )
+                  : tri(
                   "초고온 용융·급냉으로 형성된 비정질 구조를 구상화하여 저점도·저응력·고충전 배합을 구현합니다.",
                   "The amorphous structure formed by ultra-high-temperature melting and quenching is spheroidized, enabling low-viscosity, low-stress, high-loading formulations.",
                   "超高温溶融・急冷で形成された非晶質構造を球状化し、低粘度・低応力・高充填配合を実現します。"
@@ -2304,19 +2312,19 @@ const ProductDetail = () => {
                   [
                     "비정질(Amorphous) 구조 — 고온에서도 결정화·변형 억제",
                     "열팽창계수 약 0.5 ~ 0.6 ×10⁻⁶/℃ — 실리콘 웨이퍼와 정합성 우수",
-                    "구상 형상으로 동일 충전율에서 점도 대폭 저감",
+                    isFP10 ? "각상 맞물림 구조로 경화물 강도·내마모성·치수 안정성 향상" : "구상 형상으로 동일 충전율에서 점도 대폭 저감",
                     "낮은 유전율·유전손실 — 고주파 기판·저유전 CCL 대응",
                   ].join("|"),
                   [
                     "Amorphous structure — suppresses crystallization and deformation at high temperature",
                     "CTE approx. 0.5–0.6 ×10⁻⁶/°C — excellent match with silicon wafers",
-                    "Spherical morphology greatly reduces viscosity at a given loading",
+                    isFP10 ? "Angular interlocking improves strength, abrasion resistance and dimensional stability" : "Spherical morphology greatly reduces viscosity at a given loading",
                     "Low dielectric constant and loss — suited to high-frequency substrates and low-Dk CCL",
                   ].join("|"),
                   [
                     "非晶質(Amorphous)構造 — 高温でも結晶化・変形を抑制",
                     "熱膨張係数 約0.5~0.6 ×10⁻⁶/℃ — シリコンウェハとの整合性に優れる",
-                    "球状形状により同一充填率での粘度を大幅に低減",
+                    isFP10 ? "角形のインターロッキング構造で硬化物の強度・耐摩耗性・寸法安定性を向上" : "球状形状により同一充填率での粘度を大幅に低減",
                     "低誘電率・低誘電損失 — 高周波基板・低誘電CCLに対応",
                   ].join("|")
                 ).split("|"),
@@ -2326,9 +2334,9 @@ const ProductDetail = () => {
                 tag: "04",
                 title: tri("공정 적합성 및 맞춤 공급", "Process Suitability & Custom Supply", "工程適合性およびカスタム供給"),
                 intro: tri(
-                  "10 µm 급 균일 구상 입자는 도포·성형·인쇄 공정의 안정성을 높이며, 사양은 맞춤 조정이 가능합니다.",
-                  "Uniform 10 µm-class spherical particles improve stability in coating, molding and printing processes, and the specification can be customized.",
-                  "10 µm級の均一な球状粒子は塗布・成形・印刷工程の安定性を高め、仕様はカスタム調整が可能です。"
+                  `10 µm 급 균일 ${isFP10 ? "각상" : "구상"} 입자는 도포·성형·인쇄 공정의 안정성을 높이며, 사양은 맞춤 조정이 가능합니다.`,
+                  `Uniform 10 µm-class ${isFP10 ? "angular" : "spherical"} particles improve stability in coating, molding and printing processes, and the specification can be customized.`,
+                  `10 µm級の均一な${isFP10 ? "角形" : "球状"}粒子は塗布・成形・印刷工程の安定性を高め、仕様はカスタム調整が可能です。`
                 ),
                 points: tri(
                   [
@@ -2376,7 +2384,7 @@ const ProductDetail = () => {
       )}
 
       {/* Applications — visual cards with images */}
-      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && (
+      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && !isFP10 && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">

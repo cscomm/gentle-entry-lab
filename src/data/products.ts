@@ -992,6 +992,7 @@ const advSeriesProducts: ProductDetail[] = [
     subModels: [
       { code: "SL-RG", slug: "sl-rg", spec: "용융형 각상", enSpec: "Fused Angular", jaSpec: "溶融質 角形", name: "SL-RG 용융형 각상 실리카 분말", enName: "SL-RG · Fused Angular Silica Powder", jaName: "SL-RG 溶融質角形シリカ粉末" },
       { code: "SL-JG", slug: "sl-jg", spec: "결정형 각상", enSpec: "Crystalline Angular", jaSpec: "結晶質 角形", name: "SL-JG 결정형 각상 실리카 분말", enName: "SL-JG · Crystalline Angular Silica Powder", jaName: "SL-JG 結晶質角形シリカ粉末" },
+      { code: "SL-FP10", slug: "sl-fp10", spec: "고순도 각상 용융 실리카 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "High-Purity Angular Fused Silica (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "高純度角形溶融シリカ (D50 9.96µm · SiO₂ 99.93%)", name: "SL-FP10 고순도 각상 용융 실리카", enName: "SL-FP10 · High-Purity Angular Fused Silica", jaName: "SL-FP10 高純度角形溶融シリカ" },
     ],
     applications: ["EMC / 봉지재", "산업 도료", "접착제 · 실란트", "고무 보강", "인조 대리석", "전기 절연재"],
   },
@@ -1608,11 +1609,12 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
     enTagline: "SiO₂ 99.93% · D50 9.96 µm Spherical Fused Silica — high-purity filler verified by KICET analysis (SL-FPO10)",
     jaTagline: "SiO₂ 99.93% · D50 9.96 µm 球状溶融シリカ — 韓国セラミック技術院の試験成績に基づく高純度フィラー (SL-FPO10)",
     description:
-      "SL-FPO10은 천연 석영을 초고온에서 용융·급냉하여 얻은 비정질(Amorphous) SiO₂를 구상화한 고순도 구상 용융 실리카 분말입니다. 공인 시험기관(한국세라믹기술원, 성적서 2024-4540) 분석 결과 SiO₂ 99.93%, Al₂O₃ 491 mg/kg, Fe₂O₃ 56.2 mg/kg, K₂O 33.0 mg/kg, Na₂O 20.4 mg/kg, MgO 14.6 mg/kg, TiO₂ 13.9 mg/kg, CaO 13.8 mg/kg의 조성을 확인하였습니다.\n\n입도는 레이저 회절식 입도분석(Horiba LA-950) 기준 D50 9.96 µm, 평균 9.97 µm, 모드 10.36 µm, 표준편차 1.38 µm, D10 8.08 µm, D90 11.72 µm, D99 13.21 µm로 10 µm 급에 집중된 매우 좁은 단봉(單峰) 분포를 가집니다. 15 µm 이상 조대 입자는 사실상 존재하지 않아(누적 100%), 디스펜싱·스크린 인쇄·박막 도포 공정에서 노즐 막힘이나 스크래치 결함을 최소화합니다.\n\n구상 형상은 수지·슬러리 배합 시 입자 간 마찰을 낮추어 동일 충전율에서 점도를 크게 낮추고, 고충전 배합(고열전도·저CTE 설계)을 가능하게 합니다. 또한 비정질 용융 실리카 특유의 극저 열팽창계수(약 0.5~0.6 ×10⁻⁶/℃)와 낮은 유전율·유전손실, 뛰어난 화학적 안정성으로 반도체 EMC·언더필, CCL·프리프레그, 방열/도전성 페이스트, 정밀 코팅, 인조대리석·복합소재 등 폭넓은 분야에 적용할 수 있습니다.\n\n입도 분포와 표면처리(실란 커플링) 여부는 고객의 실사용 조건에 맞추어 맞춤 가공 공급이 가능합니다.",
+      "SL-FPO10은 천연 석영을 초고온에서 용융·급냉하여 얻은 비정질(Amorphous) SiO₂를 구상화한 고순도 구상 용융 실리카 분말입니다.\n\n입도는 레이저 회절식 입도분석(Horiba LA-950) 기준 D50 9.96 µm, 평균 9.97 µm, 모드 10.36 µm, 표준편차 1.38 µm, D10 8.08 µm, D90 11.72 µm, D99 13.21 µm로 10 µm 급에 집중된 매우 좁은 단봉(單峰) 분포를 가집니다. 15 µm 이상 조대 입자는 사실상 존재하지 않아(누적 100%), 디스펜싱·스크린 인쇄·박막 도포 공정에서 노즐 막힘이나 스크래치 결함을 최소화합니다.\n\n구상 형상은 수지·슬러리 배합 시 입자 간 마찰을 낮추어 동일 충전율에서 점도를 크게 낮추고, 고충전 배합(고열전도·저CTE 설계)을 가능하게 합니다. 또한 비정질 용융 실리카 특유의 극저 열팽창계수(약 0.5~0.6 ×10⁻⁶/℃)와 낮은 유전율·유전손실, 뛰어난 화학적 안정성으로 반도체 EMC·언더필, CCL·프리프레그, 방열/도전성 페이스트, 정밀 코팅, 인조대리석·복합소재 등 폭넓은 분야에 적용할 수 있습니다.",
     enDescription:
-      "SL-FPO10 is a high-purity spherical fused silica powder produced by melting natural quartz at ultra-high temperature, quenching it into amorphous SiO₂ and spheroidizing the particles. Analysis by an accredited laboratory (Korea Institute of Ceramic Engineering & Technology, report 2024-4540) confirms SiO₂ 99.93%, Al₂O₃ 491 mg/kg, Fe₂O₃ 56.2 mg/kg, K₂O 33.0 mg/kg, Na₂O 20.4 mg/kg, MgO 14.6 mg/kg, TiO₂ 13.9 mg/kg and CaO 13.8 mg/kg.\n\nLaser-diffraction analysis (Horiba LA-950) gives D50 9.96 µm, mean 9.97 µm, mode 10.36 µm, standard deviation 1.38 µm, D10 8.08 µm, D90 11.72 µm and D99 13.21 µm — an extremely narrow, single-peak distribution centered on the 10 µm class. Particles above 15 µm are effectively absent (100% cumulative), minimizing nozzle clogging and scratch defects in dispensing, screen-printing and thin-film coating.\n\nThe spherical morphology lowers inter-particle friction in resin and slurry systems, sharply reducing viscosity at a given loading and enabling high-loading formulations for high thermal conductivity and low CTE. Combined with the ultra-low CTE of amorphous fused silica (approx. 0.5–0.6 ×10⁻⁶/°C), low dielectric constant and loss, and excellent chemical stability, it suits semiconductor EMC and underfill, CCL and prepreg, thermally conductive and conductive pastes, precision coatings, engineered stone and composite materials.\n\nParticle size distribution and optional silane surface treatment can be custom-processed to the customer's actual operating conditions.",
+      "SL-FPO10 is a high-purity spherical fused silica powder produced by melting natural quartz at ultra-high temperature, quenching it into amorphous SiO₂ and spheroidizing the particles.\n\nLaser-diffraction analysis (Horiba LA-950) gives D50 9.96 µm, mean 9.97 µm, mode 10.36 µm, standard deviation 1.38 µm, D10 8.08 µm, D90 11.72 µm and D99 13.21 µm — an extremely narrow, single-peak distribution centered on the 10 µm class. Particles above 15 µm are effectively absent (100% cumulative), minimizing nozzle clogging and scratch defects in dispensing, screen-printing and thin-film coating.\n\nThe spherical morphology lowers inter-particle friction in resin and slurry systems, sharply reducing viscosity at a given loading and enabling high-loading formulations for high thermal conductivity and low CTE. Combined with the ultra-low CTE of amorphous fused silica (approx. 0.5–0.6 ×10⁻⁶/°C), low dielectric constant and loss, and excellent chemical stability, it suits semiconductor EMC and underfill, CCL and prepreg, thermally conductive and conductive pastes, precision coatings, engineered stone and composite materials.",
     jaDescription:
-      "SL-FPO10は、天然石英を超高温で溶融・急冷して得た非晶質(Amorphous)SiO₂を球状化した高純度球状溶融シリカ粉末です。公認試験機関(韓国セラミック技術院、成績書2024-4540)の分析により、SiO₂ 99.93%、Al₂O₃ 491 mg/kg、Fe₂O₃ 56.2 mg/kg、K₂O 33.0 mg/kg、Na₂O 20.4 mg/kg、MgO 14.6 mg/kg、TiO₂ 13.9 mg/kg、CaO 13.8 mg/kgの組成を確認しています。\n\n粒度はレーザー回折式粒度分析(Horiba LA-950)基準でD50 9.96 µm、平均9.97 µm、モード10.36 µm、標準偏差1.38 µm、D10 8.08 µm、D90 11.72 µm、D99 13.21 µmと、10 µm級に集中した非常に狭い単峰分布を有します。15 µm以上の粗大粒子は実質的に存在せず(累積100%)、ディスペンス・スクリーン印刷・薄膜塗布工程でのノズル詰まりやスクラッチ欠陥を最小化します。\n\n球状形状は樹脂・スラリー配合時の粒子間摩擦を低減し、同一充填率での粘度を大幅に下げ、高充填配合(高熱伝導・低CTE設計)を可能にします。さらに非晶質溶融シリカ特有の極低熱膨張係数(約0.5~0.6 ×10⁻⁶/℃)、低誘電率・低誘電損失、優れた化学的安定性により、半導体EMC・アンダーフィル、CCL・プリプレグ、放熱/導電性ペースト、精密コーティング、人造大理石・複合素材など幅広い分野に適用できます。\n\n粒度分布およびシランカップリング処理の有無は、顧客の実使用条件に合わせてカスタム加工供給が可能です。",
+      "SL-FPO10は、天然石英を超高温で溶融・急冷して得た非晶質(Amorphous)SiO₂を球状化した高純度球状溶融シリカ粉末です。\n\n粒度はレーザー回折式粒度分析(Horiba LA-950)基準でD50 9.96 µm、平均9.97 µm、モード10.36 µm、標準偏差1.38 µm、D10 8.08 µm、D90 11.72 µm、D99 13.21 µmと、10 µm級に集中した非常に狭い単峰分布を有します。15 µm以上の粗大粒子は実質的に存在せず(累積100%)、ディスペンス・スクリーン印刷・薄膜塗布工程でのノズル詰まりやスクラッチ欠陥を最小化します。\n\n球状形状は樹脂・スラリー配合時の粒子間摩擦を低減し、同一充填率での粘度を大幅に下げ、高充填配合(高熱伝導・低CTE設計)を可能にします。さらに非晶質溶融シリカ特有の極低熱膨張係数(約0.5~0.6 ×10⁻⁶/℃)、低誘電率・低誘電損失、優れた化学的安定性により、半導体EMC・アンダーフィル、CCL・プリプレグ、放熱/導電性ペースト、精密コーティング、人造大理石・複合素材など幅広い分野に適用できます。",
+
     image: slFpo10Img,
     features: [
       { title: "🧪 SiO₂ 99.93% 고순도", desc: "공인기관(KICET) 성적서 2024-4540 기준 습식·기기분석 검증", enTitle: "🧪 High Purity SiO₂ 99.93%", jaTitle: "🧪 SiO₂ 99.93% 高純度", enDesc: "Verified by wet and instrumental analysis in KICET report 2024-4540", jaDesc: "公認機関(KICET)成績書2024-4540に基づく湿式・機器分析で検証" },
@@ -1647,6 +1649,50 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
     ],
     applications: [],
   },
+  "sl-fp10": {
+    tagline: "SiO₂ 99.93% · D50 9.96 µm · 각상 용융 실리카 — 고순도 비정질 각상 필러 (SL-FP10)",
+    enTagline: "SiO₂ 99.93% · D50 9.96 µm Angular Fused Silica — high-purity amorphous angular filler (SL-FP10)",
+    jaTagline: "SiO₂ 99.93% · D50 9.96 µm 角形溶融シリカ — 高純度非晶質角形フィラー (SL-FP10)",
+    description:
+      "SL-FP10은 천연 석영을 초고온에서 용융·급냉하여 얻은 비정질(Amorphous) SiO₂를 정밀 분쇄·분급한 고순도 각상(Angular) 용융 실리카 분말입니다.\n\n입도는 레이저 회절식 입도분석(Horiba LA-950) 기준 D50 9.96 µm, 평균 9.97 µm, 모드 10.36 µm, 표준편차 1.38 µm, D10 8.08 µm, D90 11.72 µm, D99 13.21 µm로 10 µm 급에 집중된 매우 좁은 단봉(單峰) 분포를 가집니다. 15 µm 이상 조대 입자는 사실상 존재하지 않아 도포·인쇄·성형 공정에서 스크래치 및 표면 결함을 억제합니다.\n\n각상 형상은 입자 간 맞물림(interlocking)이 강해 경화물의 기계적 강도·치수 안정성·내마모성을 높이고, 침강을 억제하여 슬러리·페이스트의 형상 유지력(thixotropy)을 개선합니다. 또한 비정질 용융 실리카 특유의 극저 열팽창계수(약 0.5~0.6 ×10⁻⁶/℃)와 낮은 유전율·유전손실, 뛰어난 화학적 안정성으로 EMC·봉지재, CCL·프리프레그, 산업용 도료·접착제, 정밀 주조, 인조대리석·복합소재 등에 적용할 수 있습니다.",
+    enDescription:
+      "SL-FP10 is a high-purity angular fused silica powder produced by melting natural quartz at ultra-high temperature, quenching it into amorphous SiO₂ and precision milling / classifying the particles.\n\nLaser-diffraction analysis (Horiba LA-950) gives D50 9.96 µm, mean 9.97 µm, mode 10.36 µm, standard deviation 1.38 µm, D10 8.08 µm, D90 11.72 µm and D99 13.21 µm — an extremely narrow, single-peak distribution centered on the 10 µm class. Particles above 15 µm are effectively absent, suppressing scratches and surface defects in coating, printing and molding.\n\nThe angular morphology creates strong particle interlocking, raising mechanical strength, dimensional stability and abrasion resistance of the cured body while suppressing settling and improving the shape retention (thixotropy) of slurries and pastes. Together with the ultra-low CTE of amorphous fused silica (approx. 0.5–0.6 ×10⁻⁶/°C), low dielectric constant and loss and excellent chemical stability, it suits EMC and encapsulants, CCL and prepreg, industrial coatings and adhesives, precision casting, engineered stone and composites.",
+    jaDescription:
+      "SL-FP10は、天然石英を超高温で溶融・急冷して得た非晶質(Amorphous)SiO₂を精密粉砕・分級した高純度角形(Angular)溶融シリカ粉末です。\n\n粒度はレーザー回折式粒度分析(Horiba LA-950)基準でD50 9.96 µm、平均9.97 µm、モード10.36 µm、標準偏差1.38 µm、D10 8.08 µm、D90 11.72 µm、D99 13.21 µmと、10 µm級に集中した非常に狭い単峰分布を有します。15 µm以上の粗大粒子は実質的に存在せず、塗布・印刷・成形工程でのスクラッチや表面欠陥を抑制します。\n\n角形形状は粒子間のインターロッキングが強く、硬化物の機械的強度・寸法安定性・耐摩耗性を高め、沈降を抑えてスラリー・ペーストの形状保持性(チキソtrópy)を改善します。さらに非晶質溶融シリカ特有の極低熱膨張係数(約0.5~0.6 ×10⁻⁶/℃)、低誘電率・低誘電損失、優れた化学的安定性により、EMC・封止材、CCL・プリプレグ、産業用塗料・接着剤、精密鋳造、人造大理石・複合素材などに適用できます。",
+    image: slFpo10Img,
+    features: [
+      { title: "🧪 SiO₂ 99.93% 고순도", desc: "습식·기기분석(ICP-OES/ICP-MS) 기준 전자 필러급 순도", enTitle: "🧪 High Purity SiO₂ 99.93%", jaTitle: "🧪 SiO₂ 99.93% 高純度", enDesc: "Electronics filler-grade purity by wet and instrumental analysis (ICP-OES/ICP-MS)", jaDesc: "湿式・機器分析(ICP-OES/ICP-MS)基準の電子フィラー級純度" },
+      { title: "🔶 각상 용융 실리카", desc: "비정질 용융 실리카를 정밀 분쇄 — 강한 맞물림·고강도 보강", enTitle: "🔶 Angular Fused Silica", jaTitle: "🔶 角形溶融シリカ", enDesc: "Precision-milled amorphous fused silica — strong interlocking, high reinforcement", jaDesc: "非晶質溶融シリカを精密粉砕 — 強いインターロッキング・高強度補強" },
+      { title: "📐 D50 9.96 µm 좁은 단봉 분포", desc: "D10 8.08 · D50 9.96 · D90 11.72 µm · 표준편차 1.38 µm", enTitle: "📐 Narrow Single-Peak D50 9.96 µm", jaTitle: "📐 D50 9.96 µm 狭い単峰分布", enDesc: "D10 8.08 · D50 9.96 · D90 11.72 µm · std. dev. 1.38 µm", jaDesc: "D10 8.08 · D50 9.96 · D90 11.72 µm · 標準偏差1.38 µm" },
+      { title: "💪 기계적 강도 · 내마모성", desc: "각상 맞물림 구조로 경화물 강도·치수 안정성·내마모성 향상", enTitle: "💪 Strength & Abrasion Resistance", jaTitle: "💪 機械的強度・耐摩耗性", enDesc: "Angular interlocking improves strength, dimensional stability and wear resistance", jaDesc: "角形のインターロッキング構造で硬化物の強度・寸法安定性・耐摩耗性を向上" },
+      { title: "🌡️ 극저 열팽창 · 저유전", desc: "CTE 약 0.5~0.6 ×10⁻⁶/℃ · 낮은 유전율/유전손실", enTitle: "🌡️ Ultra-Low CTE & Low Dk", jaTitle: "🌡️ 極低熱膨張・低誘電", enDesc: "CTE approx. 0.5–0.6 ×10⁻⁶/°C with low dielectric constant and loss", jaDesc: "CTE約0.5~0.6 ×10⁻⁶/℃ · 低誘電率/低誘電損失" },
+      { title: "🛠️ 맞춤 가공 공급", desc: "입도 분포·표면처리(실란) 옵션을 고객 조건에 맞춰 조정", enTitle: "🛠️ Custom Processing", jaTitle: "🛠️ カスタム加工供給", enDesc: "PSD and optional silane surface treatment adjusted to customer conditions", jaDesc: "粒度分布・表面処理(シラン)オプションを顧客条件に合わせて調整" },
+    ],
+    specs: [
+      { label: "제품 코드", value: "SL-FP10", enLabel: "Product Code", jaLabel: "製品コード" },
+      { label: "외관", value: "백색 각상 분말", enValue: "White angular powder", jaValue: "白色角形粉末", enLabel: "Appearance", jaLabel: "外観" },
+      { label: "형상 / 구조", value: "각상 (Angular) · 비정질 용융", enValue: "Angular · amorphous fused", jaValue: "角形 · 非晶質溶融", enLabel: "Morphology / Structure", jaLabel: "形状 / 構造" },
+      { label: "SiO₂", value: "99.93 %", enLabel: "SiO₂", jaLabel: "SiO₂" },
+      { label: "Al₂O₃", value: "491 mg/kg", enLabel: "Al₂O₃", jaLabel: "Al₂O₃" },
+      { label: "Fe₂O₃", value: "56.2 mg/kg", enLabel: "Fe₂O₃", jaLabel: "Fe₂O₃" },
+      { label: "K₂O", value: "33.0 mg/kg", enLabel: "K₂O", jaLabel: "K₂O" },
+      { label: "Na₂O", value: "20.4 mg/kg", enLabel: "Na₂O", jaLabel: "Na₂O" },
+      { label: "MgO", value: "14.6 mg/kg", enLabel: "MgO", jaLabel: "MgO" },
+      { label: "TiO₂", value: "13.9 mg/kg", enLabel: "TiO₂", jaLabel: "TiO₂" },
+      { label: "CaO", value: "13.8 mg/kg", enLabel: "CaO", jaLabel: "CaO" },
+      { label: "입도 D10", value: "8.08 µm", enLabel: "D10", jaLabel: "粒度 D10" },
+      { label: "입도 D50 (Median)", value: "9.96 µm", enLabel: "D50 (Median)", jaLabel: "粒度 D50 (Median)" },
+      { label: "입도 D90", value: "11.72 µm", enLabel: "D90", jaLabel: "粒度 D90" },
+      { label: "입도 D99", value: "13.21 µm", enLabel: "D99", jaLabel: "粒度 D99" },
+      { label: "평균 입경 / 모드", value: "9.97 µm / 10.36 µm", enValue: "9.97 µm / 10.36 µm", jaValue: "9.97 µm / 10.36 µm", enLabel: "Mean / Mode Size", jaLabel: "平均粒径 / モード径" },
+      { label: "표준편차", value: "1.38 µm", enLabel: "Std. Deviation", jaLabel: "標準偏差" },
+      { label: "분석 방법", value: "ICP-OES / ICP-MS 습식·기기분석 · Horiba LA-950 레이저 회절 입도분석", enValue: "ICP-OES / ICP-MS wet & instrumental analysis · Horiba LA-950 laser diffraction PSD", jaValue: "ICP-OES / ICP-MS 湿式・機器分析 · Horiba LA-950 レーザー回折粒度分析", enLabel: "Test Method", jaLabel: "分析方法" },
+      { label: "포장", value: "10 / 20 kg 지대 · OEM 대응", enValue: "10 / 20 kg bag · OEM available", jaValue: "10 / 20 kg 紙袋 · OEM対応", enLabel: "Packaging", jaLabel: "包装" },
+      { label: "비고", value: "입도 분포 및 표면처리는 고객 실사용 조건에 따라 맞춤 조정 가능", enValue: "PSD and surface treatment can be customized to actual usage conditions", jaValue: "粒度分布および表面処理は顧客の実使用条件に応じてカスタム調整可能", enLabel: "Note", jaLabel: "備考" },
+    ],
+    applications: [],
+  },
+
 };
 
 
@@ -1702,6 +1748,7 @@ export const fusedSilicaCategoryMembers = [
   "sl-hf04",
   "sl-spj-300",
   "sl-fpo10",
+  "sl-fp10",
 ];
 
 productCatalog.push({
@@ -1755,6 +1802,7 @@ productCatalog.push({
     { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },
     { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "서브미크론 구상 용융 (D50 0.3±0.1µm · 구상화율 98%)", enSpec: "Submicron Spherical Fused (D50 0.3±0.1 µm · 98% spheroidization)", jaSpec: "サブミクロン球状溶融 (D50 0.3±0.1µm · 球状化率98%)" },
     { code: "SL-FPO10", slug: "sl-fpo10", spec: "구상 용융 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "Spherical Fused (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "球状溶融 (D50 9.96µm · SiO₂ 99.93%)" },
+    { code: "SL-FP10", slug: "sl-fp10", spec: "각상 용융 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "Angular Fused (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "角形溶融 (D50 9.96µm · SiO₂ 99.93%)" },
   ],
   applications: [
     "반도체 EMC · 언더필 · 어드밴스드 패키징",
