@@ -992,6 +992,7 @@ const advSeriesProducts: ProductDetail[] = [
     subModels: [
       { code: "SL-RG", slug: "sl-rg", spec: "용융형 각상", enSpec: "Fused Angular", jaSpec: "溶融質 角形", name: "SL-RG 용융형 각상 실리카 분말", enName: "SL-RG · Fused Angular Silica Powder", jaName: "SL-RG 溶融質角形シリカ粉末" },
       { code: "SL-JG", slug: "sl-jg", spec: "결정형 각상", enSpec: "Crystalline Angular", jaSpec: "結晶質 角形", name: "SL-JG 결정형 각상 실리카 분말", enName: "SL-JG · Crystalline Angular Silica Powder", jaName: "SL-JG 結晶質角形シリカ粉末" },
+      { code: "SL-FP10", slug: "sl-fp10", spec: "고순도 각상 용융 실리카 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "High-Purity Angular Fused Silica (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "高純度角形溶融シリカ (D50 9.96µm · SiO₂ 99.93%)", name: "SL-FP10 고순도 각상 용융 실리카", enName: "SL-FP10 · High-Purity Angular Fused Silica", jaName: "SL-FP10 高純度角形溶融シリカ" },
     ],
     applications: ["EMC / 봉지재", "산업 도료", "접착제 · 실란트", "고무 보강", "인조 대리석", "전기 절연재"],
   },
@@ -1747,6 +1748,7 @@ export const fusedSilicaCategoryMembers = [
   "sl-hf04",
   "sl-spj-300",
   "sl-fpo10",
+  "sl-fp10",
 ];
 
 productCatalog.push({
@@ -1800,6 +1802,7 @@ productCatalog.push({
     { code: "SL-HF04", slug: "sl-hf04", spec: "초고순도 미분 용융 (SiO₂ 99.96% · D50 3.8µm)", enSpec: "Ultra-High-Purity Fine Fused (SiO₂ 99.96% · D50 3.8µm)", jaSpec: "超高純度微粉溶融 (SiO₂ 99.96% · D50 3.8µm)" },
     { code: "SL-SPJ-300", slug: "sl-spj-300", spec: "서브미크론 구상 용융 (D50 0.3±0.1µm · 구상화율 98%)", enSpec: "Submicron Spherical Fused (D50 0.3±0.1 µm · 98% spheroidization)", jaSpec: "サブミクロン球状溶融 (D50 0.3±0.1µm · 球状化率98%)" },
     { code: "SL-FPO10", slug: "sl-fpo10", spec: "구상 용융 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "Spherical Fused (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "球状溶融 (D50 9.96µm · SiO₂ 99.93%)" },
+    { code: "SL-FP10", slug: "sl-fp10", spec: "각상 용융 (D50 9.96µm · SiO₂ 99.93%)", enSpec: "Angular Fused (D50 9.96 µm · SiO₂ 99.93%)", jaSpec: "角形溶融 (D50 9.96µm · SiO₂ 99.93%)" },
   ],
   applications: [
     "반도체 EMC · 언더필 · 어드밴스드 패키징",
