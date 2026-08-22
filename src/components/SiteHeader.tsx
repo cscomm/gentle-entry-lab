@@ -320,8 +320,8 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
           onMouseEnter={() => activeDropdown && openDropdown(activeDropdown)}
           onMouseLeave={closeDropdown}
         >
-          <div className="px-5 py-4">
-            <div className="mb-3 border-b border-border/60 pb-2">
+          <div className="px-3 py-2">
+            <div className="mb-1.5 border-b border-border/60 pb-1">
               <Link
                 to={dropdownAllHref}
                 onClick={() => setActiveDropdown(null)}
@@ -331,13 +331,13 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4">
+            <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3 md:grid-cols-4">
               {dropdownItems.map((it) => (
                 <Link
                   key={it.to}
                   to={it.to}
                   onClick={() => setActiveDropdown(null)}
-                  className="group/item flex flex-col rounded-md px-2.5 py-2 transition hover:bg-secondary"
+                  className="group/item flex flex-col rounded-md px-2 py-1.5 transition hover:bg-secondary"
                 >
                   <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
                     {pick(lang, it.ko, it.en, it.ja)}
