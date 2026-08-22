@@ -79,7 +79,10 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
     );
     navigate(found ? `/products/${found.slug}` : `/#products`);
     setQ("");
+    setMobileSearchOpen(false);
+    setMobileOpen(false);
   };
+
 
   useEffect(() => {
     if (!transparentAtTop) {
