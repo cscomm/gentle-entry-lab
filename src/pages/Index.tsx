@@ -306,8 +306,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="h-12 rounded-full border-white/60 bg-white/10 px-8 text-white backdrop-blur hover:bg-white/20 hover:text-white"
+              className="h-12 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
             >
               <a href="#contact">
                 {t("hero.cta2")}
