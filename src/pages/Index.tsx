@@ -296,7 +296,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              className="h-12 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
+              className="h-12 w-44 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
             >
               <a href="#products" onClick={() => setActiveCat("전체 제품")}>
                 {t("hero.cta")}
@@ -306,7 +306,7 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              className="h-12 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
+              className="h-12 w-44 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
             >
               <a href="#contact">
                 {t("hero.cta2")}
