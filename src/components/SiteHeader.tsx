@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { pick } from "@/lib/lang";
 import { Link, useNavigate, useLocation } from "@/lib/router";
-import { ChevronDown, Search, Menu, X } from "lucide-react";
+import { ChevronDown, Search, Menu, X, ArrowRight } from "lucide-react";
 import { productCatalog } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -59,12 +59,24 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState<"products" | "applications" | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<"products" | "applications" | null>(null);
+  const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setMobileOpen(false);
     setMobileSearchOpen(false);
+    setActiveDropdown(null);
   }, [pathname]);
 
+
+  const openDropdown = (dropdown: "products" | "applications") => {
+    if (dropdownTimer.current) clearTimeout(dropdownTimer.current);
+    setActiveDropdown(dropdown);
+  };
+
+  const closeDropdown = () => {
+    dropdownTimer.current = setTimeout(() => setActiveDropdown(null), 120);
+  };
 
 
   const onSearch = (e: React.FormEvent) => {
@@ -81,6 +93,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
     setQ("");
     setMobileSearchOpen(false);
     setMobileOpen(false);
+    setActiveDropdown(null);
   };
 
 
@@ -94,6 +107,10 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [transparentAtTop]);
+
+  const dropdownItems = activeDropdown === "products" ? productMenu : applicationMenu;
+  const dropdownAllHref = activeDropdown === "products" ? "/products/all" : "/#applications";
+  const dropdownAllLabel = activeDropdown === "products" ? t("products.all") : t("applications.all");
 
   return (
     <header
@@ -134,144 +151,13 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
             );
 
             return (
-              <div key={item.key} className="group relative">
+              <div
+                key={item.key}
+                className="relative"
+                onMouseEnter={() => item.dropdown && openDropdown(item.dropdown)}
+                onMouseLeave={closeDropdown}
+              >
                 <Link to={item.href} className={linkClass}>{inner}</Link>
-
-
-
-                {item.dropdown === "products" && (
-                  <div className="invisible absolute left-1/2 top-full z-50 max-h-[80vh] w-72 -translate-x-1/2 overflow-y-auto pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                    <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
-                      {[
-                        { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
-                        { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
-                        { to: "/products/surface-modified-silica-powder/", ko: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末" },
-                        { to: "/products/spherical-silica-powder/", ko: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末" },
-                        { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },
-                        { to: "/products/angular-silica-powder/", ko: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末" },
-                        { to: "/products/low-radiation-silica-powder/", ko: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末" },
-                        { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
-                        { to: "/products/precipitated-silica/", ko: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ" },
-                        { to: "/products/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
-                        { to: "/products/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
-                        { to: "/products/silica-sol/", ko: "실리카졸", en: "Silica Sol (Colloidal Silica)", ja: "シリカゾル" },
-                        { to: "/products/silica-sand/", ko: "규사", en: "Silica Sand", ja: "珪砂" },
-                        { to: "/products/silica-powder/", ko: "규사분말", en: "Silica Powder", ja: "珪砂粉末" },
-                        { to: "/products/high-purity-quartz/", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
-                        { to: "/products/applied-silica-materials/", ko: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材" },
-                      ].map((it, idx, arr) => (
-
-                        <Link
-                          key={it.to}
-                          to={it.to}
-                          className={`block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow ${idx < arr.length - 1 ? "border-b border-border/60" : ""}`}
-                        >
-                          <div className="font-semibold">{lang === "ja" ? it.ja : lang === "en" ? it.en : it.ko}</div>
-                          {lang === "ko" && (
-                            <div className="mt-0.5 text-xs text-muted-foreground">{it.en}</div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-
-
-                {item.dropdown === "applications" && (
-                  <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                    <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
-                      <Link
-                        to="/applications/fused-silica/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "溶融シリカ" : lang === "en" ? "Fused Silica" : "용융실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Fused Silica</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/applications/quartz/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "クォーツ・結晶質シリカ" : lang === "en" ? "Quartz · Crystalline Silica" : "쿼츠 · 결정질 실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Quartz · Crystalline Silica</div>
-                        )}
-                      </Link>
-                      {productCatalog
-                        .filter((p) => (p.category ?? "quartz") === "quartz" && !["high-purity-quartz", "silica-sand", "silica-powder", "fused-silica-a-grade", "fused-silica-b-grade", "fused-silica-c-grade", "silica-sol", "sl-ja25", "sl-ja30", "sl-shs"].includes(p.slug))
-                        .map((p) => (
-                          <Link
-                            key={p.slug}
-                            to={`/products/${p.slug}/#applications`}
-
-                            className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                          >
-                            <div className="font-semibold">{pick(lang, p.name, p.enName, p.jaName)}</div>
-                            {lang === "ko" && (
-                              <div className="mt-0.5 text-xs text-muted-foreground">{p.enName}</div>
-                            )}
-                          </Link>
-                        ))}
-                      <Link
-                        to="/applications/precipitated-silica/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "沈降/沈殿シリカ" : lang === "en" ? "Precipitated Silica" : "침전/침강 실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Precipitated Silica</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/applications/fumed-silica/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "ヒュームドシリカ" : lang === "en" ? "Fumed Silica" : "흄드 실리카"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Fumed Silica</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/applications/silica-gel/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "シリカゲル" : lang === "en" ? "Silica Gel" : "실리카겔"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Gel</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/applications/silica-sol/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "コロイダルシリカ シリーズ" : lang === "en" ? "Colloidal Silica Series" : "콜로이달 실리카 시리즈"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Colloidal Silica / Silica Sol</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/applications/silica-sand/"
-                        className="block border-b border-border/60 px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "珪砂・珪砂粉末" : lang === "en" ? "Silica Sand & Powder" : "규사 · 규사분말"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Silica Sand & Powder</div>
-                        )}
-                      </Link>
-                      <Link
-                        to="/products/high-purity-quartz/#applications"
-                        className="block px-5 py-3 text-sm text-foreground transition hover:bg-secondary hover:text-primary-glow"
-                      >
-                        <div className="font-semibold">{lang === "ja" ? "天然高純度石英" : lang === "en" ? "Natural High-Purity Quartz" : "천연 고순도규석"}</div>
-                        {lang === "ko" && (
-                          <div className="mt-0.5 text-xs text-muted-foreground">Natural High-Purity Quartz</div>
-                        )}
-                      </Link>
-                    </div>
-                  </div>
-                )}
-
               </div>
             );
           })}
@@ -424,6 +310,45 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
               ))}
             </div>
           </nav>
+        </div>
+      )}
+
+      {/* Full-width mega dropdown */}
+      {activeDropdown && (
+        <div
+          className="hidden absolute left-0 right-0 top-full z-50 border-b border-border bg-background shadow-2xl md:block"
+          onMouseEnter={() => activeDropdown && openDropdown(activeDropdown)}
+          onMouseLeave={closeDropdown}
+        >
+          <div className="mx-auto max-w-7xl px-6 py-6 md:px-8">
+            <div className="mb-5 border-b border-border/60 pb-3">
+              <Link
+                to={dropdownAllHref}
+                onClick={() => setActiveDropdown(null)}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary-glow"
+              >
+                {dropdownAllLabel}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 md:grid-cols-4">
+              {dropdownItems.map((it) => (
+                <Link
+                  key={it.to}
+                  to={it.to}
+                  onClick={() => setActiveDropdown(null)}
+                  className="group/item flex flex-col rounded-lg px-4 py-3 transition hover:bg-secondary"
+                >
+                  <span className="font-semibold text-foreground transition group-hover/item:text-primary-glow">
+                    {pick(lang, it.ko, it.en, it.ja)}
+                  </span>
+                  {lang === "ko" && (
+                    <span className="mt-0.5 text-xs text-muted-foreground">{it.en}</span>
+                  )}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       )}
     </header>
