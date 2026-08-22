@@ -316,7 +316,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
       {/* Full-width mega dropdown */}
       {activeDropdown && (
         <div
-          className="hidden absolute left-0 right-0 top-full z-50 border-b border-border bg-background/98 shadow-2xl backdrop-blur-md md:block"
+          className="hidden absolute left-0 right-0 top-full z-50 border-b border-border bg-background shadow-2xl md:block"
           onMouseEnter={() => activeDropdown && openDropdown(activeDropdown)}
           onMouseLeave={closeDropdown}
         >
