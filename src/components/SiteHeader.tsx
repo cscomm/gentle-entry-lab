@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { pick } from "@/lib/lang";
-import { Link, useNavigate } from "@/lib/router";
-import { ChevronDown, Search } from "lucide-react";
+import { Link, useNavigate, useLocation } from "@/lib/router";
+import { ChevronDown, Search, Menu, X } from "lucide-react";
 import { productCatalog } from "@/data/products";
 import { useLang } from "@/contexts/LanguageContext";
 
@@ -13,6 +13,37 @@ const navItems = [
   { key: "nav.board", href: "/board" },
   { key: "nav.contact", href: "/#contact" },
 ];
+
+const productMenu = [
+  { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
+  { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
+  { to: "/products/surface-modified-silica-powder/", ko: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末" },
+  { to: "/products/spherical-silica-powder/", ko: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末" },
+  { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },
+  { to: "/products/angular-silica-powder/", ko: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末" },
+  { to: "/products/low-radiation-silica-powder/", ko: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末" },
+  { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
+  { to: "/products/precipitated-silica/", ko: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ" },
+  { to: "/products/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
+  { to: "/products/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
+  { to: "/products/silica-sol/", ko: "실리카졸", en: "Silica Sol (Colloidal Silica)", ja: "シリカゾル" },
+  { to: "/products/silica-sand/", ko: "규사", en: "Silica Sand", ja: "珪砂" },
+  { to: "/products/silica-powder/", ko: "규사분말", en: "Silica Powder", ja: "珪砂粉末" },
+  { to: "/products/high-purity-quartz/", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
+  { to: "/products/applied-silica-materials/", ko: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材" },
+];
+
+const applicationMenu = [
+  { to: "/applications/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
+  { to: "/applications/quartz/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
+  { to: "/applications/precipitated-silica/", ko: "침전/침강 실리카", en: "Precipitated Silica", ja: "沈降/沈殿シリカ" },
+  { to: "/applications/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
+  { to: "/applications/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
+  { to: "/applications/silica-sol/", ko: "콜로이달 실리카 시리즈", en: "Colloidal Silica Series", ja: "コロイダルシリカ シリーズ" },
+  { to: "/applications/silica-sand/", ko: "규사 · 규사분말", en: "Silica Sand & Powder", ja: "珪砂・珪砂粉末" },
+  { to: "/products/high-purity-quartz/#applications", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
+];
+
 
 interface SiteHeaderProps {
   /** Use transparent style at top of page (only useful when page has a hero behind it). */
