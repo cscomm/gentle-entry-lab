@@ -292,16 +292,30 @@ const Index = () => {
           <p key={`d-${slideIdx}`} className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow animate-in fade-in duration-1000 break-keep break-words whitespace-pre-line">
             {slides[slideIdx].desc}
           </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-10 h-12 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
-          >
-            <a href="#products" onClick={() => setActiveCat("전체 제품")}>
-              {t("hero.cta")}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Button
+              asChild
+              size="lg"
+              className="h-12 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
+            >
+              <a href="#products" onClick={() => setActiveCat("전체 제품")}>
+                {t("hero.cta")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full border-white/60 bg-white/10 px-8 text-white backdrop-blur hover:bg-white/20 hover:text-white"
+            >
+              <a href="#contact">
+                {t("hero.cta2")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+          </div>
+
         </div>
 
         <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 gap-2">
