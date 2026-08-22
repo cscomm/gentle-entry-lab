@@ -54,7 +54,18 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
   const [scrolled, setScrolled] = useState(!transparentAtTop);
   const { lang, setLang, t } = useLang();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [q, setQ] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<"products" | "applications" | null>(null);
+
+  useEffect(() => {
+    setMobileOpen(false);
+    setMobileSearchOpen(false);
+  }, [pathname]);
+
+
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
