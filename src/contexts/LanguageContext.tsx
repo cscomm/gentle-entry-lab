@@ -95,6 +95,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   // Products section
   "products.cat": { ko: "제품 카테고리", en: "Product Category", ja: "製品カテゴリ" },
   "products.all": { ko: "전체 제품", en: "All Products", ja: "全製品" },
+  "applications.all": { ko: "전체 응용분야", en: "All Applications", ja: "全応用分野" },
   "products.detail": { ko: "자세히 보기", en: "View Details", ja: "詳細を見る" },
 
   // Contact
