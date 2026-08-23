@@ -14,6 +14,8 @@ import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
 import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
 import ScrollToHash from "./components/ScrollToHash";
+import GeoGate from "./components/GeoGate";
+
 import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
 import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
 import QuartzApplications from "./pages/QuartzApplications.tsx";
@@ -92,6 +94,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <GeoGate>
       <BrowserRouter>
         <LanguageProvider>
           <CanonicalUrl />
@@ -104,8 +107,10 @@ const App = () => (
 
         </LanguageProvider>
       </BrowserRouter>
+      </GeoGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
+
 
 export default App;
