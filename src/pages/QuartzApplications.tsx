@@ -17,9 +17,9 @@ const QuartzApplications = () => {
         "半導体EMC・アンダーフィル・先端パッケージング(結晶質フィラー)"
       ),
       desc: t(
-        "결정질 실리카(α-Quartz)는 결정 구조 특유의 높은 모스 경도(7)와 우수한 기계적 강도로, 용융실리카와 함께 반도체 후공정용 무기 필러로 사용됩니다. 결정형 구상 실리카(SL-QJG)·결정형 모서리 라운드(SL-YJG)·결정형 각상(SL-JG) 그레이드는 EMC(에폭시 몰딩 컴파운드)의 강도·내마모성을 극대화하면서 원가 경쟁력을 확보하며, 저방사선(Low-α) 결정형 SL-CL은 메모리·로직 반도체의 소프트 에러(SEU)를 억제합니다. 순도 SiO₂ ≥ 99.5%, 저 방사성 원소(U/Th) 관리 그레이드가 표준입니다.",
-        "Crystalline silica (α-quartz) combines a high Mohs hardness of 7 with excellent mechanical strength, complementing fused silica as an inorganic filler in semiconductor back-end packaging. Crystalline spherical (SL-QJG), round-corner (SL-YJG) and angular (SL-JG) grades maximize the strength and abrasion resistance of epoxy molding compounds (EMC) with better cost efficiency, while low-alpha crystalline SL-CL suppresses soft errors (SEU) in memory and logic devices. Standard specifications are SiO₂ ≥ 99.5% with tightly controlled U/Th radioactive elements.",
-        "結晶質シリカ(α-クォーツ)は、モース硬度7と優れた機械的強度を併せ持ち、溶融シリカとともに半導体後工程の無機フィラーとして使用されます。結晶質球状(SL-QJG)、丸角(SL-YJG)、角状(SL-JG)グレードはEMCの強度・耐摩耗性を最大化しつつコスト競争力を確保し、低α線結晶質SL-CLはメモリ・ロジック半導体のソフトエラー(SEU)を抑制します。SiO₂ 99.5%以上・U/Th管理グレードが標準です。"
+        "결정질 실리카(α-Quartz)는 결정 구조 특유의 높은 모스 경도(7)와 우수한 기계적 강도로, 용융실리카와 함께 반도체 후공정용 무기 필러로 사용됩니다. 결정형 구상 실리카(SN-QJG)·결정형 모서리 라운드(SN-YJG)·결정형 각상(SN-JG) 그레이드는 EMC(에폭시 몰딩 컴파운드)의 강도·내마모성을 극대화하면서 원가 경쟁력을 확보하며, 저방사선(Low-α) 결정형 SN-CL은 메모리·로직 반도체의 소프트 에러(SEU)를 억제합니다. 순도 SiO₂ ≥ 99.5%, 저 방사성 원소(U/Th) 관리 그레이드가 표준입니다.",
+        "Crystalline silica (α-quartz) combines a high Mohs hardness of 7 with excellent mechanical strength, complementing fused silica as an inorganic filler in semiconductor back-end packaging. Crystalline spherical (SN-QJG), round-corner (SN-YJG) and angular (SN-JG) grades maximize the strength and abrasion resistance of epoxy molding compounds (EMC) with better cost efficiency, while low-alpha crystalline SN-CL suppresses soft errors (SEU) in memory and logic devices. Standard specifications are SiO₂ ≥ 99.5% with tightly controlled U/Th radioactive elements.",
+        "結晶質シリカ(α-クォーツ)は、モース硬度7と優れた機械的強度を併せ持ち、溶融シリカとともに半導体後工程の無機フィラーとして使用されます。結晶質球状(SN-QJG)、丸角(SN-YJG)、角状(SN-JG)グレードはEMCの強度・耐摩耗性を最大化しつつコスト競争力を確保し、低α線結晶質SN-CLはメモリ・ロジック半導体のソフトエラー(SEU)を抑制します。SiO₂ 99.5%以上・U/Th管理グレードが標準です。"
       ),
       items: [
         t("에폭시 몰딩 컴파운드 (EMC) 결정형 필러", "Crystalline filler for epoxy molding compounds (EMC)", "エポキシモールドコンパウンド(EMC)用結晶質フィラー"),
@@ -36,9 +36,9 @@ const QuartzApplications = () => {
         "CCL・PCB・高密度実装基板"
       ),
       desc: t(
-        "결정질 실리카는 CCL·PCB 프리프레그·솔더 레지스트·잉크에 첨가되어 열팽창을 낮추고 기계적 강도·내마모성·치수 안정성을 확보합니다. 결정형 구상(SL-QJG)과 모서리 라운드(SL-YJG)는 수지 유동성과 고충전율을 동시에 만족시켜 HDI·다층 기판·IC 기판에 활용되며, 결정형 각상(SL-JG)은 표준 FR-4 CCL 및 산업용 도전성 페이스트에서 저비용·고성능 필러로 사용됩니다.",
-        "Crystalline silica is added to CCL, PCB prepregs, solder resists and inks to lower CTE and improve mechanical strength, abrasion resistance and dimensional stability. Crystalline spherical (SL-QJG) and round-corner (SL-YJG) grades combine resin flow with high filler loading for HDI, multilayer boards and IC substrates, while crystalline angular (SL-JG) is a cost-effective high-performance filler for standard FR-4 CCL and industrial conductive pastes.",
-        "結晶質シリカはCCL・PCBプリプレグ・ソルダーレジスト・インキに添加され、熱膨張を低減し機械的強度・耐摩耗性・寸法安定性を確保します。結晶質球状(SL-QJG)と丸角(SL-YJG)は樹脂流動性と高充填率を両立し、HDI・多層基板・IC基板に採用され、結晶質角状(SL-JG)は標準FR-4 CCLや産業用導電性ペーストで低コスト・高性能フィラーとして使用されます。"
+        "결정질 실리카는 CCL·PCB 프리프레그·솔더 레지스트·잉크에 첨가되어 열팽창을 낮추고 기계적 강도·내마모성·치수 안정성을 확보합니다. 결정형 구상(SN-QJG)과 모서리 라운드(SN-YJG)는 수지 유동성과 고충전율을 동시에 만족시켜 HDI·다층 기판·IC 기판에 활용되며, 결정형 각상(SN-JG)은 표준 FR-4 CCL 및 산업용 도전성 페이스트에서 저비용·고성능 필러로 사용됩니다.",
+        "Crystalline silica is added to CCL, PCB prepregs, solder resists and inks to lower CTE and improve mechanical strength, abrasion resistance and dimensional stability. Crystalline spherical (SN-QJG) and round-corner (SN-YJG) grades combine resin flow with high filler loading for HDI, multilayer boards and IC substrates, while crystalline angular (SN-JG) is a cost-effective high-performance filler for standard FR-4 CCL and industrial conductive pastes.",
+        "結晶質シリカはCCL・PCBプリプレグ・ソルダーレジスト・インキに添加され、熱膨張を低減し機械的強度・耐摩耗性・寸法安定性を確保します。結晶質球状(SN-QJG)と丸角(SN-YJG)は樹脂流動性と高充填率を両立し、HDI・多層基板・IC基板に採用され、結晶質角状(SN-JG)は標準FR-4 CCLや産業用導電性ペーストで低コスト・高性能フィラーとして使用されます。"
       ),
       items: [
         t("FR-4 CCL · 다층 PCB 프리프레그", "FR-4 CCL & multilayer PCB prepregs", "FR-4 CCL・多層PCBプリプレグ"),
@@ -54,9 +54,9 @@ const QuartzApplications = () => {
         "人造大理石・エンジニアードストーン・建築資材"
       ),
       desc: t(
-        "결정질 실리카(석영)는 인조 대리석·엔지니어드 스톤(쿼츠 카운터탑)의 대표 원료로, 총 배합비의 90% 이상을 차지합니다. 결정 구조 특유의 높은 경도(모스 7)와 아름다운 백색도, 낮은 흡수율은 주방 상판·욕실 자재·건축 외벽재에 이상적입니다. 각상 결정형(SL-JG)과 규사 20~200 mesh 라인업이 인조 대리석·UHPC·고강도 콘크리트·타일·바닥재·몰탈에 폭넓게 사용됩니다.",
-        "Crystalline silica (quartz) is the primary raw material of engineered stone and artificial marble (quartz countertops), accounting for over 90% of the total formulation. Its high hardness (Mohs 7), pure whiteness and low absorption make it ideal for kitchen tops, bathroom materials and building façades. Angular crystalline grades (SL-JG) and 20–200 mesh silica sand series are widely used in engineered stone, UHPC, high-strength concrete, tiles, flooring and mortars.",
-        "結晶質シリカ(石英)は人造大理石・エンジニアードストーン(クォーツカウンタートップ)の主原料で、配合の90%以上を占めます。モース硬度7の高い硬度、優れた白色度、低吸水率により、キッチン天板・バスルーム資材・建築外装材に最適です。角状結晶質(SL-JG)と20~200メッシュの珪砂ラインアップが人造大理石、UHPC、高強度コンクリート、タイル、床材、モルタルに広く使用されています。"
+        "결정질 실리카(석영)는 인조 대리석·엔지니어드 스톤(쿼츠 카운터탑)의 대표 원료로, 총 배합비의 90% 이상을 차지합니다. 결정 구조 특유의 높은 경도(모스 7)와 아름다운 백색도, 낮은 흡수율은 주방 상판·욕실 자재·건축 외벽재에 이상적입니다. 각상 결정형(SN-JG)과 규사 20~200 mesh 라인업이 인조 대리석·UHPC·고강도 콘크리트·타일·바닥재·몰탈에 폭넓게 사용됩니다.",
+        "Crystalline silica (quartz) is the primary raw material of engineered stone and artificial marble (quartz countertops), accounting for over 90% of the total formulation. Its high hardness (Mohs 7), pure whiteness and low absorption make it ideal for kitchen tops, bathroom materials and building façades. Angular crystalline grades (SN-JG) and 20–200 mesh silica sand series are widely used in engineered stone, UHPC, high-strength concrete, tiles, flooring and mortars.",
+        "結晶質シリカ(石英)は人造大理石・エンジニアードストーン(クォーツカウンタートップ)の主原料で、配合の90%以上を占めます。モース硬度7の高い硬度、優れた白色度、低吸水率により、キッチン天板・バスルーム資材・建築外装材に最適です。角状結晶質(SN-JG)と20~200メッシュの珪砂ラインアップが人造大理石、UHPC、高強度コンクリート、タイル、床材、モルタルに広く使用されています。"
       ),
       items: [
         t("쿼츠 카운터탑 · 엔지니어드 스톤", "Quartz countertops & engineered stone", "クォーツカウンタートップ・エンジニアードストーン"),
@@ -72,9 +72,9 @@ const QuartzApplications = () => {
         "ガラス・特殊ガラス・陶磁器原料"
       ),
       desc: t(
-        "고순도 결정질 규사(SiO₂ 99% 이상)는 유리·특수 유리·도자기 산업의 기본 원료로 사용됩니다. 판유리·용기유리·태양광 커버 유리·LCD/OLED 백플레인 유리·붕규산 유리·저 유전 유리 섬유·광학 유리 등의 SiO₂ 공급원으로 필수적이며, 도자기·위생도기·타일 몸체 조성의 주 원료입니다. 결정형 각상 실리카 SL-JG 및 20~200 mesh 규사 라인업이 융제 반응과 유리 균질성 확보를 위해 정밀 입도 관리 상태로 공급됩니다.",
-        "High-purity crystalline silica sand (SiO₂ ≥ 99%) is the foundational raw material of the glass, specialty glass and ceramics industries. It is the essential SiO₂ source for flat glass, container glass, solar cover glass, LCD/OLED backplane glass, borosilicate glass, low-Dk glass fiber and optical glass, and it is a primary raw material for ceramic, sanitary ware and tile bodies. Crystalline angular SL-JG and 20–200 mesh silica sand grades are supplied under strict particle-size control to secure flux reactivity and glass homogeneity.",
-        "高純度結晶質珪砂(SiO₂ 99%以上)は、ガラス・特殊ガラス・陶磁器産業の基本原料です。板ガラス、容器ガラス、太陽光カバーガラス、LCD/OLEDバックプレーンガラス、ホウケイ酸ガラス、低誘電ガラス繊維、光学ガラスなどのSiO₂供給源として不可欠であり、陶磁器・衛生陶器・タイル素地の主原料です。結晶質角状SL-JGおよび20~200メッシュ珪砂ラインアップが、フラックス反応とガラス均質性の確保のため精密な粒度管理下で供給されます。"
+        "고순도 결정질 규사(SiO₂ 99% 이상)는 유리·특수 유리·도자기 산업의 기본 원료로 사용됩니다. 판유리·용기유리·태양광 커버 유리·LCD/OLED 백플레인 유리·붕규산 유리·저 유전 유리 섬유·광학 유리 등의 SiO₂ 공급원으로 필수적이며, 도자기·위생도기·타일 몸체 조성의 주 원료입니다. 결정형 각상 실리카 SN-JG 및 20~200 mesh 규사 라인업이 융제 반응과 유리 균질성 확보를 위해 정밀 입도 관리 상태로 공급됩니다.",
+        "High-purity crystalline silica sand (SiO₂ ≥ 99%) is the foundational raw material of the glass, specialty glass and ceramics industries. It is the essential SiO₂ source for flat glass, container glass, solar cover glass, LCD/OLED backplane glass, borosilicate glass, low-Dk glass fiber and optical glass, and it is a primary raw material for ceramic, sanitary ware and tile bodies. Crystalline angular SN-JG and 20–200 mesh silica sand grades are supplied under strict particle-size control to secure flux reactivity and glass homogeneity.",
+        "高純度結晶質珪砂(SiO₂ 99%以上)は、ガラス・特殊ガラス・陶磁器産業の基本原料です。板ガラス、容器ガラス、太陽光カバーガラス、LCD/OLEDバックプレーンガラス、ホウケイ酸ガラス、低誘電ガラス繊維、光学ガラスなどのSiO₂供給源として不可欠であり、陶磁器・衛生陶器・タイル素地の主原料です。結晶質角状SN-JGおよび20~200メッシュ珪砂ラインアップが、フラックス反応とガラス均質性の確保のため精密な粒度管理下で供給されます。"
       ),
       items: [
         t("판유리 · 용기유리 · 태양광 커버 유리", "Flat glass, container glass, solar cover glass", "板ガラス・容器ガラス・太陽光カバーガラス"),
@@ -108,9 +108,9 @@ const QuartzApplications = () => {
         "研磨材・ウォータージェット・表面処理"
       ),
       desc: t(
-        "모스 경도 7의 결정질 실리카는 샌드블라스팅·워터젯 커팅·연마 세정 등 표면 처리 분야에서 핵심 소재로 사용됩니다. 20~80 mesh 규사가 금속·석재·콘크리트 표면 세정 및 러스트 제거에, 미분 결정형 SL-JG는 정밀 연마 페이스트와 광학 렌즈 랩핑 공정에 사용됩니다. 필터 미디어(워터 필터, 수영장 필터)로도 폭넓게 활용됩니다.",
-        "With a Mohs hardness of 7, crystalline silica is a core material for surface-treatment applications — sandblasting, waterjet cutting and abrasive cleaning. 20–80 mesh silica sand is used for metal, stone and concrete surface cleaning and rust removal, while micronized crystalline SL-JG is applied to precision polishing pastes and optical-lens lapping. It is also widely used as filter media (water filtration, swimming-pool filters).",
-        "モース硬度7の結晶質シリカは、サンドブラスト・ウォータージェット切断・研磨洗浄などの表面処理分野で中核素材として使用されます。20~80メッシュの珪砂は金属・石材・コンクリート表面の洗浄と錆除去に、微粉結晶質SL-JGは精密研磨ペーストや光学レンズラッピング工程に使用されます。ろ材(水フィルター、プールフィルター)としても広く活用されています。"
+        "모스 경도 7의 결정질 실리카는 샌드블라스팅·워터젯 커팅·연마 세정 등 표면 처리 분야에서 핵심 소재로 사용됩니다. 20~80 mesh 규사가 금속·석재·콘크리트 표면 세정 및 러스트 제거에, 미분 결정형 SN-JG는 정밀 연마 페이스트와 광학 렌즈 랩핑 공정에 사용됩니다. 필터 미디어(워터 필터, 수영장 필터)로도 폭넓게 활용됩니다.",
+        "With a Mohs hardness of 7, crystalline silica is a core material for surface-treatment applications — sandblasting, waterjet cutting and abrasive cleaning. 20–80 mesh silica sand is used for metal, stone and concrete surface cleaning and rust removal, while micronized crystalline SN-JG is applied to precision polishing pastes and optical-lens lapping. It is also widely used as filter media (water filtration, swimming-pool filters).",
+        "モース硬度7の結晶質シリカは、サンドブラスト・ウォータージェット切断・研磨洗浄などの表面処理分野で中核素材として使用されます。20~80メッシュの珪砂は金属・石材・コンクリート表面の洗浄と錆除去に、微粉結晶質SN-JGは精密研磨ペーストや光学レンズラッピング工程に使用されます。ろ材(水フィルター、プールフィルター)としても広く活用されています。"
       ),
       items: [
         t("샌드블라스팅 · 그릿 블라스팅", "Sandblasting & grit blasting", "サンドブラスト・グリットブラスト"),
@@ -175,9 +175,9 @@ const QuartzApplications = () => {
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {t(
-              "쿼츠(Quartz) · 결정질 실리카(Crystalline Silica, α-Quartz)는 SiO₂가 규칙적으로 배열된 결정 구조 소재로, 모스 경도 7의 높은 기계적 강도·1670℃의 뛰어난 내화도·화학적 안정성·풍부한 매장량을 갖춘 산업의 기본 원료입니다. 결정형 구상(SL-QJG)·모서리 라운드(SL-YJG)·각상(SL-JG)·저방사선(SL-CL) 등 형상과 순도별 라인업이 반도체 EMC, CCL·PCB, 인조 대리석, 유리·도자기, 정밀 주조, 연마·워터젯, 태양광 웨이퍼, 스포츠 표면재 등 국가 기간산업 전반에 걸쳐 사용됩니다.",
-              "Quartz and crystalline silica (α-quartz) are foundational industrial raw materials — SiO₂ arranged in a regular crystalline lattice, delivering a Mohs hardness of 7, refractoriness up to 1670 °C, excellent chemical stability and abundant availability. Lineups by shape and purity — crystalline spherical (SL-QJG), round-corner (SL-YJG), angular (SL-JG) and low-alpha (SL-CL) — are used across semiconductor EMC, CCL/PCB, engineered stone, glass and ceramics, precision casting, abrasives and waterjet, solar wafer feedstock and sports surfacing.",
-              "クォーツ(Quartz)・結晶質シリカ(α-クォーツ)は、SiO₂が規則的に配列された結晶構造を持ち、モース硬度7の高い機械的強度、1670℃の優れた耐火度、化学的安定性、豊富な埋蔵量を備えた産業の基本原料です。結晶質球状(SL-QJG)、丸角(SL-YJG)、角状(SL-JG)、低α線(SL-CL)など形状・純度別のラインアップが、半導体EMC、CCL・PCB、人造大理石、ガラス・陶磁器、精密鋳造、研磨・ウォータージェット、太陽光ウェハ、スポーツ表面材など国家基幹産業全般で使用されています。"
+              "쿼츠(Quartz) · 결정질 실리카(Crystalline Silica, α-Quartz)는 SiO₂가 규칙적으로 배열된 결정 구조 소재로, 모스 경도 7의 높은 기계적 강도·1670℃의 뛰어난 내화도·화학적 안정성·풍부한 매장량을 갖춘 산업의 기본 원료입니다. 결정형 구상(SN-QJG)·모서리 라운드(SN-YJG)·각상(SN-JG)·저방사선(SN-CL) 등 형상과 순도별 라인업이 반도체 EMC, CCL·PCB, 인조 대리석, 유리·도자기, 정밀 주조, 연마·워터젯, 태양광 웨이퍼, 스포츠 표면재 등 국가 기간산업 전반에 걸쳐 사용됩니다.",
+              "Quartz and crystalline silica (α-quartz) are foundational industrial raw materials — SiO₂ arranged in a regular crystalline lattice, delivering a Mohs hardness of 7, refractoriness up to 1670 °C, excellent chemical stability and abundant availability. Lineups by shape and purity — crystalline spherical (SN-QJG), round-corner (SN-YJG), angular (SN-JG) and low-alpha (SN-CL) — are used across semiconductor EMC, CCL/PCB, engineered stone, glass and ceramics, precision casting, abrasives and waterjet, solar wafer feedstock and sports surfacing.",
+              "クォーツ(Quartz)・結晶質シリカ(α-クォーツ)は、SiO₂が規則的に配列された結晶構造を持ち、モース硬度7の高い機械的強度、1670℃の優れた耐火度、化学的安定性、豊富な埋蔵量を備えた産業の基本原料です。結晶質球状(SN-QJG)、丸角(SN-YJG)、角状(SN-JG)、低α線(SN-CL)など形状・純度別のラインアップが、半導体EMC、CCL・PCB、人造大理石、ガラス・陶磁器、精密鋳造、研磨・ウォータージェット、太陽光ウェハ、スポーツ表面材など国家基幹産業全般で使用されています。"
             )}
           </p>
         </div>
