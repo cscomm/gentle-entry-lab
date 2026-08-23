@@ -19,9 +19,9 @@ const SilicaPowderCategory = () => {
     "珪砂粉末 · Silica Powder"
   );
   const desc = tri(
-    "고순도 규사를 정밀 미세 분쇄하여 생산한 산업용 실리카 분말 라인업입니다. 균일한 입도 분포와 우수한 백색도, 높은 SiO₂ 순도를 바탕으로 도료·코팅, 플라스틱·고무, 인조대리석, 퍼티·실란트, 건축 자재 등 다양한 산업의 기능성 충진재로 사용되며, SL-P 표준 시리즈를 기본으로 고객사 요구 사양(입도·저철·고백색)에 맞춘 맞춤 생산이 가능합니다.",
-    "An industrial silica powder lineup produced by precisely micronizing high-purity silica sand. With uniform particle-size distribution, excellent whiteness and high SiO₂ purity, it serves as a functional filler for paints & coatings, plastics & rubber, engineered stone, putties & sealants and construction materials — supplied in customer-tailored grain sizes, low-iron and high-whiteness grades based on the SL-P standard series.",
-    "高純度シリカサンドを精密に微粉砕して生産した産業用シリカ粉末ラインアップです。均一な粒度分布と優れた白色度、高いSiO₂純度により、塗料・コーティング、プラスチック・ゴム、人造大理石、パテ・シーラント、建築資材などの機能性フィラーとして使用され、SL-P標準シリーズを基本にお客様のご要求仕様(粒度・低鉄・高白色度)に合わせたカスタム生産が可能です。"
+    "고순도 규사를 정밀 미세 분쇄하여 생산한 산업용 실리카 분말 라인업입니다. 균일한 입도 분포와 우수한 백색도, 높은 SiO₂ 순도를 바탕으로 도료·코팅, 플라스틱·고무, 인조대리석, 퍼티·실란트, 건축 자재 등 다양한 산업의 기능성 충진재로 사용되며, SN-P 표준 시리즈를 기본으로 고객사 요구 사양(입도·저철·고백색)에 맞춘 맞춤 생산이 가능합니다.",
+    "An industrial silica powder lineup produced by precisely micronizing high-purity silica sand. With uniform particle-size distribution, excellent whiteness and high SiO₂ purity, it serves as a functional filler for paints & coatings, plastics & rubber, engineered stone, putties & sealants and construction materials — supplied in customer-tailored grain sizes, low-iron and high-whiteness grades based on the SN-P standard series.",
+    "高純度シリカサンドを精密に微粉砕して生産した産業用シリカ粉末ラインアップです。均一な粒度分布と優れた白色度、高いSiO₂純度により、塗料・コーティング、プラスチック・ゴム、人造大理石、パテ・シーラント、建築資材などの機能性フィラーとして使用され、SN-P標準シリーズを基本にお客様のご要求仕様(粒度・低鉄・高白色度)に合わせたカスタム生産が可能です。"
   );
 
   return (

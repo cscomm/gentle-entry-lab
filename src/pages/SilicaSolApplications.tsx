@@ -39,7 +39,7 @@ const groups: Group[] = [
       "NaOH系で安定化された標準型シリカゾル。pH 9~10で優れた結合力と広い使用範囲を持ち、精密鋳造・耐火・製紙・塗料・研磨など全産業で最も広く使用される基本グレードです。",
     rows: [
       {
-        sku: "SL-SHS-JN15",
+        sku: "SN-SHS-JN15",
         ko: "저농도 알칼리형 실리카졸",
         en: "Low-Concentration Alkaline Sol",
         ja: "低濃度アルカリ型シリカゾル",
@@ -53,7 +53,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-SHS-JN20",
+        sku: "SN-SHS-JN20",
         ko: "표준형 알칼리 실리카졸",
         en: "Standard Alkaline Silica Sol",
         ja: "標準型アルカリシリカゾル",
@@ -67,7 +67,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-SHS-JN30",
+        sku: "SN-SHS-JN30",
         ko: "고농도 표준 실리카졸",
         en: "High-Concentration Standard Sol",
         ja: "高濃度標準シリカゾル",
@@ -82,7 +82,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-SHS-JN40",
+        sku: "SN-SHS-JN40",
         ko: "초고농도 실리카졸",
         en: "Ultra-High-Concentration Sol",
         ja: "超高濃度シリカゾル",
@@ -109,7 +109,7 @@ const groups: Group[] = [
       "pH 2~4の酸性条件で安定化した低Na⁺シリカゾル。アルカリ性原料と反応してはならない有機コーティング、シリコン離型紙、精密研磨、めっき添加剤など、酸性プロセス専用のグレードです。",
     rows: [
       {
-        sku: "SL-SHS-SW20",
+        sku: "SN-SHS-SW20",
         ko: "산성 실리카졸 (표준)",
         en: "Acidic Silica Sol (Standard)",
         ja: "酸性シリカゾル (標準)",
@@ -123,7 +123,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-SHS-SW30",
+        sku: "SN-SHS-SW30",
         ko: "산성 고농도 실리카졸",
         en: "Acidic High-Concentration Sol",
         ja: "酸性高濃度シリカゾル",
@@ -150,7 +150,7 @@ const groups: Group[] = [
       "NH₃系で安定化され、アルカリ金属(Na⁺/K⁺)含量が極めて低い(≤0.03%)新型(New Type)シリカゾル。精密鋳造シェル、二次電池セラミックコーティングセパレーター、半導体CMPスラリー原料など、低残留物が求められる先端用途に最適化されています。",
     rows: [
       {
-        sku: "SL-JA25",
+        sku: "SN-JA25",
         ko: "NH₃ 안정형 표준 콜로이달 실리카",
         en: "NH₃-Stabilized Standard Colloidal Silica",
         ja: "NH₃安定型標準コロイダルシリカ",
@@ -164,7 +164,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-JA30",
+        sku: "SN-JA30",
         ko: "NH₃ 안정형 고농도 콜로이달 실리카",
         en: "NH₃-Stabilized High-Concentration Sol",
         ja: "NH₃安定型高濃度コロイダルシリカ",
@@ -191,7 +191,7 @@ const groups: Group[] = [
       "Cl⁻・SO₄²⁻など残留アニオンを極限まで低減した低イオンシリカゾル。イオン汚染に敏感な半導体CMP、LCD/OLEDガラス研磨、ハードディスクミラー研磨スラリーなど精密表面加工用のグレードです。",
     rows: [
       {
-        sku: "SL-SHS-ZX20",
+        sku: "SN-SHS-ZX20",
         ko: "저이온 정밀 폴리싱용 실리카졸",
         en: "Low-Ion Precision Polishing Sol",
         ja: "低イオン精密研磨用シリカゾル",
@@ -205,7 +205,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-SHS-ZX30",
+        sku: "SN-SHS-ZX30",
         ko: "고농도 저이온 폴리싱 슬러리 원료",
         en: "High-Concentration Low-Ion Polishing Feedstock",
         ja: "高濃度低イオン研磨スラリー原料",
@@ -232,7 +232,7 @@ const groups: Group[] = [
       "超低イオン・超高純度で処理された特殊グレード。半導体先端ノードCMP、二次電池固体電解質、ハイエンドセラミックコーティングなど、微量不純物が最終製品性能を決定する用途に使用されます。",
     rows: [
       {
-        sku: "SL-SHS-JGC25",
+        sku: "SN-SHS-JGC25",
         ko: "특수 초저 이온 실리카졸",
         en: "Specialty Ultra-Low-Ion Sol",
         ja: "特殊超低イオンシリカゾル",
@@ -246,7 +246,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-SHS-JGC40",
+        sku: "SN-SHS-JGC40",
         ko: "초고농도 특수 실리카졸",
         en: "Ultra-High-Concentration Specialty Sol",
         ja: "超高濃度特殊シリカゾル",
@@ -380,9 +380,9 @@ const SilicaSolApplications = () => {
           </h1>
           <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
             {t(
-              "정밀 주조 · 이차전지 세퍼레이터 · 반도체 CMP · 내화 세라믹 · 제지 · 촉매 · 방활 처리까지 — SL-SHS 콜로이달 실리카(실리카졸) 5개 계열 14종 그레이드의 핵심 특성과 산업별 응용 분야를 정리했습니다.",
-              "From investment casting and Li-ion battery separators to semiconductor CMP, refractory ceramics, paper, catalysts and anti-slip treatments — this page maps the SL-SHS colloidal silica (silica sol) 14-grade lineup across 5 stabilization systems to key specs and industrial applications.",
-              "精密鋳造・二次電池セパレーター・半導体CMP・耐火セラミック・製紙・触媒・防滑処理まで — SL-SHSコロイダルシリカ(シリカゾル)5系列14グレードの主要特性と産業別用途を整理しました。"
+              "정밀 주조 · 이차전지 세퍼레이터 · 반도체 CMP · 내화 세라믹 · 제지 · 촉매 · 방활 처리까지 — SN-SHS 콜로이달 실리카(실리카졸) 5개 계열 14종 그레이드의 핵심 특성과 산업별 응용 분야를 정리했습니다.",
+              "From investment casting and Li-ion battery separators to semiconductor CMP, refractory ceramics, paper, catalysts and anti-slip treatments — this page maps the SN-SHS colloidal silica (silica sol) 14-grade lineup across 5 stabilization systems to key specs and industrial applications.",
+              "精密鋳造・二次電池セパレーター・半導体CMP・耐火セラミック・製紙・触媒・防滑処理まで — SN-SHSコロイダルシリカ(シリカゾル)5系列14グレードの主要特性と産業別用途を整理しました。"
             )}
           </p>
         </div>

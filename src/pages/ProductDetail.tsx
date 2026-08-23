@@ -219,7 +219,7 @@ const ProductDetail = () => {
   const isSPJ = product.slug === "sl-spj-300";
   const isFPO10 = product.slug === "sl-fpo10";
   const isFP10 = product.slug === "sl-fp10";
-  const fpCode = product.slug === "sl-fp10" ? "SL-FP10" : "SL-FPO10";
+  const fpCode = product.slug === "sl-fp10" ? "SN-FP10" : "SN-FPO10";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
   const children = product.isCategoryIndex
@@ -240,7 +240,7 @@ const ProductDetail = () => {
       })()
     : [];
 
-  // ============= Category-Index Layout (for SL-series parent categories) =============
+  // ============= Category-Index Layout (for SN-series parent categories) =============
   if (product.isCategoryIndex) {
     return (
       <div className="min-h-screen bg-background text-foreground">
@@ -398,7 +398,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* SL-SPH-300 — Particle Size & Chemistry Technical Tables */}
+      {/* SN-SPH-300 — Particle Size & Chemistry Technical Tables */}
       {product.slug === "sl-sph-300" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <div className="flex items-center gap-3">
@@ -411,9 +411,9 @@ const ProductDetail = () => {
           </h3>
           <p className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-SPH-300은 화학합성 공정을 통해 좁고 균일한 아미크론급 입도 분포와 초고순도 조성을 동시에 실현합니다. 아래는 대표 TDS 데이터입니다.",
-              "SL-SPH-300 achieves a narrow, uniform submicron particle size distribution and ultra-high-purity composition through a chemical synthesis process. Representative TDS data below.",
-              "SL-SPH-300は化学合成プロセスにより、狭く均一なサブミクロン粒度分布と超高純度組成を同時に実現します。以下は代表TDSデータです。"
+              "SN-SPH-300은 화학합성 공정을 통해 좁고 균일한 아미크론급 입도 분포와 초고순도 조성을 동시에 실현합니다. 아래는 대표 TDS 데이터입니다.",
+              "SN-SPH-300 achieves a narrow, uniform submicron particle size distribution and ultra-high-purity composition through a chemical synthesis process. Representative TDS data below.",
+              "SN-SPH-300は化学合成プロセスにより、狭く均一なサブミクロン粒度分布と超高純度組成を同時に実現します。以下は代表TDSデータです。"
             )}
           </p>
 
@@ -513,9 +513,9 @@ const ProductDetail = () => {
                 </h4>
                 <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {tri(
-                    "SEM(주사전자현미경) 이미지에서 확인되는 바와 같이, SL-SPH-300은 응집 없이 개별 분산된 균일한 나노구상 입자로 구성됩니다. 완전 구형에 근접한 형상은 수지 매트릭스 내 최대 충전율(High Filler Loading)을 가능하게 하며, 컴파운드 점도를 획기적으로 낮춰 반도체 EMC·언더필·저유전 CCL의 성형성과 신뢰성을 동시에 향상시킵니다.",
-                    "As shown in the SEM (Scanning Electron Microscope) image, SL-SPH-300 consists of individually dispersed, uniform nano-spherical particles with virtually no agglomeration. Its near-perfect spherical morphology enables the highest filler loading in resin matrices while dramatically reducing compound viscosity — simultaneously improving processability and reliability in semiconductor EMC, underfill and low-Dk CCL.",
-                    "SEM(走査電子顕微鏡)画像で確認されるように、SL-SPH-300は凝集のない、個別に分散した均一なナノ球状粒子で構成されます。ほぼ完全な球形状は樹脂マトリックス中の最大充填率(高フィラーローディング)を可能にし、コンパウンド粘度を大幅に低減することで、半導体EMC・アンダーフィル・低誘電CCLの成形性と信頼性を同時に向上させます。"
+                    "SEM(주사전자현미경) 이미지에서 확인되는 바와 같이, SN-SPH-300은 응집 없이 개별 분산된 균일한 나노구상 입자로 구성됩니다. 완전 구형에 근접한 형상은 수지 매트릭스 내 최대 충전율(High Filler Loading)을 가능하게 하며, 컴파운드 점도를 획기적으로 낮춰 반도체 EMC·언더필·저유전 CCL의 성형성과 신뢰성을 동시에 향상시킵니다.",
+                    "As shown in the SEM (Scanning Electron Microscope) image, SN-SPH-300 consists of individually dispersed, uniform nano-spherical particles with virtually no agglomeration. Its near-perfect spherical morphology enables the highest filler loading in resin matrices while dramatically reducing compound viscosity — simultaneously improving processability and reliability in semiconductor EMC, underfill and low-Dk CCL.",
+                    "SEM(走査電子顕微鏡)画像で確認されるように、SN-SPH-300は凝集のない、個別に分散した均一なナノ球状粒子で構成されます。ほぼ完全な球形状は樹脂マトリックス中の最大充填率(高フィラーローディング)を可能にし、コンパウンド粘度を大幅に低減することで、半導体EMC・アンダーフィル・低誘電CCLの成形性と信頼性を同時に向上させます。"
                   )}
                 </p>
               </div>
@@ -524,20 +524,20 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-SHS — Full Silica Sol Grade Matrix */}
+      {/* SN-SHS — Full Silica Sol Grade Matrix */}
       {product.slug === "sl-shs" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-            TECHNICAL DATA · SL-SHS SERIES
+            TECHNICAL DATA · SN-SHS SERIES
           </span>
           <h3 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
             📊 {tri("전체 그레이드 스펙 매트릭스", "Full Grade Specification Matrix", "全グレード仕様マトリクス")}
           </h3>
           <p className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-SHS 시리즈 14종 그레이드의 SiO₂ 농도·알칼리(Na₂O)·pH·점도·밀도·평균 입자경·Cl⁻ 범위를 한 표에서 비교할 수 있습니다. 계열별 색상 그룹으로 구분되어 있으며, 사이즈·포장은 커스터마이즈 가능합니다.",
-              "Compare SiO₂ content, alkali (Na₂O), pH, viscosity, density, mean particle size and Cl⁻ range for all 14 SL-SHS grades in one table. Grades are color-grouped by stabilization series; particle size and packaging are customizable.",
-              "SL-SHSシリーズ14グレードのSiO₂濃度・アルカリ(Na₂O)・pH・粘度・密度・平均粒子径・Cl⁻範囲を一つの表で比較できます。系列別にカラーグルーピングされ、粒子径・包装はカスタマイズ可能です。"
+              "SN-SHS 시리즈 14종 그레이드의 SiO₂ 농도·알칼리(Na₂O)·pH·점도·밀도·평균 입자경·Cl⁻ 범위를 한 표에서 비교할 수 있습니다. 계열별 색상 그룹으로 구분되어 있으며, 사이즈·포장은 커스터마이즈 가능합니다.",
+              "Compare SiO₂ content, alkali (Na₂O), pH, viscosity, density, mean particle size and Cl⁻ range for all 14 SN-SHS grades in one table. Grades are color-grouped by stabilization series; particle size and packaging are customizable.",
+              "SN-SHSシリーズ14グレードのSiO₂濃度・アルカリ(Na₂O)・pH・粘度・密度・平均粒子径・Cl⁻範囲を一つの表で比較できます。系列別にカラーグルーピングされ、粒子径・包装はカスタマイズ可能です。"
             )}
           </p>
 
@@ -559,20 +559,20 @@ const ProductDetail = () => {
                 </thead>
                 <tbody className="divide-y divide-border">
                   {[
-                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN15", sio2: "15–16", na2o: "0.70", ph: "9.0–11.0", visc: "5", dens: "1.09–1.11", grain: "6–8", cl: "—" },
-                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN20", sio2: "20–21", na2o: "0.50", ph: "9.0–11.0", visc: "6", dens: "1.12–1.14", grain: "10–20", cl: "—" },
-                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN25", sio2: "25–26", na2o: "0.30", ph: "9.0–10.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
-                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN30", sio2: "30–31", na2o: "0.30", ph: "9.0–10.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
-                    { series: "JN", tint: "bg-blue-500/5", model: "SL-SHS-JN40", sio2: "40–41", na2o: "0.60", ph: "9.0–10.5", visc: "25", dens: "1.28–1.30", grain: "10–20", cl: "—" },
-                    { series: "SW", tint: "bg-emerald-500/5", model: "SL-SHS-SW20", sio2: "20–21", na2o: "0.04", ph: "2.0–4.0", visc: "5", dens: "1.12–1.14", grain: "10–20", cl: "—" },
-                    { series: "SW", tint: "bg-emerald-500/5", model: "SL-SHS-SW25", sio2: "25–26", na2o: "0.05", ph: "2.0–4.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
-                    { series: "SW", tint: "bg-emerald-500/5", model: "SL-SHS-SW30", sio2: "30–31", na2o: "0.06", ph: "2.0–4.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
-                    { series: "JA", tint: "bg-primary/5", model: "SL-SHS-JA30", sio2: "30–31", na2o: "0.06", ph: "8.5–10.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
-                    { series: "JA", tint: "bg-primary/5", model: "SL-SHS-JA30/40", sio2: "40–41", na2o: "0.10", ph: "9.0–10.0", visc: "12", dens: "1.28–1.30", grain: "20–30", cl: "—" },
-                    { series: "ZX", tint: "bg-amber-500/5", model: "SL-SHS-ZX25", sio2: "25–26", na2o: "0.10", ph: "6.0–8.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
-                    { series: "ZX", tint: "bg-amber-500/5", model: "SL-SHS-ZX30", sio2: "30–31", na2o: "0.12", ph: "6.0–8.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
-                    { series: "JGC", tint: "bg-fuchsia-500/5", model: "SL-SHS-JGC25", sio2: "25–26", na2o: "0.30", ph: "9.0–10.0", visc: "7", dens: "1.15–1.17", grain: "8–16", cl: "≤ 30" },
-                    { series: "JGC", tint: "bg-fuchsia-500/5", model: "SL-SHS-JGC30", sio2: "30–31", na2o: "0.30", ph: "9.0–10.0", visc: "8", dens: "1.19–1.21", grain: "10–20", cl: "≤ 30" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SN-SHS-JN15", sio2: "15–16", na2o: "0.70", ph: "9.0–11.0", visc: "5", dens: "1.09–1.11", grain: "6–8", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SN-SHS-JN20", sio2: "20–21", na2o: "0.50", ph: "9.0–11.0", visc: "6", dens: "1.12–1.14", grain: "10–20", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SN-SHS-JN25", sio2: "25–26", na2o: "0.30", ph: "9.0–10.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SN-SHS-JN30", sio2: "30–31", na2o: "0.30", ph: "9.0–10.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JN", tint: "bg-blue-500/5", model: "SN-SHS-JN40", sio2: "40–41", na2o: "0.60", ph: "9.0–10.5", visc: "25", dens: "1.28–1.30", grain: "10–20", cl: "—" },
+                    { series: "SW", tint: "bg-emerald-500/5", model: "SN-SHS-SW20", sio2: "20–21", na2o: "0.04", ph: "2.0–4.0", visc: "5", dens: "1.12–1.14", grain: "10–20", cl: "—" },
+                    { series: "SW", tint: "bg-emerald-500/5", model: "SN-SHS-SW25", sio2: "25–26", na2o: "0.05", ph: "2.0–4.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
+                    { series: "SW", tint: "bg-emerald-500/5", model: "SN-SHS-SW30", sio2: "30–31", na2o: "0.06", ph: "2.0–4.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JA", tint: "bg-primary/5", model: "SN-SHS-JA30", sio2: "30–31", na2o: "0.06", ph: "8.5–10.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JA", tint: "bg-primary/5", model: "SN-SHS-JA30/40", sio2: "40–41", na2o: "0.10", ph: "9.0–10.0", visc: "12", dens: "1.28–1.30", grain: "20–30", cl: "—" },
+                    { series: "ZX", tint: "bg-amber-500/5", model: "SN-SHS-ZX25", sio2: "25–26", na2o: "0.10", ph: "6.0–8.0", visc: "6", dens: "1.15–1.17", grain: "10–20", cl: "—" },
+                    { series: "ZX", tint: "bg-amber-500/5", model: "SN-SHS-ZX30", sio2: "30–31", na2o: "0.12", ph: "6.0–8.0", visc: "7", dens: "1.19–1.21", grain: "10–20", cl: "—" },
+                    { series: "JGC", tint: "bg-fuchsia-500/5", model: "SN-SHS-JGC25", sio2: "25–26", na2o: "0.30", ph: "9.0–10.0", visc: "7", dens: "1.15–1.17", grain: "8–16", cl: "≤ 30" },
+                    { series: "JGC", tint: "bg-fuchsia-500/5", model: "SN-SHS-JGC30", sio2: "30–31", na2o: "0.30", ph: "9.0–10.0", visc: "8", dens: "1.19–1.21", grain: "10–20", cl: "≤ 30" },
                   ].map((r, i) => (
                     <tr key={r.model} className={`${r.tint} transition hover:bg-secondary/40`}>
                       <td className="border-r border-border px-3 py-3 text-xs font-bold tracking-wider text-primary md:px-4">{r.series}</td>
@@ -615,20 +615,20 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-CHR-01 — Column Chromatography A/B/C × Industrial/Reagent */}
+      {/* SN-CHR-01 — Column Chromatography A/B/C × Industrial/Reagent */}
       {product.slug === "silica-gel-sl-chr-01" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-            TECHNICAL DATA · SL-CHR-01
+            TECHNICAL DATA · SN-CHR-01
           </span>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🧪 {tri("A / B / C형 × 공업/시약 등급 스펙", "Type A / B / C × Industrial / Reagent Grade", "A / B / C型 × 工業/試薬グレード仕様")}
           </h3>
           <p className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-CHR-01은 3종 공극 구조(A: 세공 / B: 중공 / C: 조공)를 각각 공업 등급(Industrial)과 시약 등급(Reagent)으로 공급합니다. 아래는 대표 스펙 값입니다.",
-              "SL-CHR-01 is supplied in three pore structures (A: fine / B: medium / C: coarse), each available in Industrial and Reagent grades. Representative specifications below.",
-              "SL-CHR-01は3種の細孔構造(A: 細孔 / B: 中孔 / C: 粗孔)を、それぞれ工業(Industrial)グレードと試薬(Reagent)グレードで供給します。以下は代表仕様値です。"
+              "SN-CHR-01은 3종 공극 구조(A: 세공 / B: 중공 / C: 조공)를 각각 공업 등급(Industrial)과 시약 등급(Reagent)으로 공급합니다. 아래는 대표 스펙 값입니다.",
+              "SN-CHR-01 is supplied in three pore structures (A: fine / B: medium / C: coarse), each available in Industrial and Reagent grades. Representative specifications below.",
+              "SN-CHR-01は3種の細孔構造(A: 細孔 / B: 中孔 / C: 粗孔)を、それぞれ工業(Industrial)グレードと試薬(Reagent)グレードで供給します。以下は代表仕様値です。"
             )}
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
@@ -684,20 +684,20 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-CHR-02 — TLC Powder H / HF254 / G / GF254 */}
+      {/* SN-CHR-02 — TLC Powder H / HF254 / G / GF254 */}
       {product.slug === "silica-gel-sl-chr-02" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-            TECHNICAL DATA · SL-CHR-02
+            TECHNICAL DATA · SN-CHR-02
           </span>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🧪 {tri("H / HF254 / G / GF254 형별 스펙", "H / HF254 / G / GF254 Type Specifications", "H / HF254 / G / GF254 型別仕様")}
           </h3>
           <p className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-CHR-02는 TLC 분석 용도에 맞춰 4가지 형(Type)으로 공급되며, G / GF254 등급은 소석고(CaSO₄·½H₂O) 12–14 %가 첨가되어 결합력이 향상되어 있습니다.",
-              "SL-CHR-02 is offered in four types tailored for TLC analysis. G / GF254 grades contain 12–14 % calcined gypsum (CaSO₄·½H₂O) for enhanced binder strength.",
-              "SL-CHR-02はTLC分析用途に合わせて4種類の型(Type)で供給され、G / GF254グレードは焼石膏(CaSO₄·½H₂O)12–14 %を配合し結合力を高めています。"
+              "SN-CHR-02는 TLC 분석 용도에 맞춰 4가지 형(Type)으로 공급되며, G / GF254 등급은 소석고(CaSO₄·½H₂O) 12–14 %가 첨가되어 결합력이 향상되어 있습니다.",
+              "SN-CHR-02 is offered in four types tailored for TLC analysis. G / GF254 grades contain 12–14 % calcined gypsum (CaSO₄·½H₂O) for enhanced binder strength.",
+              "SN-CHR-02はTLC分析用途に合わせて4種類の型(Type)で供給され、G / GF254グレードは焼石膏(CaSO₄·½H₂O)12–14 %を配合し結合力を高めています。"
             )}
           </p>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
@@ -749,11 +749,11 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-CHR-03 — TLC Plate */}
+      {/* SN-CHR-03 — TLC Plate */}
       {product.slug === "silica-gel-sl-chr-03" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-            TECHNICAL DATA · SL-CHR-03
+            TECHNICAL DATA · SN-CHR-03
           </span>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🧪 {tri("TLC 플레이트 규격 · 포장 수량", "TLC Plate Specifications & Packing Quantity", "TLCプレート仕様・包装数量")}
@@ -1489,7 +1489,7 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-HS12 Detailed Technical Profile */}
+      {/* SN-HS12 Detailed Technical Profile */}
       {isHS12 && (
         <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <div className="flex items-center gap-3">
@@ -1500,9 +1500,9 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
           <p className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-HS12 고순도 결정질 실리카 미분의 화학 조성·입도 설계·물성·공정 품질 관리 특성을 정밀하게 정리하였습니다.",
-              "A precise breakdown of the chemical composition, particle-size design, physical properties and process quality control that define SL-HS12 high-purity crystalline silica micro-powder.",
-              "SL-HS12 高純度結晶質シリカ微粉の化学組成・粒度設計・物性・工程品質管理特性を精密に整理しました。"
+              "SN-HS12 고순도 결정질 실리카 미분의 화학 조성·입도 설계·물성·공정 품질 관리 특성을 정밀하게 정리하였습니다.",
+              "A precise breakdown of the chemical composition, particle-size design, physical properties and process quality control that define SN-HS12 high-purity crystalline silica micro-powder.",
+              "SN-HS12 高純度結晶質シリカ微粉の化学組成・粒度設計・物性・工程品質管理特性を精密に整理しました。"
             )}
           </p>
 
@@ -1834,7 +1834,7 @@ const ProductDetail = () => {
 
 
 
-      {/* SL-A81 Detailed Content */}
+      {/* SN-A81 Detailed Content */}
       {product.slug === "precipitated-silica-sl-a81" && (
         <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
           {/* Application Areas */}
@@ -2051,7 +2051,7 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-SPJ-300 — Detailed Technical Profile */}
+      {/* SN-SPJ-300 — Detailed Technical Profile */}
       {isSPJ && (
         <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <div className="flex items-center gap-3">
@@ -2062,9 +2062,9 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
           <p className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
-              "SL-SPJ-300의 구상화 품질, 화학 순도, 서브미크론 입도 설계, 표면·이온 특성을 TDS 기준으로 정밀하게 정리하였습니다.",
-              "A precise, TDS-based breakdown of the spheroidization quality, chemical purity, submicron particle design and surface / ionic characteristics of SL-SPJ-300.",
-              "SL-SPJ-300の球状化品質、化学純度、サブミクロン粒度設計、表面・イオン特性をTDS基準で精密に整理しました。"
+              "SN-SPJ-300의 구상화 품질, 화학 순도, 서브미크론 입도 설계, 표면·이온 특성을 TDS 기준으로 정밀하게 정리하였습니다.",
+              "A precise, TDS-based breakdown of the spheroidization quality, chemical purity, submicron particle design and surface / ionic characteristics of SN-SPJ-300.",
+              "SN-SPJ-300の球状化品質、化学純度、サブミクロン粒度設計、表面・イオン特性をTDS基準で精密に整理しました。"
             )}
           </p>
 
@@ -2214,7 +2214,7 @@ const ProductDetail = () => {
         </section>
       )}
 
-      {/* SL-FPO10 — Detailed Technical Profile */}
+      {/* SN-FPO10 — Detailed Technical Profile */}
       {(isFPO10 || isFP10) && (
         <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <div className="flex items-center gap-3">

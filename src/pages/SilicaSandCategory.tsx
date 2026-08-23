@@ -19,9 +19,9 @@ const SilicaSandCategory = () => {
     "珪砂 · Silica Sand"
   );
   const desc = tri(
-    "천연 규석(Quartz)을 원료로 선별·세척·산처리 공정을 거쳐 생산한 고품질 산업용 규사 라인업입니다. 유리 원료, 정밀 주조, 연마재, 워터필터, 인조잔디, 건축 자재 등 광범위한 산업 분야에 사용되며, SL-S 표준 시리즈를 기본으로 고객사 요구 사양에 맞춘 맞춤 입도·저철·고백색 사양으로 공급됩니다.",
-    "A high-quality industrial silica sand lineup produced from natural quartz through screening, washing, and acid-treatment processes. Used across glass, precision casting, abrasives, water filtration, artificial turf, and construction — supplied in customer-tailored grain sizes, low-iron, and high-whiteness grades based on the SL-S standard series.",
-    "天然石英(Quartz)を原料に選別・洗浄・酸処理工程を経て生産する高品質な産業用シリカサンドラインアップです。ガラス原料、精密鋳造、研磨材、浄水フィルター、人工芝、建築資材など幅広い産業分野で使用され、SL-S標準シリーズを基本にお客様のご要求仕様に合わせた粒度・低鉄・高白色度グレードを供給します。"
+    "천연 규석(Quartz)을 원료로 선별·세척·산처리 공정을 거쳐 생산한 고품질 산업용 규사 라인업입니다. 유리 원료, 정밀 주조, 연마재, 워터필터, 인조잔디, 건축 자재 등 광범위한 산업 분야에 사용되며, SN-S 표준 시리즈를 기본으로 고객사 요구 사양에 맞춘 맞춤 입도·저철·고백색 사양으로 공급됩니다.",
+    "A high-quality industrial silica sand lineup produced from natural quartz through screening, washing, and acid-treatment processes. Used across glass, precision casting, abrasives, water filtration, artificial turf, and construction — supplied in customer-tailored grain sizes, low-iron, and high-whiteness grades based on the SN-S standard series.",
+    "天然石英(Quartz)を原料に選別・洗浄・酸処理工程を経て生産する高品質な産業用シリカサンドラインアップです。ガラス原料、精密鋳造、研磨材、浄水フィルター、人工芝、建築資材など幅広い産業分野で使用され、SN-S標準シリーズを基本にお客様のご要求仕様に合わせた粒度・低鉄・高白色度グレードを供給します。"
   );
 
   return (

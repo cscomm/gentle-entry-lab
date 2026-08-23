@@ -16,9 +16,9 @@
 - [침전 실리카 Precipitated Silica](https://silica.co.kr/ko/products/precipitated-silica/): 도료 소광·고무 보강·접착제·사료·식품·치약용 침전 실리카 25종
 - [흄드 실리카 Fumed Silica](https://silica.co.kr/ko/products/fumed-silica/): 친수성/소수성 기상법 실리카, 증점·요변성 부여
 - [실리카겔 Silica Gel](https://silica.co.kr/ko/products/silica-gel/): 크로마토그래피(CHR)·산업용(IND)·건조제(DES)·촉매 담체 등 26종
-- [콜로이달 실리카 · 실리카졸 Silica Sol](https://silica.co.kr/ko/products/silica-sol/): SL-JA/SL-SHS 시리즈 수분산 콜로이달 실리카
-- [규사 Silica Sand](https://silica.co.kr/ko/products/silica-sand/): SL-S 시리즈 규사
-- [규사분말 Silica Powder](https://silica.co.kr/ko/products/silica-powder/): SL-P 시리즈 규사분말
+- [콜로이달 실리카 · 실리카졸 Silica Sol](https://silica.co.kr/ko/products/silica-sol/): SN-JA/SN-SHS 시리즈 수분산 콜로이달 실리카
+- [규사 Silica Sand](https://silica.co.kr/ko/products/silica-sand/): SN-S 시리즈 규사
+- [규사분말 Silica Powder](https://silica.co.kr/ko/products/silica-powder/): SN-P 시리즈 규사분말
 - [전체 제품 보기](https://silica.co.kr/ko/products/all/): 전 라인업 통합 목록 (페이지네이션)
 
 ## 응용분야 (Applications)

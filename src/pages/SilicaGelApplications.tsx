@@ -28,15 +28,15 @@ type Group = {
 
 const groups: Group[] = [
   {
-    ko: "크로마토그래피용 실리카겔 (SL-CHR)",
-    en: "Chromatography Silica Gel (SL-CHR)",
-    ja: "クロマトグラフィー用シリカゲル (SL-CHR)",
+    ko: "크로마토그래피용 실리카겔 (SN-CHR)",
+    en: "Chromatography Silica Gel (SN-CHR)",
+    ja: "クロマトグラフィー用シリカゲル (SN-CHR)",
     descKo: "중약재 유효성분·석유·유기물 분리정제와 정성/정량 분석에 사용되는 컬럼·박막 크로마토그래피 전용 실리카겔",
     descEn: "Column & TLC silica gel for separation/purification of herbal actives, petroleum and organic compounds, and qualitative/quantitative analysis.",
     descJa: "生薬有効成分・石油・有機物の分離精製および定性/定量分析に用いるカラム・薄層クロマトグラフィー専用シリカゲル",
     rows: [
       {
-        sku: "SL-CHR-01",
+        sku: "SN-CHR-01",
         ko: "컬럼크로마토그래피용 실리카겔 (A/B/C형)",
         en: "Column Chromatography Silica Gel (Type A/B/C)",
         ja: "カラムクロマトグラフィー用シリカゲル (A/B/C型)",
@@ -50,7 +50,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-CHR-02",
+        sku: "SN-CHR-02",
         ko: "박막크로마토그래피용 실리카겔 분말",
         en: "TLC Silica Gel Powder",
         ja: "薄層クロマトグラフィー用シリカゲル粉末",
@@ -63,7 +63,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-CHR-03",
+        sku: "SN-CHR-03",
         ko: "TLC 박막크로마토그래피 플레이트",
         en: "TLC Silica Gel Plate",
         ja: "TLC薄層クロマトグラフィープレート",
@@ -78,15 +78,15 @@ const groups: Group[] = [
     ],
   },
   {
-    ko: "산업·공정용 실리카겔 (SL-IND)",
-    en: "Industrial & Process Silica Gel (SL-IND)",
-    ja: "産業・工程用シリカゲル (SL-IND)",
+    ko: "산업·공정용 실리카겔 (SN-IND)",
+    en: "Industrial & Process Silica Gel (SN-IND)",
+    ja: "産業・工程用シリカゲル (SN-IND)",
     descKo: "촉매 합성, 식품(맥주) 여과, 오일 정제·탈색, 특수 흡착 등 산업 공정 전용 실리카겔",
     descEn: "Silica gel dedicated to industrial processes: catalyst synthesis, beer filtration, oil refining/bleaching, specialty adsorption.",
     descJa: "触媒合成、食品(ビール)濾過、オイル精製・脱色、特殊吸着など産業工程専用のシリカゲル",
     rows: [
       {
-        sku: "SL-IND-01",
+        sku: "SN-IND-01",
         ko: "촉매용 미분 실리카겔 (C형)",
         en: "Micro-powder Silica Gel for Catalyst",
         ja: "触媒用微粉シリカゲル (C型)",
@@ -99,7 +99,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-IND-02",
+        sku: "SN-IND-02",
         ko: "유로키나제 흡착용 실리카겔 (C형)",
         en: "Urokinase Adsorbent Silica Gel",
         ja: "ウロキナーゼ吸着用シリカゲル",
@@ -112,7 +112,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-IND-03",
+        sku: "SN-IND-03",
         ko: "맥주 여과용 실리카겔 (초광공형)",
         en: "Silica Gel for Beer Filtration (Super Wide Pore)",
         ja: "ビール濾過用シリカゲル (超広孔型)",
@@ -125,7 +125,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-IND-04",
+        sku: "SN-IND-04",
         ko: "대공극 실리카겔 (C형, 구형/괴상)",
         en: "Wide Pore Silica Gel (Type C)",
         ja: "大孔径シリカゲル (C型)",
@@ -139,7 +139,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-IND-05",
+        sku: "SN-IND-05",
         ko: "오일 탈색용 실리카겔 샌드 (C형)",
         en: "Silica Gel Sand for Oil Bleaching",
         ja: "オイル脱色用シリカゲルサンド (C型)",
@@ -152,7 +152,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-IND-06",
+        sku: "SN-IND-06",
         ko: "대공극 마이크로구형 실리카겔 (C형)",
         en: "Macro-pored Micro-spherical Silica Gel",
         ja: "大孔径マイクロ球状シリカゲル (C型)",
@@ -166,7 +166,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-IND-07",
+        sku: "SN-IND-07",
         ko: "폐엔진오일 정제용 촉매",
         en: "Catalyst for Waste Engine Oil Refining",
         ja: "廃エンジンオイル精製用触媒",
@@ -181,15 +181,15 @@ const groups: Group[] = [
     ],
   },
   {
-    ko: "건조제·흡습제 실리카겔 (SL-DES)",
-    en: "Desiccant & Adsorbent Silica Gel (SL-DES)",
-    ja: "乾燥剤・吸湿剤シリカゲル (SL-DES)",
+    ko: "건조제·흡습제 실리카겔 (SN-DES)",
+    en: "Desiccant & Adsorbent Silica Gel (SN-DES)",
+    ja: "乾燥剤・吸湿剤シリカゲル (SN-DES)",
     descKo: "계기·설비 방습, 습도지시, PSA 기체분리, 반려동물 위생용품 등 건조·흡습 전용 실리카겔",
     descEn: "Silica gel for equipment moisture-proofing, humidity indication, PSA gas separation and pet-care hygiene.",
     descJa: "計器・設備の防湿、湿度指示、PSAガス分離、ペット衛生用品など乾燥・吸湿専用のシリカゲル",
     rows: [
       {
-        sku: "SL-DES-01",
+        sku: "SN-DES-01",
         ko: "세공형 실리카겔 (A형)",
         en: "Fine-pored Silica Gel (Type A)",
         ja: "細孔型シリカゲル (A型)",
@@ -202,7 +202,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-DES-02",
+        sku: "SN-DES-02",
         ko: "변압흡착(PSA)용 실리카겔 (A형)",
         en: "PSA Silica Gel (Type A)",
         ja: "圧力スイング吸着(PSA)用シリカゲル",
@@ -215,7 +215,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-DES-03",
+        sku: "SN-DES-03",
         ko: "블루 실리카겔 (A형, 습도지시)",
         en: "Blue Silica Gel (RH Indicator)",
         ja: "ブルーシリカゲル (湿度指示)",
@@ -228,7 +228,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-DES-04",
+        sku: "SN-DES-04",
         ko: "오렌지 실리카겔 (A형, 무코발트)",
         en: "Orange Silica Gel (Cobalt-Free)",
         ja: "オレンジシリカゲル (無コバルト)",
@@ -241,7 +241,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-DES-05",
+        sku: "SN-DES-05",
         ko: "B형 실리카겔 (중공형)",
         en: "B Type Silica Gel",
         ja: "B型シリカゲル",
@@ -254,7 +254,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-DES-06",
+        sku: "SN-DES-06",
         ko: "실리카겔 고양이모래 (C형)",
         en: "Silica Gel Cat Litter",
         ja: "シリカゲル猫砂 (C型)",
@@ -267,7 +267,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-DES-07",
+        sku: "SN-DES-07",
         ko: "FNG 내수성 실리카겔",
         en: "FNG Water-Resistant Silica Gel",
         ja: "FNG耐水性シリカゲル",
@@ -283,15 +283,15 @@ const groups: Group[] = [
     ],
   },
   {
-    ko: "실리카알루미나·활성알루미나·분자체 (SL-ALS)",
-    en: "Silica-Alumina · Activated Alumina · Molecular Sieve (SL-ALS)",
-    ja: "シリカアルミナ・活性アルミナ・分子篩 (SL-ALS)",
+    ko: "실리카알루미나·활성알루미나·분자체 (SN-ALS)",
+    en: "Silica-Alumina · Activated Alumina · Molecular Sieve (SN-ALS)",
+    ja: "シリカアルミナ・活性アルミナ・分子篩 (SN-ALS)",
     descKo: "천연가스·냉매·기체 심층 건조와 이온교환·정제 공정에 사용되는 알루미나·분자체 라인업",
     descEn: "Alumina & molecular-sieve lineup for deep drying of natural gas/refrigerants and for ion-exchange & purification.",
     descJa: "天然ガス・冷媒・気体の深層乾燥やイオン交換・精製工程に用いるアルミナ・分子篩ラインアップ",
     rows: [
       {
-        sku: "SL-ALS-01",
+        sku: "SN-ALS-01",
         ko: "실리카알루미나겔",
         en: "Silica-Alumina Gel",
         ja: "シリカアルミナゲル",
@@ -304,7 +304,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-ALS-03",
+        sku: "SN-ALS-03",
         ko: "활성알루미나볼",
         en: "Activated Alumina Ball",
         ja: "活性アルミナボール",
@@ -317,7 +317,7 @@ const groups: Group[] = [
         ],
       },
       {
-        sku: "SL-ALS-04",
+        sku: "SN-ALS-04",
         ko: "분자체 4A",
         en: "4A Molecular Sieve",
         ja: "4A分子篩",
@@ -448,7 +448,7 @@ const SilicaGelApplications = () => {
           <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
             {t(
               "크로마토그래피 · 산업 공정 · 건조·흡습 · 알루미나 분자체 · 미분 기능성 실리카까지 — 현행 SL 시리즈 전 라인업의 핵심 특성과 주요 응용 분야를 카테고리별로 정리했습니다.",
-              "From chromatography and industrial process to desiccants, alumina/molecular sieves and functional micronized silica — this page maps the current SL-series lineup to its key specs and applications.",
+              "From chromatography and industrial process to desiccants, alumina/molecular sieves and functional micronized silica — this page maps the current SN-series lineup to its key specs and applications.",
               "クロマトグラフィー・産業工程・乾燥吸湿・アルミナ分子篩・微粉機能性シリカまで — 現行SLシリーズ全ラインナップの主要特性と用途をカテゴリー別に整理しました。"
             )}
           </p>

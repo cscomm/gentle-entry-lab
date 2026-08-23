@@ -32,10 +32,10 @@ const T = (ko: string, en: string, ja: string): TriString => ({ ko, en, ja });
 const SPEC_H = T("규격", "Specifications", "スペック");
 
 // ============================================================
-// SL-IND-01 — 맥주 여과용 실리카겔 (미세)
+// SN-IND-01 — 맥주 여과용 실리카겔 (미세)
 // ============================================================
 const slInd01: SilicaGelSpec = {
-  code: "SL-IND-01",
+  code: "SN-IND-01",
   sections: [{
     rows: [
       { label: T("공경", "Pore size", "細孔径"), unit: "Å", values: "90–100" },
@@ -55,10 +55,10 @@ const slInd01: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-IND-02 — 맥주 여과용 실리카겔 (거친)
+// SN-IND-02 — 맥주 여과용 실리카겔 (거친)
 // ============================================================
 const slInd02: SilicaGelSpec = {
-  code: "SL-IND-02",
+  code: "SN-IND-02",
   sections: [{
     rows: [
       { label: T("공경", "Pore size", "細孔径"), unit: "Å", values: "90–100" },
@@ -76,10 +76,10 @@ const slInd02: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-IND-03 — 유로키나제 흡착용 실리카겔
+// SN-IND-03 — 유로키나제 흡착용 실리카겔
 // ============================================================
 const slInd03: SilicaGelSpec = {
-  code: "SL-IND-03",
+  code: "SN-IND-03",
   sections: [{
     rows: [
       { label: T("SiO₂", "SiO₂", "SiO₂"), unit: "% ≥", values: "98" },
@@ -111,10 +111,10 @@ const slInd03: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-IND-04 — 대공극 실리카겔 (구형/괴상)
+// SN-IND-04 — 대공극 실리카겔 (구형/괴상)
 // ============================================================
 const slInd04: SilicaGelSpec = {
-  code: "SL-IND-04",
+  code: "SN-IND-04",
   sections: [{
     headers: [T("구형", "Spherical", "球状"), T("괴상", "Lumpy", "塊状")],
     rows: [
@@ -138,10 +138,10 @@ const slInd04: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-IND-05 — 오일 탈색용 실리카겔 샌드
+// SN-IND-05 — 오일 탈색용 실리카겔 샌드
 // ============================================================
 const slInd05: SilicaGelSpec = {
-  code: "SL-IND-05",
+  code: "SN-IND-05",
   sections: [{
     rows: [
       { label: T("흡착량 (RH=100%)", "Adsorption capacity (RH=100%)", "吸着量 (RH=100%)"), unit: "% ≥", values: "90" },
@@ -161,10 +161,10 @@ const slInd05: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-IND-06 — 대공극 마이크로구형 실리카겔 (등급별 6컬럼)
+// SN-IND-06 — 대공극 마이크로구형 실리카겔 (등급별 6컬럼)
 // ============================================================
 const slInd06: SilicaGelSpec = {
-  code: "SL-IND-06",
+  code: "SN-IND-06",
   sections: [{
     groupHeaders: [
       { label: T("우수 등급", "Superior class", "優級"), span: 2 },
@@ -192,10 +192,10 @@ const slInd06: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-IND-07 — 폐엔진오일 정제용 촉매 (복수 표)
+// SN-IND-07 — 폐엔진오일 정제용 촉매 (복수 표)
 // ============================================================
 const slInd07: SilicaGelSpec = {
-  code: "SL-IND-07",
+  code: "SN-IND-07",
   sections: [
     {
       title: T("① 촉매 기본 사양 (Strip Type)", "① Catalyst Specifications (Strip Type)", "① 触媒基本仕様 (Strip Type)"),
@@ -252,10 +252,10 @@ const slInd07: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-01 — A형 실리카겔 (구형/괴상)
+// SN-DES-01 — A형 실리카겔 (구형/괴상)
 // ============================================================
 const slDes01: SilicaGelSpec = {
-  code: "SL-DES-01",
+  code: "SN-DES-01",
   sections: [{
     headers: [T("펠릿", "Silica gel pellet", "ペレット"), T("괴상", "Silica gel lump", "塊状")],
     rows: [
@@ -279,10 +279,10 @@ const slDes01: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-02 — 대공극 B형 실리카겔
+// SN-DES-02 — 대공극 B형 실리카겔
 // ============================================================
 const slDes02: SilicaGelSpec = {
-  code: "SL-DES-02",
+  code: "SN-DES-02",
   sections: [{
     rows: [
       { label: T("흡착량 RH=20%", "Adsorption RH=20%", "吸着量 RH=20%"), unit: "% ≥", values: "10.5" },
@@ -304,10 +304,10 @@ const slDes02: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-03 — 청색·변색 실리카겔
+// SN-DES-03 — 청색·변색 실리카겔
 // ============================================================
 const slDes03: SilicaGelSpec = {
-  code: "SL-DES-03",
+  code: "SN-DES-03",
   sections: [{
     headers: [T("청색 지시제", "Blue silica gel indicator", "青色指示剤"), T("변색 청색", "Color-changing blue", "変色青色")],
     rows: [
@@ -333,10 +333,10 @@ const slDes03: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-04 — 오렌지 지시제 실리카겔
+// SN-DES-04 — 오렌지 지시제 실리카겔
 // ============================================================
 const slDes04: SilicaGelSpec = {
-  code: "SL-DES-04",
+  code: "SN-DES-04",
   sections: [{
     headers: [T("오렌지–그린", "Orange-green", "オレンジ-グリーン"), T("오렌지–무변", "Orange-null", "オレンジ-無変")],
     rows: [
@@ -363,10 +363,10 @@ const slDes04: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-05 — 절연용 실리카겔 (형상·등급)
+// SN-DES-05 — 절연용 실리카겔 (형상·등급)
 // ============================================================
 const slDes05: SilicaGelSpec = {
-  code: "SL-DES-05",
+  code: "SN-DES-05",
   sections: [{
     groupHeaders: [
       { label: T("구형", "Spherical", "球状"), span: 2 },
@@ -397,10 +397,10 @@ const slDes05: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-06 — 반려동물 크리스탈 리터
+// SN-DES-06 — 반려동물 크리스탈 리터
 // ============================================================
 const slDes06: SilicaGelSpec = {
-  code: "SL-DES-06",
+  code: "SN-DES-06",
   sections: [{
     rows: [
       { label: T("흡착량", "Adsorption capacity", "吸着量"), unit: "% ≥", values: "90" },
@@ -420,10 +420,10 @@ const slDes06: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-DES-07 — 내수성 실리카겔 (FNG-A / FNG-C)
+// SN-DES-07 — 내수성 실리카겔 (FNG-A / FNG-C)
 // ============================================================
 const slDes07: SilicaGelSpec = {
-  code: "SL-DES-07",
+  code: "SN-DES-07",
   sections: [{
     groupHeaders: [
       { label: T("FNG-A", "FNG-A", "FNG-A"), span: 2 },
@@ -452,10 +452,10 @@ const slDes07: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-ALS-01 — 실리카알루미나겔 (A/B형)
+// SN-ALS-01 — 실리카알루미나겔 (A/B형)
 // ============================================================
 const slAls01: SilicaGelSpec = {
-  code: "SL-ALS-01",
+  code: "SN-ALS-01",
   sections: [{
     headers: [T("A 형", "Type A", "A 型"), T("B 형", "Type B", "B 型")],
     rows: [
@@ -479,10 +479,10 @@ const slAls01: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-ALS-03 — 활성알루미나볼 (COA)
+// SN-ALS-03 — 활성알루미나볼 (COA)
 // ============================================================
 const slAls03: SilicaGelSpec = {
-  code: "SL-ALS-03",
+  code: "SN-ALS-03",
   sections: [{
     headers: [T("규격", "SPEC", "規格"), T("측정값", "Test Result", "測定値")],
     rows: [
@@ -504,10 +504,10 @@ const slAls03: SilicaGelSpec = {
 };
 
 // ============================================================
-// SL-ALS-04 — 4A 분자체 (Strip / Pellet)
+// SN-ALS-04 — 4A 분자체 (Strip / Pellet)
 // ============================================================
 const slAls04: SilicaGelSpec = {
-  code: "SL-ALS-04",
+  code: "SN-ALS-04",
   sections: [{
     groupHeaders: [
       { label: T("Strip 조형", "Strip", "Strip"), span: 2 },
