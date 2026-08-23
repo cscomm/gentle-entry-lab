@@ -92,6 +92,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <GeoGate>
       <BrowserRouter>
         <LanguageProvider>
           <CanonicalUrl />
@@ -104,8 +105,10 @@ const App = () => (
 
         </LanguageProvider>
       </BrowserRouter>
+      </GeoGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
+
 
 export default App;
