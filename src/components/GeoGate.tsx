@@ -91,10 +91,13 @@ const GeoGate = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (isExempt()) return;
     let cancelled = false;
-    lookupCountry().then((code) => {
-      // Fail open: unknown location is never blocked.
-      if (!cancelled && code && BLOCKED_COUNTRIES.includes(code)) setBlocked(true);
+    lookupCountries().then((codes) => {
+      if (cancelled) return;
+      // Fail open: block only when 2+ independent providers agree on a blocked country.
+      const hits = codes.filter((c) => BLOCKED_COUNTRIES.includes(c)).length;
+      if (hits >= 2) setBlocked(true);
     });
+
     return () => {
       cancelled = true;
     };
