@@ -18,12 +18,17 @@ const isExempt = () => {
   if (typeof navigator === "undefined") return true;
   const ua = navigator.userAgent || "";
   if (BOT_UA.test(ua)) return true;
+  // Manual bypass for testing: ?geo=off
+  if (typeof window !== "undefined" && window.location.search.includes("geo=off")) return true;
+
   // Prerender / automated build browsers
   if ((navigator as Navigator & { webdriver?: boolean }).webdriver) return true;
   return false;
 };
 
-const lookupCountry = async (): Promise<string | null> => {
+// Queries several providers and only returns a country when at least two
+// independent sources agree — a single mis-geolocated answer can never block.
+const lookupCountries = async (): Promise<string[]> => {
   const endpoints: Array<{ url: string; pick: (data: unknown) => string | undefined }> = [
     {
       url: "https://get.geojs.io/v1/ip/country.json",
@@ -33,23 +38,31 @@ const lookupCountry = async (): Promise<string | null> => {
       url: "https://ipapi.co/json/",
       pick: (d) => (d as { country_code?: string })?.country_code,
     },
+    {
+      url: "https://ipwho.is/",
+      pick: (d) => (d as { country_code?: string })?.country_code,
+    },
   ];
 
-  for (const ep of endpoints) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 3500);
-      const res = await fetch(ep.url, { signal: controller.signal });
-      clearTimeout(timer);
-      if (!res.ok) continue;
-      const code = ep.pick(await res.json());
-      if (code) return String(code).toUpperCase();
-    } catch {
-      // try next endpoint
-    }
-  }
-  return null;
+  const results = await Promise.all(
+    endpoints.map(async (ep) => {
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 3500);
+        const res = await fetch(ep.url, { signal: controller.signal });
+        clearTimeout(timer);
+        if (!res.ok) return null;
+        const code = ep.pick(await res.json());
+        return code ? String(code).toUpperCase() : null;
+      } catch {
+        return null;
+      }
+    }),
+  );
+
+  return results.filter((c): c is string => !!c);
 };
+
 
 const BlockedNotice = () => (
   <main className="flex min-h-screen items-center justify-center bg-background px-6">
@@ -81,10 +94,13 @@ const GeoGate = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (isExempt()) return;
     let cancelled = false;
-    lookupCountry().then((code) => {
-      // Fail open: unknown location is never blocked.
-      if (!cancelled && code && BLOCKED_COUNTRIES.includes(code)) setBlocked(true);
+    lookupCountries().then((codes) => {
+      if (cancelled) return;
+      // Fail open: block only when 2+ independent providers agree on a blocked country.
+      const hits = codes.filter((c) => BLOCKED_COUNTRIES.includes(c)).length;
+      if (hits >= 2) setBlocked(true);
     });
+
     return () => {
       cancelled = true;
     };
