@@ -18,6 +18,9 @@ const isExempt = () => {
   if (typeof navigator === "undefined") return true;
   const ua = navigator.userAgent || "";
   if (BOT_UA.test(ua)) return true;
+  // Manual bypass for testing: ?geo=off
+  if (typeof window !== "undefined" && window.location.search.includes("geo=off")) return true;
+
   // Prerender / automated build browsers
   if ((navigator as Navigator & { webdriver?: boolean }).webdriver) return true;
   return false;
