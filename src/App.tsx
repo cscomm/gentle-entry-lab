@@ -93,7 +93,6 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <GeoGate>
       <BrowserRouter>
         <LanguageProvider>
           <CanonicalUrl />
@@ -103,10 +102,8 @@ const App = () => (
             {/* Legacy paths without a lang prefix → redirect with detected lang */}
             <Route path="*" element={<LegacyRedirect />} />
           </Routes>
-
         </LanguageProvider>
       </BrowserRouter>
-      </GeoGate>
     </TooltipProvider>
   </QueryClientProvider>
 );
