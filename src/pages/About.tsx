@@ -220,8 +220,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Partner: SINOTENNG-SILICA (시노실리카) — 임시 숨김. 다시 보이게 요청 시 false를 true로 */}
-      {false && (
+      {/* Partner: SINOTENNG-SILICA (시노실리카) */}
+      {true && (
       <section className="border-y border-border bg-secondary/40 py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mx-auto max-w-4xl text-center">
