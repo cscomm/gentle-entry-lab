@@ -23,7 +23,7 @@ import ptHq from "@/assets/partner-hq.png";
 import ptAerial from "@/assets/partner-aerial.png";
 import ptLine from "@/assets/partner-line.png";
 import ptYard from "@/assets/partner-yard.png";
-import ptIngot from "@/assets/partner-ingot.png";
+import ptIngot from "@/assets/partner-rawyard.jpg";
 import { Beaker, Filter, FlaskConical, Gem, Snowflake, Thermometer, Droplets, Microscope } from "lucide-react";
 
 const stats = [

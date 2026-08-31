@@ -269,7 +269,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "ab.pt.cap2": { ko: "장쑤성 생산 단지 항공 전경", en: "Jiangsu production complex, aerial view", ja: "江蘇省生産団地 空撮" },
   "ab.pt.cap3": { ko: "자동 계량·포장 라인", en: "Automated weighing & packing line", ja: "自動計量・包装ライン" },
   "ab.pt.cap4": { ko: "원료 야드 및 물류 창고", en: "Raw material yard & warehouse", ja: "原料ヤード・物流倉庫" },
-  "ab.pt.cap5": { ko: "용융 실리카 인고트", en: "Fused silica ingot", ja: "溶融シリカインゴット" },
+  "ab.pt.cap5": { ko: "원료 야드", en: "Raw material yard", ja: "原料ヤード" },
 
   // SDR Quartz
 
