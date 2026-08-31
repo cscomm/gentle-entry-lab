@@ -21,8 +21,8 @@ import sdr4 from "@/assets/sdr-4.png";
 import sdr5 from "@/assets/sdr-5.jpg";
 import ptHq from "@/assets/partner-hq.png";
 import ptAerial from "@/assets/partner-aerial.png";
-import ptLine from "@/assets/partner-line.png";
-import ptYard from "@/assets/partner-yard.png";
+import ptLine from "@/assets/partner-line2.jpg";
+import ptYard from "@/assets/partner-yard2.jpg";
 import ptIngot from "@/assets/partner-rawyard.jpg";
 import { Beaker, Filter, FlaskConical, Gem, Snowflake, Thermometer, Droplets, Microscope } from "lucide-react";
 
