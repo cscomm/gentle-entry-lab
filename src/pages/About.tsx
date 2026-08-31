@@ -265,19 +265,15 @@ const About = () => {
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-4">
             <figure className="relative overflow-hidden rounded-2xl border border-border md:col-span-2">
               <img src={ptIngot} alt={silicaAlt(tr("ab.pt.cap5"))} loading="lazy" className="h-56 w-full object-cover transition duration-700 hover:scale-105 md:h-64" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-xs text-white">{tr("ab.pt.cap5")}</figcaption>
             </figure>
             <figure className="relative overflow-hidden rounded-2xl border border-border">
               <img src={ptLine} alt={silicaAlt(tr("ab.pt.cap3"))} loading="lazy" className="h-56 w-full object-cover transition duration-700 hover:scale-105 md:h-64" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-xs text-white">{tr("ab.pt.cap3")}</figcaption>
             </figure>
             <figure className="relative overflow-hidden rounded-2xl border border-border">
               <img src={ptYard} alt={silicaAlt(tr("ab.pt.cap4"))} loading="lazy" className="h-56 w-full object-cover transition duration-700 hover:scale-105 md:h-64" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-xs text-white">{tr("ab.pt.cap4")}</figcaption>
             </figure>
             <figure className="relative overflow-hidden rounded-2xl border border-border md:col-span-4">
               <img src={ptAerial} alt={silicaAlt(tr("ab.pt.cap2"))} loading="lazy" className="h-64 w-full object-cover transition duration-700 hover:scale-105 md:h-80" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 text-xs text-white">{tr("ab.pt.cap2")}</figcaption>
             </figure>
 
           </div>
