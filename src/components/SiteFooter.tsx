@@ -138,7 +138,7 @@ const SiteFooter = () => {
               <span className="opacity-30">|</span>
               <Link to="/privacy/" className="hover:text-primary-glow">개인정보처리방침</Link>
               <span className="opacity-30">|</span>
-              <span>contact@silica.co.kr</span>
+              <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
               <span className="opacity-30">|</span>
               <span>전북특별자치도 진안군 동향면 동계로 328 주식회사비에이알</span>
               <span className="opacity-30">|</span>
@@ -180,7 +180,7 @@ const SiteFooter = () => {
             <span className="opacity-30">|</span>
             <Link to="/privacy/" className="hover:text-primary-glow">개인정보처리방침</Link>
             <span className="opacity-30">|</span>
-            <span>contact@silica.co.kr</span>
+            <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
             <span className="opacity-30">|</span>
             <span>전북특별자치도 진안군 동향면 동계로 328 주식회사비에이알</span>
             <span className="opacity-30">|</span>
