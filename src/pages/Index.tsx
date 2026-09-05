@@ -448,7 +448,7 @@ const Index = () => {
               {/* Compact office card */}
               <aside className="mt-8 rounded-2xl border border-background/15 bg-background/5 p-5 backdrop-blur-xl">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] tracking-widest text-primary-glow">OFFICE</span>
+                  <span className="text-[10px] tracking-widest text-primary-glow">sales office</span>
                   <span className="h-px flex-1 bg-background/15" />
                 </div>
                 <ul className="mt-4 space-y-2.5 text-sm">
