@@ -140,6 +140,8 @@ const SiteFooter = () => {
               <span className="opacity-30">|</span>
               <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
               <span className="opacity-30">|</span>
+              <a href="tel:+82-31-356-5682" className="hover:text-primary-glow">031-356-5682</a>
+              <span className="opacity-30">|</span>
               <span>전북특별자치도 진안군 동향면 동계로 328 주식회사비에이알</span>
               <span className="opacity-30">|</span>
               <span>© 2023 SiLiCA. All rights reserved.</span>
@@ -181,6 +183,8 @@ const SiteFooter = () => {
             <Link to="/privacy/" className="hover:text-primary-glow">개인정보처리방침</Link>
             <span className="opacity-30">|</span>
             <a href="mailto:contact@silica.co.kr" className="hover:text-primary-glow">contact@silica.co.kr</a>
+            <span className="opacity-30">|</span>
+            <a href="tel:+82-31-356-5682" className="hover:text-primary-glow">031-356-5682</a>
             <span className="opacity-30">|</span>
             <span>전북특별자치도 진안군 동향면 동계로 328 주식회사비에이알</span>
             <span className="opacity-30">|</span>

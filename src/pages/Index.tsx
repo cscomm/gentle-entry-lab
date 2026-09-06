@@ -5,7 +5,7 @@ import { Link, useLocation } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Mail, Send, MessageSquare } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, MapPin, Mail, Phone, Send, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
@@ -455,6 +455,12 @@ const Index = () => {
                   <li className="flex items-start gap-2.5 text-background/85">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
                     <span>{t("footer.address")}</span>
+                  </li>
+                  <li>
+                    <a href="tel:+82-31-356-5682" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
+                      <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
+                      031-356-5682
+                    </a>
                   </li>
                   <li>
                     <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
