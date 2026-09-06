@@ -89,7 +89,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
     en: "Our local production factory holds strict global quality, hygiene, and environmental management systems such as ISO 9001, ISO 22000, and FSSC 22000, backed by extensive experience and unrivaled technology in supplying raw materials to global companies.", ja: "当社の現地生産工場は、グローバル企業に原料を供給してきた長年の経験と独自の技術力を背景に、ISO 9001、ISO 22000、FSSC 22000などの厳格なグローバル品質・衛生・環境管理システムを保有しています。" },
   "about.p6": {
     ko: "주식회사 비에이알은 지속적으로 발전하는 선진 기술을 빠르게 적용하여 전자 소재, 산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 제공하겠습니다.",
-    en: "Silica Co., Ltd. will quickly apply continuously advancing cutting-edge technologies to provide optimal silica solutions perfectly tailored to customer needs across all industries, including electronic materials, industrial coatings, ceramics, refractories, casting, solar and energy materials, and various silica additives.", ja: "株式会社シリカは、持続的に発展する先端技術を迅速に適用し、電子素材、産業用コーティング、セラミックス、耐火材、鋳造、太陽光およびエネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを提供してまいります。" },
+    en: "BAR Co., Ltd. will quickly apply continuously advancing cutting-edge technologies to provide optimal silica solutions perfectly tailored to customer needs across all industries, including electronic materials, industrial coatings, ceramics, refractories, casting, solar and energy materials, and various silica additives.", ja: "株式会社BARは、持続的に発展する先端技術を迅速に適用し、電子素材、産業用コーティング、セラミックス、耐火材、鋳造、太陽光およびエネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを提供してまいります。" },
   "about.btn": { ko: "회사 소개 보기", en: "About the Company", ja: "会社紹介を見る" },
 
   // Products section
@@ -219,7 +219,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
     en: "Our local production factory holds strict global quality, hygiene, and environmental management systems such as ISO 9001, ISO 22000, and FSSC 22000, backed by extensive experience and unrivaled technology in supplying raw materials to global companies.", ja: "当社の現地生産工場は、グローバル企業に原料を供給してきた長年の経験と独自の技術力を背景に、ISO 9001、ISO 22000、FSSC 22000などの厳格なグローバル品質・衛生・環境管理システムを保有しています。" },
   "ab.overview.p6": {
     ko: "주식회사 비에이알은 지속적으로 발전하는 선진 기술을 빠르게 적용하여 전자 소재, 산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 제공하겠습니다.",
-    en: "Silica Co., Ltd. will quickly apply continuously advancing cutting-edge technologies to provide optimal silica solutions perfectly tailored to customer needs across all industries, including electronic materials, industrial coatings, ceramics, refractories, casting, solar and energy materials, and various silica additives.", ja: "株式会社シリカは、持続的に発展する先端技術を迅速に適用し、電子素材、産業用コーティング、セラミックス、耐火材、鋳造、太陽光およびエネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを提供してまいります。" },
+    en: "BAR Co., Ltd. will quickly apply continuously advancing cutting-edge technologies to provide optimal silica solutions perfectly tailored to customer needs across all industries, including electronic materials, industrial coatings, ceramics, refractories, casting, solar and energy materials, and various silica additives.", ja: "株式会社BARは、持続的に発展する先端技術を迅速に適用し、電子素材、産業用コーティング、セラミックス、耐火材、鋳造、太陽光およびエネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを提供してまいります。" },
   "ab.mine.tag": { ko: "JANGSU BAEKAM MINE · BAR", en: "JANGSU BAEKAM MINE · BAR", ja: "JANGSU BAEKAM MINE · BAR" },
   "ab.mine.title": { ko: "장수백암광산", en: "Jangsu Baekam Mine", ja: "長水白岩鉱山" },
   "ab.mine.p1.ko": {
