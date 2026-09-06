@@ -457,12 +457,6 @@ const Index = () => {
                     <span>{t("footer.address")}</span>
                   </li>
                   <li>
-                    <a href="tel:+82-31-356-5682" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
-                      <Phone className="h-4 w-4 shrink-0 text-primary-glow" />
-                      031-356-5682
-                    </a>
-                  </li>
-                  <li>
                     <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
                       <Mail className="h-4 w-4 shrink-0 text-primary-glow" />
                       info@silica.co.kr
