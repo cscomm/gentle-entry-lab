@@ -2915,6 +2915,7 @@ const appliedSilicaMaterials: ProductDetail = {
   subModelsColumnLabel: { ko: "소재", en: "Material", ja: "素材" },
   subModels: [
     { code: "FRIT", slug: "amorphous-ceramic-frit", spec: "칼슘-알루미노실리케이트계 무붕소 유리 프리트 · SiO₂ 65.68% · 0.1~0.7 mm", enSpec: "Calcium aluminosilicate boron-free glass frit · SiO₂ 65.68% · 0.1–0.7 mm", jaSpec: "カルシウムアルミノシリケート系無ホウ素ガラスフリット · SiO₂ 65.68% · 0.1~0.7 mm", name: "비정질 세라믹 프리트", enName: "Amorphous Ceramic Frit", jaName: "非晶質セラミックフリット" },
+    { code: "HGM", slug: "hollow-glass-microspheres", spec: "붕규산염 중공 유리 마이크로스피어 · SiO₂ ≥72.0% · 진밀도 0.22~0.55 g/cm³ · D50 30~60 µm", enSpec: "Borosilicate hollow glass microspheres · SiO₂ ≥72.0% · true density 0.22–0.55 g/cm³ · D50 30–60 µm", jaSpec: "ホウケイ酸中空ガラスマイクロスフェア · SiO₂ ≥72.0% · 真密度 0.22~0.55 g/cm³ · D50 30~60 µm", name: "중공 유리 마이크로스피어", enName: "Hollow Glass Microspheres", jaName: "中空ガラスマイクロスフェア" },
   ],
   applications: ceramicFritApps,
 };
