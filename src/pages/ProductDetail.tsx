@@ -219,6 +219,7 @@ const ProductDetail = () => {
   const isSPJ = product.slug === "sl-spj-300";
   const isFPO10 = product.slug === "sl-fpo10";
   const isFP10 = product.slug === "sl-fp10";
+  const isHGM = product.slug === "hollow-glass-microspheres";
   const fpCode = product.slug === "sl-fp10" ? "SN-FP10" : "SN-FPO10";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
@@ -397,6 +398,180 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* HGM — Detailed Technical Profile */}
+      {isHGM && (
+        <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
+          <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+            TECHNICAL DATA · HGM
+          </span>
+          <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
+          <p className="mt-3 max-w-3xl text-muted-foreground">
+            {tri(
+              "질소 가스를 내부에 충전한 완전 밀폐 중공 구형 입자 — 밀도는 낮추고 강도는 유지하는 붕규산염 유리 기반 초경량 충전재입니다. 아래는 공식 TDS 기준 데이터입니다.",
+              "Perfectly sealed hollow spheres filled with nitrogen gas — an ultra-lightweight borosilicate glass filler that cuts density while retaining strength. Official TDS data below.",
+              "内部に窒素ガスを封入した完全密閉の中空球形粒子 — 密度を下げながら強度を維持するホウケイ酸ガラス系超軽量充填材です。以下は公式TDS基準データです。",
+            )}
+          </p>
+
+          {/* 4 highlight cards */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: "🪶", title: tri("초저밀도", "Ultra-Low Density", "超低密度"), value: "0.22–0.55", unit: "g/cm³", note: tri("물보다 가벼운 중공 구조 · 부유율 ≥95%", "Lighter-than-water hollow structure · floatation ≥95%", "水より軽い中空構造 · 浮遊率 ≥95%") },
+              { icon: "💪", title: tri("압축강도", "Compressive Strength", "圧縮強度"), value: "30–80", unit: "MPa", note: tri("사출·압출·고압 혼련에서도 파쇄 없음", "Survives injection, extrusion and high-shear mixing", "射出・押出・高せん断混練でも破砕なし") },
+              { icon: "🧊", title: tri("단열 · 저유전", "Insulation · Low Dk", "断熱 · 低誘電"), value: "N₂", unit: tri("내부 충전 가스", "internal gas", "内部封入ガス"), note: tri("저열전도 단열성 + 저유전율·저유전손실", "Low thermal conductivity + low Dk / low loss", "低熱伝導の断熱性 + 低誘電率・低誘電損失") },
+              { icon: "⚗️", title: tri("붕규산염 조성", "Borosilicate Composition", "ホウケイ酸組成"), value: "SiO₂ ≥72", unit: "%", note: tri("Al₂O₃ 5–12% · pH 7–9 중성 · 백색도 ≥88", "Al₂O₃ 5–12% · neutral pH 7–9 · whiteness ≥88", "Al₂O₃ 5–12% · pH 7–9中性 · 白色度 ≥88") },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                <div className="text-2xl">{c.icon}</div>
+                <div className="mt-2 text-xs font-semibold tracking-widest text-muted-foreground">{c.title}</div>
+                <div className="mt-1 text-2xl font-bold text-primary">{c.value} <span className="text-sm font-medium text-muted-foreground">{c.unit}</span></div>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{c.note}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Main property table */}
+          <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="border-b border-border bg-primary/5 px-6 py-4">
+              <h4 className="text-lg font-bold text-foreground">📐 {tri("물리 · 화학 특성 (Typical Data)", "Physical & Chemical Properties (Typical Data)", "物理・化学特性(代表値)")}</h4>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm" style={{ fontVariantNumeric: "tabular-nums" }}>
+                <thead>
+                  <tr className="bg-foreground text-background">
+                    <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("항목", "Item", "項目")}</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("규격", "Specification", "規格")}</th>
+                    <th className="px-6 py-3 text-left text-xs font-semibold tracking-[0.2em]">{tri("단위", "Unit", "単位")}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { item: tri("진밀도 (True Density)", "True Density", "真密度"), val: "0.22 – 0.55", unit: "g/cm³" },
+                    { item: tri("벌크밀도 (Bulk Density)", "Bulk Density", "かさ密度"), val: "0.13 – 0.35", unit: "g/cm³" },
+                    { item: tri("D50 평균 입도", "D50 Particle Size", "D50 平均粒径"), val: "30 – 60", unit: "µm" },
+                    { item: tri("부유율 (Floatation Rate)", "Floatation Rate", "浮遊率"), val: "≥ 95", unit: "%" },
+                    { item: tri("압축강도 (Compressive Strength)", "Compressive Strength", "圧縮強度"), val: "30 – 80", unit: "MPa" },
+                    { item: tri("이산화규소 (SiO₂)", "SiO₂ Content", "二酸化ケイ素 (SiO₂)"), val: "≥ 72.0", unit: "%" },
+                    { item: tri("산화알루미늄 (Al₂O₃)", "Al₂O₃ Content", "酸化アルミニウム (Al₂O₃)"), val: "5.0 – 12.0", unit: "%" },
+                    { item: tri("수분 함량 (Moisture)", "Moisture Content", "水分含有量"), val: "≤ 0.30", unit: "%" },
+                    { item: tri("백색도 (Whiteness)", "Whiteness", "白色度"), val: "≥ 88.0", unit: "—" },
+                    { item: tri("pH 값", "pH Value", "pH値"), val: "7.0 – 9.0", unit: "—" },
+                  ].map((r) => (
+                    <tr key={r.item} className="transition hover:bg-secondary/40">
+                      <td className="px-6 py-3 font-medium text-foreground">{r.item}</td>
+                      <td className="px-6 py-3 font-mono font-semibold text-primary">{r.val}</td>
+                      <td className="px-6 py-3 text-muted-foreground">{r.unit}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Grade lineup */}
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <h4 className="text-base font-bold text-foreground">🏷️ {tri("표준 그레이드 라인업", "Standard Grade Lineup", "標準グレードラインナップ")}</h4>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {["HN10", "HN16", "HN20", "HN25", "HN32", "HN38", "HN40", "HN46", "HN60"].map((g) => (
+                  <span key={g} className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-xs font-semibold text-primary">{g}</span>
+                ))}
+              </div>
+              <p className="mt-3 text-xs text-muted-foreground">{tri("밀도 0.22~0.55 g/cm³ · 용도별 맞춤 공급", "Density 0.22–0.55 g/cm³ · tailored supply per application", "密度0.22~0.55 g/cm³ · 用途別カスタム供給")}</p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+              <h4 className="text-base font-bold text-foreground">🛡️ {tri("고강도(Hi-Strength) 그레이드", "High-Strength Grades", "高強度グレード")}</h4>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {["HN46HS", "HN60HS", "HN16K", "HN18K"].map((g) => (
+                  <span key={g} className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-xs font-semibold text-primary">{g}</span>
+                ))}
+              </div>
+              <p className="mt-3 text-xs text-muted-foreground">{tri("고압 공정 · 5G 저유전 · 유정 시멘팅 등 고하중 용도", "For high-pressure processing, 5G low-Dk, oil-well cementing and other high-load uses", "高圧工程・5G低誘電・油井セメンチングなど高負荷用途")}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* HGM — Application Recommendation Table */}
+      {isHGM && (
+        <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
+          <div className="text-center">
+            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
+              APPLICATIONS
+            </span>
+            <h2 className="mt-6 text-3xl font-bold md:text-4xl">🎯 {tri("용도별 권장 등급", "Application Recommendations", "用途別推奨グレード")}</h2>
+            <p className="mt-4 mx-auto max-w-3xl text-muted-foreground">
+              {tri(
+                "HGM은 용도에 따라 최적의 밀도·강도 그레이드가 다릅니다. 아래 표에서 산업별 권장 그레이드를 확인하고, 필요하신 용도를 알려주시면 맞춤 제안을 드립니다.",
+                "Each application calls for a specific density and strength grade. Check the recommended grades below — tell us your application and we will suggest the best fit.",
+                "用途ごとに最適な密度・強度グレードが異なります。下表で産業別の推奨グレードをご確認いただき、用途をお知らせいただければ最適な提案をいたします。",
+              )}
+            </p>
+          </div>
+
+          <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="bg-foreground text-background">
+                    <th className="px-6 py-4 text-left text-xs font-semibold tracking-[0.2em] w-16">No.</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold tracking-[0.2em]">{tri("응용 분야", "Application Area", "応用分野")}</th>
+                    <th className="px-6 py-4 text-left text-xs font-semibold tracking-[0.2em]">{tri("권장 등급", "Recommended Grade", "推奨グレード")}</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  {[
+                    { ko: "항공우주 보조재 · 경량 구조 충전재", en: "Aerospace auxiliary & lightweight structural fillers", ja: "航空宇宙補助材・軽量構造充填材", g: "HN10 · HN16 · HN20" },
+                    { ko: "항공우주용 접착제 및 실런트", en: "Aerospace adhesives and sealants", ja: "航空宇宙用接着剤・シーラント", g: "HN25 · HN32 · HN38 · HN40" },
+                    { ko: "5G 통신 관련 저유전 플라스틱", en: "5G-related low-dielectric plastics", ja: "5G関連 低誘電プラスチック", g: "HN46HS · HN16K · HN60HS · HN18K" },
+                    { ko: "복합 인쇄회로기판(PCB) 저유전 충전재", en: "Composite printed circuit boards", ja: "複合プリント基板(PCB)用低誘電充填材", g: "HN46HS · HN16K · HN60HS · HN18K" },
+                    { ko: "단열 · 차열 코팅 및 보온 도료", en: "Heat-insulation & thermal-barrier coatings", ja: "断熱・遮熱コーティング・保温塗料", g: "HN20 · HN25 · HN32 · HN38 · HN40 · HN46" },
+                    { ko: "인조대리석 · 인조석재 경량화", en: "Artificial & engineered stone lightweighting", ja: "人造大理石・人造石材の軽量化", g: "HN25 · HN32 · HN38 · HN40" },
+                    { ko: "퍼티 · 보수용 패치 컴파운드", en: "Patch putty & repair compounds", ja: "パテ・補修用パッチコンパウンド", g: "HN25 · HN32 · HN38 · HN40" },
+                    { ko: "타일 접착 모르타르 · 줄눈재", en: "Tile adhesive mortar & grout", ja: "タイル接着モルタル・目地材", g: "HN32 · HN38 · HN40" },
+                    { ko: "툴링 플레이트 · 목형/모델링 소재", en: "Tooling plate & modelling board", ja: "ツーリングプレート・モデリング素材", g: "HN25 · HN32 · HN38 · HN40" },
+                    { ko: "무기질 단열 보드", en: "Inorganic thermal insulation board", ja: "無機質断熱ボード", g: "HN20 · HN25" },
+                    { ko: "경량 가구 · 목재 대체 소재", en: "Lightweight furniture & wood substitute", ja: "軽量家具・木材代替素材", g: "HN20" },
+                    { ko: "브릿징 입자(Bridging Particle)", en: "Bridging particles", ja: "ブリッジング粒子", g: "HN20" },
+                    { ko: "폴리우레탄 사출 · 발포 성형", en: "Polyurethane injection moulding & foaming", ja: "ポリウレタン射出・発泡成形", g: "HN20 · HN25 · HN32 · HN38 · HN40 · HN46" },
+                    { ko: "SMC / BMC 복합 성형 소재", en: "SMC / BMC composite moulding", ja: "SMC / BMC 複合成形素材", g: "HN40 · HN46 · HN60" },
+                    { ko: "플라스틱 경량화 마스터배치", en: "Plastics lightweighting masterbatch", ja: "プラスチック軽量化マスターバッチ", g: "HN32 · HN38 · HN40 · HN46 · HN60" },
+                    { ko: "사출 · 압출 성형 경량 충전재", en: "Injection & extrusion moulding lightweight filler", ja: "射出・押出成形用軽量充填材", g: "HN40 · HN46 · HN60" },
+                    { ko: "볼링공 코어 등 스포츠 용품", en: "Bowling ball cores & sporting goods", ja: "ボウリングボールコアなどスポーツ用品", g: "HN20 · HN25 · HN32 · HN38 · HN40" },
+                    { ko: "신세틱 폼(Syntactic Foam) 합성 발포체", en: "Syntactic foam", ja: "シンタクチックフォーム", g: "HN20 · HN25 · HN32 · HN38 · HN40 · HN46 · HN60" },
+                    { ko: "유정 시멘팅용 경량 본드 시멘트", en: "Lightweight oil-well bond cement", ja: "油井セメンチング用軽量ボンドセメント", g: "HN40 · HN46 · HN60 · HN46HS · HN60HS · HN16K · HN18K" },
+                    { ko: "저밀도 시추 이수(Drilling Fluid)", en: "Low-density drilling fluid", ja: "低密度掘削泥水", g: "HN60 · HN60HS · HN18K" },
+                    { ko: "보온 배관 · 단열 파이프 라이닝", en: "Insulated & heat-preservation pipe", ja: "保温配管・断熱パイプ", g: "HN40 · HN46 · HN60" },
+                    { ko: "심해 부력재(Buoyancy Material)", en: "Deep-sea buoyancy material", ja: "深海用浮力材", g: "HN25 · HN32 · HN38 · HN40 · HN46 · HN60" },
+                    { ko: "선박용 경량 퍼티", en: "Marine ship putty", ja: "船舶用軽量パテ", g: "HN20" },
+                  ].map((r, i) => (
+                    <tr key={i} className={`transition hover:bg-secondary/40 ${i % 2 === 0 ? "bg-background" : "bg-secondary/20"}`}>
+                      <td className="px-6 py-3 font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</td>
+                      <td className="px-6 py-3 font-medium text-foreground">{pick(lang, r.ko, r.en, r.ja)}</td>
+                      <td className="px-6 py-3">
+                        <div className="flex flex-wrap gap-1.5">
+                          {r.g.split(" · ").map((g) => (
+                            <span key={g} className="rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 font-mono text-[11px] font-semibold text-primary">{g}</span>
+                          ))}
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <Link to="/#contact">
+              <Button size="lg" className="h-12 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90">
+                {t("pd.inquire")} <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* SN-SPH-300 — Particle Size & Chemistry Technical Tables */}
       {product.slug === "sl-sph-300" && (
@@ -2384,7 +2559,7 @@ const ProductDetail = () => {
       )}
 
       {/* Applications — visual cards with images */}
-      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && !isFP10 && (
+      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && !isFP10 && !isHGM && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
