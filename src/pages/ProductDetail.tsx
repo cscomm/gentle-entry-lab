@@ -219,6 +219,7 @@ const ProductDetail = () => {
   const isSPJ = product.slug === "sl-spj-300";
   const isFPO10 = product.slug === "sl-fpo10";
   const isFP10 = product.slug === "sl-fp10";
+  const isHGM = product.slug === "hollow-glass-microspheres";
   const fpCode = product.slug === "sl-fp10" ? "SN-FP10" : "SN-FPO10";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
