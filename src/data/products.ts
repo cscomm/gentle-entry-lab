@@ -2905,7 +2905,7 @@ const appliedSilicaMaterials: ProductDetail = {
     { title: "📄 로트별 성적서 · 안정 공급", desc: "조성·입도·수분 성적서 제공 및 대량 안정 공급 체계", enTitle: "📄 Per-Lot COA · Stable Supply", jaTitle: "📄 ロット別成績書・安定供給", enDesc: "Certificates for composition, PSD and moisture with stable high-volume supply", jaDesc: "組成・粒度・水分の成績書提供と大量安定供給体制" },
   ],
   specs: [
-    { label: "제품 라인업", value: "비정질 세라믹 프리트 (Amorphous Ceramic Frit) — 순차 확대 예정", enValue: "Amorphous Ceramic Frit — lineup expanding", jaValue: "非晶質セラミックフリット — 順次拡大予定", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "제품 라인업", value: "비정질 세라믹 프리트 · 중공 유리 마이크로스피어(HGM) — 순차 확대 예정", enValue: "Amorphous Ceramic Frit · Hollow Glass Microspheres (HGM) — lineup expanding", jaValue: "非晶質セラミックフリット · 中空ガラスマイクロスフェア(HGM) — 順次拡大予定", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
     { label: "소재 유형", value: "유리질 프리트 · 세라믹 결합제 · 기능성 충진재", enValue: "Vitreous frits · ceramic binders · functional fillers", jaValue: "ガラス質フリット · セラミック結合剤 · 機能性充填材", enLabel: "Material Types", jaLabel: "素材タイプ" },
     { label: "주요 산업", value: "건축 · 세라믹 · 내화물 · 화학 바인더 · 인조석재", enValue: "Construction · ceramics · refractories · chemical binders · engineered stone", jaValue: "建築 · セラミックス · 耐火物 · 化学バインダー · 人造石材", enLabel: "Key Industries", jaLabel: "主要産業" },
     { label: "제조 공정", value: "고온 용융 → 급냉(수냉/공냉) 유리화 → 분급", enValue: "High-temperature melting → water/air quench vitrification → classification", jaValue: "高温溶融 → 急冷(水冷/空冷)ガラス化 → 分級", enLabel: "Process", jaLabel: "製造工程" },
