@@ -16,3 +16,6 @@ verify_jwt = false
 
 [functions.translate-post]
 verify_jwt = false
+
+[functions.admin-inquiries]
+verify_jwt = false
