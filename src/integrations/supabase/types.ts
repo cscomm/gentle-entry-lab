@@ -14,6 +14,139 @@ export type Database = {
   }
   public: {
     Tables: {
+      account_contacts: {
+        Row: {
+          account_id: string
+          created_at: string
+          email: string | null
+          id: string
+          memo: string | null
+          name: string
+          phone: string | null
+          position: string | null
+          updated_at: string
+        }
+        Insert: {
+          account_id: string
+          created_at?: string
+          email?: string | null
+          id?: string
+          memo?: string | null
+          name?: string
+          phone?: string | null
+          position?: string | null
+          updated_at?: string
+        }
+        Update: {
+          account_id?: string
+          created_at?: string
+          email?: string | null
+          id?: string
+          memo?: string | null
+          name?: string
+          phone?: string | null
+          position?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "account_contacts_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      account_notes: {
+        Row: {
+          account_id: string
+          body: string
+          created_at: string
+          id: string
+          note_date: string
+          updated_at: string
+        }
+        Insert: {
+          account_id: string
+          body?: string
+          created_at?: string
+          id?: string
+          note_date?: string
+          updated_at?: string
+        }
+        Update: {
+          account_id?: string
+          body?: string
+          created_at?: string
+          id?: string
+          note_date?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "account_notes_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      accounts: {
+        Row: {
+          account_type: string
+          address: string | null
+          biz_item: string | null
+          biz_no: string | null
+          biz_type: string | null
+          ceo_name: string | null
+          channel: string
+          company_name: string
+          country: string | null
+          created_at: string
+          email: string | null
+          id: string
+          memo: string | null
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          account_type?: string
+          address?: string | null
+          biz_item?: string | null
+          biz_no?: string | null
+          biz_type?: string | null
+          ceo_name?: string | null
+          channel?: string
+          company_name?: string
+          country?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          memo?: string | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          account_type?: string
+          address?: string | null
+          biz_item?: string | null
+          biz_no?: string | null
+          biz_type?: string | null
+          ceo_name?: string | null
+          channel?: string
+          company_name?: string
+          country?: string | null
+          created_at?: string
+          email?: string | null
+          id?: string
+          memo?: string | null
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
       email_send_log: {
         Row: {
           created_at: string
@@ -103,7 +236,9 @@ export type Database = {
       }
       inquiries: {
         Row: {
+          account_id: string | null
           admin_note: string | null
+          channel: string
           company: string | null
           created_at: string
           email: string | null
@@ -116,7 +251,9 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          account_id?: string | null
           admin_note?: string | null
+          channel?: string
           company?: string | null
           created_at?: string
           email?: string | null
@@ -129,7 +266,9 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          account_id?: string | null
           admin_note?: string | null
+          channel?: string
           company?: string | null
           created_at?: string
           email?: string | null
@@ -141,7 +280,15 @@ export type Database = {
           status?: string
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "inquiries_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       post_translations: {
         Row: {
@@ -213,6 +360,448 @@ export type Database = {
           views?: number
         }
         Relationships: []
+      }
+      purchase_payments: {
+        Row: {
+          amount: number
+          bank_account: string | null
+          created_at: string
+          id: string
+          memo: string | null
+          paid_date: string
+          voucher_id: string
+        }
+        Insert: {
+          amount?: number
+          bank_account?: string | null
+          created_at?: string
+          id?: string
+          memo?: string | null
+          paid_date?: string
+          voucher_id: string
+        }
+        Update: {
+          amount?: number
+          bank_account?: string | null
+          created_at?: string
+          id?: string
+          memo?: string | null
+          paid_date?: string
+          voucher_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "purchase_payments_voucher_id_fkey"
+            columns: ["voucher_id"]
+            isOneToOne: false
+            referencedRelation: "purchase_vouchers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      purchase_vouchers: {
+        Row: {
+          account_id: string | null
+          amount_foreign: number
+          amount_krw: number
+          channel: string
+          cost_type: string
+          created_at: string
+          currency: string
+          description: string | null
+          evidence_status: string
+          fx_rate: number
+          id: string
+          memo: string | null
+          pay_status: string
+          total_krw: number
+          updated_at: string
+          vat_amount: number
+          voucher_date: string
+        }
+        Insert: {
+          account_id?: string | null
+          amount_foreign?: number
+          amount_krw?: number
+          channel?: string
+          cost_type?: string
+          created_at?: string
+          currency?: string
+          description?: string | null
+          evidence_status?: string
+          fx_rate?: number
+          id?: string
+          memo?: string | null
+          pay_status?: string
+          total_krw?: number
+          updated_at?: string
+          vat_amount?: number
+          voucher_date?: string
+        }
+        Update: {
+          account_id?: string | null
+          amount_foreign?: number
+          amount_krw?: number
+          channel?: string
+          cost_type?: string
+          created_at?: string
+          currency?: string
+          description?: string | null
+          evidence_status?: string
+          fx_rate?: number
+          id?: string
+          memo?: string | null
+          pay_status?: string
+          total_krw?: number
+          updated_at?: string
+          vat_amount?: number
+          voucher_date?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "purchase_vouchers_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quote_items: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          item_name: string
+          qty: number
+          quote_id: string
+          sort_order: number
+          spec: string | null
+          unit: string
+          unit_price: number
+        }
+        Insert: {
+          amount?: number
+          created_at?: string
+          id?: string
+          item_name?: string
+          qty?: number
+          quote_id: string
+          sort_order?: number
+          spec?: string | null
+          unit?: string
+          unit_price?: number
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          item_name?: string
+          qty?: number
+          quote_id?: string
+          sort_order?: number
+          spec?: string | null
+          unit?: string
+          unit_price?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quote_items_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      quotes: {
+        Row: {
+          account_id: string | null
+          bank_account: string | null
+          bank_holder: string | null
+          bank_name: string | null
+          buyer_company: string | null
+          buyer_contact: string | null
+          buyer_email: string | null
+          buyer_phone: string | null
+          channel: string
+          created_at: string
+          currency: string
+          delivery_terms: string | null
+          fx_rate: number
+          id: string
+          inquiry_id: string | null
+          issuer: string
+          lang: string
+          quote_date: string
+          quote_no: string
+          remarks: string | null
+          seller_address: string | null
+          seller_ceo: string | null
+          seller_company: string | null
+          seller_contact: string | null
+          seller_email: string | null
+          status: string
+          subtotal: number
+          total_amount: number
+          updated_at: string
+          valid_days: number
+          vat_amount: number
+          vat_rate: number
+        }
+        Insert: {
+          account_id?: string | null
+          bank_account?: string | null
+          bank_holder?: string | null
+          bank_name?: string | null
+          buyer_company?: string | null
+          buyer_contact?: string | null
+          buyer_email?: string | null
+          buyer_phone?: string | null
+          channel?: string
+          created_at?: string
+          currency?: string
+          delivery_terms?: string | null
+          fx_rate?: number
+          id?: string
+          inquiry_id?: string | null
+          issuer?: string
+          lang?: string
+          quote_date?: string
+          quote_no: string
+          remarks?: string | null
+          seller_address?: string | null
+          seller_ceo?: string | null
+          seller_company?: string | null
+          seller_contact?: string | null
+          seller_email?: string | null
+          status?: string
+          subtotal?: number
+          total_amount?: number
+          updated_at?: string
+          valid_days?: number
+          vat_amount?: number
+          vat_rate?: number
+        }
+        Update: {
+          account_id?: string | null
+          bank_account?: string | null
+          bank_holder?: string | null
+          bank_name?: string | null
+          buyer_company?: string | null
+          buyer_contact?: string | null
+          buyer_email?: string | null
+          buyer_phone?: string | null
+          channel?: string
+          created_at?: string
+          currency?: string
+          delivery_terms?: string | null
+          fx_rate?: number
+          id?: string
+          inquiry_id?: string | null
+          issuer?: string
+          lang?: string
+          quote_date?: string
+          quote_no?: string
+          remarks?: string | null
+          seller_address?: string | null
+          seller_ceo?: string | null
+          seller_company?: string | null
+          seller_contact?: string | null
+          seller_email?: string | null
+          status?: string
+          subtotal?: number
+          total_amount?: number
+          updated_at?: string
+          valid_days?: number
+          vat_amount?: number
+          vat_rate?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "quotes_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "quotes_inquiry_id_fkey"
+            columns: ["inquiry_id"]
+            isOneToOne: false
+            referencedRelation: "inquiries"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sales_receipts: {
+        Row: {
+          amount: number
+          bank_account: string | null
+          created_at: string
+          id: string
+          memo: string | null
+          paid_date: string
+          voucher_id: string
+        }
+        Insert: {
+          amount?: number
+          bank_account?: string | null
+          created_at?: string
+          id?: string
+          memo?: string | null
+          paid_date?: string
+          voucher_id: string
+        }
+        Update: {
+          amount?: number
+          bank_account?: string | null
+          created_at?: string
+          id?: string
+          memo?: string | null
+          paid_date?: string
+          voucher_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sales_receipts_voucher_id_fkey"
+            columns: ["voucher_id"]
+            isOneToOne: false
+            referencedRelation: "sales_vouchers"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      sales_vouchers: {
+        Row: {
+          account_id: string | null
+          amount_foreign: number
+          amount_krw: number
+          channel: string
+          created_at: string
+          currency: string
+          description: string | null
+          fx_rate: number
+          id: string
+          memo: string | null
+          quote_id: string | null
+          receipt_status: string
+          tax_invoice_status: string
+          total_krw: number
+          updated_at: string
+          vat_amount: number
+          voucher_date: string
+        }
+        Insert: {
+          account_id?: string | null
+          amount_foreign?: number
+          amount_krw?: number
+          channel?: string
+          created_at?: string
+          currency?: string
+          description?: string | null
+          fx_rate?: number
+          id?: string
+          memo?: string | null
+          quote_id?: string | null
+          receipt_status?: string
+          tax_invoice_status?: string
+          total_krw?: number
+          updated_at?: string
+          vat_amount?: number
+          voucher_date?: string
+        }
+        Update: {
+          account_id?: string | null
+          amount_foreign?: number
+          amount_krw?: number
+          channel?: string
+          created_at?: string
+          currency?: string
+          description?: string | null
+          fx_rate?: number
+          id?: string
+          memo?: string | null
+          quote_id?: string | null
+          receipt_status?: string
+          tax_invoice_status?: string
+          total_krw?: number
+          updated_at?: string
+          vat_amount?: number
+          voucher_date?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sales_vouchers_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sales_vouchers_quote_id_fkey"
+            columns: ["quote_id"]
+            isOneToOne: false
+            referencedRelation: "quotes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      samples: {
+        Row: {
+          account_id: string | null
+          carrier: string | null
+          channel: string
+          created_at: string
+          feedback: string | null
+          id: string
+          item_name: string
+          qty: number
+          sent_date: string | null
+          test_status: string
+          tracking_no: string | null
+          unit: string
+          updated_at: string
+        }
+        Insert: {
+          account_id?: string | null
+          carrier?: string | null
+          channel?: string
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          item_name?: string
+          qty?: number
+          sent_date?: string | null
+          test_status?: string
+          tracking_no?: string | null
+          unit?: string
+          updated_at?: string
+        }
+        Update: {
+          account_id?: string | null
+          carrier?: string | null
+          channel?: string
+          created_at?: string
+          feedback?: string | null
+          id?: string
+          item_name?: string
+          qty?: number
+          sent_date?: string | null
+          test_status?: string
+          tracking_no?: string | null
+          unit?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "samples_account_id_fkey"
+            columns: ["account_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       suppressed_emails: {
         Row: {
