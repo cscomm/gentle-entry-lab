@@ -1,51 +1,46 @@
+# 관리자 문의 관리 모드
 
-## 목표
-업로드된 PDF(중텅 석영 샘플 카탈로그)를 기반으로 7개 새로운 실리카 분말 카테고리(총 13개 하위 모델)를 사이트에 등록. 한국어·영어·일본어 3개 언어 지원, 카테고리 바 재구성, SEO 프리렌더까지.
+## 무엇을 만드나
 
-## 신규 7개 카테고리 (슬러그 · 모델)
+홈페이지 문의 폼으로 들어온 문의를 메일 발송과 동시에 데이터베이스에 저장하고,
+비밀번호로 들어가는 관리자 화면에서 1:1 문의처럼 열어 보고 상태를 관리합니다.
 
-| # | 슬러그 | 카테고리 (KO/EN/JA) | 하위 모델 |
-|---|---|---|---|
-| 1 | `spherical-silica-powder` | 구형 실리카 분말 / Spherical Silica Powder / 球状シリカ粉末 | SL-QG · SL-QG-L |
-| 2 | `round-corner-silica-powder` | 원각 실리카 분말 / Round Corner Silica Powder / 円角シリカ粉末 | SL-YJG · SL-YRG |
-| 3 | `angular-silica-powder` | 각형 실리카 분말 / Angular Silica Powder / 角形シリカ粉末 | SL-RG · SL-JG |
-| 4 | `low-radiation-silica-powder` | 저방사 실리카 분말 / Low-α Silica Powder / 低放射シリカ粉末 | SL-CL · SL-FL |
-| 5 | `surface-modified-silica-powder` | 활성(표면개질) 실리카 분말 / Surface-Modified Silica Powder / 表面改質シリカ粉末 | SL-HJG · SL-HRG |
-| 6 | `silica-sand-granule` | 실리카 사 · 입자 / Silica Sand & Granule / シリカサンド・粒 | SL-CS · SL-FS |
-| 7 | `lead-free-glass-powder` | 무연유리분말 / Lead-Free Glass Powder / 無鉛ガラス粉末 | SL-ZT |
+## 관리자 화면
 
-원본 이름의 `SINO-` prefix를 모두 `SL-`로 변경.
+- 주소: 사이트 주소 끝에 `/admin` (예: `/ko/admin`), 검색엔진에는 노출되지 않게 처리
+- 진입 시 비밀번호 입력 (891122). 로그인 상태는 브라우저에 잠시 유지
+- 목록: 접수일 · 이름 · 회사 · 연락처 · 이메일 · 상태 · 문의 요약
+- 상단 필터 탭: 전체 / 대기중 / 진행중 / 완료 (각 건수 표시) + 이름·회사·이메일 검색
+- 한 건을 클릭하면 1:1 문의 형태의 상세 패널이 열림
+  - 문의 전체 내용, 연락처 정보(이메일·전화번호 클릭 시 바로 연결)
+  - 관리자 메모/답변 내용 입력 후 저장
+  - 상태 변경 버튼: 대기중 → 진행중 → 완료
+  - 처리 이력(마지막 수정 시각) 표시
 
-## 카테고리 바 순서 (요청대로)
-- **1행**: 전체 제품 · 구형 · 원각 · 각형 · 저방사 · 활성 · 실리카 사·입자 (1~6)
-- **2행**: A등급 · B등급 · C등급 · 침전 · 흄드 · 규사 · 규사분말 · 천연규석 · **무연유리분말**(끝)
-- **3행/끝**: 실리카겔 (아래로 이동)
+## 지난 문의
 
-## 이미지 처리
-PDF 내 각 시리즈 대표 SEM/제품 사진(img_pN_1.jpg)을 추출 → AI 이미지 편집으로:
-- 좌상단 파란 삼각형 "产品特点/Product Features" 리본 제거
-- 로고·워터마크 제거, 배경 정리, 선명도 향상
-- `src/assets/`에 저장 (7장, 각 카테고리 1장)
+이전 문의는 발송 기록만 남아 있어 이름과 문의 내용은 복구할 수 없습니다.
+대신 두 가지를 제공합니다.
 
-## 상세 페이지 구성
-각 상세 페이지에 아래 섹션 렌더:
-1. 히어로 (제품명·태그라인·대표사진)
-2. **하위 모델 표** (모델코드 · 원료/공법 · 대표 특성) — 규사 페이지와 동일 컨셉
-3. 기본 특성 및 화학 조성 스펙 카드
-4. 주요 특징 (Product Features) 아이콘 카드
-5. 주요 응용 분야 (기존 applications 렌더)
+- 발송 기록에 남아 있는 지난 문의(이메일 주소 + 접수일 약 112건)를 "보관" 상태로 불러오기
+- 관리자 화면에서 지난 문의를 직접 추가·수정할 수 있는 입력 폼
 
-## 파일 수정 목록
-- `src/data/products.ts` — 7개 신규 엔트리 추가 (KO/EN/JA), subModels 필드 확장
-- `src/pages/ProductDetail.tsx` — 하위 모델 테이블 렌더 로직 추가
-- `src/components/ProductCategoryBar.tsx` — 순서 재편, 2행 wrap 처리
-- `src/components/SiteHeader.tsx` — 제품 드롭다운에 7개 신규 항목
-- `src/pages/Index.tsx` — 제품 그리드에 신규 카테고리 추가
-- `scripts/prerender.ts` — 7개 신규 라우트 + 3개 언어 SEO 메타
-- `public/sitemap.xml` — 자동 재생성
+## 보안
 
-## 확인 요청
-1. **응용분야 페이지**: 신규 7개 카테고리에도 `/applications/{slug}/` 별도 페이지를 만들까요? 아니면 상세페이지 내 응용 분야 섹션만으로 충분한가요? (규사·분말은 상세페이지 응용 섹션을 지운 상태)
-2. **이미지 톤**: PDF 이미지가 SEM 흑백 사진이 대부분입니다. 그대로 유지 vs 컬러 톤 보정 중 어느 쪽이 좋을까요?
+- 문의 내용은 일반 방문자가 절대 읽을 수 없도록 잠그고, 관리자 화면은 서버에서
+  비밀번호를 확인한 뒤에만 데이터를 내려줍니다. 비밀번호는 코드가 아닌
+  서버 비밀값으로 저장합니다.
+- 문의 접수(쓰기)만 누구나 가능하고, 조회·수정은 관리자 경로만 가능합니다.
 
-승인 주시면 순서대로 진행하겠습니다.
+## 기술 메모
+
+- 새 테이블 `public.inquiries`: name, phone, email, company, message, status
+  (`pending|in_progress|done|archived`), admin_note, created_at, updated_at.
+  anon은 INSERT만, SELECT/UPDATE 권한 없음.
+- 새 엣지 함수 `admin-inquiries` (verify_jwt=false): 액션 `login`, `list`, `update`,
+  `create`, `backfill`. 요청마다 비밀번호를 검증하고 service role로 조회/수정.
+  비밀번호는 시크릿 `ADMIN_PANEL_PASSWORD`.
+- `src/pages/Index.tsx` 문의 제출 시 `inquiries` insert 후 기존 메일 발송 유지
+  (insert 실패해도 메일 발송은 진행).
+- 새 페이지 `src/pages/Admin.tsx`, `App.tsx` LangShell에 `admin` 라우트 추가,
+  `robots.txt`에 `/admin` disallow. 프리렌더 목록에는 추가하지 않음.
