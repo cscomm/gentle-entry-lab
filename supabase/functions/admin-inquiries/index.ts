@@ -88,7 +88,8 @@ Deno.serve(async (req) => {
         company: body.company ? String(body.company).slice(0, 200) : null,
         message: String(body.message ?? '').slice(0, 5000),
         status: typeof body.status === 'string' && STATUSES.includes(body.status) ? body.status : 'pending',
-        source: 'manual',
+        source: typeof body.source === 'string' && body.source ? body.source.slice(0, 50) : 'manual',
+        channel: typeof body.channel === 'string' && body.channel ? body.channel.slice(0, 30) : 'silica',
         ...(typeof body.created_at === 'string' && body.created_at ? { created_at: body.created_at } : {}),
       }
       const { data, error } = await supabase.from('inquiries').insert(row).select().maybeSingle()
