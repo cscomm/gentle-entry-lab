@@ -29,6 +29,8 @@ import Board from "./pages/Board.tsx";
 import BoardNew from "./pages/BoardNew.tsx";
 import BoardDetail from "./pages/BoardDetail.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
+import Admin from "./pages/Admin.tsx";
+
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CanonicalUrl from "./components/CanonicalUrl";
 import { detectInitialLang, isLang, SUPPORTED_LANGS } from "./lib/i18nRouting";
@@ -82,6 +84,8 @@ const LangShell = () => {
       <Route path="board/new" element={<BoardNew />} />
       <Route path="board/:id" element={<BoardDetail />} />
       <Route path="unsubscribe" element={<Unsubscribe />} />
+      <Route path="admin" element={<Admin />} />
+
       <Route path="*" element={<NotFound />} />
     </Routes>
     </>
