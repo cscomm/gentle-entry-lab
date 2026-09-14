@@ -186,6 +186,22 @@ const Index = () => {
     try {
       const inquiryId = crypto.randomUUID();
 
+      // 0) 관리자 모드에서 조회할 수 있도록 문의 내용 저장 (실패해도 메일 발송은 진행)
+      try {
+        await supabase.from("inquiries").insert({
+          id: inquiryId,
+          name: form.name,
+          phone: form.phone,
+          email: form.email || null,
+          company: form.company || null,
+          message: form.message,
+          status: "pending",
+        });
+      } catch (dbError) {
+        console.error("Inquiry save failed", dbError);
+      }
+
+
       // 1) 관리자에게 알림 메일 (cscomm@naver.com)
       const adminRes = await supabase.functions.invoke("send-transactional-email", {
         body: {
