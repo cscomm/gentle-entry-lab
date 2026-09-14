@@ -19,3 +19,6 @@ verify_jwt = false
 
 [functions.admin-inquiries]
 verify_jwt = false
+
+[functions.admin-crm]
+verify_jwt = false
