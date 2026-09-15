@@ -1,4 +1,5 @@
 import { ISSUERS, type Issuer, type Quote, type QuoteItem, type SalesVoucher, won } from "./shared";
+import SealStamp from "./SealStamp";
 
 interface Props {
   quote: Quote;
@@ -26,13 +27,16 @@ const TransactionDocument = ({ quote, voucher, items }: Props) => {
       <div className="mb-5 grid grid-cols-2 gap-4">
         <section className="border border-neutral-300">
           <h2 className="border-b border-neutral-300 bg-neutral-100 px-3 py-1.5 text-[11px] font-bold tracking-widest">공 급 자</h2>
-          <dl className="space-y-1 p-3 text-[12px]">
+          <dl className="relative space-y-1 p-3 text-[12px]">
             <div><span className="text-neutral-500">상호:</span> {issuer.company}</div>
             <div><span className="text-neutral-500">등록번호:</span> {issuer.bizNo}</div>
             <div><span className="text-neutral-500">대표자:</span> {issuer.ceo}</div>
             <div><span className="text-neutral-500">주소:</span> {issuer.address}</div>
             <div><span className="text-neutral-500">업태:</span> {issuer.bizType}</div>
             <div><span className="text-neutral-500">종목:</span> {issuer.bizItem}</div>
+            {quote.issuer === "silica" && (
+              <div className="absolute right-3 top-3"><SealStamp size={54} /></div>
+            )}
           </dl>
         </section>
         <section className="border border-neutral-300">
@@ -78,7 +82,10 @@ const TransactionDocument = ({ quote, voucher, items }: Props) => {
         <div className="border border-neutral-300 p-3">
           <p className="font-bold">공급자 확인</p>
           <p className="mt-2">{issuer.company} · 대표 {issuer.ceo}</p>
-          <p className="mt-6 border-t border-dashed border-neutral-300 pt-1 text-right text-neutral-400">(인)</p>
+          <div className="mt-6 flex items-end justify-between border-t border-dashed border-neutral-300 pt-1">
+            <span className="text-neutral-400">(인)</span>
+            {quote.issuer === "silica" && <SealStamp size={52} />}
+          </div>
         </div>
         <div className="border border-neutral-300 p-3">
           <p className="font-bold">인수자 확인</p>

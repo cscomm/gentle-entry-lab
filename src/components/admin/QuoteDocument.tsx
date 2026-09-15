@@ -1,4 +1,5 @@
 import { ISSUERS, type Issuer, type QuoteItem, won } from "./shared";
+import SealStamp from "./SealStamp";
 
 const L = {
   ko: {
@@ -211,11 +212,15 @@ const QuoteDocument = ({ data, items }: { data: QuoteDocData; items: QuoteItem[]
       </div>
 
       <div className="mt-6 grid grid-cols-2 gap-4 text-[12px]">
-        <div className="border border-neutral-300 p-3">
+        <div className="relative border border-neutral-300 p-3">
           <div className="mb-2 text-[11px] font-bold tracking-widest">{t.sellerSign}</div>
           <div>{t.company}: {sellerName}</div>
+          <div>{t.ceo}: {iss.ceo}</div>
           <div>{t.contactPerson}: {data.seller_contact || iss.contact}</div>
-          <div className="mt-6 border-t border-dashed border-neutral-300 pt-1 text-right text-neutral-400">(sign)</div>
+          <div className="mt-6 flex items-end justify-between border-t border-dashed border-neutral-300 pt-1">
+            <span className="text-neutral-400">(sign)</span>
+            {data.issuer === "silica" && <SealStamp size={52} />}
+          </div>
         </div>
         <div className="border border-neutral-300 p-3">
           <div className="mb-2 text-[11px] font-bold tracking-widest">{t.buyerSign}</div>
