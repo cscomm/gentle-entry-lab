@@ -1,4 +1,5 @@
 import { ISSUERS, type Issuer, type Quote, type QuoteItem, type SalesVoucher, won } from "./shared";
+import SealStamp from "./SealStamp";
 
 interface Props {
   quote: Quote;

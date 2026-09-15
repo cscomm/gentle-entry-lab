@@ -1,4 +1,5 @@
 import { ISSUERS, type Issuer, type QuoteItem, won } from "./shared";
+import SealStamp from "./SealStamp";
 
 const L = {
   ko: {
