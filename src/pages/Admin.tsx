@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { BarChart3, Download, FileText, FlaskConeIcon, Lock, LogOut, MessageSquare, RefreshCw, Users, Wallet } from "lucide-react";
+import { BarChart3, Download, FileText, FlaskConical, Lock, LogOut, MessageSquare, RefreshCw, Users, Wallet } from "lucide-react";
 import { PW_KEY, inquiryApi } from "@/components/admin/shared";
 import { useAdminData, type Inquiry } from "@/components/admin/useAdminData";
 import InquiriesTab from "@/components/admin/InquiriesTab";
@@ -19,7 +19,7 @@ const TABS: { key: Tab; label: string; icon: typeof Users }[] = [
   { key: "inquiries", label: "문의 관리", icon: MessageSquare },
   { key: "accounts", label: "거래처 관리", icon: Users },
   { key: "quotes", label: "견적서", icon: FileText },
-  { key: "samples", label: "샘플 관리", icon: FlaskConeIcon },
+  { key: "samples", label: "샘플 관리", icon: FlaskConical },
   { key: "finance", label: "매출 · 매입 · 수금", icon: Wallet },
 ];
 

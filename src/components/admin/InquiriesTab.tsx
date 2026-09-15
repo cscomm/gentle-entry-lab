@@ -203,7 +203,7 @@ const InquiriesTab = ({ store, reload, onOpenAccount, onQuoteFromInquiry }: Prop
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <Pills
           value={filter}
-          onChange={setFilter}
+          onChange={(v) => setFilter(v as typeof filter)}
           items={[
             { key: "all" as const, label: "전체", count: counts.all },
             { key: "pending" as const, label: "대기중", count: counts.pending },

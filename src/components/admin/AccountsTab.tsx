@@ -201,7 +201,7 @@ const AccountsTab = ({ store, reload, focusId, onFocused, onQuoteForAccount }: P
       <div className="mb-4 flex flex-wrap items-center gap-2">
         <Pills
           value={typeFilter}
-          onChange={setTypeFilter}
+          onChange={(v) => setTypeFilter(v as "all" | "customer" | "supplier")}
           items={[
             { key: "all" as const, label: "전체", count: counts.all },
             { key: "customer" as const, label: "매출처/고객", count: counts.customer },
