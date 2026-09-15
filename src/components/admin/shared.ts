@@ -23,9 +23,9 @@ export const asChannel = (v: string | null | undefined): Channel =>
 
 export const ISSUERS = {
   silica: {
-    label: "주식회사 실리카",
-    company: "주식회사 실리카",
-    companyEn: "SILICA Co., Ltd.",
+    label: "주식회사 비에이알",
+    company: "주식회사 비에이알",
+    companyEn: "BAR Co., Ltd.",
     ceo: "최은성",
     address: "경기도 화성시",
     email: "info@silica.co.kr",
