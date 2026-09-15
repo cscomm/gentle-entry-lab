@@ -82,7 +82,10 @@ const TransactionDocument = ({ quote, voucher, items }: Props) => {
         <div className="border border-neutral-300 p-3">
           <p className="font-bold">공급자 확인</p>
           <p className="mt-2">{issuer.company} · 대표 {issuer.ceo}</p>
-          <p className="mt-6 border-t border-dashed border-neutral-300 pt-1 text-right text-neutral-400">(인)</p>
+          <div className="mt-6 flex items-end justify-between border-t border-dashed border-neutral-300 pt-1">
+            <span className="text-neutral-400">(인)</span>
+            {quote.issuer === "silica" && <SealStamp size={52} />}
+          </div>
         </div>
         <div className="border border-neutral-300 p-3">
           <p className="font-bold">인수자 확인</p>
