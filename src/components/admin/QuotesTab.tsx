@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Plus, Printer, Trash2, X } from "lucide-react";
+import { CheckCircle2, PackageCheck, Plus, Printer, Trash2, X } from "lucide-react";
 import {
   CHANNELS,
   CHANNEL_LABEL,
@@ -286,6 +286,66 @@ const QuotesTab = ({ store, reload, draft, onDraftConsumed }: Props) => {
     await reload();
   };
 
+  const nextTransactionNo = (date: string) => {
+    const prefix = `TR-${date.replace(/-/g, "")}`;
+    const count = store.salesVouchers.filter((voucher) => voucher.transaction_no?.startsWith(prefix)).length + 1;
+    return `${prefix}-${String(count).padStart(2, "0")}`;
+  };
+
+  const ensureSalesVoucher = async (quote: Quote) => {
+    const existing = store.salesVouchers.find((voucher) => voucher.quote_id === quote.id);
+    if (existing) return existing;
+    const quoteItems = store.quoteItems.filter((item) => item.quote_id === quote.id);
+    const rate = quote.currency === "KRW" ? 1 : Number(quote.fx_rate || 1);
+    const date = today();
+    const result = await crm({
+      action: "create",
+      table: "sales_vouchers",
+      values: {
+        account_id: quote.account_id,
+        quote_id: quote.id,
+        channel: quote.channel,
+        voucher_date: date,
+        description: quoteItems.map((item) => item.item_name).filter(Boolean).join(", ") || quote.quote_no,
+        currency: quote.currency,
+        fx_rate: rate,
+        amount_foreign: Number(quote.subtotal),
+        amount_krw: Math.round(Number(quote.subtotal) * rate),
+        vat_amount: Math.round(Number(quote.vat_amount) * rate),
+        total_krw: Math.round(Number(quote.total_amount) * rate),
+        receipt_status: "unpaid",
+        tax_invoice_status: "none",
+        transaction_no: nextTransactionNo(date),
+        delivery_date: date,
+        memo: `견적 ${quote.quote_no}에서 자동 생성`,
+      },
+    });
+    return result.row;
+  };
+
+  const advanceOrder = async (quote: Quote, status: "order_confirmed" | "shipped") => {
+    try {
+      const now = new Date().toISOString();
+      const voucher = await ensureSalesVoucher(quote);
+      const quoteValues = status === "order_confirmed"
+        ? { status, order_confirmed_at: quote.order_confirmed_at ?? now }
+        : { status, order_confirmed_at: quote.order_confirmed_at ?? now, shipped_at: now };
+      await crm({ action: "update", table: "quotes", id: quote.id, values: quoteValues });
+      if (status === "shipped" && voucher?.id) {
+        await crm({
+          action: "update",
+          table: "sales_vouchers",
+          id: voucher.id,
+          values: { delivery_date: today() },
+        });
+      }
+      await reload();
+      toast({ title: status === "order_confirmed" ? "주문을 확정하고 매출 전표를 만들었습니다" : "출고 완료로 변경했습니다" });
+    } catch {
+      toast({ title: "진행 상태를 변경하지 못했습니다", variant: "destructive" });
+    }
+  };
+
   const previewQuote = store.quotes.find((q) => q.id === previewId) ?? null;
   const previewItems = previewQuote ? store.quoteItems.filter((i) => i.quote_id === previewQuote.id) : [];
 
@@ -300,9 +360,23 @@ const QuotesTab = ({ store, reload, draft, onDraftConsumed }: Props) => {
             <Printer className="mr-1.5 h-3.5 w-3.5" /> 인쇄 · PDF 저장
           </Button>
           <Button size="sm" variant="outline" onClick={() => openEdit(previewQuote)}>수정</Button>
+          {!store.salesVouchers.some((voucher) => voucher.quote_id === previewQuote.id) && previewQuote.status !== "lost" && (
+            <Button size="sm" variant="outline" onClick={() => advanceOrder(previewQuote, "order_confirmed")}>
+              <CheckCircle2 className="mr-1.5 h-3.5 w-3.5" /> 주문 확정
+            </Button>
+          )}
+          {store.salesVouchers.some((voucher) => voucher.quote_id === previewQuote.id) && previewQuote.status !== "shipped" && (
+            <Button size="sm" variant="outline" onClick={() => advanceOrder(previewQuote, "shipped")}>
+              <PackageCheck className="mr-1.5 h-3.5 w-3.5" /> 출고 완료
+            </Button>
+          )}
           <Select
             value={previewQuote.status}
             onChange={async (v) => {
+              if (v === "order_confirmed" || v === "shipped") {
+                await advanceOrder(previewQuote, v);
+                return;
+              }
               await crm({ action: "update", table: "quotes", id: previewQuote.id, values: { status: v } });
               await reload();
             }}
