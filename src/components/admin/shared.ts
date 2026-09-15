@@ -26,8 +26,11 @@ export const ISSUERS = {
     label: "주식회사 비에이알",
     company: "주식회사 비에이알",
     companyEn: "BAR Co., Ltd.",
-    ceo: "최은성",
-    address: "경기도 화성시",
+    bizNo: "565-88-02541",
+    ceo: "박금수",
+    address: "전라북도 진안군 동향면 동계로 328",
+    bizType: "제조업, 도매 및 소매업",
+    bizItem: "비금속광물 광업, 도소매업, 광물",
     email: "info@silica.co.kr",
     contact: "송인재 (010-8884-2773)",
     prefix: "SIL",
@@ -36,8 +39,11 @@ export const ISSUERS = {
     label: "나노코리아",
     company: "나노코리아",
     companyEn: "NANO KOREA",
+    bizNo: "",
     ceo: "최은성",
     address: "경기도 화성시",
+    bizType: "",
+    bizItem: "",
     email: "info@silica.co.kr",
     contact: "송인재 (010-8884-2773)",
     prefix: "NK",
@@ -110,7 +116,9 @@ export interface Quote {
   fx_rate: number;
   quote_date: string;
   valid_days: number;
-  status: "draft" | "sent" | "won" | "lost";
+  status: "draft" | "sent" | "won" | "order_confirmed" | "shipped" | "lost";
+  order_confirmed_at: string | null;
+  shipped_at: string | null;
   buyer_company: string | null;
   buyer_contact: string | null;
   buyer_phone: string | null;
@@ -159,6 +167,10 @@ export interface SalesVoucher {
   total_krw: number;
   receipt_status: "unpaid" | "partial" | "paid";
   tax_invoice_status: string;
+  transaction_no: string | null;
+  delivery_date: string | null;
+  tax_invoice_requested_at: string | null;
+  tax_invoice_issued_at: string | null;
   memo: string | null;
 }
 
@@ -202,6 +214,8 @@ export const QUOTE_STATUS: Record<string, string> = {
   draft: "작성중",
   sent: "발송완료",
   won: "계약성사",
+  order_confirmed: "주문 확정",
+  shipped: "출고 완료",
   lost: "거절",
 };
 
@@ -209,6 +223,8 @@ export const QUOTE_STATUS_STYLE: Record<string, string> = {
   draft: "bg-muted text-muted-foreground border-border",
   sent: "bg-sky-100 text-sky-800 border-sky-200",
   won: "bg-emerald-100 text-emerald-800 border-emerald-200",
+  order_confirmed: "bg-amber-100 text-amber-800 border-amber-200",
+  shipped: "bg-teal-100 text-teal-800 border-teal-200",
   lost: "bg-rose-100 text-rose-800 border-rose-200",
 };
 
@@ -220,6 +236,7 @@ export const RECEIPT_STATUS: Record<string, string> = {
 
 export const TAX_INVOICE_STATUS: Record<string, string> = {
   none: "미발행",
+  requested: "발행 요청",
   issued: "세금계산서 발행완료",
   zero_rate: "영세율",
   cash_receipt: "현금영수증",

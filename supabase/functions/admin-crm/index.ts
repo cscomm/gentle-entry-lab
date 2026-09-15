@@ -24,13 +24,14 @@ const TABLES: Record<string, string[]> = {
     'quote_date', 'valid_days', 'status', 'buyer_company', 'buyer_contact', 'buyer_phone',
     'buyer_email', 'delivery_terms', 'seller_company', 'seller_ceo', 'seller_address',
     'seller_email', 'seller_contact', 'remarks', 'bank_name', 'bank_account', 'bank_holder',
-    'vat_rate', 'subtotal', 'vat_amount', 'total_amount',
+    'vat_rate', 'subtotal', 'vat_amount', 'total_amount', 'order_confirmed_at', 'shipped_at',
   ],
   quote_items: ['quote_id', 'sort_order', 'item_name', 'spec', 'qty', 'unit', 'unit_price', 'amount'],
   sales_vouchers: [
     'account_id', 'quote_id', 'channel', 'voucher_date', 'description', 'currency', 'fx_rate',
     'amount_foreign', 'amount_krw', 'vat_amount', 'total_krw', 'receipt_status',
-    'tax_invoice_status', 'memo',
+    'tax_invoice_status', 'transaction_no', 'delivery_date', 'tax_invoice_requested_at',
+    'tax_invoice_issued_at', 'memo',
   ],
   sales_receipts: ['voucher_id', 'paid_date', 'amount', 'bank_account', 'memo'],
   purchase_vouchers: [
