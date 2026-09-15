@@ -533,6 +533,7 @@ export type Database = {
           inquiry_id: string | null
           issuer: string
           lang: string
+          order_confirmed_at: string | null
           quote_date: string
           quote_no: string
           remarks: string | null
@@ -541,6 +542,7 @@ export type Database = {
           seller_company: string | null
           seller_contact: string | null
           seller_email: string | null
+          shipped_at: string | null
           status: string
           subtotal: number
           total_amount: number
@@ -567,6 +569,7 @@ export type Database = {
           inquiry_id?: string | null
           issuer?: string
           lang?: string
+          order_confirmed_at?: string | null
           quote_date?: string
           quote_no: string
           remarks?: string | null
@@ -575,6 +578,7 @@ export type Database = {
           seller_company?: string | null
           seller_contact?: string | null
           seller_email?: string | null
+          shipped_at?: string | null
           status?: string
           subtotal?: number
           total_amount?: number
@@ -601,6 +605,7 @@ export type Database = {
           inquiry_id?: string | null
           issuer?: string
           lang?: string
+          order_confirmed_at?: string | null
           quote_date?: string
           quote_no?: string
           remarks?: string | null
@@ -609,6 +614,7 @@ export type Database = {
           seller_company?: string | null
           seller_contact?: string | null
           seller_email?: string | null
+          shipped_at?: string | null
           status?: string
           subtotal?: number
           total_amount?: number
@@ -680,14 +686,18 @@ export type Database = {
           channel: string
           created_at: string
           currency: string
+          delivery_date: string | null
           description: string | null
           fx_rate: number
           id: string
           memo: string | null
           quote_id: string | null
           receipt_status: string
+          tax_invoice_issued_at: string | null
+          tax_invoice_requested_at: string | null
           tax_invoice_status: string
           total_krw: number
+          transaction_no: string | null
           updated_at: string
           vat_amount: number
           voucher_date: string
@@ -699,14 +709,18 @@ export type Database = {
           channel?: string
           created_at?: string
           currency?: string
+          delivery_date?: string | null
           description?: string | null
           fx_rate?: number
           id?: string
           memo?: string | null
           quote_id?: string | null
           receipt_status?: string
+          tax_invoice_issued_at?: string | null
+          tax_invoice_requested_at?: string | null
           tax_invoice_status?: string
           total_krw?: number
+          transaction_no?: string | null
           updated_at?: string
           vat_amount?: number
           voucher_date?: string
@@ -718,14 +732,18 @@ export type Database = {
           channel?: string
           created_at?: string
           currency?: string
+          delivery_date?: string | null
           description?: string | null
           fx_rate?: number
           id?: string
           memo?: string | null
           quote_id?: string | null
           receipt_status?: string
+          tax_invoice_issued_at?: string | null
+          tax_invoice_requested_at?: string | null
           tax_invoice_status?: string
           total_krw?: number
+          transaction_no?: string | null
           updated_at?: string
           vat_amount?: number
           voucher_date?: string

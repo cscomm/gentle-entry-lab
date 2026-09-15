@@ -11,6 +11,9 @@ const L = {
     seller: "공 급 자",
     buyer: "수 신 처",
     company: "회사명",
+    bizNo: "사업자등록번호",
+    bizType: "업태",
+    bizItem: "종목",
     ceo: "대표자",
     address: "주소",
     email: "이메일",
@@ -43,6 +46,9 @@ const L = {
     seller: "SELLER",
     buyer: "BUYER (TO)",
     company: "Company",
+    bizNo: "Business Registration No.",
+    bizType: "Business Type",
+    bizItem: "Business Item",
     ceo: "Representative",
     address: "Address",
     email: "E-mail",
@@ -124,8 +130,11 @@ const QuoteDocument = ({ data, items }: { data: QuoteDocData; items: QuoteItem[]
           </div>
           <dl className="space-y-1 p-3 text-[12px]">
             <div><span className="text-neutral-500">{t.company}:</span> {sellerName}</div>
+            {iss.bizNo && <div><span className="text-neutral-500">{t.bizNo}:</span> {iss.bizNo}</div>}
             <div><span className="text-neutral-500">{t.ceo}:</span> {iss.ceo}</div>
             <div><span className="text-neutral-500">{t.address}:</span> {iss.address}</div>
+            {iss.bizType && <div><span className="text-neutral-500">{t.bizType}:</span> {iss.bizType}</div>}
+            {iss.bizItem && <div><span className="text-neutral-500">{t.bizItem}:</span> {iss.bizItem}</div>}
             <div><span className="text-neutral-500">{t.email}:</span> {iss.email}</div>
           </dl>
         </div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Download, Plus, Trash2 } from "lucide-react";
+import { Download, FileText, Plus, Printer, Trash2, X } from "lucide-react";
 import {
   CHANNELS,
   CHANNEL_LABEL,
@@ -23,6 +23,7 @@ import {
 } from "./shared";
 import { Badge, Empty, Field, Panel, Pills, Select } from "./ui";
 import type { AdminStore } from "./useAdminData";
+import TransactionDocument from "./TransactionDocument";
 
 const channelOptions = CHANNELS.map((c) => ({ value: c, label: CHANNEL_LABEL[c] }));
 const currencyOptions = CURRENCIES.map((c) => ({ value: c, label: c }));
@@ -59,6 +60,7 @@ const FinanceTab = ({ store, reload }: Props) => {
   const [form, setForm] = useState({ ...blankVoucher });
   const [openId, setOpenId] = useState<string | null>(null);
   const [money, setMoney] = useState({ paid_date: today(), amount: "", bank_account: "", memo: "" });
+  const [statementId, setStatementId] = useState<string | null>(null);
 
   const accountOptions = useMemo(
     () => [
@@ -162,6 +164,14 @@ const FinanceTab = ({ store, reload }: Props) => {
     await reload();
   };
 
+  const updateTaxInvoice = async (id: string, status: string) => {
+    const now = new Date().toISOString();
+    const values: Record<string, unknown> = { tax_invoice_status: status };
+    if (status === "requested") values.tax_invoice_requested_at = now;
+    if (status === "issued") values.tax_invoice_issued_at = now;
+    await patch(id, values);
+  };
+
   const exportCsv = () => {
     const name = (id: string | null) => store.accounts.find((a) => a.id === id)?.company_name ?? "";
     if (mode === "sales") {
@@ -205,6 +215,33 @@ const FinanceTab = ({ store, reload }: Props) => {
       ]);
     }
   };
+
+  const statementVoucher = store.salesVouchers.find((voucher) => voucher.id === statementId) ?? null;
+  const statementQuote = statementVoucher
+    ? store.quotes.find((quote) => quote.id === statementVoucher.quote_id) ?? null
+    : null;
+
+  if (statementVoucher && statementQuote) {
+    return (
+      <div>
+        <div className="mb-3 flex flex-wrap items-center gap-2 print:hidden">
+          <Button size="sm" variant="outline" onClick={() => setStatementId(null)}>
+            <X className="mr-1.5 h-3.5 w-3.5" /> 목록으로
+          </Button>
+          <Button size="sm" onClick={() => window.print()}>
+            <Printer className="mr-1.5 h-3.5 w-3.5" /> 인쇄 · PDF 저장
+          </Button>
+        </div>
+        <div className="rounded-xl border bg-white p-2 print:border-0 print:p-0">
+          <TransactionDocument
+            quote={statementQuote}
+            voucher={statementVoucher}
+            items={store.quoteItems.filter((item) => item.quote_id === statementQuote.id)}
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -329,7 +366,7 @@ const FinanceTab = ({ store, reload }: Props) => {
                     {mode === "sales" ? (
                       <>
                         <Select value={v.receipt_status} onChange={(val) => patch(v.id, { receipt_status: val })} options={opts(RECEIPT_STATUS)} className="h-8 w-28" />
-                        <Select value={v.tax_invoice_status} onChange={(val) => patch(v.id, { tax_invoice_status: val })} options={opts(TAX_INVOICE_STATUS)} className="h-8 w-44" />
+                        <Select value={v.tax_invoice_status} onChange={(val) => updateTaxInvoice(v.id, val)} options={opts(TAX_INVOICE_STATUS)} className="h-8 w-44" />
                       </>
                     ) : (
                       <>
@@ -340,12 +377,24 @@ const FinanceTab = ({ store, reload }: Props) => {
                     <Button size="sm" variant="ghost" className="text-destructive" onClick={() => remove(v.id)}>
                       <Trash2 className="h-3.5 w-3.5" />
                     </Button>
+                    {mode === "sales" && v.transaction_no && (
+                      <Button size="sm" variant="outline" onClick={() => setStatementId(v.id)}>
+                        <FileText className="mr-1.5 h-3.5 w-3.5" /> 거래명세표
+                      </Button>
+                    )}
                   </div>
                 </div>
                 <p className="mt-1 text-xs text-muted-foreground">
                   {v.description || "내용 없음"} · {mode === "sales" ? "수금" : "지급"} {won(paid)}원 ·{" "}
                   {mode === "sales" ? "미수금" : "미지급"} {won(Math.max(0, outstanding))}원
                 </p>
+                {mode === "sales" && v.transaction_no && (
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    {v.transaction_no} · 출고일 {v.delivery_date || v.voucher_date}
+                    {v.tax_invoice_requested_at ? ` · 발행 요청 ${v.tax_invoice_requested_at.slice(0, 10)}` : ""}
+                    {v.tax_invoice_issued_at ? ` · 발행 완료 ${v.tax_invoice_issued_at.slice(0, 10)}` : ""}
+                  </p>
+                )}
                 <button
                   className="mt-1.5 text-xs text-muted-foreground underline-offset-2 hover:underline"
                   onClick={() => setOpenId(openId === v.id ? null : v.id)}

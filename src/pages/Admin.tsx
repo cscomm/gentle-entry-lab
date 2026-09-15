@@ -131,7 +131,7 @@ const Admin = () => {
 
   return (
     <main className="min-h-screen bg-muted/20 px-4 py-8 md:px-8">
-      <style>{`@media print { body * { visibility: hidden; } #quote-print, #quote-print * { visibility: visible; } #quote-print { position: absolute; left: 0; top: 0; width: 100%; } }`}</style>
+      <style>{`@media print { body * { visibility: hidden; } #quote-print, #quote-print *, #transaction-print, #transaction-print * { visibility: visible; } #quote-print, #transaction-print { position: absolute; left: 0; top: 0; width: 100%; } }`}</style>
       <div className="mx-auto max-w-7xl">
         <header className="mb-5 flex flex-wrap items-center justify-between gap-3 print:hidden">
           <div>
