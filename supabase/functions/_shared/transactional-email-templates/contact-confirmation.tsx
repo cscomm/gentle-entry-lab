@@ -29,9 +29,6 @@ const ContactConfirmationEmail = ({ name, message }: ContactConfirmationProps) =
             <Text style={quoteText}>{message}</Text>
           </Section>
         ) : null}
-        <Text style={text}>
-          추가 문의 사항이 있으시면 본 메일에 회신해 주시거나 31-356-5682로 연락 주십시오.
-        </Text>
         <Text style={footer}>— {SITE_NAME} 드림</Text>
       </Container>
     </Body>
