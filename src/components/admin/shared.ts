@@ -27,7 +27,7 @@ export const ISSUERS = {
     company: "주식회사 비에이알",
     companyEn: "BAR Co., Ltd.",
     bizNo: "565-88-02541",
-    ceo: "박금수",
+    ceo: "박균수",
     address: "전라북도 진안군 동향면 동계로 328",
     bizType: "제조업, 도매 및 소매업",
     bizItem: "비금속광물 광업, 도소매업, 광물",
