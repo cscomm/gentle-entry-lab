@@ -835,7 +835,7 @@ export const routes: Route[] = [
     path: "/",
     title: "용융실리카·규사·흄드.침전실리카.실리카졸겔 전문|SILICA",
     description:
-      "실리카는 용융실리카,실리카샌드.규사.침전실리카,흄드실리카.실리카 졸,실리카겔 등 다양한 실리카 소재 전문기업입니다./SILICA",
+      "실리카·고순도 실리카·SILICA·용융실리카·규사·침전실리카·실리카겔",
     titleI18n: {
       en: "High-Purity Fused Silica, Silica Sand, Fumed & Precipitated Silica Supplier | SILICA",
       ja: "溶融シリカ・珪砂・ヒュームド/沈降シリカ・シリカゲル 専門メーカー | SILICA",
