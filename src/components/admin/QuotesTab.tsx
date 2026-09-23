@@ -508,9 +508,9 @@ const QuotesTab = ({ store, reload, draft, onDraftConsumed }: Props) => {
               <div key={idx} className="grid gap-2 sm:grid-cols-[2fr_1fr_0.7fr_0.7fr_1fr_1fr_auto]">
                 <Input placeholder="품명" value={it.item_name} onChange={(e) => setItem(idx, { item_name: e.target.value })} />
                 <Input placeholder="규격" value={it.spec ?? ""} onChange={(e) => setItem(idx, { spec: e.target.value })} />
-                <Input placeholder="수량" value={String(it.qty ?? "")} onChange={(e) => setItem(idx, { qty: num(e.target.value) })} />
+                <NumberInput placeholder="수량" value={it.qty} onValueChange={(v) => setItem(idx, { qty: v })} />
                 <Select value={it.unit} onChange={(v) => setItem(idx, { unit: v })} options={unitOptions} />
-                <Input placeholder="단가" value={String(it.unit_price ?? "")} onChange={(e) => setItem(idx, { unit_price: num(e.target.value) })} />
+                <NumberInput placeholder="단가" value={it.unit_price} onValueChange={(v) => setItem(idx, { unit_price: v })} />
                 <Input readOnly value={won(num(it.qty) * num(it.unit_price))} className="bg-muted/50 text-right" />
                 <Button variant="ghost" size="sm" onClick={() => setItems(items.filter((_, i) => i !== idx))}>
                   <Trash2 className="h-3.5 w-3.5" />
