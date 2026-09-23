@@ -833,7 +833,7 @@ export const productRoutes: Route[] = [
 export const routes: Route[] = [
   {
     path: "/",
-    title: "용융실리카·규사·흄드.침전실리카.실리카졸겔 전문|SILICA",
+    title: "실리카·고순도 실리카·용융실리카·규사·침전실리카·실리카겔 전문 | SILICA",
     description:
       "실리카·고순도 실리카·SILICA·용융실리카·규사·침전실리카·실리카겔",
     titleI18n: {
