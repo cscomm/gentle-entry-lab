@@ -1,4 +1,46 @@
+import { useState } from "react";
 import type { ReactNode } from "react";
+import { Input } from "@/components/ui/input";
+import { num } from "./shared";
+
+const NUMERIC_TEXT = /^[0-9.,]*$/;
+
+/**
+ * Numeric text field that keeps the exact keystrokes while focused, so typing a
+ * decimal ("1.", "1.5") is never swallowed by re-formatting the parsed number.
+ * The parsed value is reported on every change; the raw text is dropped on blur.
+ */
+export const NumberInput = ({
+  value,
+  onValueChange,
+  placeholder,
+  className = "",
+}: {
+  value: number | null | undefined;
+  onValueChange: (v: number) => void;
+  placeholder?: string;
+  className?: string;
+}) => {
+  const [raw, setRaw] = useState<string | null>(null);
+  const current = value ?? 0;
+  const shown =
+    raw !== null ? (num(raw) === current ? raw : String(current)) : current === 0 ? "" : String(current);
+  return (
+    <Input
+      inputMode="decimal"
+      placeholder={placeholder}
+      value={shown}
+      onChange={(e) => {
+        const text = e.target.value;
+        if (!NUMERIC_TEXT.test(text)) return;
+        setRaw(text);
+        onValueChange(num(text));
+      }}
+      onBlur={() => setRaw(null)}
+      className={className}
+    />
+  );
+};
 
 export const Panel = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
   <div className={`rounded-xl border bg-background p-5 ${className}`}>{children}</div>
