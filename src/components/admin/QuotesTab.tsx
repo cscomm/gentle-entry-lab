@@ -22,7 +22,7 @@ import {
   type Quote,
   type QuoteItem,
 } from "./shared";
-import { Badge, Empty, Field, Panel, Select } from "./ui";
+import { Badge, Empty, Field, NumberInput, Panel, Select } from "./ui";
 import QuoteDocument from "./QuoteDocument";
 import type { AdminStore } from "./useAdminData";
 
