@@ -20,6 +20,8 @@ import type { AdminStore, Inquiry, Status } from "./useAdminData";
 const STATUS_LABEL: Record<Status, string> = {
   pending: "대기중",
   in_progress: "진행중",
+  sampling: "샘플진행중",
+  sample_done: "샘플 완료",
   done: "완료",
   archived: "보관",
 };
@@ -27,9 +29,13 @@ const STATUS_LABEL: Record<Status, string> = {
 const STATUS_STYLE: Record<Status, string> = {
   pending: "bg-amber-100 text-amber-800 border-amber-200",
   in_progress: "bg-sky-100 text-sky-800 border-sky-200",
+  sampling: "bg-violet-100 text-violet-800 border-violet-200",
+  sample_done: "bg-teal-100 text-teal-800 border-teal-200",
   done: "bg-emerald-100 text-emerald-800 border-emerald-200",
   archived: "bg-muted text-muted-foreground border-border",
 };
+
+const STATUS_ORDER: Status[] = ["pending", "in_progress", "sampling", "sample_done", "done", "archived"];
 
 const channelOptions = CHANNELS.map((c) => ({ value: c, label: CHANNEL_LABEL[c] }));
 
@@ -63,7 +69,8 @@ const InquiriesTab = ({ store, reload, onOpenAccount, onQuoteFromInquiry }: Prop
   const [editForm, setEditForm] = useState({ name: "", phone: "", email: "", company: "", message: "" });
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: inquiries.length, pending: 0, in_progress: 0, done: 0, archived: 0 };
+    const c: Record<string, number> = { all: inquiries.length };
+    for (const s of STATUS_ORDER) c[s] = 0;
     for (const i of inquiries) c[i.status] = (c[i.status] ?? 0) + 1;
     return c;
   }, [inquiries]);
@@ -206,10 +213,7 @@ const InquiriesTab = ({ store, reload, onOpenAccount, onQuoteFromInquiry }: Prop
           onChange={(v) => setFilter(v as typeof filter)}
           items={[
             { key: "all" as const, label: "전체", count: counts.all },
-            { key: "pending" as const, label: "대기중", count: counts.pending },
-            { key: "in_progress" as const, label: "진행중", count: counts.in_progress },
-            { key: "done" as const, label: "완료", count: counts.done },
-            { key: "archived" as const, label: "보관", count: counts.archived },
+            ...STATUS_ORDER.map((s) => ({ key: s, label: STATUS_LABEL[s], count: counts[s] })),
           ]}
         />
         <div className="ml-auto flex flex-wrap items-center gap-2">
@@ -429,7 +433,7 @@ const InquiriesTab = ({ store, reload, onOpenAccount, onQuoteFromInquiry }: Prop
 
               <h3 className="mb-2 mt-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">상태 변경</h3>
               <div className="flex flex-wrap gap-2">
-                {(["pending", "in_progress", "done", "archived"] as Status[]).map((s) => (
+                {STATUS_ORDER.map((s) => (
                   <Button
                     key={s}
                     size="sm"

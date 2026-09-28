@@ -11,7 +11,7 @@ import {
   type Sample,
 } from "./shared";
 
-export type Status = "pending" | "in_progress" | "done" | "archived";
+export type Status = "pending" | "in_progress" | "sampling" | "sample_done" | "done" | "archived";
 
 export interface Inquiry {
   id: string;
