@@ -20,6 +20,8 @@ import type { AdminStore, Inquiry, Status } from "./useAdminData";
 const STATUS_LABEL: Record<Status, string> = {
   pending: "대기중",
   in_progress: "진행중",
+  sampling: "샘플진행중",
+  sample_done: "샘플 완료",
   done: "완료",
   archived: "보관",
 };
@@ -27,9 +29,13 @@ const STATUS_LABEL: Record<Status, string> = {
 const STATUS_STYLE: Record<Status, string> = {
   pending: "bg-amber-100 text-amber-800 border-amber-200",
   in_progress: "bg-sky-100 text-sky-800 border-sky-200",
+  sampling: "bg-violet-100 text-violet-800 border-violet-200",
+  sample_done: "bg-teal-100 text-teal-800 border-teal-200",
   done: "bg-emerald-100 text-emerald-800 border-emerald-200",
   archived: "bg-muted text-muted-foreground border-border",
 };
+
+const STATUS_ORDER: Status[] = ["pending", "in_progress", "sampling", "sample_done", "done", "archived"];
 
 const channelOptions = CHANNELS.map((c) => ({ value: c, label: CHANNEL_LABEL[c] }));
 
