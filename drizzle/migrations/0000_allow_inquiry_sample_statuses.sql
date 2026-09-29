@@ -1,0 +1,2 @@
+ALTER TABLE public.inquiries DROP CONSTRAINT IF EXISTS inquiries_status_check;
+ALTER TABLE public.inquiries ADD CONSTRAINT inquiries_status_check CHECK (status IN ('pending', 'in_progress', 'sampling', 'sample_done', 'done', 'archived'));
