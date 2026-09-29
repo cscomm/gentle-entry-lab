@@ -7,7 +7,7 @@ const json = (body: unknown, status = 200) =>
     headers: { ...corsHeaders, 'Content-Type': 'application/json' },
   })
 
-const STATUSES = ['pending', 'in_progress', 'done', 'archived']
+const STATUSES = ['pending', 'in_progress', 'sampling', 'sample_done', 'done', 'archived']
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') return new Response(null, { headers: corsHeaders })
