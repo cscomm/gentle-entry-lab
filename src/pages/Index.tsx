@@ -12,6 +12,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProductCategoryBar from "@/components/ProductCategoryBar";
 import { useLang } from "@/contexts/LanguageContext";
+import kakaoChannel from "@/assets/kakao-channel.png.asset.json";
 import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
@@ -468,9 +469,24 @@ const Index = () => {
                   <span className="h-px flex-1 bg-background/15" />
                 </div>
                 <ul className="mt-4 space-y-2.5 text-sm">
-                  <li className="flex items-start gap-2.5 text-background/85">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
-                    <span>{t("footer.address")}</span>
+                  <li className="flex items-start justify-between gap-3">
+                    <span className="flex items-start gap-2.5 text-background/85">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
+                      <span>{t("footer.address")}</span>
+                    </span>
+                    <a
+                      href="http://pf.kakao.com/_xhITxiX/chat"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="카카오톡 채널 상담"
+                      className="shrink-0 transition hover:opacity-80"
+                    >
+                      <img
+                        src={kakaoChannel.url}
+                        alt="카카오톡 채널"
+                        className="h-9 w-9 rounded-lg"
+                      />
+                    </a>
                   </li>
                   <li>
                     <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background/85 hover:text-primary-glow">
