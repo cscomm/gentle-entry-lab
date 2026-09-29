@@ -12,7 +12,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProductCategoryBar from "@/components/ProductCategoryBar";
 import { useLang } from "@/contexts/LanguageContext";
-import kakaoChannel from "@/assets/kakao-channel.png.asset.json";
+import kakaoChannel from "@/assets/kakao-channel.png";
 import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
