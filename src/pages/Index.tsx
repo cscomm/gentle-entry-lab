@@ -482,7 +482,7 @@ const Index = () => {
                       className="shrink-0 transition hover:opacity-80"
                     >
                       <img
-                        src={kakaoChannel.url}
+                        src={kakaoChannel}
                         alt="카카오톡 채널"
                         className="h-9 w-9 rounded-lg"
                       />
