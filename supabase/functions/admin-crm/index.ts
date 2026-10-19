@@ -100,6 +100,18 @@ Deno.serve(async (req) => {
   try {
     if (action === 'ping') return json({ success: true })
 
+    if (action === 'set_visibility') {
+      const slugs = (Array.isArray(body.slugs) ? body.slugs : [body.slug])
+        .filter((s): s is string => typeof s === 'string' && s.length > 0 && s.length < 200)
+        .slice(0, 500)
+      if (slugs.length === 0) return json({ error: 'slug_required' }, 400)
+      const visible = body.visible !== false
+      const rows = slugs.map((slug) => ({ slug, visible, updated_at: new Date().toISOString() }))
+      const { error } = await supabase.from('product_visibility').upsert(rows, { onConflict: 'slug' })
+      if (error) throw error
+      return json({ success: true })
+    }
+
     if (action === 'bootstrap') {
       const [accounts, quotes, samples, sales, purchases, receipts, payments, quoteItems] =
         await Promise.all([
