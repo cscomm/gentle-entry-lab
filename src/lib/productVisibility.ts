@@ -18,17 +18,21 @@ export const groupKeyOf = (p: ProductDetail) =>
 
 let hidden = new Set<string>();
 let loaded = false;
+const overrides = new Map<string, boolean>();
 const listeners = new Set<() => void>();
 const emit = () => listeners.forEach((l) => l());
 
 export const loadVisibility = async () => {
   const { data } = await supabase.from("product_visibility").select("slug, visible");
-  hidden = new Set((data ?? []).filter((r) => !r.visible).map((r) => r.slug));
+  const next = new Set((data ?? []).filter((r) => !r.visible).map((r) => r.slug));
+  overrides.forEach((h, s) => (h ? next.add(s) : next.delete(s)));
+  hidden = next;
   loaded = true;
   emit();
 };
 
 export const setHiddenLocal = (slug: string, isHidden: boolean) => {
+  overrides.set(slug, isHidden);
   const next = new Set(hidden);
   if (isHidden) next.add(slug);
   else next.delete(slug);
