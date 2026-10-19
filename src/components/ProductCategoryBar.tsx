@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "@/lib/router";
 import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import { productCatalog } from "@/data/products";
+import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 
 const categories: { label: string; en: string; ja: string; slug?: string; href?: string }[] = [
@@ -38,6 +39,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
   const { lang } = useLang();
   const navigate = useNavigate();
   const [q, setQ] = useState("");
+  const hiddenSet = useHiddenSlugs();
 
   const onSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,7 +76,7 @@ const ProductCategoryBar = ({ activeSlug, className = "" }: Props) => {
         <ArrowRight className="h-4 w-4" />
       </button>
 
-      {categories.map((cat) => {
+      {categories.filter((cat) => !cat.slug || !hiddenSet.has(cat.slug)).map((cat) => {
         const isActive = !!activeSlug && cat.slug === activeSlug;
         const className = `rounded-full border px-3.5 py-1.5 text-xs md:text-sm whitespace-nowrap transition ${
           isActive

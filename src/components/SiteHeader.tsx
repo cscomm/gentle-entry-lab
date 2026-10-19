@@ -3,6 +3,7 @@ import { pick } from "@/lib/lang";
 import { Link, useNavigate, useLocation } from "@/lib/router";
 import { ChevronDown, Search, Menu, X, ArrowRight } from "lucide-react";
 import { productCatalog } from "@/data/products";
+import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 
 const navItems = [
@@ -108,7 +109,9 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
     return () => window.removeEventListener("scroll", onScroll);
   }, [transparentAtTop]);
 
-  const dropdownItems = activeDropdown === "products" ? productMenu : applicationMenu;
+  const hiddenSet = useHiddenSlugs();
+  const visProductMenu = productMenu.filter((it) => !hiddenSet.has(it.to.split("/")[2]));
+  const dropdownItems = activeDropdown === "products" ? visProductMenu : applicationMenu;
   const dropdownAllHref = activeDropdown === "products" ? "/products/all" : "/#applications";
   const dropdownAllLabel = activeDropdown === "products" ? t("products.all") : t("applications.all");
 
@@ -271,7 +274,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   </button>
                   {openGroup === item.dropdown && (
                     <div className="pb-2">
-                      {(item.dropdown === "products" ? productMenu : applicationMenu).map((it) => (
+                      {(item.dropdown === "products" ? visProductMenu : applicationMenu).map((it) => (
                         <Link
                           key={it.to}
                           to={it.to}

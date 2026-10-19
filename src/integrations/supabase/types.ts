@@ -361,6 +361,24 @@ export type Database = {
         }
         Relationships: []
       }
+      product_visibility: {
+        Row: {
+          slug: string
+          updated_at: string
+          visible: boolean
+        }
+        Insert: {
+          slug: string
+          updated_at?: string
+          visible?: boolean
+        }
+        Update: {
+          slug?: string
+          updated_at?: string
+          visible?: boolean
+        }
+        Relationships: []
+      }
       purchase_payments: {
         Row: {
           amount: number

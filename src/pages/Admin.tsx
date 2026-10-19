@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { BarChart3, Download, FileText, FlaskConical, Lock, LogOut, MessageSquare, RefreshCw, Users, Wallet } from "lucide-react";
+import { BarChart3, Boxes, Download, FileText, FlaskConical, Lock, LogOut, MessageSquare, RefreshCw, Users, Wallet } from "lucide-react";
 import { PW_KEY, inquiryApi } from "@/components/admin/shared";
 import { useAdminData, type Inquiry } from "@/components/admin/useAdminData";
 import InquiriesTab from "@/components/admin/InquiriesTab";
@@ -11,8 +11,9 @@ import SamplesTab from "@/components/admin/SamplesTab";
 import QuotesTab, { type QuoteDraft } from "@/components/admin/QuotesTab";
 import FinanceTab from "@/components/admin/FinanceTab";
 import DashboardTab from "@/components/admin/DashboardTab";
+import ProductsTab from "@/components/admin/ProductsTab";
 
-type Tab = "dashboard" | "inquiries" | "accounts" | "quotes" | "samples" | "finance";
+type Tab = "dashboard" | "products" | "inquiries" | "accounts" | "quotes" | "samples" | "finance";
 
 const TABS: { key: Tab; label: string; icon: typeof Users }[] = [
   { key: "dashboard", label: "대시보드", icon: BarChart3 },
@@ -21,6 +22,7 @@ const TABS: { key: Tab; label: string; icon: typeof Users }[] = [
   { key: "quotes", label: "견적서", icon: FileText },
   { key: "samples", label: "샘플 관리", icon: FlaskConical },
   { key: "finance", label: "매출 · 매입 · 수금", icon: Wallet },
+  { key: "products", label: "상품 관리", icon: Boxes },
 ];
 
 const Admin = () => {
@@ -202,6 +204,7 @@ const Admin = () => {
         )}
         {tab === "samples" && <SamplesTab store={store} reload={reload} />}
         {tab === "finance" && <FinanceTab store={store} reload={reload} />}
+        {tab === "products" && <ProductsTab />}
       </div>
     </main>
   );

@@ -6,6 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { getProductsByCategory } from "@/data/products";
+import { useVisibleProducts } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 
 const FS_TAG_OPTIONS: { ko: string; en: string; ja: string }[] = [
@@ -17,7 +18,7 @@ const FS_TAG_OPTIONS: { ko: string; en: string; ja: string }[] = [
 
 const FumedSilicaCategory = () => {
   const { lang, t } = useLang();
-  const products = useMemo(() => getProductsByCategory("fumed"), []);
+  const products = useVisibleProducts(useMemo(() => getProductsByCategory("fumed"), []));
   const [tag, setTag] = useState<string>("__all__");
   const filtered = tag === "__all__" ? products : products.filter((p) => (p.useTags ?? []).includes(tag));
   const tri = (ko: string, en: string, ja: string) => pick(lang, ko, en, ja);

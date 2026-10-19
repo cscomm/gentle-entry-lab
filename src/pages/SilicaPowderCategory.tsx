@@ -6,11 +6,12 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { getProductsByCategory } from "@/data/products";
+import { useVisibleProducts } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 
 const SilicaPowderCategory = () => {
   const { lang, t } = useLang();
-  const products = useMemo(() => getProductsByCategory("sand-powder"), []);
+  const products = useVisibleProducts(useMemo(() => getProductsByCategory("sand-powder"), []));
   const tri = (ko: string, en: string, ja: string) => pick(lang, ko, en, ja);
 
   const title = tri(
