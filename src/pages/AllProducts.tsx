@@ -5,6 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProductCategoryBar from "@/components/ProductCategoryBar";
 import { productCatalog } from "@/data/products";
+import { useVisibleProducts } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
@@ -16,10 +17,10 @@ const AllProducts = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const items = useMemo(
+  const items = useVisibleProducts(useMemo(
     () => productCatalog.filter((p) => !p.isCategoryIndex),
     []
-  );
+  ));
 
   const params = new URLSearchParams(location.search);
   const initialPage = Math.max(1, parseInt(params.get("page") || "1", 10) || 1);

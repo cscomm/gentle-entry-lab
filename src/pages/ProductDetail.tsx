@@ -5,6 +5,7 @@ import { Link, useLocation, useParams } from "@/lib/router";
 import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap, Wrench, Paintbrush, Pen, Link2, Layers, Battery, Droplets } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, productCatalog } from "@/data/products";
+import { useHiddenSlugs, isProductHidden } from "@/lib/productVisibility";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProductCategoryBar from "@/components/ProductCategoryBar";
@@ -108,7 +109,9 @@ const APP_VISUALS: Record<string, { img?: string; items: string[] }> = {
 
 const ProductDetail = () => {
   const { slug } = useParams<{ slug: string }>();
-  const product = slug ? getProductBySlug(slug) : undefined;
+  const hiddenSet = useHiddenSlugs();
+  const rawProduct = slug ? getProductBySlug(slug) : undefined;
+  const product = rawProduct && !isProductHidden(hiddenSet, rawProduct) ? rawProduct : undefined;
   const location = useLocation();
   const { t, lang } = useLang();
   const tri = (ko: string, en: string, ja: string) =>
@@ -206,9 +209,9 @@ const ProductDetail = () => {
     );
   }
 
-  const others = product.parentSlug
+  const others = (product.parentSlug
     ? productCatalog.filter((p) => p.parentSlug === product.parentSlug && p.slug !== product.slug)
-    : productCatalog.filter((p) => p.slug !== product.slug && !p.isCategoryIndex && !p.parentSlug && (p.category ?? "quartz") === (product.category ?? "quartz"));
+    : productCatalog.filter((p) => p.slug !== product.slug && !p.isCategoryIndex && !p.parentSlug && (p.category ?? "quartz") === (product.category ?? "quartz"))).filter((p) => !isProductHidden(hiddenSet, p));
   const isGradeA = product.slug === "fused-silica-a-grade";
   const isGradeB = product.slug === "fused-silica-b-grade";
   const isGradeC = product.slug === "fused-silica-c-grade";
@@ -234,6 +237,7 @@ const ProductDetail = () => {
           .filter((p): p is typeof productCatalog[number] => !!p);
         const seen = new Set<string>();
         return [...byParent, ...referenced].filter((p) => {
+          if (isProductHidden(hiddenSet, p)) return false;
           if (seen.has(p.slug)) return false;
           seen.add(p.slug);
           return true;

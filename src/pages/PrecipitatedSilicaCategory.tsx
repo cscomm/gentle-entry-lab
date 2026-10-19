@@ -6,6 +6,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { getProductsByCategory } from "@/data/products";
+import { useVisibleProducts } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 
 // 침전 실리카 용도별 분류 (KO / EN / JA)
@@ -26,7 +27,7 @@ const TAG_OPTIONS: { ko: string; en: string; ja: string }[] = [
 
 const PrecipitatedSilicaCategory = () => {
   const { lang, t } = useLang();
-  const products = useMemo(() => getProductsByCategory("precipitated"), []);
+  const products = useVisibleProducts(useMemo(() => getProductsByCategory("precipitated"), []));
   const [tag, setTag] = useState<string>("__all__");
   const tri = (ko: string, en: string, ja: string) => pick(lang, ko, en, ja);
 
