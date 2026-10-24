@@ -10,6 +10,7 @@ const categories: { label: string; en: string; ja: string; slug?: string; href?:
   // Row 1 — Fused / Quartz
   { label: "용융실리카", en: "Fused Silica", ja: "溶融シリカ", slug: "fused-silica" },
   { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ", slug: "crystalline-silica" },
+  { label: "화학합성 실리카", en: "Chemically Synthesized Silica", ja: "化学合成シリカ", slug: "synthetic-silica" },
   // Row 2 — Surface-Modified / Spherical / Round-Corner / Angular / Low-Alpha / Lead-Free
   { label: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末", slug: "surface-modified-silica-powder" },
   { label: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末", slug: "spherical-silica-powder" },

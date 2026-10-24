@@ -18,6 +18,7 @@ const navItems = [
 const productMenu = [
   { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
+  { to: "/products/synthetic-silica/", ko: "화학합성 실리카", en: "Chemically Synthesized Silica", ja: "化学合成シリカ" },
   { to: "/products/surface-modified-silica-powder/", ko: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", ja: "表面改質シリカ粉末" },
   { to: "/products/spherical-silica-powder/", ko: "구상 실리카 분말", en: "Spherical Silica Powder", ja: "球状シリカ粉末" },
   { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },

@@ -55,6 +55,7 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "전체 제품", en: "All Products" },
   { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
   { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", slug: "crystalline-silica" },
+  { label: "화학합성 실리카", en: "Chemically Synthesized Silica", slug: "synthetic-silica" },
   { label: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", slug: "surface-modified-silica-powder" },
   { label: "구상 실리카 분말", en: "Spherical Silica Powder", slug: "spherical-silica-powder" },
   { label: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", slug: "round-corner-silica-powder" },
