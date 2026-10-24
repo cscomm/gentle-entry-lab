@@ -1700,7 +1700,10 @@ const surfaceModelOverrides: Record<string, Partial<ProductDetail>> = {
 
 
 const generatedChildren: ProductDetail[] = [];
-const generatedSeen = new Set<string>();
+// Products defined as standalone entries elsewhere in this file but also
+// cross-listed in an advanced-series category via subModels.
+const standaloneSlugs = new Set<string>(["synthetic-spherical-silica"]);
+const generatedSeen = new Set<string>(standaloneSlugs);
 for (const parent of advSeriesProducts) {
   if (!parent.subModels) continue;
   for (const sm of parent.subModels) {
