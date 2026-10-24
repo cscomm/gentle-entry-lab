@@ -1924,6 +1924,81 @@ productCatalog.push({
   applications: [],
 });
 
+// ============= Category: Chemically Synthesized Silica =============
+productCatalog.push({
+  slug: "synthetic-silica",
+  name: "화학합성 실리카",
+  enName: "Chemically Synthesized Silica",
+  jaName: "化学合成シリカ",
+  tagline: "고순도 전구체를 화학 반응으로 합성해 입경·형상·순도를 설계하는 초고순도 실리카",
+  enTagline: "Ultra-high-purity silica built from purified precursors by chemical reaction — particle size, shape and purity by design",
+  jaTagline: "高純度前駆体を化学反応で合成し、粒径・形状・純度を設計する超高純度シリカ",
+  description:
+    "화학합성 실리카(Chemically Synthesized Silica)는 천연 석영 광석을 녹이거나 분쇄하는 대신, 고순도로 정제된 규소 화합물을 액상에서 가수분해·축합 반응시켜 SiO₂ 입자를 처음부터 '키워 내는' 방식으로 만든 실리카입니다. 원료 단계부터 불순물을 걸러내기 때문에 SiO₂ 99.99% 이상의 초고순도와 우라늄(U)·토륨(Th) 등 방사성 원소가 거의 없는 저방사선 특성을 얻을 수 있고, 반응 조건을 조절해 수십 나노미터에서 수 마이크로미터까지 원하는 크기의 완전 구형(구상) 입자를 균일하게 만들 수 있습니다. 이러한 특성 덕분에 반도체 패키징용 고신뢰성 필러, CMP 연마재, 전자급 실리카졸, 정밀 코팅 등 순도와 입자 균일성이 가장 엄격하게 요구되는 분야에 사용됩니다.",
+  enDescription:
+    "Chemically Synthesized Silica is made not by melting or grinding natural quartz ore, but by hydrolysing and condensing highly purified silicon compounds in the liquid phase so that SiO₂ particles are literally grown from scratch. Because impurities are removed at the precursor stage, it reaches ultra-high purity above 99.99% SiO₂ with virtually no radioactive elements such as uranium (U) and thorium (Th), and by tuning the reaction conditions it can be produced as uniform, perfectly spherical particles of any size from tens of nanometres to a few micrometres. These properties make it the material of choice for high-reliability semiconductor packaging fillers, CMP abrasives, electronic-grade silica sol and precision coatings — fields where purity and particle uniformity are held to the strictest standards.",
+  jaDescription:
+    "化学合成シリカ(Chemically Synthesized Silica)は、天然石英鉱石を溶融・粉砕するのではなく、高純度に精製したケイ素化合物を液相で加水分解・縮合させ、SiO₂粒子を一から「成長させる」方法で作られるシリカです。原料段階で不純物を除去するため、SiO₂ 99.99%以上の超高純度と、ウラン(U)・トリウム(Th)などの放射性元素をほとんど含まない低放射線特性が得られ、反応条件を調整することで数十ナノメートルから数マイクロメートルまで任意サイズの完全球状粒子を均一に製造できます。これらの特性から、半導体パッケージ用高信頼性フィラー、CMP研磨材、電子グレードシリカゾル、精密コーティングなど、純度と粒子均一性が最も厳しく求められる分野で使用されます。",
+  image: synSph400Img,
+  category: "advanced-series",
+  isCategoryIndex: true,
+  features: [
+    { title: "🧪 초고순도", desc: "정제된 전구체 기반 — SiO₂ 99.99% 이상", enTitle: "🧪 Ultra-High Purity", jaTitle: "🧪 超高純度", enDesc: "From purified precursors — SiO₂ above 99.99%", jaDesc: "精製前駆体ベース — SiO₂ 99.99%以上" },
+    { title: "☢️ 저방사선", desc: "천연 광석 유래 U·Th 원천 차단", enTitle: "☢️ Low Radioactivity", jaTitle: "☢️ 低放射線", enDesc: "No ore-derived U/Th", jaDesc: "天然鉱石由来のU・Thを遮断" },
+    { title: "🔵 완전 구형 · 입경 설계", desc: "나노~마이크로미터 균일 구상 입자", enTitle: "🔵 Perfect Spheres by Design", jaTitle: "🔵 完全球状・粒径設計", enDesc: "Uniform spheres from nm to µm", jaDesc: "nm~µmの均一球状粒子" },
+  ],
+  specs: [
+    { label: "제품 라인업", value: "합성 구형 실리카", enValue: "Synthetic Spherical Silica", jaValue: "合成球状シリカ", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "제조 공법", value: "화학합성 (액상 가수분해 · 축합)", enValue: "Chemical synthesis (liquid-phase hydrolysis & condensation)", jaValue: "化学合成 (液相加水分解・縮合)", enLabel: "Process", jaLabel: "製造工法" },
+  ],
+  subModelsColumnLabel: { ko: "형상 / 특성", en: "Shape / Feature", ja: "形状/特性" },
+  subModels: [
+    { code: "SYN-SPH", slug: "synthetic-spherical-silica", spec: "화학합성 구형 실리카 (D50 20nm~2µm · SiO₂ ≥99.995%)", enSpec: "Chemically Synthesized Spherical (D50 20 nm–2 µm · SiO₂ ≥99.995%)", jaSpec: "化学合成球状 (D50 20nm~2µm · SiO₂ ≥99.995%)" },
+  ],
+  applications: ["반도체 EMC · 언더필", "CMP 연마 슬러리", "전자급 실리카졸", "정밀 코팅 · 수지 하이브리드"],
+});
+
+// ============= Synthetic Spherical Silica (also cross-listed in Spherical Silica Powder) =============
+productCatalog.push({
+  slug: "synthetic-spherical-silica",
+  name: "합성 구형 실리카",
+  enName: "Synthetic Spherical Silica",
+  jaName: "合成球状シリカ",
+  tagline: "SiO₂ ≥99.995% · 구상화율 ≥99% · U/Th <0.1 ppb — 입경 20 nm~2 µm 맞춤 생산 화학합성 구상 실리카",
+  enTagline: "SiO₂ ≥99.995% · spheroidization ≥99% · U/Th <0.1 ppb — chemically synthesized spherical silica, custom D50 20 nm–2 µm",
+  jaTagline: "SiO₂ ≥99.995% · 球状化率 ≥99% · U/Th <0.1 ppb — 粒径20 nm~2 µmカスタム生産の化学合成球状シリカ",
+  description:
+    "합성 구형 실리카는 화학합성 공법으로 만든 이산화규소(SiO₂) 입자로, 입경이 고르게 맞춰진 완전 구형(구상) 형태를 갖습니다. SiO₂ 순도 99.995% 이상, 구상화율·구형도 각각 99.0% 이상으로 관리되며, 우라늄(U)·토륨(Th)이 각각 0.1 ppb 미만인 초저방사선 소재입니다. 전기전도도는 1.0 µS/cm 미만으로 이온성 불순물이 극히 적어 반도체 패키징처럼 신뢰성이 중요한 전자 소재에 적합합니다. 입경(D50)은 20 nm부터 2 µm까지 고객 요구에 맞춰 생산하며, 아미노기·메르캅토기 등의 표면개질과 접촉각 150° 이상의 소수화 처리도 가능합니다. 또한 고객 요청에 따라 전자급 실리카졸(6N급)로 수계 및 맞춤 용제형 공급이 가능해 CMP 연마, 도료, 수지 하이브리드 등 다양한 분야에 사용됩니다.",
+  enDescription:
+    "Synthetic Spherical Silica consists of silicon dioxide (SiO₂) particles produced by chemical synthesis, with a perfectly spherical shape and tightly matched particle size. SiO₂ purity is held at ≥99.995%, spheroidization and sphericity are each ≥99.0%, and uranium (U) and thorium (Th) are each below 0.1 ppb, making it an ultra-low-radioactivity material. Electrical conductivity below 1.0 µS/cm reflects extremely low ionic impurities, ideal for reliability-critical electronic materials such as semiconductor packaging. Particle size (D50) is produced to customer requirements anywhere from 20 nm to 2 µm, and the surface can be modified with amino or mercapto groups or given a hydrophobic treatment with a contact angle above 150°. On request it is also supplied as electronic-grade 6N silica sol in water-based or custom solvent-based form, for CMP polishing, coatings and resin hybrids.",
+  jaDescription:
+    "合成球状シリカは化学合成法で製造された二酸化ケイ素(SiO₂)粒子で、粒径の揃った完全球状の形態を持ちます。SiO₂純度99.995%以上、球状化率・球形度はそれぞれ99.0%以上で管理され、ウラン(U)・トリウム(Th)がそれぞれ0.1 ppb未満の超低放射線素材です。電気伝導率は1.0 µS/cm未満とイオン性不純物が極めて少なく、半導体パッケージなど信頼性が重視される電子材料に適しています。粒径(D50)は20 nmから2 µmまでお客様の要求に合わせて生産し、アミノ基・メルカプト基などの表面改質や接触角150°以上の疎水化処理も可能です。またご要望に応じて電子グレードシリカゾル(6N級)として水系およびカスタム溶剤系での供給が可能で、CMP研磨・塗料・樹脂ハイブリッドなど幅広い分野に使用されます。",
+  image: synSph100Img,
+  category: "advanced-series",
+  parentSlug: "synthetic-silica",
+  features: [
+    { title: "🔵 완전 구형 · 구상화율 ≥99.0%", desc: "구형도·구상화율 모두 99.0% 이상 — 응집 없이 고르게 분산되는 균일한 구상 입자", enTitle: "🔵 Perfect Spheres · Spheroidization ≥99.0%", jaTitle: "🔵 完全球状 · 球状化率 ≥99.0%", enDesc: "Sphericity and spheroidization both ≥99.0% — uniform spheres that disperse evenly without agglomeration", jaDesc: "球形度・球状化率ともに99.0%以上 — 凝集なく均一に分散する球状粒子" },
+    { title: "🧪 초고순도 SiO₂ ≥99.995%", desc: "고순도로 정제된 전구체를 화학합성 — 금속 불순물을 원료 단계부터 차단", enTitle: "🧪 Ultra-High Purity SiO₂ ≥99.995%", jaTitle: "🧪 超高純度 SiO₂ ≥99.995%", enDesc: "Synthesized from purified precursors — metallic impurities blocked at the raw-material stage", jaDesc: "高純度精製前駆体から化学合成 — 金属不純物を原料段階から遮断" },
+    { title: "☢️ 초저방사선 U·Th <0.1 ppb", desc: "천연 광석 유래 방사성 원소가 거의 없어 HBM·AI 반도체의 소프트 에러 억제에 유리", enTitle: "☢️ Ultra-Low Radioactivity U/Th <0.1 ppb", jaTitle: "☢️ 超低放射線 U・Th <0.1 ppb", enDesc: "Virtually free of ore-derived radioactive elements — helps suppress soft errors in HBM and AI chips", jaDesc: "天然鉱石由来の放射性元素がほぼなく、HBM・AI半導体のソフトエラー抑制に有利" },
+    { title: "📐 입경 20 nm ~ 2 µm 맞춤 생산", desc: "나노부터 서브미크론까지 고객이 원하는 D50으로 입경을 설계해 공급", enTitle: "📐 Custom D50 from 20 nm to 2 µm", jaTitle: "📐 粒径20 nm~2 µmカスタム生産", enDesc: "Particle size designed to your target D50, from nano to submicron", jaDesc: "ナノからサブミクロンまでご希望のD50で粒径を設計・供給" },
+    { title: "⚡ 전기전도도 <1.0 µS/cm", desc: "이온성 불순물이 극히 적어 부식·이온 마이그레이션 위험을 낮추고 절연 신뢰성 확보", enTitle: "⚡ Conductivity <1.0 µS/cm", jaTitle: "⚡ 電気伝導率 <1.0 µS/cm", enDesc: "Extremely low ionic impurities reduce corrosion and ion-migration risk for reliable insulation", jaDesc: "イオン性不純物が極めて少なく、腐食・イオンマイグレーションのリスクを低減" },
+    { title: "⚗️ 표면개질 · 소수화 처리", desc: "아미노기·메르캅토기 개질 가능, 소수화 처리 시 접촉각 150° 이상", enTitle: "⚗️ Surface Modification · Hydrophobic Treatment", jaTitle: "⚗️ 表面改質・疎水化処理", enDesc: "Amino- or mercapto-functionalization available; hydrophobic treatment reaches contact angles above 150°", jaDesc: "アミノ基・メルカプト基改質が可能、疎水化処理で接触角150°以上" },
+  ],
+  specs: [
+    { label: "제조 공법", value: "화학합성", enValue: "Chemical synthesis", jaValue: "化学合成", enLabel: "Process", jaLabel: "製造工法" },
+    { label: "형상", value: "구형 (Spherical)", enValue: "Spherical", jaValue: "球状 (Spherical)", enLabel: "Morphology", jaLabel: "形状" },
+    { label: "SiO₂ 순도", value: "≥ 99.995 %", note: "초고순도", enNote: "Ultra-high purity", jaNote: "超高純度", enLabel: "SiO₂ Purity", jaLabel: "SiO₂純度" },
+    { label: "구상화율 (Spheroidization)", value: "≥ 99.0 %", enLabel: "Spheroidization", jaLabel: "球状化率" },
+    { label: "구형도 (Sphericity)", value: "≥ 99.0 %", enLabel: "Sphericity", jaLabel: "球形度" },
+    { label: "입경 (D50)", value: "20 nm ~ 2 µm", note: "맞춤 생산", enNote: "Customizable", jaNote: "カスタム生産", enValue: "20 nm – 2 µm", jaValue: "20 nm ~ 2 µm", enLabel: "Particle Size (D50)", jaLabel: "粒径 (D50)" },
+    { label: "전기전도도", value: "< 1.0 µS/cm", enLabel: "Electrical Conductivity", jaLabel: "電気伝導率" },
+    { label: "방사성 원소", value: "U < 0.1 ppb · Th < 0.1 ppb", note: "초저방사선", enNote: "Ultra-low-α", jaNote: "超低放射線", enLabel: "Radioactive Elements", jaLabel: "放射性元素" },
+    { label: "표면개질", value: "아미노기 · 메르캅토기 개질 / 소수화 (접촉각 ≥150°)", enValue: "Amino / mercapto groups · hydrophobic (contact angle ≥150°)", jaValue: "アミノ基・メルカプト基改質 / 疎水化 (接触角 ≥150°)", enLabel: "Surface Modification", jaLabel: "表面改質" },
+    { label: "실리카졸 공급", value: "전자급 6N급 · 수계 / 맞춤 용제형", enValue: "Electronic-grade 6N · water-based / custom solvent", jaValue: "電子グレード6N級 · 水系 / カスタム溶剤系", enLabel: "Silica Sol Option", jaLabel: "シリカゾル供給" },
+  ],
+  applications: ["반도체 EMC · 언더필", "어드밴스드 패키징", "CMP 연마 슬러리", "도료 · 정밀 코팅", "수지 하이브리드 · 복합재", "저유전 CCL / PCB"],
+});
+
 
 
 
