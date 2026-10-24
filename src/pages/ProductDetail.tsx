@@ -29,6 +29,7 @@ import cIndustrial from "@/assets/c-industrial.jpg";
 import aSilicaGel from "@/assets/a-silica-gel.jpg";
 import SpecTable from "@/components/SpecTable";
 import { silicaGelSpecs } from "@/data/silicaGelSpecs";
+import { SyntheticSilicaIntro, SynSphBadges, SynSphSemGallery, SynSphTechProfile } from "@/components/product/SyntheticSilica";
 
 const APP_VISUALS: Record<string, { img?: string; items: string[] }> = {
   "반도체": {
@@ -209,9 +210,24 @@ const ProductDetail = () => {
     );
   }
 
-  const others = (product.parentSlug
+  const primaryOthers = (product.parentSlug
     ? productCatalog.filter((p) => p.parentSlug === product.parentSlug && p.slug !== product.slug)
     : productCatalog.filter((p) => p.slug !== product.slug && !p.isCategoryIndex && !p.parentSlug && (p.category ?? "quartz") === (product.category ?? "quartz"))).filter((p) => !isProductHidden(hiddenSet, p));
+  // Cross-listed products with no siblings in their own category: fall back to
+  // siblings from the other categories that list them via subModels.
+  const others = primaryOthers.length
+    ? primaryOthers
+    : (() => {
+        const crossParents = new Set(
+          productCatalog
+            .filter((c) => c.isCategoryIndex && c.slug !== product.parentSlug && c.subModels?.some((s) => s.slug === product.slug))
+            .map((c) => c.slug)
+        );
+        if (!crossParents.size) return primaryOthers;
+        return productCatalog.filter(
+          (p) => p.slug !== product.slug && !p.isCategoryIndex && !!p.parentSlug && crossParents.has(p.parentSlug) && !isProductHidden(hiddenSet, p)
+        );
+      })();
   const isGradeA = product.slug === "fused-silica-a-grade";
   const isGradeB = product.slug === "fused-silica-b-grade";
   const isGradeC = product.slug === "fused-silica-c-grade";
@@ -223,6 +239,7 @@ const ProductDetail = () => {
   const isFPO10 = product.slug === "sl-fpo10";
   const isFP10 = product.slug === "sl-fp10";
   const isHGM = product.slug === "hollow-glass-microspheres";
+  const isSynSph = product.slug === "synthetic-spherical-silica";
   const fpCode = product.slug === "sl-fp10" ? "SN-FP10" : "SN-FPO10";
   const subModels = product.subModels;
   const subModelsLabel = product.subModelsColumnLabel;
@@ -304,6 +321,8 @@ const ProductDetail = () => {
           </div>
         </section>
 
+        {product.slug === "synthetic-silica" && <SyntheticSilicaIntro />}
+
         <SiteFooter />
       </div>
     );
@@ -370,6 +389,7 @@ const ProductDetail = () => {
                 ))}
               </div>
             )}
+            {isSynSph && <SynSphBadges />}
           </div>
 
           {/* Spec Sheet */}
@@ -402,6 +422,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Synthetic Spherical Silica — SEM gallery (100 / 150 / 400 nm) */}
+      {isSynSph && <SynSphSemGallery />}
 
       {/* HGM — Detailed Technical Profile */}
       {isHGM && (
@@ -1163,6 +1186,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Synthetic Spherical Silica — Detailed Technical Profile + Applications */}
+      {isSynSph && <SynSphTechProfile />}
 
       {/* Grade A Detailed Technical Content */}
       {isGradeA && (
@@ -2563,7 +2589,7 @@ const ProductDetail = () => {
       )}
 
       {/* Applications — visual cards with images */}
-      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && !isFP10 && !isHGM && (
+      {product.slug !== "fumed-silica-slh-380s" && !isSilicaSand && !isSilicaPowder && !isGradeB && !isHS12 && !isSPJ && !isFPO10 && !isFP10 && !isHGM && !isSynSph && (
       <section id="applications" className="mx-auto max-w-7xl px-6 py-20 md:py-28 scroll-mt-24">
         <div className="text-center">
           <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">

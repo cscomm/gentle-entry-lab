@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
+import { useHiddenSlugs } from "@/lib/productVisibility";
 import { Link, useLocation } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -42,6 +43,7 @@ import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import silicaSolImg from "@/assets/silica-sol.png";
 import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
+import synSph400Img from "@/assets/syn-sph-sem-400nm-clean.jpg";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
@@ -55,6 +57,7 @@ const productCategories: { label: string; en: string; slug?: string; href?: stri
   { label: "전체 제품", en: "All Products" },
   { label: "용융실리카", en: "Fused Silica", slug: "fused-silica" },
   { label: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", slug: "crystalline-silica" },
+  { label: "화학합성 실리카", en: "Chemically Synthesized Silica", slug: "synthetic-silica" },
   { label: "표면개질 실리카 분말", en: "Surface-Modified Silica Powder", slug: "surface-modified-silica-powder" },
   { label: "구상 실리카 분말", en: "Spherical Silica Powder", slug: "spherical-silica-powder" },
   { label: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", slug: "round-corner-silica-powder" },
@@ -79,6 +82,7 @@ const products = [
   // Row 1 — Fused / Quartz
   { img: gradeA, slug: "fused-silica", title: "용융실리카", enTitle: "Fused Silica", jaTitle: "溶融シリカ", desc: "A · B · C 등급 + 전 SL 시리즈 용융실리카 통합 카테고리 — 반도체·광학·EMC·정밀 주조 전용", enDesc: "Unified category with A/B/C grades and every SN-series fused silica — for semiconductor, optics, EMC and precision casting.", jaDesc: "A・B・Cグレード+全SLシリーズ溶融シリカを統合したカテゴリ — 半導体・光学・EMC・精密鋳造向け", cat: "용융실리카" },
   { img: crystallineSilicaImg, slug: "crystalline-silica", title: "쿼츠 · 결정질 실리카", enTitle: "Quartz · Crystalline Silica", jaTitle: "クォーツ・結晶質シリカ", desc: "SN-YJG · SN-JG · SN-CL · SN-HJG · SN-CS — α-Quartz 결정질 실리카 전 형상 라인업 통합 카테고리", enDesc: "SN-YJG · SN-JG · SN-CL · SN-HJG · SN-CS — unified α-quartz crystalline silica lineup covering every shape and function.", jaDesc: "SN-YJG · SN-JG · SN-CL · SN-HJG · SN-CS — α-Quartz結晶質シリカの全形状ラインアップ統合カテゴリ", cat: "쿼츠 · 결정질 실리카" },
+  { img: synSph400Img, slug: "synthetic-silica", title: "화학합성 실리카", enTitle: "Chemically Synthesized Silica", jaTitle: "化学合成シリカ", desc: "합성 구형 실리카 — SiO₂ ≥99.995%·U/Th <0.1ppb, 입경 20nm~2µm 맞춤 설계 초고순도 구상 실리카", enDesc: "Synthetic spherical silica — SiO₂ ≥99.995%, U/Th <0.1 ppb, custom 20 nm–2 µm ultra-pure spheres.", jaDesc: "合成球状シリカ — SiO₂ ≥99.995%・U/Th <0.1ppb、粒径20nm~2µmカスタム設計の超高純度球状シリカ", cat: "화학합성 실리카" },
   // Row 2 — Surface-Modified / Spherical / Round-Corner / Angular / Low-Alpha / Lead-Free
   { img: surfaceModImg, slug: "surface-modified-silica-powder", title: "표면개질 실리카 분말", enTitle: "Surface-Modified Silica Powder", jaTitle: "表面改質シリカ粉末", desc: "SN-HJG / SN-HRG — 실란 커플링 표면개질로 유기 매트릭스 상용성 향상", enDesc: "SN-HJG / SN-HRG — silane-coupled surface modification for enhanced compatibility with organic matrices.", jaDesc: "SN-HJG / SN-HRG — シラン処理表面改質により有機マトリクスとの相溶性を向上", cat: "표면개질 실리카 분말" },
   { img: sphericalImg, slug: "spherical-silica-powder", title: "구상 실리카 분말", enTitle: "Spherical Silica Powder", jaTitle: "球状シリカ粉末", desc: "SN-QG / SN-QG-L — EMC·CCL·반도체 봉지재용 고구상·저응력·저열팽창 무정형 SiO₂", enDesc: "SN-QG / SN-QG-L — highly spherical, low-stress, low-CTE amorphous SiO₂ for EMC, CCL and semiconductor encapsulation.", jaDesc: "SN-QG / SN-QG-L — EMC・CCL・半導体封止材向けの高球状・低応力・低熱膨張の非晶質SiO₂", cat: "구상 실리카 분말" },
@@ -129,6 +133,7 @@ const Index = () => {
   const { toast } = useToast();
   const { t, lang } = useLang();
   const [activeCat, setActiveCat] = useState("전체 제품");
+  const hiddenSet = useHiddenSlugs();
   const [activeApp, setActiveApp] = useState("전체 응용분야");
   const [form, setForm] = useState({ name: "", phone: "", email: "", company: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -171,8 +176,9 @@ const Index = () => {
     }
   }, [location.pathname, location.hash, location.key]);
 
-  const filteredProducts =
-    activeCat === "전체 제품" ? products : products.filter((p) => p.cat === activeCat);
+  const filteredProducts = (
+    activeCat === "전체 제품" ? products : products.filter((p) => p.cat === activeCat)
+  ).filter((p) => !hiddenSet.has(p.slug));
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

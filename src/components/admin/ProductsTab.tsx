@@ -9,6 +9,7 @@ import { crm } from "./shared";
 const ORDER: [string, string][] = [
   ["fused-silica", "용융실리카"],
   ["crystalline-silica", "쿼츠 · 결정질 실리카"],
+  ["synthetic-silica", "화학합성 실리카"],
   ["surface-modified-silica-powder", "표면개질 실리카 분말"],
   ["spherical-silica-powder", "구상 실리카 분말"],
   ["round-corner-silica-powder", "모서리 라운드 실리카 분말"],

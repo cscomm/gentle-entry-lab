@@ -55,6 +55,71 @@ export const productRoutes: Route[] = [
       <p>각 제품은 원래 소속 카테고리(구상·모서리 라운드·각상·저방사선·표면개질·실리카 분말·입자)에도 그대로 유지되어 형상·기능별로도 탐색 가능합니다. 입도·순도·표면처리·포장 등 고객 요구 사양에 맞춘 커스텀 생산이 가능합니다.</p>`,
   },
   {
+    path: "/products/synthetic-silica",
+    title: "화학합성 실리카(Chemically Synthesized Silica) — 초고순도 구형 실리카 | SILICA",
+    description:
+      "고순도 전구체를 화학 반응으로 합성해 SiO₂ 99.99% 이상·U/Th ppb 미만·입경 20nm~2µm 완전 구형 입자를 설계하는 화학합성 실리카. 반도체 EMC·언더필·CMP·전자급 실리카졸용.",
+    titleI18n: {
+      en: "Chemically Synthesized Silica — Ultra-High-Purity Spherical Silica | SILICA",
+      ja: "化学合成シリカ — 超高純度球状シリカ | SILICA",
+    },
+    descriptionI18n: {
+      en: "Silica grown by chemical synthesis from purified precursors — SiO₂ above 99.99%, sub-ppb U/Th and perfectly spherical particles from 20 nm to 2 µm. For semiconductor EMC, underfill, CMP and electronic-grade silica sol.",
+      ja: "高純度前駆体から化学合成し、SiO₂ 99.99%以上・U/Th ppb未満・粒径20nm~2µmの完全球状粒子を設計する化学合成シリカ。半導体EMC・アンダーフィル・CMP・電子グレードシリカゾル向け。",
+    },
+    h1: "화학합성 실리카 · Chemically Synthesized Silica",
+    body: `
+      <p><strong>화학합성 실리카(Chemically Synthesized Silica)</strong>는 천연 석영 광석을 녹이거나 분쇄하는 대신, 고순도로 정제된 규소 화합물을 액상에서 가수분해·축합 반응시켜 SiO₂ 입자를 처음부터 키워 내는 방식으로 만든 실리카입니다.</p>
+      <h2>제조 과정</h2>
+      <ol>
+        <li>고순도 전구체 정제 — 금속 불순물과 방사성 원소를 원료 단계에서 제거</li>
+        <li>가수분해 · 축합 반응 — SiO₂ 핵이 고르게 성장해 구형 입자 형성</li>
+        <li>입경 제어 — 20 nm ~ 2 µm 목표 입경에서 성장 제어</li>
+        <li>세정 · 건조 · 표면처리 — 분말 또는 실리카졸로 마감, 표면개질 옵션</li>
+      </ol>
+      <h2>주요 특징</h2>
+      <ul>
+        <li>SiO₂ 99.99% 이상의 초고순도</li>
+        <li>우라늄(U) · 토륨(Th) ppb 미만의 초저방사선</li>
+        <li>완전 구형(구상) · 균일 입경</li>
+      </ul>
+      <h2>제품 라인업</h2>
+      <ul><li><a href="/ko/products/synthetic-spherical-silica/">합성 구형 실리카 (Synthetic Spherical Silica)</a> — SiO₂ ≥99.995%, 구상화율 ≥99.0%, D50 20nm~2µm</li></ul>`,
+  },
+  {
+    path: "/products/synthetic-spherical-silica",
+    title: "합성 구형 실리카(Synthetic Spherical Silica) — SiO₂ ≥99.995% 화학합성 구상 실리카 | SILICA",
+    description:
+      "SiO₂ ≥99.995%·구상화율/구형도 ≥99.0%·U/Th <0.1ppb·전기전도도 <1.0µS/cm의 화학합성 구형 실리카. 입경 D50 20nm~2µm 맞춤 생산, 아미노·메르캅토 표면개질, 전자급 6N 실리카졸 공급.",
+    titleI18n: {
+      en: "Synthetic Spherical Silica — SiO₂ ≥99.995%, U/Th <0.1 ppb | SILICA",
+      ja: "合成球状シリカ — SiO₂ ≥99.995%・U/Th <0.1ppb | SILICA",
+    },
+    descriptionI18n: {
+      en: "Chemically synthesized spherical silica — SiO₂ ≥99.995%, spheroidization/sphericity ≥99.0%, U/Th <0.1 ppb, conductivity <1.0 µS/cm. Custom D50 20 nm–2 µm, amino/mercapto modification, electronic-grade 6N silica sol.",
+      ja: "SiO₂ ≥99.995%・球状化率/球形度 ≥99.0%・U/Th <0.1ppb・電気伝導率 <1.0µS/cmの化学合成球状シリカ。粒径D50 20nm~2µmカスタム生産、アミノ・メルカプト表面改質、電子グレード6Nシリカゾル供給。",
+    },
+    h1: "합성 구형 실리카 · Synthetic Spherical Silica",
+    body: `
+      <p><strong>합성 구형 실리카</strong>는 화학합성 공법으로 만든 이산화규소(SiO₂) 입자로, 입경이 고르게 맞춰진 완전 구형(구상) 형태를 갖습니다. 화학합성 실리카와 구상 실리카 분말 카테고리에 함께 게시됩니다.</p>
+      <h2>검사 항목 · 대표값 (TDS)</h2>
+      <table>
+        <tr><th>순도 SiO₂</th><td>≥ 99.995 %</td></tr>
+        <tr><th>구상화율 (Spheroidization)</th><td>≥ 99.0 %</td></tr>
+        <tr><th>입경 (D50)</th><td>20 nm ~ 2 µm</td></tr>
+        <tr><th>전기전도도</th><td>&lt; 1.0 µS/cm</td></tr>
+        <tr><th>구형도</th><td>≥ 99.0 %</td></tr>
+        <tr><th>방사성 원소</th><td>U &lt; 0.1 ppb · Th &lt; 0.1 ppb</td></tr>
+        <tr><th>표면개질</th><td>아미노기 · 메르캅토기 개질 가능, 소수화 처리 시 접촉각 150° 이상</td></tr>
+      </table>
+      <h2>입경별 SEM</h2>
+      <p>100 nm · 150 nm · 400 nm 입자의 SEM 이미지에서 응집 없는 균일한 구형 입자를 확인할 수 있습니다.</p>
+      <h2>전자급 실리카졸 (6N)</h2>
+      <p>고객 요구에 따라 전자급 실리카졸 6N급을 수계 및 맞춤 용제형으로 생산하며, CMP 연마·도료·수지 하이브리드 등에 사용됩니다.</p>
+      <h2>주요 응용 분야</h2>
+      <p>반도체 EMC · 언더필, 어드밴스드 패키징, CMP 연마 슬러리, 도료 · 정밀 코팅, 수지 하이브리드 · 복합재, 저유전 CCL / PCB.</p>`,
+  },
+  {
     path: "/products/fused-silica",
     title: "용융실리카(Fused Silica) — A·B·C 등급 + 전 SL 시리즈 통합 카테고리 | SILICA",
     description:
