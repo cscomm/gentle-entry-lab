@@ -321,6 +321,8 @@ const ProductDetail = () => {
           </div>
         </section>
 
+        {product.slug === "synthetic-silica" && <SyntheticSilicaIntro />}
+
         <SiteFooter />
       </div>
     );
@@ -387,6 +389,7 @@ const ProductDetail = () => {
                 ))}
               </div>
             )}
+            {isSynSph && <SynSphBadges />}
           </div>
 
           {/* Spec Sheet */}
@@ -419,6 +422,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Synthetic Spherical Silica — SEM gallery (100 / 150 / 400 nm) */}
+      {isSynSph && <SynSphSemGallery />}
 
       {/* HGM — Detailed Technical Profile */}
       {isHGM && (
