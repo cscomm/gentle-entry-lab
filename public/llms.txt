@@ -13,6 +13,7 @@
 
 - [용융실리카 Fused Silica](https://silica.co.kr/ko/products/fumed-silica/): 반도체·CCL·EMC용 고순도 용융 실리카 (A/B/C 등급, SL 시리즈)
 - [쿼츠 · 결정질 실리카 Crystalline Silica](https://silica.co.kr/ko/products/crystalline-silica/): α-Quartz 기반 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말
+- [화학합성 실리카 Chemically Synthesized Silica](https://silica.co.kr/ko/products/synthetic-silica/): 합성 구형 실리카 — SiO₂ ≥99.995%, U/Th <0.1ppb, 입경 20nm~2µm 맞춤 (구상 실리카 분말에도 게시)
 - [침전 실리카 Precipitated Silica](https://silica.co.kr/ko/products/precipitated-silica/): 도료 소광·고무 보강·접착제·사료·식품·치약용 침전 실리카 25종
 - [흄드 실리카 Fumed Silica](https://silica.co.kr/ko/products/fumed-silica/): 친수성/소수성 기상법 실리카, 증점·요변성 부여
 - [실리카겔 Silica Gel](https://silica.co.kr/ko/products/silica-gel/): 크로마토그래피(CHR)·산업용(IND)·건조제(DES)·촉매 담체 등 26종
