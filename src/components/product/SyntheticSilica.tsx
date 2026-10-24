@@ -444,7 +444,7 @@ export const SynSphTechProfile = () => {
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm lg:col-span-2">
-            <div className="relative aspect-square overflow-hidden bg-foreground">
+            <div className="relative aspect-[4/3] overflow-hidden bg-foreground">
               <img src={sem150} alt={silicaAlt("합성 구형 실리카 150nm SEM 확대")} loading="lazy" className="h-full w-full object-cover" />
               <span className="absolute bottom-3 left-3 rounded-full bg-card/90 px-3 py-1 font-mono text-xs font-semibold text-foreground backdrop-blur">SEM · 150 nm</span>
             </div>
