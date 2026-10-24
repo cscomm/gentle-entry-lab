@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
+import { useHiddenSlugs } from "@/lib/productVisibility";
 import { Link, useLocation } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -132,6 +133,7 @@ const Index = () => {
   const { toast } = useToast();
   const { t, lang } = useLang();
   const [activeCat, setActiveCat] = useState("전체 제품");
+  const hiddenSet = useHiddenSlugs();
   const [activeApp, setActiveApp] = useState("전체 응용분야");
   const [form, setForm] = useState({ name: "", phone: "", email: "", company: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -174,8 +176,9 @@ const Index = () => {
     }
   }, [location.pathname, location.hash, location.key]);
 
-  const filteredProducts =
-    activeCat === "전체 제품" ? products : products.filter((p) => p.cat === activeCat);
+  const filteredProducts = (
+    activeCat === "전체 제품" ? products : products.filter((p) => p.cat === activeCat)
+  ).filter((p) => !hiddenSet.has(p.slug));
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
