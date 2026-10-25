@@ -361,6 +361,48 @@ export type Database = {
         }
         Relationships: []
       }
+      product_finder_logs: {
+        Row: {
+          answer: string | null
+          created_at: string
+          duration_ms: number | null
+          error_message: string | null
+          id: string
+          lang: string
+          query: string
+          recommended: Json
+          status: string
+          updated_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          answer?: string | null
+          created_at?: string
+          duration_ms?: number | null
+          error_message?: string | null
+          id?: string
+          lang?: string
+          query?: string
+          recommended?: Json
+          status?: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          answer?: string | null
+          created_at?: string
+          duration_ms?: number | null
+          error_message?: string | null
+          id?: string
+          lang?: string
+          query?: string
+          recommended?: Json
+          status?: string
+          updated_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       product_visibility: {
         Row: {
           slug: string
