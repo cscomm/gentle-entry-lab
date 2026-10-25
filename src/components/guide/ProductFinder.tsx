@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Link } from "@/lib/router";
 import { ArrowRight, Loader2, RotateCcw, Sparkles, Square, Wand2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -362,7 +363,7 @@ const ProductFinder = () => {
               </div>
               {analysis ? (
                 <div className="text-[15px]">
-                  <ReactMarkdown components={md}>{analysis}</ReactMarkdown>
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={md}>{analysis}</ReactMarkdown>
                   {loading && !hasRecMarker && <span className="inline-block h-4 w-2 animate-pulse bg-primary/60 align-middle" />}
                 </div>
               ) : (
