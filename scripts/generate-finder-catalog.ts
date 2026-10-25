@@ -24,9 +24,9 @@ const items = productCatalog
     en: p.enName,
     group: p.isCategoryIndex ? "CATEGORY" : p.parentSlug ?? p.category ?? "",
     tag: clip(p.tagline, 90),
-    desc: clip(p.description, p.isCategoryIndex ? 220 : 160),
-    apps: (p.applications ?? []).slice(0, 6).map((a) => clip(a, 40)),
-    specs: (p.specs ?? []).slice(0, 5).map((s) => `${clip(s.label, 20)}: ${clip(s.value, 40)}`),
+    desc: clip(p.description, p.isCategoryIndex ? 180 : 120),
+    apps: (p.applications ?? []).slice(0, 5).map((a) => clip(a, 30)),
+    specs: (p.specs ?? []).slice(0, 4).map((s) => `${clip(s.label, 20)}: ${clip(s.value, 40)}`),
     models: p.isCategoryIndex ? undefined : (p.subModels ?? []).slice(0, 8).map((m) => m.code),
   }));
 
