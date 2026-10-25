@@ -60,7 +60,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "form.cancel": { ko: "취소", en: "Cancel", ja: "キャンセル" },
 
   // Hero
-  "hero.cta": { ko: "제품 살펴보기", en: "Explore Products", ja: "製品を見る" },
+  "hero.cta": { ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
   "hero.cta2": { ko: "제품 문의", en: "Product Inquiry", ja: "製品お問い合わせ" },
 
   "hero1.title": { ko: "Silica: Nature's Gift to the Future.", en: "Silica: Nature's Gift to the Future.", ja: "Silica: Nature's Gift to the Future." },

@@ -319,17 +319,17 @@ const Index = () => {
             <Button
               asChild
               size="lg"
-              className="h-12 w-44 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
+              className="h-12 min-w-44 rounded-full bg-primary px-7 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
             >
-              <a href="#products" onClick={() => setActiveCat("전체 제품")}>
+              <Link to="/guide/finder/">
                 {t("hero.cta")}
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
             </Button>
             <Button
               asChild
               size="lg"
-              className="h-12 w-44 rounded-full bg-primary px-8 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
+              className="h-12 min-w-44 rounded-full bg-primary px-7 text-primary-foreground shadow-[var(--shadow-glow)] hover:bg-primary/90"
             >
               <a href="#contact">
                 {t("hero.cta2")}

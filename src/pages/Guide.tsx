@@ -7,6 +7,7 @@ import FaqSection from "@/components/guide/FaqSection";
 import BoardSection from "@/components/guide/BoardSection";
 import ProductFinder from "@/components/guide/ProductFinder";
 import { Navigate } from "@/lib/router";
+import { withLang } from "@/lib/i18nRouting";
 import { useLang } from "@/contexts/LanguageContext";
 
 export type GuideSection = "faq" | "board" | "finder";
@@ -100,9 +101,10 @@ const Guide = ({ section = "faq" }: { section?: GuideSection }) => {
 /** Old single-page URL (/guide?tab=…) → the matching separate page. */
 export const GuideRedirect = () => {
   const [params] = useSearchParams();
+  const { lang } = useLang();
   const tab = params.get("tab");
   const target = tab === "finder" ? GUIDE_SECTIONS.finder.to : tab === "board" ? GUIDE_SECTIONS.board.to : GUIDE_SECTIONS.faq.to;
-  return <Navigate to={target} replace />;
+  return <Navigate to={withLang(lang, target)} replace />;
 };
 
 export default Guide;
