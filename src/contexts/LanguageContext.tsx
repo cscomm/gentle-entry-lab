@@ -23,6 +23,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "nav.applications": { ko: "응용분야", en: "Applications", ja: "応用分野" },
   "nav.contact": { ko: "문의하기", en: "Contact", ja: "お問い合わせ" },
   "nav.board": { ko: "게시판", en: "Board", ja: "掲示板" },
+  "nav.guide": { ko: "사용가이드", en: "User Guide", ja: "ご利用ガイド" },
   "nav.tagline": { ko: "실리카 전문 기업", en: "Silica Specialist", ja: "シリカ専門企業" },
 
   // Board
