@@ -45,9 +45,9 @@ export const GUIDE_SECTIONS: Record<GuideSection, { to: string; icon: typeof Hel
     eyebrow: "AI PRODUCT FINDER",
     label: { ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
     intro: {
-      ko: "사용 용도나 원하는 효과를 적어 주시면, AI가 적합한 소재를 제안하고 사이트에서 가장 가까운 제품을 추천합니다.",
-      en: "Describe your application or the effect you need — the AI suggests suitable materials and our closest matching products.",
-      ja: "用途や求める効果をご記入いただくと、AIが適した素材を提案し、当サイトで最も近い製品をおすすめします。",
+      ko: "사용하실 용도, 공정, 원하는 효과를 자유롭게 적어주세요. AI가 소재 전문가 관점에서 적합한 소재와 핵심 사양을 먼저 제안하고, 사이트에서 가장 근접한 제품을 함께 추천해 드립니다.",
+      en: "Describe your application, process and the effect you want. AI first proposes suitable materials and key specs from a materials-expert view, then recommends the closest products on our site.",
+      ja: "ご使用の用途・工程・求める効果を自由にご記入ください。AIが素材の専門家の視点で適した素材と主要スペックを提案し、当サイトで最も近い製品もあわせてご推薦します。",
     },
     title: {
       ko: "나에게 적합한 실리카 제품은? AI 추천 | SILICA",
