@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "@/lib/router";
-import { ArrowRight, Loader2, RotateCcw, Sparkles, Square, Wand2 } from "lucide-react";
+import { ArrowRight, Loader2, RotateCcw, Sparkles, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useLang, type Lang } from "@/contexts/LanguageContext";
@@ -273,19 +273,6 @@ const ProductFinder = () => {
       <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-card p-6 shadow-sm md:p-8">
         <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
         <div className="relative">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md">
-              <Wand2 className="h-5 w-5" />
-            </span>
-            <div>
-              <p className="text-xs font-bold tracking-widest text-primary">AI PRODUCT FINDER</p>
-              <p className="text-lg font-bold text-foreground">
-                {{ ko: "나에게 적합한 제품은?", en: "Which product is right for me?", ja: "私に合う製品は？" }[lang]}
-              </p>
-            </div>
-          </div>
-          <p className="mb-5 text-sm leading-relaxed text-muted-foreground md:text-base">{tx("lead")}</p>
-
           <label htmlFor="finder-query" className="mb-2 block text-sm font-semibold text-foreground">
             {tx("label")}
           </label>

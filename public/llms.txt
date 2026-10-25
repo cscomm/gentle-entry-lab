@@ -36,7 +36,9 @@
 ## 회사 정보
 
 - [회사 소개](https://silica.co.kr/ko/about/): 사업 개요, 파트너사(SINOTENNG-SILICA), 생산·공급 체계
-- [사용가이드](https://silica.co.kr/ko/guide/): FAQ(샘플·MOQ·납기·전략물자·최종용도확인서·품질 보증), 게시판, AI 소재 추천 '나에게 적합한 제품은?'
+- [사용가이드 · FAQ](https://silica.co.kr/ko/guide/faq/): 샘플·MOQ·납기·전략물자·최종용도확인서·품질 보증
+- [사용가이드 · 게시판](https://silica.co.kr/ko/board/): 공지·기술 정보
+- [나에게 적합한 제품은?](https://silica.co.kr/ko/guide/finder/): 용도·원하는 효과로 실리카 소재를 추천하는 AI
 - [기술 게시판](https://silica.co.kr/ko/board/): 실리카 소재 기술 자료 및 공지 (ko/en/ja 자동 번역 제공)
 - [이용약관](https://silica.co.kr/ko/terms/)
 - [개인정보처리방침](https://silica.co.kr/ko/privacy/)
