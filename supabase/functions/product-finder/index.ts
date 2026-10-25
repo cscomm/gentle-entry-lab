@@ -76,10 +76,37 @@ Deno.serve(async (req) => {
   const apiKey = Deno.env.get("LOVABLE_API_KEY");
   if (!apiKey) return json({ error: "AI not configured" }, 500);
 
+  const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+  const startedAt = Date.now();
+
+  // Log every request so the admin panel can review what visitors asked.
+  let logId: string | null = null;
+  try {
+    const { data } = await sb
+      .from("product_finder_logs")
+      .insert({ query, lang, status: "pending", user_agent: (req.headers.get("user-agent") ?? "").slice(0, 300) || null })
+      .select("id")
+      .single();
+    logId = data?.id ?? null;
+  } catch (e) {
+    console.error("finder log insert failed", e);
+  }
+  const finishLog = async (answer: string, status: string, errorMessage: string | null) => {
+    if (!logId) return;
+    const { analysis, recommended } = splitAnswer(answer);
+    try {
+      await sb
+        .from("product_finder_logs")
+        .update({ answer: analysis, recommended, status, error_message: errorMessage, duration_ms: Date.now() - startedAt })
+        .eq("id", logId);
+    } catch (e) {
+      console.error("finder log update failed", e);
+    }
+  };
+
   // Respect admin show/hide switches.
   let hidden = new Set<string>();
   try {
-    const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
     const { data } = await sb.from("product_visibility").select("slug, visible");
     hidden = new Set((data ?? []).filter((r) => !r.visible).map((r) => r.slug as string));
   } catch {
@@ -115,6 +142,9 @@ Deno.serve(async (req) => {
     async start(controller) {
       let wrote = false;
       let errored = false;
+      let full = "";
+      let logStatus = "done";
+      let logError: string | null = null;
       try {
         for await (const part of result.fullStream) {
           if (part.type === "text-delta") {
@@ -122,21 +152,40 @@ Deno.serve(async (req) => {
             const t = (part as any).text ?? (part as any).delta ?? "";
             if (t) {
               wrote = true;
+              full += t;
               controller.enqueue(enc.encode(t));
             }
           } else if (part.type === "error") {
             errored = true;
-            controller.enqueue(enc.encode(errorMarker(part.error)));
+            const m = errorMarker(part.error);
+            logStatus = "error";
+            logError = m.replace("\n[[ERROR]]", "");
+            controller.enqueue(enc.encode(m));
             break;
           }
         }
         if (!wrote && !errored) {
+          logStatus = "error";
+          logError = "empty response";
           controller.enqueue(enc.encode(`\n[[ERROR]]${JSON.stringify({ status: 502, message: "empty response" })}`));
         }
       } catch (e) {
-        if ((e as Error)?.name !== "AbortError") controller.enqueue(enc.encode(errorMarker(e)));
+        if ((e as Error)?.name === "AbortError" || req.signal.aborted) {
+          logStatus = "aborted";
+        } else {
+          const m = errorMarker(e);
+          logStatus = "error";
+          logError = m.replace("\n[[ERROR]]", "");
+          try {
+            controller.enqueue(enc.encode(m));
+          } catch { /* client gone */ }
+        }
       } finally {
-        controller.close();
+        if (req.signal.aborted && logStatus === "done") logStatus = "aborted";
+        await finishLog(full, logStatus, logError);
+        try {
+          controller.close();
+        } catch { /* already closed */ }
       }
     },
   });
@@ -147,6 +196,18 @@ Deno.serve(async (req) => {
     corsHeaders,
   );
 });
+
+/** Separates the markdown analysis from the trailing [[RECOMMEND]] JSON for the log. */
+function splitAnswer(text: string): { analysis: string; recommended: unknown[] } {
+  const i = text.indexOf("[[RECOMMEND]]");
+  if (i < 0) return { analysis: text.trim(), recommended: [] };
+  let recommended: unknown[] = [];
+  try {
+    const v = JSON.parse(text.slice(i + 13).trim().replace(/^```(json)?|```$/g, "").trim());
+    if (Array.isArray(v)) recommended = v.slice(0, 8);
+  } catch { /* malformed */ }
+  return { analysis: text.slice(0, i).trim(), recommended };
+}
 
 function errorMarker(err: unknown) {
   // deno-lint-ignore no-explicit-any
