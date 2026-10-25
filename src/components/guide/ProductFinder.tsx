@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "@/lib/router";
-import { ArrowRight, Loader2, RotateCcw, Sparkles, Square, Wand2 } from "lucide-react";
+import { ArrowRight, Loader2, RotateCcw, Sparkles, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useLang, type Lang } from "@/contexts/LanguageContext";
@@ -273,7 +273,6 @@ const ProductFinder = () => {
       <div className="relative overflow-hidden rounded-3xl border border-primary/25 bg-card p-6 shadow-sm md:p-8">
         <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
         <div className="relative">
-
           <label htmlFor="finder-query" className="mb-2 block text-sm font-semibold text-foreground">
             {tx("label")}
           </label>
