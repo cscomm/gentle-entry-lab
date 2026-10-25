@@ -11,7 +11,7 @@ const navItems = [
   { key: "nav.products", href: "/#products", dropdown: "products" as const },
   { key: "nav.about", href: "/about" },
   { key: "nav.applications", href: "/#applications", dropdown: "applications" as const },
-  { key: "nav.guide", href: "/guide" },
+  { key: "nav.guide", href: "/guide/faq/", dropdown: "guide" as const },
   { key: "nav.contact", href: "/#contact" },
 ];
 
@@ -46,6 +46,13 @@ const applicationMenu = [
   { to: "/products/high-purity-quartz/#applications", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
 ];
 
+const guideMenu = [
+  { to: "/guide/faq/", ko: "FAQ", en: "FAQ", ja: "FAQ" },
+  { to: "/board/", ko: "게시판", en: "Board", ja: "掲示板" },
+  { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
+];
+
+type DropdownKey = "products" | "applications" | "guide";
 
 interface SiteHeaderProps {
   /** Use transparent style at top of page (only useful when page has a hero behind it). */
@@ -60,8 +67,8 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
   const [q, setQ] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
-  const [openGroup, setOpenGroup] = useState<"products" | "applications" | null>(null);
-  const [activeDropdown, setActiveDropdown] = useState<"products" | "applications" | null>(null);
+  const [openGroup, setOpenGroup] = useState<DropdownKey | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<DropdownKey | null>(null);
   const dropdownTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -71,7 +78,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
   }, [pathname]);
 
 
-  const openDropdown = (dropdown: "products" | "applications") => {
+  const openDropdown = (dropdown: DropdownKey) => {
     if (dropdownTimer.current) clearTimeout(dropdownTimer.current);
     setActiveDropdown(dropdown);
   };
@@ -112,7 +119,8 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
 
   const hiddenSet = useHiddenSlugs();
   const visProductMenu = productMenu.filter((it) => !hiddenSet.has(it.to.split("/")[2]));
-  const dropdownItems = activeDropdown === "products" ? visProductMenu : applicationMenu;
+  const menuFor = (d: DropdownKey) => (d === "products" ? visProductMenu : d === "guide" ? guideMenu : applicationMenu);
+  const dropdownItems = activeDropdown ? menuFor(activeDropdown) : [];
   const dropdownAllHref = activeDropdown === "products" ? "/products/all" : "/#applications";
   const dropdownAllLabel = activeDropdown === "products" ? t("products.all") : t("applications.all");
 
@@ -275,7 +283,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   </button>
                   {openGroup === item.dropdown && (
                     <div className="pb-2">
-                      {(item.dropdown === "products" ? visProductMenu : applicationMenu).map((it) => (
+                      {menuFor(item.dropdown).map((it) => (
                         <Link
                           key={it.to}
                           to={it.to}
@@ -320,12 +328,14 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
       {/* Compact mega dropdown */}
       {activeDropdown && (
         <div
-          className="hidden absolute left-1/2 top-full z-50 w-full max-w-4xl -translate-x-1/2 rounded-b-xl border border-border/60 bg-background shadow-2xl md:block"
+          className={`hidden absolute left-1/2 top-full z-50 w-full -translate-x-1/2 rounded-b-xl border border-border/60 bg-background shadow-2xl md:block ${
+            activeDropdown === "guide" ? "max-w-2xl" : "max-w-4xl"
+          }`}
           onMouseEnter={() => activeDropdown && openDropdown(activeDropdown)}
           onMouseLeave={closeDropdown}
         >
           <div className="px-3 py-2">
-            <div className="mb-1.5 border-b border-border/60 pb-1">
+            {activeDropdown !== "guide" && <div className="mb-1.5 border-b border-border/60 pb-1">
               <Link
                 to={dropdownAllHref}
                 onClick={() => setActiveDropdown(null)}
@@ -334,8 +344,8 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                 {dropdownAllLabel}
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-            </div>
-            <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3 md:grid-cols-4">
+            </div>}
+            <div className={`grid gap-0.5 ${activeDropdown === "guide" ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4"}`}>
               {dropdownItems.map((it) => (
                 <Link
                   key={it.to}
@@ -346,7 +356,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
                     {pick(lang, it.ko, it.en, it.ja)}
                   </span>
-                  {lang === "ko" && (
+                  {lang === "ko" && it.en !== it.ko && (
                     <span className="mt-0.5 text-[11px] text-muted-foreground">{it.en}</span>
                   )}
                 </Link>
