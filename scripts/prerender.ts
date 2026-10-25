@@ -46,10 +46,6 @@ function guideBody(): string {
       <p>${escHtml(FAQ_INTRO.ko)}</p>
       <h2>자주 묻는 질문 (FAQ)</h2>
       ${items}
-      <h2>게시판</h2>
-      <p>공지사항, 업계 소식, 용융 실리카·실리카 겔·고순도 규석 관련 기술 정보를 공유합니다.</p>
-      <h2>나에게 적합한 제품은? — AI 소재 추천</h2>
-      <p>사용 용도, 공정, 원하는 효과를 입력하면 AI가 소재 전문가 관점에서 적합한 실리카 소재와 핵심 사양(입경, 순도, 비표면적, 표면처리 등)을 제안하고, 사이트 내 가장 근접한 제품을 추천합니다.</p>
       <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
 }
 
@@ -989,20 +985,43 @@ export const routes: Route[] = [
   },
   ...productRoutes,
   {
-    path: "/guide",
-    title: "사용가이드 — 실리카 FAQ · 게시판 · AI 제품 추천 | SILICA",
+    path: "/guide/faq",
+    title: "사용가이드 FAQ — 샘플·MOQ·납기·통관·품질 자주 묻는 질문 | SILICA",
     description:
-      "샘플 제공·소요 기간, 최소 주문 수량(MOQ), 납기, 전략물자·최종용도확인서, 품질 보증(TDS·CoA) 등 자주 묻는 질문과 게시판, 용도에 맞는 실리카 소재를 AI가 추천하는 '나에게 적합한 제품은?'을 제공합니다.",
+      "샘플 제공·소요 기간, 최소 주문 수량(MOQ), 납기, 전략물자·최종용도확인서, 품질 보증(TDS·CoA) 등 실리카 소재 구매 시 자주 묻는 질문과 답변을 안내합니다.",
     titleI18n: {
-      en: "User Guide — Silica FAQ, Board & AI Product Finder | SILICA",
-      ja: "ご利用ガイド — シリカFAQ・掲示板・AI製品レコメンド | SILICA",
+      en: "User Guide FAQ — Samples, MOQ, Lead Time, Customs & Quality | SILICA",
+      ja: "ご利用ガイドFAQ — サンプル・MOQ・納期・通関・品質 | SILICA",
     },
     descriptionI18n: {
-      en: "FAQ on samples and lead times, MOQ, delivery, dual-use items and End-User Certificates, quality assurance (TDS, CoA), plus our board and an AI advisor that recommends the right silica material for your application.",
-      ja: "サンプル提供・所要期間、最小注文数量（MOQ）、納期、戦略物資・最終用途確認書、品質保証（TDS・CoA）などのよくあるご質問、掲示板、用途に合うシリカ素材をAIが提案する「私に合う製品は？」をご案内します。",
+      en: "Answers on samples and lead times, minimum order quantity (MOQ), delivery, dual-use items and End-User Certificates, and quality assurance (TDS, CoA) for silica materials.",
+      ja: "サンプル提供・所要期間、最小注文数量（MOQ）、納期、戦略物資・最終用途確認書、品質保証（TDS・CoA）など、シリカ素材購入時のよくあるご質問にお答えします。",
     },
-    h1: "사용가이드 — FAQ · 게시판 · 나에게 적합한 제품은?",
+    h1: "사용가이드 — 자주 묻는 질문 (FAQ)",
     body: guideBody(),
+  },
+  {
+    path: "/guide/finder",
+    title: "나에게 적합한 실리카 제품은? — AI 소재 추천 | SILICA",
+    description:
+      "사용 용도, 공정, 원하는 효과를 입력하면 AI가 소재 전문가 관점에서 적합한 실리카 소재와 핵심 사양을 제안하고, SILICA의 가장 근접한 제품을 추천합니다.",
+    titleI18n: {
+      en: "Find the Right Silica Product — AI Material Advisor | SILICA",
+      ja: "私に合うシリカ製品は？— AI素材レコメンド | SILICA",
+    },
+    descriptionI18n: {
+      en: "Describe your application, process or desired effect — the AI suggests suitable silica materials and key specs, then recommends SILICA's closest matching products.",
+      ja: "用途・工程・求める効果を入力すると、AIが素材専門家の視点で適したシリカ素材と主要仕様を提案し、SILICAの最も近い製品をおすすめします。",
+    },
+    h1: "나에게 적합한 제품은? — AI 소재 추천",
+    body: `
+      <p>사용 용도, 공정, 원하는 효과를 입력하면 AI가 소재 전문가 관점에서 적합한 실리카 소재와 핵심 사양(입경, 순도, 비표면적, 표면처리 등)을 먼저 제안하고, 이어서 사이트 내 가장 근접한 제품을 추천합니다.</p>
+      <h2>이렇게 활용하세요</h2>
+      <ul>
+        <li>에폭시 몰딩 컴파운드(EMC) 충전재, 저열팽창·고충전이 필요할 때</li>
+        <li>도료·코팅의 소광, 증점·요변성, 블로킹 방지가 필요할 때</li>
+        <li>흡습·제습, 정밀 연마(CMP), 단열·경량화 소재를 찾을 때</li>
+      </ul>`,
   },
   {
     path: "/board",
@@ -1133,7 +1152,7 @@ function priorityFor(path: string): { changefreq: string; priority: string } {
   if (path.startsWith("/products/")) return { changefreq: "monthly", priority: "0.8" };
   if (path.startsWith("/applications/")) return { changefreq: "monthly", priority: "0.7" };
   if (path === "/board") return { changefreq: "daily", priority: "0.7" };
-  if (path === "/guide") return { changefreq: "weekly", priority: "0.8" };
+  if (path.startsWith("/guide/")) return { changefreq: "weekly", priority: "0.8" };
   return { changefreq: "yearly", priority: "0.3" };
 }
 
