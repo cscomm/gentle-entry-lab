@@ -73,7 +73,7 @@ const Guide = ({ defaultTab = "faq" }: { defaultTab?: Tab }) => {
             <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
               {{ ko: "사용가이드", en: "User Guide", ja: "ご利用ガイド" }[lang]}
             </h1>
-            <p className="mt3 mt-3 text-muted-foreground">
+            <p className="mt-3 text-muted-foreground">
               {{
                 ko: "자주 묻는 질문부터 게시판, AI 제품 추천까지 — 필요한 정보를 한 곳에서 찾아보세요.",
                 en: "From FAQs to our board and an AI product advisor — everything you need in one place.",
