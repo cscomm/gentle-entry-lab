@@ -9,7 +9,11 @@ interface LangCtx {
   t: (key: string) => string;
 }
 
-const LanguageContext = createContext<LangCtx | undefined>(undefined);
+// Keep one context instance across hot reloads: editing this file (e.g. adding
+// a translation key) otherwise creates a new context while the mounted provider
+// still uses the old one, and every useLang() call throws.
+const g = globalThis as { __silicaLangCtx?: React.Context<LangCtx | undefined> };
+const LanguageContext = (g.__silicaLangCtx ??= createContext<LangCtx | undefined>(undefined));
 
 const SUPPORTED: readonly Lang[] = ["ko", "en", "ja"];
 const isLang = (v: string | undefined): v is Lang =>
@@ -23,6 +27,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "nav.applications": { ko: "응용분야", en: "Applications", ja: "応用分野" },
   "nav.contact": { ko: "문의하기", en: "Contact", ja: "お問い合わせ" },
   "nav.board": { ko: "게시판", en: "Board", ja: "掲示板" },
+  "nav.guide": { ko: "사용가이드", en: "User Guide", ja: "ご利用ガイド" },
   "nav.tagline": { ko: "실리카 전문 기업", en: "Silica Specialist", ja: "シリカ専門企業" },
 
   // Board

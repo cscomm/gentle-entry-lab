@@ -26,6 +26,7 @@ import About from "./pages/About.tsx";
 import Terms from "./pages/Terms.tsx";
 import Privacy from "./pages/Privacy.tsx";
 import Board from "./pages/Board.tsx";
+import Guide from "./pages/Guide.tsx";
 import BoardNew from "./pages/BoardNew.tsx";
 import BoardDetail from "./pages/BoardDetail.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
@@ -80,6 +81,7 @@ const LangShell = () => {
       <Route path="about" element={<About />} />
       <Route path="terms" element={<Terms />} />
       <Route path="privacy" element={<Privacy />} />
+      <Route path="guide" element={<Guide />} />
       <Route path="board" element={<Board />} />
       <Route path="board/new" element={<BoardNew />} />
       <Route path="board/:id" element={<BoardDetail />} />

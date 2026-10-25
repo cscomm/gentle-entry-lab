@@ -7,6 +7,51 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
+import { faqItems, FAQ_INTRO } from "../src/data/faq";
+
+const escHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+// Static FAQ text + FAQPage structured data for the 사용가이드 page.
+function guideBody(): string {
+  const items = faqItems
+    .map((f) => {
+      const parts: string[] = [];
+      let list: string[] = [];
+      const flush = () => {
+        if (list.length) parts.push(`<ul>${list.map((l) => `<li>${escHtml(l)}</li>`).join("")}</ul>`);
+        list = [];
+      };
+      for (const line of f.a.ko) {
+        if (line.startsWith("- ")) list.push(line.slice(2));
+        else {
+          flush();
+          parts.push(`<p>${escHtml(line)}</p>`);
+        }
+      }
+      flush();
+      return `<h3>Q. ${escHtml(f.q.ko)}</h3>${parts.join("")}`;
+    })
+    .join("\n");
+  const ld = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((f) => ({
+      "@type": "Question",
+      name: f.q.ko,
+      acceptedAnswer: { "@type": "Answer", text: f.a.ko.map((l) => l.replace(/^- /, "• ")).join("\n") },
+    })),
+  };
+  return `
+      <p>${escHtml(FAQ_INTRO.ko)}</p>
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      ${items}
+      <h2>게시판</h2>
+      <p>공지사항, 업계 소식, 용융 실리카·실리카 겔·고순도 규석 관련 기술 정보를 공유합니다.</p>
+      <h2>나에게 적합한 제품은? — AI 소재 추천</h2>
+      <p>사용 용도, 공정, 원하는 효과를 입력하면 AI가 소재 전문가 관점에서 적합한 실리카 소재와 핵심 사양(입경, 순도, 비표면적, 표면처리 등)을 제안하고, 사이트 내 가장 근접한 제품을 추천합니다.</p>
+      <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
+}
 
 const BASE_URL = "https://silica.co.kr";
 const DIST = resolve("dist");
@@ -944,6 +989,22 @@ export const routes: Route[] = [
   },
   ...productRoutes,
   {
+    path: "/guide",
+    title: "사용가이드 — 실리카 FAQ · 게시판 · AI 제품 추천 | SILICA",
+    description:
+      "샘플 제공·소요 기간, 최소 주문 수량(MOQ), 납기, 전략물자·최종용도확인서, 품질 보증(TDS·CoA) 등 자주 묻는 질문과 게시판, 용도에 맞는 실리카 소재를 AI가 추천하는 '나에게 적합한 제품은?'을 제공합니다.",
+    titleI18n: {
+      en: "User Guide — Silica FAQ, Board & AI Product Finder | SILICA",
+      ja: "ご利用ガイド — シリカFAQ・掲示板・AI製品レコメンド | SILICA",
+    },
+    descriptionI18n: {
+      en: "FAQ on samples and lead times, MOQ, delivery, dual-use items and End-User Certificates, quality assurance (TDS, CoA), plus our board and an AI advisor that recommends the right silica material for your application.",
+      ja: "サンプル提供・所要期間、最小注文数量（MOQ）、納期、戦略物資・最終用途確認書、品質保証（TDS・CoA）などのよくあるご質問、掲示板、用途に合うシリカ素材をAIが提案する「私に合う製品は？」をご案内します。",
+    },
+    h1: "사용가이드 — FAQ · 게시판 · 나에게 적합한 제품은?",
+    body: guideBody(),
+  },
+  {
     path: "/board",
     title: "공지·기술 자료 — 용융 실리카·실리카 겔 소식 | SILICA",
     description:
@@ -1072,6 +1133,7 @@ function priorityFor(path: string): { changefreq: string; priority: string } {
   if (path.startsWith("/products/")) return { changefreq: "monthly", priority: "0.8" };
   if (path.startsWith("/applications/")) return { changefreq: "monthly", priority: "0.7" };
   if (path === "/board") return { changefreq: "daily", priority: "0.7" };
+  if (path === "/guide") return { changefreq: "weekly", priority: "0.8" };
   return { changefreq: "yearly", priority: "0.3" };
 }
 
