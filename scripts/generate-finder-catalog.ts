@@ -11,6 +11,17 @@ const clip = (s: string | undefined, n: number) => {
   return t.length > n ? t.slice(0, n) + "…" : t;
 };
 
+// Mirrors groupKeyOf in src/lib/productVisibility.ts so admin hide toggles apply.
+const CAT_TO_PAGE: Record<string, string> = {
+  quartz: "high-purity-quartz",
+  "silica-gel": "silica-gel",
+  precipitated: "precipitated-silica",
+  fumed: "fumed-silica",
+  sand: "silica-sand",
+  "sand-powder": "silica-powder",
+  "advanced-series": "applied-silica-materials",
+};
+
 const seen = new Set<string>();
 const items = productCatalog
   .filter((p) => {
@@ -22,7 +33,7 @@ const items = productCatalog
     slug: p.slug,
     name: p.name,
     en: p.enName,
-    group: p.isCategoryIndex ? "CATEGORY" : p.parentSlug ?? p.category ?? "",
+    group: p.isCategoryIndex ? "CATEGORY" : p.parentSlug ?? CAT_TO_PAGE[p.category ?? "quartz"] ?? "",
     tag: clip(p.tagline, 90),
     desc: clip(p.description, p.isCategoryIndex ? 180 : 120),
     apps: (p.applications ?? []).slice(0, 5).map((a) => clip(a, 30)),
