@@ -112,6 +112,25 @@ Deno.serve(async (req) => {
       return json({ success: true })
     }
 
+    if (action === 'finder_logs') {
+      const limit = Math.min(Math.max(Number(body.limit) || 300, 1), 1000)
+      const { data, error } = await supabase
+        .from('product_finder_logs')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(limit)
+      if (error) throw error
+      return json({ success: true, rows: data })
+    }
+
+    if (action === 'delete_finder_log') {
+      const id = typeof body.id === 'string' ? body.id : ''
+      if (!id) return json({ error: 'id_required' }, 400)
+      const { error } = await supabase.from('product_finder_logs').delete().eq('id', id)
+      if (error) throw error
+      return json({ success: true })
+    }
+
     if (action === 'bootstrap') {
       const [accounts, quotes, samples, sales, purchases, receipts, payments, quoteItems] =
         await Promise.all([
