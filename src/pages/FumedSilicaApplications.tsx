@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -257,13 +258,13 @@ const FumedSilicaApplications = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
             {t("흄드 실리카 응용 분야", "Fumed Silica Applications", "ヒュームドシリカの用途")}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <Prose className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {t(
               "흄드 실리카는 현대 산업에서 가장 다재다능한 나노 기능성 첨가제입니다. 사염화규소(SiCl₄)의 화염가수분해로 제조되며, 보강·틱소트로피·안티-새깅·침강 방지·소광·유동성 향상·단열의 독특한 조합을 동시에 제공하여 실리콘 고무·실란트·접착제·도료·화장품·의약품·식품·전자·배터리·고성능 단열재 분야에서 없어서는 안 될 소재로 자리잡고 있습니다.",
               "Fumed silica is the most versatile nano-scale functional additive in modern industry. Produced by flame hydrolysis of SiCl₄, it brings unique combinations of reinforcement, thixotropy, anti-sagging, anti-settling, matting, free-flow and insulation — making it indispensable in silicone rubber, sealants, adhesives, paints, cosmetics, pharmaceuticals, food, electronics, batteries and high-performance insulation.",
               "ヒュームドシリカは、現代産業において最も多機能なナノスケール機能性添加剤です。四塩化ケイ素(SiCl₄)の火炎加水分解により製造され、補強・チキソトロピー・アンチサギング・沈降防止・艶消し・流動性向上・断熱という独自の特性の組み合わせを同時に発揮します。シリコーンゴム・シーラント・接着剤・塗料・化粧品・医薬品・食品・電子部材・電池・高性能断熱材など、幅広い分野で欠かせない素材として活用されています。"
             )}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -280,7 +281,7 @@ const FumedSilicaApplications = () => {
                 </span>
                 <h2 className="text-xl font-bold tracking-tight md:text-2xl">{s.title}</h2>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</p>
+              <Prose className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</Prose>
               <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-start gap-2 text-sm text-foreground/90">

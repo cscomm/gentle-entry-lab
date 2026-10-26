@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -445,13 +446,13 @@ const SilicaGelApplications = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
             {t("실리카겔 응용 분야", "Silica Gel Applications", "シリカゲルの用途")}
           </h1>
-          <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
+          <Prose className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
             {t(
               "크로마토그래피 · 산업 공정 · 건조·흡습 · 알루미나 분자체 · 미분 기능성 실리카까지 — 현행 SL 시리즈 전 라인업의 핵심 특성과 주요 응용 분야를 카테고리별로 정리했습니다.",
               "From chromatography and industrial process to desiccants, alumina/molecular sieves and functional micronized silica — this page maps the current SN-series lineup to its key specs and applications.",
               "クロマトグラフィー・産業工程・乾燥吸湿・アルミナ分子篩・微粉機能性シリカまで — 現行SLシリーズ全ラインナップの主要特性と用途をカテゴリー別に整理しました。"
             )}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -460,9 +461,9 @@ const SilicaGelApplications = () => {
           <div key={g.en}>
             <div className="mb-6">
               <h2 className="text-2xl font-bold md:text-3xl">{t(g.ko, g.en, g.ja)}</h2>
-              <p className="mt-2 max-w-3xl text-sm text-muted-foreground md:text-base">
+              <Prose className="mt-2 max-w-3xl text-sm text-muted-foreground md:text-base">
                 {t(g.descKo, g.descEn, g.descJa)}
-              </p>
+              </Prose>
             </div>
 
             {/* Desktop table */}

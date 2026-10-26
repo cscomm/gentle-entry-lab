@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import Prose from "@/components/Prose";
 import { Link, useLocation, useNavigate } from "@/lib/router";
 import { ArrowRight, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
@@ -67,7 +68,7 @@ const AllProducts = () => {
             ALL PRODUCTS
           </span>
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">{title}</h1>
-          <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">{desc}</p>
+          <Prose className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">{desc}</Prose>
           <p className="mt-3 text-xs text-muted-foreground">
             {pick(lang, "총", "Total", "合計")} {items.length}
             {pick(lang, "개 제품", " products", " 製品")}

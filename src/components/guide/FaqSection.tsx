@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import Prose from "@/components/Prose";
 import { Link } from "@/lib/router";
 import { ArrowRight, MessageCircleQuestion } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -27,7 +28,7 @@ const FaqAnswer = ({ lines }: { lines: string[] }) => {
             ))}
           </ul>
         ) : (
-          <p key={i}>{b}</p>
+          <Prose key={i}>{b}</Prose>
         ),
       )}
     </div>
@@ -42,7 +43,7 @@ const FaqSection = () => {
 
   return (
     <div>
-      <p className="mb-6 text-muted-foreground">{FAQ_INTRO[lang]}</p>
+      <Prose className="mb-6 text-muted-foreground">{FAQ_INTRO[lang]}</Prose>
 
       <div className="mb-6 flex flex-wrap gap-2" role="group" aria-label="FAQ topics">
         {(["all", ...Object.keys(FAQ_TOPICS)] as (FaqTopic | "all")[]).map((k) => {
@@ -99,16 +100,16 @@ const FaqSection = () => {
         <div className="flex items-start gap-3">
           <MessageCircleQuestion className="mt-0.5 h-6 w-6 shrink-0 text-primary" />
           <div>
-            <p className="font-semibold text-foreground">
+            <Prose className="font-semibold text-foreground">
               {{ ko: "원하시는 답을 찾지 못하셨나요?", en: "Didn't find your answer?", ja: "お探しの回答が見つかりませんでしたか？" }[lang]}
-            </p>
-            <p className="text-sm text-muted-foreground">
+            </Prose>
+            <Prose className="text-sm text-muted-foreground">
               {{
                 ko: "용도와 필요한 사양을 남겨주시면 담당자가 직접 안내해 드립니다.",
                 en: "Tell us your application and required specs — our team will get back to you.",
                 ja: "用途と必要なスペックをお知らせいただければ、担当者が直接ご案内いたします。",
               }[lang]}
-            </p>
+            </Prose>
           </div>
         </div>
         <Link

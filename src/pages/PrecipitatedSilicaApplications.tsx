@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -175,13 +176,13 @@ const PrecipitatedSilicaApplications = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
             {t("침전/침강 실리카 응용 분야", "Precipitated Silica Applications", "沈降シリカの用途")}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <Prose className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {t(
               "침전 실리카는 합성 무정형 이산화규소 중 가장 폭넓게 사용되는 형태입니다. 그린타이어와 고기능성 고무 제품, 페인트·잉크·접착제, 식품·의약품·화장품, 농약·산업용 캐리어에 이르기까지 — 거의 모든 현대 산업에서 보강재·레올로지 조절제·고결방지제·기능성 캐리어로 사용되고 있습니다.",
               "Precipitated silica is one of the most universally used forms of synthetic amorphous silicon dioxide. From green tires and high-performance rubber to paints, food, pharmaceuticals, cosmetics, agrochemicals and industrial carriers — almost every modern industry uses it as a reinforcement, rheology modifier, anti-caking agent or functional carrier.",
               "沈降シリカは、合成非晶質二酸化ケイ素の中でも最も幅広く利用されている形態です。グリーンタイヤや高性能ゴム製品、塗料・インキ・接着剤、食品・医薬品・化粧品、農薬・産業用キャリアに至るまで、現代産業のほぼあらゆる分野で補強材・レオロジー調整剤・固結防止剤・機能性キャリアとして使用されています。"
             )}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -198,7 +199,7 @@ const PrecipitatedSilicaApplications = () => {
                 </span>
                 <h2 className="text-xl font-bold tracking-tight md:text-2xl">{s.title}</h2>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</p>
+              <Prose className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</Prose>
               <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-start gap-2 text-sm text-foreground/90">

@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -199,13 +200,13 @@ const FusedSilicaApplications = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
             {t("용융실리카 응용 분야", "Fused Silica Applications", "溶融シリカの用途")}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <Prose className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {t(
               "용융실리카(Fused Silica)는 천연 석영을 1,800℃ 이상의 초고온에서 용융·급냉하여 얻는 비정질 이산화규소(SiO₂) 소재로, 극저 열팽창(0.5~0.6 ×10⁻⁶/℃)·탁월한 열충격 저항·초고온 안정성·우수한 화학적 내구성·저 유전율·고 전기 절연을 동시에 갖춘 첨단 산업의 핵심 원료입니다. A · B · C 등급과 전 SL 시리즈(SN-QG · SN-QG-L · SN-YRG · SN-RG · SN-FL · SN-HRG · SN-FS · SN-HF04) 라인업이 반도체·광학·항공·방산·태양광·에너지·정밀 주조·특수 유리·산업용 컴파운드 등 국가 기간산업 전반에 걸쳐 사용되고 있습니다.",
               "Fused silica is an amorphous SiO₂ material produced by melting natural quartz above 1,800 °C and rapidly quenching it. It uniquely combines ultra-low CTE (0.5–0.6 ×10⁻⁶/°C), exceptional thermal-shock resistance, ultra-high temperature stability, superior chemical durability, low dielectric constant and high electrical insulation — a foundational material for advanced industries. Grades A / B / C together with the full SN-series lineup (SN-QG, SN-QG-L, SN-YRG, SN-RG, SN-FL, SN-HRG, SN-FS, SN-HF04) are used across semiconductor, optics, aerospace, defense, solar, energy, precision casting, specialty glass and industrial-compound sectors.",
               "溶融シリカ(Fused Silica)は、天然石英を1,800℃以上の超高温で溶融・急冷して得られる非晶質二酸化ケイ素(SiO₂)素材で、極低熱膨張(0.5~0.6 ×10⁻⁶/℃)・卓越した耐熱衝撃性・超高温安定性・優れた化学耐久性・低誘電率・高電気絶縁性を兼ね備えた先端産業の核心原料です。A・B・Cグレードと全SLシリーズ(SN-QG・SN-QG-L・SN-YRG・SN-RG・SN-FL・SN-HRG・SN-FS・SN-HF04)ラインアップが、半導体・光学・航空・防衛・太陽光・エネルギー・精密鋳造・特殊ガラス・産業用コンパウンドなど国家基幹産業全般で使用されています。"
             )}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -222,7 +223,7 @@ const FusedSilicaApplications = () => {
                 </span>
                 <h2 className="text-xl font-bold tracking-tight md:text-2xl">{s.title}</h2>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</p>
+              <Prose className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</Prose>
               <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-start gap-2 text-sm text-foreground/90">

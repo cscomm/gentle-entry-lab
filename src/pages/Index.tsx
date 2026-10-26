@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Prose from "@/components/Prose";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { useHiddenSlugs } from "@/lib/productVisibility";
@@ -309,9 +310,9 @@ const Index = () => {
           <h1 key={`t-${slideIdx}`} className="text-5xl font-bold tracking-tight md:text-7xl drop-shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
             {slides[slideIdx].title}
           </h1>
-          <p key={`s-${slideIdx}`} className="mt-6 text-2xl font-light text-white/95 md:text-3xl drop-shadow animate-in fade-in duration-700">
+          <Prose key={`s-${slideIdx}`} className="mt-6 text-2xl font-light text-white/95 md:text-3xl drop-shadow animate-in fade-in duration-700">
             {slides[slideIdx].sub}
-          </p>
+          </Prose>
           <p key={`d-${slideIdx}`} className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow animate-in fade-in duration-1000 break-keep break-words whitespace-pre-line">
             {slides[slideIdx].desc}
           </p>
@@ -367,12 +368,12 @@ const Index = () => {
             <h2 className="mt-6 whitespace-pre-line text-4xl font-bold leading-tight md:text-5xl">
               {t("about.title")}
             </h2>
-            <p className="mt-6 text-muted-foreground">{t("about.p1")}</p>
-            <p className="mt-4 text-muted-foreground">{t("about.p2")}</p>
-            <p className="mt-4 text-muted-foreground">{t("about.p3")}</p>
-            <p className="mt-4 text-muted-foreground">{t("about.p4")}</p>
-            <p className="mt-4 text-muted-foreground">{t("about.p5")}</p>
-            <p className="mt-4 text-muted-foreground">{t("about.p6")}</p>
+            <Prose className="mt-6 text-muted-foreground">{t("about.p1")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{t("about.p2")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{t("about.p3")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{t("about.p4")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{t("about.p5")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{t("about.p6")}</Prose>
             <Button
               asChild
               variant="outline"
@@ -464,9 +465,9 @@ const Index = () => {
               <h2 className="mt-6 whitespace-pre-line text-3xl font-bold leading-tight md:text-4xl">
                 {t("contact.title")}
               </h2>
-              <p className="mt-5 text-sm text-background/70">
+              <Prose className="mt-5 text-sm text-background/70">
                 {t("contact.desc")}
-              </p>
+              </Prose>
 
               {/* Compact office card */}
               <aside className="mt-8 rounded-2xl border border-background/15 bg-background/5 p-5 backdrop-blur-xl">
