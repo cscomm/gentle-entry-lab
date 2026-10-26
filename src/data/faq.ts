@@ -34,19 +34,19 @@ export const faqItems: FaqItem[] = [
     },
     a: {
       ko: [
-        "동일한 제품이라도 입도(입자 크기)나 순도 등에 따라 종류가 세분화되어 있어, 고객사마다 요구 사항이 다릅니다. 따라서 당사가 국내에 보유 중인 샘플은 일반적인 제품 및 일부 국내 생산 제품으로 한정되어 있습니다.",
-        "국내 재고가 없는 샘플은 중국 현지 협력 공장을 통해 대부분 무료로 제공받으실 수 있습니다. (단, 별도의 특수 제조 과정이 필요한 경우는 예외입니다.) 다만, 분말 소재 특성상 통관 절차 등에 시간이 소요될 수 있습니다.",
-        "긴급히 샘플이 필요하신 경우 사전 협의가 필요하며, 발송에 따른 물류비(FedEx 등)는 수신자 부담이 기본 원칙입니다. 고객사의 FedEx 계정 번호(Customer Account)를 알려주시면 현지 공장에서 직송으로 빠르게 받아보실 수 있습니다.",
+        "실리카 제품은 고객사의 용도에 따라 입자 크기나 순도 스펙이 워낙 다양하게 나뉩니다. 그래서 국내생산과 일부 일반적인 제품 외에는 고객사별 맞춤형 샘플은 중국 현지 전문 공장을 통해 무료로 제작하여 공급해 드리고 있습니다. (특수 제작 공정이 들어가는 일부 제품 제외)",
+        "그러나 해외 맞춤 공급 특성상 통관 과정에서 시간이 약간 걸릴 수 있는 점과 아울러 R&D 테스트용 샘플 발송에 발생하는 해외 물류비(FedEx 등)는 고객사에서 부담해 주셔야 하는 점 안내드립니다.",
+        "혹시 이용 중이신 FedEx 계정 번호가 있으시다면 알려주세요! 현지 공장에서 고객사로 바로 직송해 드려 배송 기간을 한층 단축해 드리겠습니다.",
       ],
       en: [
-        "Even for the same product, grades are subdivided by particle size, purity and other factors, and every customer's requirements differ. For this reason, the samples we keep in stock in Korea are limited to standard products and some domestically produced grades.",
-        "Samples not held in Korea can, in most cases, be provided free of charge through our partner factories in China (except where a special manufacturing process is required). Please note that customs clearance for powder materials may take some time.",
-        "If you need a sample urgently, please consult us in advance. As a rule, shipping costs (FedEx, etc.) are borne by the recipient. If you share your FedEx Customer Account number, the factory can ship directly to you for faster delivery.",
+        "Silica specifications such as particle size and purity vary widely depending on each customer's application. Apart from domestically produced and some standard products, we produce customized samples for each customer free of charge through specialized partner factories in China (excluding some products that require a special manufacturing process).",
+        "Please note, however, that because these samples are supplied from overseas, customs clearance may take a little time, and the international shipping costs (FedEx, etc.) for R&D test samples are to be borne by the customer.",
+        "If you have a FedEx account number, please let us know! The factory will ship directly to you, significantly shortening the delivery time.",
       ],
       ja: [
-        "同じ製品でも粒度（粒子径）や純度などによって種類が細分化されており、お客様ごとにご要望が異なります。そのため、当社が韓国国内で保有しているサンプルは、一般的な製品および一部の国内生産品に限られます。",
-        "国内在庫のないサンプルは、中国現地の協力工場を通じてほとんどの場合無償でご提供できます（特殊な製造工程が必要な場合を除きます）。ただし、粉体素材の特性上、通関手続きなどに時間がかかる場合があります。",
-        "お急ぎの場合は事前のご相談が必要で、発送に伴う物流費（FedExなど）は受取人負担が原則です。貴社のFedExアカウント番号（Customer Account）をお知らせいただければ、現地工場から直送で迅速にお届けできます。",
+        "シリカ製品は、お客様の用途によって粒子径や純度のスペックが非常に多様に分かれます。そのため、国内生産品と一部の一般的な製品以外は、お客様ごとのカスタムサンプルを中国現地の専門工場を通じて無償で製作・ご提供しております（特殊な製造工程を要する一部製品を除く）。",
+        "ただし、海外からのカスタム供給という特性上、通関に多少時間がかかる場合があること、またR&Dテスト用サンプルの発送にかかる国際物流費（FedExなど）はお客様にご負担いただくことをご了承ください。",
+        "ご利用中のFedExアカウント番号がございましたらお知らせください！現地工場からお客様へ直送し、配送期間を大幅に短縮いたします。",
       ],
     },
   },
