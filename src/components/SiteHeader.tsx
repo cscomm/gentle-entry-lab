@@ -354,7 +354,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
           onMouseLeave={closeDropdown}
         >
           <div className="px-3 py-2">
-            {activeDropdown !== "guide" && <div className="mb-1.5 border-b border-border/60 pb-1">
+            <div className="mb-1.5 border-b border-border/60 pb-1">
               <Link
                 to={dropdownAllHref}
                 onClick={() => setActiveDropdown(null)}
@@ -363,8 +363,8 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                 {dropdownAllLabel}
                 <ArrowRight className="h-3.5 w-3.5" />
               </Link>
-            </div>}
-            <div className={`grid gap-0.5 ${activeDropdown === "guide" ? "grid-cols-3" : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4"}`}>
+            </div>
+            <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3 md:grid-cols-4">
               {dropdownItems.map((it) => (
                 <Link
                   key={it.to}
