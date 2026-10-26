@@ -170,6 +170,27 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                 onMouseLeave={closeDropdown}
               >
                 <Link to={item.href} className={linkClass}>{inner}</Link>
+                {item.dropdown === "guide" && activeDropdown === "guide" && (
+                  <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
+                    <div className="w-60 overflow-hidden rounded-xl border border-border/60 bg-background py-1.5 shadow-2xl">
+                      {guideMenu.map((it) => (
+                        <Link
+                          key={it.to}
+                          to={it.to}
+                          onClick={() => setActiveDropdown(null)}
+                          className="group/item flex flex-col px-4 py-2.5 transition hover:bg-secondary"
+                        >
+                          <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
+                            {pick(lang, it.ko, it.en, it.ja)}
+                          </span>
+                          {lang === "ko" && it.en !== it.ko && (
+                            <span className="mt-0.5 text-[11px] text-muted-foreground">{it.en}</span>
+                          )}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })}
@@ -326,11 +347,9 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
       )}
 
       {/* Compact mega dropdown */}
-      {activeDropdown && (
+      {activeDropdown && activeDropdown !== "guide" && (
         <div
-          className={`hidden absolute left-1/2 top-full z-50 w-full -translate-x-1/2 rounded-b-xl border border-border/60 bg-background shadow-2xl md:block ${
-            activeDropdown === "guide" ? "max-w-2xl" : "max-w-4xl"
-          }`}
+          className="hidden absolute left-1/2 top-full z-50 w-full max-w-4xl -translate-x-1/2 rounded-b-xl border border-border/60 bg-background shadow-2xl md:block"
           onMouseEnter={() => activeDropdown && openDropdown(activeDropdown)}
           onMouseLeave={closeDropdown}
         >
