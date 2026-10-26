@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2, Sparkles, FlaskConical, BarChart3, Layers, Droplets, Cpu, Disc3, Paintbrush, Link2, CircuitBoard, Atom, Factory, ShieldCheck } from "lucide-react";
+import Prose from "@/components/Prose";
 import { Link } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/contexts/LanguageContext";
@@ -88,20 +89,20 @@ export const SyntheticSilicaIntro = () => {
           <h2 className="mt-6 text-3xl font-bold md:text-4xl">
             🧬 {tri("화학합성 실리카란?", "What Is Chemically Synthesized Silica?", "化学合成シリカとは?")}
           </h2>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "천연 광석을 깎고 녹여 만드는 실리카와 달리, 화학합성 실리카는 분자 단위의 원료에서 입자를 한 알씩 키워 냅니다. 그래서 순도·크기·모양을 처음부터 설계할 수 있습니다.",
               "Unlike silica made by grinding or melting natural ore, synthetic silica is grown particle by particle from molecular-level raw materials — so purity, size and shape can be designed from the start.",
               "天然鉱石を削り溶かして作るシリカと異なり、化学合成シリカは分子単位の原料から粒子を一つずつ成長させます。そのため純度・サイズ・形状を最初から設計できます。",
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s) => (
               <div key={s.n} className="relative overflow-hidden rounded-2xl border border-border bg-card p-6">
                 <div className="font-mono text-3xl font-bold text-primary/30">{s.n}</div>
                 <h3 className="mt-2 text-base font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+                <Prose className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</Prose>
               </div>
             ))}
           </div>
@@ -123,7 +124,7 @@ export const SyntheticSilicaIntro = () => {
                   <r.icon className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
                   <div>
                     <div className="font-semibold">{r.t}</div>
-                    <p className="mt-1 text-sm text-muted-foreground">{r.d}</p>
+                    <Prose className="mt-1 text-sm text-muted-foreground">{r.d}</Prose>
                   </div>
                 </li>
               ))}
@@ -158,9 +159,9 @@ export const SyntheticSilicaIntro = () => {
                 </table>
               </div>
             </div>
-            <p className="mt-3 text-xs text-muted-foreground">
+            <Prose className="mt-3 text-xs text-muted-foreground">
               {tri("※ 비교 값은 일반적인 범위이며, 제품·등급에 따라 다를 수 있습니다.", "* Typical ranges; actual values vary by product and grade.", "※ 一般的な範囲であり、製品・グレードにより異なります。")}
-            </p>
+            </Prose>
           </div>
         </div>
 
@@ -237,13 +238,13 @@ export const SynSphSemGallery = () => {
       <h2 className="mt-6 text-3xl font-bold md:text-4xl">
         🔬 {tri("입경별 전자현미경(SEM) 이미지", "SEM Images by Particle Size", "粒径別 電子顕微鏡(SEM)画像")}
       </h2>
-      <p className="mt-4 max-w-3xl text-muted-foreground">
+      <Prose className="mt-4 max-w-3xl text-muted-foreground">
         {tri(
           "같은 합성 공법으로 100 nm · 150 nm · 400 nm 입자를 만든 실제 SEM 사진입니다. 크기가 달라져도 구형과 균일함이 그대로 유지되며, 20 nm~2 µm 범위에서 원하는 입경으로 생산할 수 있습니다.",
           "Actual SEM photos of 100 nm, 150 nm and 400 nm particles made with the same synthesis route. Shape and uniformity hold at every size, and any D50 from 20 nm to 2 µm can be produced.",
           "同一の合成工法で製造した100 nm・150 nm・400 nm粒子の実際のSEM写真です。サイズが変わっても球状と均一性が保たれ、20 nm~2 µmの範囲で任意の粒径を生産できます。",
         )}
-      </p>
+      </Prose>
 
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {shots.map((s) => (
@@ -261,7 +262,7 @@ export const SynSphSemGallery = () => {
             </div>
             <figcaption className="p-6">
               <h3 className="text-lg font-bold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <Prose className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</Prose>
             </figcaption>
           </figure>
         ))}
@@ -394,13 +395,13 @@ export const SynSphTechProfile = () => {
       <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
         <Eyebrow>TECHNICAL DEEP-DIVE · SYNTHETIC SPHERICAL SILICA</Eyebrow>
         <h2 className="mt-6 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h2>
-        <p className="mt-4 max-w-3xl text-muted-foreground">
+        <Prose className="mt-4 max-w-3xl text-muted-foreground">
           {tri(
             "합성 구형 실리카의 핵심 품질 지표를 TDS 기준으로 정리했습니다. 구형 품질, 순도와 방사선, 입경 설계, 표면개질까지 한눈에 확인하세요.",
             "Key quality indicators of Synthetic Spherical Silica, organized from the TDS — spherical quality, purity and radioactivity, size design and surface modification at a glance.",
             "合成球状シリカの主要品質指標をTDS基準で整理しました。球状品質、純度と放射線、粒径設計、表面改質まで一目で確認できます。",
           )}
-        </p>
+        </Prose>
 
         {/* Stat cards */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -413,7 +414,7 @@ export const SynSphTechProfile = () => {
                 <div className="mt-1 text-3xl font-bold text-primary" style={{ fontVariantNumeric: "tabular-nums" }}>
                   {c.value} <span className="text-sm font-medium text-muted-foreground">{c.unit}</span>
                 </div>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{c.note}</p>
+                <Prose className="mt-2 text-xs leading-relaxed text-muted-foreground">{c.note}</Prose>
               </div>
             </div>
           ))}
@@ -450,13 +451,13 @@ export const SynSphTechProfile = () => {
             </div>
             <div className="p-6">
               <h4 className="font-bold">{tri("응집 없는 개별 구형 입자", "Discrete, non-agglomerated spheres", "凝集のない個別の球状粒子")}</h4>
-              <p className="mt-2 text-sm text-muted-foreground">
+              <Prose className="mt-2 text-sm text-muted-foreground">
                 {tri(
                   "입자 크기가 고르고 서로 엉겨 붙지 않아, 수지·용제에 넣었을 때 균일하게 퍼집니다.",
                   "Even sizes and no clumping mean particles spread uniformly in resins and solvents.",
                   "粒子サイズが揃い互いに凝集しないため、樹脂・溶剤中で均一に広がります。",
                 )}
-              </p>
+              </Prose>
             </div>
           </div>
         </div>
@@ -471,7 +472,7 @@ export const SynSphTechProfile = () => {
                 <h3 className="font-bold">{c.title}</h3>
               </div>
               <div className="p-6">
-                <p className="text-sm text-muted-foreground">{c.intro}</p>
+                <Prose className="text-sm text-muted-foreground">{c.intro}</Prose>
                 <ul className="mt-4 space-y-2">
                   {c.points.map((p) => (
                     <li key={p} className="flex items-start gap-2 text-sm text-foreground/80">
@@ -493,13 +494,13 @@ export const SynSphTechProfile = () => {
           <div>
             <div className="text-xs font-semibold tracking-[0.3em] text-primary">ELECTRONIC-GRADE SILICA SOL · 6N</div>
             <h3 className="mt-2 text-2xl font-bold">{tri("전자급 실리카졸(6N급)로도 공급합니다", "Also Available as Electronic-Grade 6N Silica Sol", "電子グレードシリカゾル(6N級)でも供給します")}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">
               {tri(
                 "고객 요청에 따라 합성 구형 실리카를 액상의 실리카졸 형태로 생산합니다. 수계(水系)와 고객 공정에 맞춘 용제형 두 가지로 공급하며, CMP 연마·도료·수지 하이브리드 등에 바로 투입할 수 있습니다.",
                 "On request, the particles are produced as liquid silica sol — water-based or in a solvent matched to your process — ready to use in CMP polishing, coatings and resin hybrids.",
                 "ご要望に応じて合成球状シリカを液状のシリカゾルとして生産します。水系とお客様の工程に合わせた溶剤系の2種で供給し、CMP研磨・塗料・樹脂ハイブリッドなどにそのまま投入できます。",
               )}
-            </p>
+            </Prose>
             <div className="mt-4 flex flex-wrap gap-2">
               {[tri("수계형", "Water-based", "水系"), tri("맞춤 용제형", "Custom solvent", "カスタム溶剤系"), "CMP", tri("도료", "Coatings", "塗料"), tri("수지 하이브리드", "Resin hybrid", "樹脂ハイブリッド")].map((t) => (
                 <span key={t} className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">{t}</span>
@@ -523,7 +524,7 @@ export const SynSphTechProfile = () => {
                   <a.icon className="h-5 w-5" />
                 </div>
                 <h3 className="mt-4 text-lg font-bold">{tri(a.ko, a.en, a.ja)}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{tri(a.dko, a.den, a.dja)}</p>
+                <Prose className="mt-2 text-sm text-muted-foreground">{tri(a.dko, a.den, a.dja)}</Prose>
               </div>
             ))}
           </div>

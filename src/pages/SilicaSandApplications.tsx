@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import {
   Sparkles,
   Layers,
@@ -262,7 +263,7 @@ const SilicaSandApplications = () => {
             SILICA SAND · SILICA POWDER
           </span>
           <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-tight md:text-6xl">{title}</h1>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{heroDesc}</p>
+          <Prose className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">{heroDesc}</Prose>
 
           {/* Stat grid */}
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -284,13 +285,13 @@ const SilicaSandApplications = () => {
             <div className="p-6">
               <div className="text-xs tracking-widest text-primary">SILICA SAND</div>
               <h3 className="mt-2 text-2xl font-bold">{tri("규사 (Silica Sand)", "Silica Sand", "珪砂 (Silica Sand)")}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {tri(
                   "0.1 mm ~ 10 mm 입도 범위의 산업용 정제 규사. 유리·주조·수처리·건축 등 벌크 원료 시장을 담당합니다.",
                   "Industrial refined silica sand from 0.1 mm to 10 mm — bulk feedstock for glass, foundry, water treatment and construction markets.",
                   "0.1 mm 〜 10 mm 粒度範囲の産業用精製珪砂。ガラス・鋳造・水処理・建築などバルク原料市場を担当します。",
                 )}
-              </p>
+              </Prose>
             </div>
           </div>
           <div className="group relative overflow-hidden rounded-2xl border border-border bg-card">
@@ -298,13 +299,13 @@ const SilicaSandApplications = () => {
             <div className="p-6">
               <div className="text-xs tracking-widest text-primary">SILICA POWDER</div>
               <h3 className="mt-2 text-2xl font-bold">{tri("규사분말 (Silica Powder)", "Silica Powder", "珪砂粉末 (Silica Powder)")}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {tri(
                   "200 ~ 2,500 mesh의 초미분 규석. 페인트·플라스틱·인조대리석·전자 캡슐화용 기능성 필러로 사용됩니다.",
                   "Ultra-fine quartz powder from 200 to 2,500 mesh — functional filler for paints, plastics, engineered stone and electronic encapsulation.",
                   "200 〜 2,500 メッシュの超微粉珪石。塗料・プラスチック・人造大理石・電子封止用の機能性フィラーとして使用されます。",
                 )}
-              </p>
+              </Prose>
             </div>
           </div>
         </div>
@@ -320,13 +321,13 @@ const SilicaSandApplications = () => {
             <h2 className="mt-5 text-3xl font-bold md:text-4xl">
               {tri("6대 핵심 산업 분야", "Six Core Industry Segments", "6 大核心産業分野")}
             </h2>
-            <p className="mt-4 text-muted-foreground">
+            <Prose className="mt-4 text-muted-foreground">
               {tri(
                 "규사와 규사분말은 서로 다른 입도 대역에서 각기 다른 산업 요구를 충족하지만, 원료·품질 관리·공급 체계는 하나로 통합되어 있습니다.",
                 "Silica sand and silica powder serve different grain-size ranges and industrial needs, yet share a unified raw material base, quality control and supply system.",
                 "珪砂と珪砂粉末はそれぞれ異なる粒度帯で異なる産業要求を満たしますが、原料・品質管理・供給体系は一つに統合されています。",
               )}
-            </p>
+            </Prose>
           </div>
 
           <div className="mt-14 grid gap-6 lg:grid-cols-2">
@@ -341,7 +342,7 @@ const SilicaSandApplications = () => {
                     <h3 className="mt-2 text-xl font-bold leading-snug">{ind.title}</h3>
                   </div>
                 </div>
-                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{ind.desc}</p>
+                <Prose className="mt-5 text-sm leading-relaxed text-muted-foreground">{ind.desc}</Prose>
                 <ul className="mt-5 space-y-2">
                   {ind.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2 text-sm">
@@ -365,13 +366,13 @@ const SilicaSandApplications = () => {
           <h2 className="mt-5 text-3xl font-bold md:text-4xl">
             {tri("고부가 특수 유리 · 5대 제품군", "Five High-Value Specialty Glass Categories", "高付加特殊ガラス・5 大製品群")}
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <Prose className="mt-4 text-muted-foreground">
             {tri(
               "저부가 일반 유리에서 벗어나 고정밀 특수 유리 분야로 확장되는 시장에서, 저철분·고순도 규사는 필수 원료입니다.",
               "As demand shifts from low-value commodity glass to high-precision specialty glass, low-iron and high-purity silica sand becomes an indispensable feedstock.",
               "低付加の一般ガラスから高精密特殊ガラス分野へ拡大する市場において、低鉄分・高純度珪砂は必須原料です。",
             )}
-          </p>
+          </Prose>
         </div>
 
         <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-5">
@@ -411,13 +412,13 @@ const SilicaSandApplications = () => {
               <h2 className="mt-5 text-3xl font-bold md:text-4xl">
                 {tri("입도가 곧 용도를 결정합니다", "Grain size defines the application", "粒度がそのまま用途を決定します")}
               </h2>
-              <p className="mt-4 text-muted-foreground">
+              <Prose className="mt-4 text-muted-foreground">
                 {tri(
                   "동일한 SiO₂ 99.5% 이상 순도라도 입도 대역에 따라 산업별 활용 방식이 달라집니다. 실리카는 조사부터 미분까지 전 입도 대역을 자체 분급·정제 라인에서 생산 공급합니다.",
                   "Even at ≥ 99.5% SiO₂ purity, application changes with grain size. SiLiCA produces and supplies the full range from coarse sand to micronized powder through in-house classification and refining lines.",
                   "同じ SiO₂ 99.5% 以上の純度でも粒度帯によって産業別活用方式が異なります。SiLiCA は粗砂から微粉まで全粒度帯を自社の分級・精製ラインで生産供給します。",
                 )}
-              </p>
+              </Prose>
               <div className="mt-6 flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/5 p-4 text-sm text-primary">
                 <Ruler className="h-4 w-4" />
                 <span className="font-medium">
@@ -497,7 +498,7 @@ const SilicaSandApplications = () => {
                 <v.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-5 text-lg font-bold">{v.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.desc}</p>
+              <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.desc}</Prose>
             </div>
           ))}
         </div>
@@ -514,13 +515,13 @@ const SilicaSandApplications = () => {
               "サンプル依頼・技術相談",
             )}
           </h2>
-          <p className="mt-4 text-primary-foreground/90 md:text-lg">
+          <Prose className="mt-4 text-primary-foreground/90 md:text-lg">
             {tri(
               "적용 산업 · 요구 순도 · 목표 입도만 알려 주시면, 최적 사양의 시료와 시험 성적서를 발송해 드립니다.",
               "Tell us your target industry, purity level and grain size — we will ship optimized samples with a test report.",
               "適用産業・要求純度・目標粒度をお知らせいただければ、最適仕様の試料と試験成績書を発送いたします。",
             )}
-          </p>
+          </Prose>
           <Link
             to="/#contact"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-background px-8 py-3 text-sm font-semibold text-primary shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"

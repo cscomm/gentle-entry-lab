@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import Prose from "@/components/Prose";
 import { Link } from "@/lib/router";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
@@ -39,7 +40,7 @@ const SilicaPowderCategory = () => {
             SILICA POWDER
           </span>
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">{title}</h1>
-          <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">{desc}</p>
+          <Prose className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">{desc}</Prose>
         </div>
       </section>
 

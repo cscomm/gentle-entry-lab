@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { Sparkles } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -378,13 +379,13 @@ const SilicaSolApplications = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
             {t("콜로이달 실리카 시리즈 응용 분야", "Colloidal Silica Applications", "コロイダルシリカの用途")}
           </h1>
-          <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
+          <Prose className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
             {t(
               "정밀 주조 · 이차전지 세퍼레이터 · 반도체 CMP · 내화 세라믹 · 제지 · 촉매 · 방활 처리까지 — SN-SHS 콜로이달 실리카(실리카졸) 5개 계열 14종 그레이드의 핵심 특성과 산업별 응용 분야를 정리했습니다.",
               "From investment casting and Li-ion battery separators to semiconductor CMP, refractory ceramics, paper, catalysts and anti-slip treatments — this page maps the SN-SHS colloidal silica (silica sol) 14-grade lineup across 5 stabilization systems to key specs and industrial applications.",
               "精密鋳造・二次電池セパレーター・半導体CMP・耐火セラミック・製紙・触媒・防滑処理まで — SN-SHSコロイダルシリカ(シリカゾル)5系列14グレードの主要特性と産業別用途を整理しました。"
             )}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -394,22 +395,22 @@ const SilicaSolApplications = () => {
           <h2 className="text-2xl font-bold md:text-3xl">
             {t("산업별 핵심 응용 분야", "Key Industrial Applications", "産業別の主要用途")}
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-muted-foreground md:text-base">
+          <Prose className="mt-2 max-w-3xl text-sm text-muted-foreground md:text-base">
             {t(
               "실리카졸(콜로이달 실리카)은 물속에 균일 분산된 나노 SiO₂ 입자가 건조 후 Si–O 결합을 통해 소재 표면에 견고히 부착되는 특성을 이용, 첨단 산업부터 전통 산업까지 광범위하게 사용됩니다.",
               "Silica sol (colloidal silica) is a uniform dispersion of nano SiO₂ particles in water that, after drying, bonds firmly to substrate surfaces via Si–O linkages — enabling use across both advanced and traditional industries.",
               "シリカゾル(コロイダルシリカ)は水中に均一分散したナノSiO₂粒子が乾燥後にSi–O結合を介して素材表面に強固に付着する特性を活かし、先端産業から伝統産業まで幅広く使用されます。"
             )}
-          </p>
+          </Prose>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((it) => (
             <div key={it.en} className="rounded-2xl border border-border bg-card p-5 transition hover:border-primary hover:shadow-[var(--shadow-glow)]">
               <div className="text-3xl">{it.icon}</div>
               <h3 className="mt-3 text-base font-bold">{t(it.ko, it.en, it.ja)}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              <Prose className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {t(it.descKo, it.descEn, it.descJa)}
-              </p>
+              </Prose>
             </div>
           ))}
         </div>
@@ -420,9 +421,9 @@ const SilicaSolApplications = () => {
           <div key={g.en}>
             <div className="mb-6">
               <h2 className="text-2xl font-bold md:text-3xl">{t(g.ko, g.en, g.ja)}</h2>
-              <p className="mt-2 max-w-3xl text-sm text-muted-foreground md:text-base">
+              <Prose className="mt-2 max-w-3xl text-sm text-muted-foreground md:text-base">
                 {t(g.descKo, g.descEn, g.descJa)}
-              </p>
+              </Prose>
             </div>
 
             {/* Desktop table */}

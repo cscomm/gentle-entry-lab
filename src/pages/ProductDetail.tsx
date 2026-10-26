@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Prose from "@/components/Prose";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { Link, useLocation, useParams } from "@/lib/router";
@@ -280,9 +281,9 @@ const ProductDetail = () => {
             <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
               {pick(lang, product.name, product.enName, product.jaName)} · {product.enName}
             </h1>
-            <p className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
+            <Prose className="mt-5 max-w-3xl text-base text-muted-foreground md:text-lg">
               {pick(lang, product.description, product.enDescription, product.jaDescription)}
-            </p>
+            </Prose>
           </div>
         </section>
 
@@ -347,7 +348,7 @@ const ProductDetail = () => {
             {product.enName.toUpperCase()}
           </span>
           <h1 className="mt-4 text-4xl font-bold md:text-6xl drop-shadow-lg">{pick(lang, product.name, product.enName, product.jaName)}</h1>
-          <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{pick(lang, product.tagline, product.enTagline, product.jaTagline)}</p>
+          <Prose className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">{pick(lang, product.tagline, product.enTagline, product.jaTagline)}</Prose>
         </div>
       </section>
 
@@ -366,7 +367,7 @@ const ProductDetail = () => {
               OVERVIEW
             </span>
             <h2 className="mt-6 text-3xl font-bold md:text-4xl">{t("pd.overview")}</h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">{pick(lang, product.description, product.enDescription, product.jaDescription)}</p>
+            <Prose className="mt-6 leading-relaxed text-muted-foreground">{pick(lang, product.description, product.enDescription, product.jaDescription)}</Prose>
 
             {product.detailImage && (
               <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
@@ -433,13 +434,13 @@ const ProductDetail = () => {
             TECHNICAL DATA · HGM
           </span>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "질소 가스를 내부에 충전한 완전 밀폐 중공 구형 입자 — 밀도는 낮추고 강도는 유지하는 붕규산염 유리 기반 초경량 충전재입니다. 아래는 공식 TDS 기준 데이터입니다.",
               "Perfectly sealed hollow spheres filled with nitrogen gas — an ultra-lightweight borosilicate glass filler that cuts density while retaining strength. Official TDS data below.",
               "内部に窒素ガスを封入した完全密閉の中空球形粒子 — 密度を下げながら強度を維持するホウケイ酸ガラス系超軽量充填材です。以下は公式TDS基準データです。",
             )}
-          </p>
+          </Prose>
 
           {/* 4 highlight cards */}
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -453,7 +454,7 @@ const ProductDetail = () => {
                 <div className="text-2xl">{c.icon}</div>
                 <div className="mt-2 text-xs font-semibold tracking-widest text-muted-foreground">{c.title}</div>
                 <div className="mt-1 text-2xl font-bold text-primary">{c.value} <span className="text-sm font-medium text-muted-foreground">{c.unit}</span></div>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{c.note}</p>
+                <Prose className="mt-2 text-xs leading-relaxed text-muted-foreground">{c.note}</Prose>
               </div>
             ))}
           </div>
@@ -505,7 +506,7 @@ const ProductDetail = () => {
                   <span key={g} className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-xs font-semibold text-primary">{g}</span>
                 ))}
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">{tri("밀도 0.22~0.55 g/cm³ · 용도별 맞춤 공급", "Density 0.22–0.55 g/cm³ · tailored supply per application", "密度0.22~0.55 g/cm³ · 用途別カスタム供給")}</p>
+              <Prose className="mt-3 text-xs text-muted-foreground">{tri("밀도 0.22~0.55 g/cm³ · 용도별 맞춤 공급", "Density 0.22–0.55 g/cm³ · tailored supply per application", "密度0.22~0.55 g/cm³ · 用途別カスタム供給")}</Prose>
             </div>
             <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
               <h4 className="text-base font-bold text-foreground">🛡️ {tri("고강도(Hi-Strength) 그레이드", "High-Strength Grades", "高強度グレード")}</h4>
@@ -514,7 +515,7 @@ const ProductDetail = () => {
                   <span key={g} className="rounded-full border border-primary/30 bg-primary/5 px-3 py-1 font-mono text-xs font-semibold text-primary">{g}</span>
                 ))}
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">{tri("고압 공정 · 5G 저유전 · 유정 시멘팅 등 고하중 용도", "For high-pressure processing, 5G low-Dk, oil-well cementing and other high-load uses", "高圧工程・5G低誘電・油井セメンチングなど高負荷用途")}</p>
+              <Prose className="mt-3 text-xs text-muted-foreground">{tri("고압 공정 · 5G 저유전 · 유정 시멘팅 등 고하중 용도", "For high-pressure processing, 5G low-Dk, oil-well cementing and other high-load uses", "高圧工程・5G低誘電・油井セメンチングなど高負荷用途")}</Prose>
             </div>
           </div>
         </section>
@@ -528,13 +529,13 @@ const ProductDetail = () => {
               APPLICATIONS
             </span>
             <h2 className="mt-6 text-3xl font-bold md:text-4xl">🎯 {tri("용도별 권장 등급", "Application Recommendations", "用途別推奨グレード")}</h2>
-            <p className="mt-4 mx-auto max-w-3xl text-muted-foreground">
+            <Prose className="mt-4 mx-auto max-w-3xl text-muted-foreground">
               {tri(
                 "HGM은 용도에 따라 최적의 밀도·강도 그레이드가 다릅니다. 아래 표에서 산업별 권장 그레이드를 확인하고, 필요하신 용도를 알려주시면 맞춤 제안을 드립니다.",
                 "Each application calls for a specific density and strength grade. Check the recommended grades below — tell us your application and we will suggest the best fit.",
                 "用途ごとに最適な密度・強度グレードが異なります。下表で産業別の推奨グレードをご確認いただき、用途をお知らせいただければ最適な提案をいたします。",
               )}
-            </p>
+            </Prose>
           </div>
 
           <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
@@ -611,13 +612,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🔬 {tri("입도 분석 및 화학 조성", "Particle Size Analysis & Chemistry", "粒度分析および化学組成")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "SN-SPH-300은 화학합성 공정을 통해 좁고 균일한 아미크론급 입도 분포와 초고순도 조성을 동시에 실현합니다. 아래는 대표 TDS 데이터입니다.",
               "SN-SPH-300 achieves a narrow, uniform submicron particle size distribution and ultra-high-purity composition through a chemical synthesis process. Representative TDS data below.",
               "SN-SPH-300は化学合成プロセスにより、狭く均一なサブミクロン粒度分布と超高純度組成を同時に実現します。以下は代表TDSデータです。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             {/* Particle Size Table */}
@@ -713,13 +714,13 @@ const ProductDetail = () => {
                     "完全球状 · 均一粒度を確認"
                   )}
                 </h4>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                <Prose className="mt-4 text-sm leading-relaxed text-muted-foreground">
                   {tri(
                     "SEM(주사전자현미경) 이미지에서 확인되는 바와 같이, SN-SPH-300은 응집 없이 개별 분산된 균일한 나노구상 입자로 구성됩니다. 완전 구형에 근접한 형상은 수지 매트릭스 내 최대 충전율(High Filler Loading)을 가능하게 하며, 컴파운드 점도를 획기적으로 낮춰 반도체 EMC·언더필·저유전 CCL의 성형성과 신뢰성을 동시에 향상시킵니다.",
                     "As shown in the SEM (Scanning Electron Microscope) image, SN-SPH-300 consists of individually dispersed, uniform nano-spherical particles with virtually no agglomeration. Its near-perfect spherical morphology enables the highest filler loading in resin matrices while dramatically reducing compound viscosity — simultaneously improving processability and reliability in semiconductor EMC, underfill and low-Dk CCL.",
                     "SEM(走査電子顕微鏡)画像で確認されるように、SN-SPH-300は凝集のない、個別に分散した均一なナノ球状粒子で構成されます。ほぼ完全な球形状は樹脂マトリックス中の最大充填率(高フィラーローディング)を可能にし、コンパウンド粘度を大幅に低減することで、半導体EMC・アンダーフィル・低誘電CCLの成形性と信頼性を同時に向上させます。"
                   )}
-                </p>
+                </Prose>
               </div>
             </div>
           </div>
@@ -735,13 +736,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
             📊 {tri("전체 그레이드 스펙 매트릭스", "Full Grade Specification Matrix", "全グレード仕様マトリクス")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "SN-SHS 시리즈 14종 그레이드의 SiO₂ 농도·알칼리(Na₂O)·pH·점도·밀도·평균 입자경·Cl⁻ 범위를 한 표에서 비교할 수 있습니다. 계열별 색상 그룹으로 구분되어 있으며, 사이즈·포장은 커스터마이즈 가능합니다.",
               "Compare SiO₂ content, alkali (Na₂O), pH, viscosity, density, mean particle size and Cl⁻ range for all 14 SN-SHS grades in one table. Grades are color-grouped by stabilization series; particle size and packaging are customizable.",
               "SN-SHSシリーズ14グレードのSiO₂濃度・アルカリ(Na₂O)・pH・粘度・密度・平均粒子径・Cl⁻範囲を一つの表で比較できます。系列別にカラーグルーピングされ、粒子径・包装はカスタマイズ可能です。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="overflow-x-auto">
@@ -810,7 +811,7 @@ const ProductDetail = () => {
               <div key={c.en} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
                 <div className="text-3xl">{c.icon}</div>
                 <h4 className="mt-3 text-lg font-bold text-foreground">{tri(c.ko, c.en, c.ja)}</h4>
-                <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+                <Prose className="mt-2 text-sm text-muted-foreground">{c.desc}</Prose>
               </div>
             ))}
           </div>
@@ -826,13 +827,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🧪 {tri("A / B / C형 × 공업/시약 등급 스펙", "Type A / B / C × Industrial / Reagent Grade", "A / B / C型 × 工業/試薬グレード仕様")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "SN-CHR-01은 3종 공극 구조(A: 세공 / B: 중공 / C: 조공)를 각각 공업 등급(Industrial)과 시약 등급(Reagent)으로 공급합니다. 아래는 대표 스펙 값입니다.",
               "SN-CHR-01 is supplied in three pore structures (A: fine / B: medium / C: coarse), each available in Industrial and Reagent grades. Representative specifications below.",
               "SN-CHR-01は3種の細孔構造(A: 細孔 / B: 中孔 / C: 粗孔)を、それぞれ工業(Industrial)グレードと試薬(Reagent)グレードで供給します。以下は代表仕様値です。"
             )}
-          </p>
+          </Prose>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -895,13 +896,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🧪 {tri("H / HF254 / G / GF254 형별 스펙", "H / HF254 / G / GF254 Type Specifications", "H / HF254 / G / GF254 型別仕様")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "SN-CHR-02는 TLC 분석 용도에 맞춰 4가지 형(Type)으로 공급되며, G / GF254 등급은 소석고(CaSO₄·½H₂O) 12–14 %가 첨가되어 결합력이 향상되어 있습니다.",
               "SN-CHR-02 is offered in four types tailored for TLC analysis. G / GF254 grades contain 12–14 % calcined gypsum (CaSO₄·½H₂O) for enhanced binder strength.",
               "SN-CHR-02はTLC分析用途に合わせて4種類の型(Type)で供給され、G / GF254グレードは焼石膏(CaSO₄·½H₂O)12–14 %を配合し結合力を高めています。"
             )}
-          </p>
+          </Prose>
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -960,13 +961,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             🧪 {tri("TLC 플레이트 규격 · 포장 수량", "TLC Plate Specifications & Packing Quantity", "TLCプレート仕様・包装数量")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "판 두께는 전 형 공통 0.20 ± 0.03 mm이며, 활성도는 삼색 분리(디메틸옐로우·수단레드·인디고) 기준입니다. 규격·형별 표준 포장 수량은 아래와 같습니다.",
               "Plate thickness is 0.20 ± 0.03 mm across all types; activity is verified by tricolor separation (dimethyl yellow, sudan red, indigo). Standard packing quantities per size and type are shown below.",
               "板厚は全型共通で0.20 ± 0.03 mm、活性度は三色分離(ジメチルイエロー・スダンレッド・インジゴ)基準です。サイズ・型別の標準包装数量は下記の通りです。"
             )}
-          </p>
+          </Prose>
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
               <div className="text-[10px] tracking-[0.3em] text-primary">THICKNESS</div>
@@ -1047,13 +1048,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             📦 {tri("대표 제품", "Representative Products", "代表製品")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "표준 입도별 4종 라인업을 기본 공급하며, 그 외 입도·SiO₂·Fe·백색도 사양은 상담을 통해 맞춤 생산이 가능합니다.",
               "Four standard grain-size grades are offered as our base lineup. Additional grain sizes, SiO₂, Fe, and whiteness specs are available via custom production upon consultation.",
               "標準粒度別の4種ラインアップを基本供給しており、その他の粒度・SiO₂・Fe・白色度仕様はご相談によりカスタム生産が可能です。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="overflow-x-auto">
@@ -1089,13 +1090,13 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          <p className="mt-4 text-xs text-muted-foreground">
+          <Prose className="mt-4 text-xs text-muted-foreground">
             {tri(
               "※ 표준 규격 외 입도, 이산화규소(SiO₂) 함량, 철(Fe) 함량, 백색도 등 다양한 사양은 상담을 통해 맞춤 생산이 가능합니다.",
               "※ Beyond the standard specifications, custom production is available for grain size, SiO₂ content, Fe content, whiteness, and more — please contact us for details.",
               "※ 標準規格以外の粒度、二酸化ケイ素(SiO₂)含有量、鉄(Fe)含有量、白色度など多様な仕様はご相談によりカスタム生産が可能です。"
             )}
-          </p>
+          </Prose>
         </section>
       )}
 
@@ -1110,13 +1111,13 @@ const ProductDetail = () => {
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">
             📦 {tri("대표 제품", "Representative Products", "代表製品")}
           </h3>
-          <p className="mt-3 max-w-3xl text-muted-foreground">
+          <Prose className="mt-3 max-w-3xl text-muted-foreground">
             {tri(
               "아래 대표 라인업을 기본 공급하며, 그 외 입도·순도·표면처리 등 세부 사양은 상담을 통해 맞춤 생산이 가능합니다.",
               "The representative lineup below is our standard offering. Additional grain sizes, purity levels, surface treatments and detailed specs are available via custom production upon consultation.",
               "以下の代表ラインアップを基本供給しており、その他の粒度・純度・表面処理など詳細仕様はご相談によりカスタム生産が可能です。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-8 overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
             <div className="overflow-x-auto">
@@ -1151,13 +1152,13 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          <p className="mt-4 text-xs text-muted-foreground">
+          <Prose className="mt-4 text-xs text-muted-foreground">
             {tri(
               "※ 표준 규격 외 입도·순도·표면처리·조성 등 다양한 사양은 상담을 통해 맞춤 생산이 가능합니다.",
               "※ Beyond the standard specs, custom production is available for grain size, purity, surface treatment, composition and more — please contact us.",
               "※ 標準規格以外の粒度・純度・表面処理・組成など多様な仕様はご相談によりカスタム生産が可能です。"
             )}
-          </p>
+          </Prose>
         </section>
       )}
 
@@ -1179,7 +1180,7 @@ const ProductDetail = () => {
                 <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-primary/10 blur-2xl transition group-hover:bg-primary/20" />
                 <div className="relative">
                   <h3 className="text-lg font-bold leading-snug">{pick(lang, f.title, f.enTitle, f.jaTitle)}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pick(lang, f.desc, f.enDesc, f.jaDesc)}</p>
+                  <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{pick(lang, f.desc, f.enDesc, f.jaDesc)}</Prose>
                 </div>
               </div>
             ))}
@@ -1199,13 +1200,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "A급 용융 실리카(Fused Silica)의 화학·물리·전기·수분 관리 측면 핵심 특성을 정밀하게 정리하였습니다.",
               "An in-depth look at the chemical, physical, electrical, and moisture-control characteristics that define Grade A Fused Silica.",
               "Aグレード溶融シリカ(Fused Silica)の化学・物理・電気・水分管理面における核心特性を精密に整理しました。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -1340,7 +1341,7 @@ const ProductDetail = () => {
                     <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
                   </div>
                   <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</Prose>
                   <ul className="mt-5 space-y-2.5">
                     {sec.points.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
@@ -1365,13 +1366,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "B급 용융 실리카(Fused Silica)의 화학·물리·공정 안정성·가공성 측면 핵심 특성을 정밀하게 정리하였습니다.",
               "An in-depth look at the chemical, physical, process-stability, and processability characteristics that define Grade B Fused Silica.",
               "Bグレード溶融シリカ(Fused Silica)の化学・物理・工程安定性・加工性の核心特性を精密に整理しました。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -1509,7 +1510,7 @@ const ProductDetail = () => {
                     <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
                   </div>
                   <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</Prose>
                   <ul className="mt-5 space-y-2.5">
                     {sec.points.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
@@ -1534,13 +1535,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "C급 용융 실리카(Fused Silica)의 화학 조성·물리 구조·경제성·범용 적용성 측면의 핵심 특성을 정밀하게 정리하였습니다.",
               "An in-depth look at the chemical composition, physical structure, cost efficiency, and general-purpose applicability that define Grade C Fused Silica.",
               "Cグレード溶融シリカ(Fused Silica)の化学組成・物理構造・経済性・汎用適用性における核心特性を精密に整理しました。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -1678,7 +1679,7 @@ const ProductDetail = () => {
                     <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
                   </div>
                   <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</Prose>
                   <ul className="mt-5 space-y-2.5">
                     {sec.points.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
@@ -1703,13 +1704,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "SN-HS12 고순도 결정질 실리카 미분의 화학 조성·입도 설계·물성·공정 품질 관리 특성을 정밀하게 정리하였습니다.",
               "A precise breakdown of the chemical composition, particle-size design, physical properties and process quality control that define SN-HS12 high-purity crystalline silica micro-powder.",
               "SN-HS12 高純度結晶質シリカ微粉の化学組成・粒度設計・物性・工程品質管理特性を精密に整理しました。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -1847,7 +1848,7 @@ const ProductDetail = () => {
                     <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
                   </div>
                   <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</Prose>
                   <ul className="mt-5 space-y-2.5">
                     {sec.points.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
@@ -1872,13 +1873,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "비정질 세라믹 프리트의 유리 조성 설계, 용융·급냉 공정, 소성 거동 및 품질 관리 특성을 정밀하게 정리하였습니다.",
               "A precise breakdown of the glass composition design, melting and quenching process, firing behavior and quality control that define this amorphous ceramic frit.",
               "非晶質セラミックフリットのガラス組成設計、溶融・急冷工程、焼成挙動および品質管理特性を精密に整理しました。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -2019,7 +2020,7 @@ const ProductDetail = () => {
                     <span className="text-xs tracking-[0.3em] text-primary">{sec.tag}</span>
                   </div>
                   <h4 className="mt-5 text-xl font-bold leading-snug md:text-2xl">{sec.title}</h4>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</p>
+                  <Prose className="mt-3 text-sm leading-relaxed text-muted-foreground">{sec.intro}</Prose>
                   <ul className="mt-5 space-y-2.5">
                     {sec.points.map((pt, i) => (
                       <li key={i} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/90">
@@ -2121,13 +2122,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-2xl font-bold md:text-3xl">🏭 {tri("적용 분야", "Application Areas", "適用分野")}</h3>
-          <p className="mt-4 text-muted-foreground">
+          <Prose className="mt-4 text-muted-foreground">
             {tri(
               "SLH-380S는 다양한 산업 분야에서 사용됩니다.",
               "SLH-380S is used in a wide variety of industrial fields.",
               "SLH-380Sは多様な産業分野で使用されています。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
@@ -2265,13 +2266,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               "SN-SPJ-300의 구상화 품질, 화학 순도, 서브미크론 입도 설계, 표면·이온 특성을 TDS 기준으로 정밀하게 정리하였습니다.",
               "A precise, TDS-based breakdown of the spheroidization quality, chemical purity, submicron particle design and surface / ionic characteristics of SN-SPJ-300.",
               "SN-SPJ-300の球状化品質、化学純度、サブミクロン粒度設計、表面・イオン特性をTDS基準で精密に整理しました。"
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -2403,7 +2404,7 @@ const ProductDetail = () => {
                   <h4 className="font-bold">{c.title}</h4>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-muted-foreground">{c.intro}</p>
+                  <Prose className="text-sm text-muted-foreground">{c.intro}</Prose>
                   <ul className="mt-4 space-y-2">
                     {c.points.map((p, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
@@ -2428,13 +2429,13 @@ const ProductDetail = () => {
             </span>
           </div>
           <h3 className="mt-4 text-3xl font-bold md:text-4xl">🔍 {tri("상세 기술 프로파일", "Detailed Technical Profile", "詳細技術プロファイル")}</h3>
-          <p className="mt-4 max-w-3xl text-muted-foreground">
+          <Prose className="mt-4 max-w-3xl text-muted-foreground">
             {tri(
               `${fpCode}의 화학 조성, 입도 분포, ${isFP10 ? "각상" : "구상"} 용융 구조 및 공정 적합성을 기기분석 및 레이저 회절 입도분석(Horiba LA-950) 데이터를 기준으로 정리하였습니다.`,
               `The chemical composition, particle size distribution, ${isFP10 ? "angular" : "spherical"} fused structure and process suitability of ${fpCode}, organized from instrumental analysis and laser-diffraction PSD data (Horiba LA-950).`,
               `${fpCode}の化学組成、粒度分布、${isFP10 ? "角形" : "球状"}溶融構造および工程適合性を機器分析およびレーザー回折粒度分析(Horiba LA-950)データに基づき整理しました。`
             )}
-          </p>
+          </Prose>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
             {[
@@ -2572,7 +2573,7 @@ const ProductDetail = () => {
                   <h4 className="font-bold">{c.title}</h4>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-muted-foreground">{c.intro}</p>
+                  <Prose className="text-sm text-muted-foreground">{c.intro}</Prose>
                   <ul className="mt-4 space-y-2">
                     {c.points.map((p, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm text-foreground/80">
@@ -2596,7 +2597,7 @@ const ProductDetail = () => {
             APPLICATIONS
           </span>
           <h2 className="mt-6 text-3xl font-bold md:text-4xl">🎯 {t("pd.applications")}</h2>
-          <p className="mt-4 text-muted-foreground">{t("pd.applications.desc")}</p>
+          <Prose className="mt-4 text-muted-foreground">{t("pd.applications.desc")}</Prose>
         </div>
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

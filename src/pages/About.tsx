@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { silicaAlt } from "@/lib/silicaAlt";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Award, Factory, Globe2, Mountain, ShieldCheck, Sparkles } from "lucide-react";
@@ -89,9 +90,9 @@ const About = () => {
           <h1 className="mt-6 whitespace-pre-line text-4xl font-bold leading-tight md:text-6xl drop-shadow">
             {tr("ab.hero.title")}
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow">
+          <Prose className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow">
             {tr("ab.hero.sub")}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -117,12 +118,12 @@ const About = () => {
             <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
               {tr("ab.overview.title")}
             </h2>
-            <p className="mt-6 text-muted-foreground">{tr("ab.overview.p1")}</p>
-            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p2")}</p>
-            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p3")}</p>
-            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p4")}</p>
-            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p5")}</p>
-            <p className="mt-4 text-muted-foreground">{tr("ab.overview.p6")}</p>
+            <Prose className="mt-6 text-muted-foreground">{tr("ab.overview.p1")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{tr("ab.overview.p2")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{tr("ab.overview.p3")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{tr("ab.overview.p4")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{tr("ab.overview.p5")}</Prose>
+            <Prose className="mt-4 text-muted-foreground">{tr("ab.overview.p6")}</Prose>
           </div>
         </div>
 
@@ -173,9 +174,9 @@ const About = () => {
               <h3 className="mt-5 text-2xl font-bold md:text-3xl">
                 {tr("ab.prod.title")} <span className="text-primary">{tr("ab.prod.titleAccent")}</span>
               </h3>
-              <p className="mt-3 text-muted-foreground">
+              <Prose className="mt-3 text-muted-foreground">
                 {tr("ab.prod.desc")}
-              </p>
+              </Prose>
             </div>
 
             <div className="mt-10 grid gap-4 md:grid-cols-5">
@@ -191,7 +192,7 @@ const About = () => {
                     {s.n}
                   </div>
                   <h4 className="mt-4 text-lg font-bold">{s.title}</h4>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                  <Prose className="mt-2 text-sm text-muted-foreground">{s.desc}</Prose>
                 </div>
               ))}
             </div>
@@ -211,9 +212,9 @@ const About = () => {
                   {tr("ab.process.title")}<br />
                   <span className="text-primary">{tr("ab.process.titleAccent")}</span>
                 </h3>
-                <p className="mt-5 text-muted-foreground">
+                <Prose className="mt-5 text-muted-foreground">
                   {tr("ab.process.desc")}
-                </p>
+                </Prose>
               </div>
             </div>
           </div>
@@ -231,7 +232,7 @@ const About = () => {
             <h2 className="mt-5 text-3xl font-bold tracking-tight md:text-5xl">
               SINO<span className="text-primary">TENNG</span>-SILICA
             </h2>
-            <p className="mt-3 text-muted-foreground">{tr("ab.pt.sub")}</p>
+            <Prose className="mt-3 text-muted-foreground">{tr("ab.pt.sub")}</Prose>
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center">
@@ -331,9 +332,9 @@ const About = () => {
                 <h3 className="mt-5 text-2xl font-bold md:text-3xl">
                   {tr("ab.sdr.mfg.title")} <span className="text-primary">{tr("ab.sdr.mfg.titleAccent")}</span>
                 </h3>
-                <p className="mt-3 text-muted-foreground">
+                <Prose className="mt-3 text-muted-foreground">
                   {tr("ab.sdr.mfg.desc")}
-                </p>
+                </Prose>
               </div>
 
               <div className="mt-10 grid gap-4 md:grid-cols-4">
@@ -351,7 +352,7 @@ const About = () => {
                         <s.icon className="h-6 w-6 text-primary/70" />
                       </div>
                       <h4 className="mt-6 text-lg font-bold">{s.title}</h4>
-                      <p className="mt-3 text-sm text-muted-foreground">{s.desc}</p>
+                      <Prose className="mt-3 text-sm text-muted-foreground">{s.desc}</Prose>
                     </div>
                   </div>
                 ))}
@@ -377,7 +378,7 @@ const About = () => {
                       <q.icon className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
                       <div>
                         <div className="text-xs font-bold">{q.t}</div>
-                        <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{q.d}</p>
+                        <Prose className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{q.d}</Prose>
                       </div>
                     </div>
                   ))}

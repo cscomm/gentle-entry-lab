@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router";
+import Prose from "@/components/Prose";
 import { Sparkles, CheckCircle2 } from "lucide-react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -173,13 +174,13 @@ const QuartzApplications = () => {
           <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-6xl">
             {t("쿼츠 · 결정질 실리카 응용 분야", "Quartz · Crystalline Silica Applications", "クォーツ・結晶質シリカ用途分野")}
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
+          <Prose className="mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {t(
               "쿼츠(Quartz) · 결정질 실리카(Crystalline Silica, α-Quartz)는 SiO₂가 규칙적으로 배열된 결정 구조 소재로, 모스 경도 7의 높은 기계적 강도·1670℃의 뛰어난 내화도·화학적 안정성·풍부한 매장량을 갖춘 산업의 기본 원료입니다. 결정형 구상(SN-QJG)·모서리 라운드(SN-YJG)·각상(SN-JG)·저방사선(SN-CL) 등 형상과 순도별 라인업이 반도체 EMC, CCL·PCB, 인조 대리석, 유리·도자기, 정밀 주조, 연마·워터젯, 태양광 웨이퍼, 스포츠 표면재 등 국가 기간산업 전반에 걸쳐 사용됩니다.",
               "Quartz and crystalline silica (α-quartz) are foundational industrial raw materials — SiO₂ arranged in a regular crystalline lattice, delivering a Mohs hardness of 7, refractoriness up to 1670 °C, excellent chemical stability and abundant availability. Lineups by shape and purity — crystalline spherical (SN-QJG), round-corner (SN-YJG), angular (SN-JG) and low-alpha (SN-CL) — are used across semiconductor EMC, CCL/PCB, engineered stone, glass and ceramics, precision casting, abrasives and waterjet, solar wafer feedstock and sports surfacing.",
               "クォーツ(Quartz)・結晶質シリカ(α-クォーツ)は、SiO₂が規則的に配列された結晶構造を持ち、モース硬度7の高い機械的強度、1670℃の優れた耐火度、化学的安定性、豊富な埋蔵量を備えた産業の基本原料です。結晶質球状(SN-QJG)、丸角(SN-YJG)、角状(SN-JG)、低α線(SN-CL)など形状・純度別のラインアップが、半導体EMC、CCL・PCB、人造大理石、ガラス・陶磁器、精密鋳造、研磨・ウォータージェット、太陽光ウェハ、スポーツ表面材など国家基幹産業全般で使用されています。"
             )}
-          </p>
+          </Prose>
         </div>
       </section>
 
@@ -196,7 +197,7 @@ const QuartzApplications = () => {
                 </span>
                 <h2 className="text-xl font-bold tracking-tight md:text-2xl">{s.title}</h2>
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</p>
+              <Prose className="mt-5 text-sm leading-relaxed text-muted-foreground md:text-base">{s.desc}</Prose>
               <ul className="mt-6 grid gap-2 sm:grid-cols-2">
                 {s.items.map((it) => (
                   <li key={it} className="flex items-start gap-2 text-sm text-foreground/90">
