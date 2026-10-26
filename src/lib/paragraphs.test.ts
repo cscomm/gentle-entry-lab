@@ -17,7 +17,7 @@ describe("splitParagraphs", () => {
 
   it("does not split on decimals like 99.96% or abbreviations like typ.", () => {
     const text =
-      "SN-HF04 offers a typical SiO₂ purity of 99.96% (spec ≥99.95%, typ. 99.96) and extremely low iron content with a tightly controlled particle size distribution of D10 1.6 µm, D50 3.8 µm and D90 6.6 µm for demanding semiconductor packaging uses.";
+      "SN-HF04 offers a typical SiO₂ purity of 99.96% (spec ≥99.95%, typ. 99.96) and extremely low iron content with a tightly controlled particle size distribution of D10 1.6 µm, D50 3.8 µm and D90 6.6 µm for demanding semiconductor packaging, underfill, encapsulant, CCL and high-frequency substrate uses across the advanced electronics industry.";
     expect(splitParagraphs(text)).toHaveLength(1);
   });
 
