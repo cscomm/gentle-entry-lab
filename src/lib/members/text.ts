@@ -106,6 +106,11 @@ export const MT = {
     en: "Please sign in to use the AI product finder. Signing up is free.",
     ja: "AI製品提案はログイン後にご利用いただけます。会員登録は無料です。",
   },
+  gateFinderUsed: {
+    ko: "비회원 무료 체험(1회)을 사용하셨습니다. 무료 회원가입 후 매월 10회 이용하실 수 있습니다.",
+    en: "You've used your free guest try. Sign up for free to use it 10 times a month.",
+    ja: "非会員の無料お試し（1回）をご利用済みです。無料会員登録で毎月10回ご利用いただけます。",
+  },
   gateBoard: {
     ko: "게시판 글쓰기는 로그인 후 이용하실 수 있습니다.",
     en: "Please sign in to write on the board.",

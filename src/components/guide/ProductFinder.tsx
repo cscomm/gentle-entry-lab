@@ -318,6 +318,7 @@ const ProductFinder = () => {
         const s = parsed.error.status;
         setErrMsg(s === 429 ? tx("err429") : s === 402 || s === 403 ? tx("err402") : tx("errGeneric"));
         setStatus(parsed.analysis ? "done" : "error");
+        loadQuota(); // failed answers don't count
         return;
       }
       setStatus("done");
@@ -386,28 +387,54 @@ const ProductFinder = () => {
             </div>
           </div>
 
-          {!canUse ? (
+          {needsProfile ? (
             <MemberGate messageKey="gateFinder" className="mt-6" />
+          ) : outOfTries && !loading && quota?.kind === "guest" ? (
+            <MemberGate messageKey="gateFinderUsed" className="mt-6" />
+          ) : outOfTries && !loading ? (
+            <div role="status" className="mt-6 rounded-2xl border border-primary/25 bg-primary/5 p-6 text-center">
+              <p className="font-semibold text-foreground">{tx("memberUsedTitle")}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{tx("memberUsed").replace("{limit}", String(quota?.limit ?? 10))}</p>
+              <Button asChild className="mt-4">
+                <Link to="/#contact">{tx("cta")}</Link>
+              </Button>
+            </div>
           ) : (
-          <div className="mt-6 flex flex-wrap items-center gap-3">
-            {loading ? (
-              <Button type="button" variant="outline" onClick={stop} className="gap-2">
-                <Square className="h-4 w-4" />
-                {tx("stop")}
-              </Button>
-            ) : (
-              <Button type="button" size="lg" onClick={run} className="gap-2">
-                <Sparkles className="h-4 w-4" />
-                {tx("submit")}
-              </Button>
+          <div className="mt-6 space-y-3">
+            <div className="flex flex-wrap items-center gap-3">
+              {loading ? (
+                <Button type="button" variant="outline" onClick={stop} className="gap-2">
+                  <Square className="h-4 w-4" />
+                  {tx("stop")}
+                </Button>
+              ) : (
+                <Button type="button" size="lg" onClick={run} className="gap-2">
+                  <Sparkles className="h-4 w-4" />
+                  {tx("submit")}
+                </Button>
+              )}
+              {(analysis || status === "error") && !loading && (
+                <Button type="button" variant="ghost" onClick={reset} className="gap-2">
+                  <RotateCcw className="h-4 w-4" />
+                  {tx("reset")}
+                </Button>
+              )}
+              <span className="text-xs text-muted-foreground">{tx("disclaimer")}</span>
+            </div>
+            {quota && (
+              <p className="inline-flex items-center gap-1.5 rounded-full border border-primary/25 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+                {quota.unlimited ? (
+                  <>
+                    <InfinityIcon className="h-3.5 w-3.5" />
+                    {tx("unlimitedNote")}
+                  </>
+                ) : quota.kind === "guest" ? (
+                  tx("guestNote")
+                ) : (
+                  tx("memberNote").replace("{n}", String(quota.remaining)).replace("{limit}", String(quota.limit))
+                )}
+              </p>
             )}
-            {(analysis || status === "error") && !loading && (
-              <Button type="button" variant="ghost" onClick={reset} className="gap-2">
-                <RotateCcw className="h-4 w-4" />
-                {tx("reset")}
-              </Button>
-            )}
-            <span className="text-xs text-muted-foreground">{tx("disclaimer")}</span>
           </div>
           )}
 
