@@ -368,6 +368,7 @@ const ProductDetail = () => {
             </span>
             <h2 className="mt-6 text-3xl font-bold md:text-4xl">{t("pd.overview")}</h2>
             <Prose className="mt-6 leading-relaxed text-muted-foreground">{pick(lang, product.description, product.enDescription, product.jaDescription)}</Prose>
+            <DatasheetButton slug={product.slug} className="mt-6" />
 
             {product.detailImage && (
               <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
