@@ -332,6 +332,7 @@ export type Database = {
           created_at: string
           id: string
           is_public: boolean
+          member_id: string | null
           password_hash: string
           title: string
           updated_at: string
@@ -343,6 +344,7 @@ export type Database = {
           created_at?: string
           id?: string
           is_public?: boolean
+          member_id?: string | null
           password_hash: string
           title: string
           updated_at?: string
@@ -354,6 +356,7 @@ export type Database = {
           created_at?: string
           id?: string
           is_public?: boolean
+          member_id?: string | null
           password_hash?: string
           title?: string
           updated_at?: string
@@ -369,6 +372,8 @@ export type Database = {
           error_message: string | null
           id: string
           lang: string
+          member_email: string | null
+          member_id: string | null
           query: string
           recommended: Json
           status: string
@@ -382,6 +387,8 @@ export type Database = {
           error_message?: string | null
           id?: string
           lang?: string
+          member_email?: string | null
+          member_id?: string | null
           query?: string
           recommended?: Json
           status?: string
@@ -395,6 +402,8 @@ export type Database = {
           error_message?: string | null
           id?: string
           lang?: string
+          member_email?: string | null
+          member_id?: string | null
           query?: string
           recommended?: Json
           status?: string
