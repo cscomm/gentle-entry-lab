@@ -57,7 +57,7 @@ const SiteFooter = () => {
     { label: t("nav.products"), to: "/#products", external: true },
     { label: t("nav.about"), to: "/about", external: false },
     { label: t("nav.applications"), dropdown: true },
-    { label: t("nav.guide"), to: "/guide/faq/", external: false },
+    { label: t("nav.guide"), to: "/guide/finder/", external: false },
     { label: t("nav.contact"), to: "/#contact", external: true },
   ];
 

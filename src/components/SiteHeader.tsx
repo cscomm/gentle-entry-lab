@@ -13,7 +13,7 @@ const navItems = [
   { key: "nav.products", href: "/#products", dropdown: "products" as const },
   { key: "nav.about", href: "/about" },
   { key: "nav.applications", href: "/#applications", dropdown: "applications" as const },
-  { key: "nav.guide", href: "/guide/faq/", dropdown: "guide" as const },
+  { key: "nav.guide", href: "/guide/finder/", dropdown: "guide" as const },
   { key: "nav.contact", href: "/#contact" },
 ];
 
