@@ -35,12 +35,12 @@ const MemberSignup = () => {
     if (!consent.terms || !consent.privacy) return setError(mt(lang, "agreeRequired"));
 
     setBusy(true);
-    const back = `${window.location.origin}${withLang(lang, "/login/")}${next ? `?next=${encodeURIComponent(next)}` : ""}`;
+    rememberAuthReturn(lang, next);
     const { data, error: err } = await memberAuth.auth.signUp({
       email: email.trim(),
       password,
       options: {
-        emailRedirectTo: back,
+        emailRedirectTo: authCallbackUrl(),
         data: {
           full_name: profile.full_name.trim(),
           company: profile.company.trim(),
