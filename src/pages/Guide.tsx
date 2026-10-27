@@ -103,7 +103,7 @@ export const GuideRedirect = () => {
   const [params] = useSearchParams();
   const { lang } = useLang();
   const tab = params.get("tab");
-  const target = tab === "finder" ? GUIDE_SECTIONS.finder.to : tab === "board" ? GUIDE_SECTIONS.board.to : GUIDE_SECTIONS.faq.to;
+  const target = tab === "finder" ? GUIDE_SECTIONS.finder.to : tab === "board" ? GUIDE_SECTIONS.board.to : tab === "faq" ? GUIDE_SECTIONS.faq.to : GUIDE_SECTIONS.finder.to;
   return <Navigate to={withLang(lang, target)} replace />;
 };
 
