@@ -1,8 +1,8 @@
-import { useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { Link } from "@/lib/router";
-import { ArrowRight, Loader2, RotateCcw, Sparkles, Square } from "lucide-react";
+import { ArrowRight, Infinity as InfinityIcon, Loader2, RotateCcw, Sparkles, Square } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useLang, type Lang } from "@/contexts/LanguageContext";
@@ -17,8 +17,24 @@ const ENDPOINT = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/product-find
 const ANON = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
 const REC = "[[RECOMMEND]]";
 const ERR = "[[ERROR]]";
+const DEVICE_KEY = "silica-finder-device";
 
 type Rec = { slug: string; reason: string };
+type Quota = { kind: "guest" | "member"; unlimited: boolean; limit: number; used: number; remaining: number };
+
+/** Random id kept in this browser so a visitor's free try can be recognised. */
+const getDeviceId = () => {
+  try {
+    let id = localStorage.getItem(DEVICE_KEY);
+    if (!id || !/^[0-9a-f-]{36}$/i.test(id)) {
+      id = crypto.randomUUID();
+      localStorage.setItem(DEVICE_KEY, id);
+    }
+    return id;
+  } catch {
+    return undefined;
+  }
+};
 
 const TXT: Record<string, Record<Lang, string>> = {
   lead: {
@@ -96,6 +112,27 @@ const TXT: Record<string, Record<Lang, string>> = {
     ko: "AI 답변을 가져오지 못했습니다. 잠시 후 다시 시도해 주세요.",
     en: "Couldn't get an AI answer. Please try again shortly.",
     ja: "AIの回答を取得できませんでした。しばらくしてから再度お試しください。",
+  },
+  guestNote: {
+    ko: "비회원은 1회 무료로 체험하실 수 있습니다. 회원가입 후에는 매월 10회 이용하실 수 있습니다.",
+    en: "Guests can try it once for free. Members can use it 10 times a month.",
+    ja: "非会員の方は1回無料でお試しいただけます。会員登録後は毎月10回ご利用いただけます。",
+  },
+  memberNote: {
+    ko: "이번 달 남은 이용 횟수: {n} / {limit}회",
+    en: "Remaining this month: {n} / {limit}",
+    ja: "今月の残り利用回数：{n} / {limit}回",
+  },
+  unlimitedNote: { ko: "무제한 이용 계정입니다", en: "Unlimited account", ja: "無制限アカウントです" },
+  memberUsedTitle: {
+    ko: "이번 달 이용 횟수를 모두 사용하셨습니다",
+    en: "You've used all of this month's tries",
+    ja: "今月の利用回数をすべて使用しました",
+  },
+  memberUsed: {
+    ko: "회원은 매월 {limit}회까지 이용하실 수 있으며, 다음 달 1일에 다시 채워집니다. 더 자세한 상담이 필요하시면 문의하기를 이용해 주세요.",
+    en: "Members can use it {limit} times a month; it resets on the 1st. For more help, please contact us.",
+    ja: "会員は毎月{limit}回までご利用いただけ、翌月1日にリセットされます。詳しいご相談はお問い合わせをご利用ください。",
   },
 };
 
@@ -182,8 +219,9 @@ const parseStream = (raw: string) => {
 const ProductFinder = () => {
   const { lang } = useLang();
   const hidden = useHiddenSlugs();
-  const { session, profileComplete, getToken } = useMember();
-  const canUse = Boolean(session && profileComplete);
+  const { session, profileComplete, getToken, loading: memberLoading } = useMember();
+  const needsProfile = Boolean(session && !profileComplete);
+  const [quota, setQuota] = useState<Quota | null>(null);
   const [query, setQuery] = useState("");
   const [raw, setRaw] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
@@ -191,6 +229,28 @@ const ProductFinder = () => {
   const abortRef = useRef<AbortController | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const tx = (k: string) => TXT[k][lang];
+  const outOfTries = Boolean(quota && !quota.unlimited && quota.remaining <= 0);
+
+  const loadQuota = useCallback(async () => {
+    const memberToken = (await getToken()) ?? undefined;
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
+        body: JSON.stringify({ mode: "quota", memberToken, deviceId: getDeviceId() }),
+      });
+      if (res.ok) setQuota(await res.json());
+    } catch {
+      /* the server re-checks on every request */
+    }
+  }, [getToken]);
+
+  const sessionId = session?.user?.id ?? null;
+  useEffect(() => {
+    if (memberLoading) return;
+    setQuota(null);
+    loadQuota();
+  }, [memberLoading, sessionId, loadQuota]);
 
   const { analysis, recs, hasRecMarker, error } = useMemo(() => parseStream(raw), [raw]);
 
@@ -214,8 +274,8 @@ const ProductFinder = () => {
       setStatus("error");
       return;
     }
-    const memberToken = await getToken();
-    if (!memberToken || !canUse) return;
+    if (needsProfile || outOfTries) return;
+    const memberToken = (await getToken()) ?? undefined;
     abortRef.current?.abort();
     const ac = new AbortController();
     abortRef.current = ac;
@@ -228,14 +288,22 @@ const ProductFinder = () => {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
-        body: JSON.stringify({ query: q, lang, memberToken }),
+        body: JSON.stringify({ query: q, lang, memberToken, deviceId: getDeviceId() }),
         signal: ac.signal,
       });
       if (!res.ok || !res.body) {
+        const data = await res.json().catch(() => ({}));
+        if (res.status === 429 && data?.error === "quota_exceeded") {
+          setQuota(data as Quota);
+          setStatus("idle");
+          return;
+        }
         setErrMsg(res.status === 401 ? tx("errLogin") : res.status === 429 ? tx("err429") : res.status === 402 || res.status === 403 ? tx("err402") : tx("errGeneric"));
         setStatus("error");
         return;
       }
+      // This try now counts; update the remaining number shown.
+      setQuota((qt) => (qt && !qt.unlimited ? { ...qt, used: qt.used + 1, remaining: Math.max(0, qt.remaining - 1) } : qt));
       const reader = res.body.getReader();
       const dec = new TextDecoder();
       let acc = "";
