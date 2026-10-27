@@ -29,6 +29,13 @@
       "when": 1793067806732,
       "tag": "0003_member_gating",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793072664110,
+      "tag": "0004_finder_usage_limits",
+      "breakpoints": true
     }
   ]
 }
