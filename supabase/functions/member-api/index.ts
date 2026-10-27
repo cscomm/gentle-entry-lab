@@ -44,7 +44,9 @@ Deno.serve(async (req) => {
 
   try {
     if (body.action === "my_inquiries") {
-      if (!member.emailConfirmed || !member.email) return json({ error: "email_not_confirmed" }, 403);
+      // Kakao accounts may have no email; there is nothing verified to match inquiries against.
+      if (!member.email) return json({ rows: [], reason: "no_email" });
+      if (!member.emailConfirmed) return json({ error: "email_not_confirmed" }, 403);
       const pattern = member.email.replace(/[\\%_]/g, (c) => `\\${c}`);
       const { data, error } = await sb
         .from("inquiries")
