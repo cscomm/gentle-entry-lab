@@ -31,6 +31,11 @@ import BoardNew from "./pages/BoardNew.tsx";
 import BoardDetail from "./pages/BoardDetail.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
 import Admin from "./pages/Admin.tsx";
+import MemberLogin from "./pages/MemberLogin.tsx";
+import MemberSignup from "./pages/MemberSignup.tsx";
+import MemberAccount from "./pages/MemberAccount.tsx";
+import MemberResetPassword from "./pages/MemberResetPassword.tsx";
+import { MemberProvider } from "./lib/members/MemberContext";
 
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CanonicalUrl from "./components/CanonicalUrl";
@@ -89,6 +94,10 @@ const LangShell = () => {
       <Route path="board/:id" element={<BoardDetail />} />
       <Route path="unsubscribe" element={<Unsubscribe />} />
       <Route path="admin" element={<Admin />} />
+      <Route path="login" element={<MemberLogin />} />
+      <Route path="signup" element={<MemberSignup />} />
+      <Route path="account" element={<MemberAccount />} />
+      <Route path="reset-password" element={<MemberResetPassword />} />
 
       <Route path="*" element={<NotFound />} />
     </Routes>
@@ -103,6 +112,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <LanguageProvider>
+          <MemberProvider>
           <CanonicalUrl />
           <Routes>
             <Route path="/" element={<RootRedirect />} />
@@ -110,6 +120,7 @@ const App = () => (
             {/* Legacy paths without a lang prefix → redirect with detected lang */}
             <Route path="*" element={<LegacyRedirect />} />
           </Routes>
+          </MemberProvider>
         </LanguageProvider>
       </BrowserRouter>
     </TooltipProvider>
