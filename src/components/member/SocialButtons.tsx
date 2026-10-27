@@ -41,7 +41,13 @@ const SocialButtons = ({ next }: { next: string | null }) => {
       /* try anyway */
     }
     const back = `${window.location.origin}${withLang(lang, "/login/")}${next ? `?next=${encodeURIComponent(next)}` : ""}`;
-    const { error } = await memberAuth.auth.signInWithOAuth({ provider, options: { redirectTo: back } });
+    const { error } = await memberAuth.auth.signInWithOAuth({
+      provider,
+      options:
+        provider === "kakao"
+          ? { redirectTo: back, scopes: "profile_nickname" }
+          : { redirectTo: back },
+    });
     if (error) {
       setBusy(null);
       toast.error(mt(lang, "genericError"));
