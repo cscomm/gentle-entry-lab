@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLang } from "@/contexts/LanguageContext";
 import { EMPTY_PROFILE, authCallbackUrl, memberAuth, rememberAuthReturn, safeNext, type MemberProfile } from "@/lib/members/client";
-import { withLang } from "@/lib/i18nRouting";
 import { mt } from "@/lib/members/text";
 import AuthLayout from "@/components/member/AuthLayout";
 import SocialButtons from "@/components/member/SocialButtons";
