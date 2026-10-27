@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/contexts/LanguageContext";
-import { memberAuth } from "@/lib/members/client";
+import { MEMBER_AUTH_KEY, MEMBER_AUTH_URL, memberAuth } from "@/lib/members/client";
 import { withLang } from "@/lib/i18nRouting";
 import { mt } from "@/lib/members/text";
 
@@ -28,11 +28,23 @@ const SocialButtons = ({ next }: { next: string | null }) => {
 
   const go = async (provider: "google" | "kakao") => {
     setBusy(provider);
+    // Avoid sending visitors to a raw error page when the provider isn't switched on yet.
+    try {
+      const res = await fetch(`${MEMBER_AUTH_URL}/auth/v1/settings`, { headers: { apikey: MEMBER_AUTH_KEY } });
+      const s = await res.json();
+      if (s?.external && s.external[provider] === false) {
+        setBusy(null);
+        toast.error(mt(lang, "socialSetupError"));
+        return;
+      }
+    } catch {
+      /* try anyway */
+    }
     const back = `${window.location.origin}${withLang(lang, "/login/")}${next ? `?next=${encodeURIComponent(next)}` : ""}`;
     const { error } = await memberAuth.auth.signInWithOAuth({ provider, options: { redirectTo: back } });
     if (error) {
       setBusy(null);
-      toast.error(/not enabled|unsupported/i.test(error.message) ? mt(lang, "socialSetupError") : mt(lang, "genericError"));
+      toast.error(mt(lang, "genericError"));
     }
   };
 
