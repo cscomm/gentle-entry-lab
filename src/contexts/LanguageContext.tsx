@@ -48,6 +48,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "board.wrongPw": { ko: "비밀번호가 일치하지 않습니다.", en: "Incorrect password.", ja: "パスワードが一致しません。" },
   "board.deleted": { ko: "게시글이 삭제되었습니다.", en: "Post deleted.", ja: "記事が削除されました。" },
   "board.created": { ko: "게시글이 등록되었습니다.", en: "Post created.", ja: "記事が登録されました。" },
+  "board.createFailed": { ko: "게시글을 등록하지 못했습니다. 다시 시도해 주세요.", en: "Couldn't create the post. Please try again.", ja: "記事を登録できませんでした。再度お試しください。" },
 
   // Compose form
   "form.title": { ko: "제목", en: "Title", ja: "タイトル" },
