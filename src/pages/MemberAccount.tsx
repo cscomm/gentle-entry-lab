@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLang } from "@/contexts/LanguageContext";
 import { useMember } from "@/lib/members/MemberContext";
-import { EMPTY_PROFILE, isProfileComplete, memberAuth, safeNext, type MemberProfile } from "@/lib/members/client";
+import { EMPTY_PROFILE, isProfileComplete, isValidEmail, memberAuth, safeNext, type MemberProfile } from "@/lib/members/client";
 import { memberApi } from "@/lib/members/api";
 import { INQUIRY_STATUS_LABEL, mt } from "@/lib/members/text";
 import AuthLayout from "@/components/member/AuthLayout";
@@ -111,12 +111,15 @@ const MemberAccount = () => {
   }
 
   const needsConsent = !saved?.terms_agreed_at;
+  const accountEmail = user.email || null;
+  const emailLabel = accountEmail || profile.contact_email || mt(lang, "kakaoAccount");
   const usesPassword = (user.identities ?? []).some((i) => i.provider === "email");
 
   const save = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!profile.full_name.trim() || !profile.company.trim() || !profile.phone.trim() || !profile.address.trim())
       return toast.error(mt(lang, "fillRequired"));
+    if (!accountEmail && !isValidEmail(profile.contact_email)) return toast.error(mt(lang, "invalidEmail"));
     if (needsConsent && (!consent.terms || !consent.privacy)) return toast.error(mt(lang, "agreeRequired"));
     setBusy(true);
     const data: MemberProfile = {
@@ -126,13 +129,14 @@ const MemberAccount = () => {
       zipcode: profile.zipcode.trim(),
       address: profile.address.trim(),
       address_detail: profile.address_detail.trim(),
+      contact_email: profile.contact_email.trim().toLowerCase(),
       terms_agreed_at: saved?.terms_agreed_at || new Date().toISOString(),
     };
     const { error } = await memberAuth.auth.updateUser({ data });
     setBusy(false);
     if (error) return toast.error(mt(lang, "genericError"));
     toast.success(mt(lang, "saved"));
-    if (next && isProfileComplete(data)) navigate(next);
+    if (next && isProfileComplete(data, accountEmail)) navigate(next);
   };
 
   const changePw = async (e: React.FormEvent) => {
@@ -146,18 +150,19 @@ const MemberAccount = () => {
   };
 
   return (
-    <AuthLayout title={mt(lang, profileComplete ? "myAccount" : "completeTitle")} lead={profileComplete ? user.email : mt(lang, "completeLead")} wide>
+    <AuthLayout title={mt(lang, profileComplete ? "myAccount" : "completeTitle")} lead={profileComplete ? emailLabel : mt(lang, "completeLead")} wide>
       <div className="space-y-6">
         <form onSubmit={save} className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">
           <div className="mb-5 flex items-center justify-between gap-3">
             <h2 className="text-lg font-bold text-foreground">{mt(lang, "profileTitle")}</h2>
-            <span className="truncate text-xs text-muted-foreground">{user.email}</span>
+            <span className="truncate text-xs text-muted-foreground">{emailLabel}</span>
           </div>
           <ProfileFields
             value={profile}
             onChange={setProfile}
             consent={needsConsent ? consent : undefined}
             onConsent={needsConsent ? setConsent : undefined}
+            askEmail={!accountEmail}
           />
           <Button type="submit" className="mt-6 w-full sm:w-auto" disabled={busy}>
             {busy && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
@@ -165,7 +170,12 @@ const MemberAccount = () => {
           </Button>
         </form>
 
-        {profileComplete && <MyInquiries />}
+        {profileComplete &&
+          (accountEmail ? (
+            <MyInquiries />
+          ) : (
+            <p className="rounded-2xl border border-border bg-card p-6 text-sm text-muted-foreground shadow-sm">{mt(lang, "noEmailInquiries")}</p>
+          ))}
 
         {usesPassword && (
           <form onSubmit={changePw} className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">

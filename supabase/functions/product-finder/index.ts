@@ -161,7 +161,10 @@ Deno.serve(async (req) => {
         lang,
         status: "pending",
         member_id: member?.id ?? null,
-        member_email: member?.email || null,
+        member_email:
+          member?.email ||
+          (typeof member?.meta.contact_email === "string" ? member.meta.contact_email.slice(0, 120) : "") ||
+          null,
         guest_device_id: member ? null : deviceId ?? null,
         guest_ip_hash: ipH,
         user_agent: (req.headers.get("user-agent") ?? "").slice(0, 300) || null,

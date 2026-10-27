@@ -14,6 +14,8 @@ type Props = {
   onChange: (v: MemberProfile) => void;
   consent?: Consent;
   onConsent?: (c: Consent) => void;
+  /** Show a required contact email field (account has no email from its provider). */
+  askEmail?: boolean;
 };
 
 const Field = ({ label, children, required = true }: { label: string; children: React.ReactNode; required?: boolean }) => (
@@ -26,7 +28,7 @@ const Field = ({ label, children, required = true }: { label: string; children: 
   </div>
 );
 
-const ProfileFields = ({ value, onChange, consent, onConsent }: Props) => {
+const ProfileFields = ({ value, onChange, consent, onConsent, askEmail }: Props) => {
   const { lang } = useLang();
   const set = (patch: Partial<MemberProfile>) => onChange({ ...value, ...patch });
   const onAddress = useCallback(
@@ -52,6 +54,19 @@ const ProfileFields = ({ value, onChange, consent, onConsent }: Props) => {
           />
         </Field>
       </div>
+      {askEmail && (
+        <Field label={mt(lang, "contactEmail")}>
+          <Input
+            type="email"
+            value={value.contact_email}
+            onChange={(e) => set({ contact_email: e.target.value.slice(0, 120) })}
+            required
+            autoComplete="email"
+            placeholder="name@company.com"
+          />
+          <p className="mt-1.5 text-xs text-muted-foreground">{mt(lang, "contactEmailHint")}</p>
+        </Field>
+      )}
       <Field label={mt(lang, "company")}>
         <Input value={value.company} onChange={(e) => set({ company: e.target.value.slice(0, 80) })} required autoComplete="organization" />
       </Field>

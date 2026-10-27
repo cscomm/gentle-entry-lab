@@ -11,6 +11,13 @@ describe("member profile rules", () => {
     }
   });
 
+  it("Kakao accounts without an email need a valid contact email", () => {
+    expect(isProfileComplete(full, null)).toBe(false);
+    expect(isProfileComplete({ ...full, contact_email: "not-an-email" }, null)).toBe(false);
+    expect(isProfileComplete({ ...full, contact_email: "kim@company.com" }, null)).toBe(true);
+    expect(isProfileComplete(full, "kim@company.com")).toBe(true);
+  });
+
   it("address detail and postal code are optional", () => {
     expect(isProfileComplete({ ...full, zipcode: "", address_detail: "" })).toBe(true);
   });

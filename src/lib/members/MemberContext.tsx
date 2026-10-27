@@ -54,7 +54,7 @@ export const MemberProvider = ({ children }: { children: ReactNode }) => {
       session,
       user,
       profile,
-      profileComplete: profile ? isProfileComplete(profile) : false,
+      profileComplete: profile ? isProfileComplete(profile, user?.email ?? null) : false,
       loading,
       signOut,
       refresh,

@@ -23,6 +23,8 @@ export type MemberProfile = {
   zipcode: string;
   address: string;
   address_detail: string;
+  /** Contact email typed by the member; used when the sign-in provider (e.g. Kakao) gave no email. */
+  contact_email: string;
   terms_agreed_at?: string;
 };
 
@@ -33,6 +35,7 @@ export const EMPTY_PROFILE: MemberProfile = {
   zipcode: "",
   address: "",
   address_detail: "",
+  contact_email: "",
 };
 
 const str = (v: unknown) => (typeof v === "string" ? v : "");
@@ -46,13 +49,26 @@ export const profileFromMeta = (meta: Record<string, unknown> | undefined | null
     zipcode: str(m.zipcode),
     address: str(m.address),
     address_detail: str(m.address_detail),
+    contact_email: str(m.contact_email),
     terms_agreed_at: str(m.terms_agreed_at) || undefined,
   };
 };
 
-/** Required before a member can use members-only features. */
-export const isProfileComplete = (p: MemberProfile) =>
-  Boolean(p.full_name.trim() && p.company.trim() && p.phone.trim() && p.address.trim() && p.terms_agreed_at);
+export const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+
+/**
+ * Required before a member can use members-only features. Accounts whose sign-in
+ * provider returned no email (Kakao without email consent) must give a contact email.
+ */
+export const isProfileComplete = (p: MemberProfile, accountEmail: string | null | undefined = "x") =>
+  Boolean(
+    p.full_name.trim() &&
+      p.company.trim() &&
+      p.phone.trim() &&
+      p.address.trim() &&
+      p.terms_agreed_at &&
+      (accountEmail || isValidEmail(p.contact_email)),
+  );
 
 /** Keeps redirects on this site only. */
 export const safeNext = (next: string | null | undefined) =>
