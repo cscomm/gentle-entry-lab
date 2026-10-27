@@ -57,3 +57,7 @@ export const isProfileComplete = (p: MemberProfile) =>
 /** Keeps redirects on this site only. */
 export const safeNext = (next: string | null | undefined) =>
   next && next.startsWith("/") && !next.startsWith("//") ? next : null;
+
+/** True when the page was opened from a password-reset email (captured before the link is consumed). */
+export const openedFromRecoveryLink =
+  typeof window !== "undefined" && /type=recovery/.test(window.location.hash + window.location.search);
