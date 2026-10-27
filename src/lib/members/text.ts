@@ -138,6 +138,13 @@ export const MT = {
   completeNow: { ko: "정보 입력하기", en: "Complete profile", ja: "情報を入力する" },
   datasheet: { ko: "데이터시트(TDS) 다운로드", en: "Download datasheet (TDS)", ja: "データシート（TDS）ダウンロード" },
   datasheetMembers: { ko: "회원 전용", en: "Members only", ja: "会員専用" },
+  callbackWorking: { ko: "로그인 처리 중입니다…", en: "Signing you in…", ja: "ログイン処理中です…" },
+  callbackFailed: { ko: "로그인을 완료하지 못했습니다", en: "Sign-in couldn't be completed", ja: "ログインを完了できませんでした" },
+  callbackFailedLead: {
+    ko: "다시 로그인해 주세요. 문제가 계속되면 이메일로 로그인해 주세요.",
+    en: "Please sign in again. If this keeps happening, sign in with email.",
+    ja: "もう一度ログインしてください。解決しない場合はメールでログインしてください。",
+  },
   socialSetupError: {
     ko: "이 로그인 방식은 아직 준비 중입니다. 이메일로 가입해 주세요.",
     en: "This sign-in option isn't ready yet. Please use email.",

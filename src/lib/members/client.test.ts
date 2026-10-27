@@ -36,3 +36,19 @@ describe("safeNext", () => {
     expect(safeNext(null)).toBeNull();
   });
 });
+
+describe("after social sign-in", () => {
+  it("goes to the main page when nothing else was requested", async () => {
+    const { afterSignInPath } = await import("./client");
+    expect(afterSignInPath("ko", null, true)).toBe("/ko/");
+    expect(afterSignInPath("en", null, true)).toBe("/en/");
+  });
+  it("returns to the page the member came from", async () => {
+    const { afterSignInPath } = await import("./client");
+    expect(afterSignInPath("ko", "/guide/finder/", true)).toBe("/ko/guide/finder/");
+  });
+  it("sends members with an unfinished profile to the account page first", async () => {
+    const { afterSignInPath } = await import("./client");
+    expect(afterSignInPath("ko", null, false)).toBe("/ko/account/");
+  });
+});

@@ -2,8 +2,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/contexts/LanguageContext";
-import { MEMBER_AUTH_KEY, MEMBER_AUTH_URL, memberAuth } from "@/lib/members/client";
-import { withLang } from "@/lib/i18nRouting";
+import { MEMBER_AUTH_KEY, MEMBER_AUTH_URL, authCallbackUrl, memberAuth, rememberAuthReturn } from "@/lib/members/client";
 import { mt } from "@/lib/members/text";
 
 const GoogleIcon = () => (
@@ -21,7 +20,7 @@ const KakaoIcon = () => (
   </svg>
 );
 
-/** Google / Kakao sign-in through the member sign-up server. Returns here via /login. */
+/** Google / Kakao sign-in through the member sign-up server. Returns via /auth/callback. */
 const SocialButtons = ({ next }: { next: string | null }) => {
   const { lang } = useLang();
   const [busy, setBusy] = useState<string | null>(null);
@@ -40,13 +39,10 @@ const SocialButtons = ({ next }: { next: string | null }) => {
     } catch {
       /* try anyway */
     }
-    const back = `${window.location.origin}${withLang(lang, "/login/")}${next ? `?next=${encodeURIComponent(next)}` : ""}`;
+    rememberAuthReturn(lang, next);
     const { error } = await memberAuth.auth.signInWithOAuth({
       provider,
-      options:
-        provider === "kakao"
-          ? { redirectTo: back, scopes: "profile_nickname" }
-          : { redirectTo: back },
+      options: { redirectTo: authCallbackUrl() },
     });
     if (error) {
       setBusy(null);

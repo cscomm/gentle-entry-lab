@@ -35,6 +35,7 @@ import MemberLogin from "./pages/MemberLogin.tsx";
 import MemberSignup from "./pages/MemberSignup.tsx";
 import MemberAccount from "./pages/MemberAccount.tsx";
 import MemberResetPassword from "./pages/MemberResetPassword.tsx";
+import AuthCallback from "./pages/AuthCallback.tsx";
 import { MemberProvider } from "./lib/members/MemberContext";
 
 import { LanguageProvider } from "./contexts/LanguageContext";
@@ -116,6 +117,7 @@ const App = () => (
           <CanonicalUrl />
           <Routes>
             <Route path="/" element={<RootRedirect />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
             <Route path="/:lang/*" element={<LangShell />} />
             {/* Legacy paths without a lang prefix → redirect with detected lang */}
             <Route path="*" element={<LegacyRedirect />} />

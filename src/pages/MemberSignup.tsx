@@ -4,8 +4,7 @@ import { Link, useSearchParams } from "@/lib/router";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useLang } from "@/contexts/LanguageContext";
-import { EMPTY_PROFILE, memberAuth, safeNext, type MemberProfile } from "@/lib/members/client";
-import { withLang } from "@/lib/i18nRouting";
+import { EMPTY_PROFILE, authCallbackUrl, memberAuth, rememberAuthReturn, safeNext, type MemberProfile } from "@/lib/members/client";
 import { mt } from "@/lib/members/text";
 import AuthLayout from "@/components/member/AuthLayout";
 import SocialButtons from "@/components/member/SocialButtons";
@@ -35,12 +34,12 @@ const MemberSignup = () => {
     if (!consent.terms || !consent.privacy) return setError(mt(lang, "agreeRequired"));
 
     setBusy(true);
-    const back = `${window.location.origin}${withLang(lang, "/login/")}${next ? `?next=${encodeURIComponent(next)}` : ""}`;
+    rememberAuthReturn(lang, next);
     const { data, error: err } = await memberAuth.auth.signUp({
       email: email.trim(),
       password,
       options: {
-        emailRedirectTo: back,
+        emailRedirectTo: authCallbackUrl(),
         data: {
           full_name: profile.full_name.trim(),
           company: profile.company.trim(),
