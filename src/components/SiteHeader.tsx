@@ -13,7 +13,7 @@ const navItems = [
   { key: "nav.products", href: "/#products", dropdown: "products" as const },
   { key: "nav.about", href: "/about" },
   { key: "nav.applications", href: "/#applications", dropdown: "applications" as const },
-  { key: "nav.guide", href: "/guide/faq/", dropdown: "guide" as const },
+  { key: "nav.guide", href: "/guide/finder/", dropdown: "guide" as const },
   { key: "nav.contact", href: "/#contact" },
 ];
 
@@ -49,9 +49,9 @@ const applicationMenu = [
 ];
 
 const guideMenu = [
+  { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
   { to: "/guide/faq/", ko: "FAQ", en: "FAQ", ja: "FAQ" },
   { to: "/board/", ko: "게시판", en: "Board", ja: "掲示板" },
-  { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
 ];
 
 type DropdownKey = "products" | "applications" | "guide";

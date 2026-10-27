@@ -370,6 +370,8 @@ export type Database = {
           created_at: string
           duration_ms: number | null
           error_message: string | null
+          guest_device_id: string | null
+          guest_ip_hash: string | null
           id: string
           lang: string
           member_email: string | null
@@ -385,6 +387,8 @@ export type Database = {
           created_at?: string
           duration_ms?: number | null
           error_message?: string | null
+          guest_device_id?: string | null
+          guest_ip_hash?: string | null
           id?: string
           lang?: string
           member_email?: string | null
@@ -400,6 +404,8 @@ export type Database = {
           created_at?: string
           duration_ms?: number | null
           error_message?: string | null
+          guest_device_id?: string | null
+          guest_ip_hash?: string | null
           id?: string
           lang?: string
           member_email?: string | null

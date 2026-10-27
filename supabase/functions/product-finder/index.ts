@@ -15,16 +15,65 @@ import {
   getLovableAiGatewayRunId,
   withLovableAiGatewayRunIdHeader,
 } from "../_shared/run-id.ts";
-import { getMember } from "../_shared/member-auth.ts";
+import { getMember, type Member } from "../_shared/member-auth.ts";
+import { buildQuota, isUnlimitedMember, monthStartKst, type Quota } from "./quota.ts";
 
 const GATEWAY_URL = "https://ai.gateway.lovable.dev/v1";
 const MODEL = "openai/gpt-6-astra";
 
 const Body = z.object({
-  query: z.string().trim().min(4).max(2000),
+  mode: z.enum(["ask", "quota"]).default("ask"),
+  query: z.string().trim().max(2000).default(""),
   lang: z.enum(["ko", "en", "ja"]).default("ko"),
   memberToken: z.string().optional(),
+  deviceId: z.string().uuid().optional(),
 });
+
+// deno-lint-ignore no-explicit-any
+type Sb = any;
+
+/** Keyed hash of the visitor IP so the raw address is never stored. */
+async function ipHash(req: Request): Promise<string | null> {
+  const ip =
+    req.headers.get("cf-connecting-ip") ??
+    req.headers.get("x-real-ip") ??
+    (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim();
+  if (!ip) return null;
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "finder"),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(`finder-ip:${ip}`));
+  return Array.from(new Uint8Array(sig), (b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+/** How many tries this member or visitor has used (failed answers are not counted). */
+async function getQuota(sb: Sb, member: Member | null, deviceId: string | undefined, ipH: string | null): Promise<Quota> {
+  if (member) {
+    if (isUnlimitedMember(member.email, member.emailConfirmed)) return buildQuota("member", 0, true);
+    const { count, error } = await sb
+      .from("product_finder_logs")
+      .select("id", { count: "exact", head: true })
+      .eq("member_id", member.id)
+      .neq("status", "error")
+      .gte("created_at", monthStartKst(new Date()).toISOString());
+    if (error) throw error;
+    return buildQuota("member", count ?? 0);
+  }
+  const filters = [deviceId && `guest_device_id.eq.${deviceId}`, ipH && `guest_ip_hash.eq.${ipH}`].filter(Boolean);
+  if (filters.length === 0) return buildQuota("guest", 1); // cannot identify the visitor → ask them to sign up
+  const { count, error } = await sb
+    .from("product_finder_logs")
+    .select("id", { count: "exact", head: true })
+    .is("member_id", null)
+    .neq("status", "error")
+    .or(filters.join(","));
+  if (error) throw error;
+  return buildQuota("guest", count ?? 0);
+}
 
 const LANG_NAME = { ko: "Korean", en: "English", ja: "Japanese (natural business Japanese)" } as const;
 
@@ -73,16 +122,33 @@ Deno.serve(async (req) => {
     return json({ error: "invalid json" }, 400);
   }
   if (!parsed.success) return json({ error: "invalid input", details: parsed.error.flatten().fieldErrors }, 400);
-  const { query, lang, memberToken } = parsed.data;
+  const { mode, query, lang, memberToken, deviceId } = parsed.data;
 
-  // Members only: the token comes from the external sign-up server.
-  const member = await getMember(memberToken);
-  if (!member) return json({ error: "login_required" }, 401);
+  // Signed-in members send a token from the external sign-up server; a token
+  // that no longer verifies means the session expired.
+  let member: Member | null = null;
+  if (memberToken) {
+    member = await getMember(memberToken);
+    if (!member) return json({ error: "login_required" }, 401);
+  }
+
+  const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+  const ipH = member ? null : await ipHash(req);
+
+  let quota: Quota;
+  try {
+    quota = await getQuota(sb, member, deviceId, ipH);
+  } catch (e) {
+    console.error("finder quota check failed", e);
+    return json({ error: "server error" }, 500);
+  }
+  if (mode === "quota") return json(quota);
+  if (query.length < 4) return json({ error: "invalid input" }, 400);
+  if (quota.remaining <= 0) return json({ error: "quota_exceeded", ...quota }, 429);
 
   const apiKey = Deno.env.get("LOVABLE_API_KEY");
   if (!apiKey) return json({ error: "AI not configured" }, 500);
 
-  const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
   const startedAt = Date.now();
 
   // Log every request so the admin panel can review what visitors asked.
@@ -90,7 +156,16 @@ Deno.serve(async (req) => {
   try {
     const { data } = await sb
       .from("product_finder_logs")
-      .insert({ query, lang, status: "pending", member_id: member.id, member_email: member.email || null, user_agent: (req.headers.get("user-agent") ?? "").slice(0, 300) || null })
+      .insert({
+        query,
+        lang,
+        status: "pending",
+        member_id: member?.id ?? null,
+        member_email: member?.email || null,
+        guest_device_id: member ? null : deviceId ?? null,
+        guest_ip_hash: ipH,
+        user_agent: (req.headers.get("user-agent") ?? "").slice(0, 300) || null,
+      })
       .select("id")
       .single();
     logId = data?.id ?? null;
