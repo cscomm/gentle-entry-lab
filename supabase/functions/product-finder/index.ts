@@ -15,6 +15,7 @@ import {
   getLovableAiGatewayRunId,
   withLovableAiGatewayRunIdHeader,
 } from "../_shared/run-id.ts";
+import { getMember } from "../_shared/member-auth.ts";
 
 const GATEWAY_URL = "https://ai.gateway.lovable.dev/v1";
 const MODEL = "openai/gpt-6-astra";
@@ -22,6 +23,7 @@ const MODEL = "openai/gpt-6-astra";
 const Body = z.object({
   query: z.string().trim().min(4).max(2000),
   lang: z.enum(["ko", "en", "ja"]).default("ko"),
+  memberToken: z.string().optional(),
 });
 
 const LANG_NAME = { ko: "Korean", en: "English", ja: "Japanese (natural business Japanese)" } as const;
@@ -71,7 +73,11 @@ Deno.serve(async (req) => {
     return json({ error: "invalid json" }, 400);
   }
   if (!parsed.success) return json({ error: "invalid input", details: parsed.error.flatten().fieldErrors }, 400);
-  const { query, lang } = parsed.data;
+  const { query, lang, memberToken } = parsed.data;
+
+  // Members only: the token comes from the external sign-up server.
+  const member = await getMember(memberToken);
+  if (!member) return json({ error: "login_required" }, 401);
 
   const apiKey = Deno.env.get("LOVABLE_API_KEY");
   if (!apiKey) return json({ error: "AI not configured" }, 500);
@@ -84,7 +90,7 @@ Deno.serve(async (req) => {
   try {
     const { data } = await sb
       .from("product_finder_logs")
-      .insert({ query, lang, status: "pending", user_agent: (req.headers.get("user-agent") ?? "").slice(0, 300) || null })
+      .insert({ query, lang, status: "pending", member_id: member.id, member_email: member.email || null, user_agent: (req.headers.get("user-agent") ?? "").slice(0, 300) || null })
       .select("id")
       .single();
     logId = data?.id ?? null;
