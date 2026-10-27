@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { pick } from "@/lib/lang";
 import { Link, useNavigate, useLocation } from "@/lib/router";
-import { ChevronDown, Search, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Search, Menu, X, ArrowRight, UserRound } from "lucide-react";
 import { productCatalog } from "@/data/products";
 import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
+import { useMember } from "@/lib/members/MemberContext";
+import { mt } from "@/lib/members/text";
 
 const navItems = [
   { key: "nav.home", href: "/" },
@@ -116,6 +118,10 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [transparentAtTop]);
+
+  const { session } = useMember();
+  const accountTo = session ? "/account/" : "/login/";
+  const accountLabel = mt(lang, session ? "myAccount" : "login");
 
   const hiddenSet = useHiddenSlugs();
   const visProductMenu = productMenu.filter((it) => !hiddenSet.has(it.to.split("/")[2]));
@@ -248,10 +254,32 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
               JA
             </button>
           </div>
+
+          {/* Member */}
+          <Link
+            to={accountTo}
+            aria-label={accountLabel}
+            title={accountLabel}
+            className={`-ml-4 inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold transition-colors duration-500 ${
+              scrolled
+                ? "border-border/60 bg-card text-foreground hover:border-primary hover:text-primary"
+                : "border-white/30 bg-white/10 text-white backdrop-blur hover:bg-white/20"
+            }`}
+          >
+            <UserRound className="h-3.5 w-3.5" />
+            <span className="hidden xl:inline">{accountLabel}</span>
+          </Link>
         </nav>
 
         {/* Mobile actions */}
         <div className="flex items-center gap-1 md:hidden">
+          <Link
+            to={accountTo}
+            aria-label={accountLabel}
+            className={`rounded-full p-2 transition ${scrolled ? "text-foreground hover:bg-secondary" : "text-white hover:bg-white/15"}`}
+          >
+            <UserRound className="h-5 w-5" />
+          </Link>
           <button
             onClick={() => { setMobileSearchOpen((v) => !v); setMobileOpen(false); }}
             aria-label={lang === "ja" ? "検索" : lang === "en" ? "Search" : "검색"}

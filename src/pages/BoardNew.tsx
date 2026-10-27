@@ -10,10 +10,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { useLang } from "@/contexts/LanguageContext";
 import { toast } from "sonner";
+import { useMember } from "@/lib/members/MemberContext";
+import { memberApi } from "@/lib/members/api";
+import MemberGate from "@/components/member/MemberGate";
 
 const BoardNew = () => {
   const { t } = useLang();
   const navigate = useNavigate();
+  const { session, profileComplete, profile, getToken, loading: memberLoading } = useMember();
+  const canWrite = Boolean(session && profileComplete);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [author, setAuthor] = useState("");
@@ -21,6 +26,8 @@ const BoardNew = () => {
   const [isPublic, setIsPublic] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const authorTouched = useRef(false);
+  const shownAuthor = authorTouched.current ? author : author || profile?.full_name || "";
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -97,19 +104,23 @@ const BoardNew = () => {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!title.trim() || !content.trim() || !password.trim()) return;
+    const memberToken = await getToken();
+    if (!memberToken) return;
     setSubmitting(true);
-    const { error } = await supabase.from("posts").insert({
-      title: title.trim(),
-      content: content.trim(),
-      author_name: author.trim() || "Anonymous",
-      password_hash: password,
-      is_public: isPublic,
-    });
-    setSubmitting(false);
-    if (error) {
-      toast.error(error.message);
+    try {
+      await memberApi("create_post", memberToken, {
+        title: title.trim(),
+        content: content.trim(),
+        author_name: shownAuthor.trim() || undefined,
+        password,
+        is_public: isPublic,
+      });
+    } catch {
+      setSubmitting(false);
+      toast.error(t("board.createFailed"));
       return;
     }
+    setSubmitting(false);
     toast.success(t("board.created"));
     navigate("/board/");
   };
@@ -126,6 +137,9 @@ const BoardNew = () => {
             {t("board.new")}
           </h1>
 
+          {memberLoading ? null : !canWrite ? (
+            <MemberGate messageKey="gateBoard" className="mt-8" />
+          ) : (
           <form onSubmit={onSubmit} className="mt-8 space-y-6 rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">
             <div>
               <label className="mb-2 block text-sm font-semibold text-foreground">{t("form.title")}</label>
@@ -182,7 +196,15 @@ const BoardNew = () => {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-semibold text-foreground">{t("form.author")}</label>
-                <Input value={author} onChange={(e) => setAuthor(e.target.value)} placeholder="Anonymous" maxLength={40} />
+                <Input
+                  value={shownAuthor}
+                  onChange={(e) => {
+                    authorTouched.current = true;
+                    setAuthor(e.target.value);
+                  }}
+                  placeholder="Anonymous"
+                  maxLength={40}
+                />
               </div>
               <div>
                 <label className="mb-2 block text-sm font-semibold text-foreground">{t("form.password")}</label>
@@ -219,6 +241,7 @@ const BoardNew = () => {
               </Button>
             </div>
           </form>
+          )}
         </section>
       </main>
       <SiteFooter />

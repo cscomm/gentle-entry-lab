@@ -18,6 +18,7 @@ interface FinderLog {
   error_message: string | null;
   duration_ms: number | null;
   user_agent: string | null;
+  member_email: string | null;
   created_at: string;
 }
 
@@ -99,9 +100,10 @@ const FinderLogsTab = () => {
 
   const exportCsv = () => {
     downloadCsv(`ai-finder-log-${new Date().toISOString().slice(0, 10)}.csv`, [
-      ["일시", "언어", "상태", "질문", "추천 제품", "AI 답변"],
+      ["일시", "회원", "언어", "상태", "질문", "추천 제품", "AI 답변"],
       ...list.map((r) => [
         fmtDateTime(r.created_at),
+        r.member_email ?? "",
         LANG_LABEL[r.lang] ?? r.lang,
         STATUS[r.status]?.label ?? r.status,
         r.query,
@@ -188,6 +190,7 @@ const FinderLogsTab = () => {
                       <span className={`rounded-full px-2 py-0.5 font-semibold ${st.cls}`}>{st.label}</span>
                       <span>{LANG_LABEL[r.lang] ?? r.lang}</span>
                       {device(r.user_agent) && <span>· {device(r.user_agent)}</span>}
+                      {r.member_email && <span className="font-medium text-foreground">· {r.member_email}</span>}
                     </div>
                     <p className={`text-sm font-medium text-foreground ${isOpen ? "whitespace-pre-wrap" : "line-clamp-2"}`}>{r.query}</p>
                     {!isOpen && recs.length > 0 && (

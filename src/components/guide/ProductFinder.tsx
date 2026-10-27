@@ -10,6 +10,8 @@ import { productCatalog } from "@/data/products";
 import { isProductHidden, useHiddenSlugs } from "@/lib/productVisibility";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
+import { useMember } from "@/lib/members/MemberContext";
+import MemberGate from "@/components/member/MemberGate";
 
 const ENDPOINT = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/product-finder`;
 const ANON = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
@@ -84,6 +86,11 @@ const TXT: Record<string, Record<Lang, string>> = {
     ko: "요청이 많아 잠시 대기 중입니다. 1분 후 다시 시도해 주세요.",
     en: "Too many requests right now. Please try again in a minute.",
     ja: "リクエストが集中しています。1分後に再度お試しください。",
+  },
+  errLogin: {
+    ko: "로그인이 만료되었습니다. 다시 로그인해 주세요.",
+    en: "Your session has expired. Please sign in again.",
+    ja: "ログインの有効期限が切れました。再度ログインしてください。",
   },
   errGeneric: {
     ko: "AI 답변을 가져오지 못했습니다. 잠시 후 다시 시도해 주세요.",
@@ -175,6 +182,8 @@ const parseStream = (raw: string) => {
 const ProductFinder = () => {
   const { lang } = useLang();
   const hidden = useHiddenSlugs();
+  const { session, profileComplete, getToken } = useMember();
+  const canUse = Boolean(session && profileComplete);
   const [query, setQuery] = useState("");
   const [raw, setRaw] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
@@ -205,6 +214,8 @@ const ProductFinder = () => {
       setStatus("error");
       return;
     }
+    const memberToken = await getToken();
+    if (!memberToken || !canUse) return;
     abortRef.current?.abort();
     const ac = new AbortController();
     abortRef.current = ac;
@@ -217,11 +228,11 @@ const ProductFinder = () => {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
-        body: JSON.stringify({ query: q, lang }),
+        body: JSON.stringify({ query: q, lang, memberToken }),
         signal: ac.signal,
       });
       if (!res.ok || !res.body) {
-        setErrMsg(res.status === 429 ? tx("err429") : res.status === 402 || res.status === 403 ? tx("err402") : tx("errGeneric"));
+        setErrMsg(res.status === 401 ? tx("errLogin") : res.status === 429 ? tx("err429") : res.status === 402 || res.status === 403 ? tx("err402") : tx("errGeneric"));
         setStatus("error");
         return;
       }
@@ -307,6 +318,9 @@ const ProductFinder = () => {
             </div>
           </div>
 
+          {!canUse ? (
+            <MemberGate messageKey="gateFinder" className="mt-6" />
+          ) : (
           <div className="mt-6 flex flex-wrap items-center gap-3">
             {loading ? (
               <Button type="button" variant="outline" onClick={stop} className="gap-2">
@@ -327,6 +341,7 @@ const ProductFinder = () => {
             )}
             <span className="text-xs text-muted-foreground">{tx("disclaimer")}</span>
           </div>
+          )}
 
           {status === "error" && errMsg && !raw && (
             <p role="alert" className="mt-4 rounded-lg border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
