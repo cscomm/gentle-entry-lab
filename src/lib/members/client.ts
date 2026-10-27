@@ -77,3 +77,31 @@ export const safeNext = (next: string | null | undefined) =>
 /** True when the page was opened from a password-reset email (captured before the link is consumed). */
 export const openedFromRecoveryLink =
   typeof window !== "undefined" && /type=recovery/.test(window.location.hash + window.location.search);
+
+/** Single return address for social sign-in and sign-up email links (must be on the member server's Redirect URLs list). */
+export const AUTH_CALLBACK_PATH = "/auth/callback";
+export const authCallbackUrl = () => `${window.location.origin}${AUTH_CALLBACK_PATH}`;
+
+const RETURN_KEY = "silica-auth-return";
+type AuthReturn = { lang: string; next: string | null };
+
+/** Remembered before leaving for Kakao/Google, because the callback address can't carry a query string. */
+export const rememberAuthReturn = (lang: string, next: string | null) => {
+  try {
+    window.localStorage.setItem(RETURN_KEY, JSON.stringify({ lang, next: safeNext(next) }));
+  } catch {
+    /* ignore */
+  }
+};
+
+export const takeAuthReturn = (): AuthReturn => {
+  let saved: Partial<AuthReturn> = {};
+  try {
+    saved = JSON.parse(window.localStorage.getItem(RETURN_KEY) || "{}");
+    window.localStorage.removeItem(RETURN_KEY);
+  } catch {
+    /* ignore */
+  }
+  const lang = saved.lang === "en" || saved.lang === "ja" ? saved.lang : "ko";
+  return { lang, next: safeNext(saved.next ?? null) };
+};
