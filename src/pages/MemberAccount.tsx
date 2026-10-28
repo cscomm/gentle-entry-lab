@@ -132,14 +132,14 @@ const MemberAccount = () => {
       contact_email: profile.contact_email.trim().toLowerCase(),
       terms_agreed_at: saved?.terms_agreed_at || new Date().toISOString(),
     };
-    const { data: updated, error } = await memberAuth.auth.updateUser({ data });
+    const { error } = await memberAuth.auth.updateUser({ data });
     if (error) {
       setBusy(false);
       return toast.error(mt(lang, "genericError"));
     }
     // Keep the site's own member list in step with the saved profile.
     try {
-      const token = (await getToken()) ?? updated.user?.id ?? "";
+      const token = (await getToken()) ?? "";
       await memberApi("sync_profile", token);
     } catch {
       setBusy(false);
