@@ -85,7 +85,7 @@ const MemberAccount = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
   const next = safeNext(params.get("next"));
-  const { session, user, profile: saved, profileComplete, loading, signOut } = useMember();
+  const { session, user, profile: saved, profileComplete, loading, signOut, getToken } = useMember();
   const [profile, setProfile] = useState<MemberProfile>(EMPTY_PROFILE);
   const [consent, setConsent] = useState<Consent>({ terms: false, privacy: false });
   const [busy, setBusy] = useState(false);
@@ -133,8 +133,19 @@ const MemberAccount = () => {
       terms_agreed_at: saved?.terms_agreed_at || new Date().toISOString(),
     };
     const { error } = await memberAuth.auth.updateUser({ data });
+    if (error) {
+      setBusy(false);
+      return toast.error(mt(lang, "genericError"));
+    }
+    // Keep the site's own member list in step with the saved profile.
+    try {
+      const token = (await getToken()) ?? "";
+      await memberApi("sync_profile", token);
+    } catch {
+      setBusy(false);
+      return toast.error(mt(lang, "genericError"));
+    }
     setBusy(false);
-    if (error) return toast.error(mt(lang, "genericError"));
     toast.success(mt(lang, "saved"));
     if (next && isProfileComplete(data, accountEmail)) navigate(next);
   };

@@ -2,9 +2,8 @@ import { describe, expect, it } from "vitest";
 import { buildQuota, isUnlimitedMember, monthStartKst } from "../../../supabase/functions/product-finder/quota";
 
 describe("AI finder usage limits", () => {
-  it("guests get exactly 1 try", () => {
-    expect(buildQuota("guest", 0).remaining).toBe(1);
-    expect(buildQuota("guest", 1).remaining).toBe(0);
+  it("guests (not signed in) get no tries", () => {
+    expect(buildQuota("guest", 0).remaining).toBe(0);
   });
 
   it("members get 10 tries per month", () => {

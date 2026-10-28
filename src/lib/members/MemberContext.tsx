@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import type { Session, User } from "@supabase/supabase-js";
 import { isProfileComplete, memberAuth, profileFromMeta, type MemberProfile } from "./client";
+import { memberApi } from "./api";
 
 type MemberState = {
   session: Session | null;
@@ -46,6 +47,33 @@ export const MemberProvider = ({ children }: { children: ReactNode }) => {
     const { data } = await memberAuth.auth.getSession();
     return data.session?.access_token ?? null;
   }, []);
+
+  // Once per visit, copy the member's profile into the site's member list
+  // (covers members who signed up before that list existed).
+  const userId = session?.user?.id ?? null;
+  useEffect(() => {
+    if (!userId) return;
+    const key = `silica-member-synced:${userId}`;
+    try {
+      if (sessionStorage.getItem(key)) return;
+    } catch {
+      /* ignore */
+    }
+    getToken().then((token) => {
+      if (!token) return;
+      memberApi("sync_profile", token)
+        .then(() => {
+          try {
+            sessionStorage.setItem(key, "1");
+          } catch {
+            /* ignore */
+          }
+        })
+        .catch(() => {
+          /* retried on the next visit or profile save */
+        });
+    });
+  }, [userId, getToken]);
 
   const value = useMemo<MemberState>(() => {
     const user = session?.user ?? null;

@@ -9,6 +9,9 @@ export type Member = {
   email: string;
   emailConfirmed: boolean;
   meta: Record<string, unknown>;
+  /** Sign-in method of the account, e.g. "email", "google", "kakao". */
+  provider: string | null;
+  createdAt: string | null;
 };
 
 export async function getMember(token: unknown): Promise<Member | null> {
@@ -25,6 +28,8 @@ export async function getMember(token: unknown): Promise<Member | null> {
       email: String(u.email ?? "").toLowerCase(),
       emailConfirmed: Boolean(u.email_confirmed_at ?? u.confirmed_at),
       meta: (u.user_metadata ?? {}) as Record<string, unknown>,
+      provider: typeof u.app_metadata?.provider === "string" ? u.app_metadata.provider : null,
+      createdAt: typeof u.created_at === "string" ? u.created_at : null,
     };
   } catch (e) {
     console.error("member verify failed", e);

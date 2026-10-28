@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { BarChart3, Boxes, Download, FileText, FlaskConical, Lock, LogOut, MessageSquare, RefreshCw, Users, Wallet, Wand2 } from "lucide-react";
+import { BarChart3, Boxes, Download, FileText, FlaskConical, Lock, LogOut, MessageSquare, RefreshCw, UserRound, Users, Wallet, Wand2 } from "lucide-react";
 import { PW_KEY, inquiryApi } from "@/components/admin/shared";
 import { useAdminData, type Inquiry } from "@/components/admin/useAdminData";
 import InquiriesTab from "@/components/admin/InquiriesTab";
@@ -13,8 +13,9 @@ import FinanceTab from "@/components/admin/FinanceTab";
 import DashboardTab from "@/components/admin/DashboardTab";
 import ProductsTab from "@/components/admin/ProductsTab";
 import FinderLogsTab from "@/components/admin/FinderLogsTab";
+import MembersTab from "@/components/admin/MembersTab";
 
-type Tab = "dashboard" | "products" | "inquiries" | "accounts" | "quotes" | "samples" | "finance" | "finder";
+type Tab = "dashboard" | "products" | "inquiries" | "accounts" | "quotes" | "samples" | "finance" | "finder" | "members";
 
 const TABS: { key: Tab; label: string; icon: typeof Users }[] = [
   { key: "dashboard", label: "대시보드", icon: BarChart3 },
@@ -25,6 +26,7 @@ const TABS: { key: Tab; label: string; icon: typeof Users }[] = [
   { key: "finance", label: "매출 · 매입 · 수금", icon: Wallet },
   { key: "products", label: "상품 관리", icon: Boxes },
   { key: "finder", label: "AI 추천 로그", icon: Wand2 },
+  { key: "members", label: "회원 정보", icon: UserRound },
 ];
 
 const Admin = () => {
@@ -208,6 +210,7 @@ const Admin = () => {
         {tab === "finance" && <FinanceTab store={store} reload={reload} />}
         {tab === "products" && <ProductsTab />}
         {tab === "finder" && <FinderLogsTab />}
+        {tab === "members" && <MembersTab />}
       </div>
     </main>
   );

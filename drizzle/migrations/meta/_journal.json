@@ -36,6 +36,13 @@
       "when": 1793072664110,
       "tag": "0004_finder_usage_limits",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793152289950,
+      "tag": "0005_member_profiles",
+      "breakpoints": true
     }
   ]
 }

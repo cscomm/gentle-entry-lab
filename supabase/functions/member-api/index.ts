@@ -22,6 +22,7 @@ const Body = z.discriminatedUnion("action", [
     is_public: z.boolean(),
   }),
   z.object({ action: z.literal("datasheet"), memberToken: z.string(), slug: z.string().max(200) }),
+  z.object({ action: z.literal("sync_profile"), memberToken: z.string() }),
 ]);
 
 Deno.serve(async (req) => {
@@ -43,6 +44,34 @@ Deno.serve(async (req) => {
   const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 
   try {
+    if (body.action === "sync_profile") {
+      // Copies the profile the member saved on the sign-up server (read back
+      // from there with their token, so it can't be forged) into the site's database.
+      const m = member.meta;
+      const s = (k: string, max = 300) => (typeof m[k] === "string" ? (m[k] as string).trim().slice(0, max) : "");
+      const terms = s("terms_agreed_at", 40);
+      const { error } = await sb.from("member_profiles").upsert(
+        {
+          member_id: member.id,
+          account_email: member.email || null,
+          contact_email: s("contact_email", 200).toLowerCase() || null,
+          provider: member.provider,
+          full_name: s("full_name", 100) || s("name", 100) || s("nickname", 100),
+          company: s("company", 200),
+          phone: s("phone", 50),
+          zipcode: s("zipcode", 20),
+          address: s("address"),
+          address_detail: s("address_detail"),
+          terms_agreed_at: terms && !Number.isNaN(Date.parse(terms)) ? terms : null,
+          signed_up_at: member.createdAt,
+          last_seen_at: new Date().toISOString(),
+        },
+        { onConflict: "member_id" },
+      );
+      if (error) throw error;
+      return json({ ok: true });
+    }
+
     if (body.action === "my_inquiries") {
       // Kakao accounts may have no email; there is nothing verified to match inquiries against.
       if (!member.email) return json({ rows: [], reason: "no_email" });

@@ -123,6 +123,17 @@ Deno.serve(async (req) => {
       return json({ success: true, rows: data })
     }
 
+    // Read-only member list (profiles are edited by members themselves).
+    if (action === 'member_profiles') {
+      const { data, error } = await supabase
+        .from('member_profiles')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(5000)
+      if (error) throw error
+      return json({ success: true, rows: data })
+    }
+
     if (action === 'delete_finder_log') {
       const id = typeof body.id === 'string' ? body.id : ''
       if (!id) return json({ error: 'id_required' }, 400)

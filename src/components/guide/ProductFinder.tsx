@@ -17,24 +17,8 @@ const ENDPOINT = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/product-find
 const ANON = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY as string;
 const REC = "[[RECOMMEND]]";
 const ERR = "[[ERROR]]";
-const DEVICE_KEY = "silica-finder-device";
-
 type Rec = { slug: string; reason: string };
 type Quota = { kind: "guest" | "member"; unlimited: boolean; limit: number; used: number; remaining: number };
-
-/** Random id kept in this browser so a visitor's free try can be recognised. */
-const getDeviceId = () => {
-  try {
-    let id = localStorage.getItem(DEVICE_KEY);
-    if (!id || !/^[0-9a-f-]{36}$/i.test(id)) {
-      id = crypto.randomUUID();
-      localStorage.setItem(DEVICE_KEY, id);
-    }
-    return id;
-  } catch {
-    return undefined;
-  }
-};
 
 const TXT: Record<string, Record<Lang, string>> = {
   lead: {
@@ -112,11 +96,6 @@ const TXT: Record<string, Record<Lang, string>> = {
     ko: "AI 답변을 가져오지 못했습니다. 잠시 후 다시 시도해 주세요.",
     en: "Couldn't get an AI answer. Please try again shortly.",
     ja: "AIの回答を取得できませんでした。しばらくしてから再度お試しください。",
-  },
-  guestNote: {
-    ko: "비회원은 1회 무료로 체험하실 수 있습니다. 회원가입 후에는 매월 10회 이용하실 수 있습니다.",
-    en: "Guests can try it once for free. Members can use it 10 times a month.",
-    ja: "非会員の方は1回無料でお試しいただけます。会員登録後は毎月10回ご利用いただけます。",
   },
   memberNote: {
     ko: "이번 달 남은 이용 횟수: {n} / {limit}회",
@@ -233,11 +212,12 @@ const ProductFinder = () => {
 
   const loadQuota = useCallback(async () => {
     const memberToken = (await getToken()) ?? undefined;
+    if (!memberToken) return; // visitors see the sign-up notice instead
     try {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
-        body: JSON.stringify({ mode: "quota", memberToken, deviceId: getDeviceId() }),
+        body: JSON.stringify({ mode: "quota", memberToken }),
       });
       if (res.ok) setQuota(await res.json());
     } catch {
@@ -274,7 +254,7 @@ const ProductFinder = () => {
       setStatus("error");
       return;
     }
-    if (needsProfile || outOfTries) return;
+    if (!session || needsProfile || outOfTries) return;
     const memberToken = (await getToken()) ?? undefined;
     abortRef.current?.abort();
     const ac = new AbortController();
@@ -288,7 +268,7 @@ const ProductFinder = () => {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
-        body: JSON.stringify({ query: q, lang, memberToken, deviceId: getDeviceId() }),
+        body: JSON.stringify({ query: q, lang, memberToken }),
         signal: ac.signal,
       });
       if (!res.ok || !res.body) {
@@ -387,10 +367,10 @@ const ProductFinder = () => {
             </div>
           </div>
 
-          {needsProfile ? (
-            <MemberGate messageKey="gateFinder" className="mt-6" />
-          ) : outOfTries && !loading && quota?.kind === "guest" ? (
+          {!memberLoading && !session ? (
             <MemberGate messageKey="gateFinderUsed" className="mt-6" />
+          ) : needsProfile ? (
+            <MemberGate messageKey="gateFinder" className="mt-6" />
           ) : outOfTries && !loading ? (
             <div role="status" className="mt-6 rounded-2xl border border-primary/25 bg-primary/5 p-6 text-center">
               <p className="font-semibold text-foreground">{tx("memberUsedTitle")}</p>
@@ -428,8 +408,6 @@ const ProductFinder = () => {
                     <InfinityIcon className="h-3.5 w-3.5" />
                     {tx("unlimitedNote")}
                   </>
-                ) : quota.kind === "guest" ? (
-                  tx("guestNote")
                 ) : (
                   tx("memberNote").replace("{n}", String(quota.remaining)).replace("{limit}", String(quota.limit))
                 )}
