@@ -32,47 +32,18 @@ const Body = z.object({
 // deno-lint-ignore no-explicit-any
 type Sb = any;
 
-/** Keyed hash of the visitor IP so the raw address is never stored. */
-async function ipHash(req: Request): Promise<string | null> {
-  const ip =
-    req.headers.get("cf-connecting-ip") ??
-    req.headers.get("x-real-ip") ??
-    (req.headers.get("x-forwarded-for") ?? "").split(",")[0].trim();
-  if (!ip) return null;
-  const key = await crypto.subtle.importKey(
-    "raw",
-    new TextEncoder().encode(Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? "finder"),
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign"],
-  );
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(`finder-ip:${ip}`));
-  return Array.from(new Uint8Array(sig), (b) => b.toString(16).padStart(2, "0")).join("");
-}
-
-/** How many tries this member or visitor has used (failed answers are not counted). */
-async function getQuota(sb: Sb, member: Member | null, deviceId: string | undefined, ipH: string | null): Promise<Quota> {
-  if (member) {
-    if (isUnlimitedMember(member.email, member.emailConfirmed)) return buildQuota("member", 0, true);
-    const { count, error } = await sb
-      .from("product_finder_logs")
-      .select("id", { count: "exact", head: true })
-      .eq("member_id", member.id)
-      .neq("status", "error")
-      .gte("created_at", monthStartKst(new Date()).toISOString());
-    if (error) throw error;
-    return buildQuota("member", count ?? 0);
-  }
-  const filters = [deviceId && `guest_device_id.eq.${deviceId}`, ipH && `guest_ip_hash.eq.${ipH}`].filter(Boolean);
-  if (filters.length === 0) return buildQuota("guest", 1); // cannot identify the visitor → ask them to sign up
+/** How many tries this member has used this month (failed answers are not counted). Visitors get none. */
+async function getQuota(sb: Sb, member: Member | null): Promise<Quota> {
+  if (!member) return buildQuota("guest", 0);
+  if (isUnlimitedMember(member.email, member.emailConfirmed)) return buildQuota("member", 0, true);
   const { count, error } = await sb
     .from("product_finder_logs")
     .select("id", { count: "exact", head: true })
-    .is("member_id", null)
+    .eq("member_id", member.id)
     .neq("status", "error")
-    .or(filters.join(","));
+    .gte("created_at", monthStartKst(new Date()).toISOString());
   if (error) throw error;
-  return buildQuota("guest", count ?? 0);
+  return buildQuota("member", count ?? 0);
 }
 
 const LANG_NAME = { ko: "Korean", en: "English", ja: "Japanese (natural business Japanese)" } as const;
