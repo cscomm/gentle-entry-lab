@@ -290,6 +290,60 @@ export type Database = {
           },
         ]
       }
+      member_profiles: {
+        Row: {
+          account_email: string | null
+          address: string
+          address_detail: string
+          company: string
+          contact_email: string | null
+          created_at: string
+          full_name: string
+          last_seen_at: string
+          member_id: string
+          phone: string
+          provider: string | null
+          signed_up_at: string | null
+          terms_agreed_at: string | null
+          updated_at: string
+          zipcode: string
+        }
+        Insert: {
+          account_email?: string | null
+          address?: string
+          address_detail?: string
+          company?: string
+          contact_email?: string | null
+          created_at?: string
+          full_name?: string
+          last_seen_at?: string
+          member_id: string
+          phone?: string
+          provider?: string | null
+          signed_up_at?: string | null
+          terms_agreed_at?: string | null
+          updated_at?: string
+          zipcode?: string
+        }
+        Update: {
+          account_email?: string | null
+          address?: string
+          address_detail?: string
+          company?: string
+          contact_email?: string | null
+          created_at?: string
+          full_name?: string
+          last_seen_at?: string
+          member_id?: string
+          phone?: string
+          provider?: string | null
+          signed_up_at?: string | null
+          terms_agreed_at?: string | null
+          updated_at?: string
+          zipcode?: string
+        }
+        Relationships: []
+      }
       post_translations: {
         Row: {
           content: string
