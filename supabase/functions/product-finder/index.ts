@@ -93,7 +93,7 @@ Deno.serve(async (req) => {
     return json({ error: "invalid json" }, 400);
   }
   if (!parsed.success) return json({ error: "invalid input", details: parsed.error.flatten().fieldErrors }, 400);
-  const { mode, query, lang, memberToken, deviceId } = parsed.data;
+  const { mode, query, lang, memberToken } = parsed.data;
 
   // Signed-in members send a token from the external sign-up server; a token
   // that no longer verifies means the session expired.
@@ -104,16 +104,17 @@ Deno.serve(async (req) => {
   }
 
   const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-  const ipH = member ? null : await ipHash(req);
 
   let quota: Quota;
   try {
-    quota = await getQuota(sb, member, deviceId, ipH);
+    quota = await getQuota(sb, member);
   } catch (e) {
     console.error("finder quota check failed", e);
     return json({ error: "server error" }, 500);
   }
   if (mode === "quota") return json(quota);
+  // The finder is for members only.
+  if (!member) return json({ error: "login_required", ...quota }, 401);
   if (query.length < 4) return json({ error: "invalid input" }, 400);
   if (quota.remaining <= 0) return json({ error: "quota_exceeded", ...quota }, 429);
 
