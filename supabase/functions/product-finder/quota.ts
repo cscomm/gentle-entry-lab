@@ -1,8 +1,8 @@
 // Usage limits for the AI product finder. Pure functions so they can be tested
 // from the site's test suite as well as used by the edge function.
 
-/** Visitors who are not signed in get this many tries in total. */
-export const GUEST_LIMIT = 1;
+/** Visitors who are not signed in cannot use the finder; they are asked to sign up. */
+export const GUEST_LIMIT = 0;
 /** Signed-in members get this many tries per calendar month (Korea time). */
 export const MEMBER_MONTHLY_LIMIT = 10;
 /** Members with these confirmed emails have no limit. */
