@@ -112,6 +112,24 @@ Deno.serve(async (req) => {
       return json({ success: true })
     }
 
+    // Admin-only product memos (prices etc.) — never exposed publicly.
+    if (action === 'product_notes') {
+      const { data, error } = await supabase.from('product_admin_notes').select('slug, memo, updated_at').limit(2000)
+      if (error) throw error
+      return json({ success: true, rows: data })
+    }
+
+    if (action === 'set_product_note') {
+      const slug = typeof body.slug === 'string' ? body.slug : ''
+      if (!slug || slug.length > 200) return json({ error: 'slug_required' }, 400)
+      const memo = typeof body.memo === 'string' ? body.memo.slice(0, 5000) : ''
+      const { error } = await supabase
+        .from('product_admin_notes')
+        .upsert({ slug, memo, updated_at: new Date().toISOString() }, { onConflict: 'slug' })
+      if (error) throw error
+      return json({ success: true })
+    }
+
     if (action === 'finder_logs') {
       const limit = Math.min(Math.max(Number(body.limit) || 300, 1), 1000)
       const { data, error } = await supabase

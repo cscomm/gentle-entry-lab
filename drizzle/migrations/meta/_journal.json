@@ -43,6 +43,13 @@
       "when": 1793152289950,
       "tag": "0005_member_profiles",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793266891063,
+      "tag": "0006_product_admin_notes",
+      "breakpoints": true
     }
   ]
 }
