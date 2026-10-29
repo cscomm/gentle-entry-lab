@@ -179,7 +179,7 @@ const About = () => {
               </Prose>
             </div>
 
-            <div className="mt-10 grid gap-4 md:grid-cols-5">
+            <div className="mt-10 grid gap-4 md:grid-cols-4">
               {[
                 { n: 1, title: tr("ab.prod.s1.t"), desc: tr("ab.prod.s1.d") },
                 { n: 2, title: tr("ab.prod.s2.t"), desc: tr("ab.prod.s2.d") },
