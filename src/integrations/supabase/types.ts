@@ -418,6 +418,24 @@ export type Database = {
         }
         Relationships: []
       }
+      product_admin_notes: {
+        Row: {
+          memo: string
+          slug: string
+          updated_at: string
+        }
+        Insert: {
+          memo?: string
+          slug: string
+          updated_at?: string
+        }
+        Update: {
+          memo?: string
+          slug?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       product_finder_logs: {
         Row: {
           answer: string | null
