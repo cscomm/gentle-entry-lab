@@ -91,7 +91,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
     ko: "이에 당사는 다년간 쌓아온 실리카 분야의 전문 지식과 기술 노하우를 바탕으로, 풍부한 고품질 원재료와 첨단 가공 설비를 갖춘 중국 현지 전문 제조 공장을 통해 고객 맞춤형 실리카 제품을 직접 제조하여 안정적으로 공급하고자 본 회사를 설립하게 되었습니다.",
     en: "Therefore, based on years of accumulated expertise and technical know-how in the silica field, we established this company to directly manufacture and stably supply customized silica products through a specialized local manufacturing factory in China equipped with abundant high-quality raw materials and advanced processing equipment.", ja: "このような背景から、当社は長年にわたり培ってきたシリカ分野の専門知識と技術ノウハウを基盤に、豊富な高品質原料と先端加工設備を備えた中国現地の専門製造工場を通じて、お客様のニーズに合わせたカスタムシリカ製品を直接製造し、安定的に供給するために本会社を設立しました。" },
   "about.p5": {
-    ko: "당사의 현지 생산 공장은 글로벌 기업들에 원료를 공급해 온 오랜 경험과 독보적인 기술력을 기탕으로 ISO 9001, ISO 22000, FSSC 22000 등 엄격한 글로벌 품질 및 위생·환경 관리 시스템을 보유하고 있습니다.",
+    ko: "당사의 현지 생산 공장은 글로벌 기업들에 원료를 공급해 온 오랜 경험과 독보적인 기술력을 기반으로 ISO 9001, ISO 22000, FSSC 22000 등 엄격한 글로벌 품질 및 위생·환경 관리 시스템을 보유하고 있습니다.",
     en: "Our local production factory holds strict global quality, hygiene, and environmental management systems such as ISO 9001, ISO 22000, and FSSC 22000, backed by extensive experience and unrivaled technology in supplying raw materials to global companies.", ja: "当社の現地生産工場は、グローバル企業に原料を供給してきた長年の経験と独自の技術力を背景に、ISO 9001、ISO 22000、FSSC 22000などの厳格なグローバル品質・衛生・環境管理システムを保有しています。" },
   "about.p6": {
     ko: "주식회사 비에이알은 지속적으로 발전하는 선진 기술을 빠르게 적용하여 전자 소재, 산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 제공하겠습니다.",
@@ -221,7 +221,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
     ko: "이에 당사는 다년간 쌓아온 실리카 분야의 전문 지식과 기술 노하우를 바탕으로, 풍부한 고품질 원재료와 첨단 가공 설비를 갖춘 중국 현지 전문 제조 공장을 통해 고객 맞춤형 실리카 제품을 직접 제조하여 안정적으로 공급하고자 본 회사를 설립하게 되었습니다.",
     en: "Therefore, based on years of accumulated expertise and technical know-how in the silica field, we established this company to directly manufacture and stably supply customized silica products through a specialized local manufacturing factory in China equipped with abundant high-quality raw materials and advanced processing equipment.", ja: "このような背景から、当社は長年にわたり培ってきたシリカ分野の専門知識と技術ノウハウを基盤に、豊富な高品質原料と先端加工設備を備えた中国現地の専門製造工場を通じて、お客様のニーズに合わせたカスタムシリカ製品を直接製造し、安定的に供給するために本会社を設立しました。" },
   "ab.overview.p5": {
-    ko: "당사의 현지 생산 공장은 글로벌 기업들에 원료를 공급해 온 오랜 경험과 독보적인 기술력을 기탕으로 ISO 9001, ISO 22000, FSSC 22000 등 엄격한 글로벌 품질 및 위생·환경 관리 시스템을 보유하고 있습니다.",
+    ko: "당사의 현지 생산 공장은 글로벌 기업들에 원료를 공급해 온 오랜 경험과 독보적인 기술력을 기반으로 ISO 9001, ISO 22000, FSSC 22000 등 엄격한 글로벌 품질 및 위생·환경 관리 시스템을 보유하고 있습니다.",
     en: "Our local production factory holds strict global quality, hygiene, and environmental management systems such as ISO 9001, ISO 22000, and FSSC 22000, backed by extensive experience and unrivaled technology in supplying raw materials to global companies.", ja: "当社の現地生産工場は、グローバル企業に原料を供給してきた長年の経験と独自の技術力を背景に、ISO 9001、ISO 22000、FSSC 22000などの厳格なグローバル品質・衛生・環境管理システムを保有しています。" },
   "ab.overview.p6": {
     ko: "주식회사 비에이알은 지속적으로 발전하는 선진 기술을 빠르게 적용하여 전자 소재, 산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 제공하겠습니다.",
