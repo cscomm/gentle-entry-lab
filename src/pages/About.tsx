@@ -183,9 +183,8 @@ const About = () => {
               {[
                 { n: 1, title: tr("ab.prod.s1.t"), desc: tr("ab.prod.s1.d") },
                 { n: 2, title: tr("ab.prod.s2.t"), desc: tr("ab.prod.s2.d") },
-                { n: 3, title: tr("ab.prod.s3.t"), desc: tr("ab.prod.s3.d") },
-                { n: 4, title: tr("ab.prod.s4.t"), desc: tr("ab.prod.s4.d") },
-                { n: 5, title: tr("ab.prod.s5.t"), desc: tr("ab.prod.s5.d") },
+                { n: 3, title: tr("ab.prod.s4.t"), desc: tr("ab.prod.s4.d") },
+                { n: 4, title: tr("ab.prod.s5.t"), desc: tr("ab.prod.s5.d") },
               ].map((s) => (
                 <div key={s.n} className="relative rounded-2xl border border-border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-[var(--shadow-glow)]">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">

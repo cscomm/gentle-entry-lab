@@ -245,7 +245,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "ab.prod.tag": { ko: "PRODUCTION PROCESS", en: "PRODUCTION PROCESS", ja: "PRODUCTION PROCESS" },
   "ab.prod.title": { ko: "다양한 입도 제품", en: "Various Particle-Size Products", ja: "多様な粒度製品" },
   "ab.prod.titleAccent": { ko: "생산 공정", en: "Production Process", ja: "生産工程" },
-  "ab.prod.desc": { ko: "다섯 단계의 정밀 공정을 통해 고순도, 균일한 품질의 제품을 만듭니다.", en: "A five-step precision process produces high-purity, uniformly sized products.", ja: "5段階の精密工程を通じて、高純度かつ均一な品質の製品を製造します。" },
+  "ab.prod.desc": { ko: "네 단계의 정밀 공정을 통해 고순도, 균일한 품질의 제품을 만듭니다.", en: "A four-step precision process produces high-purity, uniformly sized products.", ja: "4段階の精密工程を通じて、高純度かつ均一な品質の製品を製造します。" },
   "ab.prod.s1.t": { ko: "인공 선별", en: "Manual Sorting", ja: "人工選別" },
   "ab.prod.s1.d": { ko: "원료를 육안 및 기준에 따라 선별하여 불순물을 제거합니다.", en: "Sort raw materials visually and by standard to remove impurities.", ja: "原料を目視および基準に従い選別し、不純物を除去します。" },
   "ab.prod.s2.t": { ko: "기계 분쇄", en: "Mechanical Crushing", ja: "機械粉砕" },
