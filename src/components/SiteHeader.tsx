@@ -17,6 +17,8 @@ const navItems = [
   { key: "nav.contact", href: "/#contact" },
 ];
 
+const finderItem = { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" };
+
 const productMenu = [
   { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
@@ -38,6 +40,7 @@ const productMenu = [
 ];
 
 const applicationMenu = [
+  finderItem,
   { to: "/applications/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/applications/quartz/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
   { to: "/applications/precipitated-silica/", ko: "침전/침강 실리카", en: "Precipitated Silica", ja: "沈降/沈殿シリカ" },
@@ -49,7 +52,7 @@ const applicationMenu = [
 ];
 
 const guideMenu = [
-  { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
+  finderItem,
   { to: "/guide/faq/", ko: "FAQ", en: "FAQ", ja: "FAQ" },
   { to: "/board/", ko: "게시판", en: "Board", ja: "掲示板" },
 ];
@@ -124,7 +127,7 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
   const accountLabel = mt(lang, session ? "myAccount" : "login");
 
   const hiddenSet = useHiddenSlugs();
-  const visProductMenu = productMenu.filter((it) => !hiddenSet.has(it.to.split("/")[2]));
+  const visProductMenu = [finderItem, ...productMenu.filter((it) => !hiddenSet.has(it.to.split("/")[2]))];
   const menuFor = (d: DropdownKey) => (d === "products" ? visProductMenu : d === "guide" ? guideMenu : applicationMenu);
   const dropdownItems = activeDropdown ? menuFor(activeDropdown) : [];
   const dropdownAllHref = activeDropdown === "products" ? "/products/all" : "/#applications";
