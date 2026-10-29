@@ -52,12 +52,18 @@ const SiteFooter = () => {
     },
   ];
 
-  const navItems = [
+  const guideLinks = [
+    { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
+    { to: "/guide/faq/", ko: "FAQ", en: "FAQ", ja: "FAQ" },
+    { to: "/board/", ko: "게시판", en: "Board", ja: "掲示板" },
+  ];
+
+  const navItems: { label: string; to?: string; external?: boolean; dropdown?: boolean; links?: typeof applicationLinks }[] = [
     { label: t("nav.home"), to: "/#home", external: true },
     { label: t("nav.products"), to: "/#products", external: true },
     { label: t("nav.about"), to: "/about", external: false },
     { label: t("nav.applications"), dropdown: true },
-    { label: t("nav.guide"), to: "/guide/finder/", external: false },
+    { label: t("nav.guide"), dropdown: true, links: guideLinks },
     { label: t("nav.contact"), to: "/#contact", external: true },
   ];
 
@@ -76,7 +82,7 @@ const SiteFooter = () => {
           </button>
           <div className="invisible absolute bottom-full left-1/2 z-50 mb-3 w-56 -translate-x-1/2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
             <div className="overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-md">
-              {applicationLinks.map((link, idx, arr) => (
+              {(item.links ?? applicationLinks).map((link, idx, arr) => (
                 <Link
                   key={link.to}
                   to={link.to}
@@ -87,7 +93,7 @@ const SiteFooter = () => {
                   <div className="font-semibold">
                     {lang === "ja" ? link.ja : lang === "en" ? link.en : link.ko}
                   </div>
-                  {lang === "ko" && (
+                  {lang === "ko" && link.en !== link.ko && (
                     <div className="mt-0.5 text-xs text-muted-foreground">
                       {link.en}
                     </div>
@@ -103,7 +109,7 @@ const SiteFooter = () => {
     return (
       <Link
         key={item.label}
-        to={item.to}
+        to={item.to!}
         className="transition hover:text-primary-glow"
       >
         {item.label}
