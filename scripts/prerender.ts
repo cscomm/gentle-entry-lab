@@ -7,50 +7,27 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
-import { faqItems, FAQ_INTRO } from "../src/data/faq";
+import {
+  breadcrumbHtml,
+  breadcrumbTrail,
+  catalogBySlug,
+  catalogSlugs,
+  esc as escHtml,
+  guideBody,
+  isHiddenSlug,
+  listingHtml,
+  loc,
+  pageLabel,
+  productBody,
+  productName,
+  setHiddenSlugs,
+  siteNav,
+  label,
+} from "./prerenderContent";
 
-const escHtml = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
-// Static FAQ text + FAQPage structured data for the 사용가이드 page.
-function guideBody(): string {
-  const items = faqItems
-    .map((f) => {
-      const parts: string[] = [];
-      let list: string[] = [];
-      const flush = () => {
-        if (list.length) parts.push(`<ul>${list.map((l) => `<li>${escHtml(l)}</li>`).join("")}</ul>`);
-        list = [];
-      };
-      for (const line of f.a.ko) {
-        if (line.startsWith("- ")) list.push(line.slice(2));
-        else {
-          flush();
-          parts.push(`<p>${escHtml(line)}</p>`);
-        }
-      }
-      flush();
-      return `<h3>Q. ${escHtml(f.q.ko)}</h3>${parts.join("")}`;
-    })
-    .join("\n");
-  const ld = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems.map((f) => ({
-      "@type": "Question",
-      name: f.q.ko,
-      acceptedAnswer: { "@type": "Answer", text: f.a.ko.map((l) => l.replace(/^- /, "• ")).join("\n") },
-    })),
-  };
-  return `
-      <p>${escHtml(FAQ_INTRO.ko)}</p>
-      <h2>자주 묻는 질문 (FAQ)</h2>
-      ${items}
-      <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
-}
-
-const BASE_URL = "https://silica.co.kr";
-const DIST = resolve("dist");
+// Primary domain: silica.co.kr 302-redirects to www, so every canonical/hreflang/sitemap URL uses www.
+const BASE_URL = "https://www.silica.co.kr";
+const DIST = resolve(process.env.PRERENDER_DIST ?? "dist");
 const SOURCE = resolve(DIST, "index.html");
 
 type LangCode = "ko" | "en" | "ja";
@@ -62,7 +39,9 @@ type Route = {
   titleI18n?: I18n;              // per-language override (en/ja)
   descriptionI18n?: I18n;        // per-language override (en/ja)
   h1: string;
-  body: string;        // inner HTML for SEO content
+  body: string;        // inner HTML for SEO content (Korean)
+  h1I18n?: I18n;       // per-language h1 (en/ja); defaults to the localized title
+  bodyI18n?: I18n;     // per-language body (en/ja); defaults to the localized description
 };
 
 export const productRoutes: Route[] = [
@@ -662,17 +641,17 @@ export const productRoutes: Route[] = [
     path: "/products/all",
     title: "전체 제품 All Products — 실리카 종합 라인업 | SILICA",
     description:
-      "실리원의 전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지.",
+      "SILICA 전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지.",
     titleI18n: {
       en: "All Products — Complete Silica Lineup | SILICA",
       ja: "全製品 All Products — シリカ総合ラインアップ | SILICA",
     },
     descriptionI18n: {
-      en: "Silione's complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz.",
-      ja: "Silione の全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで。",
+      en: "SILICA's complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz.",
+      ja: "SILICA の全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで。",
     },
     h1: "전체 제품 · All Products",
-    body: `<p>SILICA(실리원)의 전 제품군을 한 페이지에서 탐색할 수 있는 통합 인덱스입니다. 용융실리카(A/B/C 등급, 구상, 각상, 모서리 라운드, 저방사선, 표면개질), 침전/흄드/나노 실리카, 실리카겔, 실리카졸, 규사·규사분말, 무연유리분말, 천연 고순도규석까지 모든 라인업을 카테고리·용도별로 확인하실 수 있습니다.</p>`,
+    body: `<p>SILICA의 전 제품군을 한 페이지에서 탐색할 수 있는 통합 인덱스입니다. 용융실리카(A/B/C 등급, 구상, 각상, 모서리 라운드, 저방사선, 표면개질), 침전/흄드/나노 실리카, 실리카겔, 실리카졸, 규사·규사분말, 무연유리분말, 천연 고순도규석까지 모든 라인업을 카테고리·용도별로 확인하실 수 있습니다.</p>`,
   },
 
   // ============= Category & Application pages (SSR completeness) =============
@@ -961,6 +940,36 @@ export const routes: Route[] = [
         <li><strong>흄드 실리카 (Fumed Silica)</strong> — 실리콘 고무·실란트·도료 첨가제</li>
         <li><strong>천연 고순도 규석 (High-Purity Quartz)</strong> — EGS·고급 유리·전자재료용</li>
       </ul>`,
+    h1I18n: {
+      en: "SiLiCA · High-Purity Fused Silica, Quartz, Silica Gel, Fumed & Precipitated Silica",
+      ja: "SiLiCA · 高純度溶融シリカ・石英・シリカゲル・ヒュームド/沈降シリカ専門メーカー",
+    },
+    bodyI18n: {
+      en: `
+      <p>SiLiCA supplies custom high-precision, ultra-high-purity silica materials that meet the strict standards of each industry.</p>
+      <p>Our lineup covers fused silica, quartz and crystalline silica, chemically synthesized silica, spherical, round-corner, angular, low-alpha and surface-modified silica powders, precipitated silica, fumed silica, silica gel, colloidal silica (silica sol), silica sand and powder, and lead-free glass powder.</p>
+      <h2>Core Products</h2>
+      <ul>
+        <li><strong>Fused Silica</strong> — for semiconductors, optics, EMC, CCL and precision casting</li>
+        <li><strong>Spherical &amp; Low-Alpha Silica Powder</strong> — fillers for semiconductor packaging, HBM and AI chips</li>
+        <li><strong>Silica Gel</strong> — adsorption, drying, matting, anti-blocking and chromatography</li>
+        <li><strong>Precipitated &amp; Fumed Silica</strong> — rubber reinforcement, thickening, coatings and adhesives</li>
+        <li><strong>Natural High-Purity Quartz</strong> — from our own quartz mine in Korea</li>
+      </ul>
+      <p>Particle size, purity and surface treatment are produced to customer specifications. Samples, TDS and quotations are available on request.</p>`,
+      ja: `
+      <p>SiLiCAは、各産業が求める厳しい基準に合わせ、高精度・超高純度のカスタムシリカ素材を供給しています。</p>
+      <p>溶融シリカ、クォーツ・結晶質シリカ、化学合成シリカ、球状・丸角・角形・低α線・表面改質シリカ粉末、沈降シリカ、ヒュームドシリカ、シリカゲル、コロイダルシリカ(シリカゾル)、珪砂・珪砂粉末、無鉛ガラス粉末まで幅広く取り揃えています。</p>
+      <h2>主要製品</h2>
+      <ul>
+        <li><strong>溶融シリカ</strong> — 半導体・光学・EMC・CCL・精密鋳造向け</li>
+        <li><strong>球状・低α線シリカ粉末</strong> — 半導体パッケージ・HBM・AI半導体用フィラー</li>
+        <li><strong>シリカゲル</strong> — 吸着・乾燥・艶消し・アンチブロッキング・クロマトグラフィー</li>
+        <li><strong>沈降・ヒュームドシリカ</strong> — ゴム補強・増粘・塗料・接着剤</li>
+        <li><strong>天然高純度石英</strong> — 韓国国内の自社鉱山から供給</li>
+      </ul>
+      <p>粒度・純度・表面処理はお客様の仕様に合わせて生産します。サンプル・TDS・お見積りはお気軽にお問い合わせください。</p>`,
+    },
   },
   {
     path: "/about",
@@ -982,6 +991,26 @@ export const routes: Route[] = [
       <p>전라북도 진안군에 위치한 현존 국내 유일의 고품위 규석 광산으로, 최저 99.5%를 유지하는 편차 없는 순도를 보장합니다.</p>
       <h2>SDR Quartz · 글로벌 파트너십</h2>
       <p>중국 장수성의 SDR Quartz는 ISO 9001 및 ISO 14001 인증을 보유하고 석영 용해·원석 선별·분쇄·미분말 가공의 4단계 전 공정을 자체 생산합니다.</p>`,
+    h1I18n: {
+      en: "About SILICA — We Develop Korea's Only High-Grade Quartz Mine",
+      ja: "会社案内 — 韓国唯一の高品位珪石鉱山を自ら開発しています",
+    },
+    bodyI18n: {
+      en: `
+      <p>We develop and operate Korea's only high-grade quartz (silica stone) mine ourselves, carrying out exploration, mining and primary processing in-house to produce top-quality high-grade quartz.</p>
+      <p>A dedicated quality-control system at every stage, from raw-material selection to finished products, meets our customers' expectations.</p>
+      <h2>Jangsu Baegam Mine (BAR)</h2>
+      <p>Located in Jinan-gun, Jeollabuk-do, it is currently Korea's only high-grade quartz mine, guaranteeing consistent purity of at least 99.5%.</p>
+      <h2>SDR Quartz · Global Partnership</h2>
+      <p>SDR Quartz in Jiangsu, China holds ISO 9001 and ISO 14001 certification and produces all four process stages in-house: quartz melting, raw-stone sorting, crushing and fine-powder processing.</p>`,
+      ja: `
+      <p>当社は韓国唯一の高品位珪石鉱山を自ら開発・運営し、探査から採掘・一次加工までを自社で行い、最高品質の高品位石英を生産しています。</p>
+      <p>原料選別から完成品まで、各段階の独自の品質管理システムによりお客様の期待にお応えします。</p>
+      <h2>長水白岩鉱山 (BAR)</h2>
+      <p>全羅北道鎮安郡に位置する現存する韓国唯一の高品位珪石鉱山で、最低99.5%を維持するばらつきのない純度を保証します。</p>
+      <h2>SDR Quartz · グローバルパートナーシップ</h2>
+      <p>中国江蘇省のSDR QuartzはISO 9001およびISO 14001認証を取得し、石英溶解・原石選別・粉砕・微粉末加工の4段階全工程を自社生産しています。</p>`,
+    },
   },
   ...productRoutes,
   {
@@ -998,7 +1027,9 @@ export const routes: Route[] = [
       ja: "サンプル提供・所要期間、最小注文数量（MOQ）、納期、戦略物資・最終用途確認書、品質保証（TDS・CoA）など、シリカ素材購入時のよくあるご質問にお答えします。",
     },
     h1: "사용가이드 — 자주 묻는 질문 (FAQ)",
-    body: guideBody(),
+    h1I18n: { en: "User Guide — Frequently Asked Questions (FAQ)", ja: "ご利用ガイド — よくあるご質問 (FAQ)" },
+    body: guideBody("ko"),
+    bodyI18n: { en: guideBody("en"), ja: guideBody("ja") },
   },
   {
     path: "/guide/finder",
@@ -1073,24 +1104,109 @@ export const routes: Route[] = [
   },
 ];
 
+// Every catalog product without a hand-written route still gets its own static page.
+// Without this, those URLs fell back to the home page HTML (home canonical), which
+// Google treats as duplicates of the home page.
+const clip = (t: string, n: number) => {
+  const one = t.replace(/\s+/g, " ").trim();
+  return one.length > n ? `${one.slice(0, n - 1).trimEnd()}…` : one;
+};
+const known = new Set(routes.map((r) => r.path));
+for (const slug of catalogSlugs) {
+  const path = `/products/${slug}`;
+  if (known.has(path)) continue;
+  const p = catalogBySlug.get(slug)!;
+  const descFor = (lang: LangCode) =>
+    clip(
+      [loc(lang, p.tagline, p.enTagline, p.jaTagline), loc(lang, p.description, p.enDescription, p.jaDescription)]
+        .filter(Boolean)
+        .join(" — "),
+      155,
+    );
+  routes.push({
+    path,
+    title: `${productName(p, "ko")} | SILICA`,
+    description: descFor("ko"),
+    titleI18n: { en: `${productName(p, "en")} | SILICA`, ja: `${productName(p, "ja")} | SILICA` },
+    descriptionI18n: { en: descFor("en"), ja: descFor("ja") },
+    h1: productName(p, "ko"),
+    body: "",
+  });
+  known.add(path);
+}
+
 const LANGS = ["ko", "en", "ja"] as const satisfies readonly LangCode[];
 
 const HTML_LANG: Record<LangCode, string> = { ko: "ko-KR", en: "en", ja: "ja" };
+const OG_LOCALE: Record<LangCode, string> = { ko: "ko_KR", en: "en_US", ja: "ja_JP" };
 
 const langPath = (lang: LangCode, routePath: string): string => {
   const base = routePath === "/" ? "" : routePath;
   return `/${lang}${base}/`;
 };
 
-function buildHtml(template: string, route: Route, lang: LangCode): string {
-  const path = langPath(lang, route.path);
+const isRouteHidden = (r: Route) => r.path.startsWith("/products/") && isHiddenSlug(r.path.slice(10));
+
+/** Replace everything inside <div id="root">…</div>, matching nested <div>s correctly. */
+export function replaceRoot(html: string, inner: string): string {
+  const open = html.indexOf('<div id="root">');
+  if (open < 0) throw new Error('[prerender] <div id="root"> not found in dist/index.html');
+  const start = open + '<div id="root">'.length;
+  const tag = /<\/?div\b[^>]*>/gi;
+  tag.lastIndex = start;
+  let depth = 1;
+  let m: RegExpExecArray | null;
+  while ((m = tag.exec(html))) {
+    depth += m[0][1] === "/" ? -1 : 1;
+    if (depth === 0) return `${html.slice(0, start)}${inner}\n    ${html.slice(m.index)}`;
+  }
+  throw new Error('[prerender] closing tag for <div id="root"> not found');
+}
+
+/** Localized h1 + body for a route. */
+function contentFor(route: Route, lang: LangCode): { h1: string; body: string } {
+  const slug = route.path.startsWith("/products/") ? route.path.slice(10) : "";
+  const product = slug ? catalogBySlug.get(slug) : undefined;
+  const localTitle = route.titleI18n?.[lang] ?? route.title;
+  const localDesc = route.descriptionI18n?.[lang] ?? route.description;
+  let h1: string;
+  let body: string;
+  if (product) {
+    h1 = productName(product, lang);
+    body = productBody(product, lang);
+  } else if (lang === "ko") {
+    h1 = route.h1;
+    body = route.body;
+  } else {
+    h1 = route.h1I18n?.[lang] ?? localTitle.replace(/\s*\|\s*SILICA\s*$/, "");
+    body = route.bodyI18n?.[lang] ?? `<p>${escHtml(localDesc)}</p>`;
+  }
+  const crumb = breadcrumbHtml(route.path, lang, h1);
+  return { h1, body: `${crumb}${body}\n        ${listingHtml(route.path, lang)}` };
+}
+
+function breadcrumbLd(route: Route, lang: LangCode, h1: string): string {
+  const trail = breadcrumbTrail(route.path);
+  if (!trail.length) return "";
+  const items = [...trail, route.path].map((p, i, all) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: i === all.length - 1 ? h1 : pageLabel(p, lang) || label("home", lang),
+    item: `${BASE_URL}${langPath(lang, p)}`,
+  }));
+  const ld = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items };
+  return `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
+}
+
+function buildHtml(template: string, route: Route, lang: LangCode, canonicalLang: LangCode = lang): string {
+  const path = langPath(canonicalLang, route.path);
   const url = `${BASE_URL}${path}`;
-  const escape = (s: string) =>
-    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const escape = escHtml;
   const localTitle = route.titleI18n?.[lang] ?? route.title;
   const localDesc = route.descriptionI18n?.[lang] ?? route.description;
   const escTitle = escape(localTitle);
   const escDesc = escape(localDesc);
+  const { h1, body } = contentFor(route, lang);
 
   let html = template;
 
@@ -1116,7 +1232,7 @@ function buildHtml(template: string, route: Route, lang: LangCode): string {
   html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}">`);
   html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escTitle}">`);
   html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${escDesc}">`);
-  html = html.replace(/<meta\s+property="og:locale"\s+content="[^"]*"\s*\/?>/, `<meta property="og:locale" content="${HTML_LANG[lang].replace("-", "_")}">`);
+  html = html.replace(/<meta\s+property="og:locale"\s+content="[^"]*"\s*\/?>/, `<meta property="og:locale" content="${OG_LOCALE[lang]}">`);
   html = html.replace(/<meta\s+name="twitter:url"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:url" content="${url}" />`);
   html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${escTitle}">`);
   html = html.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:description" content="${escDesc}">`);
@@ -1127,23 +1243,25 @@ function buildHtml(template: string, route: Route, lang: LangCode): string {
       (l) => `<link rel="alternate" hreflang="${l}" href="${BASE_URL}${langPath(l, route.path)}" />`,
     ),
     `<link rel="alternate" hreflang="x-default" href="${BASE_URL}${langPath("ko", route.path)}" />`,
-  ].join("\n    ");
+    breadcrumbLd(route, lang, h1),
+  ]
+    .filter(Boolean)
+    .join("\n    ");
   // Strip any prior alternate tags from the template, then inject ours before </head>.
   html = html.replace(/\s*<link\s+rel="alternate"[^>]*>/g, "");
   html = html.replace(/<\/head>/, `    ${altTags}\n  </head>`);
 
-  // SEO body block (Korean source content for all langs — SPA replaces on hydration).
+  // SEO body block in the page's own language — React replaces it on load.
   const seoBlock = `
-      <noscript><p>이 사이트를 보시려면 JavaScript를 활성화해 주세요.</p></noscript>
+      <noscript><p>${escape(label("noscript", lang))}</p></noscript>
       <div style="max-width: 960px; margin: 0 auto; padding: 40px 20px; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.7;">
-        <header><h1>${escape(route.h1)}</h1></header>
-        <section>${route.body}</section>
-        <footer><p>SiLiCA · 주식회사 비에이알 · 경기도 화성시 마도면 마도공단로 202 1F · 전화 070-4517-0773</p></footer>
+        <header><h1>${escape(h1)}</h1></header>
+        <main>${body}</main>
+        ${siteNav(lang)}
+        <footer><p>${escape(label("footer", lang))}</p></footer>
       </div>`;
 
-  html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script/, `<div id="root">${seoBlock}\n    </div>\n    <script`);
-
-  return html;
+  return replaceRoot(html, seoBlock);
 }
 
 function priorityFor(path: string): { changefreq: string; priority: string } {
@@ -1156,10 +1274,11 @@ function priorityFor(path: string): { changefreq: string; priority: string } {
   return { changefreq: "yearly", priority: "0.3" };
 }
 
-function generateSitemap(): string {
-  const today = new Date().toISOString().slice(0, 10);
+// No <lastmod>: the project has no per-page content timestamps, and a build date
+// on every URL tells search engines nothing (Google ignores untrustworthy lastmod).
+function generateSitemap(list: Route[]): string {
   const blocks: string[] = [];
-  for (const r of routes) {
+  for (const r of list) {
     const { changefreq, priority } = priorityFor(r.path);
     for (const lang of LANGS) {
       const loc = `${BASE_URL}${langPath(lang, r.path)}`;
@@ -1173,7 +1292,6 @@ function generateSitemap(): string {
         [
           `  <url>`,
           `    <loc>${loc}</loc>`,
-          `    <lastmod>${today}</lastmod>`,
           `    <changefreq>${changefreq}</changefreq>`,
           `    <priority>${priority}</priority>`,
           alternates,
@@ -1191,14 +1309,50 @@ function generateSitemap(): string {
   ].join("\n");
 }
 
-function main() {
+/** Products switched off in the admin 상품 관리 tab — the site shows them as "not found". */
+async function loadHiddenSlugs(): Promise<Set<string>> {
+  const url = process.env.VITE_SUPABASE_URL;
+  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key) return new Set();
+  try {
+    const res = await fetch(`${url}/rest/v1/product_visibility?select=slug&visible=eq.false`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const rows = (await res.json()) as { slug: string }[];
+    return new Set(rows.map((r) => r.slug));
+  } catch (e) {
+    console.warn("[prerender] could not load hidden products — publishing all:", (e as Error).message);
+    return new Set();
+  }
+}
+
+function loadEnv() {
+  // Vite reads .env itself; this script runs outside Vite, so load it for the visibility lookup.
+  try {
+    for (const line of readFileSync(resolve(".env"), "utf8").split("\n")) {
+      const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*"?([^"\n]*)"?\s*$/);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
+    }
+  } catch {
+    /* no .env */
+  }
+}
+
+async function main() {
   if (!existsSync(SOURCE)) {
     console.error(`[prerender] dist/index.html not found at ${SOURCE} — skipping.`);
     return;
   }
+  loadEnv();
+  const hidden = await loadHiddenSlugs();
+  setHiddenSlugs(hidden);
+  const live = routes.filter((r) => !isRouteHidden(r));
+
   const template = readFileSync(SOURCE, "utf-8");
   let count = 0;
-  for (const route of routes) {
+  for (const route of live) {
     for (const lang of LANGS) {
       const relPath = route.path === "/" ? lang : `${lang}${route.path}`;
       const out = resolve(DIST, relPath, "index.html");
@@ -1207,32 +1361,38 @@ function main() {
       count++;
     }
   }
-  console.log(`[prerender] generated ${count} static HTML files (3 langs × ${routes.length} routes).`);
+  console.log(`[prerender] generated ${count} static HTML files (3 langs × ${live.length} routes, ${routes.length - live.length} hidden).`);
+
+  // Root "/" (also the fallback for app-only pages): Korean home content, canonical → /ko/.
+  const home = routes.find((r) => r.path === "/")!;
+  writeFileSync(SOURCE, buildHtml(template, home, "ko", "ko"));
 
   // Auto-generate sitemap.xml — emits one entry per (lang, route) with hreflang alternates.
-  const sitemapXml = generateSitemap();
+  const sitemapXml = generateSitemap(live);
   writeFileSync(resolve(DIST, "sitemap.xml"), sitemapXml);
-  try {
-    writeFileSync(resolve("public/sitemap.xml"), sitemapXml);
-  } catch {
-    /* ignore in read-only CI */
+  if (!process.env.PRERENDER_DIST) {
+    try {
+      writeFileSync(resolve("public/sitemap.xml"), sitemapXml);
+    } catch {
+      /* ignore in read-only CI */
+    }
   }
-  console.log(`[prerender] generated sitemap.xml with ${routes.length * LANGS.length} URLs.`);
+  console.log(`[prerender] generated sitemap.xml with ${live.length * LANGS.length} URLs.`);
 
   // ── IndexNow: notify Naver (and other participating engines) of all URLs ──
-  void notifyIndexNow();
+  await notifyIndexNow(live);
 }
 
 const INDEXNOW_KEY = "550e8400e29b41d4a716446655440000";
-const INDEXNOW_HOST = "silica.co.kr";
+const INDEXNOW_HOST = "www.silica.co.kr";
 
-async function notifyIndexNow() {
+async function notifyIndexNow(list: Route[]) {
   if (process.env.SKIP_INDEXNOW === "1") {
     console.log("[indexnow] skipped (SKIP_INDEXNOW=1).");
     return;
   }
   const urlList: string[] = [];
-  for (const r of routes) for (const l of LANGS) urlList.push(`${BASE_URL}${langPath(l, r.path)}`);
+  for (const r of list) for (const l of LANGS) urlList.push(`${BASE_URL}${langPath(l, r.path)}`);
   const payload = {
     host: INDEXNOW_HOST,
     key: INDEXNOW_KEY,
@@ -1249,6 +1409,7 @@ async function notifyIndexNow() {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(10000),
       });
       console.log(`[indexnow] ${ep} -> ${res.status} (${urlList.length} URLs)`);
     } catch (e) {
@@ -1257,6 +1418,12 @@ async function notifyIndexNow() {
   }
 }
 
-if (import.meta.main) {
-  main();
+// Run only when executed directly (tests import replaceRoot without generating files).
+const runDirectly =
+  (import.meta as { main?: boolean }).main === true || /prerender\.ts$/.test(process.argv[1] ?? "");
+if (runDirectly) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
 }

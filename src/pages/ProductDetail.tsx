@@ -130,73 +130,17 @@ const ProductDetail = () => {
     }
   }, [location.hash, slug]);
 
+  // No Product structured data here: products have no public price, and an offer with a
+  // placeholder price misleads search results. Breadcrumbs come from the static HTML.
+  // Unknown or hidden products show "not found" — keep them out of search results.
   useEffect(() => {
-    if (!product) return;
-    const name = pick(lang, product.name, product.enName, product.jaName);
-    const description = pick(lang, product.description, product.enDescription, product.jaDescription);
-    const url = `https://silica.co.kr${location.pathname.endsWith("/") ? location.pathname : location.pathname + "/"}`;
-    const image = product.image?.startsWith("http") ? product.image : `https://silica.co.kr${product.image ?? ""}`;
-    const ld = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name,
-      description,
-      image,
-      url,
-      sku: product.slug,
-      brand: { "@type": "Brand", name: "SiLiCA" },
-      manufacturer: { "@type": "Organization", name: "SiLiCA", url: "https://silica.co.kr/" },
-      offers: {
-        "@type": "Offer",
-        url,
-        priceCurrency: "KRW",
-        price: "0",
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          priceCurrency: "KRW",
-          price: "0",
-          valueAddedTaxIncluded: false,
-        },
-        availability: "https://schema.org/InStock",
-        itemCondition: "https://schema.org/NewCondition",
-        businessFunction: "http://purl.org/goodrelations/v1#Sell",
-        seller: { "@type": "Organization", name: "SiLiCA", url: "https://silica.co.kr/" },
-        hasMerchantReturnPolicy: {
-          "@type": "MerchantReturnPolicy",
-          returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-          merchantReturnLink: "https://silica.co.kr/terms",
-          applicableCountry: "KR",
-        },
-        shippingDetails: {
-          "@type": "OfferShippingDetails",
-          shippingRate: { "@type": "MonetaryAmount", value: "0", currency: "KRW" },
-          shippingDestination: { "@type": "DefinedRegion", addressCountry: "KR" },
-          deliveryTime: {
-            "@type": "ShippingDeliveryTime",
-            handlingTime: {
-              "@type": "QuantitativeValue",
-              minValue: 1,
-              maxValue: 3,
-              unitCode: "DAY",
-            },
-            transitTime: {
-              "@type": "QuantitativeValue",
-              minValue: 1,
-              maxValue: 5,
-              unitCode: "DAY",
-            },
-          },
-        },
-      },
-    };
-    const el = document.createElement("script");
-    el.type = "application/ld+json";
-    el.dataset.jsonld = "product";
-    el.textContent = JSON.stringify(ld);
-    document.head.querySelectorAll('script[data-jsonld="product"]').forEach((n) => n.remove());
-    document.head.appendChild(el);
-    return () => { el.remove(); };
-  }, [product, lang, location.pathname]);
+    if (product) return;
+    const meta = document.createElement("meta");
+    meta.name = "robots";
+    meta.content = "noindex";
+    document.head.appendChild(meta);
+    return () => meta.remove();
+  }, [product]);
 
 
   if (!product) {

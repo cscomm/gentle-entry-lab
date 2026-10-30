@@ -81,4 +81,4 @@ Allow: /
 Disallow: /admin
 Disallow: /*/admin
 
-Sitemap: https://silica.co.kr/sitemap.xml
+Sitemap: https://www.silica.co.kr/sitemap.xml

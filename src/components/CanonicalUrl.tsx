@@ -2,7 +2,14 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { SUPPORTED_LANGS, langFromPath, stripLang, DEFAULT_LANG } from "@/lib/i18nRouting";
 
-const SITE_ORIGIN = "https://silica.co.kr";
+const SITE_ORIGIN = "https://www.silica.co.kr";
+
+// App paths that show the same page as another URL → point canonical at the main one.
+const CANONICAL_ALIASES: Record<string, string> = {
+  "/products": "/products/all",
+  "/products/silica-sand/all": "/products/silica-sand",
+  "/products/silica-powder/all": "/products/silica-powder",
+};
 
 /**
  * Maintains <link rel="canonical">, hreflang alternates, og:url, twitter:url,
@@ -17,7 +24,8 @@ const CanonicalUrl = () => {
 
   useEffect(() => {
     const lang = langFromPath(pathname) ?? DEFAULT_LANG;
-    const basePath = stripLang(pathname); // always starts with "/"
+    const rawBase = stripLang(pathname).replace(/(.)\/$/, "$1"); // always starts with "/"
+    const basePath = CANONICAL_ALIASES[rawBase] ?? rawBase;
     const normalize = (p: string) => (p.endsWith("/") ? p : `${p}/`);
 
     const canonicalPath = normalize(`/${lang}${basePath === "/" ? "" : basePath}`);
