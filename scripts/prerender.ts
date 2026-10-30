@@ -1418,7 +1418,10 @@ async function notifyIndexNow(list: Route[]) {
   }
 }
 
-if (import.meta.main) {
+// Run only when executed directly (tests import replaceRoot without generating files).
+const runDirectly =
+  (import.meta as { main?: boolean }).main === true || /prerender\.ts$/.test(process.argv[1] ?? "");
+if (runDirectly) {
   main().catch((e) => {
     console.error(e);
     process.exit(1);
