@@ -940,6 +940,36 @@ export const routes: Route[] = [
         <li><strong>흄드 실리카 (Fumed Silica)</strong> — 실리콘 고무·실란트·도료 첨가제</li>
         <li><strong>천연 고순도 규석 (High-Purity Quartz)</strong> — EGS·고급 유리·전자재료용</li>
       </ul>`,
+    h1I18n: {
+      en: "SiLiCA · High-Purity Fused Silica, Quartz, Silica Gel, Fumed & Precipitated Silica",
+      ja: "SiLiCA · 高純度溶融シリカ・石英・シリカゲル・ヒュームド/沈降シリカ専門メーカー",
+    },
+    bodyI18n: {
+      en: `
+      <p>SiLiCA supplies custom high-precision, ultra-high-purity silica materials that meet the strict standards of each industry.</p>
+      <p>Our lineup covers fused silica, quartz and crystalline silica, chemically synthesized silica, spherical, round-corner, angular, low-alpha and surface-modified silica powders, precipitated silica, fumed silica, silica gel, colloidal silica (silica sol), silica sand and powder, and lead-free glass powder.</p>
+      <h2>Core Products</h2>
+      <ul>
+        <li><strong>Fused Silica</strong> — for semiconductors, optics, EMC, CCL and precision casting</li>
+        <li><strong>Spherical &amp; Low-Alpha Silica Powder</strong> — fillers for semiconductor packaging, HBM and AI chips</li>
+        <li><strong>Silica Gel</strong> — adsorption, drying, matting, anti-blocking and chromatography</li>
+        <li><strong>Precipitated &amp; Fumed Silica</strong> — rubber reinforcement, thickening, coatings and adhesives</li>
+        <li><strong>Natural High-Purity Quartz</strong> — from our own quartz mine in Korea</li>
+      </ul>
+      <p>Particle size, purity and surface treatment are produced to customer specifications. Samples, TDS and quotations are available on request.</p>`,
+      ja: `
+      <p>SiLiCAは、各産業が求める厳しい基準に合わせ、高精度・超高純度のカスタムシリカ素材を供給しています。</p>
+      <p>溶融シリカ、クォーツ・結晶質シリカ、化学合成シリカ、球状・丸角・角形・低α線・表面改質シリカ粉末、沈降シリカ、ヒュームドシリカ、シリカゲル、コロイダルシリカ(シリカゾル)、珪砂・珪砂粉末、無鉛ガラス粉末まで幅広く取り揃えています。</p>
+      <h2>主要製品</h2>
+      <ul>
+        <li><strong>溶融シリカ</strong> — 半導体・光学・EMC・CCL・精密鋳造向け</li>
+        <li><strong>球状・低α線シリカ粉末</strong> — 半導体パッケージ・HBM・AI半導体用フィラー</li>
+        <li><strong>シリカゲル</strong> — 吸着・乾燥・艶消し・アンチブロッキング・クロマトグラフィー</li>
+        <li><strong>沈降・ヒュームドシリカ</strong> — ゴム補強・増粘・塗料・接着剤</li>
+        <li><strong>天然高純度石英</strong> — 韓国国内の自社鉱山から供給</li>
+      </ul>
+      <p>粒度・純度・表面処理はお客様の仕様に合わせて生産します。サンプル・TDS・お見積りはお気軽にお問い合わせください。</p>`,
+    },
   },
   {
     path: "/about",
@@ -961,6 +991,26 @@ export const routes: Route[] = [
       <p>전라북도 진안군에 위치한 현존 국내 유일의 고품위 규석 광산으로, 최저 99.5%를 유지하는 편차 없는 순도를 보장합니다.</p>
       <h2>SDR Quartz · 글로벌 파트너십</h2>
       <p>중국 장수성의 SDR Quartz는 ISO 9001 및 ISO 14001 인증을 보유하고 석영 용해·원석 선별·분쇄·미분말 가공의 4단계 전 공정을 자체 생산합니다.</p>`,
+    h1I18n: {
+      en: "About SILICA — We Develop Korea's Only High-Grade Quartz Mine",
+      ja: "会社案内 — 韓国唯一の高品位珪石鉱山を自ら開発しています",
+    },
+    bodyI18n: {
+      en: `
+      <p>We develop and operate Korea's only high-grade quartz (silica stone) mine ourselves, carrying out exploration, mining and primary processing in-house to produce top-quality high-grade quartz.</p>
+      <p>A dedicated quality-control system at every stage, from raw-material selection to finished products, meets our customers' expectations.</p>
+      <h2>Jangsu Baegam Mine (BAR)</h2>
+      <p>Located in Jinan-gun, Jeollabuk-do, it is currently Korea's only high-grade quartz mine, guaranteeing consistent purity of at least 99.5%.</p>
+      <h2>SDR Quartz · Global Partnership</h2>
+      <p>SDR Quartz in Jiangsu, China holds ISO 9001 and ISO 14001 certification and produces all four process stages in-house: quartz melting, raw-stone sorting, crushing and fine-powder processing.</p>`,
+      ja: `
+      <p>当社は韓国唯一の高品位珪石鉱山を自ら開発・運営し、探査から採掘・一次加工までを自社で行い、最高品質の高品位石英を生産しています。</p>
+      <p>原料選別から完成品まで、各段階の独自の品質管理システムによりお客様の期待にお応えします。</p>
+      <h2>長水白岩鉱山 (BAR)</h2>
+      <p>全羅北道鎮安郡に位置する現存する韓国唯一の高品位珪石鉱山で、最低99.5%を維持するばらつきのない純度を保証します。</p>
+      <h2>SDR Quartz · グローバルパートナーシップ</h2>
+      <p>中国江蘇省のSDR QuartzはISO 9001およびISO 14001認証を取得し、石英溶解・原石選別・粉砕・微粉末加工の4段階全工程を自社生産しています。</p>`,
+    },
   },
   ...productRoutes,
   {
