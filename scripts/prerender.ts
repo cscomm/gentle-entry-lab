@@ -7,50 +7,27 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
-import { faqItems, FAQ_INTRO } from "../src/data/faq";
+import {
+  breadcrumbHtml,
+  breadcrumbTrail,
+  catalogBySlug,
+  catalogSlugs,
+  esc as escHtml,
+  guideBody,
+  isHiddenSlug,
+  listingHtml,
+  loc,
+  pageLabel,
+  productBody,
+  productName,
+  setHiddenSlugs,
+  siteNav,
+  label,
+} from "./prerenderContent";
 
-const escHtml = (s: string) =>
-  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-
-// Static FAQ text + FAQPage structured data for the 사용가이드 page.
-function guideBody(): string {
-  const items = faqItems
-    .map((f) => {
-      const parts: string[] = [];
-      let list: string[] = [];
-      const flush = () => {
-        if (list.length) parts.push(`<ul>${list.map((l) => `<li>${escHtml(l)}</li>`).join("")}</ul>`);
-        list = [];
-      };
-      for (const line of f.a.ko) {
-        if (line.startsWith("- ")) list.push(line.slice(2));
-        else {
-          flush();
-          parts.push(`<p>${escHtml(line)}</p>`);
-        }
-      }
-      flush();
-      return `<h3>Q. ${escHtml(f.q.ko)}</h3>${parts.join("")}`;
-    })
-    .join("\n");
-  const ld = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqItems.map((f) => ({
-      "@type": "Question",
-      name: f.q.ko,
-      acceptedAnswer: { "@type": "Answer", text: f.a.ko.map((l) => l.replace(/^- /, "• ")).join("\n") },
-    })),
-  };
-  return `
-      <p>${escHtml(FAQ_INTRO.ko)}</p>
-      <h2>자주 묻는 질문 (FAQ)</h2>
-      ${items}
-      <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
-}
-
-const BASE_URL = "https://silica.co.kr";
-const DIST = resolve("dist");
+// Primary domain: silica.co.kr 302-redirects to www, so every canonical/hreflang/sitemap URL uses www.
+const BASE_URL = "https://www.silica.co.kr";
+const DIST = resolve(process.env.PRERENDER_DIST ?? "dist");
 const SOURCE = resolve(DIST, "index.html");
 
 type LangCode = "ko" | "en" | "ja";
@@ -62,7 +39,9 @@ type Route = {
   titleI18n?: I18n;              // per-language override (en/ja)
   descriptionI18n?: I18n;        // per-language override (en/ja)
   h1: string;
-  body: string;        // inner HTML for SEO content
+  body: string;        // inner HTML for SEO content (Korean)
+  h1I18n?: I18n;       // per-language h1 (en/ja); defaults to the localized title
+  bodyI18n?: I18n;     // per-language body (en/ja); defaults to the localized description
 };
 
 export const productRoutes: Route[] = [
@@ -662,17 +641,17 @@ export const productRoutes: Route[] = [
     path: "/products/all",
     title: "전체 제품 All Products — 실리카 종합 라인업 | SILICA",
     description:
-      "실리원의 전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지.",
+      "SILICA 전체 실리카 제품 라인업 — 용융실리카, 구상·각상·모서리 라운드·저방사선·표면개질 실리카 분말, 침전·흄드·나노 실리카, 실리카겔, 실리카졸, 규사, 무연유리분말, 천연 고순도 규석까지.",
     titleI18n: {
       en: "All Products — Complete Silica Lineup | SILICA",
       ja: "全製品 All Products — シリカ総合ラインアップ | SILICA",
     },
     descriptionI18n: {
-      en: "Silione's complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz.",
-      ja: "Silione の全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで。",
+      en: "SILICA's complete silica lineup — fused silica, spherical / angular / round-corner / low-alpha / surface-modified silica powders, precipitated, fumed and nano silica, silica gel, silica sol, silica sand, lead-free glass powder and natural high-purity quartz.",
+      ja: "SILICA の全シリカ製品ラインアップ — 溶融シリカ、球状・角形・丸角・低α線・表面改質シリカ粉末、沈降・ヒュームド・ナノシリカ、シリカゲル、シリカゾル、珪砂、無鉛ガラス粉末、天然高純度石英まで。",
     },
     h1: "전체 제품 · All Products",
-    body: `<p>SILICA(실리원)의 전 제품군을 한 페이지에서 탐색할 수 있는 통합 인덱스입니다. 용융실리카(A/B/C 등급, 구상, 각상, 모서리 라운드, 저방사선, 표면개질), 침전/흄드/나노 실리카, 실리카겔, 실리카졸, 규사·규사분말, 무연유리분말, 천연 고순도규석까지 모든 라인업을 카테고리·용도별로 확인하실 수 있습니다.</p>`,
+    body: `<p>SILICA의 전 제품군을 한 페이지에서 탐색할 수 있는 통합 인덱스입니다. 용융실리카(A/B/C 등급, 구상, 각상, 모서리 라운드, 저방사선, 표면개질), 침전/흄드/나노 실리카, 실리카겔, 실리카졸, 규사·규사분말, 무연유리분말, 천연 고순도규석까지 모든 라인업을 카테고리·용도별로 확인하실 수 있습니다.</p>`,
   },
 
   // ============= Category & Application pages (SSR completeness) =============
@@ -998,7 +977,9 @@ export const routes: Route[] = [
       ja: "サンプル提供・所要期間、最小注文数量（MOQ）、納期、戦略物資・最終用途確認書、品質保証（TDS・CoA）など、シリカ素材購入時のよくあるご質問にお答えします。",
     },
     h1: "사용가이드 — 자주 묻는 질문 (FAQ)",
-    body: guideBody(),
+    h1I18n: { en: "User Guide — Frequently Asked Questions (FAQ)", ja: "ご利用ガイド — よくあるご質問 (FAQ)" },
+    body: guideBody("ko"),
+    bodyI18n: { en: guideBody("en"), ja: guideBody("ja") },
   },
   {
     path: "/guide/finder",
