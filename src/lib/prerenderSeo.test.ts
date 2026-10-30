@@ -1,5 +1,5 @@
 import { describe, expect, it, afterEach } from "vitest";
-import { listingHtml, loc, productBody, setHiddenSlugs } from "../../scripts/prerenderContent";
+import { catalogBySlug, listingHtml, loc, productBody, setHiddenSlugs } from "../../scripts/prerenderContent";
 import { replaceRoot } from "../../scripts/prerender";
 
 const HANGUL = /[\uAC00-\uD7A3]/;
@@ -14,11 +14,7 @@ describe("static HTML for search engines", () => {
   });
 
   it("writes the Japanese SN-HF04 page in Japanese", () => {
-    const html = productBody(
-      // sl-hf04 is a real catalog product
-      (require("../../scripts/prerenderContent").catalogBySlug as Map<string, never>).get("sl-hf04")!,
-      "ja",
-    );
+    const html = productBody(catalogBySlug.get("sl-hf04")!, "ja");
     expect(html).toContain("高純度");
     expect(HANGUL.test(html.replace(/<[^>]+>/g, ""))).toBe(false);
   });
