@@ -1104,24 +1104,109 @@ export const routes: Route[] = [
   },
 ];
 
+// Every catalog product without a hand-written route still gets its own static page.
+// Without this, those URLs fell back to the home page HTML (home canonical), which
+// Google treats as duplicates of the home page.
+const clip = (t: string, n: number) => {
+  const one = t.replace(/\s+/g, " ").trim();
+  return one.length > n ? `${one.slice(0, n - 1).trimEnd()}…` : one;
+};
+const known = new Set(routes.map((r) => r.path));
+for (const slug of catalogSlugs) {
+  const path = `/products/${slug}`;
+  if (known.has(path)) continue;
+  const p = catalogBySlug.get(slug)!;
+  const descFor = (lang: LangCode) =>
+    clip(
+      [loc(lang, p.tagline, p.enTagline, p.jaTagline), loc(lang, p.description, p.enDescription, p.jaDescription)]
+        .filter(Boolean)
+        .join(" — "),
+      155,
+    );
+  routes.push({
+    path,
+    title: `${productName(p, "ko")} | SILICA`,
+    description: descFor("ko"),
+    titleI18n: { en: `${productName(p, "en")} | SILICA`, ja: `${productName(p, "ja")} | SILICA` },
+    descriptionI18n: { en: descFor("en"), ja: descFor("ja") },
+    h1: productName(p, "ko"),
+    body: "",
+  });
+  known.add(path);
+}
+
 const LANGS = ["ko", "en", "ja"] as const satisfies readonly LangCode[];
 
 const HTML_LANG: Record<LangCode, string> = { ko: "ko-KR", en: "en", ja: "ja" };
+const OG_LOCALE: Record<LangCode, string> = { ko: "ko_KR", en: "en_US", ja: "ja_JP" };
 
 const langPath = (lang: LangCode, routePath: string): string => {
   const base = routePath === "/" ? "" : routePath;
   return `/${lang}${base}/`;
 };
 
-function buildHtml(template: string, route: Route, lang: LangCode): string {
-  const path = langPath(lang, route.path);
+const isRouteHidden = (r: Route) => r.path.startsWith("/products/") && isHiddenSlug(r.path.slice(10));
+
+/** Replace everything inside <div id="root">…</div>, matching nested <div>s correctly. */
+export function replaceRoot(html: string, inner: string): string {
+  const open = html.indexOf('<div id="root">');
+  if (open < 0) throw new Error('[prerender] <div id="root"> not found in dist/index.html');
+  const start = open + '<div id="root">'.length;
+  const tag = /<\/?div\b[^>]*>/gi;
+  tag.lastIndex = start;
+  let depth = 1;
+  let m: RegExpExecArray | null;
+  while ((m = tag.exec(html))) {
+    depth += m[0][1] === "/" ? -1 : 1;
+    if (depth === 0) return `${html.slice(0, start)}${inner}\n    ${html.slice(m.index)}`;
+  }
+  throw new Error('[prerender] closing tag for <div id="root"> not found');
+}
+
+/** Localized h1 + body for a route. */
+function contentFor(route: Route, lang: LangCode): { h1: string; body: string } {
+  const slug = route.path.startsWith("/products/") ? route.path.slice(10) : "";
+  const product = slug ? catalogBySlug.get(slug) : undefined;
+  const localTitle = route.titleI18n?.[lang] ?? route.title;
+  const localDesc = route.descriptionI18n?.[lang] ?? route.description;
+  let h1: string;
+  let body: string;
+  if (product) {
+    h1 = productName(product, lang);
+    body = productBody(product, lang);
+  } else if (lang === "ko") {
+    h1 = route.h1;
+    body = route.body;
+  } else {
+    h1 = route.h1I18n?.[lang] ?? localTitle.replace(/\s*\|\s*SILICA\s*$/, "");
+    body = route.bodyI18n?.[lang] ?? `<p>${escHtml(localDesc)}</p>`;
+  }
+  const crumb = breadcrumbHtml(route.path, lang, h1);
+  return { h1, body: `${crumb}${body}\n        ${listingHtml(route.path, lang)}` };
+}
+
+function breadcrumbLd(route: Route, lang: LangCode, h1: string): string {
+  const trail = breadcrumbTrail(route.path);
+  if (!trail.length) return "";
+  const items = [...trail, route.path].map((p, i, all) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: i === all.length - 1 ? h1 : pageLabel(p, lang) || label("home", lang),
+    item: `${BASE_URL}${langPath(lang, p)}`,
+  }));
+  const ld = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: items };
+  return `<script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
+}
+
+function buildHtml(template: string, route: Route, lang: LangCode, canonicalLang: LangCode = lang): string {
+  const path = langPath(canonicalLang, route.path);
   const url = `${BASE_URL}${path}`;
-  const escape = (s: string) =>
-    s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const escape = escHtml;
   const localTitle = route.titleI18n?.[lang] ?? route.title;
   const localDesc = route.descriptionI18n?.[lang] ?? route.description;
   const escTitle = escape(localTitle);
   const escDesc = escape(localDesc);
+  const { h1, body } = contentFor(route, lang);
 
   let html = template;
 
@@ -1147,7 +1232,7 @@ function buildHtml(template: string, route: Route, lang: LangCode): string {
   html = html.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}">`);
   html = html.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${escTitle}">`);
   html = html.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${escDesc}">`);
-  html = html.replace(/<meta\s+property="og:locale"\s+content="[^"]*"\s*\/?>/, `<meta property="og:locale" content="${HTML_LANG[lang].replace("-", "_")}">`);
+  html = html.replace(/<meta\s+property="og:locale"\s+content="[^"]*"\s*\/?>/, `<meta property="og:locale" content="${OG_LOCALE[lang]}">`);
   html = html.replace(/<meta\s+name="twitter:url"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:url" content="${url}" />`);
   html = html.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:title" content="${escTitle}">`);
   html = html.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/, `<meta name="twitter:description" content="${escDesc}">`);
@@ -1158,23 +1243,25 @@ function buildHtml(template: string, route: Route, lang: LangCode): string {
       (l) => `<link rel="alternate" hreflang="${l}" href="${BASE_URL}${langPath(l, route.path)}" />`,
     ),
     `<link rel="alternate" hreflang="x-default" href="${BASE_URL}${langPath("ko", route.path)}" />`,
-  ].join("\n    ");
+    breadcrumbLd(route, lang, h1),
+  ]
+    .filter(Boolean)
+    .join("\n    ");
   // Strip any prior alternate tags from the template, then inject ours before </head>.
   html = html.replace(/\s*<link\s+rel="alternate"[^>]*>/g, "");
   html = html.replace(/<\/head>/, `    ${altTags}\n  </head>`);
 
-  // SEO body block (Korean source content for all langs — SPA replaces on hydration).
+  // SEO body block in the page's own language — React replaces it on load.
   const seoBlock = `
-      <noscript><p>이 사이트를 보시려면 JavaScript를 활성화해 주세요.</p></noscript>
+      <noscript><p>${escape(label("noscript", lang))}</p></noscript>
       <div style="max-width: 960px; margin: 0 auto; padding: 40px 20px; font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif; color: #1a1a1a; line-height: 1.7;">
-        <header><h1>${escape(route.h1)}</h1></header>
-        <section>${route.body}</section>
-        <footer><p>SiLiCA · 주식회사 비에이알 · 경기도 화성시 마도면 마도공단로 202 1F · 전화 070-4517-0773</p></footer>
+        <header><h1>${escape(h1)}</h1></header>
+        <main>${body}</main>
+        ${siteNav(lang)}
+        <footer><p>${escape(label("footer", lang))}</p></footer>
       </div>`;
 
-  html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<script/, `<div id="root">${seoBlock}\n    </div>\n    <script`);
-
-  return html;
+  return replaceRoot(html, seoBlock);
 }
 
 function priorityFor(path: string): { changefreq: string; priority: string } {
@@ -1187,10 +1274,11 @@ function priorityFor(path: string): { changefreq: string; priority: string } {
   return { changefreq: "yearly", priority: "0.3" };
 }
 
-function generateSitemap(): string {
-  const today = new Date().toISOString().slice(0, 10);
+// No <lastmod>: the project has no per-page content timestamps, and a build date
+// on every URL tells search engines nothing (Google ignores untrustworthy lastmod).
+function generateSitemap(list: Route[]): string {
   const blocks: string[] = [];
-  for (const r of routes) {
+  for (const r of list) {
     const { changefreq, priority } = priorityFor(r.path);
     for (const lang of LANGS) {
       const loc = `${BASE_URL}${langPath(lang, r.path)}`;
@@ -1204,7 +1292,6 @@ function generateSitemap(): string {
         [
           `  <url>`,
           `    <loc>${loc}</loc>`,
-          `    <lastmod>${today}</lastmod>`,
           `    <changefreq>${changefreq}</changefreq>`,
           `    <priority>${priority}</priority>`,
           alternates,
@@ -1222,14 +1309,50 @@ function generateSitemap(): string {
   ].join("\n");
 }
 
-function main() {
+/** Products switched off in the admin 상품 관리 tab — the site shows them as "not found". */
+async function loadHiddenSlugs(): Promise<Set<string>> {
+  const url = process.env.VITE_SUPABASE_URL;
+  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+  if (!url || !key) return new Set();
+  try {
+    const res = await fetch(`${url}/rest/v1/product_visibility?select=slug&visible=eq.false`, {
+      headers: { apikey: key, Authorization: `Bearer ${key}` },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const rows = (await res.json()) as { slug: string }[];
+    return new Set(rows.map((r) => r.slug));
+  } catch (e) {
+    console.warn("[prerender] could not load hidden products — publishing all:", (e as Error).message);
+    return new Set();
+  }
+}
+
+function loadEnv() {
+  // Vite reads .env itself; this script runs outside Vite, so load it for the visibility lookup.
+  try {
+    for (const line of readFileSync(resolve(".env"), "utf8").split("\n")) {
+      const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*"?([^"\n]*)"?\s*$/);
+      if (m && !process.env[m[1]]) process.env[m[1]] = m[2];
+    }
+  } catch {
+    /* no .env */
+  }
+}
+
+async function main() {
   if (!existsSync(SOURCE)) {
     console.error(`[prerender] dist/index.html not found at ${SOURCE} — skipping.`);
     return;
   }
+  loadEnv();
+  const hidden = await loadHiddenSlugs();
+  setHiddenSlugs(hidden);
+  const live = routes.filter((r) => !isRouteHidden(r));
+
   const template = readFileSync(SOURCE, "utf-8");
   let count = 0;
-  for (const route of routes) {
+  for (const route of live) {
     for (const lang of LANGS) {
       const relPath = route.path === "/" ? lang : `${lang}${route.path}`;
       const out = resolve(DIST, relPath, "index.html");
@@ -1238,32 +1361,38 @@ function main() {
       count++;
     }
   }
-  console.log(`[prerender] generated ${count} static HTML files (3 langs × ${routes.length} routes).`);
+  console.log(`[prerender] generated ${count} static HTML files (3 langs × ${live.length} routes, ${routes.length - live.length} hidden).`);
+
+  // Root "/" (also the fallback for app-only pages): Korean home content, canonical → /ko/.
+  const home = routes.find((r) => r.path === "/")!;
+  writeFileSync(SOURCE, buildHtml(template, home, "ko", "ko"));
 
   // Auto-generate sitemap.xml — emits one entry per (lang, route) with hreflang alternates.
-  const sitemapXml = generateSitemap();
+  const sitemapXml = generateSitemap(live);
   writeFileSync(resolve(DIST, "sitemap.xml"), sitemapXml);
-  try {
-    writeFileSync(resolve("public/sitemap.xml"), sitemapXml);
-  } catch {
-    /* ignore in read-only CI */
+  if (!process.env.PRERENDER_DIST) {
+    try {
+      writeFileSync(resolve("public/sitemap.xml"), sitemapXml);
+    } catch {
+      /* ignore in read-only CI */
+    }
   }
-  console.log(`[prerender] generated sitemap.xml with ${routes.length * LANGS.length} URLs.`);
+  console.log(`[prerender] generated sitemap.xml with ${live.length * LANGS.length} URLs.`);
 
   // ── IndexNow: notify Naver (and other participating engines) of all URLs ──
-  void notifyIndexNow();
+  await notifyIndexNow(live);
 }
 
 const INDEXNOW_KEY = "550e8400e29b41d4a716446655440000";
-const INDEXNOW_HOST = "silica.co.kr";
+const INDEXNOW_HOST = "www.silica.co.kr";
 
-async function notifyIndexNow() {
+async function notifyIndexNow(list: Route[]) {
   if (process.env.SKIP_INDEXNOW === "1") {
     console.log("[indexnow] skipped (SKIP_INDEXNOW=1).");
     return;
   }
   const urlList: string[] = [];
-  for (const r of routes) for (const l of LANGS) urlList.push(`${BASE_URL}${langPath(l, r.path)}`);
+  for (const r of list) for (const l of LANGS) urlList.push(`${BASE_URL}${langPath(l, r.path)}`);
   const payload = {
     host: INDEXNOW_HOST,
     key: INDEXNOW_KEY,
@@ -1280,6 +1409,7 @@ async function notifyIndexNow() {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(10000),
       });
       console.log(`[indexnow] ${ep} -> ${res.status} (${urlList.length} URLs)`);
     } catch (e) {
@@ -1289,5 +1419,8 @@ async function notifyIndexNow() {
 }
 
 if (import.meta.main) {
-  main();
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
 }
