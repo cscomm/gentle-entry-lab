@@ -306,7 +306,6 @@ export function guideBody(lang: LangCode): string {
   const ld = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    inLanguage: lang,
     mainEntity: faqItems.map((f) => ({
       "@type": "Question",
       name: f.q[lang],
@@ -317,6 +316,8 @@ export function guideBody(lang: LangCode): string {
   return `
       <p>${esc(FAQ_INTRO[lang])}</p>
       <h2>${heading}</h2>
-      ${items}
-      <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>`;
+      ${items}${
+        // FAQPage data is kept only where it already existed (Korean page).
+        lang === "ko" ? `\n      <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>` : ""
+      }`;
 }
