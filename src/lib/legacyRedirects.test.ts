@@ -49,4 +49,25 @@ describe("old addresses Google reported as soft 404", () => {
     // A current slug never gets overwritten by a forward page.
     expect(from).not.toContain("/ko/products/sl-hf04/");
   });
+
+  it("sends old addresses without a language to the Korean page", () => {
+    const fwd = new Map(
+      legacyForwardPaths(["fused-silica-a-grade", "silica-gel-sl-des-05", "silica-gel"], [
+        "/products/fused-silica-a-grade",
+        "/products/silica-gel",
+        "/applications/silica-gel",
+      ]).map((p) => [p.from, p.to]),
+    );
+    expect(fwd.get("/products/fused-silica-a-grade/")).toBe("/ko/products/fused-silica-a-grade/");
+    expect(fwd.get("/applications/silica-gel/")).toBe("/ko/applications/silica-gel/");
+    expect(fwd.get("/products/silica-gel-type-b/")).toBe("/ko/products/silica-gel-sl-des-05/");
+    expect(fwd.get("/ja/fused-silica-a-grade/")).toBe("/ja/products/fused-silica-a-grade/");
+    expect(fwd.get("/en/silica-gel/")).toBe("/en/products/silica-gel/");
+  });
+
+  it("never turns a real page like /ko/about/ into a product address", () => {
+    expect(resolveLegacyPath("/ko/about/", () => true)).toBeNull();
+    const from = legacyForwardPaths(["about", "board"]).map((p) => p.from);
+    expect(from).not.toContain("/ko/about/");
+  });
 });
