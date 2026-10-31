@@ -7,6 +7,8 @@ import { Link, useLocation, useParams } from "@/lib/router";
 import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Thermometer, Scale, Gem, FlaskConical, Factory, Leaf, Zap, Wrench, Paintbrush, Pen, Link2, Layers, Battery, Droplets } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, productCatalog } from "@/data/products";
+import { Navigate } from "react-router-dom";
+import { resolveLegacyPath } from "@/lib/legacyRedirects";
 import { useHiddenSlugs, isProductHidden } from "@/lib/productVisibility";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -134,7 +136,11 @@ const ProductDetail = () => {
   // placeholder price misleads search results. Breadcrumbs come from the static HTML.
   // Unknown or hidden products show "not found" — keep them out of search results.
   useEffect(() => {
-    if (product) return;
+    if (product) {
+      // Static page was built while the product was hidden; it is shown again now.
+      document.querySelectorAll('meta[data-prerender="hidden"]').forEach((m) => m.remove());
+      return;
+    }
     const meta = document.createElement("meta");
     meta.name = "robots";
     meta.content = "noindex";
@@ -142,6 +148,11 @@ const ProductDetail = () => {
     return () => meta.remove();
   }, [product]);
 
+  // Old product addresses (renamed models, old silica gel pages) forward to the current page.
+  const legacyTarget = !rawProduct && slug
+    ? resolveLegacyPath(`/${lang}/products/${slug}/`, (s) => !!getProductBySlug(s))
+    : null;
+  if (legacyTarget) return <Navigate to={legacyTarget + location.search + location.hash} replace />;
 
   if (!product) {
     return (
