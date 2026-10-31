@@ -8,7 +8,7 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Sparkles, BarChart3, Shield, Therm
 import { Button } from "@/components/ui/button";
 import { getProductBySlug, productCatalog } from "@/data/products";
 import { Navigate } from "react-router-dom";
-import { resolveLegacyPath } from "@/lib/legacyRedirects";
+import { CATEGORY_ROUTE_SLUGS, resolveLegacyPath } from "@/lib/legacyRedirects";
 import { useHiddenSlugs, isProductHidden } from "@/lib/productVisibility";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -150,7 +150,7 @@ const ProductDetail = () => {
 
   // Old product addresses (renamed models, old silica gel pages) forward to the current page.
   const legacyTarget = !rawProduct && slug
-    ? resolveLegacyPath(`/${lang}/products/${slug}/`, (s) => !!getProductBySlug(s))
+    ? resolveLegacyPath(`/${lang}/products/${slug}/`, (s) => !!getProductBySlug(s) || CATEGORY_ROUTE_SLUGS.includes(s))
     : null;
   if (legacyTarget) return <Navigate to={legacyTarget + location.search + location.hash} replace />;
 
