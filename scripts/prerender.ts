@@ -1264,6 +1264,32 @@ function buildHtml(template: string, route: Route, lang: LangCode, canonicalLang
   return replaceRoot(html, seoBlock);
 }
 
+/** Static page for an address that moved: Google treats an instant meta refresh as a permanent redirect. */
+export function forwardHtml(to: string): string {
+  const url = `${BASE_URL}${to}`;
+  const e = escHtml(url);
+  return `<!doctype html>
+<html><head><meta charset="utf-8" />
+<title>${e}</title>
+<link rel="canonical" href="${e}" />
+<meta http-equiv="refresh" content="0; url=${e}" />
+<script>location.replace(${JSON.stringify(to)} + location.search + location.hash);</script>
+</head><body><p><a href="${e}">${e}</a></p></body></html>
+`;
+}
+
+/** Hidden product: keeps the app (visitors see "not found") but tells search engines not to index it. */
+function hiddenProductHtml(template: string, route: Route, lang: LangCode): string {
+  let html = buildHtml(template, route, lang);
+  html = html.replace(/\s*<link\s+rel="alternate"[^>]*>/g, "");
+  html = html.replace(/<\/head>/, `  <meta name="robots" content="noindex" data-prerender="hidden" />\n  </head>`);
+  const listing = `/${lang}/products/`;
+  return replaceRoot(
+    html,
+    `<main style="max-width:960px;margin:0 auto;padding:40px 20px"><h1>${escHtml(label("notListed", lang))}</h1><p><a href="${listing}">${escHtml(pageLabel("/products", lang))}</a></p></main>`,
+  );
+}
+
 function priorityFor(path: string): { changefreq: string; priority: string } {
   if (path === "/") return { changefreq: "weekly", priority: "1.0" };
   if (path === "/about") return { changefreq: "weekly", priority: "0.9" };
@@ -1362,6 +1388,32 @@ async function main() {
     }
   }
   console.log(`[prerender] generated ${count} static HTML files (3 langs × ${live.length} routes, ${routes.length - live.length} hidden).`);
+
+  // Admin-hidden products: a "not listed" page marked noindex, instead of the home-page
+  // fallback (which Google reports as a soft 404). The app removes the tag if the product is shown again.
+  let hiddenCount = 0;
+  for (const route of routes.filter(isRouteHidden)) {
+    for (const lang of LANGS) {
+      const out = resolve(DIST, `${lang}${route.path}`, "index.html");
+      mkdirSync(dirname(out), { recursive: true });
+      writeFileSync(out, hiddenProductHtml(template, route, lang));
+      hiddenCount++;
+    }
+  }
+
+  // Old addresses still in search engines → forward pages to the current product.
+  const knownSlugs = [
+    ...new Set([...catalogSlugs, ...routes.filter((r) => r.path.startsWith("/products/")).map((r) => r.path.slice(10))]),
+  ];
+  let fwdCount = 0;
+  for (const { from, to } of legacyForwardPaths(knownSlugs)) {
+    const out = resolve(DIST, from.slice(1), "index.html");
+    if (existsSync(out)) continue;
+    mkdirSync(dirname(out), { recursive: true });
+    writeFileSync(out, forwardHtml(to));
+    fwdCount++;
+  }
+  console.log(`[prerender] ${hiddenCount} hidden-product pages (noindex), ${fwdCount} old-address forward pages.`);
 
   // Root "/" (also the fallback for app-only pages): Korean home content, canonical → /ko/.
   const home = routes.find((r) => r.path === "/")!;
