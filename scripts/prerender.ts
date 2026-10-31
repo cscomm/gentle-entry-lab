@@ -24,6 +24,7 @@ import {
   siteNav,
   label,
 } from "./prerenderContent";
+import { legacyForwardPaths } from "../src/lib/legacyRedirects";
 
 // Primary domain: silica.co.kr 302-redirects to www, so every canonical/hreflang/sitemap URL uses www.
 const BASE_URL = "https://www.silica.co.kr";
@@ -1286,7 +1287,7 @@ function hiddenProductHtml(template: string, route: Route, lang: LangCode): stri
   const listing = `/${lang}/products/`;
   return replaceRoot(
     html,
-    `<main style="max-width:960px;margin:0 auto;padding:40px 20px"><h1>${escHtml(label("notListed", lang))}</h1><p><a href="${listing}">${escHtml(pageLabel("/products", lang))}</a></p></main>`,
+    `<main style="max-width:960px;margin:0 auto;padding:40px 20px"><h1>${escHtml(label("notListed", lang))}</h1><p><a href="${listing}">${escHtml(label("allProducts", lang))}</a></p></main>`,
   );
 }
 

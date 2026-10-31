@@ -108,6 +108,12 @@ const L = {
     en: "SiLiCA · BAR Co., Ltd. · 1F, 202 Madogongdan-ro, Mado-myeon, Hwaseong-si, Gyeonggi-do, Republic of Korea · Tel +82-70-4517-0773",
     ja: "SiLiCA · 株式会社BAR · 韓国 京畿道 華城市 麻道面 麻道工団路 202 1F · TEL +82-70-4517-0773",
   },
+  notListed: {
+    ko: "현재 게시되지 않은 제품입니다.",
+    en: "This product is not currently listed.",
+    ja: "この製品は現在掲載されていません。",
+  },
+  allProducts: { ko: "전체 제품 보기", en: "View all products", ja: "全製品を見る" },
 } satisfies Record<string, Record<LangCode, string>>;
 export const label = (k: keyof typeof L, lang: LangCode) => L[k][lang];
 
