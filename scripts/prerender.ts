@@ -1407,7 +1407,7 @@ async function main() {
     ...new Set([...catalogSlugs, ...routes.filter((r) => r.path.startsWith("/products/")).map((r) => r.path.slice(10))]),
   ];
   let fwdCount = 0;
-  for (const { from, to } of legacyForwardPaths(knownSlugs, live.map((r) => r.path))) {
+  for (const { from, to } of legacyForwardPaths(knownSlugs, routes.map((r) => r.path))) {
     const out = resolve(DIST, from.slice(1), "index.html");
     if (existsSync(out)) continue;
     mkdirSync(dirname(out), { recursive: true });
