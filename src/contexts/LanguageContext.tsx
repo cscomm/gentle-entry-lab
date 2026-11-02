@@ -97,6 +97,13 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
     ko: "주식회사 비에이알은 지속적으로 발전하는 선진 기술을 빠르게 적용하여 전자 소재, 산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 제공하겠습니다.",
     en: "BAR Co., Ltd. will quickly apply continuously advancing cutting-edge technologies to provide optimal silica solutions perfectly tailored to customer needs across all industries, including electronic materials, industrial coatings, ceramics, refractories, casting, solar and energy materials, and various silica additives.", ja: "株式会社BARは、持続的に発展する先端技術を迅速に適用し、電子素材、産業用コーティング、セラミックス、耐火材、鋳造、太陽光およびエネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを提供してまいります。" },
   "about.btn": { ko: "회사 소개 보기", en: "About the Company", ja: "会社紹介を見る" },
+  "about.hero1": { ko: "실리카는\n자연이 주는", en: "Silica,\na gift of nature,", ja: "シリカは\n自然がもたらす" },
+  "about.hero2": { ko: "미래를\n만들어 갑니다.", en: "shapes\nthe future.", ja: "未来を\n創り出します。" },
+  "about.heroDesc": {
+    ko: "산업용 코팅, 세라믹, 내화재, 주조, 태양광 및 에너지 소재, 각종 실리카 첨가물 등 산업 전반에 걸쳐 고객의 니즈에 딱 맞춘 최적의 실리카 솔루션을 안정적으로 공급 합니다.",
+    en: "We reliably supply optimal silica solutions tailored to each customer's needs across industries — industrial coatings, ceramics, refractories, casting, solar and energy materials, and a wide range of silica additives.",
+    ja: "産業用コーティング、セラミックス、耐火材、鋳造、太陽光・エネルギー素材、各種シリカ添加物など、産業全般にわたりお客様のニーズにぴったり合わせた最適なシリカソリューションを安定的に供給します。" },
+  "about.more": { ko: "자세히 보기", en: "Learn more", ja: "詳しく見る" },
 
   // Products section
   "products.cat": { ko: "제품 카테고리", en: "Product Category", ja: "製品カテゴリ" },
