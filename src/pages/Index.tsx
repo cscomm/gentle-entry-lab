@@ -22,7 +22,10 @@ import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
-import aboutSilica from "@/assets/about-silica.jpg";
+import bowlGrains from "@/assets/silica-bowl-grains.webp";
+import bowlSand from "@/assets/silica-bowl-sand.webp";
+import bowlPowderBottom from "@/assets/silica-bowl-powder-bottom.webp";
+import bowlPowderLeft from "@/assets/silica-bowl-powder-left.webp";
 import gradeA from "@/assets/fused-silica-category.jpg";
 import gradeB from "@/assets/grade-b-silica.png";
 import gradeC from "@/assets/grade-c-silica.png";
@@ -355,36 +358,40 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-        <div className="grid items-center gap-12 md:grid-cols-2">
-          <div className="relative overflow-hidden rounded-2xl border border-border">
-            <img src={aboutSilica} alt={silicaAlt("실리카 제품 샘플")} loading="lazy" className="h-[420px] w-full object-cover" />
-          </div>
-          <div>
-            <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
-              {t("about.tag")}
-            </span>
-            <h2 className="mt-6 whitespace-pre-line text-4xl font-bold leading-tight md:text-5xl">
-              {t("about.title")}
-            </h2>
-            <Prose className="mt-6 text-muted-foreground">{t("about.p1")}</Prose>
-            <Prose className="mt-4 text-muted-foreground">{t("about.p2")}</Prose>
-            <Prose className="mt-4 text-muted-foreground">{t("about.p3")}</Prose>
-            <Prose className="mt-4 text-muted-foreground">{t("about.p4")}</Prose>
-            <Prose className="mt-4 text-muted-foreground">{t("about.p5")}</Prose>
-            <Prose className="mt-4 text-muted-foreground">{t("about.p6")}</Prose>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="mt-8 h-12 rounded-full border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground"
+      {/* About — Company intro (full text stays on the 회사소개 page) */}
+      <section id="about" className="relative overflow-hidden bg-background">
+        {/* Silica bowls cluster, bleeding off the right edge */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[62%]">
+          <img src={bowlGrains} alt="" loading="lazy" className="absolute -right-[6%] -top-[8%] w-[46%] min-w-[220px] max-w-[480px] rounded-full shadow-2xl md:-right-[4%] md:w-[44%]" />
+          <img src={bowlSand} alt="" loading="lazy" className="absolute -right-[18%] top-[38%] w-[40%] min-w-[200px] max-w-[420px] rounded-full shadow-2xl md:-right-[10%] md:w-[38%]" />
+          <img src={bowlPowderBottom} alt="" loading="lazy" className="absolute -bottom-[14%] right-[30%] w-[50%] min-w-[240px] max-w-[540px] rounded-full shadow-2xl md:right-[26%] md:w-[52%]" />
+          <img src={bowlPowderLeft} alt="" loading="lazy" className="absolute right-[48%] top-[10%] hidden w-[24%] max-w-[260px] rounded-full shadow-xl md:block" />
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent md:via-background/40" aria-hidden="true" />
+
+        <div className="relative mx-auto flex min-h-[640px] max-w-7xl flex-col px-6 py-20 md:min-h-[760px] md:py-28">
+          <span className="text-base text-muted-foreground md:text-lg">Company</span>
+          <h2 className="mt-5 whitespace-pre-line text-5xl font-bold leading-[1.1] tracking-tight text-foreground md:text-7xl lg:text-8xl">
+            {t("about.hero1")}
+          </h2>
+
+          <p className="mt-16 self-end whitespace-pre-line text-right text-5xl font-bold leading-[1.1] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-7xl lg:text-8xl">
+            {t("about.hero2")}
+          </p>
+
+          <div className="mt-auto flex flex-col gap-8 pt-16 md:flex-row md:items-end md:justify-between">
+            <p className="max-w-md rounded-xl bg-background/80 text-base leading-relaxed text-muted-foreground backdrop-blur-sm md:bg-transparent md:backdrop-blur-none">
+              {t("about.heroDesc")}
+            </p>
+            <Link
+              to="/about/"
+              className="group inline-flex items-center gap-4 self-end rounded-full bg-background/80 py-1 pl-4 pr-1 text-base font-semibold text-primary backdrop-blur-sm"
             >
-              <Link to="/about/">
-                {t("about.btn")}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+              {t("about.more")}
+              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <ArrowRight className="h-5 w-5" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>
