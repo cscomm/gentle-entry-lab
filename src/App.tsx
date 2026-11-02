@@ -14,6 +14,7 @@ import PrecipitatedSilicaCategory from "./pages/PrecipitatedSilicaCategory.tsx";
 import PrecipitatedSilicaApplications from "./pages/PrecipitatedSilicaApplications.tsx";
 import FumedSilicaCategory from "./pages/FumedSilicaCategory.tsx";
 import ScrollToHash from "./components/ScrollToHash";
+import ScrollReveal from "./components/ScrollReveal";
 
 import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
 import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
@@ -64,6 +65,7 @@ const LangShell = () => {
   return (
     <>
     <ScrollToHash />
+    <ScrollReveal />
     <Routes>
       <Route index element={<Index />} />
       <Route path="products/silica-gel" element={<SilicaGelCategory />} />

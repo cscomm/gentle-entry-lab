@@ -362,20 +362,20 @@ const Index = () => {
       <section id="about" className="relative overflow-hidden bg-background">
         {/* Silica bowls cluster, bleeding off the right edge */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[62%]">
-          <img src={bowlGrains} alt="" loading="lazy" className="absolute -right-[6%] -top-[8%] w-[46%] min-w-[220px] max-w-[480px] rounded-full shadow-2xl md:-right-[4%] md:w-[44%]" />
-          <img src={bowlSand} alt="" loading="lazy" className="absolute -right-[18%] top-[38%] w-[40%] min-w-[200px] max-w-[420px] rounded-full shadow-2xl md:-right-[10%] md:w-[38%]" />
-          <img src={bowlPowderBottom} alt="" loading="lazy" className="absolute -bottom-[14%] right-[30%] w-[50%] min-w-[240px] max-w-[540px] rounded-full shadow-2xl md:right-[26%] md:w-[52%]" />
-          <img src={bowlPowderLeft} alt="" loading="lazy" className="absolute right-[48%] top-[10%] hidden w-[24%] max-w-[260px] rounded-full shadow-xl md:block" />
+          <img src={bowlGrains} alt="" loading="lazy" data-parallax="0.18" className="absolute -right-[6%] -top-[8%] w-[46%] min-w-[220px] max-w-[480px] rounded-full shadow-2xl md:-right-[4%] md:w-[44%]" />
+          <img src={bowlSand} alt="" loading="lazy" data-parallax="0.08" className="absolute -right-[18%] top-[38%] w-[40%] min-w-[200px] max-w-[420px] rounded-full shadow-2xl md:-right-[10%] md:w-[38%]" />
+          <img src={bowlPowderBottom} alt="" loading="lazy" data-parallax="-0.1" className="absolute -bottom-[14%] right-[30%] w-[50%] min-w-[240px] max-w-[540px] rounded-full shadow-2xl md:right-[26%] md:w-[52%]" />
+          <img src={bowlPowderLeft} alt="" loading="lazy" data-parallax="0.25" className="absolute right-[48%] top-[10%] hidden w-[24%] max-w-[260px] rounded-full shadow-xl md:block" />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent md:via-background/40" aria-hidden="true" />
 
         <div className="relative mx-auto flex min-h-[640px] max-w-7xl flex-col px-6 py-20 md:min-h-[760px] md:py-28">
-          <span className="text-base text-muted-foreground md:text-lg">Company</span>
-          <h2 className="mt-5 whitespace-pre-line break-keep text-5xl font-bold leading-[1.1] tracking-tight text-foreground md:text-7xl lg:text-8xl">
+          <span className="text-base text-muted-foreground md:text-lg" data-reveal>Company</span>
+          <h2 className="mt-5 whitespace-pre-line break-keep text-[1.8rem] font-bold leading-[1.15] tracking-tight text-foreground md:text-[2.7rem] lg:text-[3.6rem]" data-reveal="left">
             {t("about.hero1")}
           </h2>
 
-          <p className="mt-16 self-end whitespace-pre-line break-keep text-right text-5xl font-bold leading-[1.1] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-7xl lg:text-8xl">
+          <p className="mt-16 self-end whitespace-pre-line break-keep text-right text-[1.8rem] font-bold leading-[1.15] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-[2.7rem] lg:text-[3.6rem]" data-reveal="right">
             {t("about.hero2")}
           </p>
 
