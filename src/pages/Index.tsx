@@ -371,16 +371,16 @@ const Index = () => {
 
         <div className="relative mx-auto flex min-h-[640px] max-w-7xl flex-col px-6 py-20 md:min-h-[760px] md:py-28">
           <span className="text-base text-muted-foreground md:text-lg">Company</span>
-          <h2 className="mt-5 whitespace-pre-line text-5xl font-bold leading-[1.1] tracking-tight text-foreground md:text-7xl lg:text-8xl">
+          <h2 className="mt-5 whitespace-pre-line break-keep text-5xl font-bold leading-[1.1] tracking-tight text-foreground md:text-7xl lg:text-8xl">
             {t("about.hero1")}
           </h2>
 
-          <p className="mt-16 self-end whitespace-pre-line text-right text-5xl font-bold leading-[1.1] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-7xl lg:text-8xl">
+          <p className="mt-16 self-end whitespace-pre-line break-keep text-right text-5xl font-bold leading-[1.1] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-7xl lg:text-8xl">
             {t("about.hero2")}
           </p>
 
           <div className="mt-auto flex flex-col gap-8 pt-16 md:flex-row md:items-end md:justify-between">
-            <p className="max-w-md rounded-xl bg-background/80 text-base leading-relaxed text-muted-foreground backdrop-blur-sm md:bg-transparent md:backdrop-blur-none">
+            <p className="max-w-md break-keep rounded-xl bg-background/80 text-base leading-relaxed text-muted-foreground backdrop-blur-sm md:bg-transparent md:backdrop-blur-none">
               {t("about.heroDesc")}
             </p>
             <Link
