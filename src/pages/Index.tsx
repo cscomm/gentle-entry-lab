@@ -23,9 +23,6 @@ import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
 import contactLabBg from "@/assets/contact-lab-bg.jpg";
-
-const glassInput =
-  "mt-2 h-11 border-card/80 bg-card/40 text-foreground shadow-sm backdrop-blur-md placeholder:text-foreground/45 focus-visible:border-primary focus-visible:ring-primary/30";
 import bowlGrains from "@/assets/silica-bowl-grains.webp";
 import bowlSand from "@/assets/silica-bowl-sand.webp";
 import bowlPowderBottom from "@/assets/silica-bowl-powder-bottom.webp";
@@ -52,6 +49,8 @@ import silicaSolImg from "@/assets/silica-sol.png";
 import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import synSph400Img from "@/assets/syn-sph-sem-400nm-clean.jpg";
+const glassInput =
+  "mt-2 h-11 border-card/80 bg-card/40 text-foreground shadow-sm backdrop-blur-md placeholder:text-foreground/45 focus-visible:border-primary focus-visible:ring-primary/30";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
