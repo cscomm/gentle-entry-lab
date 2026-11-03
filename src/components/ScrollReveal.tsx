@@ -41,7 +41,7 @@ const ScrollReveal = () => {
       window.setTimeout(() => {
         el.classList.remove("reveal", "is-revealed");
         el.style.removeProperty("--reveal-delay");
-      }, 1100 + delay);
+      }, 1700 + delay);
     };
 
     const io = new IntersectionObserver(
