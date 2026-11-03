@@ -41,7 +41,7 @@ const ScrollReveal = () => {
       window.setTimeout(() => {
         el.classList.remove("reveal", "is-revealed");
         el.style.removeProperty("--reveal-delay");
-      }, 1700 + delay);
+      }, 1100 + delay);
     };
 
     const io = new IntersectionObserver(
@@ -69,7 +69,7 @@ const ScrollReveal = () => {
         if (seen.has(el)) return;
         seen.add(el);
         if (el.parentElement?.closest(SKIP_ANCESTOR)) return;
-        if (el.closest("[data-parallax]") || el.className.toString().includes("animate-")) return;
+        if (el.closest("[data-parallax],[data-scroll-slide]") || el.className.toString().includes("animate-")) return;
         const r = el.getBoundingClientRect();
         // Already on screen (or not rendered): leave as is, no flash.
         if (r.width === 0 && r.height === 0) return;
@@ -79,11 +79,12 @@ const ScrollReveal = () => {
       });
     };
 
-    // Parallax
+    // Parallax + scroll-linked slides
     let ticking = false;
     const parallax = () => {
       ticking = false;
       const vh = window.innerHeight;
+      const vw = window.innerWidth;
       document.querySelectorAll<HTMLElement>("[data-parallax]").forEach((el) => {
         const host = (el.closest("section") as HTMLElement) ?? el;
         const r = host.getBoundingClientRect();
@@ -91,6 +92,21 @@ const ScrollReveal = () => {
         const speed = parseFloat(el.dataset.parallax || "0.1");
         const offset = (r.top + r.height / 2 - vh / 2) * speed;
         el.style.translate = `0 ${offset.toFixed(1)}px`;
+      });
+      // data-scroll-slide="left|right": slides in from the side toward the
+      // centre, following the scroll position, so it replays on every pass.
+      document.querySelectorAll<HTMLElement>("[data-scroll-slide]").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < -400 || r.top > vh + 400) return;
+        const t = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.7)));
+        const e = 1 - Math.pow(1 - t, 3);
+        const start = vw * 0.32;
+        const inward = vw >= 768 ? vw * 0.08 : vw * 0.03;
+        const x = -start + (start + inward) * e;
+        const dir = el.dataset.scrollSlide === "right" ? -1 : 1;
+        if (!el.style.transition) el.style.transition = "transform 0.3s ease-out, opacity 0.3s ease-out";
+        el.style.transform = `translate3d(${(x * dir).toFixed(1)}px,0,0)`;
+        el.style.opacity = Math.min(1, t * 1.8).toFixed(3);
       });
     };
     const onScroll = () => {

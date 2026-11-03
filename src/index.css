@@ -132,8 +132,6 @@ html .reveal {
 }
 html .reveal[data-reveal="left"] { translate: -64px 0; }
 html .reveal[data-reveal="right"] { translate: 64px 0; }
-html .reveal[data-reveal="left-far"] { translate: max(-240px, -24vw) 0; }
-html .reveal[data-reveal="right-far"] { translate: min(240px, 24vw) 0; }
 html .reveal[data-reveal="zoom"] { translate: 0 0; scale: 0.92; }
 html .reveal.is-revealed { opacity: 1; translate: 0 0; scale: 1; }
 @media print {
