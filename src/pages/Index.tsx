@@ -464,8 +464,8 @@ const Index = () => {
             data-parallax="0.06"
             className="absolute -inset-y-[8%] inset-x-0 h-[116%] w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-foreground/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/60 via-transparent to-foreground/30" />
+          <div className="absolute inset-0 bg-foreground/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/35 via-transparent to-foreground/15" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6">
