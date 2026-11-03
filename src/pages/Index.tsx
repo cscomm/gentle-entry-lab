@@ -50,7 +50,7 @@ import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import synSph400Img from "@/assets/syn-sph-sem-400nm-clean.jpg";
 const glassInput =
-  "mt-2 h-11 border-background/25 bg-background/10 text-background shadow-sm backdrop-blur-md placeholder:text-background/45 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
+  "mt-2 h-11 border-background/25 bg-background/10 text-background shadow-sm backdrop-blur-md placeholder:text-background/65 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
@@ -464,8 +464,8 @@ const Index = () => {
             data-parallax="0.06"
             className="absolute -inset-y-[8%] inset-x-0 h-[116%] w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-foreground/75" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/60 via-transparent to-foreground/30" />
+          <div className="absolute inset-0 bg-foreground/45" />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/35 via-transparent to-foreground/15" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6">
