@@ -30,7 +30,7 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(180deg, hsl(150 30% 98% / 0.2) 0%, hsl(150 30% 98% / 0.75) 100%);
     --gradient-primary: linear-gradient(135deg, hsl(152 55% 38%), hsl(150 65% 50%));
     --shadow-glow: 0 10px 40px -10px hsl(152 60% 45% / 0.3);
-    --shadow-glass: 0 20px 50px -20px hsl(165 30% 12% / 0.18), inset 0 1px 0 hsl(0 0% 100% / 0.7);
+    --shadow-glass: 0 24px 60px -24px hsl(165 40% 4% / 0.6), inset 0 1px 0 hsl(0 0% 100% / 0.18);
 
     --secondary: 150 20% 94%;
     --secondary-foreground: 165 30% 12%;
@@ -132,14 +132,6 @@ html .reveal {
 }
 html .reveal[data-reveal="left"] { translate: -64px 0; }
 html .reveal[data-reveal="right"] { translate: 64px 0; }
-/* Larger, slower slide for big statement headings */
-html .reveal[data-reveal="left-far"],
-html .reveal[data-reveal="right-far"] {
-  transition:
-    opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1),
-    translate 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--reveal-delay, 0ms);
-}
 html .reveal[data-reveal="left-far"] { translate: max(-240px, -24vw) 0; }
 html .reveal[data-reveal="right-far"] { translate: min(240px, 24vw) 0; }
 html .reveal[data-reveal="zoom"] { translate: 0 0; scale: 0.92; }
