@@ -371,11 +371,11 @@ const Index = () => {
 
         <div className="relative mx-auto flex min-h-[640px] max-w-7xl flex-col px-6 py-20 md:min-h-[760px] md:py-28">
           <span className="text-base text-muted-foreground md:text-lg" data-reveal>Company</span>
-          <h2 className="mt-5 whitespace-pre-line break-keep text-[1.8rem] font-bold leading-[1.15] tracking-tight text-foreground md:text-[2.7rem] lg:text-[3.6rem]" data-reveal="left">
+          <h2 className="mt-5 whitespace-pre-line break-keep text-[1.8rem] font-bold leading-[1.15] tracking-tight text-foreground md:text-[2.7rem] lg:text-[3.6rem]" data-reveal="left-far">
             {t("about.hero1")}
           </h2>
 
-          <p className="mt-16 self-end whitespace-pre-line break-keep text-right text-[1.8rem] font-bold leading-[1.15] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-[2.7rem] lg:text-[3.6rem]" data-reveal="right">
+          <p className="mt-16 self-end whitespace-pre-line break-keep text-right text-[1.8rem] font-bold leading-[1.15] tracking-tight text-foreground [text-shadow:0_0_28px_hsl(var(--background)),0_0_10px_hsl(var(--background))] md:mt-24 md:text-[2.7rem] lg:text-[3.6rem]" data-reveal="right-far">
             {t("about.hero2")}
           </p>
 
