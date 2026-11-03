@@ -50,7 +50,7 @@ import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import synSph400Img from "@/assets/syn-sph-sem-400nm-clean.jpg";
 const glassInput =
-  "mt-2 h-11 border-background/25 bg-background/10 text-background shadow-sm backdrop-blur-md placeholder:text-background/45 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
+  "mt-2 h-11 border-background/25 bg-background/10 text-background shadow-sm backdrop-blur-md placeholder:text-background/65 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
