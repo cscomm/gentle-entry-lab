@@ -48,7 +48,7 @@ const productMenu: MenuItem[] = [
   },
 ];
 
-const applicationMenu = [
+const applicationMenu: MenuItem[] = [
   finderItem,
   { to: "/applications/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/applications/quartz/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
@@ -60,7 +60,7 @@ const applicationMenu = [
   { to: "/products/high-purity-quartz/#applications", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
 ];
 
-const guideMenu = [
+const guideMenu: MenuItem[] = [
   finderItem,
   { to: "/guide/faq/", ko: "FAQ", en: "FAQ", ja: "FAQ" },
   { to: "/board/", ko: "게시판", en: "Board", ja: "掲示板" },
