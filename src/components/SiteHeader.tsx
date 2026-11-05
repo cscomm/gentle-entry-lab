@@ -17,9 +17,11 @@ const navItems = [
   { key: "nav.contact", href: "/#contact" },
 ];
 
-const finderItem = { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" };
+type MenuItem = { to: string; ko: string; en: string; ja: string; sub?: MenuItem[] };
 
-const productMenu = [
+const finderItem: MenuItem = { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" };
+
+const productMenu: MenuItem[] = [
   { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
   { to: "/products/synthetic-silica/", ko: "화학합성 실리카", en: "Chemically Synthesized Silica", ja: "化学合成シリカ" },
@@ -28,7 +30,6 @@ const productMenu = [
   { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },
   { to: "/products/angular-silica-powder/", ko: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末" },
   { to: "/products/low-radiation-silica-powder/", ko: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末" },
-  { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
   { to: "/products/precipitated-silica/", ko: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ" },
   { to: "/products/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
   { to: "/products/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
@@ -36,10 +37,18 @@ const productMenu = [
   { to: "/products/silica-sand/", ko: "규사", en: "Silica Sand", ja: "珪砂" },
   { to: "/products/silica-powder/", ko: "규사분말", en: "Silica Powder", ja: "珪砂粉末" },
   { to: "/products/high-purity-quartz/", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
-  { to: "/products/applied-silica-materials/", ko: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材" },
+  {
+    to: "/products/applied-silica-materials/",
+    ko: "실리카 응용 · 연관 소재",
+    en: "Applied & Related Silica Materials",
+    ja: "シリカ応用・関連素材",
+    sub: [
+      { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
+    ],
+  },
 ];
 
-const applicationMenu = [
+const applicationMenu: MenuItem[] = [
   finderItem,
   { to: "/applications/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/applications/quartz/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
@@ -51,7 +60,7 @@ const applicationMenu = [
   { to: "/products/high-purity-quartz/#applications", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
 ];
 
-const guideMenu = [
+const guideMenu: MenuItem[] = [
   finderItem,
   { to: "/guide/faq/", ko: "FAQ", en: "FAQ", ja: "FAQ" },
   { to: "/board/", ko: "게시판", en: "Board", ja: "掲示板" },
@@ -336,14 +345,27 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   {openGroup === item.dropdown && (
                     <div className="pb-2">
                       {menuFor(item.dropdown).map((it) => (
-                        <Link
-                          key={it.to}
-                          to={it.to}
-                          onClick={() => setMobileOpen(false)}
-                          className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-secondary hover:text-primary-glow"
-                        >
-                          {pick(lang, it.ko, it.en, it.ja)}
-                        </Link>
+                        <div key={it.to}>
+                          <Link
+                            to={it.to}
+                            onClick={() => setMobileOpen(false)}
+                            className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-secondary hover:text-primary-glow"
+                          >
+                            {pick(lang, it.ko, it.en, it.ja)}
+                          </Link>
+                          {it.sub
+                            ?.filter((s) => !hiddenSet.has(s.to.split("/")[2]))
+                            .map((s) => (
+                              <Link
+                                key={s.to}
+                                to={s.to}
+                                onClick={() => setMobileOpen(false)}
+                                className="block rounded-lg py-2 pl-8 pr-4 text-[13px] text-muted-foreground/80 transition hover:bg-secondary hover:text-primary-glow"
+                              >
+                                └ {pick(lang, s.ko, s.en, s.ja)}
+                              </Link>
+                            ))}
+                        </div>
                       ))}
                     </div>
                   )}
@@ -397,19 +419,35 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
             </div>
             <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3 md:grid-cols-4">
               {dropdownItems.map((it) => (
-                <Link
-                  key={it.to}
-                  to={it.to}
-                  onClick={() => setActiveDropdown(null)}
-                  className="group/item flex flex-col rounded-md px-2 py-1.5 transition hover:bg-secondary"
-                >
-                  <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
-                    {pick(lang, it.ko, it.en, it.ja)}
-                  </span>
-                  {lang === "ko" && it.en !== it.ko && (
-                    <span className="mt-0.5 text-[11px] text-muted-foreground">{it.en}</span>
-                  )}
-                </Link>
+                <div key={it.to} className="flex flex-col">
+                  <Link
+                    to={it.to}
+                    onClick={() => setActiveDropdown(null)}
+                    className="group/item flex flex-col rounded-md px-2 py-1.5 transition hover:bg-secondary"
+                  >
+                    <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
+                      {pick(lang, it.ko, it.en, it.ja)}
+                    </span>
+                    {lang === "ko" && it.en !== it.ko && (
+                      <span className="mt-0.5 text-[11px] text-muted-foreground">{it.en}</span>
+                    )}
+                  </Link>
+                  {it.sub
+                    ?.filter((s) => !hiddenSet.has(s.to.split("/")[2]))
+                    .map((s) => (
+                      <Link
+                        key={s.to}
+                        to={s.to}
+                        onClick={() => setActiveDropdown(null)}
+                        className="group/sub flex items-center gap-1 rounded-md py-1 pl-4 pr-2 transition hover:bg-secondary"
+                      >
+                        <span className="text-muted-foreground/60">└</span>
+                        <span className="text-[13px] font-medium text-muted-foreground transition group-hover/sub:text-primary-glow">
+                          {pick(lang, s.ko, s.en, s.ja)}
+                        </span>
+                      </Link>
+                    ))}
+                </div>
               ))}
             </div>
           </div>
