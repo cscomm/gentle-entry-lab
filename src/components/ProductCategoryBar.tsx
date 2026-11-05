@@ -17,7 +17,6 @@ const categories: { label: string; en: string; ja: string; slug?: string; href?:
   { label: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末", slug: "round-corner-silica-powder" },
   { label: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末", slug: "angular-silica-powder" },
   { label: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末", slug: "low-radiation-silica-powder" },
-  { label: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末", slug: "lead-free-glass-powder" },
   // Row 3 — Precipitated / Fumed / Gel / Sol / Sand / Powder / Natural Quartz / Applied
   { label: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ", href: "/products/precipitated-silica" },
   { label: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ", href: "/products/fumed-silica" },
