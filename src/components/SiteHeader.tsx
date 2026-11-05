@@ -345,14 +345,27 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
                   {openGroup === item.dropdown && (
                     <div className="pb-2">
                       {menuFor(item.dropdown).map((it) => (
-                        <Link
-                          key={it.to}
-                          to={it.to}
-                          onClick={() => setMobileOpen(false)}
-                          className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-secondary hover:text-primary-glow"
-                        >
-                          {pick(lang, it.ko, it.en, it.ja)}
-                        </Link>
+                        <div key={it.to}>
+                          <Link
+                            to={it.to}
+                            onClick={() => setMobileOpen(false)}
+                            className="block rounded-lg px-4 py-2.5 text-sm text-muted-foreground transition hover:bg-secondary hover:text-primary-glow"
+                          >
+                            {pick(lang, it.ko, it.en, it.ja)}
+                          </Link>
+                          {it.sub
+                            ?.filter((s) => !hiddenSet.has(s.to.split("/")[2]))
+                            .map((s) => (
+                              <Link
+                                key={s.to}
+                                to={s.to}
+                                onClick={() => setMobileOpen(false)}
+                                className="block rounded-lg py-2 pl-8 pr-4 text-[13px] text-muted-foreground/80 transition hover:bg-secondary hover:text-primary-glow"
+                              >
+                                └ {pick(lang, s.ko, s.en, s.ja)}
+                              </Link>
+                            ))}
+                        </div>
                       ))}
                     </div>
                   )}
@@ -406,19 +419,35 @@ const SiteHeader = ({ transparentAtTop = false }: SiteHeaderProps) => {
             </div>
             <div className="grid grid-cols-2 gap-0.5 sm:grid-cols-3 md:grid-cols-4">
               {dropdownItems.map((it) => (
-                <Link
-                  key={it.to}
-                  to={it.to}
-                  onClick={() => setActiveDropdown(null)}
-                  className="group/item flex flex-col rounded-md px-2 py-1.5 transition hover:bg-secondary"
-                >
-                  <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
-                    {pick(lang, it.ko, it.en, it.ja)}
-                  </span>
-                  {lang === "ko" && it.en !== it.ko && (
-                    <span className="mt-0.5 text-[11px] text-muted-foreground">{it.en}</span>
-                  )}
-                </Link>
+                <div key={it.to} className="flex flex-col">
+                  <Link
+                    to={it.to}
+                    onClick={() => setActiveDropdown(null)}
+                    className="group/item flex flex-col rounded-md px-2 py-1.5 transition hover:bg-secondary"
+                  >
+                    <span className="text-sm font-semibold text-foreground transition group-hover/item:text-primary-glow">
+                      {pick(lang, it.ko, it.en, it.ja)}
+                    </span>
+                    {lang === "ko" && it.en !== it.ko && (
+                      <span className="mt-0.5 text-[11px] text-muted-foreground">{it.en}</span>
+                    )}
+                  </Link>
+                  {it.sub
+                    ?.filter((s) => !hiddenSet.has(s.to.split("/")[2]))
+                    .map((s) => (
+                      <Link
+                        key={s.to}
+                        to={s.to}
+                        onClick={() => setActiveDropdown(null)}
+                        className="group/sub flex items-center gap-1 rounded-md py-1 pl-4 pr-2 transition hover:bg-secondary"
+                      >
+                        <span className="text-muted-foreground/60">└</span>
+                        <span className="text-[13px] font-medium text-muted-foreground transition group-hover/sub:text-primary-glow">
+                          {pick(lang, s.ko, s.en, s.ja)}
+                        </span>
+                      </Link>
+                    ))}
+                </div>
               ))}
             </div>
           </div>
