@@ -17,9 +17,9 @@ const navItems = [
   { key: "nav.contact", href: "/#contact" },
 ];
 
-const finderItem = { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" };
-
 type MenuItem = { to: string; ko: string; en: string; ja: string; sub?: MenuItem[] };
+
+const finderItem: MenuItem = { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" };
 
 const productMenu: MenuItem[] = [
   { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
