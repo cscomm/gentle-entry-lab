@@ -44,7 +44,6 @@ import angularImg from "@/assets/angular-silica-powder.jpg";
 import lowRadImg from "@/assets/low-radiation-silica-powder.jpg";
 import surfaceModImg from "@/assets/surface-modified-silica-powder.jpg";
 import sandGranuleImg from "@/assets/silica-sand-granule.jpg";
-import leadFreeGlassImg from "@/assets/lead-free-glass-powder.jpg";
 import silicaSolImg from "@/assets/silica-sol.png";
 import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
