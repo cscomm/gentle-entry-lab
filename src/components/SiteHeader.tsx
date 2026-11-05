@@ -19,7 +19,9 @@ const navItems = [
 
 const finderItem = { to: "/guide/finder/", ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" };
 
-const productMenu = [
+type MenuItem = { to: string; ko: string; en: string; ja: string; sub?: MenuItem[] };
+
+const productMenu: MenuItem[] = [
   { to: "/products/fused-silica/", ko: "용융실리카", en: "Fused Silica", ja: "溶融シリカ" },
   { to: "/products/crystalline-silica/", ko: "쿼츠 · 결정질 실리카", en: "Quartz · Crystalline Silica", ja: "クォーツ・結晶質シリカ" },
   { to: "/products/synthetic-silica/", ko: "화학합성 실리카", en: "Chemically Synthesized Silica", ja: "化学合成シリカ" },
@@ -28,7 +30,6 @@ const productMenu = [
   { to: "/products/round-corner-silica-powder/", ko: "모서리 라운드 실리카 분말", en: "Round Corner Silica Powder", ja: "丸角シリカ粉末" },
   { to: "/products/angular-silica-powder/", ko: "각상 실리카 분말", en: "Angular Silica Powder", ja: "角形シリカ粉末" },
   { to: "/products/low-radiation-silica-powder/", ko: "저방사선 실리카 분말", en: "Low-Alpha Silica Powder", ja: "低α線シリカ粉末" },
-  { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
   { to: "/products/precipitated-silica/", ko: "침전 실리카", en: "Precipitated Silica", ja: "沈降シリカ" },
   { to: "/products/fumed-silica/", ko: "흄드 실리카", en: "Fumed Silica", ja: "ヒュームドシリカ" },
   { to: "/products/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
@@ -36,7 +37,15 @@ const productMenu = [
   { to: "/products/silica-sand/", ko: "규사", en: "Silica Sand", ja: "珪砂" },
   { to: "/products/silica-powder/", ko: "규사분말", en: "Silica Powder", ja: "珪砂粉末" },
   { to: "/products/high-purity-quartz/", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
-  { to: "/products/applied-silica-materials/", ko: "실리카 응용 · 연관 소재", en: "Applied & Related Silica Materials", ja: "シリカ応用・関連素材" },
+  {
+    to: "/products/applied-silica-materials/",
+    ko: "실리카 응용 · 연관 소재",
+    en: "Applied & Related Silica Materials",
+    ja: "シリカ応用・関連素材",
+    sub: [
+      { to: "/products/lead-free-glass-powder/", ko: "무연유리분말", en: "Lead-Free Glass Powder", ja: "無鉛ガラス粉末" },
+    ],
+  },
 ];
 
 const applicationMenu = [
