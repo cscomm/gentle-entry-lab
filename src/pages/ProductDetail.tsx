@@ -33,6 +33,7 @@ import cIndustrial from "@/assets/c-industrial.jpg";
 import aSilicaGel from "@/assets/a-silica-gel.jpg";
 import SpecTable from "@/components/SpecTable";
 import { silicaGelSpecs } from "@/data/silicaGelSpecs";
+import LeadFreeGlassGrades from "@/components/product/LeadFreeGlassGrades";
 import { SyntheticSilicaIntro, SynSphBadges, SynSphSemGallery, SynSphTechProfile } from "@/components/product/SyntheticSilica";
 
 const APP_VISUALS: Record<string, { img?: string; items: string[] }> = {
@@ -557,6 +558,8 @@ const ProductDetail = () => {
           </div>
         </section>
       )}
+
+      {product.slug === "sl-zt" && <LeadFreeGlassGrades />}
 
       {/* SN-SPH-300 — Particle Size & Chemistry Technical Tables */}
       {product.slug === "sl-sph-300" && (
