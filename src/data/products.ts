@@ -3002,7 +3002,7 @@ const appliedSilicaMaterials: ProductDetail = {
     { title: "📄 로트별 성적서 · 안정 공급", desc: "조성·입도·수분 성적서 제공 및 대량 안정 공급 체계", enTitle: "📄 Per-Lot COA · Stable Supply", jaTitle: "📄 ロット別成績書・安定供給", enDesc: "Certificates for composition, PSD and moisture with stable high-volume supply", jaDesc: "組成・粒度・水分の成績書提供と大量安定供給体制" },
   ],
   specs: [
-    { label: "제품 라인업", value: "비정질 세라믹 프리트 · 중공 유리 마이크로스피어(HGM) · 무연유리분말(SN-ZT) — 순차 확대 예정", enValue: "Amorphous Ceramic Frit · Hollow Glass Microspheres (HGM) · Lead-Free Glass Powder (SN-ZT) — lineup expanding", jaValue: "非晶質セラミックフリット · 中空ガラスマイクロスフェア(HGM) · 無鉛ガラス粉末(SN-ZT) — 順次拡大予定", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
+    { label: "제품 라인업", value: "비정질 세라믹 프리트 · 중공 유리 마이크로스피어(HGM) — 순차 확대 예정", enValue: "Amorphous Ceramic Frit · Hollow Glass Microspheres (HGM) — lineup expanding", jaValue: "非晶質セラミックフリット · 中空ガラスマイクロスフェア(HGM) — 順次拡大予定", enLabel: "Product Lineup", jaLabel: "製品ラインアップ" },
     { label: "소재 유형", value: "유리질 프리트 · 세라믹 결합제 · 기능성 충진재", enValue: "Vitreous frits · ceramic binders · functional fillers", jaValue: "ガラス質フリット · セラミック結合剤 · 機能性充填材", enLabel: "Material Types", jaLabel: "素材タイプ" },
     { label: "주요 산업", value: "건축 · 세라믹 · 내화물 · 화학 바인더 · 인조석재", enValue: "Construction · ceramics · refractories · chemical binders · engineered stone", jaValue: "建築 · セラミックス · 耐火物 · 化学バインダー · 人造石材", enLabel: "Key Industries", jaLabel: "主要産業" },
     { label: "제조 공정", value: "고온 용융 → 급냉(수냉/공냉) 유리화 → 분급", enValue: "High-temperature melting → water/air quench vitrification → classification", jaValue: "高温溶融 → 急冷(水冷/空冷)ガラス化 → 分級", enLabel: "Process", jaLabel: "製造工程" },
@@ -3013,7 +3013,6 @@ const appliedSilicaMaterials: ProductDetail = {
   subModels: [
     { code: "FRIT", slug: "amorphous-ceramic-frit", spec: "칼슘-알루미노실리케이트계 무붕소 유리 프리트 · SiO₂ 65.68% · 0.1~0.7 mm", enSpec: "Calcium aluminosilicate boron-free glass frit · SiO₂ 65.68% · 0.1–0.7 mm", jaSpec: "カルシウムアルミノシリケート系無ホウ素ガラスフリット · SiO₂ 65.68% · 0.1~0.7 mm", name: "비정질 세라믹 프리트", enName: "Amorphous Ceramic Frit", jaName: "非晶質セラミックフリット" },
     { code: "HGM", slug: "hollow-glass-microspheres", spec: "붕규산염 중공 유리 마이크로스피어 · SiO₂ ≥72.0% · 진밀도 0.22~0.55 g/cm³ · D50 30~60 µm", enSpec: "Borosilicate hollow glass microspheres · SiO₂ ≥72.0% · true density 0.22–0.55 g/cm³ · D50 30–60 µm", jaSpec: "ホウケイ酸中空ガラスマイクロスフェア · SiO₂ ≥72.0% · 真密度 0.22~0.55 g/cm³ · D50 30~60 µm", name: "중공 유리 마이크로스피어", enName: "Hollow Glass Microspheres", jaName: "中空ガラスマイクロスフェア" },
-    { code: "SN-ZT", slug: "lead-free-glass-powder", spec: "인산염계 무연 저융점 유리분말 · 연화점 350~900℃ 6개 등급 · 유연 1개 등급 별도", enSpec: "Phosphate lead-free low-melting glass powder · 6 grades, softening 350–900 ℃ · 1 leaded grade separate", jaSpec: "リン酸塩系無鉛低融点ガラス粉末 · 軟化点350~900℃ 6グレード · 有鉛1グレード別掲", name: "무연유리분말", enName: "Lead-Free Glass Powder", jaName: "無鉛ガラス粉末" },
   ],
   applications: ceramicFritApps,
 };

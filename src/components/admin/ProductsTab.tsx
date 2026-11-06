@@ -16,6 +16,7 @@ const ORDER: [string, string][] = [
   ["round-corner-silica-powder", "모서리 라운드 실리카 분말"],
   ["angular-silica-powder", "각상 실리카 분말"],
   ["low-radiation-silica-powder", "저방사선 실리카 분말"],
+  ["lead-free-glass-powder", "무연유리분말"],
   ["silica-sand-granule", "실리카 샌드 · 입자"],
   ["precipitated-silica", "침전 실리카"],
   ["fumed-silica", "흄드 실리카"],
