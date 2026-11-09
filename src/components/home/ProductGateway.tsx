@@ -78,46 +78,46 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
         </div>
 
         <p
-          className="mt-12 whitespace-pre-line text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          className="mt-10 whitespace-pre-line text-xl font-bold leading-tight tracking-tight md:text-3xl lg:text-[42px] lg:leading-[1.3]"
           data-reveal="left"
         >
           {pick(
             lang,
-            "자연이 준 실리카로\n산업의 내일을 만듭니다",
-            "Building Industry's Tomorrow\nwith Nature's Silica",
-            "自然がくれたシリカで\n産業の明日をつくります"
+            "데이터와 경험으로\n최적의 공급망을 구축합니다",
+            "Building the Optimal Supply Chain\nwith Data and Experience",
+            "データと経験で\n最適なサプライチェーンを築きます"
           )}
         </p>
 
-        <div className="relative mt-14 md:px-16" data-reveal="zoom">
+        <div className="relative mt-10 md:mx-auto md:w-[72%] md:px-14" data-reveal="zoom">
           <button
             type="button"
             onClick={prev}
             aria-label={pick(lang, "이전 카테고리", "Previous", "前へ")}
-            className="absolute left-0 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
+            className="absolute left-0 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-4 w-4" />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label={pick(lang, "다음 카테고리", "Next", "次へ")}
-            className="absolute right-0 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
+            className="absolute right-0 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
           >
-            <ArrowRight className="h-5 w-5" />
+            <ArrowRight className="h-4 w-4" />
           </button>
 
-          <div className="grid gap-5 px-14 md:grid-cols-3 md:px-0">
+          <div className="grid gap-4 px-14 md:grid-cols-3 md:px-0">
             {visible.map((c, i) => (
               <Link
                 key={`${c.key}-${idx}`}
                 to={c.href}
                 className={`group animate-fade-in overflow-hidden rounded-xl bg-card/90 text-foreground shadow-lg backdrop-blur ${i > 0 ? "hidden md:block" : ""}`}
               >
-                <div className="flex flex-col items-center gap-4 px-5 py-7">
-                  <h3 className="text-center text-lg font-semibold md:text-xl">{pick(lang, c.label, c.en, c.ja)}</h3>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-5 py-2 text-sm transition group-hover:border-primary group-hover:gap-3">
-                    {pick(lang, "자세히 보기", "Learn More", "詳しく見る")} <ArrowRight className="h-4 w-4" />
+                <div className="flex flex-col items-center gap-3 px-4 py-5">
+                  <h3 className="text-center text-base font-semibold md:text-lg">{pick(lang, c.label, c.en, c.ja)}</h3>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-4 py-1.5 text-xs transition group-hover:border-primary group-hover:gap-2.5">
+                    {pick(lang, "자세히 보기", "Learn More", "詳しく見る")} <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
                 <div className="aspect-[16/10] overflow-hidden bg-muted">
@@ -134,7 +134,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
             ))}
           </div>
 
-          <div className="mt-8 flex justify-center gap-1.5">
+          <div className="mt-6 flex justify-center gap-1.5">
             {items.map((c, i) => (
               <button
                 key={c.key}
