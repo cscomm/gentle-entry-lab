@@ -78,7 +78,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
         </div>
 
         <p
-          className="mt-10 whitespace-pre-line text-xl font-bold leading-tight tracking-tight md:text-3xl lg:text-[42px]"
+          className="mt-10 whitespace-pre-line text-xl font-bold leading-tight tracking-tight md:text-3xl lg:text-[42px] lg:leading-[1.3]"
           data-reveal="left"
         >
           {pick(
