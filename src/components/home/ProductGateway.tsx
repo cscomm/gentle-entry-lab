@@ -89,7 +89,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
           )}
         </p>
 
-        <div className="relative mt-14 md:px-16" data-reveal="zoom">
+        <div className="relative mt-10 md:mx-auto md:w-[72%] md:px-14" data-reveal="zoom">
           <button
             type="button"
             onClick={prev}
@@ -107,17 +107,17 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
             <ArrowRight className="h-5 w-5" />
           </button>
 
-          <div className="grid gap-5 px-14 md:grid-cols-3 md:px-0">
+          <div className="grid gap-4 px-14 md:grid-cols-3 md:px-0">
             {visible.map((c, i) => (
               <Link
                 key={`${c.key}-${idx}`}
                 to={c.href}
                 className={`group animate-fade-in overflow-hidden rounded-xl bg-card/90 text-foreground shadow-lg backdrop-blur ${i > 0 ? "hidden md:block" : ""}`}
               >
-                <div className="flex flex-col items-center gap-4 px-5 py-7">
-                  <h3 className="text-center text-lg font-semibold md:text-xl">{pick(lang, c.label, c.en, c.ja)}</h3>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-5 py-2 text-sm transition group-hover:border-primary group-hover:gap-3">
-                    {pick(lang, "자세히 보기", "Learn More", "詳しく見る")} <ArrowRight className="h-4 w-4" />
+                <div className="flex flex-col items-center gap-3 px-4 py-5">
+                  <h3 className="text-center text-base font-semibold md:text-lg">{pick(lang, c.label, c.en, c.ja)}</h3>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-background/70 px-4 py-1.5 text-xs transition group-hover:border-primary group-hover:gap-2.5">
+                    {pick(lang, "자세히 보기", "Learn More", "詳しく見る")} <ArrowRight className="h-3.5 w-3.5" />
                   </span>
                 </div>
                 <div className="aspect-[16/10] overflow-hidden bg-muted">
@@ -134,7 +134,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
             ))}
           </div>
 
-          <div className="mt-8 flex justify-center gap-1.5">
+          <div className="mt-6 flex justify-center gap-1.5">
             {items.map((c, i) => (
               <button
                 key={c.key}
