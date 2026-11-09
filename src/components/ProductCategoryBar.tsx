@@ -5,7 +5,7 @@ import { productCatalog } from "@/data/products";
 import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 
-const categories: { label: string; en: string; ja: string; slug?: string; href?: string }[] = [
+export const categories: { label: string; en: string; ja: string; slug?: string; href?: string }[] = [
   { label: "전체 제품", en: "All Products", ja: "全製品", href: "/products/all" },
   // Row 1 — Fused / Quartz
   { label: "용융실리카", en: "Fused Silica", ja: "溶融シリカ", slug: "fused-silica" },
