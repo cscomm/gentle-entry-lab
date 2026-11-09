@@ -1,4 +1,4 @@
 - [x] Replace homepage product background with uploaded port photo and match Product label to Company typography.
 - [x] Remove product heading divider and prevent background parallax from exposing section edges.
 - [x] Brighten contact boxes and fields without changing their content or dimensions.
-- [ ] Verify desktop and mobile homepage appearance and product controls.
+- [x] Verify desktop and mobile homepage appearance and product controls (asset serving checked on the public domain).
