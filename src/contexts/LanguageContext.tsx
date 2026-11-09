@@ -210,7 +210,7 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
 
   // About page
   "ab.hero.tag": { ko: "ABOUT US", en: "ABOUT US", ja: "ABOUT US" },
-  "ab.hero.title": { ko: "국내 유일의 고품위\n규석 광산을\n직접 개발합니다", en: "We Operate Korea's Only\nHigh-Grade Silica Mine", ja: "韓国唯一の高品位\n石英鉱山を\n直接開発しています" },
+  "ab.hero.title": { ko: "전문성과 신뢰로\n산업의 한계를\n극복합니다", en: "Overcoming Industry Limits\nwith Expertise and Trust", ja: "専門性と信頼で\n産業の限界を\n克服します" },
   "ab.hero.sub": { ko: "원료부터 완제품까지, 차별화된 품질로 산업의 표준을 만듭니다.", en: "From raw material to finished product — we set the industry standard with differentiated quality.", ja: "原料から完成品まで、差別化された品質で産業の標準を創ります。" },
   "ab.back": { ko: "홈으로", en: "Back to Home", ja: "ホームへ" },
   "ab.overview.tag": { ko: "COMPANY OVERVIEW", en: "COMPANY OVERVIEW", ja: "COMPANY OVERVIEW" },
