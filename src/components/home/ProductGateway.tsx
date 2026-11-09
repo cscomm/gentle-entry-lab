@@ -78,14 +78,14 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
         </div>
 
         <p
-          className="mt-12 whitespace-pre-line text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          className="mt-10 whitespace-pre-line text-xl font-bold leading-tight tracking-tight md:text-3xl lg:text-[42px]"
           data-reveal="left"
         >
           {pick(
             lang,
-            "자연이 준 실리카로\n산업의 내일을 만듭니다",
-            "Building Industry's Tomorrow\nwith Nature's Silica",
-            "自然がくれたシリカで\n産業の明日をつくります"
+            "데이터와 경험으로\n최적의 공급망을 구축합니다",
+            "Building the Optimal Supply Chain\nwith Data and Experience",
+            "データと経験で\n最適なサプライチェーンを築きます"
           )}
         </p>
 
