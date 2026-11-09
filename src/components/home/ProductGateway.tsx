@@ -1,0 +1,154 @@
+import { useEffect, useMemo, useState } from "react";
+import { Link } from "@/lib/router";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { categories } from "@/components/ProductCategoryBar";
+import { productCatalog } from "@/data/products";
+import { useHiddenSlugs } from "@/lib/productVisibility";
+import { useLang } from "@/contexts/LanguageContext";
+import { pick } from "@/lib/lang";
+import bg from "@/assets/silica-macro-green.jpg";
+
+interface Props {
+  showAll: boolean;
+  onToggleAll: () => void;
+}
+
+const ProductGateway = ({ showAll, onToggleAll }: Props) => {
+  const { lang } = useLang();
+  const hidden = useHiddenSlugs();
+
+  const items = useMemo(
+    () =>
+      categories
+        .filter((c) => c.label !== "전체 제품")
+        .map((c) => {
+          const slug = c.slug ?? c.href?.split("/").filter(Boolean).pop() ?? "";
+          const p = productCatalog.find((x) => x.slug === slug);
+          return { ...c, key: slug, href: c.href ?? `/products/${slug}/`, image: p?.image };
+        })
+        .filter((c) => !hidden.has(c.key)),
+    [hidden]
+  );
+
+  const [idx, setIdx] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const n = items.length || 1;
+  const next = () => setIdx((i) => (i + 1) % n);
+  const prev = () => setIdx((i) => (i - 1 + n) % n);
+
+  useEffect(() => {
+    if (paused) return;
+    const t = setInterval(next, 4000);
+    return () => clearInterval(t);
+  }, [paused, n]);
+
+  const visible = [0, 1, 2].map((o) => items[(idx + o) % n]).filter(Boolean);
+
+  return (
+    <section
+      id="products"
+      className="relative overflow-hidden bg-foreground py-24 text-background md:py-32"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <img
+        src={bg}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        width={1920}
+        height={1088}
+        data-parallax="0.15"
+        className="absolute inset-0 h-full w-full scale-110 object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/55 to-foreground/30" />
+
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="flex flex-wrap items-center gap-5 border-b border-background/20 pb-4" data-reveal="left">
+          <h2 className="text-xl font-semibold md:text-2xl">SiLiCA Product</h2>
+          <button
+            type="button"
+            onClick={onToggleAll}
+            aria-expanded={showAll}
+            className="inline-flex items-center gap-2 rounded-full border border-background/50 px-5 py-2 text-sm transition hover:bg-background/10"
+          >
+            {pick(lang, "제품 전체보기", "View All Products", "全製品を見る")}
+            {showAll ? <ChevronDown className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
+          </button>
+        </div>
+
+        <p
+          className="mt-12 whitespace-pre-line text-3xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
+          data-reveal="left"
+        >
+          {pick(
+            lang,
+            "자연이 준 실리카로\n산업의 내일을 만듭니다",
+            "Building Industry's Tomorrow\nwith Nature's Silica",
+            "自然がくれたシリカで\n産業の明日をつくります"
+          )}
+        </p>
+
+        <div className="relative mt-14 md:px-16" data-reveal="zoom">
+          <button
+            type="button"
+            onClick={prev}
+            aria-label={pick(lang, "이전 카테고리", "Previous", "前へ")}
+            className="absolute left-0 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            aria-label={pick(lang, "다음 카테고리", "Next", "次へ")}
+            className="absolute right-0 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
+
+          <div className="grid gap-5 px-14 md:grid-cols-3 md:px-0">
+            {visible.map((c, i) => (
+              <Link
+                key={`${c.key}-${idx}`}
+                to={c.href}
+                className={`group animate-fade-in overflow-hidden rounded-xl bg-card/90 text-foreground shadow-lg backdrop-blur ${i > 0 ? "hidden md:block" : ""}`}
+              >
+                <div className="flex flex-col items-center gap-4 px-5 py-7">
+                  <h3 className="text-center text-lg font-semibold md:text-xl">{pick(lang, c.label, c.en, c.ja)}</h3>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-5 py-2 text-sm transition group-hover:border-primary group-hover:gap-3">
+                    {pick(lang, "자세히 보기", "Learn More", "詳しく見る")} <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+                <div className="aspect-[16/10] overflow-hidden bg-muted">
+                  {c.image && (
+                    <img
+                      src={c.image}
+                      alt={pick(lang, c.label, c.en, c.ja)}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex justify-center gap-1.5">
+            {items.map((c, i) => (
+              <button
+                key={c.key}
+                type="button"
+                onClick={() => setIdx(i)}
+                aria-label={pick(lang, c.label, c.en, c.ja)}
+                className={`h-1.5 rounded-full transition-all ${i === idx ? "w-6 bg-background" : "w-1.5 bg-background/40"}`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductGateway;

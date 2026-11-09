@@ -13,6 +13,7 @@ import { productCatalog } from "@/data/products";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ProductCategoryBar from "@/components/ProductCategoryBar";
+import ProductGateway from "@/components/home/ProductGateway";
 import { useLang } from "@/contexts/LanguageContext";
 import kakaoChannel from "@/assets/kakao-channel.png";
 import { supabase } from "@/integrations/supabase/client";
@@ -161,6 +162,13 @@ const Index = () => {
       desc: t("hero2.desc"),
     },
   ];
+  const [showAllProducts, setShowAllProducts] = useState(false);
+  const toggleAllProducts = () => {
+    setShowAllProducts((v) => {
+      if (!v) setTimeout(() => document.getElementById("products-all")?.scrollIntoView({ behavior: "smooth", block: "start" }), 60);
+      return !v;
+    });
+  };
   const [slideIdx, setSlideIdx] = useState(0);
   const nextSlide = () => setSlideIdx((i) => (i + 1) % slides.length);
   const prevSlide = () => setSlideIdx((i) => (i - 1 + slides.length) % slides.length);
@@ -399,8 +407,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Products */}
-      <section id="products" className="bg-secondary/40 py-24 md:py-32">
+      {/* Products gateway */}
+      <ProductGateway showAll={showAllProducts} onToggleAll={toggleAllProducts} />
+
+      {/* All product categories (opened from the gateway) */}
+      {showAllProducts && (
+      <section id="products-all" className="scroll-mt-20 bg-secondary/40 py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-center">
             <span className="inline-block rounded-full border border-border bg-card px-4 py-1.5 text-xs tracking-widest text-muted-foreground">
@@ -444,6 +456,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      )}
 
 
 
