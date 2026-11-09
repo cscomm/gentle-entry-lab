@@ -94,17 +94,17 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
             type="button"
             onClick={prev}
             aria-label={pick(lang, "이전 카테고리", "Previous", "前へ")}
-            className="absolute left-0 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
+            className="absolute left-0 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
           >
-            <ArrowLeft className="h-5 w-5" />
+            <ArrowLeft className="h-4 w-4" />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label={pick(lang, "다음 카테고리", "Next", "次へ")}
-            className="absolute right-0 top-1/2 z-10 inline-flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
+            className="absolute right-0 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
           >
-            <ArrowRight className="h-5 w-5" />
+            <ArrowRight className="h-4 w-4" />
           </button>
 
           <div className="grid gap-4 px-14 md:grid-cols-3 md:px-0">
