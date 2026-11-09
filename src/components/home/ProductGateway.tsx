@@ -6,7 +6,8 @@ import { productCatalog } from "@/data/products";
 import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 import { pick } from "@/lib/lang";
-import bg from "@/assets/silica-macro-green.jpg";
+import bg from "@/assets/logistics-port.png.asset.json";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   showAll: boolean;
@@ -52,21 +53,21 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
       onMouseLeave={() => setPaused(false)}
     >
       <img
-        src={bg}
+        src={bg.url}
         alt=""
         aria-hidden
         loading="lazy"
-        width={1920}
-        height={1088}
-        data-parallax="0.15"
-        className="absolute inset-0 h-full w-full scale-110 object-cover"
+        width={948}
+        height={729}
+        className="absolute inset-0 block h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/55 to-foreground/30" />
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="flex flex-wrap items-center gap-5 border-b border-background/20 pb-4" data-reveal="left">
-          <h2 className="text-xl font-semibold md:text-2xl">SiLiCA Product</h2>
-          <button
+        <div className="flex flex-wrap items-center gap-5 pb-4" data-reveal="left">
+          <h2 className="text-base font-normal md:text-lg">Product</h2>
+          <Button
+            variant="ghost"
             type="button"
             onClick={onToggleAll}
             aria-expanded={showAll}
@@ -74,7 +75,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
           >
             {pick(lang, "제품 전체보기", "View All Products", "全製品を見る")}
             {showAll ? <ChevronDown className="h-4 w-4" /> : <ArrowRight className="h-4 w-4" />}
-          </button>
+          </Button>
         </div>
 
         <p
@@ -90,22 +91,26 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
         </p>
 
         <div className="relative mt-10 md:mx-auto md:w-[72%] md:px-14" data-reveal="zoom">
-          <button
+          <Button
+            variant="ghost"
+            size="icon"
             type="button"
             onClick={prev}
             aria-label={pick(lang, "이전 카테고리", "Previous", "前へ")}
             className="absolute left-0 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
           >
             <ArrowLeft className="h-4 w-4" />
-          </button>
-          <button
+          </Button>
+          <Button
+            variant="ghost"
+            size="icon"
             type="button"
             onClick={next}
             aria-label={pick(lang, "다음 카테고리", "Next", "次へ")}
             className="absolute right-0 top-1/2 z-10 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-background/50 bg-foreground/30 backdrop-blur transition hover:bg-background/15"
           >
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </Button>
 
           <div className="grid gap-4 px-14 md:grid-cols-3 md:px-0">
             {visible.map((c, i) => (
@@ -136,12 +141,13 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
 
           <div className="mt-6 flex justify-center gap-1.5">
             {items.map((c, i) => (
-              <button
+              <Button
+                variant="ghost"
                 key={c.key}
                 type="button"
                 onClick={() => setIdx(i)}
                 aria-label={pick(lang, c.label, c.en, c.ja)}
-                className={`h-1.5 rounded-full transition-all ${i === idx ? "w-6 bg-background" : "w-1.5 bg-background/40"}`}
+                className={`h-1.5 rounded-full p-0 transition-all hover:bg-background/80 ${i === idx ? "w-6 bg-background" : "w-1.5 bg-background/40"}`}
               />
             ))}
           </div>

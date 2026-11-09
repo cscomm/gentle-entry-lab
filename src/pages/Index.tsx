@@ -51,7 +51,7 @@ import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import synSph400Img from "@/assets/syn-sph-sem-400nm-clean.jpg";
 const glassInput =
-  "mt-2 h-11 border-background/25 bg-background/10 text-background shadow-sm backdrop-blur-md placeholder:text-background/65 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
+  "mt-2 h-11 border-background/40 bg-background/20 text-background shadow-sm backdrop-blur-md placeholder:text-background/80 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
@@ -496,7 +496,7 @@ const Index = () => {
               </Prose>
 
               {/* Compact office card */}
-              <aside className="mt-8 rounded-2xl border border-background/25 bg-background/10 p-5 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150">
+              <aside className="mt-8 rounded-2xl border border-background/40 bg-background/25 p-5 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150">
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-semibold tracking-widest text-primary-glow">sales office</span>
                   <span className="h-px flex-1 bg-background/20" />
@@ -533,7 +533,7 @@ const Index = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="relative overflow-hidden rounded-3xl border border-background/25 bg-background/10 p-8 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150 md:p-10 lg:col-span-7"
+            className="relative overflow-hidden rounded-3xl border border-background/40 bg-background/25 p-8 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150 md:p-10 lg:col-span-7"
           >
             <div className="relative">
               <div className="flex items-center gap-3">
