@@ -24,7 +24,7 @@ import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
-import contactLabBg from "@/assets/contact-lab-bg.jpg";
+import contactLabBg from "@/assets/contact-lab-bright.jpg";
 import bowlGrains from "@/assets/silica-bowl-grains.webp";
 import bowlSand from "@/assets/silica-bowl-sand.webp";
 import bowlPowderBottom from "@/assets/silica-bowl-powder-bottom.webp";
@@ -478,8 +478,8 @@ const Index = () => {
             data-parallax="0.06"
             className="absolute -inset-y-[8%] inset-x-0 h-[116%] w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-background/90" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/85" />
+          <div className="absolute inset-0 bg-white/25" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/55 via-white/20 to-white/40" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6">
