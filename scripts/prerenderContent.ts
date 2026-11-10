@@ -7,6 +7,7 @@ import { readFileSync } from "fs";
 import { resolve } from "path";
 import { productCatalog } from "../src/lib/mcp/catalog.generated";
 import { faqItems, FAQ_INTRO } from "../src/data/faq";
+import { productImageUrls } from "./productImages";
 
 export type LangCode = "ko" | "en" | "ja";
 export type CatalogProduct = (typeof productCatalog)[number];
@@ -211,6 +212,8 @@ export const breadcrumbHtml = (path: string, lang: LangCode, current: string) =>
 /** Full localized body for a product or product-category page. */
 export function productBody(p: CatalogProduct, lang: LangCode): string {
   const out: string[] = [];
+  const name = productName(p, lang);
+  out.push(...productImageUrls(p).map((src) => `<figure><img src="${esc(src)}" alt="${esc(name)}" title="${esc(name)}" loading="lazy" width="800" /><figcaption>${esc(name)}</figcaption></figure>`));
   const tagline = loc(lang, p.tagline, p.enTagline, p.jaTagline);
   if (tagline) out.push(`<p><strong>${esc(tagline)}</strong></p>`);
   const desc = loc(lang, p.description, p.enDescription, p.jaDescription);
@@ -276,14 +279,15 @@ const LISTINGS: Record<string, (p: CatalogProduct) => boolean> = {
 };
 
 export function listingHtml(path: string, lang: LangCode): string {
-  const filter = LISTINGS[path];
+  const filter = path === "/" ? (p: CatalogProduct) => p.isCategoryIndex : LISTINGS[path];
   if (!filter) return "";
   const items = [...catalogBySlug.values()].filter((p) => filter(p) && !isHidden(p) && `/products/${p.slug}` !== path);
   if (!items.length) return "";
   return `<h2>${esc(label("related", lang))}</h2><ul>${items
     .map((p) => {
       const tag = loc(lang, p.tagline, p.enTagline, p.jaTagline);
-      return `<li><a href="${href(lang, `/products/${p.slug}`)}">${esc(productName(p, lang))}</a>${tag ? ` — ${esc(tag)}` : ""}</li>`;
+      const name = esc(productName(p, lang));
+      return `<li><a href="${href(lang, `/products/${p.slug}`)}"><img src="${esc(productImageUrls(p)[0])}" alt="${name}" title="${name}" loading="lazy" width="240" />${name}</a>${tag ? ` — ${esc(tag)}` : ""}</li>`;
     })
     .join("")}</ul>`;
 }

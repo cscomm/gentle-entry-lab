@@ -32,9 +32,15 @@ const Body = z.object({
 // deno-lint-ignore no-explicit-any
 type Sb = any;
 
-/** How many tries this member has used this month (failed answers are not counted). Visitors get none. */
-async function getQuota(sb: Sb, member: Member | null): Promise<Quota> {
-  if (!member) return buildQuota("guest", 0);
+/** Guest trials are lifetime-limited by both device and a salted network hash. */
+async function getQuota(sb: Sb, member: Member | null, deviceId?: string, ipHash?: string): Promise<Quota> {
+  if (!member) {
+    const { count, error } = await sb.from("product_finder_logs")
+      .select("id", { count: "exact", head: true }).is("member_id", null)
+      .neq("status", "error").or(`guest_device_id.eq.${deviceId},guest_ip_hash.eq.${ipHash}`);
+    if (error) throw error;
+    return buildQuota("guest", count ?? 0);
+  }
   if (isUnlimitedMember(member.email, member.emailConfirmed)) return buildQuota("member", 0, true);
   const { count, error } = await sb
     .from("product_finder_logs")
@@ -93,7 +99,7 @@ Deno.serve(async (req) => {
     return json({ error: "invalid json" }, 400);
   }
   if (!parsed.success) return json({ error: "invalid input", details: parsed.error.flatten().fieldErrors }, 400);
-  const { mode, query, lang, memberToken } = parsed.data;
+  const { mode, query, lang, memberToken, deviceId } = parsed.data;
 
   // Signed-in members send a token from the external sign-up server; a token
   // that no longer verifies means the session expired.
@@ -103,18 +109,23 @@ Deno.serve(async (req) => {
     if (!member) return json({ error: "login_required" }, 401);
   }
 
-  const sb = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+  const serviceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+  const serviceUrl = Deno.env.get("SUPABASE_URL");
+  if (!serviceKey || !serviceUrl) return json({ error: "server error" }, 500);
+  if (!member && !deviceId) return json({ error: "device_required" }, 400);
+  const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || req.headers.get("cf-connecting-ip") || "unknown";
+  const digest = await crypto.subtle.digest("SHA-256", enc.encode(`${serviceKey}:finder:${ip}`));
+  const ipHash = Array.from(new Uint8Array(digest), (b) => b.toString(16).padStart(2, "0")).join("");
+  const sb = createClient(serviceUrl, serviceKey);
 
   let quota: Quota;
   try {
-    quota = await getQuota(sb, member);
+    quota = await getQuota(sb, member, deviceId, ipHash);
   } catch (e) {
     console.error("finder quota check failed", e);
     return json({ error: "server error" }, 500);
   }
   if (mode === "quota") return json(quota);
-  // The finder is for members only.
-  if (!member) return json({ error: "login_required", ...quota }, 401);
   if (query.length < 4) return json({ error: "invalid input" }, 400);
   if (quota.remaining <= 0) return json({ error: "quota_exceeded", ...quota }, 429);
 
@@ -126,6 +137,15 @@ Deno.serve(async (req) => {
   // Log every request so the admin panel can review what visitors asked.
   let logId: string | null = null;
   try {
+    if (!member) {
+      const { data, error } = await sb.rpc("reserve_guest_finder_trial", {
+        p_device_id: deviceId, p_ip_hash: ipHash, p_query: query, p_lang: lang,
+        p_user_agent: req.headers.get("user-agent") ?? "",
+      });
+      if (error) throw error;
+      if (!data) return json({ error: "quota_exceeded", ...buildQuota("guest", 1) }, 429);
+      logId = data;
+    } else {
     const { data } = await sb
       .from("product_finder_logs")
       .insert({
@@ -142,8 +162,10 @@ Deno.serve(async (req) => {
       .select("id")
       .single();
     logId = data?.id ?? null;
+    }
   } catch (e) {
     console.error("finder log insert failed", e);
+    return json({ error: "server error" }, 500);
   }
   const finishLog = async (answer: string, status: string, errorMessage: string | null) => {
     if (!logId) return;

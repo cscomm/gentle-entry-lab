@@ -297,7 +297,7 @@ const ProductDetail = () => {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <img src={product.image} alt={silicaAlt(product.name)} className="h-[460px] w-full object-cover md:h-[560px]" />
+        <img src={product.image} alt={pick(lang, product.name, product.enName, product.jaName)} title={pick(lang, product.name, product.enName, product.jaName)} className="h-[460px] w-full object-cover md:h-[560px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/80" />
         <div className="absolute inset-0 mx-auto flex max-w-7xl flex-col justify-end px-6 pb-16 text-white">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs tracking-widest text-white/90 backdrop-blur">
@@ -329,7 +329,7 @@ const ProductDetail = () => {
 
             {product.detailImage && (
               <div className="mt-8 overflow-hidden rounded-2xl border border-border shadow-sm">
-                <img src={product.detailImage} alt={silicaAlt(`${product.name} 상세`)} className="h-full w-full object-cover" loading="lazy" />
+                <img src={product.detailImage} alt={`${pick(lang, product.name, product.enName, product.jaName)} ${pick(lang, "상세 사진", "detail photo", "詳細写真")}`} className="h-full w-full object-cover" loading="lazy" />
               </div>
             )}
 
