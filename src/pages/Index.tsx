@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Prose from "@/components/Prose";
 import { pick } from "@/lib/lang";
 import { silicaAlt } from "@/lib/silicaAlt";
+import { CONTACT_MESSAGE_LIMIT, limitContactMessage } from "@/lib/contactLimits";
 import { useHiddenSlugs } from "@/lib/productVisibility";
 import { Link, useLocation } from "@/lib/router";
 import { Button } from "@/components/ui/button";
@@ -51,7 +52,7 @@ import ceramicFritImg from "@/assets/amorphous-ceramic-frit.jpg";
 import crystallineSilicaImg from "@/assets/crystalline-silica.jpg";
 import synSph400Img from "@/assets/syn-sph-sem-400nm-clean.jpg";
 const glassInput =
-  "mt-2 h-11 border-background/40 bg-background/20 text-background shadow-sm backdrop-blur-md placeholder:text-background/80 focus-visible:border-primary-glow focus-visible:ring-primary-glow/40";
+  "mt-2 h-11 border-border bg-card/90 text-foreground shadow-sm backdrop-blur-md placeholder:text-muted-foreground focus-visible:border-primary focus-visible:ring-primary/40";
 
 const navItems = [
   { en: "Home", ko: "홈", href: "#home" },
@@ -373,10 +374,10 @@ const Index = () => {
       <section id="about" className="relative overflow-hidden bg-background">
         {/* Silica bowls cluster, bleeding off the right edge */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-full md:w-[62%]">
-          <img src={bowlGrains} alt="" loading="lazy" data-parallax="0.18" className="absolute -right-[6%] -top-[8%] w-[46%] min-w-[220px] max-w-[480px] rounded-full shadow-2xl md:-right-[4%] md:w-[44%]" />
-          <img src={bowlSand} alt="" loading="lazy" data-parallax="0.08" className="absolute -right-[18%] top-[38%] w-[40%] min-w-[200px] max-w-[420px] rounded-full shadow-2xl md:-right-[10%] md:w-[38%]" />
-          <img src={bowlPowderBottom} alt="" loading="lazy" data-parallax="-0.1" className="absolute -bottom-[14%] right-[30%] w-[50%] min-w-[240px] max-w-[540px] rounded-full shadow-2xl md:right-[26%] md:w-[52%]" />
-          <img src={bowlPowderLeft} alt="" loading="lazy" data-parallax="0.25" className="absolute right-[48%] top-[10%] hidden w-[24%] max-w-[260px] rounded-full shadow-xl md:block" />
+          <img src={bowlGrains} alt={silicaAlt("규석 과립")} loading="lazy" data-parallax="0.18" className="absolute -right-[6%] -top-[8%] w-[46%] min-w-[220px] max-w-[480px] rounded-full shadow-2xl md:-right-[4%] md:w-[44%]" />
+          <img src={bowlSand} alt={silicaAlt("규사")} loading="lazy" data-parallax="0.08" className="absolute -right-[18%] top-[38%] w-[40%] min-w-[200px] max-w-[420px] rounded-full shadow-2xl md:-right-[10%] md:w-[38%]" />
+          <img src={bowlPowderBottom} alt={silicaAlt("규사분말")} loading="lazy" data-parallax="-0.1" className="absolute -bottom-[14%] right-[30%] w-[50%] min-w-[240px] max-w-[540px] rounded-full shadow-2xl md:right-[26%] md:w-[52%]" />
+          <img src={bowlPowderLeft} alt={silicaAlt("실리카 미분말")} loading="lazy" data-parallax="0.25" className="absolute right-[48%] top-[10%] hidden w-[24%] max-w-[260px] rounded-full shadow-xl md:block" />
         </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background via-background/70 to-transparent md:via-background/40" aria-hidden="true" />
 
@@ -437,7 +438,7 @@ const Index = () => {
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={p.img}
-                    alt={silicaAlt(p.title)}
+                    alt={silicaAlt(pick(lang, p.title, p.enTitle, p.jaTitle))}
                     loading="lazy"
                     className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                   />
@@ -464,47 +465,47 @@ const Index = () => {
       {/* Contact — dimmed lab photo with frosted-glass boxes */}
       <section
         id="contact"
-        className="relative overflow-hidden scroll-mt-24 bg-foreground py-24 text-background md:py-32"
+        className="relative overflow-hidden scroll-mt-24 contact-surface bg-background py-24 text-foreground md:py-32"
       >
         {/* background photo */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <img
             src={contactLabBg}
-            alt=""
+            alt={pick(lang, "실리카 소재 연구 실험실", "Silica materials research laboratory", "シリカ素材研究室")}
             loading="lazy"
             width={1920}
             height={1088}
             data-parallax="0.06"
             className="absolute -inset-y-[8%] inset-x-0 h-[116%] w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-foreground/45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-foreground/35 via-transparent to-foreground/15" />
+          <div className="absolute inset-0 bg-background/90" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/85" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6">
           <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
             {/* Left: Slogan + small office card */}
             <div className="lg:col-span-5">
-              <span className="inline-flex items-center gap-2 rounded-full border border-background/25 bg-background/10 px-4 py-1.5 text-xs tracking-widest text-background/80 shadow-sm backdrop-blur-md">
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-1.5 text-xs tracking-widest text-muted-foreground shadow-sm backdrop-blur-md">
                 <MessageSquare className="h-3.5 w-3.5" /> {t("contact.tag")}
               </span>
-              <h2 className="mt-6 whitespace-pre-line text-3xl font-bold leading-tight text-background md:text-4xl">
+              <h2 className="mt-6 whitespace-pre-line text-3xl font-bold leading-tight text-foreground md:text-4xl">
                 {t("contact.title")}
               </h2>
-              <Prose className="mt-5 text-sm text-background/75">
+              <Prose className="mt-5 text-sm text-muted-foreground">
                 {t("contact.desc")}
               </Prose>
 
               {/* Compact office card */}
-              <aside className="mt-8 rounded-2xl border border-background/40 bg-background/25 p-5 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150">
+              <aside className="mt-8 rounded-2xl border border-border bg-card/85 p-5 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150">
                 <div className="flex items-center gap-2">
-                  <span className="text-[10px] font-semibold tracking-widest text-primary-glow">sales office</span>
-                  <span className="h-px flex-1 bg-background/20" />
+                  <span className="text-[10px] font-semibold tracking-widest text-primary">sales office</span>
+                  <span className="h-px flex-1 bg-border" />
                 </div>
                 <ul className="mt-4 space-y-2.5 text-sm">
                   <li className="flex items-start justify-between gap-3">
-                    <span className="flex items-start gap-2.5 text-background">
-                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-glow" />
+                    <span className="flex items-start gap-2.5 text-foreground">
+                      <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                       <span>{t("footer.address")}</span>
                     </span>
                     <a
@@ -522,8 +523,8 @@ const Index = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-background hover:text-primary-glow">
-                      <Mail className="h-4 w-4 shrink-0 text-primary-glow" />
+                    <a href="mailto:info@silica.co.kr" className="flex items-center gap-2.5 text-foreground hover:text-primary">
+                      <Mail className="h-4 w-4 shrink-0 text-primary" />
                       info@silica.co.kr
                     </a>
                   </li>
@@ -533,20 +534,20 @@ const Index = () => {
 
           <form
             onSubmit={handleSubmit}
-            className="relative overflow-hidden rounded-3xl border border-background/40 bg-background/25 p-8 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150 md:p-10 lg:col-span-7"
+            className="relative overflow-hidden rounded-3xl border border-border bg-card/85 p-8 shadow-[var(--shadow-glass)] backdrop-blur-xl backdrop-saturate-150 md:p-10 lg:col-span-7"
           >
             <div className="relative">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
                   <Send className="h-4 w-4" />
                 </div>
-                <h3 className="text-xl font-semibold text-background">{t("contact.form")}</h3>
+                <h3 className="text-xl font-semibold text-foreground">{t("contact.form")}</h3>
               </div>
 
               <div className="mt-8 grid gap-5">
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="contact-name" className="text-xs font-medium uppercase tracking-wider text-background/70">{t("form.name")}</label>
+                    <label htmlFor="contact-name" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("form.name")}</label>
                     <Input
                       id="contact-name"
                       name="이름"
@@ -557,7 +558,7 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="contact-phone" className="text-xs font-medium uppercase tracking-wider text-background/70">{t("form.phone")}</label>
+                    <label htmlFor="contact-phone" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("form.phone")}</label>
                     <Input
                       id="contact-phone"
                       name="연락처"
@@ -571,7 +572,7 @@ const Index = () => {
                 </div>
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div>
-                    <label htmlFor="contact-email" className="text-xs font-medium uppercase tracking-wider text-background/70">{t("form.email")}</label>
+                    <label htmlFor="contact-email" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("form.email")}</label>
                     <Input
                       id="contact-email"
                       name="이메일"
@@ -583,7 +584,7 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="contact-company" className="text-xs font-medium uppercase tracking-wider text-background/70">{t("form.company")}</label>
+                    <label htmlFor="contact-company" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("form.company")}</label>
                     <Input
                       id="contact-company"
                       name="회사명"
@@ -595,19 +596,20 @@ const Index = () => {
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="contact-message" className="text-xs font-medium uppercase tracking-wider text-background/70">{t("form.message")}</label>
+                  <label htmlFor="contact-message" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">{t("form.message")}</label>
                   <Textarea
                     id="contact-message"
                     name="문의내용"
+                    maxLength={CONTACT_MESSAGE_LIMIT}
                     value={form.message}
                     onChange={(e) =>
-                      setForm({ ...form, message: e.target.value.slice(0, 500) })
+                      setForm({ ...form, message: limitContactMessage(e.target.value) })
                     }
                     className={`${glassInput} h-auto min-h-32`}
                     placeholder="문의하실 내용을 입력해 주세요. 용도나 최종 제품 정보를 구체적으로 알려주시면 더 정확하고 빠른 상담이 가능합니다."
                   />
-                  <div className="mt-1 text-right text-xs text-background/60">
-                    {form.message.length}/500자
+                  <div className="mt-1 text-right text-xs text-muted-foreground">
+                    {form.message.length}/{CONTACT_MESSAGE_LIMIT}자
                   </div>
                 </div>
 
