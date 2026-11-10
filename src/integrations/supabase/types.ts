@@ -1032,6 +1032,16 @@ export type Database = {
           read_ct: number
         }[]
       }
+      reserve_guest_finder_trial: {
+        Args: {
+          p_device_id: string
+          p_ip_hash: string
+          p_lang: string
+          p_query: string
+          p_user_agent: string
+        }
+        Returns: string
+      }
       verify_post_password: {
         Args: { _password: string; _post_id: string }
         Returns: boolean
