@@ -54,8 +54,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
     >
       <img
         src={bg.url}
-        alt=""
-        aria-hidden
+        alt={pick(lang, "실리카 제품 공급을 위한 항만 물류", "Port logistics for silica product supply", "シリカ製品供給の港湾物流")}
         loading="lazy"
         width={948}
         height={729}

@@ -20,6 +20,15 @@ const ERR = "[[ERROR]]";
 type Rec = { slug: string; reason: string };
 type Quota = { kind: "guest" | "member"; unlimited: boolean; limit: number; used: number; remaining: number };
 
+const getDeviceId = () => {
+  const key = "silica-finder-device";
+  const stored = localStorage.getItem(key);
+  if (stored && /^[0-9a-f-]{36}$/i.test(stored)) return stored;
+  const id = crypto.randomUUID();
+  localStorage.setItem(key, id);
+  return id;
+};
+
 const TXT: Record<string, Record<Lang, string>> = {
   lead: {
     ko: "사용하실 용도, 공정, 원하는 효과를 자유롭게 적어주세요. AI가 소재 전문가 관점에서 적합한 소재와 핵심 사양을 먼저 제안하고, 사이트에서 가장 근접한 제품을 함께 추천해 드립니다.",
@@ -102,6 +111,7 @@ const TXT: Record<string, Record<Lang, string>> = {
     en: "Remaining this month: {n} / {limit}",
     ja: "今月の残り利用回数：{n} / {limit}回",
   },
+  guestNote: { ko: "비회원 무료 이용: {n} / 1회", en: "Guest trial: {n} / 1", ja: "会員登録なしのお試し：{n} / 1回" },
   unlimitedNote: { ko: "무제한 이용 계정입니다", en: "Unlimited account", ja: "無制限アカウントです" },
   memberUsedTitle: {
     ko: "이번 달 이용 횟수를 모두 사용하셨습니다",
@@ -212,12 +222,11 @@ const ProductFinder = () => {
 
   const loadQuota = useCallback(async () => {
     const memberToken = (await getToken()) ?? undefined;
-    if (!memberToken) return; // visitors see the sign-up notice instead
     try {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
-        body: JSON.stringify({ mode: "quota", memberToken }),
+        body: JSON.stringify({ mode: "quota", memberToken, deviceId: getDeviceId() }),
       });
       if (res.ok) setQuota(await res.json());
     } catch {
@@ -254,7 +263,7 @@ const ProductFinder = () => {
       setStatus("error");
       return;
     }
-    if (!session || needsProfile || outOfTries) return;
+    if (needsProfile || outOfTries || memberLoading) return;
     const memberToken = (await getToken()) ?? undefined;
     abortRef.current?.abort();
     const ac = new AbortController();
@@ -268,7 +277,7 @@ const ProductFinder = () => {
       const res = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", apikey: ANON, Authorization: `Bearer ${ANON}` },
-        body: JSON.stringify({ query: q, lang, memberToken }),
+        body: JSON.stringify({ query: q, lang, memberToken, deviceId: getDeviceId() }),
         signal: ac.signal,
       });
       if (!res.ok || !res.body) {
@@ -367,7 +376,7 @@ const ProductFinder = () => {
             </div>
           </div>
 
-          {!memberLoading && !session ? (
+          {!memberLoading && !session && outOfTries && !loading ? (
             <MemberGate messageKey="gateFinderUsed" className="mt-6" />
           ) : needsProfile ? (
             <MemberGate messageKey="gateFinder" className="mt-6" />
@@ -409,7 +418,7 @@ const ProductFinder = () => {
                     {tx("unlimitedNote")}
                   </>
                 ) : (
-                  tx("memberNote").replace("{n}", String(quota.remaining)).replace("{limit}", String(quota.limit))
+                  tx(quota.kind === "guest" ? "guestNote" : "memberNote").replace("{n}", String(quota.remaining)).replace("{limit}", String(quota.limit))
                 )}
               </p>
             )}

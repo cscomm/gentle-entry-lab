@@ -120,9 +120,9 @@ export const MT = {
     ja: "AI製品提案はログイン後にご利用いただけます。会員登録は無料です。",
   },
   gateFinderUsed: {
-    ko: "무료회원가입후 사용하실수 있습니다.",
-    en: "Sign up for free to use it.",
-    ja: "無料会員登録後にご利用いただけます。",
+    ko: "비회원 무료 이용 1회를 사용하셨습니다. 무료회원가입 후 매월 10회 이용하실 수 있습니다.",
+    en: "You've used your guest trial. Sign up for free for 10 tries each month.",
+    ja: "会員登録なしのお試し1回を使用しました。無料会員登録後は毎月10回ご利用いただけます。",
   },
   gateBoard: {
     ko: "게시판 글쓰기는 로그인 후 이용하실 수 있습니다.",

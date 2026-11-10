@@ -25,6 +25,7 @@ import {
   label,
 } from "./prerenderContent";
 import { legacyForwardPaths } from "../src/lib/legacyRedirects";
+import { copyProductImages, productImageUrls } from "./productImages";
 
 // Primary domain: silica.co.kr 302-redirects to www, so every canonical/hreflang/sitemap URL uses www.
 const BASE_URL = "https://www.silica.co.kr";
@@ -1315,6 +1316,8 @@ function generateSitemap(list: Route[]): string {
         ),
         `    <xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${langPath("ko", r.path)}" />`,
       ].join("\n");
+      const product = r.path.startsWith("/products/") ? catalogBySlug.get(r.path.slice(10)) : undefined;
+      const images = product ? productImageUrls(product).map((src) => `    <image:image><image:loc>${escHtml(src.startsWith("https://") ? src : `${BASE_URL}${src}`)}</image:loc></image:image>`).join("\n") : "";
       blocks.push(
         [
           `  <url>`,
@@ -1322,6 +1325,7 @@ function generateSitemap(list: Route[]): string {
           `    <changefreq>${changefreq}</changefreq>`,
           `    <priority>${priority}</priority>`,
           alternates,
+          images,
           `  </url>`,
         ].join("\n"),
       );
@@ -1329,7 +1333,7 @@ function generateSitemap(list: Route[]): string {
   }
   return [
     `<?xml version="1.0" encoding="UTF-8"?>`,
-    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">`,
+    `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
     ...blocks,
     `</urlset>`,
     ``,
@@ -1376,6 +1380,7 @@ async function main() {
   const hidden = await loadHiddenSlugs();
   setHiddenSlugs(hidden);
   const live = routes.filter((r) => !isRouteHidden(r));
+  copyProductImages([...catalogBySlug.values()].filter((p) => !isHiddenSlug(p.slug)), DIST);
 
   const template = readFileSync(SOURCE, "utf-8");
   let count = 0;

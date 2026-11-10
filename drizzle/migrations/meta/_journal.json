@@ -50,6 +50,13 @@
       "when": 1793266891063,
       "tag": "0006_product_admin_notes",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1794282491923,
+      "tag": "0007_reserve_guest_finder_trial",
+      "breakpoints": true
     }
   ]
 }
