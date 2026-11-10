@@ -22,6 +22,8 @@ All colors MUST be HSL.
     --primary-glow: 150 65% 50%;
 
     --hero-overlay: 150 30% 98%;
+    --contact-surface: 48 45% 96%;
+    --contact-ink: 0 0% 12%;
 
     /* Kakao brand button */
     --kakao: 54 100% 50%;
@@ -104,6 +106,17 @@ All colors MUST be HSL.
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+}
+
+/* A light, fixed-tone inquiry surface, including when the site theme changes. */
+.contact-surface {
+  --background: var(--contact-surface);
+  --foreground: var(--contact-ink);
+  --card: 48 35% 99%;
+  --border: 48 12% 76%;
+  --muted-foreground: 0 0% 35%;
+  background-color: hsl(var(--contact-surface));
+  color: hsl(var(--contact-ink));
 }
 
 @layer base {
