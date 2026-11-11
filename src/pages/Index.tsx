@@ -25,7 +25,7 @@ import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
 import facility from "@/assets/facility.jpg";
-import contactLabBg from "@/assets/contact-lab-bright.jpg";
+import portBg from "@/assets/logistics-port.png.asset.json";
 import bowlGrains from "@/assets/silica-bowl-grains.webp";
 import bowlSand from "@/assets/silica-bowl-sand.webp";
 import bowlPowderBottom from "@/assets/silica-bowl-powder-bottom.webp";
@@ -478,16 +478,16 @@ const Index = () => {
         {/* background photo */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <img
-            src={contactLabBg}
-            alt={pick(lang, "실리카 소재 연구 실험실", "Silica materials research laboratory", "シリカ素材研究室")}
+            src={portBg.url}
+            alt={pick(lang, "실리카 제품 공급을 위한 항만 물류", "Port logistics for silica product supply", "シリカ製品供給の港湾物流")}
             loading="lazy"
-            width={1920}
-            height={1088}
+            width={948}
+            height={729}
             data-parallax="0.06"
             className="absolute -inset-y-[8%] inset-x-0 h-[116%] w-full object-cover object-[70%_center]"
           />
-          <div className="absolute inset-0 bg-white/25" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/55 via-white/20 to-white/40" />
+          <div className="absolute inset-0 bg-white/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/45 via-white/15 to-white/35" />
         </div>
 
         <div className="relative mx-auto max-w-6xl px-6">
