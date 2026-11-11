@@ -20,6 +20,7 @@ import kakaoChannel from "@/assets/kakao-channel.png";
 import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
+import heroGlobe from "@/assets/hero-globe.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
@@ -148,6 +149,13 @@ const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const slides = [
+    {
+      img: heroGlobe,
+      alt: "자연과 산업이 어우러진 초록 지구본",
+      title: t("hero0.title"),
+      sub: t("hero0.sub"),
+      desc: t("hero0.desc"),
+    },
     {
       img: heroImage,
       alt: "High-purity quartz crystal",
@@ -322,7 +330,7 @@ const Index = () => {
         </button>
 
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 text-center text-white">
-          <h1 key={`t-${slideIdx}`} className="text-5xl font-bold tracking-tight md:text-7xl drop-shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h1 key={`t-${slideIdx}`} className="whitespace-pre-line text-5xl font-bold tracking-tight md:text-7xl drop-shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
             {slides[slideIdx].title}
           </h1>
           <Prose key={`s-${slideIdx}`} className="mt-6 text-2xl font-light text-white/95 md:text-3xl drop-shadow animate-in fade-in duration-700">
