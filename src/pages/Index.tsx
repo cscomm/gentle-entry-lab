@@ -150,6 +150,13 @@ const Index = () => {
 
   const slides = [
     {
+      img: heroGlobe.url,
+      alt: "자연과 산업이 어우러진 초록 지구본",
+      title: t("hero0.title"),
+      sub: t("hero0.sub"),
+      desc: t("hero0.desc"),
+    },
+    {
       img: heroImage,
       alt: "High-purity quartz crystal",
       title: t("hero1.title"),
