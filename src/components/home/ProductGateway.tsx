@@ -6,7 +6,7 @@ import { productCatalog } from "@/data/products";
 import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 import { pick } from "@/lib/lang";
-import bg from "@/assets/logistics-port.png.asset.json";
+import bg from "@/assets/product-gateway-circuit-tree.jpg.asset.json";
 import { Button } from "@/components/ui/button";
 
 interface Props {
@@ -54,10 +54,15 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
     >
       <img
         src={bg.url}
-        alt={pick(lang, "실리카 제품 공급을 위한 항만 물류", "Port logistics for silica product supply", "シリカ製品供給の港湾物流")}
+        alt={pick(
+          lang,
+          "녹색빛 회로 위에 핀 실리카 소재",
+          "Silica materials on a glowing green circuit",
+          "緑色に光る回路の上のシリカ素材"
+        )}
         loading="lazy"
-        width={948}
-        height={729}
+        width={1803}
+        height={1250}
         className="absolute inset-0 block h-full w-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-foreground/85 via-foreground/55 to-foreground/30" />
