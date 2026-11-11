@@ -20,7 +20,7 @@ import kakaoChannel from "@/assets/kakao-channel.png";
 import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
-import heroGlobe from "@/assets/hero-globe.jpg.asset.json";
+import heroGlobe from "@/assets/hero-globe.jpg";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
@@ -150,7 +150,7 @@ const Index = () => {
 
   const slides = [
     {
-      img: heroGlobe.url,
+      img: heroGlobe,
       alt: "자연과 산업이 어우러진 초록 지구본",
       title: t("hero0.title"),
       sub: t("hero0.sub"),
