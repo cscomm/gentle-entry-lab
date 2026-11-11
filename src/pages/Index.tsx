@@ -20,6 +20,7 @@ import kakaoChannel from "@/assets/kakao-channel.png";
 import { supabase } from "@/integrations/supabase/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
+import heroGlobe from "@/assets/hero-globe.jpg.asset.json";
 import heroNanoImage from "@/assets/hero-nanopowder.jpg";
 import silicaSandImg from "@/assets/silica-sand.jpg";
 import silicaPowderImg from "@/assets/silica-powder.jpg";
