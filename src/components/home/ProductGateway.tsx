@@ -6,7 +6,7 @@ import { productCatalog } from "@/data/products";
 import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 import { pick } from "@/lib/lang";
-import bg from "@/assets/product-gateway-circuit-tree.jpg.asset.json";
+import bg from "@/assets/product-gateway-circuit-tree.jpg";
 import silicaGelFallback from "@/assets/sl-chr-01.jpg";
 import { Button } from "@/components/ui/button";
 
