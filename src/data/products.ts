@@ -2057,7 +2057,7 @@ productCatalog.push({
     "SL Silica Sol is a milky-white translucent colloidal solution in which 10–12 nm ultrafine amorphous SiO₂ nanoparticles are uniformly dispersed in water, stabilized with an ammonia (NH₃) system as a New-Type product line. Its very large specific surface area (~200–260 m²/g) and excellent colloidal stability make it suitable for investment-casting shell binders, refractory and ceramic coatings, catalyst supports, paper and textile surface modification, semiconductor CMP slurry feedstock and ceramic-coated separators for lithium-ion batteries.\n\nSiLiCA offers two standard grades — SN-JA25 (SiO₂ 25–26%) and SN-JA30 (SiO₂ 30–31%) — with customizable concentration, particle size and stabilizer system (NH₃/Na) to match customer slurry, binder and pH requirements.",
   jaDescription:
     "SLシリカゾルは、水中に10~12 nmの超微粒非晶質SiO₂ナノ粒子を均一に分散させた乳白色半透明のコロイド溶液で、アンモニア(NH₃)系で安定化した新型(New Type)ラインアップです。約200~260 m²/gの大きな比表面積と優れたコロイド安定性を活かし、精密鋳造(インベストメント鋳造)のシェルバインダー、耐火・セラミックコーティング、触媒担体、製紙・繊維の表面改質、半導体CMPスラリー原料、リチウムイオン二次電池のセラミックコーティングセパレーターなど、先端・伝統産業を幅広くカバーします。\n\nSiLiCAはSiO₂濃度とアルカリ(Na₂O)レベルに応じてSN-JA25(25~26%)およびSN-JA30(30~31%)の2種標準グレードを供給し、スラリー配合・バインダー含量・pH要求に合わせて濃度・粒子径・安定剤系(NH₃/Na)までカスタム対応が可能です。",
-  image: silicaSolImg,
+  image: slShsImg,
   detailImage: silicaSolImg,
   category: "quartz",
   isCategoryIndex: true,
