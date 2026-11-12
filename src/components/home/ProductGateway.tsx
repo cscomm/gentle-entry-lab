@@ -55,7 +55,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
       onMouseLeave={() => setPaused(false)}
     >
       <img
-        src={bg.url}
+        src={bg}
         alt={pick(
           lang,
           "녹색빛 회로 위에 핀 실리카 소재",
