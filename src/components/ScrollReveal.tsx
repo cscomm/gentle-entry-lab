@@ -36,6 +36,8 @@ const ScrollReveal = () => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const seen = new WeakSet<Element>();
+    const repeating = new WeakSet<Element>();
+    const tracked = new Set<HTMLElement>();
 
     const finish = (el: HTMLElement, delay: number) => {
       window.setTimeout(() => {
@@ -46,6 +48,11 @@ const ScrollReveal = () => {
 
     const io = new IntersectionObserver(
       (entries) => {
+        entries.forEach(({ target, isIntersecting }) => {
+          if (!isIntersecting && repeating.has(target)) {
+            target.classList.remove("is-revealed");
+          }
+        });
         const shown = entries.filter((e) => e.isIntersecting).map((e) => e.target as HTMLElement);
         // Stagger siblings that appear together (e.g. a row of cards).
         const perParent = new Map<Element | null, number>();
@@ -55,8 +62,10 @@ const ScrollReveal = () => {
           const delay = Math.min(i * 80, 480);
           el.style.setProperty("--reveal-delay", `${delay}ms`);
           el.classList.add("is-revealed");
-          io.unobserve(el);
-          finish(el, delay);
+          if (!repeating.has(el)) {
+            io.unobserve(el);
+            finish(el, delay);
+          }
         });
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0 },
@@ -68,13 +77,18 @@ const ScrollReveal = () => {
       document.querySelectorAll<HTMLElement>(AUTO_SELECTOR).forEach((el) => {
         if (seen.has(el)) return;
         seen.add(el);
-        if (el.parentElement?.closest(SKIP_ANCESTOR)) return;
+        if (el.closest("[data-no-reveal]") || el.parentElement?.closest(SKIP_ANCESTOR)) return;
         if (el.closest("[data-parallax],[data-scroll-slide]") || el.className.toString().includes("animate-")) return;
+        if (el.tagName === "IMG" && getComputedStyle(el).position === "absolute") return;
         const r = el.getBoundingClientRect();
         // Already on screen (or not rendered): leave as is, no flash.
         if (r.width === 0 && r.height === 0) return;
-        if (r.top < vh * 0.92) return;
+        const repeat = /^\/(ko|en|ja)\/?$/.test(pathRef.current);
+        if (!repeat && r.top < vh * 0.92) return;
+        if (repeat) repeating.add(el);
+        if (repeat && r.top < vh * 0.92 && r.bottom > 0) el.classList.add("is-revealed");
         el.classList.add("reveal");
+        tracked.add(el);
         io.observe(el);
       });
     };
@@ -135,6 +149,10 @@ const ScrollReveal = () => {
     return () => {
       mo.disconnect();
       io.disconnect();
+      tracked.forEach((el) => {
+        el.classList.remove("reveal", "is-revealed");
+        el.style.removeProperty("--reveal-delay");
+      });
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (scheduled) window.clearTimeout(scheduled);
