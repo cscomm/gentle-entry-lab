@@ -7,6 +7,7 @@ import { useHiddenSlugs } from "@/lib/productVisibility";
 import { useLang } from "@/contexts/LanguageContext";
 import { pick } from "@/lib/lang";
 import bg from "@/assets/product-gateway-circuit-tree.jpg.asset.json";
+import silicaGelFallback from "@/assets/sl-chr-01.jpg";
 import { Button } from "@/components/ui/button";
 
 interface Props {
@@ -25,7 +26,8 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
         .map((c) => {
           const slug = c.slug ?? c.href?.split("/").filter(Boolean).pop() ?? "";
           const p = productCatalog.find((x) => x.slug === slug);
-          return { ...c, key: slug, href: c.href ?? `/products/${slug}/`, image: p?.image };
+          const image = p?.image ?? (slug === "silica-gel" ? silicaGelFallback : undefined);
+          return { ...c, key: slug, href: c.href ?? `/products/${slug}/`, image };
         })
         .filter((c) => !hidden.has(c.key)),
     [hidden]
