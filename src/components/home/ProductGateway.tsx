@@ -35,17 +35,30 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
 
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [outgoing, setOutgoing] = useState<typeof items | null>(null);
+  const [direction, setDirection] = useState<"next" | "prev">("next");
   const n = items.length || 1;
-  const next = () => setIdx((i) => (i + 1) % n);
-  const prev = () => setIdx((i) => (i - 1 + n) % n);
+  const visible = [0, 1, 2].map((o) => items[(idx + o) % n]).filter(Boolean);
+  const moveTo = (target: number, dir: "next" | "prev" = "next") => {
+    if (outgoing || target === idx || !items.length) return;
+    setOutgoing(visible);
+    setDirection(dir);
+    setIdx(target);
+  };
+  const next = () => moveTo((idx + 1) % n);
+  const prev = () => moveTo((idx - 1 + n) % n, "prev");
 
   useEffect(() => {
-    if (paused) return;
+    if (!outgoing) return;
+    const timer = window.setTimeout(() => setOutgoing(null), 650);
+    return () => window.clearTimeout(timer);
+  }, [outgoing]);
+
+  useEffect(() => {
+    if (paused || outgoing) return;
     const t = setInterval(next, 4000);
     return () => clearInterval(t);
-  }, [paused, n]);
-
-  const visible = [0, 1, 2].map((o) => items[(idx + o) % n]).filter(Boolean);
+  }, [paused, n, idx, outgoing]);
 
   return (
     <section
@@ -118,12 +131,20 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
             <ArrowRight className="h-4 w-4" />
           </Button>
 
-          <div className="grid gap-4 px-14 md:grid-cols-3 md:px-0">
-            {visible.map((c, i) => (
+          <div className="relative overflow-hidden mx-14 md:mx-0" data-no-reveal>
+            {[...(outgoing ? [{ cards: outgoing, leaving: true }] : []), { cards: visible, leaving: false }].map(({ cards, leaving }) => (
+            <div
+              key={leaving ? "outgoing" : `incoming-${idx}`}
+              aria-hidden={leaving || undefined}
+              data-direction={direction}
+              className={`grid gap-4 md:grid-cols-3 ${leaving ? "product-slide-out pointer-events-none absolute inset-0" : outgoing ? "product-slide-in" : ""}`}
+            >
+            {cards.map((c, i) => (
               <Link
-                key={`${c.key}-${idx}`}
+                key={c.key}
                 to={c.href}
-                className={`group animate-fade-in overflow-hidden rounded-xl bg-card/90 text-foreground shadow-lg backdrop-blur ${i > 0 ? "hidden md:block" : ""}`}
+                tabIndex={leaving ? -1 : undefined}
+                className={`group overflow-hidden rounded-xl bg-card/90 text-foreground shadow-lg backdrop-blur ${i > 0 ? "hidden md:block" : ""}`}
               >
                 <div className="flex flex-col items-center gap-3 px-4 py-5">
                   <h3 className="text-center text-base font-semibold md:text-lg">{pick(lang, c.label, c.en, c.ja)}</h3>
@@ -143,6 +164,8 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
                 </div>
               </Link>
             ))}
+            </div>
+            ))}
           </div>
 
           <div className="mt-6 flex justify-center gap-1.5">
@@ -151,7 +174,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
                 variant="ghost"
                 key={c.key}
                 type="button"
-                onClick={() => setIdx(i)}
+                onClick={() => moveTo(i)}
                 aria-label={pick(lang, c.label, c.en, c.ja)}
                 className={`h-1.5 rounded-full p-0 transition-all hover:bg-background/80 ${i === idx ? "w-6 bg-background" : "w-1.5 bg-background/40"}`}
               />
