@@ -148,8 +148,8 @@ html .reveal[data-reveal="right"] { translate: 64px 0; }
 html .reveal[data-reveal="zoom"] { translate: 0 0; scale: 0.92; }
 html .reveal.is-revealed { opacity: 1; translate: 0 0; scale: 1; }
 
-.product-slide-in { animation: product-enter-left 650ms cubic-bezier(0.22, 1, 0.36, 1) both; }
-.product-slide-out { animation: product-exit-left 650ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.product-slide-in { animation: product-enter-left 950ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.product-slide-out { animation: product-exit-left 950ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 .product-slide-in[data-direction="prev"] { animation-name: product-enter-right; }
 .product-slide-out[data-direction="prev"] { animation-name: product-exit-right; }
 @keyframes product-enter-left { from { transform: translateX(calc(100% + 1rem)); } to { transform: translateX(0); } }

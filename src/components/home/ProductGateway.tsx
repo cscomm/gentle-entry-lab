@@ -50,7 +50,7 @@ const ProductGateway = ({ showAll, onToggleAll }: Props) => {
 
   useEffect(() => {
     if (!outgoing) return;
-    const timer = window.setTimeout(() => setOutgoing(null), 650);
+    const timer = window.setTimeout(() => setOutgoing(null), 950);
     return () => window.clearTimeout(timer);
   }, [outgoing]);
 
