@@ -64,12 +64,11 @@ const dict: Record<string, { ko: string; en: string; ja?: string }> = {
   "hero.cta": { ko: "나에게 적합한 제품은?", en: "Find My Product", ja: "私に合う製品は？" },
   "hero.cta2": { ko: "제품 문의", en: "Product Inquiry", ja: "製品お問い合わせ" },
 
-  "hero0.title": { ko: "실리카는 자연이 주는\n미래를 만들어 갑니다", en: "Silica Shapes the Future\nNature Has Given Us", ja: "シリカは自然がもたらす\n未来を創り出します" },
-  "hero0.sub": { ko: "", en: "", ja: "" },
+  "hero0.title": { ko: "Silica: Nature's Gift to the Future.", en: "Silica: Nature's Gift to the Future.", ja: "Silica: Nature's Gift to the Future." },
+  "hero0.sub": { ko: "Technology that Leads Industry", en: "Technology that Leads Industry", ja: "Technology that Leads Industry" },
   "hero0.desc": {
-    ko: "자연이 준 고순도 실리카로 산업의 내일을 함께 만들어 갑니다.",
-    en: "Building tomorrow's industries together with high-purity silica from nature.", ja: "自然がくれた高純度シリカで、産業の明日を共に創ります。" },
-
+    ko: "각 산업군이 요구하는 엄격한 기준에 맞추어,\n고정밀·초고순도 맞춤형 실리카 소재를 공급합니다.",
+    en: "Aligned with the stringent standards each industry demands,\nwe supply high-precision, custom ultra-high-purity silica materials.", ja: "各産業が求める厳しい基準に合わせ、\n高精度・超高純度のカスタムシリカ素材を供給します。" },
   "hero1.title": { ko: "Silica: Nature's Gift to the Future.", en: "Silica: Nature's Gift to the Future.", ja: "Silica: Nature's Gift to the Future." },
   "hero1.sub": { ko: "Technology that Leads Industry", en: "Technology that Leads Industry", ja: "Technology that Leads Industry" },
   "hero1.desc": {
