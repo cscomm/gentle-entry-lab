@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "@/lib/router";
 import { Globe, ImagePlus, Lock, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { Button } from "@/components/ui/button";
@@ -49,17 +48,23 @@ const BoardNew = () => {
   };
 
   const uploadImageFile = async (file: File): Promise<string | null> => {
-    const ext = (file.name.split(".").pop() || "png").toLowerCase();
-    const path = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
-    const { error } = await supabase.storage
-      .from("board-images")
-      .upload(path, file, { contentType: file.type || "image/png", upsert: false });
-    if (error) {
-      toast.error(error.message);
+    const allowed = ["image/png", "image/jpeg", "image/gif", "image/webp"];
+    if (!allowed.includes(file.type) || file.size > 5 * 1024 * 1024) {
+      toast.error("PNG/JPG/GIF/WEBP, 5MB");
       return null;
     }
-    const { data } = supabase.storage.from("board-images").getPublicUrl(path);
-    return data.publicUrl;
+    const memberToken = await getToken();
+    if (!memberToken) return null;
+    const buf = new Uint8Array(await file.arrayBuffer());
+    let bin = "";
+    for (let i = 0; i < buf.length; i += 0x8000) bin += String.fromCharCode(...buf.subarray(i, i + 0x8000));
+    try {
+      const res = await memberApi<{ url: string }>("upload_image", memberToken, { contentType: file.type, data: btoa(bin) });
+      return res.url;
+    } catch {
+      toast.error(t("board.createFailed"));
+      return null;
+    }
   };
 
   const handleFiles = async (files: FileList | File[]) => {

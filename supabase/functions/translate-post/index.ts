@@ -18,8 +18,9 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
   try {
-    const { post_id, lang } = await req.json();
-    if (!post_id || (lang !== "en" && lang !== "ja")) {
+    const { post_id, lang, password } = await req.json();
+    const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (typeof post_id !== "string" || !UUID_RE.test(post_id) || (lang !== "en" && lang !== "ja")) {
       return json({ error: "invalid params" }, 400);
     }
 
@@ -28,14 +29,26 @@ Deno.serve(async (req) => {
       Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
     );
 
-    // Return cached translation if it already exists
+    const { data: meta } = await supabase
+      .from("posts").select("is_public").eq("id", post_id).maybeSingle();
+    if (!meta) return json({ error: "post not found" }, 404);
+    if (!meta.is_public) {
+      // Private posts: caller must prove the password; never cache publicly.
+      if (typeof password !== "string" || password.length === 0 || password.length > 100) {
+        return json({ error: "forbidden" }, 403);
+      }
+      const { data: ok } = await supabase.rpc("verify_post_password", { _post_id: post_id, _password: password });
+      if (ok !== true) return json({ error: "forbidden" }, 403);
+    }
+
+    // Return cached translation if it already exists (public posts only)
     const { data: cached } = await supabase
       .from("post_translations")
       .select("title, content")
       .eq("post_id", post_id)
       .eq("lang", lang)
       .maybeSingle();
-    if (cached) return json({ ...cached, cached: true });
+    if (cached && meta.is_public) return json({ ...cached, cached: true });
 
     const { data: post, error: postErr } = await supabase
       .from("posts")
@@ -76,8 +89,8 @@ ${post.content}`;
     if (aiRes.status === 429) return json({ error: "rate limited" }, 429);
     if (aiRes.status === 402) return json({ error: "AI credits exhausted" }, 402);
     if (!aiRes.ok) {
-      const t = await aiRes.text();
-      return json({ error: "AI error", detail: t }, 500);
+      console.error("translate-post AI error", aiRes.status);
+      return json({ error: "AI error" }, 500);
     }
     const aiJson = await aiRes.json();
     const raw = aiJson.choices?.[0]?.message?.content ?? "{}";
@@ -93,7 +106,7 @@ ${post.content}`;
       return json({ error: "bad AI output" }, 500);
     }
 
-    await supabase.from("post_translations").upsert({
+    if (meta.is_public) await supabase.from("post_translations").upsert({
       post_id,
       lang,
       title: parsed.title,
@@ -102,7 +115,8 @@ ${post.content}`;
 
     return json({ title: parsed.title, content: parsed.content, cached: false });
   } catch (e) {
-    return json({ error: String(e) }, 500);
+    console.error("translate-post error", e);
+    return json({ error: "server error" }, 500);
   }
 });
 

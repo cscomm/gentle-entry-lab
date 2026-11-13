@@ -57,6 +57,13 @@
       "when": 1794282491923,
       "tag": "0007_reserve_guest_finder_trial",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1794562816452,
+      "tag": "0008_security_hardening",
+      "breakpoints": true
     }
   ]
 }

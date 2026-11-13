@@ -55,15 +55,14 @@ Deno.serve(async (req) => {
   let idempotencyKey: string
   let messageId: string
   let templateData: Record<string, any> = {}
+  let inquiryId = ''
   try {
     const body = await req.json()
     templateName = body.templateName || body.template_name
     recipientEmail = body.recipientEmail || body.recipient_email
     messageId = crypto.randomUUID()
-    idempotencyKey = body.idempotencyKey || body.idempotency_key || messageId
-    if (body.templateData && typeof body.templateData === 'object') {
-      templateData = body.templateData
-    }
+    idempotencyKey = messageId
+    inquiryId = typeof body.inquiryId === 'string' ? body.inquiryId : ''
   } catch {
     return new Response(
       JSON.stringify({ error: 'Invalid JSON in request body' }),
@@ -103,7 +102,38 @@ Deno.serve(async (req) => {
   // Resolve effective recipient: template-level `to` takes precedence over
   // the caller-provided recipientEmail. This allows notification templates
   // to always send to a fixed address (e.g., site owner from env var).
-  const effectiveRecipient = template.to || recipientEmail
+  // Emails can only be sent for a freshly submitted inquiry. Recipients and
+  // content come from the stored inquiry, never from the request body.
+  const ALLOWED_TEMPLATES = ['contact-notification', 'contact-confirmation']
+  const ADMIN_RECIPIENTS = ['cscomm@naver.com', 'songinjai@gmail.com']
+  const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+  if (!ALLOWED_TEMPLATES.includes(templateName) || !UUID_RE.test(inquiryId)) {
+    return new Response(JSON.stringify({ error: 'Not allowed' }), {
+      status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
+  }
+  const inquiryClient = createClient(supabaseUrl, supabaseServiceKey)
+  const { data: inquiry } = await inquiryClient
+    .from('inquiries')
+    .select('id, name, phone, email, company, message, created_at')
+    .eq('id', inquiryId)
+    .maybeSingle()
+  if (!inquiry || Date.now() - Date.parse(inquiry.created_at) > 15 * 60 * 1000) {
+    return new Response(JSON.stringify({ error: 'Not allowed' }), {
+      status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
+  }
+  let resolvedRecipient = ''
+  if (templateName === 'contact-notification') {
+    const wanted = String(recipientEmail || '').toLowerCase()
+    resolvedRecipient = ADMIN_RECIPIENTS.includes(wanted) ? wanted : ADMIN_RECIPIENTS[0]
+    templateData = { name: inquiry.name, phone: inquiry.phone, email: inquiry.email, company: inquiry.company, message: inquiry.message }
+  } else {
+    resolvedRecipient = inquiry.email || ''
+    templateData = { name: inquiry.name, message: inquiry.message }
+  }
+  idempotencyKey = `${templateName}-${resolvedRecipient}-${inquiry.id}`
+  const effectiveRecipient = template.to || resolvedRecipient
 
   if (!effectiveRecipient) {
     return new Response(
@@ -130,7 +160,6 @@ Deno.serve(async (req) => {
   if (suppressionError) {
     console.error('Suppression check failed — refusing to send', {
       error: suppressionError,
-      effectiveRecipient,
     })
     return new Response(
       JSON.stringify({ error: 'Failed to verify suppression status' }),
@@ -150,7 +179,7 @@ Deno.serve(async (req) => {
       status: 'suppressed',
     })
 
-    console.log('Email suppressed', { effectiveRecipient, templateName })
+    console.log('Email suppressed', { templateName })
     return new Response(
       JSON.stringify({ success: false, reason: 'email_suppressed' }),
       {
@@ -174,7 +203,6 @@ Deno.serve(async (req) => {
   if (tokenLookupError) {
     console.error('Token lookup failed', {
       error: tokenLookupError,
-      email: normalizedEmail,
     })
     await supabase.from('email_send_log').insert({
       message_id: messageId,
@@ -236,7 +264,6 @@ Deno.serve(async (req) => {
     if (reReadError || !storedToken) {
       console.error('Failed to read back unsubscribe token after upsert', {
         error: reReadError,
-        email: normalizedEmail,
       })
       await supabase.from('email_send_log').insert({
         message_id: messageId,
@@ -258,7 +285,6 @@ Deno.serve(async (req) => {
     // Token exists but is already used — email should have been caught by suppression check above.
     // This is a safety fallback; log and skip sending.
     console.warn('Unsubscribe token already used but email not suppressed', {
-      email: normalizedEmail,
     })
     await supabase.from('email_send_log').insert({
       message_id: messageId,
@@ -325,7 +351,6 @@ Deno.serve(async (req) => {
     console.error('Failed to enqueue email', {
       error: enqueueError,
       templateName,
-      effectiveRecipient,
     })
 
     await supabase.from('email_send_log').insert({
@@ -342,7 +367,7 @@ Deno.serve(async (req) => {
     })
   }
 
-  console.log('Transactional email enqueued', { templateName, effectiveRecipient })
+  console.log('Transactional email enqueued', { templateName })
 
   return new Response(
     JSON.stringify({ success: true, queued: true }),

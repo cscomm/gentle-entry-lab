@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input";
 import { useLang } from "@/contexts/LanguageContext";
 import RichContent from "@/components/RichContent";
 import { toast } from "sonner";
+import { useMember } from "@/lib/members/MemberContext";
+import { memberApi } from "@/lib/members/api";
 
 interface PostMeta {
   id: string;
@@ -32,6 +34,7 @@ const BoardDetail = () => {
   const [pw, setPw] = useState("");
   const [delPw, setDelPw] = useState("");
   const [showDelete, setShowDelete] = useState(false);
+  const { getToken } = useMember();
 
   useEffect(() => {
     if (!id) return;
@@ -39,11 +42,16 @@ const BoardDetail = () => {
       setLoading(true);
       const { data } = await supabase
         .from("posts")
-        .select("id, title, author_name, is_public, views, created_at, content")
+        .select("id, title, author_name, is_public, views, created_at")
         .eq("id", id)
         .maybeSingle();
       if (data) {
-        let record = data as PostMeta;
+        let publicContent = "";
+        if (data.is_public) {
+          const { data: c } = await supabase.rpc("get_post_content", { _post_id: id, _password: "" });
+          publicContent = (c as string | null) ?? "";
+        }
+        let record = { ...data, content: publicContent } as PostMeta;
 
         // For non-Korean views, overlay title/content with translation
         if (lang === "en" || lang === "ja") {
@@ -99,7 +107,7 @@ const BoardDetail = () => {
       setTranslating(true);
       try {
         const res = await supabase.functions.invoke("translate-post", {
-          body: { post_id: id, lang },
+          body: { post_id: id, lang, password: pw },
         });
         const tr = res.data as { title?: string; content?: string } | null;
         if (tr?.content) {
@@ -118,11 +126,14 @@ const BoardDetail = () => {
   const onDelete = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!id) return;
-    const { data, error } = await supabase.rpc("delete_post_with_password", {
-      _post_id: id,
-      _password: delPw,
-    });
-    if (error || !data) {
+    const memberToken = await getToken();
+    if (!memberToken) {
+      toast.error(t("board.wrongPw"));
+      return;
+    }
+    try {
+      await memberApi("delete_post", memberToken, { postId: id, password: delPw });
+    } catch {
       toast.error(t("board.wrongPw"));
       return;
     }
