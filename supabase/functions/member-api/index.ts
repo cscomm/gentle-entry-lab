@@ -23,6 +23,13 @@ const Body = z.discriminatedUnion("action", [
   }),
   z.object({ action: z.literal("datasheet"), memberToken: z.string(), slug: z.string().max(200) }),
   z.object({ action: z.literal("sync_profile"), memberToken: z.string() }),
+  z.object({ action: z.literal("delete_post"), memberToken: z.string(), postId: z.string().uuid(), password: z.string().min(1).max(100) }),
+  z.object({
+    action: z.literal("upload_image"),
+    memberToken: z.string(),
+    contentType: z.enum(["image/png", "image/jpeg", "image/gif", "image/webp"]),
+    data: z.string().max(7_000_000),
+  }),
 ]);
 
 Deno.serve(async (req) => {
@@ -103,6 +110,27 @@ Deno.serve(async (req) => {
         .single();
       if (error) throw error;
       return json({ id: data.id });
+    }
+
+    if (body.action === "delete_post") {
+      const { data: post } = await sb.from("posts").select("id, member_id").eq("id", body.postId).maybeSingle();
+      if (!post || post.member_id !== member.id) return json({ error: "forbidden" }, 403);
+      const { data: ok } = await sb.rpc("verify_post_password", { _post_id: body.postId, _password: body.password });
+      if (ok !== true) return json({ error: "forbidden" }, 403);
+      const { error } = await sb.from("posts").delete().eq("id", body.postId);
+      if (error) throw error;
+      return json({ ok: true });
+    }
+
+    if (body.action === "upload_image") {
+      const bytes = Uint8Array.from(atob(body.data), (c) => c.charCodeAt(0));
+      if (bytes.length > 5 * 1024 * 1024) return json({ error: "too_large" }, 413);
+      const ext = body.contentType.split("/")[1].replace("jpeg", "jpg");
+      const path = `${member.id}/${Date.now()}-${crypto.randomUUID().slice(0, 8)}.${ext}`;
+      const { error } = await sb.storage.from("board-images").upload(path, bytes, { contentType: body.contentType, upsert: false });
+      if (error) throw error;
+      const { data } = sb.storage.from("board-images").getPublicUrl(path);
+      return json({ url: data.publicUrl });
     }
 
     if (body.action === "datasheet") {

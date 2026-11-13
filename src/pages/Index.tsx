@@ -217,65 +217,30 @@ const Index = () => {
     try {
       const inquiryId = crypto.randomUUID();
 
-      // 0) 관리자 모드에서 조회할 수 있도록 문의 내용 저장 (실패해도 메일 발송은 진행)
-      try {
-        await supabase.from("inquiries").insert({
-          id: inquiryId,
-          name: form.name,
-          phone: form.phone,
-          email: form.email || null,
-          company: form.company || null,
-          message: form.message,
-          status: "pending",
+      // 0) 문의 저장 (메일 발송은 저장된 문의 기준으로 서버에서 처리)
+      const { error: dbError } = await supabase.from("inquiries").insert({
+        id: inquiryId,
+        name: form.name.slice(0, 100),
+        phone: form.phone.slice(0, 50),
+        email: form.email || null,
+        company: form.company ? form.company.slice(0, 200) : null,
+        message: form.message,
+        status: "pending",
+      });
+      if (dbError) throw dbError;
+
+      // 1) 관리자 알림 메일
+      for (const recipientEmail of ["cscomm@naver.com", "songinjai@gmail.com"]) {
+        const res = await supabase.functions.invoke("send-transactional-email", {
+          body: { templateName: "contact-notification", recipientEmail, inquiryId },
         });
-      } catch (dbError) {
-        console.error("Inquiry save failed", dbError);
+        if (res.error) throw res.error;
       }
 
-
-      // 1) 관리자에게 알림 메일 (cscomm@naver.com)
-      const adminRes = await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "contact-notification",
-          recipientEmail: "cscomm@naver.com",
-          idempotencyKey: `contact-notify-cscomm-${inquiryId}`,
-          templateData: {
-            name: form.name,
-            phone: form.phone,
-            email: form.email,
-            company: form.company,
-            message: form.message,
-          },
-        },
-      });
-      if (adminRes.error) throw adminRes.error;
-
-      // 1-2) 관리자에게 알림 메일 중복 발송 (songinjai@gmail.com)
-      const adminRes2 = await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "contact-notification",
-          recipientEmail: "songinjai@gmail.com",
-          idempotencyKey: `contact-notify-songinjai-${inquiryId}`,
-          templateData: {
-            name: form.name,
-            phone: form.phone,
-            email: form.email,
-            company: form.company,
-            message: form.message,
-          },
-        },
-      });
-      if (adminRes2.error) throw adminRes2.error;
-
-      // 2) 고객에게 접수 확인 메일 (이메일 입력 시에만)
+      // 2) 고객 접수 확인 메일 (이메일 입력 시에만)
       if (form.email) {
         await supabase.functions.invoke("send-transactional-email", {
-          body: {
-            templateName: "contact-confirmation",
-            recipientEmail: form.email,
-            idempotencyKey: `contact-confirm-${inquiryId}`,
-            templateData: { name: form.name, message: form.message },
-          },
+          body: { templateName: "contact-confirmation", inquiryId },
         });
       }
 

@@ -302,7 +302,12 @@ export const crm = (payload: Record<string, unknown>) => invoke("admin-crm", pay
 export const inquiryApi = (payload: Record<string, unknown>) => invoke("admin-inquiries", payload);
 
 export const downloadCsv = (filename: string, rows: (string | number)[][]) => {
-  const esc = (v: string | number) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+  const esc = (v: string | number) => {
+    let str = String(v ?? "");
+    // Neutralize spreadsheet formulas (CSV injection)
+    if (typeof v === "string" && /^[=+\-@\t\r]/.test(str)) str = `'${str}`;
+    return `"${str.replace(/"/g, '""')}"`;
+  };
   const csv = "\uFEFF" + rows.map((r) => r.map(esc).join(",")).join("\r\n");
   const url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
   const a = document.createElement("a");
