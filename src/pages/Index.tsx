@@ -215,34 +215,51 @@ const Index = () => {
     setIsSubmitting(true);
 
     try {
-      const inquiryId = crypto.randomUUID();
-
-      // 0) 문의 저장 (메일 발송은 저장된 문의 기준으로 서버에서 처리)
-      const { error: dbError } = await supabase.from("inquiries").insert({
-        id: inquiryId,
-        name: form.name.slice(0, 100),
-        phone: form.phone.slice(0, 50),
-        email: form.email || null,
-        company: form.company ? form.company.slice(0, 200) : null,
-        message: form.message,
-        status: "pending",
+      // 1) 메일 직접 전달 (서버가 꺼져 있어도 동작)
+      const relay = await fetch("https://formsubmit.co/ajax/songinjai@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `[실리카 문의] ${form.name.slice(0, 100)}${form.company ? ` / ${form.company.slice(0, 200)}` : ""}`,
+          _template: "table",
+          _captcha: "false",
+          ...(form.email ? { _replyto: form.email } : {}),
+          이름: form.name.slice(0, 100),
+          연락처: form.phone.slice(0, 50),
+          이메일: form.email || "-",
+          회사: form.company || "-",
+          문의내용: form.message,
+        }),
       });
-      if (dbError) throw dbError;
+      const relayJson = await relay.json().catch(() => ({}));
+      if (!relay.ok || String(relayJson?.success) === "false") throw new Error("relay failed");
 
-      // 1) 관리자 알림 메일
-      for (const recipientEmail of ["cscomm@naver.com", "songinjai@gmail.com"]) {
-        const res = await supabase.functions.invoke("send-transactional-email", {
-          body: { templateName: "contact-notification", recipientEmail, inquiryId },
-        });
-        if (res.error) throw res.error;
-      }
-
-      // 2) 고객 접수 확인 메일 (이메일 입력 시에만)
-      if (form.email) {
-        await supabase.functions.invoke("send-transactional-email", {
-          body: { templateName: "contact-confirmation", inquiryId },
-        });
-      }
+      // 2) 서버가 켜져 있으면 관리자 화면에도 저장 (실패해도 무시)
+      void (async () => {
+        try {
+          const inquiryId = crypto.randomUUID();
+          const { error: dbError } = await supabase.from("inquiries").insert({
+            id: inquiryId,
+            name: form.name.slice(0, 100),
+            phone: form.phone.slice(0, 50),
+            email: form.email || null,
+            company: form.company ? form.company.slice(0, 200) : null,
+            message: form.message,
+            status: "pending",
+          });
+          if (dbError) return;
+          await supabase.functions.invoke("send-transactional-email", {
+            body: { templateName: "contact-notification", recipientEmail: "cscomm@naver.com", inquiryId },
+          });
+          if (form.email) {
+            await supabase.functions.invoke("send-transactional-email", {
+              body: { templateName: "contact-confirmation", inquiryId },
+            });
+          }
+        } catch {
+          /* 서버 일시정지 중 */
+        }
+      })();
 
       setForm({ name: "", phone: "", email: "", company: "", message: "" });
       toast({ title: "문의가 전송되었습니다", description: "빠른 시일 내에 답변드리겠습니다." });
