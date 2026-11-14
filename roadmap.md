@@ -1,5 +1,5 @@
-- [ ] Temporarily disable publish-time MCP registration without deleting its tools or Cloud data.
-- [ ] Verify contact delivery through the external email relay while Cloud remains paused.
+- [x] Temporarily disable publish-time MCP registration without deleting its tools or Cloud data; manifest extraction confirms no MCP manifest, preview build OK.
+- [ ] Verify contact delivery through the external email relay while Cloud remains paused — local preview relay requests require recipient activation; production delivery remains unverified.
 - [x] Replace homepage product background with uploaded port photo and match Product label to Company typography.
 - [x] Remove product heading divider and prevent background parallax from exposing section edges.
 - [x] Brighten contact boxes and fields without changing their content or dimensions.
