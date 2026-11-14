@@ -232,7 +232,10 @@ const Index = () => {
         }),
       });
       const relayJson = await relay.json().catch(() => ({}));
-      if (!relay.ok || String(relayJson?.success) === "false") throw new Error("relay failed");
+      if (!relay.ok || String(relayJson?.success) !== "true") {
+        const needsActivation = /activation|activate/i.test(String(relayJson?.message || ""));
+        throw new Error(needsActivation ? "relay_activation_required" : "relay_failed");
+      }
 
       // 2) 서버가 켜져 있으면 관리자 화면에도 저장 (실패해도 무시)
       void (async () => {
@@ -264,10 +267,12 @@ const Index = () => {
       setForm({ name: "", phone: "", email: "", company: "", message: "" });
       toast({ title: "문의가 전송되었습니다", description: "빠른 시일 내에 답변드리겠습니다." });
     } catch (error) {
-      console.error("Contact form send failed", error);
+      const needsActivation = error instanceof Error && error.message === "relay_activation_required";
       toast({
-        title: "문의 전송에 실패했습니다",
-        description: "잠시 후 다시 시도하시거나 이메일로 직접 문의해 주세요.",
+        title: needsActivation ? "문의 수신 설정이 아직 완료되지 않았습니다" : "문의 전송에 실패했습니다",
+        description: needsActivation
+          ? "현재 문의가 전달되지 않았습니다. songinjai@gmail.com으로 직접 문의해 주세요."
+          : "잠시 후 다시 시도하시거나 songinjai@gmail.com으로 직접 문의해 주세요.",
         variant: "destructive",
       });
     } finally {
