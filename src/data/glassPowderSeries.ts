@@ -100,11 +100,6 @@ export const GLASS_POWDER_SERIES: GlassSeries[] = [
   },
 ];
 
-export const GLASS_SOURCE_NOTE: GlassText = [
-  "첨부 제품 자료의 품번 앞에 SN-을 붙였습니다. 용융 개시 온도는 연화점·완전 용융 온도·사용 내열 온도와 동일한 값이 아닙니다. *H·E 표의 열 특성 온도는 원문 ‘围棋温度’ 표기를 구분해 옮긴 값이며, 시험 정의 확인이 필요합니다. 밀도·흡유량·선팽창계수의 단위 및 시험 조건이 명확하지 않은 항목은 원문 수치를 그대로 기재했습니다. mesh를 µm 또는 D50으로 환산하지 않았습니다. 인증·환경 적합성·최종 코팅 및 난연 성능은 등급별 시험자료와 실제 공정 시험으로 확인해야 합니다.",
-  "SN- has been prefixed to each source grade. Melt onset is not the same as softening, full melting or service temperature. *The H/E thermal reference reproduces the source label ‘围棋温度’; its test definition needs confirmation. Density, oil absorption and expansion values retain the source notation where units or test conditions are unclear. Mesh has not been converted to µm or D50. Certification, environmental compliance and final coating/fire performance require grade-specific documents and process testing.",
-  "資料の各品番にSN-を付けました。溶融開始温度は軟化点・完全溶融温度・使用耐熱温度とは異なります。*H・Eの熱特性参考温度は原文‘围棋温度’の値で、試験定義の確認が必要です。密度・吸油量・線膨張係数の単位や試験条件が不明な項目は原文の数値を記載し、meshをµmやD50に換算していません。認証・環境適合性・最終塗膜や難燃性能は品番別資料と実工程試験で確認が必要です。",
-];
 export const glassCell = (cell: Cell, lang: GlassLang): string => Array.isArray(cell) ? glassText(cell as GlassText, lang) : String(cell);
 export const glassCaution = (caution: GlassGrade["caution"], lang: GlassLang): string => caution === "lead"
   ? glassText(["유연 (납 함유)", "Leaded", "有鉛 (鉛含有)"], lang)

@@ -317,13 +317,13 @@ const Index = () => {
         </button>
 
         <div data-reveal className="relative z-10 mx-auto flex h-full max-w-7xl flex-col items-center justify-center px-6 text-center text-white">
-          <h1 key={`t-${slideIdx}`} className="whitespace-pre-line text-5xl font-bold tracking-tight md:text-7xl drop-shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+          <h1 key={`t-${slideIdx}`} className="whitespace-pre-line text-[2.4rem] font-bold tracking-tight md:text-[3.6rem] drop-shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
             {slides[slideIdx].title}
           </h1>
-          <Prose key={`s-${slideIdx}`} className="mt-6 text-2xl font-light text-white/95 md:text-3xl drop-shadow animate-in fade-in duration-700">
+          <Prose key={`s-${slideIdx}`} className="mt-6 text-[1.2rem] font-light text-white/95 md:text-[1.5rem] drop-shadow animate-in fade-in duration-700">
             {slides[slideIdx].sub}
           </Prose>
-          <p key={`d-${slideIdx}`} className="mt-6 max-w-2xl text-base text-white/85 md:text-lg drop-shadow animate-in fade-in duration-1000 break-keep break-words whitespace-pre-line">
+          <p key={`d-${slideIdx}`} className="mt-6 max-w-2xl text-[0.8rem] text-white/85 md:text-[0.9rem] drop-shadow animate-in fade-in duration-1000 break-keep break-words whitespace-pre-line">
             {slides[slideIdx].desc}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
