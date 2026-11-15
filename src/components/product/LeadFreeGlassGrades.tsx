@@ -1,5 +1,5 @@
 import { useLang } from "@/contexts/LanguageContext";
-import { Prose } from "@/components/Prose";
+import Prose from "@/components/Prose";
 import { GLASS_POWDER_SERIES, GLASS_SOURCE_NOTE, glassText, glassCell, glassCaution } from "@/data/glassPowderSeries";
 
 export default function LeadFreeGlassGrades() {
@@ -13,16 +13,16 @@ export default function LeadFreeGlassGrades() {
       </h2>
       <div className="mt-6 border-l-4 border-destructive bg-destructive/5 p-5 text-sm">
         <h3 className="font-semibold text-foreground">{tr("유연·중금속 함유 제품 별도 안내", "Leaded / Heavy-Metal Grade Notice", "有鉛・重金属含有品のご案内")}</h3>
-        <Prose className="mt-2 text-muted-foreground" text={tr(
+        <Prose className="mt-2 text-muted-foreground">{tr(
           "SN-MZ-G3와 SN-MZ-H2는 납을 함유하는 유연 제품입니다. SN-MZ-E2는 중금속 함유로 표기되어 있지만 성분은 명시되지 않아, 납 함유 여부를 단정하거나 무연 제품으로 분류하지 않습니다. 환경 규제 적용 용도는 품번별 시험 성적과 적합성 자료를 확인해 주세요.",
           "SN-MZ-G3 and SN-MZ-H2 are leaded products. SN-MZ-E2 is listed as containing unspecified heavy metals: lead content cannot be inferred and it is not classified as lead-free. Check grade-specific test and compliance documents for regulated applications.",
           "SN-MZ-G3・SN-MZ-H2は鉛含有品です。SN-MZ-E2は重金属含有と記載されていますが成分は未記載のため、鉛含有と断定せず無鉛にも分類しません。規制対象用途は品番別の試験成績・適合性資料をご確認ください。",
-        )} />
+        )}</Prose>
       </div>
       {GLASS_POWDER_SERIES.map((series) => (
         <div key={series.id} className="mt-12" data-no-reveal>
           <h3 className="text-xl font-semibold text-foreground">{glassText(series.title, lang)}</h3>
-          <Prose text={glassText(series.description, lang)} className="mt-3 max-w-4xl text-muted-foreground" />
+          <Prose className="mt-3 max-w-4xl text-muted-foreground">{glassText(series.description, lang)}</Prose>
           <div className="mt-6 overflow-x-auto rounded-lg border border-border" role="region" aria-label={glassText(series.title, lang)} tabIndex={0}>
             <table className="w-full min-w-[980px] text-sm">
               <thead className="bg-muted text-left text-xs text-muted-foreground">
@@ -43,7 +43,7 @@ export default function LeadFreeGlassGrades() {
           </div>
         </div>
       ))}
-      <Prose text={glassText(GLASS_SOURCE_NOTE, lang)} className="mt-8 text-xs leading-relaxed text-muted-foreground" />
+      <Prose className="mt-8 text-xs leading-relaxed text-muted-foreground">{glassText(GLASS_SOURCE_NOTE, lang)}</Prose>
     </section>
   );
 }
