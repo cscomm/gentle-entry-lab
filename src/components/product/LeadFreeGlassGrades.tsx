@@ -1,6 +1,6 @@
 import { useLang } from "@/contexts/LanguageContext";
 import Prose from "@/components/Prose";
-import { GLASS_POWDER_SERIES, GLASS_SOURCE_NOTE, glassText, glassCell, glassCaution } from "@/data/glassPowderSeries";
+import { GLASS_POWDER_SERIES, glassText, glassCell, glassCaution } from "@/data/glassPowderSeries";
 
 export default function LeadFreeGlassGrades() {
   const { lang } = useLang();
@@ -43,7 +43,6 @@ export default function LeadFreeGlassGrades() {
           </div>
         </div>
       ))}
-      <Prose className="mt-8 text-xs leading-relaxed text-muted-foreground">{glassText(GLASS_SOURCE_NOTE, lang)}</Prose>
     </section>
   );
 }
