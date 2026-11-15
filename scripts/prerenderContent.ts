@@ -8,6 +8,7 @@ import { resolve } from "path";
 import { productCatalog } from "../src/lib/mcp/catalog.generated";
 import { faqItems, FAQ_INTRO } from "../src/data/faq";
 import { productImageUrls } from "./productImages";
+import { GLASS_POWDER_SERIES, GLASS_SOURCE_NOTE, glassText, glassCell, glassCaution } from "../src/data/glassPowderSeries";
 
 export type LangCode = "ko" | "en" | "ja";
 export type CatalogProduct = (typeof productCatalog)[number];
@@ -259,6 +260,14 @@ export function productBody(p: CatalogProduct, lang: LangCode): string {
 
   const apps = (p.applications ?? []).map((a) => appName(lang, a)).filter(Boolean);
   if (apps.length) out.push(`<h2>${esc(label("apps", lang))}</h2><p>${apps.map(esc).join(" · ")}</p>`);
+
+  if (p.slug === "sl-zt") {
+    for (const series of GLASS_POWDER_SERIES) {
+      out.push(`<h2>${esc(glassText(series.title, lang))}</h2>${paragraphs(glassText(series.description, lang))}`);
+      out.push(`<table><thead><tr><th>Code</th>${series.headers.map((h) => `<th>${esc(glassText(h, lang))}</th>`).join("")}</tr></thead><tbody>${series.grades.map((g) => `<tr><th>${esc(g.code)}${g.caution ? ` — ${esc(glassCaution(g.caution, lang))}` : ""}</th>${g.values.map((v) => `<td>${esc(glassCell(v, lang))}</td>`).join("")}</tr>`).join("")}</tbody></table>`);
+    }
+    out.push(paragraphs(glassText(GLASS_SOURCE_NOTE, lang)));
+  }
 
   const parent = p.parentSlug ? catalogBySlug.get(p.parentSlug) : undefined;
   if (parent && parent.slug !== p.slug) {
