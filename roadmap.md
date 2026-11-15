@@ -7,5 +7,6 @@
 - [x] Make contact section light ivory with dark text and increase message limit to 2000 characters.
 - [x] Restore one server-enforced guest product-finder attempt, deploy, and verify.
 - [x] Verify desktop and mobile homepage appearance and product controls (asset serving checked on the public domain).
-- [ ] Replace the existing glass frit page with all SN-MZ series from the supplied PDF, preserving URLs and localized search information.
-- [ ] Verify all grade values, exception labels, and desktop/mobile product display.
+- [x] Replace the existing glass frit page with all SN-MZ series from the supplied PDF, preserving URLs and localized search information.
+- [x] Verify all grade values, exception labels, and desktop/mobile product display.
+- [ ] Redeploy the updated AI finder catalog after Cloud resumes — blocked by paused Cloud; generated catalog is ready.
