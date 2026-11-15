@@ -9,5 +9,5 @@
 - [x] Verify desktop and mobile homepage appearance and product controls (asset serving checked on the public domain).
 - [x] Replace the existing glass frit page with all SN-MZ series from the supplied PDF, preserving URLs and localized search information.
 - [x] Verify all grade values, exception labels, and desktop/mobile product display.
-- [ ] Remove the requested glass-series source note and reduce homepage slide title, subtitle, and description font sizes by 20%.
+- [x] Remove the requested glass-series source note and reduce homepage slide title, subtitle, and description font sizes by 20%.
 - [ ] Redeploy the updated AI finder catalog after Cloud resumes — blocked by paused Cloud; generated catalog is ready.
