@@ -806,6 +806,32 @@ export const productRoutes: Route[] = [
       </ul>`,
   },
   {
+    path: "/applications/lead-free-glass-frit",
+    title: "무연 유리 프리트 응용분야 — 유리 분말 접합·밀봉·난연·내열 코팅·은 페이스트 | SILICA",
+    description:
+      "무연 유리 프리트(유리 분말, Glass Frit) SN-MZ 35개 등급의 용도 — 유리·세라믹 저온 접합과 밀봉, 전기차·ESS 배터리 방화 및 내화 케이블, 고온 내열·방청 도료, 전도성 은 페이스트와 전자재료.",
+    titleI18n: {
+      en: "Lead-Free Glass Frit Applications — Sealing, Flame Retardant, Heat-Resistant Coatings, Silver Paste | SILICA",
+      ja: "無鉛ガラスフリット用途 — 封着・難燃・耐熱コーティング・銀ペースト | SILICA",
+    },
+    descriptionI18n: {
+      en: "Uses of the SN-MZ lead-free glass frit (glass powder) family, 35 grades — low-temperature glass/ceramic bonding and sealing, EV & ESS battery fire barriers and fire-resistant cables, high-temperature anti-corrosion paints, conductive silver paste and electronic materials.",
+      ja: "SN-MZ無鉛ガラスフリット(ガラス粉末)35グレードの用途 — ガラス・セラミックの低温接合と封着、EV・ESSバッテリー防火・耐火ケーブル、高温耐熱・防錆塗料、導電性銀ペーストと電子材料。",
+    },
+    h1: "무연 유리 프리트 응용분야 · Lead-Free Glass Frit Applications",
+    body: `
+      <p>유리 프리트(유리 분말)는 일반 유리보다 낮은 온도에서 녹는 무기질 미세 분말입니다. 가열하면 녹아 서로 붙고, 식으면 단단한 유리막이나 접합층이 됩니다. SN-MZ 시리즈는 G·FR·H·E·LC 5개 시리즈, 35개 등급입니다.</p>
+      <h2>시리즈별 주요 용도</h2>
+      <ul>
+        <li><strong>G 시리즈 (SN-MZ-G1~G8)</strong> — 유리·세라믹 저온 접합·밀봉, 무기 내열 코팅, 고온 접착제 충전재</li>
+        <li><strong>FR 시리즈 (SN-MZ-FR1~FR4)</strong> — 전기차·ESS 배터리 방화 패드, 내화 케이블, 세라믹화 실리콘 고무</li>
+        <li><strong>H · LC 시리즈 (SN-MZ-H1~H8, LC1~LC4)</strong> — 배기관·소각로 내열 도료, 고온 방청·방화 코팅</li>
+        <li><strong>E 시리즈 (SN-MZ-E1~E11)</strong> — 전도성 은 페이스트, 후막 회로, 센서 기밀 밀봉, 세라믹-금속 접합</li>
+      </ul>
+      <p>SN-MZ-G3·H2는 납 함유, SN-MZ-E2는 중금속 함유 등급입니다.</p>
+      <p><a href="/ko/products/sl-zt/">SN-MZ 전체 35개 등급 사양 보기</a></p>`,
+  },
+  {
     path: "/applications/quartz",
     title: "쿼츠 · 결정질 실리카 응용분야 — 반도체·인조대리석·유리·연마 | SILICA",
     description:
