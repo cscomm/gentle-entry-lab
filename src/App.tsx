@@ -19,6 +19,7 @@ import ScrollReveal from "./components/ScrollReveal";
 import FumedSilicaApplications from "./pages/FumedSilicaApplications.tsx";
 import FusedSilicaApplications from "./pages/FusedSilicaApplications.tsx";
 import QuartzApplications from "./pages/QuartzApplications.tsx";
+import GlassFritApplications from "./pages/GlassFritApplications.tsx";
 import SilicaSandApplications from "./pages/SilicaSandApplications.tsx";
 import SilicaSandCategory from "./pages/SilicaSandCategory.tsx";
 import SilicaPowderCategory from "./pages/SilicaPowderCategory.tsx";
@@ -79,6 +80,7 @@ const LangShell = () => {
       <Route path="applications/quartz" element={<QuartzApplications />} />
       <Route path="applications/silica-sand" element={<SilicaSandApplications />} />
       <Route path="applications/silica-powder" element={<SilicaPowderApplications />} />
+      <Route path="applications/lead-free-glass-frit" element={<GlassFritApplications />} />
       <Route path="products/silica-sand" element={<SilicaSandCategory />} />
       <Route path="products/silica-sand/all" element={<SilicaSandCategory />} />
       <Route path="products/silica-powder" element={<SilicaPowderCategory />} />

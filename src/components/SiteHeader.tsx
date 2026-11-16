@@ -55,6 +55,7 @@ const applicationMenu: MenuItem[] = [
   { to: "/applications/silica-gel/", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
   { to: "/applications/silica-sol/", ko: "콜로이달 실리카 시리즈", en: "Colloidal Silica Series", ja: "コロイダルシリカ シリーズ" },
   { to: "/applications/silica-sand/", ko: "규사 · 규사분말", en: "Silica Sand & Powder", ja: "珪砂・珪砂粉末" },
+  { to: "/applications/lead-free-glass-frit/", ko: "무연 유리 프리트", en: "Lead-Free Glass Frit", ja: "無鉛ガラスフリット" },
   { to: "/products/high-purity-quartz/#applications", ko: "천연 고순도규석", en: "Natural High-Purity Quartz", ja: "天然高純度石英" },
 ];
 
