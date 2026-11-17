@@ -57,7 +57,7 @@ const CanonicalUrl = () => {
         el.setAttribute("data-i18n", "1");
         document.head.appendChild(el);
       }
-      Object.entries(attrs).forEach(([k, v]) => el!.setAttribute(k, v));
+      for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
       el.setAttribute("href", href);
     };
 
@@ -81,6 +81,12 @@ const CanonicalUrl = () => {
     document.head
       .querySelectorAll('link[rel="canonical"]:not([data-i18n])')
       .forEach((n) => n.parentElement?.removeChild(n));
+
+    // Static prerender already contains these alternates. Remove the old set
+    // before emitting the current route's set so navigation never leaves duplicates.
+    document.head
+      .querySelectorAll('link[rel="alternate"][hreflang]')
+      .forEach((n) => n.remove());
 
     upsertLink("canonical", canonicalUrl);
     upsertMeta("property", "og:url", canonicalUrl);

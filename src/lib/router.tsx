@@ -17,12 +17,12 @@ import {
   To,
 } from "react-router-dom";
 import { useLang } from "@/contexts/LanguageContext";
-import { withLang } from "./i18nRouting";
+import { normalizePageLink, withLang } from "./i18nRouting";
 
 const prefixTo = (to: To, lang: string): To => {
-  if (typeof to === "string") return withLang(lang as any, to);
+  if (typeof to === "string") return normalizePageLink(withLang(lang as any, to));
   if (to && typeof to === "object" && typeof to.pathname === "string") {
-    return { ...to, pathname: withLang(lang as any, to.pathname) };
+    return { ...to, pathname: normalizePageLink(withLang(lang as any, to.pathname)) };
   }
   return to;
 };

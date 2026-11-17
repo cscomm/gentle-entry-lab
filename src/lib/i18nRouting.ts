@@ -22,6 +22,18 @@ export const stripLang = (pathname: string): string => {
 export const localizedLegacyPath = (lang: Lang, pathname: string): string =>
   withLang(lang, pathname);
 
+/** Public page links use the same trailing slash as their canonical URLs. */
+export const normalizePageLink = (to: string): string => {
+  if (!to.startsWith("/") || to.startsWith("//")) return to;
+  const match = to.match(/^([^?#]*)(.*)$/);
+  if (!match) return to;
+  const [, path, suffix] = match;
+  // File URLs and the exact external-auth callback are not page aliases.
+  if (/\.[^/]+\/?$/.test(path) || path === "/auth/callback") return to;
+  const base = path.replace(/\/+$/, "") || "/";
+  return `${base === "/" ? base : `${base}/`}${suffix}`;
+};
+
 /** Prefix a path with `/${lang}`. Idempotent — already-prefixed paths pass through. */
 export const withLang = (lang: Lang, to: string): string => {
   if (!to.startsWith("/")) return to;
