@@ -4,6 +4,11 @@
 
 const LANGS = ["ko", "en", "ja"] as const;
 
+/** Application pages merged into another page; never include these in the sitemap. */
+export const LEGACY_PAGE_ALIASES: Record<string, string> = {
+  "/applications/silica-powder": "/applications/silica-sand",
+};
+
 /** Old slug → current slug, for products that were renamed rather than code-renamed. */
 export const LEGACY_PRODUCT_ALIASES: Record<string, string> = {
   "silica-gel-type-a": "silica-gel-sl-des-01",
@@ -71,6 +76,9 @@ export function legacyForwardPaths(slugs: string[], routePaths: string[] = []): 
     if (old !== slug && !exists(old)) renames.push([old, slug]);
   }
   for (const lang of LANGS) {
+    for (const [old, current] of Object.entries(LEGACY_PAGE_ALIASES)) {
+      add(`/${lang}${old}/`, `/${lang}${current}/`);
+    }
     for (const [old, cur] of renames) {
       add(`/${lang}/products/${old}/`, `/${lang}/products/${cur}/`);
       add(`/${lang}/${old}/`, `/${lang}/products/${cur}/`);
@@ -79,7 +87,7 @@ export function legacyForwardPaths(slugs: string[], routePaths: string[] = []): 
     for (const slug of slugs) if (!RESERVED.has(slug)) add(`/${lang}/${slug}/`, `/${lang}/products/${slug}/`);
   }
   // Old addresses without a language prefix → Korean (the default language).
-  for (const path of routePaths) if (path !== "/") add(`${path}/`, `/ko${path}/`);
+  for (const path of routePaths) if (path !== "/") add(`${path}/`, `/ko${LEGACY_PAGE_ALIASES[path] ?? path}/`);
   for (const [old, cur] of renames) add(`/products/${old}/`, `/ko/products/${cur}/`);
   return out;
 }

@@ -42,7 +42,7 @@ import { MemberProvider } from "./lib/members/MemberContext";
 
 import { LanguageProvider } from "./contexts/LanguageContext";
 import CanonicalUrl from "./components/CanonicalUrl";
-import { detectInitialLang, isLang, SUPPORTED_LANGS } from "./lib/i18nRouting";
+import { detectInitialLang, isLang, localizedLegacyPath } from "./lib/i18nRouting";
 
 const queryClient = new QueryClient();
 
@@ -52,7 +52,7 @@ const RootRedirect = () => <Navigate to={`/${detectInitialLang()}`} replace />;
 // Unknown top-level path (no lang prefix) → prepend detected lang. Preserves search & hash.
 const LegacyRedirect = () => {
   const { pathname, search, hash } = useLocation();
-  return <Navigate to={`/${detectInitialLang()}${pathname}${search}${hash}`} replace />;
+  return <Navigate to={`${localizedLegacyPath(detectInitialLang(), pathname)}${search}${hash}`} replace />;
 };
 
 // Validates :lang and renders the localized app shell.
@@ -60,8 +60,7 @@ const LangShell = () => {
   const { lang } = useParams();
   const { pathname, search, hash } = useLocation();
   if (!isLang(lang)) {
-    const rest = pathname.replace(/^\/[^/]+/, "");
-    return <Navigate to={`/${detectInitialLang()}${rest}${search}${hash}`} replace />;
+    return <Navigate to={`${localizedLegacyPath(detectInitialLang(), pathname)}${search}${hash}`} replace />;
   }
   return (
     <>

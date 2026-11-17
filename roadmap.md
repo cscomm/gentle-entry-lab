@@ -11,3 +11,4 @@
 - [x] Verify all grade values, exception labels, and desktop/mobile product display.
 - [x] Remove the requested glass-series source note and reduce homepage slide title, subtitle, and description font sizes by 20%.
 - [ ] Redeploy the updated AI finder catalog after Cloud resumes — blocked by paused Cloud; generated catalog is ready.
+- [x] Check all 39 supplied redirect addresses; fix unprefixed company/terms paths, preserve product forwards, and exclude merged powder applications from the sitemap.

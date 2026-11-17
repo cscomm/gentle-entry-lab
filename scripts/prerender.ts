@@ -24,7 +24,7 @@ import {
   siteNav,
   label,
 } from "./prerenderContent";
-import { legacyForwardPaths } from "../src/lib/legacyRedirects";
+import { LEGACY_PAGE_ALIASES, legacyForwardPaths } from "../src/lib/legacyRedirects";
 import { copyProductImages, productImageUrls } from "./productImages";
 
 // Primary domain: silica.co.kr 302-redirects to www, so every canonical/hreflang/sitemap URL uses www.
@@ -1405,7 +1405,7 @@ async function main() {
   loadEnv();
   const hidden = await loadHiddenSlugs();
   setHiddenSlugs(hidden);
-  const live = routes.filter((r) => !isRouteHidden(r));
+  const live = routes.filter((r) => !isRouteHidden(r) && !LEGACY_PAGE_ALIASES[r.path]);
   copyProductImages([...catalogBySlug.values()].filter((p) => !isHiddenSlug(p.slug)), DIST);
 
   const template = readFileSync(SOURCE, "utf-8");

@@ -18,6 +18,10 @@ export const stripLang = (pathname: string): string => {
   return replaced === "" ? "/" : replaced;
 };
 
+/** Preserve the complete legacy path when the first segment is not a language. */
+export const localizedLegacyPath = (lang: Lang, pathname: string): string =>
+  withLang(lang, pathname);
+
 /** Prefix a path with `/${lang}`. Idempotent — already-prefixed paths pass through. */
 export const withLang = (lang: Lang, to: string): string => {
   if (!to.startsWith("/")) return to;

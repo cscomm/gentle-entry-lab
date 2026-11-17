@@ -149,7 +149,6 @@ const APP_MENU: { path: string; ko: string; en: string; ja: string }[] = [
   { path: "/applications/silica-gel", ko: "실리카겔", en: "Silica Gel", ja: "シリカゲル" },
   { path: "/applications/silica-sol", ko: "콜로이달 실리카 시리즈", en: "Colloidal Silica Series", ja: "コロイダルシリカ シリーズ" },
   { path: "/applications/silica-sand", ko: "규사 · 규사분말", en: "Silica Sand & Powder", ja: "珪砂・珪砂粉末" },
-  { path: "/applications/silica-powder", ko: "실리카 분말", en: "Silica Powder", ja: "シリカパウダー" },
   { path: "/applications/lead-free-glass-frit", ko: "무연 유리 프리트", en: "Lead-Free Glass Frit", ja: "無鉛ガラスフリット" },
 ];
 const OTHER_MENU: { path: string; ko: string; en: string; ja: string }[] = [

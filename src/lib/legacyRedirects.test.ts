@@ -70,4 +70,12 @@ describe("old addresses Google reported as soft 404", () => {
     const from = legacyForwardPaths(["about", "board"]).map((p) => p.from);
     expect(from).not.toContain("/ko/about/");
   });
+
+  it("forwards merged powder application pages directly to sand in each language", () => {
+    const forwards = new Map(legacyForwardPaths([], ["/applications/silica-powder"]).map((p) => [p.from, p.to]));
+    for (const lang of ["ko", "en", "ja"]) {
+      expect(forwards.get(`/${lang}/applications/silica-powder/`)).toBe(`/${lang}/applications/silica-sand/`);
+    }
+    expect(forwards.get("/applications/silica-powder/")).toBe("/ko/applications/silica-sand/");
+  });
 });
