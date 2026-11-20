@@ -13,3 +13,4 @@
 - [ ] Redeploy the updated AI finder catalog after Cloud resumes — blocked by paused Cloud; generated catalog is ready.
 - [x] Check all 39 supplied redirect addresses; fix unprefixed company/terms paths, preserve product forwards, and exclude merged powder applications from the sitemap.
 - [x] Review alternate-page report and Google records for Japanese home/sand; normalize internal public links and verify one canonical plus four language alternates after navigation.
+- [ ] Move board posts/images and all admin data/actions to the owner's external Supabase without using Lovable Cloud — waiting for destination project choice and authorized access; preserve existing Cloud data.
