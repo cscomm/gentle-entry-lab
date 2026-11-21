@@ -1,16 +1,18 @@
-- [x] Temporarily disable publish-time MCP registration without deleting its tools or Cloud data; manifest extraction confirms no MCP manifest, preview build OK.
-- [ ] Verify contact delivery through the external email relay while Cloud remains paused — local preview relay requests require recipient activation; production delivery remains unverified.
-- [x] Replace homepage product background with uploaded port photo and match Product label to Company typography.
-- [x] Remove product heading divider and prevent background parallax from exposing section edges.
-- [x] Brighten contact boxes and fields without changing their content or dimensions.
-- [x] Correct missing image descriptions and match product image search metadata to product names.
-- [x] Make contact section light ivory with dark text and increase message limit to 2000 characters.
-- [x] Restore one server-enforced guest product-finder attempt, deploy, and verify.
-- [x] Verify desktop and mobile homepage appearance and product controls (asset serving checked on the public domain).
-- [x] Replace the existing glass frit page with all SN-MZ series from the supplied PDF, preserving URLs and localized search information.
-- [x] Verify all grade values, exception labels, and desktop/mobile product display.
-- [x] Remove the requested glass-series source note and reduce homepage slide title, subtitle, and description font sizes by 20%.
-- [ ] Redeploy the updated AI finder catalog after Cloud resumes — blocked by paused Cloud; generated catalog is ready.
-- [x] Check all 39 supplied redirect addresses; fix unprefixed company/terms paths, preserve product forwards, and exclude merged powder applications from the sitemap.
-- [x] Review alternate-page report and Google records for Japanese home/sand; normalize internal public links and verify one canonical plus four language alternates after navigation.
-- [ ] Move board posts/images and all admin data/actions to the existing external member project without using Lovable Cloud — destination confirmed; missing destination tables/functions verified; awaiting authorized management connection and source-data export while Cloud stays paused.
+# 작업 목록
+
+## 진행 중: 게시판·관리자 저장 공간을 회원 저장 공간(외부 Supabase)으로 이전
+
+- [x] 회원 저장 공간 관리 키(MEMBER_DB_SERVICE_ROLE_KEY) 저장
+- [ ] 외부 프로젝트용 설정 SQL 작성 (`scripts/external-db-setup.sql`) — 사용자가 대시보드 SQL 편집기에서 실행
+- [ ] 게시판(목록/글쓰기/글보기/삭제/이미지 업로드) 외부 프로젝트 직접 연결로 전환
+- [ ] 관리자 화면(문의/거래처/견적/샘플/매출입/상품/로그/회원) 외부 프로젝트 직접 연결로 전환
+- [ ] 관리자 입장 방식: 비밀번호 → 관리자 회원 계정(songinjai@gmail.com) 로그인으로 변경
+- [ ] 문의 폼 저장을 외부 프로젝트로 전환
+- [ ] 상품 숨김 설정을 빌드 시 외부 프로젝트에서 읽도록 전환
+- [ ] 빌드·동작 확인
+
+## 보류 (차단됨)
+
+- 기존 자료(문의·게시글·견적 등) 이관: Lovable Cloud가 일시정지 상태라 기존 자료를 읽을 수 없음. Cloud 재개 후 이관 가능.
+- AI 제품 추천(product-finder)·게시글 자동 번역(translate-post): 서버 기능이라 Cloud 없이는 동작 불가. Cloud 재개 전까지 비활성 유지.
+- 지난 문의 불러오기(backfill): 메일 발송 기록이 Cloud에 있어 동일하게 보류.
