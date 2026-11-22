@@ -64,6 +64,13 @@
       "when": 1794562816452,
       "tag": "0008_security_hardening",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1795356955773,
+      "tag": "0009_restrict_post_translations_and_product_visibility",
+      "breakpoints": true
     }
   ]
 }
