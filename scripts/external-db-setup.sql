@@ -41,6 +41,9 @@ create table if not exists public.post_translations (
   primary key (post_id, lang)
 );
 
+grant all on public.posts to service_role;
+grant all on public.post_translations to service_role;
+
 alter table public.posts enable row level security;
 alter table public.post_translations enable row level security;
 
@@ -171,6 +174,7 @@ alter table public.inquiries enable row level security;
 
 grant insert (name, phone, email, company, message, source, channel) on public.inquiries to anon, authenticated;
 grant select, update, delete on public.inquiries to authenticated;
+grant all on public.inquiries to service_role;
 
 drop policy if exists "inquiries_insert_public" on public.inquiries;
 create policy "inquiries_insert_public" on public.inquiries for insert with check (true);
@@ -392,8 +396,15 @@ create table if not exists public.member_profiles (
 create table if not exists public.product_finder_logs (
   id uuid primary key default gen_random_uuid(),
   member_id uuid,
-  query text,
-  result jsonb,
+  member_email text,
+  query text not null default '',
+  lang text not null default 'ko',
+  answer text,
+  recommended jsonb,
+  status text not null default 'done',
+  error_message text,
+  duration_ms integer,
+  user_agent text,
   created_at timestamptz not null default now()
 );
 
@@ -409,6 +420,7 @@ begin
   ] loop
     execute format('alter table public.%I enable row level security', t);
     execute format('grant select, insert, update, delete on public.%I to authenticated', t);
+    execute format('grant all on public.%I to service_role', t);
     execute format('drop policy if exists "admin_only" on public.%I', t);
     execute format(
       'create policy "admin_only" on public.%I for all using (public.is_admin()) with check (public.is_admin())',
@@ -421,6 +433,7 @@ end $$;
 alter table public.product_visibility enable row level security;
 grant select on public.product_visibility to anon, authenticated;
 grant insert, update, delete on public.product_visibility to authenticated;
+grant all on public.product_visibility to service_role;
 drop policy if exists "product_visibility_read" on public.product_visibility;
 create policy "product_visibility_read" on public.product_visibility for select using (true);
 drop policy if exists "product_visibility_admin" on public.product_visibility;
@@ -431,6 +444,7 @@ create policy "product_visibility_admin" on public.product_visibility for all
 alter table public.member_profiles enable row level security;
 grant insert, update on public.member_profiles to authenticated;
 grant select on public.member_profiles to authenticated;
+grant all on public.member_profiles to service_role;
 drop policy if exists "member_profiles_self_write" on public.member_profiles;
 create policy "member_profiles_self_write" on public.member_profiles for insert
   with check (member_id = auth.uid());
