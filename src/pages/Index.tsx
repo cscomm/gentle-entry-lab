@@ -237,20 +237,18 @@ const Index = () => {
         throw new Error(needsActivation ? "relay_activation_required" : "relay_failed");
       }
 
-      // 2) 관리자 화면에도 저장 (회원 저장 공간; 실패해도 무시)
-      void (async () => {
-        try {
-          await memberAuth.from("inquiries").insert({
-            name: form.name.slice(0, 100),
-            phone: form.phone.slice(0, 50),
-            email: form.email || null,
-            company: form.company ? form.company.slice(0, 200) : null,
-            message: form.message,
-          });
-        } catch {
-          /* 저장 공간 연결 실패 시 메일 전달만으로 동작 */
-        }
-      })();
+      // 2) 관리자 화면에도 저장 (회원 저장 공간; 실패해도 메일 전달은 유지)
+      try {
+        await memberAuth.from("inquiries").insert({
+          name: form.name.slice(0, 100),
+          phone: form.phone.slice(0, 50),
+          email: form.email || null,
+          company: form.company ? form.company.slice(0, 200) : null,
+          message: form.message,
+        });
+      } catch {
+        /* 저장 공간 연결 실패 시 메일 전달만으로 동작 */
+      }
 
       setForm({ name: "", phone: "", email: "", company: "", message: "" });
       toast({ title: "문의가 전송되었습니다", description: "빠른 시일 내에 답변드리겠습니다." });

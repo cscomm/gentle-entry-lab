@@ -558,24 +558,36 @@ export async function inquiryApi(payload: Record<string, unknown>): Promise<any>
   }
 
   if (action === "create") {
+    const status =
+      typeof payload.status === "string" && INQUIRY_STATUSES.includes(payload.status)
+        ? payload.status
+        : "pending";
+    const createdAt =
+      typeof payload.created_at === "string" && payload.created_at ? payload.created_at : null;
     const row = {
       name: String(payload.name ?? "").slice(0, 200),
       phone: payload.phone ? String(payload.phone).slice(0, 100) : null,
       email: payload.email ? String(payload.email).slice(0, 200) : null,
       company: payload.company ? String(payload.company).slice(0, 200) : null,
       message: String(payload.message ?? "").slice(0, 5000),
-      status:
-        typeof payload.status === "string" && INQUIRY_STATUSES.includes(payload.status)
-          ? payload.status
-          : "pending",
       source: typeof payload.source === "string" && payload.source ? payload.source.slice(0, 50) : "manual",
       channel: typeof payload.channel === "string" && payload.channel ? payload.channel.slice(0, 30) : "silica",
-      ...(typeof payload.created_at === "string" && payload.created_at
-        ? { created_at: payload.created_at }
-        : {}),
     };
     const { data, error } = await memberAuth.from("inquiries").insert(row).select().maybeSingle();
     fail(error);
+    if (data?.id && (status !== "pending" || createdAt)) {
+      const extra: Record<string, unknown> = {};
+      if (status !== "pending") extra.status = status;
+      if (createdAt) extra.created_at = createdAt;
+      const { data: updated, error: updErr } = await memberAuth
+        .from("inquiries")
+        .update(extra)
+        .eq("id", data.id)
+        .select()
+        .maybeSingle();
+      fail(updErr);
+      return { success: true, inquiry: updated ?? data };
+    }
     return { success: true, inquiry: data };
   }
 
