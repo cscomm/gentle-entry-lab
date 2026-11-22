@@ -5,13 +5,14 @@
 -- 여러 번 실행해도 안전합니다 (IF NOT EXISTS / OR REPLACE 사용).
 -- ============================================================
 
-create extension if not exists pgcrypto;
+create extension if not exists pgcrypto with schema extensions;
 
 -- 관리자 판별: 이 이메일로 로그인한 회원만 관리자 자료를 읽고 쓸 수 있습니다.
 create or replace function public.is_admin()
 returns boolean
 language sql
 stable
+set search_path = public
 as $$
   select coalesce(auth.jwt() ->> 'email', '') = 'songinjai@gmail.com'
 $$;
@@ -69,9 +70,12 @@ create policy "post_translations_select" on public.post_translations for select 
 create or replace function public.posts_hash_password()
 returns trigger
 language plpgsql
+set search_path = public, extensions
 as $$
 begin
-  if new.password_hash is not null and new.password_hash not like '$2a$%' then
+  if new.password_hash is not null
+     and new.password_hash not like '$2a$%'
+     and new.password_hash not like '$2b$%' then
     new.password_hash := crypt(new.password_hash, gen_salt('bf'));
   end if;
   new.updated_at := now();
@@ -88,7 +92,7 @@ create or replace function public.verify_post_password(_post_id uuid, _password 
 returns boolean
 language sql
 security definer
-set search_path = public
+set search_path = public, extensions
 as $$
   select exists (
     select 1 from public.posts
