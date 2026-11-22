@@ -1366,11 +1366,14 @@ function generateSitemap(list: Route[]): string {
   ].join("\n");
 }
 
-/** Products switched off in the admin 상품 관리 tab — the site shows them as "not found". */
+/** Products switched off in the admin 상품 관리 tab — the site shows them as "not found".
+ *  Visibility lives in the member storage project (same place as sign-ups). */
+const MEMBER_DB_URL = "https://msjbpdeyucfunzgtnith.supabase.co";
+const MEMBER_DB_KEY = "sb_publishable_OdZnjGADHdfC1iEb3y4xyQ_Dl1QYub_";
+
 async function loadHiddenSlugs(): Promise<Set<string>> {
-  const url = process.env.VITE_SUPABASE_URL;
-  const key = process.env.VITE_SUPABASE_PUBLISHABLE_KEY;
-  if (!url || !key) return new Set();
+  const url = MEMBER_DB_URL;
+  const key = MEMBER_DB_KEY;
   try {
     const res = await fetch(`${url}/rest/v1/product_visibility?select=slug&visible=eq.false`, {
       headers: { apikey: key, Authorization: `Bearer ${key}` },

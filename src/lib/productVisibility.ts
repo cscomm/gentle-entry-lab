@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { memberAuth } from "@/lib/members/client";
 import type { ProductDetail } from "@/data/products";
 
 // Category page slug for products that have no parentSlug.
@@ -23,7 +23,7 @@ const listeners = new Set<() => void>();
 const emit = () => listeners.forEach((l) => l());
 
 export const loadVisibility = async () => {
-  const { data } = await supabase.from("product_visibility").select("slug, visible");
+  const { data } = await memberAuth.from("product_visibility").select("slug, visible");
   const next = new Set((data ?? []).filter((r) => !r.visible).map((r) => r.slug));
   overrides.forEach((h, s) => (h ? next.add(s) : next.delete(s)));
   hidden = next;

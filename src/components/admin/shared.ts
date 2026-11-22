@@ -3,8 +3,6 @@ import { memberAuth } from "@/lib/members/client";
 /** Admin data lives in the member storage project; only the admin account may read/write it. */
 export const ADMIN_EMAIL = "songinjai@gmail.com";
 
-export const PW_KEY = "silica_admin_pw";
-
 export type Channel = "silica" | "nanokorea" | "etc";
 
 export const CHANNEL_LABEL: Record<Channel, string> = {

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { BarChart3, Boxes, Download, FileText, FlaskConical, Lock, LogOut, MessageSquare, RefreshCw, UserRound, Users, Wallet, Wand2 } from "lucide-react";
-import { PW_KEY, inquiryApi } from "@/components/admin/shared";
+import { BarChart3, Boxes, FileText, FlaskConical, Loader2, Lock, LogOut, MessageSquare, RefreshCw, UserRound, Users, Wallet, Wand2 } from "lucide-react";
+import { Link } from "@/lib/router";
+import { ADMIN_EMAIL } from "@/components/admin/shared";
+import { useMember } from "@/lib/members/MemberContext";
 import { useAdminData, type Inquiry } from "@/components/admin/useAdminData";
 import InquiriesTab from "@/components/admin/InquiriesTab";
 import AccountsTab from "@/components/admin/AccountsTab";
@@ -32,9 +33,10 @@ const TABS: { key: Tab; label: string; icon: typeof Users }[] = [
 const Admin = () => {
   const { toast } = useToast();
   const { store, loading, reload, clear } = useAdminData();
-  const [password, setPassword] = useState("");
-  const [authed, setAuthed] = useState(false);
-  const [busy, setBusy] = useState(false);
+  const { session, user, loading: memberLoading, signOut } = useMember();
+  // Admin data is protected by the member storage project's access rules:
+  // only the admin account can read or write it.
+  const authed = Boolean(session && user?.email?.toLowerCase() === ADMIN_EMAIL);
   const [tab, setTab] = useState<Tab>("dashboard");
   const [accountFocus, setAccountFocus] = useState<string | null>(null);
   const [quoteDraft, setQuoteDraft] = useState<QuoteDraft | null>(null);
@@ -51,43 +53,16 @@ const Admin = () => {
   }, []);
 
   useEffect(() => {
-    if (sessionStorage.getItem(PW_KEY)) {
-      setAuthed(true);
+    if (authed) {
       reload().catch(() => toast({ title: "자료를 불러오지 못했습니다", variant: "destructive" }));
+    } else {
+      clear();
     }
-  }, [reload, toast]);
+  }, [authed, reload, clear, toast]);
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setBusy(true);
-    try {
-      sessionStorage.setItem(PW_KEY, password);
-      await inquiryApi({ action: "login" });
-      setAuthed(true);
-      setPassword("");
-      await reload();
-    } catch {
-      sessionStorage.removeItem(PW_KEY);
-      toast({ title: "비밀번호가 올바르지 않습니다", variant: "destructive" });
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  const logout = () => {
-    sessionStorage.removeItem(PW_KEY);
-    setAuthed(false);
+  const logout = async () => {
+    await signOut();
     clear();
-  };
-
-  const backfill = async () => {
-    try {
-      const res = await inquiryApi({ action: "backfill" });
-      await reload();
-      toast({ title: `지난 문의 ${res.imported ?? 0}건을 불러왔습니다` });
-    } catch {
-      toast({ title: "불러오기에 실패했습니다", variant: "destructive" });
-    }
   };
 
   const openAccount = (id: string) => {
@@ -108,29 +83,47 @@ const Admin = () => {
     setTab("quotes");
   };
 
+  if (memberLoading) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
+        <Loader2 className="h-6 w-6 animate-spin text-primary" />
+      </main>
+    );
+  }
+
   if (!authed) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-muted/30 px-4">
-        <form onSubmit={handleLogin} className="w-full max-w-sm rounded-xl border bg-background p-8 shadow-sm">
-          <div className="mb-6 flex items-center gap-2">
+        <div className="w-full max-w-sm rounded-xl border bg-background p-8 text-center shadow-sm">
+          <div className="mb-6 flex items-center justify-center gap-2">
             <Lock className="h-5 w-5 text-primary" />
             <h1 className="text-lg font-semibold">관리자 모드</h1>
           </div>
-          <label htmlFor="admin-pw" className="mb-2 block text-xs uppercase tracking-wider text-muted-foreground">
-            비밀번호
-          </label>
-          <Input
-            id="admin-pw"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            autoFocus
-            className="mb-4"
-          />
-          <Button type="submit" className="w-full" disabled={busy || !password}>
-            {busy ? "확인 중..." : "입장"}
-          </Button>
-        </form>
+          {session ? (
+            <>
+              <p className="mb-6 text-sm text-muted-foreground">
+                현재 로그인된 계정({user?.email ?? "이메일 없음"})은 관리자 계정이 아닙니다.
+              </p>
+              <div className="flex flex-col gap-2">
+                <Button asChild className="w-full">
+                  <Link to="/login/?next=%2Fadmin%2F">관리자 계정으로 다시 로그인</Link>
+                </Button>
+                <Button variant="ghost" className="w-full" onClick={logout}>
+                  로그아웃
+                </Button>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="mb-6 text-sm text-muted-foreground">
+                관리자 회원 계정으로 로그인하면 이용할 수 있습니다.
+              </p>
+              <Button asChild className="w-full">
+                <Link to="/login/?next=%2Fadmin%2F">관리자 로그인</Link>
+              </Button>
+            </>
+          )}
+        </div>
       </main>
     );
   }
@@ -147,9 +140,6 @@ const Admin = () => {
           <div className="flex flex-wrap gap-2">
             <Button variant="outline" size="sm" onClick={() => reload()} disabled={loading}>
               <RefreshCw className={`mr-1.5 h-3.5 w-3.5 ${loading ? "animate-spin" : ""}`} /> 새로고침
-            </Button>
-            <Button variant="outline" size="sm" onClick={backfill}>
-              <Download className="mr-1.5 h-3.5 w-3.5" /> 지난 문의 불러오기
             </Button>
             <Button variant="ghost" size="sm" onClick={logout}>
               <LogOut className="mr-1.5 h-3.5 w-3.5" /> 나가기

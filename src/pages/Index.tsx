@@ -17,7 +17,7 @@ import ProductCategoryBar from "@/components/ProductCategoryBar";
 import ProductGateway from "@/components/home/ProductGateway";
 import { useLang } from "@/contexts/LanguageContext";
 import kakaoChannel from "@/assets/kakao-channel.png";
-import { supabase } from "@/integrations/supabase/client";
+import { memberAuth } from "@/lib/members/client";
 
 import heroImage from "@/assets/hero-quartz.jpg";
 import heroGlobe from "@/assets/hero-globe.jpg";
@@ -237,30 +237,18 @@ const Index = () => {
         throw new Error(needsActivation ? "relay_activation_required" : "relay_failed");
       }
 
-      // 2) 서버가 켜져 있으면 관리자 화면에도 저장 (실패해도 무시)
+      // 2) 관리자 화면에도 저장 (회원 저장 공간; 실패해도 무시)
       void (async () => {
         try {
-          const inquiryId = crypto.randomUUID();
-          const { error: dbError } = await supabase.from("inquiries").insert({
-            id: inquiryId,
+          await memberAuth.from("inquiries").insert({
             name: form.name.slice(0, 100),
             phone: form.phone.slice(0, 50),
             email: form.email || null,
             company: form.company ? form.company.slice(0, 200) : null,
             message: form.message,
-            status: "pending",
           });
-          if (dbError) return;
-          await supabase.functions.invoke("send-transactional-email", {
-            body: { templateName: "contact-notification", recipientEmail: "cscomm@naver.com", inquiryId },
-          });
-          if (form.email) {
-            await supabase.functions.invoke("send-transactional-email", {
-              body: { templateName: "contact-confirmation", inquiryId },
-            });
-          }
         } catch {
-          /* 서버 일시정지 중 */
+          /* 저장 공간 연결 실패 시 메일 전달만으로 동작 */
         }
       })();
 
